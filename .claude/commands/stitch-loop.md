@@ -1,6 +1,6 @@
 ---
 description: Sinh 1 màn bằng Google Stitch, tự phản biện theo rule.md và bắt Stitch sửa tới khi điểm không tăng nữa
-argument-hint: <mã màn + tên, vd "S03 Hôm nay"> [--resume]
+argument-hint: <mã màn + tên, vd "S03 Hôm nay"> [--resume] [--from <mã màn gốc>]
 ---
 
 Màn cần làm: **$ARGUMENTS**
@@ -20,6 +20,15 @@ Nếu tham số có `--resume`: **không sinh lại v0**, bỏ qua mục 1, sử
 - **Chấm lại theo luật hiện tại:** luật và Từ điển icon có thể đã đổi, nên gọi `stitch-critic` chấm lại `vK.png`, `vK.html`, ghi đè `vK-critique.json` (giữ bản cũ thành `vK-critique.old.json`). Điểm này là điểm tốt nhất ban đầu, bộ đếm "không tăng" = 0.
 - Trong `log.md` thêm mục `## Chạy tiếp từ vK (luật mới)` với điểm chấm lại.
 - Nếu chấm lại đã 100 → dừng, kết quả **CONVERGED**. Nếu chưa, làm bước 2f (viết edit prompt từ `vK-critique.json`, sửa trên screen id vừa tìm) rồi vào vòng N = K + 1 như bình thường. Chốt an toàn v8 tính tiếp theo số vòng.
+
+## 0c. Biến thể (`--from X`)
+Nếu tham số có `--from X`: màn này là **biến thể của màn X** (cùng khung, khác trạng thái hoặc nội dung), không sinh v0 bằng `generate_screen_from_text`.
+- X phải đã chạy xong: `stitch-runs/X/log.md` có dòng `Kết quả:`. Chưa có → ghi `**Kết quả: NEEDS_HUMAN** – chờ màn gốc X` vào log của màn này rồi dừng.
+- Lấy **screen id màn chốt của X**: dòng `Màn chốt` trong `stitch-runs/X/log.md`, rồi `stitch-runs/X/run.txt`. Không thấy thì `list_screens` của project, lấy màn có tiêu đề khớp X và ảnh khớp `vK.png` của màn chốt. Vẫn không chắc → NEEDS_HUMAN, không đoán.
+- Nội dung màn: dòng của màn ở `PRD.md` 11.2 nếu có; nếu không, lấy theo cột Nguồn trong `stitch-runs/CHIA-VIEC.md` (`flutter-handoff.md`, `ux/user-flow.md`). Câu chữ vẫn theo `AppStyleGuide.md`, `vocabulary.md`.
+- Viết `v0-prompt.txt` dạng edit prompt tiếng Anh: dòng đầu `Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant.`, rồi liệt kê đánh số phần khác với X (có số đo, chữ tiếng Việt trong ngoặc kép), kèm khối ICONS cho icon mới và các luật `error` của `rule.md` liên quan. Ghi `v0-prompt-trace.md` (ghi rõ "biến thể của X, screen id ...").
+- Gọi `edit_screens` trên screen id màn chốt của X. Màn trả về là v0 của màn này; ghi screen id vào `log.md` (dòng `screen id: ...`). Không sửa thư mục `stitch-runs/X/`.
+- Sang mục 2 như bình thường (critic chấm, lặp). Các vòng sau sửa trên màn của chính biến thể này, không quay về X.
 
 ## 1. v0 – sinh màn
 - Viết prompt tiếng Anh CHỈ cho màn này; chữ trên UI bằng tiếng Việt có dấu; đưa tất cả luật mức `error` của `rule.md` vào dưới dạng ràng buộc có số đo.
