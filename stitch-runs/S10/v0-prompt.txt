@@ -1,0 +1,33 @@
+Design ONE mobile screen: "Cài đặt hiển thị" (Display settings) for the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp, portrait mobile. All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube. Principles: Bác decides; no pressure; few words; many icons, every icon has a visible text label. This screen has ONE job: let Bác pick text size and a few comfort options by TAPPING; nothing needs typing. It is a child screen opened from "Hôm nay", so there is NO bottom navigation bar. No swiping, no long-press, no carousel. List content is LEFT aligned. The content scrolls vertically.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), outline #7B887F, border #DFE5DF, border-strong #A0ACA3. Screen side margin 20px, gap between blocks 16px. Cards radius 16, buttons radius 14. NO gradients anywhere (including fixed bars), no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Body 24px, screen heading 30px bold, section title 26px bold, row label 24px bold, secondary text 20px, button text 22px bold, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px. NEVER clip or truncate text: no line-clamp, no overflow hidden, no "…"; long text wraps and the card grows taller. Text columns at least 200px wide.
+- Every touch target >= 48x48px; each row is one tappable full-width row, min height 72px. This screen has NO filled button at all. The only button is OUTLINED: "Xem thử lời nhắc" with a bell-ring icon, white background, 2px #7B887F border, #1F684B text, 60px high, full width minus margins, radius 14.
+- Each sentence <= 15 words; each button label <= 5 words. No paragraphs; each row has at most ONE secondary line.
+- Every icon has a visible text label next to it. No icon-only buttons. Icons >= 32px. One icon = one meaning: every row uses a DIFFERENT icon.
+- Selection and switch states are shown with icon + text, never color alone: selected option = check-circle icon + "Đã chọn"; unselected = empty-circle icon + "Chọn"; switch rows show the text "Đang bật" or "Đang tắt" beside the switch (switch track 64x40).
+- Back button top-left: chevron-left icon plus visible text "Hôm nay" (22px bold, #1F684B, 48px high). Never an arrow alone.
+- No progress percentages, no ranking, no streak, no score, no countdown, no three-dot menu, no pressure wording.
+
+LAYOUT (top to bottom):
+1. App bar: "‹ Hôm nay" back button at left.
+2. Heading "Cài đặt hiển thị" (30px bold, left aligned).
+3. Card "Cỡ chữ" (white, radius 16, padding 16): section title "Cỡ chữ" with a type icon. Three stacked selectable option rows (min height 72px, 2px #A0ACA3 border, radius 16): "Vừa", "Lớn" (SELECTED: 2px #1F684B border, #D6EADF background, check-circle + "Đã chọn"), "Rất lớn" (unselected: empty-circle + "Chọn"). Under them a preview line in a #F6F7F2 box: "Xem thử: Đi bộ 20 phút lúc 9:30 sáng" (24px).
+4. Card with three switch rows (each: icon · label · ONE secondary line 20px · switch with state text): 
+ - contrast icon · "Chữ và nền rõ hơn" · "Tăng độ tương phản" · "Đang tắt"
+ - volume-2 icon · "Đọc to nội dung" · "Điện thoại đọc lời nhắc" · "Đang bật"
+ - vibrate icon · "Rung khi có lời nhắc" · "Kèm tiếng chuông" · "Đang bật"
+5. Outlined button "Xem thử lời nhắc" (bell-ring icon, 60px high).
+6. Four tappable rows (white cards, icon in a 48x48 #D6EADF tile with #1F684B icon, label 24px bold, chevron-right 32px at the right):
+ - book-open icon · "Cách dùng đơn giản"
+ - user-round icon · "Thông tin của Bác"
+ - bell icon · "Lời nhắc"
+ - smartphone icon · "Dữ liệu trên điện thoại"
+Add 40px bottom padding.
+
+TEXT STYLE: Use words "Cỡ chữ", "Đọc to", "lời nhắc", "Đã chọn", "Chọn". Never use: settings, font size, contrast, notification, reminder, profile, data, task, cài đặt hồ sơ, nhiệm vụ, mục tiêu, người dùng, hệ thống, đồng bộ, sao lưu, thiết bị, cấu hình.

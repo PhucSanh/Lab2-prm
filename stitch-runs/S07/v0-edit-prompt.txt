@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Bottom navigation: set .bottom-nav padding to 0 and height 96px; make each tab flex: 1 (90px wide, 88px high); keep labels "Hôm nay", "Lịch tuần", "Thói quen", "Gia đình" at 20px, centered, allowed to wrap onto 2 lines (white-space: normal, line-height 1.15, letter-spacing -0.3px) so no label overflows its tab or touches the next label; add 116px bottom padding to the scrolling content so the last day row is not hidden behind the nav.
+2. Remove the cluster of 12px colored habit dots from all day rows (they carry meaning by color only and have no icon or text label). Let the status label ("Đã xong 6/6 việc", "6 việc, chưa làm"...) use the freed width and stay on one line where possible.
+3. Change the gap between the seven day cards from 10px to 16px.
+4. On the "Chủ nhật 11/10" row replace the calendar-style icon beside "Chưa có việc" with a circle-minus icon, 32px, stroke #526057; the calendar icon stays only in the heading and the "Lịch tuần" tab.

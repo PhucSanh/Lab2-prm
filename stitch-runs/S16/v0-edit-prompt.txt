@@ -1,0 +1,9 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Week card, legend: stack the 3 legend items vertically (one per line, 8px gap), each = 32px icon + 20px word: circle-check + "Đã xong", circle-minus + "Bỏ qua", circle + "Chưa tới". Nothing may extend past the card's inner edge (286px).
+2. Week card, day row: remove min-width 38px on the cells; use 7 equal flexible cells with 2px gap and card padding 12px so "Hai", "Ba", "Tư", "Nay", "Sáu", "Bảy", "CN" (20px) fit fully inside their cells without touching the border. Keep full Vietnamese names, no "T2" abbreviations.
+3. Today consistency: the "Nay" cell uses the `circle` icon in #B26A00 (not done yet) with the 2px #1F684B border, and the card title becomes "Tuần này Bác đã làm 2 lần", matching the "Chưa làm" chip below.
+4. "CN" cell dash "–": color #526057 (not #A0ACA3), 32px tall glyph area, bold.
+5. Today cell background: use #D6EADF instead of #EBF5F0.
+6. Habit icon: replace the distorted footprints drawing with the exact Lucide `footprints` icon (4 original paths, closed heel shapes) in both tiles: 40px in the 64x64 tile, 32px in the 48x48 tile, stroke 2.5, white #FFFFFF, fill none:
+<svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.5-2 8.5V16a2 2 0 0 1-2 2 2 2 0 0 1-2-2Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.5 2 8.5V20a2 2 0 0 0 2 2 2 2 0 0 0 2-2Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg>
+7. Legend icons: make every legend icon 32x32px (currently 26px).

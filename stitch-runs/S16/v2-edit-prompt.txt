@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Week card day row: set the card inner horizontal padding to 4px and the cell gap to 0, so each of the 7 cells is about 46px wide. Day names stay full Vietnamese words ("Hai", "Ba", "Tư", "Nay", "Sáu", "Bảy", "CN") at 20px, font-weight 500, letter-spacing 0, white-space nowrap, centered in cells that have padding 0 and NO horizontal margin on the text.
+2. "Nay" cell: remove the 2px border around the cell (it squeezes the text). Mark today instead with a #D6EADF cell background plus a 4px high #1F684B bar along the bottom edge of the cell; the text keeps its full cell width.
+3. "CN" cell: replace the dash "–" with the same Lucide `circle` icon 32px, stroke 2.5, #B26A00 used by "Nay", "Sáu" and "Bảy" (the task repeats every day). No dash anywhere on the screen.

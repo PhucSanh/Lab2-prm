@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - Chi tiết thói quen (Vận động tự nhiên)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #ECEEE9;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 20px 0;
+    }
+
+    /* Khung điện thoại chuẩn 360 x 800 dp */
+    .mobile-frame {
+      width: 360px;
+      height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+      border-radius: 24px;
+    }
+
+    /* App Bar */
+    .app-bar {
+      height: 56px;
+      padding: 4px 20px;
+      display: flex;
+      align-items: center;
+      background-color: #F6F7F2;
+      flex-shrink: 0;
+      z-index: 10;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      color: #1F684B;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: 700;
+      cursor: pointer;
+      min-height: 48px;
+      min-width: 48px;
+      padding: 0;
+      text-decoration: none;
+    }
+
+    .btn-back svg {
+      width: 32px;
+      height: 32px;
+      stroke: #1F684B;
+      stroke-width: 2.5;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    /* Vùng cuộn nội dung chính */
+    .scroll-content {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 12px 20px 108px 20px; /* Padding dưới để không che bởi footer 60px + 20px margin + 20px đệm */
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Phần 2: Tiêu đề thói quen & Icon lớn */
+    .header-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .habit-tile-large {
+      width: 64px;
+      height: 64px;
+      min-width: 64px;
+      border-radius: 12px;
+      background-color: #2BA15C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .habit-tile-large svg {
+      width: 40px;
+      height: 40px;
+      stroke: #FFFFFF;
+      stroke-width: 2.5;
+      fill: none;
+    }
+
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .habit-subtitle {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.3;
+    }
+
+    .habit-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.25;
+    }
+
+    /* Phần 3: Lời giới thiệu ngắn & Nút Đọc to */
+    .intro-block {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .intro-text {
+      font-size: 24px;
+      font-weight: 500;
+      color: #202B25;
+      line-height: 1.45;
+    }
+
+    .btn-read-aloud {
+      height: 60px;
+      width: 100%;
+      min-height: 60px;
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: 700;
+      color: #202B25;
+      cursor: pointer;
+    }
+
+    .btn-read-aloud svg {
+      width: 32px;
+      height: 32px;
+      stroke: #202B25;
+      stroke-width: 2.5;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    /* Phần 4: Thẻ tiến độ tuần này */
+    .week-card {
+      background-color: #FFFFFF;
+      border: 1px solid #DFE5DF;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .week-card-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    /* Hàng 7 ngày trong tuần */
+    .days-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+
+    .day-cell {
+      min-width: 38px;
+      min-height: 72px;
+      padding: 6px 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 10px;
+      background-color: #F8FAF8;
+      border: 1px solid #E6EAE6;
+    }
+
+    .day-cell.today {
+      border: 2px solid #1F684B;
+      background-color: #EBF5F0;
+    }
+
+    .day-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1;
+    }
+
+    .day-cell.today .day-name {
+      color: #1F684B;
+    }
+
+    .day-icon-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+    }
+
+    .day-icon-wrap svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2.5;
+      fill: none;
+    }
+
+    /* Biểu tượng trạng thái từng ngày */
+    .icon-done {
+      stroke: #1F684B;
+    }
+
+    .icon-skipped {
+      stroke: #7B887F;
+    }
+
+    .icon-upcoming {
+      stroke: #7B887F;
+    }
+
+    .dash-text {
+      font-size: 26px;
+      font-weight: 700;
+      color: #A0ACA3;
+      line-height: 1;
+    }
+
+    /* Chú thích biểu tượng */
+    .week-legend {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 8px;
+      border-top: 1px solid #ECEFEA;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-item svg {
+      width: 26px;
+      height: 26px;
+      stroke-width: 2.5;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .legend-text {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+      white-space: nowrap;
+    }
+
+    /* Phần 5: Danh sách việc của Bác */
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    .task-card {
+      background-color: #FFFFFF;
+      border: 1px solid #DFE5DF;
+      border-left: 6px solid #2BA15C;
+      border-radius: 16px;
+      padding: 14px 14px 14px 12px;
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+    }
+
+    .task-tile {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 12px;
+      background-color: #2BA15C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .task-tile svg {
+      width: 32px;
+      height: 32px;
+      stroke: #FFFFFF;
+      stroke-width: 2.5;
+      fill: none;
+    }
+
+    .task-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .task-time {
+      font-size: 20px;
+      font-weight: 700;
+      color: #526057;
+      line-height: 1.2;
+    }
+
+    .task-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+
+    .task-repeat {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.2;
+    }
+
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 40px;
+      padding: 0 12px;
+      background-color: #FFF3DB;
+      border-radius: 20px;
+      align-self: flex-start;
+      margin-top: 4px;
+    }
+
+    .status-chip svg {
+      width: 24px;
+      height: 24px;
+      stroke: #B26A00;
+      stroke-width: 2.5;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .status-chip-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: #8A5100;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .task-arrow {
+      width: 32px;
+      height: 32px;
+      stroke: #7B887F;
+      stroke-width: 2.5;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    /* Phần 6: Khung cố định chân trang (Fixed Footer) */
+    .fixed-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 20px 20px 20px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      z-index: 20;
+    }
+
+    .btn-primary-add {
+      height: 60px;
+      width: 100%;
+      min-height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(31, 104, 75, 0.25);
+    }
+
+    .btn-primary-add svg {
+      width: 32px;
+      height: 32px;
+      stroke: #FFFFFF;
+      stroke-width: 2.5;
+      fill: none;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="mobile-frame">
+<!-- 1. App Bar: nút Quay lại chữ "Thói quen" với chevron-left -->
+<header class="app-bar">
+<button aria-label="Quay lại danh sách thói quen" class="btn-back" type="button">
+<!-- Lucide chevron-left -->
+<svg viewbox="0 0 24 24">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+<span>Thói quen</span>
+</button>
+</header>
+<!-- Vùng cuộn thông tin chi tiết -->
+<main class="scroll-content">
+<!-- 2. Hàng tiêu đề thói quen -->
+<section class="header-row">
+<div class="habit-tile-large"><svg fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.5-2 8.5V16a2 2 0 0 1-2 2 2 2 0 0 1-2-2Z"></path><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.5 2 8.5V20a2 2 0 0 0 2 2 2 2 0 0 0 2-2Z"></path><path d="M16 17h4"></path><path d="M4 13h4"></path></svg></div>
+<div class="header-text">
+<span class="habit-subtitle">Thói quen 1 / 9</span>
+<h1 class="habit-title">Vận động tự nhiên</h1>
+</div>
+</section>
+<!-- 3. Lời giới thiệu ngắn & Nút Đọc to (Outlined) -->
+<section class="intro-block">
+<p class="intro-text">Đi bộ, làm vườn, tự làm việc nhà</p>
+<button class="btn-read-aloud" type="button">
+<!-- Lucide volume-2 -->
+<svg viewbox="0 0 24 24">
+<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+<path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+<path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+</svg>
+<span>Đọc to</span>
+</button>
+</section>
+<!-- 4. Thẻ tiến độ tuần này -->
+<section class="week-card" style="padding: 12px;">
+<h2 class="week-card-title">Tuần này Bác đã làm 2 lần</h2>
+<!-- Hàng 7 ngày -->
+<div class="days-grid" style="gap: 2px;">
+<!-- Thứ Hai: Đã làm -->
+<div class="day-cell">
+<span class="day-name">Hai</span>
+<div class="day-icon-wrap">
+<!-- Lucide circle-check -->
+<svg class="icon-done" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="m9 12 2 2 4-4"></path>
+</svg>
+</div>
+</div>
+<!-- Thứ Ba: Đã làm -->
+<div class="day-cell">
+<span class="day-name">Ba</span>
+<div class="day-icon-wrap">
+<!-- Lucide circle-check -->
+<svg class="icon-done" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="m9 12 2 2 4-4"></path>
+</svg>
+</div>
+</div>
+<!-- Thứ Tư: Bỏ qua -->
+<div class="day-cell">
+<span class="day-name">Tư</span>
+<div class="day-icon-wrap">
+<!-- Lucide circle-minus -->
+<svg class="icon-skipped" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M8 12h8"></path>
+</svg>
+</div>
+</div>
+<!-- Thứ Năm (Hôm nay): Đã làm + viền 2px #1F684B -->
+<div class="day-cell today" style="background-color: #D6EADF; min-width: 0;"><span class="day-name">Nay</span>
+<div class="day-icon-wrap">
+<svg fill="none" stroke="#B26A00" stroke-width="2.5" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+</div></div>
+<!-- Thứ Sáu: Chưa tới -->
+<div class="day-cell">
+<span class="day-name">Sáu</span>
+<div class="day-icon-wrap">
+<!-- Lucide circle -->
+<svg class="icon-upcoming" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+</div>
+</div>
+<!-- Thứ Bảy: Chưa tới -->
+<div class="day-cell">
+<span class="day-name">Bảy</span>
+<div class="day-icon-wrap">
+<!-- Lucide circle -->
+<svg class="icon-upcoming" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+</div>
+</div>
+<!-- Chủ Nhật: Dấu gạch "-" không có việc -->
+<div class="day-cell"><span class="day-name">CN</span>
+<div class="day-icon-wrap">
+<span class="dash-text" style="color: #526057; font-size: 26px; font-weight: 700; line-height: 32px;">–</span>
+</div></div>
+</div>
+<!-- Chú thích rõ ràng cho người cao tuổi -->
+<div class="week-legend" style="display: flex; flex-direction: column; gap: 8px; align-items: flex-start;"><div class="legend-item" style="display: flex; align-items: center; gap: 8px;">
+<svg style="width: 32px; height: 32px; stroke: #1F684B; stroke-width: 2.5; fill: none; flex-shrink: 0;" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="m9 12 2 2 4-4"></path>
+</svg>
+<span class="legend-text" style="font-size: 20px; font-weight: 500; color: #526057;">Đã làm</span>
+</div>
+<div class="legend-item" style="display: flex; align-items: center; gap: 8px;">
+<svg style="width: 32px; height: 32px; stroke: #526057; stroke-width: 2.5; fill: none; flex-shrink: 0;" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M8 12h8"></path>
+</svg>
+<span class="legend-text" style="font-size: 20px; font-weight: 500; color: #526057;">Bỏ qua</span>
+</div>
+<div class="legend-item" style="display: flex; align-items: center; gap: 8px;">
+<svg style="width: 32px; height: 32px; stroke: #7B887F; stroke-width: 2.5; fill: none; flex-shrink: 0;" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span class="legend-text" style="font-size: 20px; font-weight: 500; color: #526057;">Chưa tới</span>
+</div></div>
+</section>
+<!-- 5. Thẻ việc của Bác -->
+<section>
+<h2 class="section-title" style="margin-bottom: 12px;">Việc của Bác</h2>
+<div class="task-card">
+<div class="task-tile"><svg fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.5-2 8.5V16a2 2 0 0 1-2 2 2 2 0 0 1-2-2Z"></path><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.5 2 8.5V20a2 2 0 0 0 2 2 2 2 0 0 0 2-2Z"></path><path d="M16 17h4"></path><path d="M4 13h4"></path></svg></div>
+<div class="task-body">
+<span class="task-time">9:30 sáng</span>
+<h3 class="task-name">Đi bộ quanh công viên</h3>
+<span class="task-repeat">Mỗi ngày</span>
+<div class="status-chip">
+<!-- Lucide circle (24px) -->
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span class="status-chip-text">Chưa làm</span>
+</div>
+</div>
+<!-- Lucide chevron-right -->
+<svg class="task-arrow" viewbox="0 0 24 24">
+<path d="m9 18 6-6-6-6"></path>
+</svg>
+</div>
+</section>
+</main>
+<!-- 6. Nút chính duy nhất cố định dưới chân trang: "Thêm việc" -->
+<footer class="fixed-footer">
+<button class="btn-primary-add" type="button">
+<!-- Lucide plus (32px) -->
+<svg viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="M12 5v14"></path>
+</svg>
+<span>Thêm việc</span>
+</button>
+</footer>
+</div>
+</body>
+</html>

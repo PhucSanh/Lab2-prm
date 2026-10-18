@@ -1,0 +1,26 @@
+Design ONE mobile screen: "Thêm việc – thiết lập" (Add task, step 2 of 2: set the time, repeat and reminder) for the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp, portrait mobile. All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube. Principles: Bác decides; no pressure; few words; many icons, every icon has a visible text label. One primary filled button per screen. No swiping, no long-press, no carousel. This screen has ONE job: finish adding the task chosen in step 1 ("Đi bộ nhẹ nhàng") by CHOOSING, not typing: the name is already filled in, the time is a tappable box that opens a time dialog (no scroll wheel), repeat and reminder are picked from big buttons. Form content is LEFT aligned in one column; the content area may scroll vertically under a fixed footer.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), outline #7B887F, border #DFE5DF. Screen side margin 20px, gap between blocks 16px. Input radius 12, buttons radius 14. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Screen heading 30px bold, field labels 24px semibold, field values 24px, button text 22px bold, helper text 20px, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…" (long text must wrap, never use nowrap or ellipsis).
+- Every touch target >= 48x48px. Exactly ONE filled (dark green #1F684B) button: "Lưu việc này" with a check icon, height 60px, full width minus 20px margins, fixed at the bottom. No other filled button. Option buttons are outlined (2px #7B887F border) or selected (2px #1F684B border with #E7F2EB background and radio dot + text), each >= 60px high, separated by >= 8px.
+- Back button top-left: chevron-left icon plus visible text "Quay lại" (22px bold, #1F684B, 48px high). Never an arrow alone.
+- Each sentence <= 15 words; each button label <= 5 words. No paragraphs.
+- Every icon has a visible text label next to it. No icon-only buttons. Icons >= 32px. Selection states are icon + text, never color only.
+- Habit accent for this task: Vận động tự nhiên #2BA15C used only on a 48x48 radius-12 icon tile (white solid walking icon 32px) and a 6px left accent bar of the summary card; text always on white.
+- No progress percentages, no ranking, no streak, no countdown, no three-dot menu, no pressure wording.
+
+LAYOUT (top to bottom, no bottom navigation bar):
+1. App bar: "‹ Quay lại" at left; step text "Bước 2/2" (20px, #526057) at right.
+2. Summary card (white, radius 16, padding 16, 6px left accent bar #2BA15C): 48x48 #2BA15C icon tile with walking icon, task name "Đi bộ nhẹ nhàng" (24px bold), line "Vận động tự nhiên" (20px, #526057).
+3. Field "Tên việc": label row with a pencil icon (32px) + "Tên việc" (24px semibold); text field 60px high, white, radius 12, 2px #7B887F border, value "Đi bộ nhẹ nhàng"; helper "Ví dụ: Đi bộ buổi sáng" (20px, #526057).
+4. Field "Giờ làm": label row with a clock icon (32px) + "Giờ làm"; ONE tappable time box 60px high, white, 2px #7B887F border, radius 12: "8 : 00 sáng" (24px) + chevron-down icon with the text label "Đổi giờ" (20px) beside it. No scroll wheel.
+5. Field "Lặp lại": label row with a repeat icon (32px) + "Lặp lại"; THREE option buttons stacked or in one row (gap 8px, each 60px high): "Mỗi ngày" (selected: radio dot + text), "Vài ngày", "Một lần" (unselected: empty circle).
+6. Field "Lời nhắc": label row with a bell icon (32px) + "Lời nhắc"; one outlined row 60px high with text "Nhắc lại sau 10 phút" and a toggle switch with visible text "Bật" (selected state shown with icon + text).
+7. Fixed footer: ONLY filled button "Lưu việc này" with check icon, 60px high, 20px bottom padding, on a flat #F6F7F2 background with a 1px #DFE5DF top border.
+
+TEXT STYLE: Use words "việc", "Giờ làm", "Lặp lại", "Lời nhắc", "Lưu việc này", "Quay lại". Never use: task, save, repeat, reminder, notification, time, OK, cancel, nhiệm vụ, mục tiêu, thử thách, người dùng, hệ thống.

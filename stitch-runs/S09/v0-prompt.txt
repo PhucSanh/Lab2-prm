@@ -1,0 +1,25 @@
+Design ONE mobile screen: "Gia đình" (Family, tab 4 of the bottom navigation) for the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp, portrait mobile. All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube. Principles: Bác decides; relatives only suggest, never manage; nothing is reported to the children automatically; no pressure; few words; many icons, every icon has a visible text label. This screen has ONE job: contact a relative (call or message) and see suggestions from them, all by TAPPING. No swiping, no long-press, no carousel, no chart, no chat window. List content is LEFT aligned. The content scrolls vertically.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), outline #7B887F, border #DFE5DF. Screen side margin 20px, gap between blocks 16px. Cards radius 16, buttons radius 14. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Body 24px, screen heading 30px bold, relative name 24px bold, secondary text 20px, button text 22px bold, bottom nav labels 20px, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px. NEVER clip or truncate text: no line-clamp, no overflow hidden, no "…"; long text wraps and the card grows taller.
+- Every touch target >= 48x48px. Exactly ONE filled (dark green #1F684B) button on the whole screen: "Thêm người thân" with a user-plus icon, height 60px, width = screen minus 20px margins, fixed just above the bottom navigation, 16px gap to the nav. All other buttons are OUTLINED (white, 2px #7B887F border, #1F684B text), height 60px.
+- Each sentence <= 15 words; each button label <= 5 words; tab labels <= 3 words. No paragraphs; each card has at most ONE secondary line.
+- Every icon has a visible text label next to it. No icon-only buttons. Icons >= 32px. One icon = one meaning: use a DIFFERENT icon for each meaning, never reuse the same icon for two meanings.
+- No progress percentages, no ranking, no streak, no score, no countdown, no three-dot menu, no pressure wording, no "đã gửi" claims, no sentence saying a relative is tracking Bác.
+
+LAYOUT (top to bottom):
+1. Heading "Gia đình" (30px bold, left aligned). Below it one line "Bác chọn điều muốn kể cho con" (20px, #526057) with a message-circle icon (32px) at the left.
+2. Suggestion row (tappable white card with 2px #1F684B border, radius 16, padding 16, min height 72px): mail-open/lightbulb icon in a 48x48 #D6EADF tile + text "Gợi ý từ Mai · 2 việc" (24px bold) + chevron-right. Under it nothing else.
+3. Three relative cards (white, radius 16, padding 16, gap 16px). Each card: 48x48 circle tile (#D6EADF, single-person user icon #1F684B) · name (24px bold) · ONE secondary line (20px, #526057, the relation). Below that, a row of TWO outlined buttons of equal width with a 12px gap: "Gọi điện" with a phone icon, and "Nhắn tin" with a message-square icon (each 60px high, 22px bold text, half of the card width).
+ - "Mai" · "Con gái" · [Gọi điện] [Nhắn tin]
+ - "Hùng" · "Con trai" · [Gọi điện] [Nhắn tin]
+ - "Bin" · "Cháu" · [Gọi điện] [Nhắn tin]
+4. Filled button "Thêm người thân" (user-plus icon), fixed above the bottom nav as specified.
+5. Bottom navigation bar fixed at the bottom, 96px high, white, 4 tabs each flex 1 with icon + label (20px, centered, may wrap to 2 lines): "Hôm nay" (sun icon), "Lịch tuần" (calendar icon), "Thói quen" (leaf icon), "Gia đình" (users icon, ACTIVE: #D6EADF pill, bold, #1F684B). Add 190px bottom padding to the scrolling content so the last card is not hidden behind the button and nav.
+
+TEXT STYLE: Use words "Gọi điện", "Nhắn tin", "Gợi ý", "việc", "người thân", "con". Never use: family, call, message, contact, add, task, caregiver, monitor, theo dõi, giám sát, người chăm sóc, người dùng, hệ thống, nhiệm vụ, mục tiêu, điểm, xếp hạng.

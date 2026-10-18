@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the "Cỡ chữ" option rows, set .option-text-container min-width to 0 so the "Đã chọn" / "Chọn" badge (icon + text) sits fully inside the row with at least 12px padding to the right border; nothing may extend past the row edge at 360px.
+2. In the three switch rows, set .switch-control to min-width 64px and make the text column at least 160px wide; the 24px label may wrap to at most 2 lines (e.g. "Rung khi có lời nhắc" must not break into 3 lines). Move the state text "Đang bật" / "Đang tắt" to sit directly under the switch track (20px) if needed to free width.
+3. Make each whole switch row (min height 72px, full card width) tappable to toggle the switch, and enlarge each switch track to 64x48px (thumb 40px, padding 4px) so every touch target is at least 48px high.
+4. Change the border of the unselected font-size option rows ("Vừa", "Rất lớn") from #A0ACA3 to 2px #7B887F, and the background of switch tracks in the "Đang tắt" state from #A0ACA3 to #7B887F (contrast at least 3:1 against white).

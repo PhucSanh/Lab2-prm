@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Week card day row: set card inner horizontal padding to 8px and the gap between the 7 day cells to 0, so each cell is about 43px wide; day names ("Hai", "Ba", "Tư", "Nay", "Sáu", "Bảy", "CN") stay full Vietnamese words at 20px, font-weight 600, centered, with at least 2px clearance from every cell border, including the 2px #1F684B border of the "Nay" cell. No text may touch or overlap a border. Do not abbreviate to "T2".
+2. Legend: rename "Đã làm" to "Đã xong". Replace the item "Chưa tới" by "Chưa làm" with the `circle` icon 32px in #B26A00. Use the same `circle` icon in #B26A00 for the "Nay", "Sáu" and "Bảy" cells, so the legend explains every icon in the row. Legend stays stacked vertically (8px gap, icon 32px + 20px word).
+3. Task card chip "Chưa làm": add a 2px #B26A00 border (keep background #FFF3DB, text #8A5100, icon circle 24px #B26A00).

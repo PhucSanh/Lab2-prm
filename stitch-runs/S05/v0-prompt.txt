@@ -1,0 +1,28 @@
+Design ONE mobile screen: "Thêm việc – chọn việc quen" (Add task, step 1 of 2: pick a familiar activity) for the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp, portrait mobile. All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube. Principles: Bác decides; no pressure; few words; many icons, every icon has a visible text label. One primary filled button per screen. No swiping, no long-press, no carousel. This screen has ONE job: choose what to add by TAPPING, without typing. Show only 3 familiar activities plus a "Xem thêm" button. List content is LEFT aligned.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), outline #7B887F, border #DFE5DF. Screen side margin 20px, gap between blocks 16px. Cards radius 16, buttons radius 14. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Body 24px, screen heading 30px bold, activity name 24px bold, button text 22px bold, secondary text 20px, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…". Whole screen fits 800px without scrolling.
+- Every touch target >= 48x48px. Exactly ONE filled (dark green #1F684B) button: "Tiếp tục" with an arrow-right icon, height 60px, full width minus 20px margins, fixed at the bottom. "Xem thêm" is OUTLINED (white, 2px #7B887F border), 60px high, with a plus icon. Buttons separated by >= 8px.
+- Back button top-left: chevron-left icon plus visible text "Quay lại" (22px bold, #1F684B, 48px high). Never an arrow alone.
+- Each sentence <= 15 words; each button label <= 5 words. No paragraphs.
+- Every icon has a visible text label next to it. No icon-only buttons. Icons >= 32px.
+- Each activity row: left vertical accent bar 6px wide in the habit's accent color, 48x48 radius-12 icon tile filled with the habit accent color (white solid icon 32px), activity name, ONE secondary line (habit name, 20px), and a selection state shown as icon + text (never color only). Row height >= 72px, white card radius 16, padding 16, gap 16px.
+- Habit accent colors (use exactly): Vận động tự nhiên #2BA15C, Gia đình trên hết #D86E75. Accent colors only on small areas (tile, bar); text always on white.
+- No progress percentages, no ranking, no streak, no countdown, no three-dot menu, no pressure wording.
+
+LAYOUT (top to bottom, no bottom navigation bar on this screen):
+1. App bar: "‹ Quay lại" back button at left; step text "Bước 1/2" (20px, #526057).
+2. Heading "Bác muốn làm gì?" (30px bold, left aligned).
+3. Three activity rows (tappable, whole row):
+ - Walking icon on #2BA15C tile · "Đi bộ nhẹ nhàng" · "Vận động tự nhiên" · SELECTED: row border 2px #1F684B, background #D6EADF, check-circle icon with text "Đã chọn".
+ - Sprout/plant icon on #2BA15C tile · "Chăm cây" · "Vận động tự nhiên" · unselected: white, 2px #A0ACA3 border, empty-circle icon with text "Chọn".
+ - Phone icon on #D86E75 tile · "Gọi người thân" · "Gia đình trên hết" · unselected: same as above.
+4. Outlined button "Xem thêm" with plus icon (60px high), 16px below the list.
+5. Fixed footer: ONLY filled button "Tiếp tục" with arrow-right icon, 60px high, 20px bottom padding.
+
+TEXT STYLE: Use words "việc", "Chọn", "Đã chọn", "Xem thêm", "Tiếp tục", "Quay lại". Never use: task, activity, next, more, select, OK, cancel, nhiệm vụ, mục tiêu, thử thách, người dùng, hệ thống.

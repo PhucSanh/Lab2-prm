@@ -1,0 +1,32 @@
+Design ONE mobile screen: "9 thói quen" (the 9 healthy habits list, tab 3 of the bottom navigation) for the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp, portrait mobile. All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube. Principles: Bác decides; no pressure; few words; many icons, every icon has a visible text label. This screen has ONE job: understand the 9 habits in everyday words by glancing, then TAP one to read more. No swiping, no long-press, no carousel, no chart. List content is LEFT aligned. The list scrolls vertically.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), outline #7B887F, border #DFE5DF. Screen side margin 20px, gap between blocks 16px. Cards radius 16, buttons radius 14. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Body 24px, screen heading 30px bold, habit name 24px bold, secondary text 20px, button text 22px bold, bottom nav labels 20px, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…" (long lines wrap to a new line instead).
+- Every touch target >= 48x48px. This screen has NO filled button (no primary action). The only button is OUTLINED: "Đọc to" with a volume/speaker icon, white background, 2px #7B887F border, 60px high, full width minus 20px margins, radius 14. Each habit row is one tappable white card, whole row tappable, with a chevron-right on the right.
+- Each sentence <= 15 words; each button label <= 5 words; tab labels <= 3 words; habit names <= 4 words. No paragraphs.
+- Every icon has a visible text label next to it. No icon-only buttons. Habit icons 32px white solid inside the 48x48 tile.
+- Each habit row: left vertical accent bar 6px wide in the habit accent color, 48x48 radius-12 tile filled with the accent color (white icon 32px), habit name (24px bold, #202B25), ONE secondary line (20px, #526057, may wrap to 2 lines), and a small count chip at the right "3 lần" (20px bold, #174C37 on #D6EADF, radius 999, height 40px). Row min height 88px, padding 16, gap between rows 16px. Text always on white, never on the accent color.
+- No progress percentages, no ranking, no streak, no score, no countdown, no three-dot menu, no pressure wording, no "0 lần".
+- Use EXACT accent colors: Vận động tự nhiên #2BA15C, Sống có mục đích #768ADB, Thư giãn mỗi ngày #AC76DB, Ăn vừa đủ #B98331, Ăn nhiều rau, đậu #609D2A, Trà chiều cùng bạn #D0754E, Gắn kết cộng đồng #309BB5, Gia đình trên hết #D86E75, Bạn bè tích cực #D666AD.
+
+LAYOUT (top to bottom):
+1. Heading "9 thói quen sống khỏe" (30px bold, left aligned). Below it one line "Số lần Bác làm trong tuần này" (20px, #526057).
+2. Outlined button "Đọc to" with speaker icon (60px high).
+3. Nine habit rows in this order (icon · name · secondary line · chip):
+ 1. footprints icon · "Vận động tự nhiên" · "Đi bộ, làm vườn, tự làm việc nhà" · "3 lần"
+ 2. compass icon · "Sống có mục đích" · "Mỗi sáng có một việc mình mong làm" · "2 lần"
+ 3. wind icon · "Thư giãn mỗi ngày" · "Ngủ trưa, ngồi tĩnh lặng, thắp hương ông bà" · "1 lần"
+ 4. utensils icon · "Ăn vừa đủ" · "Ăn chậm, thấy vừa đủ thì dừng" · "4 lần"
+ 5. salad icon · "Ăn nhiều rau, đậu" · "Bữa nào cũng có rau và đậu" · "5 lần"
+ 6. coffee/cup icon · "Trà chiều cùng bạn" · "Uống trà, trò chuyện với bạn lúc chiều" · "2 lần"
+ 7. users icon · "Gắn kết cộng đồng" · "Đi chùa, nhà thờ, sinh hoạt hội, câu lạc bộ" · "1 lần"
+ 8. house icon · "Gia đình trên hết" · "Gọi điện, ăn cơm cùng con cháu" · "3 lần"
+ 9. handshake icon · "Bạn bè tích cực" · "Đi bộ, tập cùng nhóm bạn quen" · "2 lần"
+4. Bottom navigation bar fixed at the bottom, 96px high, white, 4 tabs each flex 1 with icon + label (20px, centered, may wrap to 2 lines): "Hôm nay" (sun icon), "Lịch tuần" (calendar icon), "Thói quen" (leaf icon, ACTIVE: #D6EADF pill, bold, #1F684B), "Gia đình" (people icon). Add 116px bottom padding to the scrolling content so the last row is not hidden.
+
+TEXT STYLE: Use words "thói quen", "lần", "Đọc to", "việc". Never use: habit, power 9, blue zones, move naturally, purpose, downshift, plant slant, belong, right tribe, task, today, family, nhiệm vụ, mục tiêu, thử thách, người dùng, hệ thống, điểm, xếp hạng, rượu.

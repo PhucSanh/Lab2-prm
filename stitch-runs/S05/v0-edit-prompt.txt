@@ -1,0 +1,7 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Text is truncated with "..." in all three cards. Remove white-space:nowrap and text-overflow:ellipsis from the activity name and the habit line so they wrap to at most 2 lines. "Đi bộ nhẹ nhàng", "Chăm cây", "Gọi người thân", "Vận động tự nhiên" and "Gia đình trên hết" must show in full, no "…".
+2. Shrink the selection column on the right of each card: a 32px icon with the label "Đã chọn" / "Chọn" (20px) under it, min-width 56px. Card padding 12px 12px 12px 16px.
+3. Unselected card border: change 2px #A0ACA3 to 2px #7B887F.
+4. Replace the "Chăm cây" icon with a clear sprout/seedling icon (Lucide "sprout" style), 32px, white on the #2BA15C tile.
+5. Selection state icon: replace the check-circle with a radio button: circle 32px, 3px #1F684B border, with a solid 16px #1F684B dot in the center for "Đã chọn"; an empty circle with 3px #7B887F border for "Chọn". Keep the labels.
+6. Set the gap between the three cards to 16px and the margin above the "Xem thêm" button to 16px.

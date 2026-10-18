@@ -1,0 +1,43 @@
+Design ONE mobile screen: "Chi tiết ngày" (Day detail) for the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp, portrait mobile. Top app bar with a text Back button; ONE fixed footer with a tonal button; NO bottom navigation (this is a child screen of the week calendar). All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube. Principles: Bác decides; no pressure; few words; many icons, every icon has a visible text label. No swiping, no long-press. This screen has ONE job: Bác sees what is planned on a coming day (Thứ Sáu, 9/10), grouped by part of the day, and taps a task to see how to do it.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), warning-container #FFF3DB (text #8A5100, icon #B26A00), outline #7B887F, border #DFE5DF. Screen side margin 20px, gap between blocks 16px (8px between task cards inside a group). Cards radius 16, buttons radius 14. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Screen title 30px bold, task name 24px bold, body 24px, button text 22px bold, secondary text and status chip text 20px, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…" (long task names wrap to 2 lines). The list may scroll vertically; the footer stays fixed.
+- Every touch target >= 48x48px; each task card is fully tappable and at least 88px high.
+- NO filled dark green button on this screen. The only button is the fixed footer TONAL button "Thêm việc cho ngày này" (background #D6EADF, text #174C37, plus icon, height 60px, full width minus 20px margins, 20px bottom padding).
+- Each sentence <= 15 words; each button label <= 5 words. No paragraphs. Each task card has at most ONE secondary line.
+- Every icon has a visible text label next to it. No icon-only buttons. Icons >= 32px (icons inside the status chip >= 24px because the chip has text).
+- Every task card contains ONLY: a 6px left accent bar and a 48x48 radius-12 icon tile in the habit accent color (white outline Lucide icon 32px, stroke 2.5), the time, the task name, one secondary line with the habit name, a status chip, and a chevron. Accent colors only on the bar and the tile; text always on white.
+- Status chip on every task: icon circle (24px, #B26A00) + text "Chưa làm" (20px, #8A5100) on #FFF3DB, pill height 40px. Status is never color only.
+- Habit accent colors (use exactly): Vận động tự nhiên #2BA15C, Ăn nhiều rau, đậu #609D2A, Trà chiều cùng bạn #D0754E, Gia đình trên hết #D86E75.
+- No ranking, no streak, no percentage, no pressure wording, no health claims, no three-dot menu, no swipe actions.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+- chevron-left = back, always with the text "Quay lại" or the previous screen name
+- clock = giờ của việc (summary card)
+- circle = status "Chưa làm" (inside the chip, color #B26A00)
+- chevron-right = open task detail (end of each task card)
+- plus = Thêm việc (footer button)
+- footprints = habit Vận động tự nhiên (only this habit)
+- salad = habit Ăn nhiều rau, đậu (only this habit)
+- coffee = habit Trà chiều cùng bạn (only this habit)
+- house = habit Gia đình trên hết (only this habit)
+
+LAYOUT (top to bottom, left aligned list):
+1. App bar: text button with chevron-left icon and "Lịch tuần" (22px bold, #1F684B, height 48), left padding exactly 20px.
+2. Screen title (30px bold): "Thứ Sáu, 9/10".
+3. Summary card (white, radius 16, padding 16, border #DFE5DF): clock icon (32px) + "4 việc · bắt đầu 9:30 sáng" (24px).
+4. Group label "Buổi sáng" (22px bold, #526057), then task card: icon tile footprints (#2BA15C), "9:30 sáng" (20px bold, #526057), task name "Đi bộ quanh công viên" (24px bold), secondary line "Vận động tự nhiên" (20px, #526057), chip "Chưa làm", chevron-right (32px).
+5. Group label "Buổi trưa", then task card: salad tile (#609D2A), "12 giờ trưa", "Ăn trưa nhiều rau", "Ăn nhiều rau, đậu", chip "Chưa làm".
+6. Group label "Buổi chiều", then task card: coffee tile (#D0754E), "3 giờ chiều", "Uống trà với cô Tám", "Trà chiều cùng bạn", chip "Chưa làm".
+7. Group label "Buổi tối", then task card: house tile (#D86E75), "6 giờ tối", "Gọi điện cho Mai", "Gia đình trên hết", chip "Chưa làm".
+8. Fixed footer: tonal button with plus icon "Thêm việc cho ngày này".
+Show groups in this order; the list may extend below the fold and scroll; the footer is always visible.
+
+TEXT STYLE: Use words "việc", "Chưa làm", "Lịch tuần", "Thêm việc cho ngày này". Never use: task, today, schedule, done, OK, cancel, notification, reminder, thông báo, nhiệm vụ, mục tiêu, thử thách, chưa hoàn thành, người dùng.

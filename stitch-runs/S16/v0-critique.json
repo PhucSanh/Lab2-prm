@@ -1,0 +1,74 @@
+{
+  "screen": "S16 Chi tiết thói quen",
+  "round": 0,
+  "score": 64,
+  "errors": 3,
+  "warns": 2,
+  "results": [
+    {"rule": "R-TXT-01", "level": "error", "check": "auto", "status": "pass"},
+    {"rule": "R-TXT-02", "level": "warn", "check": "ai", "status": "pass"},
+    {
+      "rule": "R-CON-01", "level": "error", "check": "auto", "status": "fail",
+      "where": "Ô ngày 'CN' trong thẻ 'Tuần này Bác đã làm 3 lần' – dấu gạch '–'",
+      "evidence": ".dash-text color #A0ACA3 trên nền ô #F8FAF8 = 2.25 : 1 (chữ 26px đậm, cần >= 3 : 1)",
+      "fix": "Đổi dấu '–' sang màu #526057 (6.2 : 1) hoặc thay bằng chữ 'Nghỉ' 20px #526057"
+    },
+    {"rule": "R-CON-02", "level": "warn", "check": "auto", "status": "pass"},
+    {
+      "rule": "R-LAY-01", "level": "error", "check": "auto", "status": "fail",
+      "where": "Hàng chú thích 'Đã làm · Bỏ qua · Chưa tới' và hàng 7 ô ngày trong thẻ tuần",
+      "evidence": "Thẻ còn 286px bên trong (360 - 40 lề - 2 viền - 32 padding); chú thích 3 × (icon 26 + gap 6) + chữ 20px white-space:nowrap ≈ 306px → 'Chưa tới' tràn ra ngoài viền thẻ (thấy rõ trong ảnh). Lưới 7 cột: (286 - 6×4)/7 = 37.4px < min-width 38px; chữ 'Nay', 'Bảy', 'Sáu' 20px đậm rộng hơn ô, 'Nay' chạm/cắt vào viền ô hôm nay",
+      "fix": "Chú thích: xếp dọc 3 dòng (flex-direction: column, gap 8px, icon 32px) hoặc flex-wrap: wrap với gap 12px. Hàng ngày: bỏ min-width 38px, gap 2px, đổi nhãn thành 'T2 T3 T4 T5 T6 T7 CN' 20px đậm, bỏ padding ngang ô; ô hôm nay giữ viền 2px #1F684B và thêm chữ 'Hôm nay' 20px #1F684B phía trên hàng"
+    },
+    {"rule": "R-TXT-03", "level": "error", "check": "auto", "status": "pass"},
+    {"rule": "R-TXT-04", "level": "error", "check": "auto", "status": "pass"},
+    {"rule": "R-TXT-05", "level": "error", "check": "ai", "status": "pass"},
+    {"rule": "R-TXT-06", "level": "warn", "check": "ai", "status": "n/a"},
+    {"rule": "R-ICON-02", "level": "error", "check": "ai", "status": "pass"},
+    {
+      "rule": "R-ICON-03", "level": "warn", "check": "ai", "status": "fail",
+      "where": "Icon trong ô thói quen lớn (64×64) và ô icon thẻ việc 'Đi bộ quanh công viên'; icon chú thích tuần",
+      "evidence": "Path SVG footprints bị sửa (kết thúc 'v2', 'M4 20h4', 'M16 22h4' thay vì cung khép kín của Lucide) → trong ảnh hiện như hai dấu chấm than '!!', dễ hiểu thành cảnh báo. Icon chú thích .legend-item svg = 26px < 32px (không phải chip trạng thái nên không được ngoại lệ 24px)",
+      "fix": "Dùng đúng Lucide `footprints` nguyên bản (paths: 'M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.5V16a2 2 0 1 1-4 0Z', 'M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.5V20a2 2 0 1 0 4 0Z', 'M16 17h4', 'M4 13h4'), icon trắng 40px trong ô 64 và 32px trong ô 48. Icon chú thích `circle-check` / `circle-minus` / `circle` tăng lên 32px"
+    },
+    {"rule": "R-COL-02", "level": "error", "check": "ai", "status": "pass"},
+    {"rule": "R-COL-03", "level": "warn", "check": "auto", "status": "pass"},
+    {"rule": "R-COL-04", "level": "warn", "check": "ai", "status": "pass"},
+    {"rule": "R-COL-01", "level": "error", "check": "ai", "status": "pass"},
+    {"rule": "R-TAP-01", "level": "error", "check": "auto", "status": "pass"},
+    {"rule": "R-TAP-02", "level": "error", "check": "ai", "status": "pass"},
+    {"rule": "R-TAP-03", "level": "warn", "check": "ai", "status": "pass"},
+    {"rule": "R-ICON-01", "level": "error", "check": "auto", "status": "pass"},
+    {"rule": "R-NAV-01", "level": "error", "check": "ai", "status": "n/a"},
+    {"rule": "R-NAV-02", "level": "error", "check": "ai", "status": "pass"},
+    {"rule": "R-GES-01", "level": "error", "check": "ai", "status": "pass"},
+    {
+      "rule": "R-STA-01", "level": "error", "check": "ai", "status": "fail",
+      "where": "Ô 'Nay' trong thẻ tuần và chip trạng thái của thẻ 'Đi bộ quanh công viên' (lặp Mỗi ngày)",
+      "evidence": "Ô hôm nay hiện circle-check (đã làm) nhưng việc duy nhất của thói quen, lặp mỗi ngày, lại có chip 'Chưa làm' → hai tín hiệu trái nhau, không biết hôm nay đã làm hay chưa. Chú thích ghi 'Đã làm' thay vì nhãn chuẩn 'Đã xong'",
+      "fix": "Cho thống nhất: ô 'Nay' dùng `circle` màu #B26A00 (chưa làm) khi chip là '○ Chưa làm' (nền #FFF3DB, chữ #8A5100), và tiêu đề đổi thành 'Tuần này Bác đã làm 2 lần'; hoặc giữ ô đã làm và đổi chip sang '✓ Đã xong' nền #1F684B chữ trắng 20px đậm. Đổi chữ chú thích 'Đã làm' thành 'Đã xong'"
+    },
+    {"rule": "R-STA-02", "level": "warn", "check": "ai", "status": "pass"},
+    {"rule": "R-ONE-01", "level": "error", "check": "ai", "status": "pass"},
+    {"rule": "R-ONE-02", "level": "warn", "check": "ai", "status": "n/a"},
+    {"rule": "R-CEN-01", "level": "warn", "check": "ai", "status": "pass"},
+    {"rule": "R-SAFE-01", "level": "warn", "check": "ai", "status": "n/a"},
+    {"rule": "R-SAFE-02", "level": "warn", "check": "ai", "status": "n/a"},
+    {"rule": "R-VOI-01", "level": "error", "check": "ai", "status": "pass"},
+    {"rule": "R-LANG-01", "level": "error", "check": "ai", "status": "pass"},
+    {"rule": "R-LANG-02", "level": "warn", "check": "auto", "status": "pass"},
+    {"rule": "R-LANG-03", "level": "error", "check": "ai", "status": "pass"},
+    {"rule": "R-VOC-01", "level": "error", "check": "auto", "status": "pass"},
+    {
+      "rule": "R-STY-01", "level": "warn", "check": "auto", "status": "fail",
+      "where": "Ô ngày hôm nay và dấu gạch ô 'CN' trong thẻ tuần",
+      "evidence": ".day-cell.today background #EBF5F0 (không phải primary-container #D6EADF); .dash-text #A0ACA3 không có trong bảng token",
+      "fix": "Nền ô hôm nay đổi sang #D6EADF; màu dấu gạch đổi sang #526057"
+    },
+    {"rule": "R-STY-02", "level": "warn", "check": "ai", "status": "pass"},
+    {"rule": "R-STY-03", "level": "warn", "check": "ai", "status": "pass"}
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Bố cục, nút Đọc to, nút chính và màu thói quen đạt; còn tràn ngang ở chú thích và hàng 7 ngày, trạng thái hôm nay mâu thuẫn giữa thẻ tuần và thẻ việc, dấu gạch CN thiếu tương phản, icon footprints bị méo thành '!!'."
+}

@@ -1,0 +1,9 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Move the filled button "Đã xong" (check icon, 60px high, radius 14, background #1F684B, white text 22px bold) out of the "Việc tiếp theo" card into a sticky bar fixed directly above the bottom navigation: width 320px (20px side margins), height 60px. Add padding-bottom 184px to the scrolling area so the bar never covers content.
+2. In the "Việc tiếp theo" card keep only the info and the outlined button "Dời lại" (clock icon), full card width, 60px high.
+3. Status chip "○ Chưa làm" (3 rows: 9:30 sáng, 3 giờ chiều, 6 giờ tối): change border to 2px solid #B26A00, keep background #FFF3DB, text #8A5100, circle icon #B26A00, height 40px. Remove any #FFE4B3 color.
+4. Place each status chip directly below the task name (before the habit line) in every task row.
+5. Make every icon 32px (bell, habit icons inside the 48x48 tiles, button icons, bottom-nav icons).
+6. Use distinct icons: "Tưới rau ngoài vườn" uses the footprints icon with habit "Vận động tự nhiên" and accent #2BA15C (tile and 6px bar); keep the leaf icon only for the bottom tab "Thói quen"; "Ăn sáng chậm rãi" uses the utensils icon.
+7. Set the gap between all main blocks to 16px; remove extra margins on the "Việc hôm nay" title (0px).
+8. Bottom-nav labels "Hôm nay", "Lịch tuần", "Thói quen", "Gia đình" must stay on one line at 20px (tab width 90px, reduce horizontal padding to 4px).

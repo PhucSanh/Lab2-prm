@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - Nhắn tin cho Mai</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #ECEEEA;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 16px;
+    }
+
+    /* Device frame: 360x800 */
+    .device-container {
+      width: 360px;
+      height: 800px;
+      background-color: #F6F7F2;
+      border-radius: 28px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top App Bar */
+    .app-bar {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      flex-shrink: 0;
+      background-color: #F6F7F2;
+      z-index: 10;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 48px;
+      background: transparent;
+      border: none;
+      color: #1F684B;
+      font-size: 22px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      padding: 0;
+      text-decoration: none;
+    }
+
+    .back-btn svg {
+      width: 32px;
+      height: 32px;
+      stroke: #1F684B;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Scrollable main content */
+    .scroll-content {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 4px 20px 104px 20px; /* 104px bottom padding for fixed footer clearance */
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      scrollbar-width: none;
+    }
+    .scroll-content::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Title row */
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .title-icon {
+      width: 32px;
+      height: 32px;
+      stroke: #1F684B;
+      stroke-width: 2.5;
+      fill: none;
+      flex-shrink: 0;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .screen-title {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #202B25;
+    }
+
+    /* Section block */
+    .section-block {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .section-label {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #202B25;
+    }
+
+    /* Option row items: 60px high, 320px wide, radius 16 */
+    .options-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-row {
+      width: 320px;
+      height: 60px;
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+
+    .option-row.selected {
+      background-color: #D6EADF;
+      border-color: #1F684B;
+    }
+
+    .option-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .option-row .option-icon {
+      stroke: #7B887F;
+      stroke-width: 2.5;
+    }
+
+    .option-row.selected .option-icon {
+      stroke: #1F684B;
+      stroke-width: 2.5;
+    }
+
+    .option-text {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #202B25;
+      flex: 1;
+      white-space: nowrap;
+    }
+
+    .selected-tag {
+      font-size: 20px;
+      font-weight: 700;
+      color: #174C37;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    /* Preview message card */
+    .preview-card {
+      width: 320px;
+      background-color: #FFFFFF;
+      border: 1px solid #DFE5DF;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    .preview-text {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #202B25;
+    }
+
+    /* Note line */
+    .note-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #526057;
+      margin-top: -2px;
+    }
+
+    .note-icon {
+      width: 32px;
+      height: 32px;
+      stroke: #526057;
+      stroke-width: 2.2;
+      fill: none;
+      flex-shrink: 0;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      margin-top: 1px;
+    }
+
+    .note-text {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.45;
+      color: #526057;
+    }
+
+    /* Fixed footer */
+    .fixed-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 360px;
+      padding: 12px 20px 20px 20px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      z-index: 20;
+    }
+
+    .primary-btn {
+      width: 320px;
+      height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(31, 104, 75, 0.25);
+    }
+
+    .primary-btn svg {
+      width: 32px;
+      height: 32px;
+      stroke: #FFFFFF;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+<div class="device-container">
+<!-- Top App Bar -->
+<header class="app-bar">
+<button aria-label="Quay lại Gia đình" class="back-btn">
+<!-- Lucide chevron-left -->
+<svg viewbox="0 0 24 24">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+<span>Gia đình</span>
+</button>
+</header>
+<!-- Scrollable Content -->
+<main class="scroll-content">
+<!-- Title row -->
+<div class="title-row">
+<!-- Lucide message-square -->
+<svg class="title-icon" viewbox="0 0 24 24">
+<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+</svg>
+<h1 class="screen-title">Nhắn tin cho Mai</h1>
+</div>
+<!-- Section: Bác muốn kể điều gì? -->
+<section class="section-block">
+<h2 class="section-label">Bác muốn kể điều gì?</h2>
+<div class="options-group">
+<!-- Option 1: Selected -->
+<div aria-checked="true" class="option-row selected" role="radio"><svg class="option-icon" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" fill="#1F684B" r="1"></circle></svg><div style="display: flex; flex-direction: column; justify-content: center; gap: 2px; flex: 1; min-width: 0;"><span class="option-text">Hỏi thăm con</span><span class="selected-tag">Đang chọn</span></div></div>
+<!-- Option 2: Unselected -->
+<div aria-checked="false" class="option-row" role="radio">
+<!-- Lucide circle -->
+<svg class="option-icon" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span class="option-text">Kể việc đi bộ</span>
+</div>
+<!-- Option 3: Unselected -->
+<div aria-checked="false" class="option-row" role="radio">
+<!-- Lucide circle -->
+<svg class="option-icon" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span class="option-text">Kể việc chăm cây</span>
+</div>
+</div>
+</section>
+<!-- Section: Mai sẽ thấy -->
+<section class="section-block">
+<h2 class="section-label">Mai sẽ thấy</h2>
+<div class="preview-card">
+<p class="preview-text">Mẹ nhớ con. Hôm nay mẹ khỏe, con nhé!</p>
+</div>
+</section>
+<!-- Section: Gửi bằng -->
+<section class="section-block">
+<h2 class="section-label">Gửi bằng</h2>
+<div class="options-group">
+<!-- Zalo: Selected -->
+<div aria-checked="true" class="option-row selected" role="radio"><svg class="option-icon" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" fill="#1F684B" r="1"></circle></svg><div style="display: flex; flex-direction: column; justify-content: center; gap: 2px; flex: 1; min-width: 0;"><span class="option-text">Zalo</span><span class="selected-tag">Đang chọn</span></div></div>
+<!-- SMS: Unselected -->
+<div aria-checked="false" class="option-row" role="radio">
+<!-- Lucide circle -->
+<svg class="option-icon" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span class="option-text">Tin nhắn SMS</span>
+</div>
+</div>
+</section>
+<!-- Note line -->
+<div class="note-line">
+<!-- Lucide info -->
+<svg class="note-icon" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 16v-4"></path>
+<path d="M12 8h.01"></path>
+</svg>
+<p class="note-text">An Nhiên chỉ mở Zalo. Bác bấm gửi ở đó.</p>
+</div>
+</main>
+<!-- Fixed Footer -->
+<footer class="fixed-footer">
+<button class="primary-btn">
+<span>Tiếp tục gửi cho Mai</span>
+<!-- Lucide arrow-right -->
+<svg viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="m12 5 7 7-7 7"></path>
+</svg>
+</button>
+</footer>
+</div>
+</body>
+</html>

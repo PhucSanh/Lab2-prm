@@ -1,0 +1,8 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Fix clipped text: the "Lời nhắc sẽ như thế này" preview card must show the full line "9:30 sáng". Set flex-shrink:0 on the hero block, the preview card and the hint card, and remove overflow:hidden from the preview card.
+2. To fit 800px height: shrink the bell circle to 80x80px (#D6EADF) with a 56px bell icon, and set its bottom margin to 12px.
+3. Hint card: change the text to "Điện thoại hỏi, Bác chọn Cho phép." (24px, "Cho phép" bold) so it fits in at most 2 lines; set card padding 16px and the gap between the phone icon and the text 12px.
+4. Increase these icons to 32x32px: the chevron of "Quay lại", and the bell icon next to "Lời nhắc sẽ như thế này".
+5. Remove the calendar icon next to "Bước 2/2"; keep only the text "Bước 2/2" (20px, #526057).
+6. Replace the walking icon inside the 48x48 #2BA15C tile with a solid walking-person icon (Material "directions_walk" style), 32px, white.
+7. Change the bottom button area background from the gradient to a flat #F6F7F2 color, keep a 1px #DFE5DF top border.

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=360, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>An Nhiên - Lịch tuần</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #E5E7EB;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px 0;
+    }
+
+    /* Mobile Frame 360x800 dp */
+    .phone-container {
+      width: 360px;
+      height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+      border-radius: 28px;
+    }
+
+    /* Scrollable Content */
+    .content-area {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 24px 20px 100px 20px; /* 100px bottom padding to clear 80px fixed nav */
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Header Block */
+    .header-block {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .header-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      color: #1F684B;
+    }
+
+    .header-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    .header-subtitle {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.4;
+      padding-left: 2px;
+    }
+
+    /* Days List */
+    .days-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Day Card */
+    .day-card {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      padding: 12px 14px;
+      min-height: 72px;
+      border: 1px solid #DFE5DF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+      gap: 8px;
+    }
+
+    .day-card:active {
+      background-color: #EFF2EE;
+    }
+
+    /* Today Card Highlight */
+    .day-card.today {
+      border: 2px solid #1F684B;
+      background-color: #FFFFFF;
+      min-height: 80px;
+      padding: 12px 14px;
+      box-shadow: 0 3px 10px rgba(31, 104, 75, 0.08);
+    }
+
+    .day-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .day-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .day-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    .day-date {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.3;
+    }
+
+    /* Today Chip */
+    .today-chip {
+      background-color: #D6EADF;
+      color: #174C37;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1.3;
+    }
+
+    /* Status row */
+    .day-status-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 2px;
+    }
+
+    .status-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .status-text {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    /* Status variations */
+    .status-completed {
+      color: #1F684B;
+    }
+
+    .status-today {
+      color: #1F684B;
+      font-weight: 700;
+    }
+
+    .status-pending-pill {
+      background-color: #FFF3DB;
+      color: #8A5100;
+      padding: 3px 10px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .status-empty {
+      color: #526057;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    /* Day Right Column */
+    .day-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    /* Habit dots (12px) */
+    .habit-dots {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .habit-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .chevron-icon {
+      width: 32px;
+      height: 32px;
+      color: #7B887F;
+      flex-shrink: 0;
+    }
+
+    /* Fixed Bottom Navigation (80px) */
+    .bottom-nav {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background-color: #FFFFFF;
+      border-top: 1px solid #DFE5DF;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 4px;
+      z-index: 50;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      width: 82px;
+      height: 68px;
+      gap: 3px;
+      border-radius: 12px;
+    }
+
+    .nav-item .nav-icon {
+      width: 32px;
+      height: 32px;
+      color: #526057;
+    }
+
+    .nav-item .nav-label {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    /* Active Nav Item */
+    .nav-item.active {
+      background-color: #D6EADF;
+    }
+
+    .nav-item.active .nav-icon {
+      color: #1F684B;
+    }
+
+    .nav-item.active .nav-label {
+      color: #1F684B;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+<div class="phone-container"><style>.content-area { padding-bottom: 116px !important; } .days-list { gap: 16px !important; } .bottom-nav { height: 96px !important; padding: 0 !important; background-color: #F6F7F2 !important; } .nav-item { flex: 1 1 0 !important; width: 90px !important; max-width: 90px !important; height: 88px !important; padding: 0 2px !important; } .nav-item .nav-label { font-size: 20px !important; text-align: center !important; white-space: normal !important; line-height: 1.15 !important; letter-spacing: -0.3px !important; word-break: break-word !important; }</style>
+<!-- Main Scrollable Content -->
+<div class="content-area">
+<!-- Heading block -->
+<div class="header-block">
+<div class="header-title-row">
+<svg class="header-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" viewbox="0 0 24 24">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+<line x1="16" x2="16" y1="2" y2="6"></line>
+<line x1="8" x2="8" y1="2" y2="6"></line>
+<line x1="3" x2="21" y1="10" y2="10"></line>
+</svg>
+<h1 class="header-title">Lịch tuần</h1>
+</div>
+<div class="header-subtitle">Tuần này · 5/10 – 11/10</div>
+</div>
+<!-- 7 Day Cards List -->
+<div class="days-list">
+<!-- Thứ Hai 5/10 -->
+<div aria-label="Xem Thứ Hai ngày 5 tháng 10, Đã xong 6/6 việc" class="day-card" role="button">
+<div class="day-left">
+<div class="day-title-row">
+<span class="day-name">Thứ Hai</span>
+<span class="day-date">5/10</span>
+</div>
+<div class="day-status-row status-completed">
+<svg class="status-icon" fill="none" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" viewbox="0 0 24 24">
+<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+<polyline points="22 4 12 14.01 9 11.01"></polyline>
+</svg>
+<span class="status-text">Đã xong 6/6 việc</span>
+</div>
+</div>
+<div class="day-right">
+<svg class="chevron-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+<!-- Thứ Ba 6/10 -->
+<div aria-label="Xem Thứ Ba ngày 6 tháng 10, Đã xong 5/6 việc" class="day-card" role="button">
+<div class="day-left">
+<div class="day-title-row">
+<span class="day-name">Thứ Ba</span>
+<span class="day-date">6/10</span>
+</div>
+<div class="day-status-row status-completed">
+<svg class="status-icon" fill="none" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" viewbox="0 0 24 24">
+<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+<polyline points="22 4 12 14.01 9 11.01"></polyline>
+</svg>
+<span class="status-text">Đã xong 5/6 việc</span>
+</div>
+</div>
+<div class="day-right">
+<svg class="chevron-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+<!-- Thứ Tư 7/10 -->
+<div aria-label="Xem Thứ Tư ngày 7 tháng 10, Đã xong 6/6 việc" class="day-card" role="button">
+<div class="day-left">
+<div class="day-title-row">
+<span class="day-name">Thứ Tư</span>
+<span class="day-date">7/10</span>
+</div>
+<div class="day-status-row status-completed">
+<svg class="status-icon" fill="none" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" viewbox="0 0 24 24">
+<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+<polyline points="22 4 12 14.01 9 11.01"></polyline>
+</svg>
+<span class="status-text">Đã xong 6/6 việc</span>
+</div>
+</div>
+<div class="day-right">
+<svg class="chevron-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+<!-- Thứ Năm 8/10 (TODAY) -->
+<div aria-label="Xem Thứ Năm ngày 8 tháng 10, Hôm nay, Đã xong 3/6 việc" class="day-card today" role="button">
+<div class="day-left">
+<div class="day-title-row">
+<span class="day-name">Thứ Năm</span>
+<span class="day-date">8/10</span>
+<span class="today-chip">Hôm nay</span>
+</div>
+<div class="day-status-row status-today">
+<svg class="status-icon" fill="none" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+<span class="status-text">Đã xong 3/6 việc</span>
+</div>
+</div>
+<div class="day-right">
+<svg class="chevron-icon" fill="none" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+<!-- Thứ Sáu 9/10 -->
+<div aria-label="Xem Thứ Sáu ngày 9 tháng 10, 6 việc, chưa làm" class="day-card" role="button">
+<div class="day-left">
+<div class="day-title-row">
+<span class="day-name">Thứ Sáu</span>
+<span class="day-date">9/10</span>
+</div>
+<div class="day-status-row">
+<div class="status-pending-pill">
+<svg class="status-icon" fill="none" stroke="#B26A00" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+</svg>
+<span>6 việc, chưa làm</span>
+</div>
+</div>
+</div>
+<div class="day-right">
+<svg class="chevron-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+<!-- Thứ Bảy 10/10 -->
+<div aria-label="Xem Thứ Bảy ngày 10 tháng 10, 4 việc, chưa làm" class="day-card" role="button">
+<div class="day-left">
+<div class="day-title-row">
+<span class="day-name">Thứ Bảy</span>
+<span class="day-date">10/10</span>
+</div>
+<div class="day-status-row">
+<div class="status-pending-pill">
+<svg class="status-icon" fill="none" stroke="#B26A00" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+</svg>
+<span>4 việc, chưa làm</span>
+</div>
+</div>
+</div>
+<div class="day-right">
+<svg class="chevron-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+<!-- Chủ nhật 11/10 -->
+<div aria-label="Xem Chủ nhật ngày 11 tháng 10, Chưa có việc" class="day-card" role="button">
+<div class="day-left">
+<div class="day-title-row">
+<span class="day-name">Chủ nhật</span>
+<span class="day-date">11/10</span>
+</div>
+<div class="day-status-row">
+<svg class="status-icon" fill="none" stroke="#526057" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="8" x2="16" y1="12" y2="12"></line></svg>
+<span class="status-empty">Chưa có việc</span>
+</div>
+</div>
+<div class="day-right">
+<svg class="chevron-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<!-- Fixed Bottom Navigation (4 tabs) -->
+<nav class="bottom-nav">
+<!-- Tab 1: Hôm nay -->
+<a class="nav-item" href="#">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+<span class="nav-label">Hôm nay</span>
+</a>
+<!-- Tab 2: Lịch tuần (ACTIVE) -->
+<a class="nav-item active" href="#">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+<line x1="16" x2="16" y1="2" y2="6"></line>
+<line x1="8" x2="8" y1="2" y2="6"></line>
+<line x1="3" x2="21" y1="10" y2="10"></line>
+</svg>
+<span class="nav-label">Lịch tuần</span>
+</a>
+<!-- Tab 3: Thói quen -->
+<a class="nav-item" href="#">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" viewbox="0 0 24 24">
+<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+<path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+</svg>
+<span class="nav-label">Thói quen</span>
+</a>
+<!-- Tab 4: Gia đình -->
+<a class="nav-item" href="#">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" viewbox="0 0 24 24">
+<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+<circle cx="9" cy="7" r="4"></circle>
+<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+</svg>
+<span class="nav-label">Gia đình</span>
+</a>
+</nav>
+</div>
+</body>
+</html>

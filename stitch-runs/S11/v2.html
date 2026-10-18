@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=360, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>An Nhiên - Chi tiết ngày</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #E8EBE6;
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 0;
+      color: #202B25;
+      line-height: 1.5;
+    }
+
+    /* Khung điện thoại chuẩn 360x800 */
+    .device-container {
+      width: 360px;
+      height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+    }
+
+    /* 1. App Bar trên cùng */
+    .app-bar {
+      height: 56px;
+      padding: 4px 20px 4px 20px;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      background-color: #F6F7F2;
+      z-index: 10;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      min-width: 48px;
+      padding: 0 12px 0 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #1F684B;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      text-decoration: none;
+      line-height: 1.3;
+    }
+
+    .btn-back:active {
+      opacity: 0.75;
+    }
+
+    /* Vùng cuộn danh sách */
+    .scroll-content {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 4px 20px 100px 20px; /* đệm đáy để không bị che bởi footer cố định */
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #DFE5DF transparent;
+    }
+
+    .scroll-content::-webkit-scrollbar {
+      width: 4px;
+    }
+    .scroll-content::-webkit-scrollbar-thumb {
+      background-color: #DFE5DF;
+      border-radius: 4px;
+    }
+
+    /* 2. Tiêu đề màn hình */
+    .screen-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #202B25;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    /* 3. Thẻ tóm tắt ngày */
+    .summary-card {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #DFE5DF;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .summary-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      color: #1F684B;
+    }
+
+    .summary-text {
+      font-size: 24px;
+      color: #202B25;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* Nhóm buổi */
+    .time-group {
+      margin-bottom: 20px;
+    }
+
+    .group-label {
+      font-size: 22px;
+      font-weight: 700;
+      color: #526057;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .task-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* Thẻ việc */
+    .task-card {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #DFE5DF;
+      min-height: 88px;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: background-color 0.15s ease;
+    }
+
+    .task-card:active {
+      background-color: #F8FAF7;
+    }
+
+    /* Dải màu nhấn bên trái thẻ (6px) */
+    .accent-bar {
+      width: 6px;
+      flex-shrink: 0;
+    }
+
+    .card-body {
+      flex: 1;
+      padding: 14px 12px 14px 12px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      min-width: 0;
+    }
+
+    /* Ô biểu tượng thói quen 48x48 */
+    .habit-tile {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .habit-tile svg {
+      width: 32px;
+      height: 32px;
+      stroke: #FFFFFF;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Thông tin nội dung công việc */
+    .task-content {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .task-time {
+      font-size: 20px;
+      font-weight: 700;
+      color: #526057;
+      line-height: 1.3;
+    }
+
+    .task-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .task-habit {
+      font-size: 20px;
+      font-weight: 400;
+      color: #526057;
+      line-height: 1.4;
+    }
+
+    /* Huy hiệu trạng thái Chưa làm */
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 40px;
+      background-color: #FFF3DB;
+      border-radius: 20px;
+      padding: 0 14px;
+      margin-top: 8px;
+      align-self: flex-start;
+    }
+
+    .status-chip svg {
+      width: 24px;
+      height: 24px;
+      stroke: #B26A00;
+      stroke-width: 2.5;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .status-chip-text {
+      font-size: 20px;
+      font-weight: 600;
+      color: #8A5100;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    /* Mũi tên điều hướng bên phải */
+    .card-action {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-right: 12px;
+      align-self: center;
+    }
+
+    .card-action svg {
+      width: 32px;
+      height: 32px;
+      stroke: #7B887F;
+      stroke-width: 2.5;
+      fill: none;
+    }
+
+    /* 8. Footer cố định phía dưới (Tonal Button) */
+    .fixed-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 20px 20px 20px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      z-index: 20;
+    }
+
+    .btn-tonal {
+      width: 100%;
+      height: 60px;
+      background-color: #D6EADF;
+      border: 1px solid #7B887F;
+      border-radius: 14px;
+      color: #174C37;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      line-height: 1.3;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn-tonal:active {
+      background-color: #C3E2D0;
+    }
+
+    .btn-tonal svg {
+      width: 32px;
+      height: 32px;
+      stroke: #174C37;
+      stroke-width: 2.5;
+      fill: none;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="device-container">
+<!-- 1. App Bar -->
+<header class="app-bar">
+<button aria-label="Quay lại Lịch tuần" class="btn-back" type="button">
+<!-- Lucide chevron-left icon (32px, stroke 2.5) -->
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+<span>Lịch tuần</span>
+</button>
+</header>
+<!-- Nội dung cuộn chính -->
+<main class="scroll-content">
+<!-- 2. Tiêu đề màn hình -->
+<h1 class="screen-title">Thứ Sáu, 9/10</h1>
+<!-- 3. Thẻ tóm tắt -->
+<div class="summary-card" style="margin-bottom: 16px;">
+<!-- Lucide clock icon (32px) -->
+<svg class="summary-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+<span class="summary-text">4 việc · bắt đầu 9:30 sáng</span>
+</div>
+<!-- 4. Buổi sáng -->
+<section class="time-group" style="margin-bottom: 16px;">
+<h2 class="group-label">Buổi sáng</h2>
+<div class="task-list">
+<div class="task-card" role="button" tabindex="0">
+<!-- Accent bar 6px -->
+<div class="accent-bar" style="background-color: #2BA15C;"></div>
+<div class="card-body">
+<!-- Habit tile 48x48 với footprints Lucide icon -->
+<div class="habit-tile" style="background-color: #2BA15C;"><svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.5-2 8.5V16a2 2 0 0 1-2 2 2 2 0 0 1-2-2Z"></path><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.5 2 8.5V20a2 2 0 0 0 2 2 2 2 0 0 0 2-2Z"></path><path d="M16 17h4"></path><path d="M4 13h4"></path></svg></div>
+<div class="task-content">
+<span class="task-time">9:30 sáng</span>
+<span class="task-name">Đi bộ quanh công viên</span>
+<span class="task-habit">Vận động tự nhiên</span>
+<div class="status-chip">
+<!-- Lucide circle icon 24px -->
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span class="status-chip-text">Chưa làm</span>
+</div>
+</div>
+</div>
+<!-- Lucide chevron-right icon (32px) -->
+<div class="card-action">
+<svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<path d="m9 18 6-6-6-6"></path>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Buổi trưa -->
+<section class="time-group" style="margin-bottom: 16px;">
+<h2 class="group-label">Buổi trưa</h2>
+<div class="task-list">
+<div class="task-card" role="button" tabindex="0">
+<!-- Accent bar 6px -->
+<div class="accent-bar" style="background-color: #609D2A;"></div>
+<div class="card-body">
+<!-- Habit tile 48x48 với salad Lucide icon -->
+<div class="habit-tile" style="background-color: #609D2A;"><svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M7 21h10"></path><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"></path><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47.63 2.4 2.4 0 0 1 3.35 3.36 2.4 2.4 0 0 1-1.4 3.55"></path><path d="m13 12 4-4"></path><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"></path></svg></div>
+<div class="task-content">
+<span class="task-time">12 giờ trưa</span>
+<span class="task-name">Ăn trưa nhiều rau</span>
+<span class="task-habit">Ăn nhiều rau, đậu</span>
+<div class="status-chip">
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span class="status-chip-text">Chưa làm</span>
+</div>
+</div>
+</div>
+<div class="card-action">
+<svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<path d="m9 18 6-6-6-6"></path>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Buổi chiều -->
+<section class="time-group" style="margin-bottom: 16px;">
+<h2 class="group-label">Buổi chiều</h2>
+<div class="task-list">
+<div class="task-card" role="button" tabindex="0">
+<!-- Accent bar 6px -->
+<div class="accent-bar" style="background-color: #D0754E;"></div>
+<div class="card-body">
+<!-- Habit tile 48x48 với coffee Lucide icon -->
+<div class="habit-tile" style="background-color: #D0754E;"><svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M10 2v2"></path><path d="M14 2v2"></path><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h12Zm0 0h1a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-1"></path><path d="M6 2v2"></path></svg></div>
+<div class="task-content">
+<span class="task-time">3 giờ chiều</span>
+<span class="task-name">Uống trà với cô Tám</span>
+<span class="task-habit">Trà chiều cùng bạn</span>
+<div class="status-chip">
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span class="status-chip-text">Chưa làm</span>
+</div>
+</div>
+</div>
+<div class="card-action">
+<svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<path d="m9 18 6-6-6-6"></path>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Buổi tối -->
+<section class="time-group" style="margin-bottom: 16px;">
+<h2 class="group-label">Buổi tối</h2>
+<div class="task-list">
+<div class="task-card" role="button" tabindex="0">
+<!-- Accent bar 6px -->
+<div class="accent-bar" style="background-color: #D86E75;"></div>
+<div class="card-body">
+<!-- Habit tile 48x48 với house Lucide icon -->
+<div class="habit-tile" style="background-color: #D86E75;"><svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></div>
+<div class="task-content">
+<span class="task-time">6 giờ tối</span>
+<span class="task-name">Gọi điện cho Mai</span>
+<span class="task-habit">Gia đình trên hết</span>
+<div class="status-chip">
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span class="status-chip-text">Chưa làm</span>
+</div>
+</div>
+</div>
+<div class="card-action">
+<svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<path d="m9 18 6-6-6-6"></path>
+</svg>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- 8. Footer cố định với nút Tonal duy nhất -->
+<footer class="fixed-footer" style="padding: 12px 12px 20px 12px;">
+<button class="btn-tonal" style="padding: 0 8px; gap: 8px; white-space: nowrap; font-size: 22px; font-weight: 700;" type="button">
+<!-- Lucide plus icon (32px, stroke 2.5) -->
+<svg viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="M12 5v14"></path>
+</svg>
+<span>Thêm việc cho ngày này</span>
+</button>
+</footer>
+</div>
+</body>
+</html>

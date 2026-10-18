@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Habit icon "Vận động tự nhiên": replace the current distorted drawing with the exact Lucide `footprints` icon (all 4 original paths, closed heel shapes), 32x32px, stroke 2.5, white #FFFFFF, inside the 48x48 #2BA15C tile.
+2. Spacing: set the gap between the summary card and the first group, and between groups, to exactly 16px (replace margin-bottom 20px with 16px on the summary card and on each group).
+3. Footer button "Thêm việc cho ngày này": reduce horizontal padding to 12px so the text keeps at least 12px clearance from the right border; keep height 60px and the plus icon 32px.

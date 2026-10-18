@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An Nhiên - Lời nhắc đến giờ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #ECEEEA;
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #202B25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 16px;
+  }
+
+  /* Fixed 360x800 Mobile Frame */
+  .device-frame {
+    width: 360px;
+    height: 800px;
+    background-color: #F6F7F2;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px 20px 20px;
+    justify-content: space-between;
+  }
+
+  /* Top row: Bell icon + Lời nhắc */
+  .top-badge-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .top-badge-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1F684B;
+    line-height: 1.2;
+  }
+
+  /* Main Reminder Card */
+  .reminder-card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    border: 1px solid #DFE5DF;
+    padding: 20px 20px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(32, 43, 37, 0.05);
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  /* Accent top bar 6px */
+  .reminder-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background-color: #2BA15C;
+  }
+
+  /* 64x64 Icon Tile */
+  .habit-tile {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    background-color: #2BA15C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    flex-shrink: 0;
+  }
+
+  .time-display {
+    font-size: 34px;
+    font-weight: 800;
+    color: #202B25;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .task-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #202B25;
+    line-height: 1.25;
+    margin-bottom: 10px;
+    word-break: break-word;
+  }
+
+  .time-remaining-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .time-remaining-text {
+    font-size: 24px;
+    font-weight: 500;
+    color: #526057;
+    line-height: 1.3;
+  }
+
+  .habit-name {
+    font-size: 20px;
+    font-weight: 500;
+    color: #526057;
+    line-height: 1.3;
+  }
+
+  /* Voice status row */
+  .voice-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  .voice-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .voice-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1F684B;
+    line-height: 1.2;
+  }
+
+  /* Outlined button "Dừng đọc" */
+  .btn-stop-voice {
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 14px;
+    background: #FFFFFF;
+    border: 2px solid #7B887F;
+    color: #202B25;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    flex-shrink: 0;
+  }
+
+  .btn-stop-voice:active {
+    background-color: #ECEEEA;
+  }
+
+  /* Actions container */
+  .actions-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  /* Standard 60px Buttons */
+  .btn-primary {
+    height: 60px;
+    width: 100%;
+    background-color: #1F684B;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 14px;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(31, 104, 75, 0.25);
+    font-family: inherit;
+  }
+
+  .btn-primary:active {
+    background-color: #174C37;
+  }
+
+  .btn-outlined {
+    height: 60px;
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #202B25;
+    border: 2px solid #7B887F;
+    border-radius: 14px;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .btn-outlined:active {
+    background-color: #F0F2ED;
+  }
+
+  /* SVG Icon Styles */
+  .icon-32 {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .icon-28 {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  .icon-40 {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="device-frame">
+  <!-- 1. Top row: Bell icon (32px) + label "Lời nhắc" (24px bold, #1F684B) -->
+  <div class="top-badge-row">
+    <svg class="icon-32" viewBox="0 0 24 24" fill="#1F684B" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+    </svg>
+    <span class="top-badge-text">Lời nhắc</span>
+  </div>
+
+  <!-- 2. Reminder card (white, radius 24, padding 20, border #DFE5DF, centered content) -->
+  <div class="reminder-card">
+    <!-- 64x64 green #2BA15C icon tile with walking icon 40px -->
+    <div class="habit-tile">
+      <svg class="icon-40" viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7z"/>
+      </svg>
+    </div>
+
+    <!-- Big time: 9:30 sáng (34px bold) -->
+    <div class="time-display">9:30 sáng</div>
+
+    <!-- Task name: Đi bộ quanh công viên (30px bold) -->
+    <div class="task-title">Đi bộ quanh công viên</div>
+
+    <!-- Line "Còn 10 phút nữa" (24px, #526057) with clock icon -->
+    <div class="time-remaining-row">
+      <svg class="icon-32" viewBox="0 0 24 24" fill="#526057" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+      </svg>
+      <span class="time-remaining-text">Còn 10 phút nữa</span>
+    </div>
+
+    <!-- Habit line: Vận động tự nhiên (20px, #526057) -->
+    <div class="habit-name">Vận động tự nhiên</div>
+  </div>
+
+  <!-- 3. Voice status row: speaker icon (32px) + "Đang đọc to" (24px, #1F684B) and outlined button "Dừng đọc" (48px high) -->
+  <div class="voice-status-row">
+    <div class="voice-indicator">
+      <svg class="icon-32" viewBox="0 0 24 24" fill="#1F684B" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+      </svg>
+      <span class="voice-text">Đang đọc to</span>
+    </div>
+    <button type="button" class="btn-stop-voice" aria-label="Dừng đọc">
+      <svg class="icon-28" viewBox="0 0 24 24" fill="#202B25" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 6h12v12H6z"/>
+      </svg>
+      <span>Dừng đọc</span>
+    </button>
+  </div>
+
+  <!-- 4. Three stacked buttons, 16px-20px gaps, height 60px each -->
+  <div class="actions-group">
+    <!-- Filled "Bắt đầu làm" with play icon -->
+    <button type="button" class="btn-primary" aria-label="Bắt đầu làm">
+      <svg class="icon-32" viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      <span>Bắt đầu làm</span>
+    </button>
+
+    <!-- Outlined "Nhắc lại sau 10 phút" with clock icon -->
+    <button type="button" class="btn-outlined" aria-label="Nhắc lại sau 10 phút">
+      <svg class="icon-32" viewBox="0 0 24 24" fill="#202B25" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.1.8-1.3-4.5-2.7V7z"/>
+      </svg>
+      <span>Nhắc lại sau 10 phút</span>
+    </button>
+
+    <!-- Outlined "Hôm nay bỏ qua" with skip icon -->
+    <button type="button" class="btn-outlined" aria-label="Hôm nay bỏ qua">
+      <svg class="icon-32" viewBox="0 0 24 24" fill="#202B25" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+      </svg>
+      <span>Hôm nay bỏ qua</span>
+    </button>
+  </div>
+</div>
+
+</body>
+</html>

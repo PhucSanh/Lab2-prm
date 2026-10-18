@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Relation options "Con", "Cháu", "Bạn bè", "Khác": change the 2x2 grid into 4 full-width rows (one column), each row 60px high and 320px wide, 12px gap between rows, white, 2px #7B887F border, radius 16, with the icon (32px) on the left and the label (24px bold) next to it.
+2. Selected row "Con": keep circle-dot icon 32px (stroke 2.5, #1F684B), 2px #1F684B border and #D6EADF background, and add the text "Đang chọn" (20px bold, #174C37) aligned to the right inside the row. Unselected rows keep the circle icon in #7B887F and show no extra text.

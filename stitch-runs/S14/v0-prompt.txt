@@ -1,0 +1,23 @@
+Design ONE mobile screen: "Lời nhắc đến giờ" (Reminder at task time) for the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp, portrait mobile, full screen (no app bar, no bottom navigation). All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube, forgets walking and meal times. Principles: Bác decides; no pressure; few words; many icons, every icon has a visible text label. One primary filled button per screen. No swiping, no long-press: the reminder CANNOT be dismissed by swiping. This screen has ONE job: Bác knows at a glance which task it is and can handle it with ONE tap. The phone reads the reminder aloud. The focal content is CENTER aligned.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), warning-container #FFF3DB (text #8A5100, icon #B26A00), outline #7B887F, border #DFE5DF. Screen side margin 20px, gap between blocks 16px. Reminder card radius 24, padding 24, buttons radius 14. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Time 34px bold, task name 30px bold, body 24px, button text 22px bold, secondary text 20px, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…". Whole screen fits 800px without scrolling.
+- Every touch target >= 48x48px. Exactly ONE filled (dark green #1F684B) button: "Bắt đầu làm" with a play icon, height 60px, full width minus 20px margins. The other two main buttons are OUTLINED (white, 2px #7B887F border), each 60px high, full width, each with an icon. All three buttons are stacked vertically with 20px gaps between them.
+- Each sentence <= 15 words; each button label <= 5 words. No paragraphs.
+- Every icon has a visible text label next to it. No icon-only buttons. Icons >= 32px.
+- Habit accent for this task: Vận động tự nhiên #2BA15C, used only on a 64x64 radius-12 icon tile (white solid walking-person icon 40px) and a 6px top or left accent bar; text always on white.
+- Status shown as icon + text, never color only.
+- No countdown timer, no progress percentage, no ranking, no streak, no pressure wording, no health claims, no three-dot menu.
+
+LAYOUT (top to bottom, center aligned):
+1. Top row: bell icon (32px) + label "Lời nhắc" (24px bold, #1F684B), centered.
+2. Reminder card (white, radius 24, padding 24, border #DFE5DF, centered content): 64x64 green #2BA15C icon tile with walking icon; big time "9:30 sáng" (34px bold); task name "Đi bộ quanh công viên" (30px bold, may wrap to 2 lines); line "Còn 10 phút nữa" (24px, #526057) with a clock icon; habit line "Vận động tự nhiên" (20px, #526057).
+3. Voice status row: speaker icon (32px) + "Đang đọc to" (24px, #1F684B) and next to it an outlined button "Dừng đọc" with a stop icon (48px high, 2px #7B887F border).
+4. Three stacked buttons, 20px gaps: filled "Bắt đầu làm" (play icon); outlined "Nhắc lại sau 10 phút" (clock icon); outlined "Hôm nay bỏ qua" (skip icon). Bottom padding 20px.
+
+TEXT STYLE: Use words "việc", "lời nhắc", "Bắt đầu làm", "Nhắc lại sau 10 phút", "Hôm nay bỏ qua", "Đọc to". Never use: task, notification, snooze, skip, today, done, OK, cancel, thông báo, nhiệm vụ, mục tiêu, thử thách, chưa hoàn thành, người dùng.

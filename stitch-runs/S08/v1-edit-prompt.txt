@@ -1,0 +1,7 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Remove "-webkit-line-clamp" and "overflow: hidden" from .habit-name and .habit-desc so no text is ever cut; the text must wrap fully and the card grows in height if needed.
+2. Change the description of "Thư giãn mỗi ngày" to "Ngủ trưa, ngồi tĩnh lặng" (20px, #526057).
+3. Change the description of "Gắn kết cộng đồng" to "Đi chùa, sinh hoạt hội" (20px, #526057).
+4. Change the description of "Trà chiều cùng bạn" to "Uống trà, chuyện trò với bạn" (20px, #526057).
+5. Replace the "Vận động tự nhiên" tile icon with the exact Lucide "footprints" icon (white stroke 2px, 32px, no fill) instead of the current custom shape.
+6. Replace the "Bạn bè tích cực" tile icon with the exact Lucide "handshake" icon (white stroke 2px, 32px, no fill) instead of the current chain-link shape.

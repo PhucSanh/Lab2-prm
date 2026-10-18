@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=360, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - Chào mừng</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F6F7F2;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .device-frame {
+      width: 360px;
+      min-height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      overflow-x: hidden;
+    }
+
+    .content-scroll {
+      flex: 1;
+      padding: 24px 20px 108px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* 1. Header Centered */
+    .header-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+      padding-top: 4px;
+    }
+
+    .app-logo {
+      width: 72px;
+      height: 72px;
+      background-color: #1F684B;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(31, 104, 75, 0.2);
+      margin-bottom: 4px;
+    }
+
+    .app-logo svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .app-name {
+      font-size: 34px;
+      font-weight: 800;
+      color: #202B25;
+      line-height: 1.2;
+    }
+
+    .welcome-heading {
+      font-size: 30px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.25;
+    }
+
+    .welcome-sub {
+      font-size: 24px;
+      font-weight: 400;
+      color: #526057;
+      line-height: 1.4;
+    }
+
+    /* 2. Live Preview Card */
+    .preview-card {
+      background-color: #FFFFFF;
+      border: 1px solid #DFE5DF;
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    .preview-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #526057;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .preview-tag svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .preview-sentence {
+      font-size: 24px;
+      font-weight: 600;
+      color: #202B25;
+      line-height: 1.4;
+      transition: font-size 0.2s ease;
+    }
+
+    /* 3. Section Title & Option Cards */
+    .size-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .section-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #202B25;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.2;
+      padding-top: 4px;
+    }
+
+    .section-title-row svg {
+      width: 28px;
+      height: 28px;
+      color: #1F684B;
+    }
+
+    .options-group {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .option-card {
+      min-height: 72px;
+      width: 100%;
+      border-radius: 16px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      cursor: pointer;
+      text-align: left;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+
+    .option-card.selected {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+    }
+
+    .option-card.unselected {
+      background-color: #FFFFFF;
+      border: 2px solid #A0ACA3;
+    }
+
+    .card-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .radio-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .radio-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .size-label-small {
+      font-size: 20px;
+      font-weight: 700;
+      color: #202B25;
+    }
+
+    .size-label-medium {
+      font-size: 24px;
+      font-weight: 700;
+      color: #174C37;
+    }
+
+    .size-label-large {
+      font-size: 28px;
+      font-weight: 700;
+      color: #202B25;
+    }
+
+    .status-text-selected {
+      font-size: 20px;
+      font-weight: 700;
+      color: #174C37;
+      background-color: #FFFFFF;
+      border: 1.5px solid #1F684B;
+      padding: 6px 12px;
+      border-radius: 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* 4. Fixed Footer Button */
+    .footer-container {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 360px;
+      padding: 12px 20px 20px 20px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      z-index: 100;
+    }
+
+    .btn-primary {
+      width: 100%;
+      height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(31, 104, 75, 0.25);
+    }
+
+    .btn-primary svg {
+      width: 32px;
+      height: 32px;
+    }
+  </style>
+</head>
+<body>
+<div class="device-frame">
+<div class="content-scroll">
+<!-- 1. Centered Header -->
+<section class="header-section">
+<div aria-hidden="true" class="app-logo">
+<!-- Leaf in circle icon -->
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" viewbox="0 0 24 24">
+<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+<path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+</svg>
+</div>
+<div class="app-name">An Nhiên</div>
+<h1 class="welcome-heading">Chào mừng Bác!</h1>
+<p class="welcome-sub">Bác chọn cỡ chữ dễ đọc nhé.</p>
+</section>
+<!-- 2. Live Preview Card -->
+<section aria-label="Xem trước cỡ chữ" class="preview-card">
+<div class="preview-tag">
+<!-- Eye icon -->
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" style="width: 32px; height: 32px;" viewbox="0 0 24 24">
+<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+<span>Xem thử</span>
+</div>
+<div class="preview-sentence" id="previewSentence">
+          Đến giờ đi bộ rồi Bác ơi
+        </div>
+</section>
+<!-- 3. Option Cards -->
+<section class="size-section">
+<div class="section-title-row">
+<!-- Text size / Type icon -->
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" style="width: 32px; height: 32px;" viewbox="0 0 24 24">
+<polyline points="4 7 4 4 20 4 20 7"></polyline>
+<line x1="9" x2="15" y1="20" y2="20"></line>
+<line x1="12" x2="12" y1="4" y2="20"></line>
+</svg>
+<span>Cỡ chữ</span>
+</div>
+<div aria-label="Chọn cỡ chữ" class="options-group" role="radiogroup">
+<!-- Option 1: Vừa (20px) -->
+<div aria-checked="false" class="option-card unselected" onclick="selectSize(20, this)" role="radio" style="border: 2px solid #526057;">
+<div class="card-left">
+<span class="radio-icon"><svg fill="none" stroke="#526057" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle></svg></span>
+<span class="size-label-small">Vừa</span>
+</div>
+</div>
+<!-- Option 2: Lớn (24px) - Default selected -->
+<div aria-checked="true" class="option-card selected" onclick="selectSize(24, this)" role="radio">
+<div class="card-left">
+<span class="radio-icon">
+<!-- Check circle -->
+<svg fill="none" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24">
+<circle cx="12" cy="12" fill="#1F684B" r="9"></circle>
+<path d="m8.5 12 2.5 2.5 5-5" stroke="#FFFFFF" stroke-width="2.4"></path>
+</svg>
+</span>
+<span class="size-label-medium">Lớn</span>
+</div>
+<div class="status-text-selected">Đang chọn</div>
+</div>
+<!-- Option 3: Rất lớn (28px) -->
+<div aria-checked="false" class="option-card unselected" onclick="selectSize(28, this)" role="radio" style="border: 2px solid #526057;">
+<div class="card-left">
+<span class="radio-icon"><svg fill="none" stroke="#526057" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle></svg></span>
+<span class="size-label-large">Rất lớn</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- 4. Fixed Footer Button -->
+<div class="footer-container">
+<button class="btn-primary" type="button">
+<span>Bắt đầu</span>
+<!-- Arrow right / play icon -->
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<line x1="5" x2="19" y1="12" y2="12"></line>
+<polyline points="12 5 19 12 12 19"></polyline>
+</svg>
+</button>
+</div>
+</div>
+<script>
+    function selectSize(sizePx, element) {
+      // Update preview sentence size
+      const preview = document.getElementById('previewSentence');
+      if (preview) {
+        preview.style.fontSize = sizePx + 'px';
+      }
+
+      // Reset all cards
+      const cards = document.querySelectorAll('.option-card');
+      cards.forEach(card => {
+        card.className = 'option-card unselected';
+        card.setAttribute('aria-checked', 'false');
+        
+        // Remove 'Đang chọn' label if exists
+        const badge = card.querySelector('.status-text-selected');
+        if (badge) badge.remove();
+
+        // Set empty circle icon
+        const iconSpan = card.querySelector('.radio-icon');
+        if (iconSpan) {
+          iconSpan.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="#A0ACA3" stroke-width="2.4">
+              <circle cx="12" cy="12" r="9"/>
+            </svg>
+          `;
+        }
+      });
+
+      // Mark clicked card as selected
+      element.className = 'option-card selected';
+      element.setAttribute('aria-checked', 'true');
+      
+      const iconSpan = element.querySelector('.radio-icon');
+      if (iconSpan) {
+        iconSpan.innerHTML = `
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9" fill="#1F684B"/>
+            <path d="m8.5 12 2.5 2.5 5-5" stroke="#FFFFFF" stroke-width="2.4"/>
+          </svg>
+        `;
+      }
+
+      // Append 'Đang chọn' text
+      const badge = document.createElement('div');
+      badge.className = 'status-text-selected';
+      badge.innerText = 'Đang chọn';
+      element.appendChild(badge);
+    }
+  </script>
+</body>
+</html>

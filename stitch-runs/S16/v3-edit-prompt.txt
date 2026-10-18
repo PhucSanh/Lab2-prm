@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Week card "Tuần này Bác đã làm 2 lần": restore card padding to 16px on all four sides (remove the inline `padding: 16px 4px`).
+2. Only the row of 7 day cells gets `margin-left: -12px; margin-right: -12px` so the row stays 310px wide and each cell stays about 44px; day names remain 20px, weight 500, nowrap, with no text touching a cell edge. Title, legend icons and legend words keep the 16px card padding.
+3. "Bỏ qua" icon (circle-minus): use color #526057 both in the legend and in the "Tư" day cell.

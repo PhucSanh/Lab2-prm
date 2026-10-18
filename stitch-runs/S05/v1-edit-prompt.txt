@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. STILL BROKEN: the names are still cut with "…" ("Đi bộ nh…", "Gọi người …", "Vận động t…", "Gia đình trên …"). Edit the original stylesheet rules (not an appended override): in the rules of .activity-title and .habit-subtitle DELETE the declarations white-space:nowrap, overflow:hidden and text-overflow:ellipsis, and set white-space:normal. Also remove nowrap from the card text container. The names must wrap onto 2 lines and show in full: "Đi bộ nhẹ nhàng", "Chăm cây", "Gọi người thân", "Vận động tự nhiên", "Gia đình trên hết".
+2. Give the text column more room: the selection column (radio 32px + label "Đã chọn"/"Chọn" 20px) gets width 72px, and the gap between icon tile, text and selection column is 12px. Card padding 12px 12px 12px 16px.
+3. STILL BROKEN: the unselected card border is still #A0ACA3. In the original rule (line with border: 2px solid #A0ACA3) change it to 2px solid #7B887F.
+4. STILL BROKEN: set .activity-list gap to 16px (currently 12px) and the "Xem thêm" button margin-top to 16px (currently 14px).

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - Thêm việc (Bước 1/2)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #E8EAE6;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+
+    /* Screen frame: 360px x 800px fixed Android viewport */
+    .screen-container {
+      width: 360px;
+      height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Top App Bar */
+    .app-bar {
+      height: 64px;
+      padding: 8px 20px 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #1F684B;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.2;
+      height: 48px;
+      padding: 0 4px;
+      border-radius: 8px;
+    }
+
+    .back-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: #1F684B;
+      flex-shrink: 0;
+    }
+
+    .step-indicator {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.2;
+    }
+
+    /* Main Content Area: Fits perfectly in 800px without scrolling */
+    .content {
+      padding: 12px 20px 0 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .screen-heading {
+      font-size: 30px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+      text-align: left;
+      margin-bottom: 16px;
+    }
+
+    /* Activity List */
+    .activity-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Activity Card */
+    .activity-card {
+      position: relative;
+      min-height: 76px;
+      border-radius: 16px;
+      padding: 12px 14px 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.15s ease-in-out;
+    }
+
+    /* Selected state */
+    .activity-card.selected {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+    }
+
+    /* Unselected state */
+    .activity-card.unselected {
+      background-color: #FFFFFF;
+      border: 2px solid #A0ACA3;
+    }
+
+    /* Left accent vertical bar */
+    .accent-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      border-top-left-radius: 16px;
+      border-bottom-left-radius: 16px;
+    }
+
+    /* Icon Tile */
+    .icon-tile {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon-tile svg {
+      width: 32px;
+      height: 32px;
+      fill: #FFFFFF;
+    }
+
+    /* Text info */
+    .card-info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+    }
+
+    .activity-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .habit-subtitle {
+      font-size: 20px;
+      font-weight: 400;
+      color: #526057;
+      line-height: 1.3;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Selection badge / indicator */
+    .status-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      flex-shrink: 0;
+      min-width: 64px;
+    }
+
+    .status-badge svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .status-text {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .status-badge.selected-badge svg {
+      fill: #1F684B;
+    }
+
+    .status-badge.selected-badge .status-text {
+      color: #174C37;
+    }
+
+    .status-badge.unselected-badge svg {
+      fill: #7B887F;
+    }
+
+    .status-badge.unselected-badge .status-text {
+      color: #526057;
+      font-weight: 600;
+    }
+
+    /* "Xem thêm" outlined button */
+    .more-btn {
+      width: 100%;
+      height: 60px;
+      margin-top: 14px;
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .more-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: #202B25;
+      flex-shrink: 0;
+    }
+
+    .more-btn span {
+      font-size: 22px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.2;
+    }
+
+    /* Fixed Bottom Action Container */
+    .footer-action {
+      padding: 12px 20px 20px 20px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Single primary filled button "Tiếp tục" */
+    .primary-btn {
+      width: 100%;
+      height: 60px;
+      background-color: #1F684B;
+      border: none;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      color: #FFFFFF;
+      box-shadow: 0 4px 10px rgba(31, 104, 75, 0.25);
+    }
+
+    .primary-btn span {
+      font-size: 22px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+
+    .primary-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: #FFFFFF;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="screen-container">
+<!-- 1. App Bar -->
+<header class="app-bar">
+<button aria-label="Quay lại" class="back-btn">
+<!-- Chevron Left 32px -->
+<svg viewbox="0 0 24 24">
+<path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+</svg>
+<span>Quay lại</span>
+</button>
+<div class="step-indicator">Bước 1/2</div>
+</header>
+<!-- 2. Content -->
+<main class="content">
+<h1 class="screen-heading">Bác muốn làm gì?</h1>
+<!-- 3. Three activity rows -->
+<div aria-label="Danh sách việc quen" class="activity-list" role="radiogroup">
+<!-- Row 1: Selected - Đi bộ nhẹ nhàng -->
+<div aria-checked="true" class="activity-card selected" role="radio" tabindex="0">
+<div class="accent-bar" style="background-color: #2BA15C;"></div>
+<div class="icon-tile" style="background-color: #2BA15C;">
+<!-- Directions Walk Icon 32px -->
+<svg viewbox="0 0 24 24">
+<path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"></path>
+</svg>
+</div>
+<div class="card-info">
+<div class="activity-title">Đi bộ nhẹ nhàng</div>
+<div class="habit-subtitle">Vận động tự nhiên</div>
+</div>
+<div class="status-badge selected-badge"><svg height="32" viewbox="0 0 32 32" width="32"><circle cx="16" cy="16" fill="none" r="14.5" stroke="#1F684B" stroke-width="3"></circle><circle cx="16" cy="16" fill="#1F684B" r="8"></circle></svg><div class="status-text">Đã chọn</div></div>
+</div>
+<!-- Row 2: Unselected - Chăm cây -->
+<div aria-checked="false" class="activity-card unselected" role="radio" tabindex="0">
+<div class="accent-bar" style="background-color: #2BA15C;"></div>
+<div class="icon-tile" style="background-color: #2BA15C;"><svg fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 20h10"></path><path d="M10 20c5.5-2.5.8-6.4 3-13"></path><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path></svg></div>
+<div class="card-info">
+<div class="activity-title">Chăm cây</div>
+<div class="habit-subtitle">Vận động tự nhiên</div>
+</div>
+<div class="status-badge unselected-badge"><svg height="32" viewbox="0 0 32 32" width="32"><circle cx="16" cy="16" fill="none" r="14.5" stroke="#7B887F" stroke-width="3"></circle></svg><div class="status-text">Chọn</div></div>
+</div>
+<!-- Row 3: Unselected - Gọi người thân -->
+<div aria-checked="false" class="activity-card unselected" role="radio" tabindex="0">
+<div class="accent-bar" style="background-color: #D86E75;"></div>
+<div class="icon-tile" style="background-color: #D86E75;">
+<!-- Phone Icon 32px -->
+<svg viewbox="0 0 24 24">
+<path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.053 15.053 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1.01A11.36 11.36 0 018.57 3.9c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.52c0-.55-.45-1-1-1z"></path>
+</svg>
+</div>
+<div class="card-info">
+<div class="activity-title">Gọi người thân</div>
+<div class="habit-subtitle">Gia đình trên hết</div>
+</div>
+<div class="status-badge unselected-badge"><svg height="32" viewbox="0 0 32 32" width="32"><circle cx="16" cy="16" fill="none" r="14.5" stroke="#7B887F" stroke-width="3"></circle></svg><div class="status-text">Chọn</div></div>
+</div>
+</div>
+<!-- 4. Outlined Button "Xem thêm" with Plus Icon -->
+<button aria-label="Xem thêm việc khác" class="more-btn">
+<!-- Plus Icon 32px -->
+<svg viewbox="0 0 24 24">
+<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+</svg>
+<span>Xem thêm</span>
+</button>
+</main>
+<!-- 5. Fixed Footer: ONLY filled button "Tiếp tục" -->
+<footer class="footer-action">
+<button aria-label="Tiếp tục sang bước tiếp theo" class="primary-btn">
+<span>Tiếp tục</span>
+<!-- Arrow Right 32px -->
+<svg viewbox="0 0 24 24">
+<path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
+</svg>
+</button>
+</footer>
+</div>
+</body>
+</html>

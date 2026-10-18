@@ -1,0 +1,41 @@
+Design ONE mobile screen: "Sửa việc" (Edit task) for the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp, portrait mobile. Has a top app bar with a text Back button and ONE fixed footer with the primary button; NO bottom navigation. All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube. Principles: Bác decides; no pressure; few words; many icons, every icon has a visible text label. One primary filled button per screen. No swiping, no long-press, no typing when a choice works. This screen has ONE job: Bác changes the name, time, repeat or reminder of a task she already added ("Đi bộ quanh công viên", currently 9:30 sáng, repeats every day) and saves. Deleting is possible but kept far from the Save button and clearly separate.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards/fields #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), error #B42318, error-container #FDECE9 (text #912018), outline #7B887F, border #DFE5DF. Screen side margin 20px, gap between blocks 16px. Cards radius 16, fields radius 12, buttons radius 14. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Screen title 30px bold, field labels 24px bold, field values 24px, button text 22px bold, secondary text 20px, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…". The form may scroll vertically, the footer stays fixed.
+- Every touch target >= 48x48px. Exactly ONE filled (dark green #1F684B) button: "Lưu thay đổi" with a save icon, height 60px, full width minus 20px margins, fixed at the bottom with 20px bottom padding. All other buttons are OUTLINED or text buttons.
+- Each sentence <= 15 words; each button label <= 5 words. No paragraphs. At most one helper line under a field.
+- Every icon has a visible text label next to it. No icon-only buttons. Icons >= 32px (a chevron inside a field is part of the field that already has text).
+- Habit accent for this task: Vận động tự nhiên #2BA15C, used only on a 48x48 radius-12 icon tile (white outline footprints icon 32px, stroke 2.5) and a 6px left accent bar; text always on white.
+- No countdown timer, no progress percentage, no ranking, no streak, no pressure wording, no three-dot menu, no swipe-to-delete.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+- chevron-left = back, always with the text "Quay lại"
+- footprints = habit Vận động tự nhiên (only this habit)
+- pencil = Sửa (next to the screen title)
+- clock = giờ của việc (next to "Giờ làm")
+- chevron-down = opens the time picker / the repeat list (inside the field)
+- repeat = Lặp lại
+- bell-ring = Nhắc nhở is on
+- info = hint line
+- trash-2 = Xóa
+- save = Lưu
+
+LAYOUT (top to bottom, left aligned form):
+1. App bar: text button with chevron-left icon and "Quay lại" (22px bold, #1F684B, height 48).
+2. Habit chip row: white card radius 16 with 6px #2BA15C left bar, 48x48 #2BA15C tile with white footprints icon, and text "Vận động tự nhiên" (24px bold) next to it.
+3. Title row: pencil icon (32px) + "Sửa việc" (30px bold).
+4. Field "Tên việc": label 24px bold above a 60px high white field, 2px #7B887F border, radius 12, value "Đi bộ quanh công viên". Under it a hint line with info icon: "Ví dụ: Đi bộ buổi sáng" (20px, #526057).
+5. Field "Giờ làm": label with clock icon; a 60px high tappable field (not a scroll wheel) showing "9:30 sáng" and chevron-down at the right.
+6. Field "Lặp lại": label with repeat icon; a 60px high tappable field showing "Mỗi ngày" and chevron-down at the right.
+7. Row "Nhắc nhở": bell-ring icon (32px) + "Nhắc nhở" (24px bold) + the text "Bật" (24px) and a switch ON (large, track at least 64x40, green #1F684B) in the same row, row height >= 64.
+8. Danger zone, separated by a 1px #DFE5DF line and 32px space above: an outlined button "Xóa việc này" with trash-2 icon (white fill, 2px #B42318 border, text #B42318, height 60, full width) and under it the line "Bác sẽ được hỏi lại trước khi xóa." (20px, #526057).
+9. Fixed footer: filled button "Lưu thay đổi" with save icon (60px).
+
+TEXT STYLE: Use words "việc", "Lưu thay đổi", "Xóa việc này", "Quay lại", "Giờ làm", "Lặp lại", "Nhắc nhở". Never use: task, edit, delete, save, notification, reminder, settings, OK, cancel, thông báo, nhiệm vụ, mục tiêu, thử thách, chưa hoàn thành, người dùng.

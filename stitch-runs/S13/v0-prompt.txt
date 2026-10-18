@@ -1,0 +1,23 @@
+Design ONE mobile screen: "Cho phép nhắc việc (Bước 2/2)" (Allow reminders, step 2 of 2), the third onboarding screen of the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp, portrait mobile. All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube, forgets walking and meal times. Principles: Bác decides; no pressure; few words; many icons, every icon has a visible text label. One primary filled button per screen. No swiping, no long-press, no carousel, no tutorial pages. This screen has ONE job: explain why the phone will ring at task time, and prepare Bác for the Android permission pop-up so she does not tap "Từ chối" by accident. Content that stands alone on the screen is CENTER aligned.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), warning-container #FFF3DB (text #8A5100, icon #B26A00), outline #7B887F, border #DFE5DF. Screen side margin 20px, gap between blocks 16px. Cards radius 16, buttons radius 14. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Body 24px, screen heading 30px bold, button text 22px bold, secondary text 20px, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…".
+- Every touch target >= 48x48px. Exactly ONE filled (dark green #1F684B) button: "Bật nhắc việc" with a bell icon, height 60px, full width minus 20px margins, fixed at the bottom. The second button "Để sau" is OUTLINED (white, 2px #7B887F border), height 60px, full width, placed directly above the filled button with an 8px gap or below it with 8px gap. No other filled button.
+- Back button top-left: chevron-left icon plus visible text "Quay lại" (22px bold, #1F684B, 48px high). Never an arrow alone.
+- Each sentence <= 15 words; each button label <= 5 words. No paragraphs longer than 2 lines.
+- Every icon has a visible text label next to it. No icon-only buttons. Icons >= 32px.
+- No countdown, no ranking, no streak, no pressure wording, no health claims.
+
+LAYOUT (top to bottom, no bottom navigation bar on this onboarding screen):
+1. App bar: "‹ Quay lại" back button at left, and the step text "Bước 2/2" (20px, #526057) with a small list icon.
+2. Center block: a large bell icon (64px) inside a #D6EADF circle (96px), then heading "Cho phép nhắc việc" (30px bold, centered), then one sentence "Để đến giờ điện thoại đổ chuông nhắc Bác." (24px, centered).
+3. Example reminder card (white, radius 16, padding 20, border #DFE5DF), small label "Lời nhắc sẽ như thế này" (20px, #526057) with bell icon, then "Đến giờ đi bộ rồi Bác ơi" (24px bold) and "9:30 sáng" (24px) with a walking icon on a 48x48 radius-12 tile #2BA15C (white icon) and a 6px #2BA15C left accent bar.
+4. Hint card (background #FFF3DB, radius 16, padding 16) with phone icon #B26A00 and text "Điện thoại sẽ hỏi lại, Bác chọn Cho phép." (24px, #8A5100) with the words "Cho phép" in bold.
+5. Fixed footer: outlined button "Để sau" with clock icon, 8px below it the ONLY filled button "Bật nhắc việc" with bell icon, both 60px high; bottom padding 20px.
+
+TEXT STYLE: Use words "nhắc việc", "lời nhắc", "Bác", "Cho phép", "Để sau", "Quay lại". Never use: notification, permission, allow, skip, later, OK, cancel, thông báo, người dùng, hệ thống, nhiệm vụ, mục tiêu, thử thách.

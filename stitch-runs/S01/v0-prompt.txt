@@ -1,0 +1,25 @@
+Design ONE mobile screen: "Chào mừng – chọn cỡ chữ" (Welcome – choose text size), the very first onboarding screen of the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp. All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube. Principles: Bác decides; no pressure; few words; many icons, every icon has a visible text label. One primary filled button per screen. No swiping, no long-press, no carousel, no tutorial pages. This screen has ONE job: pick a text size, with a live preview. Content that stands alone is CENTERED; the three option cards are one aligned column.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), outline #7B887F, border #DFE5DF. Screen side margin 20px, gap between blocks 16px. Cards radius 16, buttons radius 14. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Body 24px, app name 34px bold, screen heading 30px bold, button text 22px bold, line-height 1.5 for body.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…".
+- Every touch target >= 48x48px. Exactly ONE filled (dark green #1F684B) button: "Bắt đầu", height 60px, full width minus 20px margins, fixed at the bottom of the screen with a play/arrow-right icon plus the text. No other filled button.
+- Each sentence <= 15 words; each button label <= 5 words. No paragraphs.
+- Selection state is never color only: the chosen option card has a 2px #1F684B border, background #D6EADF, a check-circle icon and the visible text "Đang chọn"; unchosen cards are white with a 2px #A0ACA3 border and an empty-circle icon.
+- No back button needed (first screen). No bottom navigation. No three-dot menu, no icon-only buttons.
+
+LAYOUT (top to bottom):
+1. Centered header: a leaf-in-circle app logo tile 72x72 (#1F684B background, white leaf icon), below it the app name "An Nhiên" (34px bold, centered), below it one line "Chào mừng Bác!" (30px bold centered) and sub line "Bác chọn cỡ chữ dễ đọc nhé." (24px, #526057, centered).
+2. Live preview card (white, radius 16, padding 20, centered text): small label "Xem thử" with an eye icon (20px, #526057), then the sample sentence "Đến giờ đi bộ rồi Bác ơi" displayed at the currently chosen size (default: Lớn = 24px).
+3. Heading row "Cỡ chữ" with a text-size icon (26px bold), then THREE option cards stacked vertically, 16px gap, each card full width, height 72px, left aligned, each containing: radio-style check icon on the left, label showing the size name rendered in its own size, and the selection text on the right:
+ - "Vừa" (label 20px)
+ - "Lớn" (label 24px) — selected by default, with "Đang chọn"
+ - "Rất lớn" (label 28px)
+ Each whole card is tappable (>= 72px high).
+4. Fixed footer: filled button "Bắt đầu" (60px high) and above it, 8px gap, nothing else. Bottom safe padding 20px.
+
+TEXT STYLE: Use words "cỡ chữ", "Xem thử", "Bắt đầu". Never use: font size, settings, cài đặt phông, start, next, OK, người dùng, nhiệm vụ, mục tiêu, thử thách.

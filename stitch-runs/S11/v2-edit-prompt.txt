@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Footer: remove the inline override so the footer padding is exactly 12px 20px 20px 20px; the tonal button is then 320px wide and aligned with the task cards (left and right edges at x=20 and x=340).
+2. Footer button label: change "Thêm việc cho ngày này" to "Thêm việc" (22px bold, #174C37) with the Lucide `plus` icon 32px at its left; remove `white-space: nowrap` and `padding: 0 8px` from the button; keep height 60px, radius 14, background #D6EADF.

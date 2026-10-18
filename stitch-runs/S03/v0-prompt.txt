@@ -1,0 +1,30 @@
+Design ONE mobile screen: "Hôm nay" (Today) for the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp. All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube, forgets walking and meal times. Principles: Bác decides; no pressure; few words; many icons, every icon has a visible text label. One primary filled button per screen. No swiping, no long-press.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), warning-container #FFF3DB (text #8A5100, icon #B26A00), border #DFE5DF. Screen side margin 20px, gap between blocks 16px. Cards radius 16, buttons radius 14, status chips fully rounded. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px (including bottom-nav labels, chips, captions). Body 24px, screen heading 30px bold, button text 22px bold, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…".
+- Every touch target >= 48x48px. Exactly ONE filled (dark green) button on the screen: "Đã xong" inside the "Việc tiếp theo" card, height 60px, nearly full card width. Other buttons are outlined or tonal, height >= 48px; buttons separated by >= 8px.
+- Each sentence <= 15 words; each button label <= 5 words; each bottom tab label <= 3 words.
+- Each task row contains ONLY: left vertical accent bar 6px wide in the habit's accent color, 48x48 rounded-12 icon tile filled with the habit accent color (white icon 28px), time, task name (24px bold), and ONE status chip. At most one secondary line. No paragraphs, no advice/tip blocks on this screen.
+- Status chips = icon + text, never color only: "✓ Đã xong" = chip filled #1F684B with white text, height 40px; "○ Chưa làm" = pill with #FFF3DB background, circle icon #B26A00, text #8A5100, height 40px.
+- Habit accent colors (use exactly): Vận động tự nhiên #2BA15C, Sống có mục đích #768ADB, Thư giãn mỗi ngày #AC76DB, Ăn vừa đủ #B98331, Ăn nhiều rau, đậu #609D2A, Trà chiều cùng bạn #D0754E, Gắn kết cộng đồng #309BB5, Gia đình trên hết #D86E75, Bạn bè tích cực #D666AD. Accent colors only on small areas (icon tile, bar); text always on white.
+- No progress percentages, no ring without label, no ranking, no streak, no countdown, no three-dot menu, no icon-only buttons, no carousel.
+
+LAYOUT (top to bottom):
+1. Greeting, left aligned: "Chào buổi sáng, Bác Lan" (30px bold). Sub line: "Thứ Năm, 8/10 · Đã xong 3/6 việc" (20px, #526057).
+2. Featured card "Việc tiếp theo" (the ONLY emphasized block): background #D6EADF, radius 16, padding 20. Label "Việc tiếp theo · 9:30 sáng" with a bell icon; task name "Đi bộ quanh công viên" (24px bold) with a green (#2BA15C) 48x48 icon tile (walking icon); line "20 phút · Vận động tự nhiên". Inside: filled primary button "Đã xong" with a check icon (60px high), and below it (8px gap) an outlined button "Dời lại" with a clock icon (60px high).
+3. Section title "Việc hôm nay" (26px bold). Then 6 task rows ordered by time, 16px gap, white cards radius 16, padding 16:
+ - 6:30 sáng · Tưới rau ngoài vườn (Ăn nhiều rau, đậu, #609D2A, leaf icon) · ✓ Đã xong
+ - 7:30 sáng · Ăn sáng chậm rãi (Ăn vừa đủ, #B98331, bowl icon) · ✓ Đã xong
+ - 8:30 sáng · Ngồi thở nhẹ 10 phút (Thư giãn mỗi ngày, #AC76DB, wind icon) · ✓ Đã xong
+ - 9:30 sáng · Đi bộ quanh công viên (Vận động tự nhiên, #2BA15C, walking icon) · ○ Chưa làm
+ - 3 giờ chiều · Uống trà với cô Tám (Trà chiều cùng bạn, #D0754E, cup icon) · ○ Chưa làm
+ - 6 giờ tối · Gọi điện cho Mai (Gia đình trên hết, #D86E75, phone icon) · ○ Chưa làm
+ The whole row is tappable (>= 72px high). The list scrolls vertically.
+4. Bottom navigation fixed at bottom, 80px high, white, 4 tabs each with icon + label 20px: "Hôm nay" (active: background #D6EADF, bold text #1F684B, home/sun icon), "Lịch tuần" (calendar icon), "Thói quen" (leaf icon), "Gia đình" (people icon).
+
+TEXT STYLE: Use words "việc", "lời nhắc", "Đã xong", "Chưa làm", "Dời lại". Never use: task, notification, today, done, nhiệm vụ, mục tiêu, thử thách, chưa hoàn thành, người dùng.

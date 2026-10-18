@@ -1,0 +1,8 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Add a status chip right under the task name "Đi bộ quanh công viên": bell icon 32px + text "Đến giờ" (22px bold, #1F684B), white background, 2px #1F684B border, height 48px, radius 14, centered.
+2. Remove the 6px horizontal accent bar on the top edge of the reminder card. Replace it with a 6px wide vertical accent bar on the left edge of the card, full card height, color #2BA15C, fully rounded. Keep the 64x64 #2BA15C icon tile with the white icon.
+3. Stop using space-between for the screen. Use a 16px gap between the "Lời nhắc" row, the reminder card and the voice row. Push the group of three buttons to the bottom with margin-top:auto and 20px bottom padding.
+4. Set the gap between the three buttons ("Bắt đầu làm", "Nhắc lại sau 10 phút", "Hôm nay bỏ qua") to 20px.
+5. Voice row: use min-height:52px instead of a fixed height. Stack "Đang đọc to" (speaker icon 32px + text, one line) and the outlined button "Dừng đọc" vertically, centered, 8px apart. The "Dừng đọc" button stays 48px high.
+6. Make the stop icon inside "Dừng đọc" 32px.
+7. Change the icon on the line "Còn 10 phút nữa" to an hourglass icon, 32px, so the clock icon is used only for the button "Nhắc lại sau 10 phút" (32px).

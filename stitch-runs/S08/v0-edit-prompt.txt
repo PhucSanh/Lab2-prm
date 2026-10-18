@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In all 9 habit rows, remove the count chip ("3 lần", "2 lần"...) from the horizontal row and place it BELOW the secondary description line inside the text column (chip height 40px, text 20px bold, #174C37 on #D6EADF, radius 999), left aligned; keep only the chevron-right (24px) on the right edge.
+2. Set habit row card padding to 16px 12px 16px 16px so the text column is about 210px wide; habit name (24px bold) and description (20px) may each wrap to at most 2 lines, never 3 or 4.
+3. Replace the "Gia đình" bottom-nav tab icon with the Lucide "heart-handshake" icon, 32px, stroke 2px, color #526057 (inactive) so it no longer repeats the "users" icon used by "Gắn kết cộng đồng".
+4. Replace the "Bạn bè tích cực" tile icon with the standard Lucide "handshake" icon (white, 32px) instead of the current zigzag line.

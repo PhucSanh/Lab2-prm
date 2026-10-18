@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the CSS class for unselected option cards (.option-card.unselected), change the border from 2px solid #A0ACA3 to 2px solid #526057.
+2. In the JavaScript function that switches the font size (selectSize), when it redraws an empty radio circle for an unselected card, use stroke="#526057" instead of stroke="#A0ACA3" (stroke-width unchanged).
+3. Remove the duplicated inline border/stroke colors on the "Vừa" and "Rất lớn" cards so that all unselected cards ("Vừa", "Lớn", "Rất lớn") get #526057 from the shared class only.

@@ -1,18 +1,21 @@
-# AI Design Log – Google Stitch
+# AI Design Log
 
-> **Cách ghi log:** mỗi lần chạy giữ nguyên văn prompt, lưu ảnh output gốc vào `assets/stitch/` và ghi nhận xét theo ảnh thật.
-> Các ô `[ … ]` là chỗ bạn điền sau khi chạy Stitch. Không viết nhận xét cho thứ Stitch không tạo ra.
+Chuỗi làm việc: **Google Stitch** sinh UI ban đầu (v0) → **Claude** rà soát theo persona và Nielsen, đề xuất chỉnh sửa (V1 – V3) → dựng và tinh chỉnh bản cuối trong **Figma**. Slide tương ứng: "Thiết kế với AI", "Các vòng tinh chỉnh", "Quyết định thiết kế", "Chọn giờ dễ hơn".
 
-| Vòng | Mục tiêu | Ngày | Ảnh trước | Ảnh sau |
-| --- | --- | --- | --- | --- |
-| v0 | Sinh UI ban đầu từ persona + constraints | [NGÀY] | — | `assets/stitch/v0-home.png`, `v0-*.png` |
-| V1 | Đọc dễ: cỡ chữ, vùng chạm, tương phản | [NGÀY] | `v0-home.png` | `v1-home.png` |
-| V2 | Điều hướng đơn giản: tab có nhãn, bỏ cử chỉ ẩn | [NGÀY] | `v1-home.png` | `v2-home.png` |
-| V3 | Chống lỗi & phục hồi: dialog, validation, loading, offline | [NGÀY] | `v2-add.png` | `v3-add.png`, `v3-error.png` |
+| Vòng | Mục tiêu | Ảnh trước | Ảnh sau |
+| --- | --- | --- | --- |
+| v0 | Sinh UI ban đầu từ persona + constraints | — | `assets/stitch/screen_day.png`, `screen_week.png`, `power9.png`, `screen_contact.png`, `bang_mau.png` |
+| V1 | Chữ rõ, câu ngắn | `assets/stitch/screen_day.png` | `assets/figma/S03-hom-nay.png` |
+| V2 | Nút lớn, phân cấp rõ | `assets/stitch/screen_contact.png` | `assets/figma/S09-gia-dinh.png` |
+| V3 | Thống nhất hệ thống (token, component, chọn giờ) | `assets/figma/before-DLG-WakeTime.png` | `assets/figma/DLG-WakeTime.png`, `design-system.png`, `components.png` |
+
+Ảnh `assets/figma/*` là ảnh export từ page `03 Final UI`, `04 Design System`, `05 Components` (quy ước tên ở [assets/figma/README.md](../assets/figma/README.md)).
 
 ---
 
-## v0 – Sinh UI ban đầu
+## v0 – Google Stitch sinh UI ban đầu
+
+**Công cụ:** Google Stitch, chế độ Mobile · **Ảnh lưu ngày:** 11/10/2026
 
 **Prompt (nguyên văn):**
 
@@ -25,103 +28,101 @@ Constraints: all UI text in Vietnamese; body text at least 18sp; touch targets a
 Style: calm, warm and natural; cream background, deep green primary, terracotta accent; rounded cards; Be Vietnam Pro font; no gradients.
 ```
 
-**Output:** ![v0 home](../assets/stitch/v0-home.png)
+Trích đoạn prompt tiếng Việt trình bày trên slide "Thiết kế với AI":
 
-**Stitch tạo ra:** [liệt kê số màn, tên màn Stitch thực sự sinh ra]
+> "Thiết kế ứng dụng điện thoại 'An Nhiên' bằng tiếng Việt dành cho người lớn tuổi tại Việt Nam. Giúp người lớn tuổi tự tạo, nhận nhắc và duy trì một vài hoạt động phù hợp với sinh hoạt hằng ngày, lấy cảm hứng từ Power 9. Không dùng bảng xếp hạng, mất streak, điểm sức khỏe hoặc điểm tuổi thọ. Tiếng Việt tự nhiên, ngắn, cụ thể, tôn trọng."
 
-**Điểm tốt giữ lại:** [ví dụ: bảng màu xanh lá – kem đúng hướng, có card "Việc tiếp theo"]
+**Stitch tạo ra (ảnh đã lưu):**
 
-**Vấn đề thấy được:** [ghi theo ảnh thật – đối chiếu checklist phát hiện ở cuối file]
-
----
-
-## V1 – Đọc dễ (Readability & accessibility)
-
-**Vấn đề nhắm tới:** [ví dụ: chữ nội dung còn ~14 sp, chữ phụ xám nhạt, nút cao ~40 dp]
-
-**Prompt (nguyên văn):**
-
-```
-Increase all body text to 18sp and screen titles to 28sp. Make every button at least 56dp tall with 8dp spacing between buttons. Darken secondary grey text to #4A5550 so contrast is above 7:1 on the cream background. Replace the time-picker wheel with large minus/plus buttons.
-```
-
-**Trước / sau:**
-
-| Trước | Sau |
+| Ảnh | Màn |
 | --- | --- |
-| ![](../assets/stitch/v0-home.png) | ![](../assets/stitch/v1-home.png) |
+| ![Hôm nay](../assets/stitch/screen_day.png) | Hôm nay – lời chào "Chào bà Lan", tiến trình 2/4, thẻ "Việc tiếp theo", danh sách 4 việc, nút "Thêm việc mới", lời khuyên Blue Zones |
+| ![Lịch tuần](../assets/stitch/screen_week.png) | Lịch tuần – chọn tuần, dải 7 ngày, "18 / 21 hoạt động", việc chia Buổi sáng / chiều / tối |
+| ![9 thói quen](../assets/stitch/power9.png) | 9 Thói quen – 9 thẻ màu riêng, mỗi thẻ có nút "Xem cách thực hiện" |
+| ![Người thân](../assets/stitch/screen_contact.png) | Người thân – thẻ SOS đỏ, 4 người liên hệ, nhiều kiểu nút gọi |
+| ![Bảng màu](../assets/stitch/bang_mau.png) | Bảng màu "Serene Vitality": primary `#1F654A`, secondary `#A3471F`, tertiary `#91424A`, neutral `#1F2A24`; font Be Vietnam Pro |
 
-**Kết quả:** [Stitch đã sửa được gì / chưa sửa được gì]
+**Điểm tốt giữ lại:**
 
-**Quyết định:** [Accept / Modify / Reject – lý do] → thay đổi tương ứng trong Figma: `03 Final UI / S03`, text styles `body-lg`, `headline`.
-
----
-
-## V2 – Điều hướng đơn giản (Navigation & recognition)
-
-**Vấn đề nhắm tới:** [ví dụ: bottom nav 5 tab chỉ có icon; hoàn thành việc bằng cách vuốt thẻ; không có nút quay lại có chữ]
-
-**Prompt (nguyên văn):**
-
-```
-Reduce the bottom navigation to exactly 4 tabs, each with an icon and a visible Vietnamese label: Hôm nay, Lịch tuần, Thói quen, Gia đình. Move Settings to a labeled button in the top app bar. Replace swipe-to-complete with a visible "Đã xong" button on the next-activity card. Add a labeled back button ("Quay lại") on every sub-screen.
-```
-
-**Trước / sau:**
-
-| Trước | Sau |
-| --- | --- |
-| ![](../assets/stitch/v1-home.png) | ![](../assets/stitch/v2-home.png) |
-
-**Kết quả:** [ … ]
-
-**Quyết định:** [ … ] → Figma: component `BottomNav`, `AppBar` (Type = Back+Step).
+- Bảng màu xanh lá đậm đúng hướng (→ `primary #1F684B`, D5).
+- Bottom nav 4 tab đều có nhãn chữ (→ D3).
+- Thẻ "Việc tiếp theo" là khối nổi bật nhất trên Home (→ S03).
+- Lịch chia theo buổi Sáng / Chiều / Tối – đúng cách người lớn tuổi nghĩ về một ngày (→ S11, D8).
+- Mỗi thói quen có màu và icon riêng (→ collection `color/habit/*`).
+- Thói quen 6 là trà chiều, không phải rượu (→ D1); trạng thái "Đã xong" có icon + chữ.
 
 ---
 
-## V3 – Chống lỗi & phục hồi (Error prevention & recovery)
+## Phản biện UX output v0 (9 phát hiện, gắn màn cụ thể)
 
-**Vấn đề nhắm tới:** [ví dụ: bấm "Đã xong" là đổi ngay không hỏi lại; bấm Lưu không có phản hồi; không có màn lỗi]
-
-**Prompt (nguyên văn):**
-
-```
-Add a confirmation dialog before marking an activity as done, with two stacked full-width buttons "Đúng, đã xong" and "Chưa, để sau". On the add-activity screen, show inline validation when the task name is empty: red border, error icon, the message "Bà chưa nhập tên việc. Ví dụ: Tập thở chậm 10 phút." and two suggestion chips. Add a loading screen "Đang lưu việc…" and an offline error screen that says the data is not lost, with buttons "Thử lại", "Lưu trên máy, gửi sau" and "Quay lại sửa".
-```
-
-**Trước / sau:**
-
-| Trước | Sau |
-| --- | --- |
-| ![](../assets/stitch/v2-add.png) | ![](../assets/stitch/v3-add.png) |
-
-**Kết quả:** [ … ]
-
-**Quyết định:** [ … ] → Figma: component `Dialog`, `TextField` State = Error, `Loading`, `ErrorView`; frames `ST-Validation`, `ST-Loading`, `ST-Error`.
-
----
-
-## Phản biện UX (≥ 5 phát hiện, gắn màn cụ thể)
-
-> Bảng dưới là các lỗi thường gặp ở output AI cho đối tượng người già. **Chỉ giữ những dòng đúng với ảnh Stitch của bạn**, sửa mô tả cho khớp ảnh thật, và thêm dòng nếu thấy lỗi khác.
-
-| # | Màn hình | Vấn đề quan sát | Căn cứ | Mức độ | Sửa ở | Trạng thái |
+| # | Màn (ảnh) | Vấn đề quan sát | Căn cứ | Mức độ | Sửa ở | Quyết định |
 | --- | --- | --- | --- | --- | --- | --- |
-| F1 | S03 Hôm nay | Chữ nội dung ~14 sp, chữ phụ xám nhạt khó đọc | Accessibility (WCAG 1.4.3); persona viễn thị | Cao | V1 | [ ] |
-| F2 | Bottom nav | 5 tab, chỉ có icon, không có nhãn | Nielsen #6 Recognition rather than recall | Cao | V2 | [ ] |
-| F3 | S03 Hôm nay | Hoàn thành việc bằng cách vuốt thẻ, không có nút | Nielsen #5 Error prevention; ngón tay kém linh hoạt | Cao | V2 | [ ] |
-| F4 | S06 Chọn giờ | Bánh xe chọn giờ nhỏ, dễ cuộn quá | Touch target < 48 dp; motor | Trung bình | V1 | [ ] |
-| F5 | S06 Chọn giờ | Bấm Lưu không có phản hồi, không có trạng thái đang lưu | Nielsen #1 Visibility of system status | Cao | V3 | [ ] |
-| F6 | S04 Chi tiết | "Đã xong" chỉ thể hiện bằng đổi màu + gạch ngang | WCAG 1.4.1 Use of color | Trung bình | V3 | [ ] |
-| F7 | S06 Chọn giờ | Placeholder thay cho nhãn ô nhập, gõ vào là mất | Nielsen #6; NN/g về form | Trung bình | V1 | [ ] |
-| F8 | S08 / S05 | Giữ nguyên "Wine @ 5" (uống rượu) cho người già | Persona + an toàn sức khỏe | Trung bình | Figma (modify) | [ ] |
+| F1 | Hôm nay (`screen_day`) | Hai nút filled khác màu – xanh "Đánh dấu đã xong" và đất nung "Thêm việc mới" – tranh nhau làm điểm nhấn | Nguyên tắc một hành động chính; Nielsen #8 | Cao | V2 | D21 |
+| F2 | Hôm nay, Lịch tuần | Tên việc bị cắt "Ăn sáng vừa …", "Uống trà xan…", "Đi bộ thong thả …" | WCAG 1.4.4; persona không đoán được việc | Cao | V1 | D6 |
+| F3 | Mọi màn | App bar không dấu "Hom Nay", "Lich Tuan", "Nguoi Than"; năm hiển thị 2024 | Nielsen #2 Match with real world | Trung bình | V1 | D6 |
+| F4 | Hôm nay | Chữ phụ, nhãn tab, chip trạng thái nhỏ so với nội dung chính; một màn có 6 khối thông tin | Persona viễn thị (pain point 1, 5); Nielsen #8 | Cao | V1 | D4, D20 |
+| F5 | Lịch tuần, 9 Thói quen | Chấm điểm "18 / 21 hoạt động … Rất đáng khen ạ!", "4/9 thói quen tuần này", nhãn "Ưu tiên số 1" | Trái ràng buộc không điểm / không streak; tạo cảm giác bị theo dõi (P2, P4) | Cao | V2 | D7 |
+| F6 | Người thân (`screen_contact`) | Thẻ đỏ "GỌI KHẨN CẤP SOS – Gọi bác sĩ & con gái Mai" lớn nhất màn | App không bảo đảm được cấp cứu; nút lớn dễ bấm nhầm (#5) | Cao | V2 | D7b |
+| F7 | Người thân | 4 kiểu nút gọi (Gọi điện ngay, Gọi qua Zalo, Gọi video, Gọi xin tư vấn), 3 màu nút khác nhau | Nielsen #4 Consistency and standards | Trung bình | V2 | D7b, D18 |
+| F8 | Hôm nay, Lịch tuần | Đánh dấu xong không thấy bước xác nhận hay Hoàn tác; vòng tròn trống không nhãn ở buổi tối | Nielsen #3, #5; WCAG 1.4.1 | Cao | V2 | D2 |
+| F9 | 9 Thói quen | "Ăn vừa no 80%" khó ước lượng, dễ hiểu thành nhịn ăn | Persona; an toàn sức khỏe | Trung bình | V3 | D23 |
 
-## Truy vết một thay đổi end-to-end (dùng khi demo bước 6)
+---
+
+## V1 – Chữ rõ, câu ngắn
+
+**Vấn đề nhắm tới:** F2, F3, F4.
+
+**Prompt (nguyên văn):** *[Dán nguyên văn prompt vòng 1 từ lịch sử chat chụp ở slide "Các vòng tinh chỉnh".]*
+
+**Kết quả áp dụng trong Figma:** nội dung 24 sp, nhỏ nhất 20 sp (kể cả nhãn nav), tiêu đề 30; tên việc xuống dòng thay vì cắt; mỗi đoạn mô tả ≤ 2 câu; mọi chữ có dấu.
+
+| Trước | Sau |
+| --- | --- |
+| ![](../assets/stitch/screen_day.png) | ![](../assets/figma/S03-hom-nay.png) |
+
+**Quyết định:** Modify (D4, D6, D20) → text styles `body-lg`, `headline`, `caption`; frame `03 Final UI / S03 Hôm nay`.
+
+---
+
+## V2 – Nút lớn, phân cấp rõ
+
+**Vấn đề nhắm tới:** F1, F5, F6, F7, F8.
+
+**Prompt (nguyên văn):** *[Dán nguyên văn prompt vòng 2.]*
+
+**Kết quả áp dụng trong Figma:** nút chính cao 60 dp; mỗi màn một nút filled `primary`, bỏ màu đất nung; thẻ người thân chỉ còn "Gọi điện" + "Nhắn tin"; bỏ thẻ SOS và chấm điểm tuần; "Tôi đã làm xong" mở `DLG-Done` và có Snackbar "Hoàn tác".
+
+| Trước | Sau |
+| --- | --- |
+| ![](../assets/stitch/screen_contact.png) | ![](../assets/figma/S09-gia-dinh.png) |
+
+**Quyết định:** Modify / Reject (D2, D7, D7b, D18, D21) → component `Button`, `Dialog`, `Snackbar`; frame `S09 Gia đình`, `DLG-Done`.
+
+---
+
+## V3 – Thống nhất hệ thống
+
+**Vấn đề nhắm tới:** giao diện các màn chưa đồng nhất; chọn giờ khó (ưu tiên sửa: chọn giờ · tràn chữ · nút chính/phụ); F9.
+
+**Prompt (nguyên văn):** *[Dán nguyên văn prompt vòng 3.]*
+
+**Kết quả áp dụng trong Figma:** gom màu, cỡ chữ, khoảng cách, bo góc vào Variables / Text styles / Effect styles (page `04 Design System`); 9 nhóm component có variant trạng thái (page `05 Components`); hộp chọn giờ mới – trước: số lặp, lệch tâm; sau: số lớn, hàng giữa cố định, nút Hủy / Xong rõ.
+
+| Trước | Sau |
+| --- | --- |
+| ![](../assets/figma/before-DLG-WakeTime.png) | ![](../assets/figma/DLG-WakeTime.png) |
+
+**Quyết định:** Modify (D22, D23) → `DLG-WakeTime`, `DLG-TaskTime`, collection `color`, `space`, `radius`, `Dễ đọc · Cỡ chữ`.
+
+---
+
+## Truy vết một thay đổi end-to-end (dùng khi demo)
 
 | Bước | Nội dung |
 | --- | --- |
-| Prompt | V2 – "Replace swipe-to-complete with a visible 'Đã xong' button…" |
-| AI output | `assets/stitch/v2-home.png` – [mô tả Stitch đã đổi gì] |
-| Critique | F3: cử chỉ vuốt bị ẩn, người tay run dễ vuốt nhầm |
-| Decision | Reject cử chỉ vuốt → nút "Đã xong" 56 dp + dialog xác nhận (design-decisions.md, D2) |
-| Figma | `03 Final UI / S03` thẻ Việc tiếp theo; `05 Components / Button`; `06 Prototype` Flow 3 |
+| AI output | `assets/stitch/screen_day.png` – Home có hai nút filled: xanh "Đánh dấu đã xong" và đất nung "Thêm việc mới" |
+| Critique | F1: hai điểm nhấn tranh nhau, người lớn tuổi không biết bấm nút nào trước |
+| Prompt / vòng | V2 – Nút lớn, phân cấp rõ |
+| Decision | Bỏ màu đất nung, `secondary` = `primary`; chỉ "Việc tiếp theo" có nút filled (D21) |
+| Figma | `03 Final UI / S03 Hôm nay`; `05 Components / Button`; `06 Prototype` – Flow chính 2 |

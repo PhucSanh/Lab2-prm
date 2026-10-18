@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=360, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>An Nhiên - Cài đặt hiển thị</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #E5E7EB;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 20px 0;
+      color: #202B25;
+    }
+
+    .phone-container {
+      width: 360px;
+      min-height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      overflow-x: hidden;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+      border-radius: 0px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Scrollable main content */
+    .screen-content {
+      padding: 20px 20px 40px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Top App Bar */
+    .app-bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 4px 12px 4px 0;
+      background: none;
+      border: none;
+      color: #1F684B;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back-icon {
+      width: 32px;
+      height: 32px;
+      stroke: #1F684B;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* Heading */
+    .page-heading {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #202B25;
+      text-align: left;
+    }
+
+    /* Card styling */
+    .setting-card {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #DFE5DF;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-header-icon {
+      width: 32px;
+      height: 32px;
+      stroke: #1F684B;
+      stroke-width: 2.2;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .card-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    /* Option Rows (Cỡ chữ) */
+    .options-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-row {
+      min-height: 72px;
+      border-radius: 16px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      transition: all 0.2s ease;
+    }
+
+    .option-row.selected {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+    }
+
+    .option-text-container {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .option-label {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #202B25;
+      white-space: normal;
+    }
+
+    .option-row.selected .option-label {
+      color: #174C37;
+    }
+
+    .selection-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .selection-badge svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2.5;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .selection-badge .status-text {
+      font-size: 20px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .option-row.selected .selection-badge {
+      color: #174C37;
+    }
+    .option-row.selected .selection-badge svg {
+      stroke: #174C37;
+    }
+
+    .option-row.unselected .selection-badge {
+      color: #526057;
+    }
+    .option-row.unselected .selection-badge svg {
+      stroke: #7B887F;
+    }
+
+    /* Preview box */
+    .preview-box {
+      background-color: #F6F7F2;
+      border-radius: 12px;
+      padding: 14px 16px;
+      border: 1px dashed #A0ACA3;
+    }
+
+    .preview-text {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #202B25;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    /* Switch Rows Card */
+    .switch-rows-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .switch-row {
+      min-height: 72px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 4px 0;
+      cursor: pointer;
+    }
+
+    .switch-row-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      flex: 1;
+      min-width: 160px;
+    }
+
+    .switch-icon-tile {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: #D6EADF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .switch-icon-tile svg {
+      width: 32px;
+      height: 32px;
+      stroke: #1F684B;
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .switch-text-col {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+      min-width: 160px;
+    }
+
+    .switch-label {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #202B25;
+      white-space: normal;
+    }
+
+    .switch-secondary {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: #526057;
+      white-space: normal;
+    }
+
+    /* Switch Component with Visible Text Label */
+    .switch-control {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      width: 64px;
+      min-width: 64px;
+    }
+
+    .switch-track {
+      width: 64px;
+      height: 48px;
+      border-radius: 999px;
+      padding: 4px;
+      position: relative;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .switch-track.on {
+      background-color: #1F684B;
+    }
+
+    .switch-track.off {
+      background-color: #7B887F;
+    }
+
+    .switch-thumb {
+      width: 40px;
+      height: 40px;
+      background-color: #FFFFFF;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .switch-track.on .switch-thumb {
+      transform: translateX(16px);
+    }
+
+    .switch-track.off .switch-thumb {
+      transform: translateX(0);
+    }
+
+    .switch-state-text {
+      font-size: 20px;
+      font-weight: 600;
+      white-space: nowrap;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .switch-state-text.on-text {
+      color: #1F684B;
+    }
+
+    .switch-state-text.off-text {
+      color: #526057;
+    }
+
+    .divider-line {
+      height: 1px;
+      background-color: #DFE5DF;
+      width: 100%;
+    }
+
+    /* Outlined Button */
+    .btn-outlined {
+      width: 100%;
+      min-height: 60px;
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      border-radius: 14px;
+      color: #1F684B;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      padding: 8px 16px;
+      text-align: center;
+    }
+
+    .btn-outlined svg {
+      width: 32px;
+      height: 32px;
+      stroke: #1F684B;
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* Link list rows */
+    .link-list-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .tappable-row {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      min-height: 72px;
+      padding: 12px 16px;
+      border: 1px solid #DFE5DF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .tappable-row-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .tappable-tile {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: #D6EADF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .tappable-tile svg {
+      width: 32px;
+      height: 32px;
+      stroke: #1F684B;
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .tappable-label {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #202B25;
+      white-space: normal;
+    }
+
+    .chevron-icon {
+      width: 32px;
+      height: 32px;
+      stroke: #526057;
+      stroke-width: 2.4;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="phone-container">
+<div class="screen-content">
+<!-- 1. App bar with Back button -->
+<div class="app-bar">
+<button aria-label="Quay lại Hôm nay" class="back-btn">
+<svg class="back-icon" viewbox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+<span>Hôm nay</span>
+</button>
+</div>
+<!-- 2. Screen Heading -->
+<h1 class="page-heading">Cài đặt hiển thị</h1>
+<!-- 3. Card Cỡ chữ -->
+<div class="setting-card">
+<div class="card-header">
+<svg class="card-header-icon" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<polyline points="4 7 4 4 20 4 20 7"></polyline>
+<line x1="9" x2="15" y1="20" y2="20"></line>
+<line x1="12" x2="12" y1="4" y2="20"></line>
+</svg>
+<h2 class="card-title">Cỡ chữ</h2>
+</div>
+<div class="options-group">
+<!-- Option: Vừa -->
+<div class="option-row unselected">
+<div class="option-text-container">
+<span class="option-label">Vừa</span>
+</div>
+<div class="selection-badge">
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+</svg>
+<span class="status-text">Chọn</span>
+</div>
+</div>
+<!-- Option: Lớn (SELECTED) -->
+<div class="option-row selected">
+<div class="option-text-container">
+<span class="option-label">Lớn</span>
+</div>
+<div class="selection-badge">
+<svg viewbox="0 0 24 24">
+<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+<polyline points="22 4 12 14.01 9 11.01"></polyline>
+</svg>
+<span class="status-text">Đã chọn</span>
+</div>
+</div>
+<!-- Option: Rất lớn -->
+<div class="option-row unselected">
+<div class="option-text-container">
+<span class="option-label">Rất lớn</span>
+</div>
+<div class="selection-badge">
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+</svg>
+<span class="status-text">Chọn</span>
+</div>
+</div>
+</div>
+<!-- Preview Box -->
+<div class="preview-box">
+<p class="preview-text">Xem thử: Đi bộ 20 phút lúc 9:30 sáng</p>
+</div>
+</div>
+<!-- 4. Card with 3 Switch Rows -->
+<div class="setting-card">
+<div class="switch-rows-container">
+<!-- Switch Row 1: Chữ và nền rõ hơn -->
+<div class="switch-row">
+<div class="switch-row-left">
+<div class="switch-icon-tile">
+<!-- contrast icon -->
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 2a10 10 0 0 1 0 20Z" fill="#1F684B"></path>
+</svg>
+</div>
+<div class="switch-text-col">
+<span class="switch-label">Chữ và nền rõ hơn</span>
+<span class="switch-secondary">Tăng độ tương phản</span>
+</div>
+</div>
+<div class="switch-control">
+<div class="switch-track off">
+<div class="switch-thumb"></div>
+</div>
+<span class="switch-state-text off-text">Đang tắt</span>
+</div>
+</div>
+<div class="divider-line"></div>
+<!-- Switch Row 2: Đọc to nội dung -->
+<div class="switch-row">
+<div class="switch-row-left">
+<div class="switch-icon-tile">
+<!-- volume-2 icon -->
+<svg viewbox="0 0 24 24">
+<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+<path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+<path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+</svg>
+</div>
+<div class="switch-text-col">
+<span class="switch-label">Đọc to nội dung</span>
+<span class="switch-secondary">Điện thoại đọc lời nhắc</span>
+</div>
+</div>
+<div class="switch-control">
+<div class="switch-track on">
+<div class="switch-thumb"></div>
+</div>
+<span class="switch-state-text on-text">Đang bật</span>
+</div>
+</div>
+<div class="divider-line"></div>
+<!-- Switch Row 3: Rung khi có lời nhắc -->
+<div class="switch-row">
+<div class="switch-row-left">
+<div class="switch-icon-tile">
+<!-- vibrate icon / smartphone-vibrate -->
+<svg viewbox="0 0 24 24">
+<path d="m2 8 2 2-2 2 2 2-2 2"></path>
+<path d="m22 8-2 2 2 2-2 2 2 2"></path>
+<rect height="14" rx="1" width="8" x="8" y="5"></rect>
+</svg>
+</div>
+<div class="switch-text-col">
+<span class="switch-label">Rung khi có lời nhắc</span>
+<span class="switch-secondary">Kèm tiếng chuông</span>
+</div>
+</div>
+<div class="switch-control">
+<div class="switch-track on">
+<div class="switch-thumb"></div>
+</div>
+<span class="switch-state-text on-text">Đang bật</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 5. Outlined button "Xem thử lời nhắc" -->
+<button class="btn-outlined">
+<!-- bell-ring icon -->
+<svg viewbox="0 0 24 24">
+<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+<path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+<path d="M4 2C2.8 3.7 2 5.7 2 8"></path>
+<path d="M22 8c0-2.3-.8-4.3-2-6"></path>
+</svg>
+<span>Xem thử lời nhắc</span>
+</button>
+<!-- 6. Four tappable rows -->
+<div class="link-list-group">
+<!-- Row 1: Cách dùng đơn giản (book-open) -->
+<div class="tappable-row">
+<div class="tappable-row-left">
+<div class="tappable-tile">
+<svg viewbox="0 0 24 24">
+<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+</svg>
+</div>
+<span class="tappable-label">Cách dùng đơn giản</span>
+</div>
+<svg class="chevron-icon" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<!-- Row 2: Thông tin của Bác (user-round) -->
+<div class="tappable-row">
+<div class="tappable-row-left">
+<div class="tappable-tile">
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="8" r="5"></circle>
+<path d="M20 21a8 8 0 0 0-16 0"></path>
+</svg>
+</div>
+<span class="tappable-label">Thông tin của Bác</span>
+</div>
+<svg class="chevron-icon" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<!-- Row 3: Lời nhắc (bell) -->
+<div class="tappable-row">
+<div class="tappable-row-left">
+<div class="tappable-tile">
+<svg viewbox="0 0 24 24">
+<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+<path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+</svg>
+</div>
+<span class="tappable-label">Lời nhắc</span>
+</div>
+<svg class="chevron-icon" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<!-- Row 4: Dữ liệu trên điện thoại (smartphone) -->
+<div class="tappable-row">
+<div class="tappable-row-left">
+<div class="tappable-tile">
+<svg viewbox="0 0 24 24">
+<rect height="20" rx="2" ry="2" width="14" x="5" y="2"></rect>
+<path d="M12 18h.01"></path>
+</svg>
+</div>
+<span class="tappable-label">Dữ liệu trên điện thoại</span>
+</div>
+<svg class="chevron-icon" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</body></html>

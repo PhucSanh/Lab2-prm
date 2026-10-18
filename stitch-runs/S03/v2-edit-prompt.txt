@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Bottom navigation: the four labels "Hôm nay", "Lịch tuần", "Thói quen", "Gia đình" overflow their tabs and touch each other. Set .bottom-nav height 104px, padding 0 6px, gap 8px, justify-content stretch.
+2. Set .nav-tab: flex 1 1 0; min-width 0; max-width 81px; padding 4px 0; icon 32px above the label, all centered.
+3. Set .nav-label: white-space normal; font-size 20px; line-height 1.15; margin-bottom 0; labels may wrap to 2 lines of equal style, nothing may overflow its tab or touch the 360px frame edge.
+4. Move the fixed "Đã xong" bar to bottom 104px (directly above the navigation) and set the scroll container padding-bottom to 224px.

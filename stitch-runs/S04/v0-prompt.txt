@@ -1,0 +1,25 @@
+Design ONE mobile screen: "Chi tiết việc" (Task detail) for the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp. All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube, forgets walking and meal times. Principles: Bác decides; no pressure; few words; many icons, every icon has a visible text label. One primary filled button per screen. No swiping, no long-press. This screen opens when Bác taps a task row on the "Hôm nay" screen.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), warning-container #FFF3DB (text #8A5100, icon #B26A00), outline #7B887F, border #DFE5DF. Screen side margin 20px, gap between blocks 16px. Cards radius 16, buttons radius 14, status chips fully rounded. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Body 24px, screen heading 30px bold, button text 22px bold, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…".
+- Every touch target >= 48x48px. Exactly ONE filled (dark green #1F684B) button on the screen: "Đã xong", height 60px, full width minus 20px margins, fixed at the bottom of the screen. All other buttons are outlined or text buttons, height >= 48px, separated by >= 8px.
+- Each sentence <= 15 words; each button label <= 5 words.
+- Every button with an icon also has a visible text label; no icon-only buttons.
+- Habit accent for this task: Vận động tự nhiên #2BA15C (use exactly; only on small areas: 48x48 radius-12 icon tile with white 28px walking icon, and a 6px accent bar). Text always on white.
+- Status shown as icon + text: "○ Chưa làm" = pill with #FFF3DB background, circle icon #B26A00, text #8A5100, height 40px.
+- No progress percentages, no ranking, no streak, no countdown, no three-dot menu, no carousel, no health claims.
+
+LAYOUT (top to bottom, no bottom navigation bar on this screen):
+1. App bar: text button "‹ Quay lại" (green #1F684B, 22px bold, 48px high) at left, plus screen title "Chi tiết việc" (30px bold) below it.
+2. Main card (white, radius 16, padding 20, 6px left accent bar #2BA15C): 48x48 green icon tile with walking icon; task name "Đi bộ quanh công viên" (24px bold); line "9:30 sáng · 20 phút" (24px) with a clock icon; line "Vận động tự nhiên" (20px, #526057); status pill "○ Chưa làm" next to it.
+3. Voice button, outlined (border #7B887F, white), 60px high, full width, speaker icon + label "Đọc to".
+4. Two outlined secondary buttons stacked vertically, each 60px high, full width, 12px gap, each with icon + label: clock icon "Dời 30 phút nữa"; skip icon "Hôm nay bỏ qua". Below them a text button with pencil icon "Sửa việc" (48px high).
+5. Fixed footer with the ONLY filled primary button "Đã xong" with check icon, 60px high, bottom of screen with 20px margin. Tapping it asks for confirmation later (not shown).
+Content is left aligned; keep screen simple and uncluttered.
+
+TEXT STYLE: Use words "việc", "lời nhắc", "Đã xong", "Chưa làm", "Dời", "Hôm nay bỏ qua". Never use: task, notification, today, done, skip, nhiệm vụ, mục tiêu, thử thách, chưa hoàn thành, người dùng.

@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Change the border of the unselected font-size option cards "Vừa" and "Rất lớn" from #A0ACA3 to #526057, keeping 2px width.
+2. Change the stroke of the empty radio circles in the unselected option cards to #526057, keeping 2px width.
+3. Enlarge the eye icon next to the "Xem thử" tag from 24x24px to 32x32px.
+4. Enlarge the letter-T icon next to the "Cỡ chữ" section title from 28x28px to 32x32px.

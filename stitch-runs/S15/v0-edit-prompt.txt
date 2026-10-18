@@ -1,0 +1,2 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. App bar: change padding to 8px 20px so the "Quay lại" button and its chevron-left icon start exactly at x=20, aligned with the habit card and the fields; keep the button height 48px, remove any extra 16px inner padding on the back button.

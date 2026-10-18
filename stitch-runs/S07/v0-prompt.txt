@@ -1,0 +1,29 @@
+Design ONE mobile screen: "Lịch tuần" (Weekly calendar, tab 2 of the bottom navigation) for the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp, portrait mobile. All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube. Principles: Bác decides; no pressure; few words; many icons, every icon has a visible text label. This screen has ONE job: glance at the 7 days of this week and see which days are done and which are coming, then TAP a day to open it. No swiping, no long-press, no carousel, no chart, no month grid. List content is LEFT aligned.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), warning-container #FFF3DB (text #8A5100, icon #B26A00), outline #7B887F, border #DFE5DF. Screen side margin 20px, gap between blocks 16px (gap between day rows 8px). Cards radius 16. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Body 24px, screen heading 30px bold, day name 24px bold, secondary text 20px, bottom nav labels 20px, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…". Day names written in full ("Thứ Hai"), never "T2".
+- Every touch target >= 48x48px. This screen has NO filled button at all (no primary action); each day row is one tappable white card, whole row tappable, a chevron-right icon on the right shows it opens.
+- Each sentence <= 15 words; each label <= 5 words; tab labels <= 3 words. No paragraphs.
+- Every icon has a visible text label next to it. No icon-only buttons. Icons >= 32px.
+- Progress is written as text ("Đã xong 6/6 việc"), never percentages, no progress ring, no ranking, no streak, no score, no countdown, no three-dot menu, no pressure wording ("bỏ lỡ", "chưa hoàn thành", "mục tiêu").
+- Habit accent colors (use exactly, only as small 12px dots): Vận động tự nhiên #2BA15C, Sống có mục đích #768ADB, Thư giãn mỗi ngày #AC76DB, Ăn vừa đủ #B98331, Ăn nhiều rau, đậu #609D2A, Trà chiều cùng bạn #D0754E, Gắn kết cộng đồng #309BB5, Gia đình trên hết #D86E75, Bạn bè tích cực #D666AD. Accent colors only on small areas; text always on white.
+
+LAYOUT (top to bottom):
+1. Heading "Lịch tuần" (30px bold, left aligned) with a calendar icon (32px) beside it. Below it one line "Tuần này · 5/10 – 11/10" (20px, #526057).
+2. Seven day rows (white card radius 16, padding 16, height 68px; TODAY row height 76px with a 2px #1F684B border and a small chip "Hôm nay" 20px bold, #174C37 on #D6EADF). Each row: day name + date on the left ("Thứ Hai" 24px bold, "5/10" 20px #526057), then a status label with icon + text, then up to 3 small 12px habit-color dots (the habits of that day), then chevron-right at the right edge.
+ - Thứ Hai 5/10 · check-circle icon + "Đã xong 6/6 việc" (past, green text #1F684B).
+ - Thứ Ba 6/10 · check-circle icon + "Đã xong 5/6 việc" (past).
+ - Thứ Tư 7/10 · check-circle icon + "Đã xong 6/6 việc" (past).
+ - Thứ Năm 8/10 · TODAY · clock/bell icon + "Đã xong 3/6 việc".
+ - Thứ Sáu 9/10 · empty-circle icon + "6 việc, chưa làm" on #FFF3DB pill (text #8A5100).
+ - Thứ Bảy 10/10 · empty-circle icon + "4 việc, chưa làm" on #FFF3DB pill.
+ - Chủ nhật 11/10 · calendar-off icon + "Chưa có việc" (#526057).
+3. Bottom navigation bar fixed at the bottom, 80px high, white, 4 tabs each with icon + label (20px): "Hôm nay" (sun/home icon), "Lịch tuần" (calendar icon, ACTIVE: #D6EADF pill, bold, #1F684B), "Thói quen" (leaf icon), "Gia đình" (people icon).
+Seven rows must fit between the header and the bottom nav; if they do not, the list may scroll vertically but never horizontally.
+
+TEXT STYLE: Use words "việc", "Đã xong", "chưa làm", "Hôm nay", "Lịch tuần". Never use: task, schedule, calendar, today, week, done, T2, T3, nhiệm vụ, mục tiêu, thử thách, người dùng, hệ thống, điểm, xếp hạng.

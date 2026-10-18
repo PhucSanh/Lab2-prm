@@ -1,0 +1,37 @@
+Design ONE mobile screen: "Chi tiết thói quen" (Habit detail) for the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp, portrait mobile. Top app bar with a text Back button; ONE fixed footer with the primary button; NO bottom navigation (child screen of the habits tab). All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube. Principles: Bác decides; no pressure; few words; many icons, every icon has a visible text label. One primary filled button per screen. No swiping, no long-press. This screen has ONE job: Bác understands one habit (Vận động tự nhiên, habit 1 of 9) in plain words, sees how this week went, and can add a task for it.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), warning-container #FFF3DB (text #8A5100, icon #B26A00), outline #7B887F, border #DFE5DF. Screen side margin 20px, gap between blocks 16px. Cards radius 16, buttons radius 14. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Screen title 30px bold, card title 24px bold, body 24px, button text 22px bold, secondary text and status chip text 20px, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…". The content may scroll vertically; the footer stays fixed.
+- Every touch target >= 48x48px. Exactly ONE filled (dark green #1F684B) button: "Thêm việc" with a plus icon, height 60px, full width minus 20px margins, fixed at the bottom with 20px bottom padding. The "Đọc to" button is OUTLINED (white, 2px #7B887F border, height 60px).
+- Each sentence <= 15 words; each button label <= 5 words. No paragraphs. Each task card has at most ONE secondary line.
+- Every icon has a visible text label next to it. No icon-only buttons. Icons >= 32px (icons inside the status chip >= 24px because the chip has text).
+- Habit accent for this screen: Vận động tự nhiên #2BA15C, used only on the 64x64 radius-12 icon tile (white outline footprints icon 40px, stroke 2.5), the 48x48 tile in the task card, and a 6px left accent bar on the task card; text always on white.
+- Status is never color only: every day cell and the task chip has icon + text.
+- No ranking, no streak, no percentage, no pressure wording ("chưa làm lần nào" is allowed only as a neutral fact), no health claims, no three-dot menu, no swipe.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+- chevron-left = back, always with the text "Thói quen"
+- footprints = habit Vận động tự nhiên (only this habit)
+- volume-2 = Đọc to
+- circle-check = day done (only for "đã làm")
+- circle-minus = day skipped
+- circle = not yet done (upcoming day, and the "Chưa làm" chip)
+- chevron-right = open task detail (end of the task card)
+- plus = Thêm việc (footer button)
+
+LAYOUT (top to bottom, left aligned):
+1. App bar: text button with chevron-left icon and "Thói quen" (22px bold, #1F684B, height 48), left padding exactly 20px.
+2. Header row: 64x64 #2BA15C tile with white footprints icon 40px; next to it "Thói quen 1 / 9" (20px, #526057) above "Vận động tự nhiên" (30px bold).
+3. Intro line (24px): "Đi bộ, làm vườn, tự làm việc nhà". Under it an outlined button "Đọc to" with volume-2 icon (60px high, full width).
+4. Week card (white, radius 16, padding 16, border #DFE5DF): title "Tuần này Bác đã làm 3 lần" (24px bold). Under it a row of 7 equal day cells (each >= 40px wide and >= 72px high): day name 20px ("Hai", "Ba", "Tư", "Nay", "Sáu", "Bảy", "CN") above a 32px icon. Below the row, a one-line legend: circle-check icon + "Đã làm", circle-minus icon + "Bỏ qua", circle icon + "Chưa tới" (icons 32px, words 20px). Day states: Hai circle-check, Ba circle-check, Tư circle-minus, Nay circle-check with a 2px #1F684B border on the cell, Sáu circle, Bảy circle, CN shows a dash "–" (no task that day).
+5. Section label "Việc của Bác" (24px bold), then ONE task card (white, radius 16, 6px #2BA15C left bar, border #DFE5DF, min height 88): 48x48 #2BA15C tile with white footprints icon 32px, "9:30 sáng" (20px bold, #526057), task name "Đi bộ quanh công viên" (24px bold), secondary line "Mỗi ngày" (20px, #526057), chip "Chưa làm" (circle icon 24px #B26A00, text #8A5100 on #FFF3DB, pill height 40), chevron-right (32px).
+6. Fixed footer: filled button "Thêm việc" with plus icon (60px).
+
+TEXT STYLE: Use words "việc", "thói quen", "Đọc to", "Thêm việc", "Chưa làm". Never use: task, habit, today, done, skip, OK, cancel, notification, reminder, Power 9, Move Naturally, thông báo, nhiệm vụ, mục tiêu, thử thách, chưa hoàn thành, người dùng.

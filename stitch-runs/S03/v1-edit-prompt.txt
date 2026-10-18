@@ -1,0 +1,7 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. The filled button "Đã xong" (check icon, 60px high, radius 14, background #1F684B, white text 22px bold) is currently hidden behind the bottom navigation. Put it in a container with CSS: position fixed; bottom 96px; left 50%; transform translateX(-50%); width 100%; max-width 360px; padding 12px 20px; background #F6F7F2; border-top 1px solid #DFE5DF; z-index 99. The button must be visible, 320px wide, directly above the bottom navigation.
+2. Raise the bottom navigation height to 96px and keep its four labels "Hôm nay", "Lịch tuần", "Thói quen", "Gia đình" on ONE line (20px, white-space nowrap), with at least 8px space below the labels.
+3. Increase padding-bottom of the scrolling area to 216px so the last task card is never covered.
+4. Status chip "○ Chưa làm" (3 rows): replace the current 1px #FFE4B3 border with border: 2px solid #B26A00 written directly in the .status-chip.pending CSS rule; keep background #FFF3DB, text #8A5100, circle icon #B26A00, height 40px. The color #FFE4B3 must not appear anywhere.
+5. Set gap between all main blocks to exactly 16px in the scroll container CSS; set margin 0 on the "Việc hôm nay" title.
+6. In the "Việc tiếp theo" card change background from #D6EADF to #FFFFFF with a 2px solid #1F684B border, so the green 48x48 icon tile has at least 3:1 contrast.

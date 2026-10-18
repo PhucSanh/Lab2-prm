@@ -1,0 +1,35 @@
+Design ONE mobile screen: "Nhắn tin cho người thân" (Message a family member) for the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp, portrait mobile. Top app bar with a text Back button; ONE fixed footer with the primary button; NO bottom navigation (child screen of the Gia đình tab). All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube. Principles: Bác decides; nothing is sent unless Bác chooses it; the app only opens Zalo or SMS with a ready-made message and never says "đã gửi"; no pressure; few words; many icons, every icon has a visible text label. One primary filled button per screen. No typing, no swiping, no long-press. This screen has ONE job: Bác picks what to tell her daughter Mai (a ready-made message), sees exactly what Mai will read, picks Zalo or SMS, and continues.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), outline #7B887F, border #DFE5DF. Screen side margin 20px, gap between blocks 16px. Cards radius 16, buttons radius 14. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Screen title 30px bold, section labels 24px bold, option labels 24px bold, message text 24px, button text 22px bold, secondary text 20px, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…". The content may scroll vertically; the footer stays fixed.
+- Every touch target >= 48x48px. Exactly ONE filled (dark green #1F684B) button: "Tiếp tục gửi cho Mai" with an arrow-right icon, height 60px, full width minus 20px margins, fixed at the bottom with 20px bottom padding. Everything else is not a filled button.
+- Each sentence <= 15 words; each button label <= 5 words. No paragraphs.
+- Every icon has a visible text label next to it. No icon-only buttons. Icons >= 32px.
+- Choices are full-width option rows, each 60px high, 320px wide, 12px gap, white, 2px #7B887F border, radius 16: icon (32px) + label (24px bold). The selected row has a 2px #1F684B border, #D6EADF background, the circle-dot icon and the text "Đang chọn" (20px bold, #174C37) at the right; unselected rows have the circle icon in #7B887F. Selection is never color only.
+- No ranking, no streak, no pressure wording, no health claims, no three-dot menu, no swipe, never the words "Đã gửi".
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+- chevron-left = back, always with the text "Gia đình"
+- message-square = Nhắn tin (next to the screen title)
+- circle-dot = option selected
+- circle = option not selected
+- info = note line
+- arrow-right = Tiếp tục (footer button)
+
+LAYOUT (top to bottom, left aligned):
+1. App bar: text button with chevron-left icon and "Gia đình" (22px bold, #1F684B, height 48), left padding exactly 20px.
+2. Title row: message-square icon (32px) + "Nhắn tin cho Mai" (30px bold).
+3. Section label "Bác muốn kể điều gì?" (24px bold), then 3 option rows: "Hỏi thăm con" (selected, circle-dot, "Đang chọn"), "Kể việc đi bộ" (circle), "Kể việc chăm cây" (circle).
+4. Section label "Mai sẽ thấy" (24px bold), then a white card (radius 16, padding 16, border #DFE5DF) with the ready-made message (24px): "Mẹ nhớ con. Hôm nay mẹ khỏe, con nhé!".
+5. Section label "Gửi bằng" (24px bold), then 2 option rows: "Zalo" (selected, circle-dot, "Đang chọn") and "Tin nhắn SMS" (circle).
+6. Note line (20px, #526057) with info icon: "An Nhiên chỉ mở Zalo. Bác bấm gửi ở đó."
+7. Fixed footer: filled button "Tiếp tục gửi cho Mai" with arrow-right icon (60px).
+
+TEXT STYLE: Use words "Nhắn tin", "Gửi bằng", "Zalo", "Tiếp tục gửi cho Mai". Never use: message, send, share, chat, OK, cancel, notification, caregiver, Đã gửi, thông báo, người chăm sóc, nhiệm vụ, mục tiêu, người dùng.

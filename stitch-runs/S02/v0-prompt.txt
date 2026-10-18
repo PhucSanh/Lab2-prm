@@ -1,0 +1,26 @@
+Design ONE mobile screen: "Thiết lập hồ sơ (Bước 1/2)" (Profile setup, step 1 of 2), the second onboarding screen of the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp, portrait mobile. All UI text in Vietnamese WITH diacritics. No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube. Principles: Bác decides; no pressure; few words; many icons, every icon has a visible text label. One primary filled button per screen. No swiping, no long-press, no carousel, no tutorial pages. This screen has ONE job: tell the app how to address the user and when they wake up (name, Ông/Bà form of address, wake-up time). Avoid the virtual keyboard where possible: choose from buttons and a tappable time box; only the name is typed. Form content is LEFT aligned in one column.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), outline #7B887F, border #DFE5DF, error #B42318, error-container #FDECE9 (text #912018). Screen side margin 20px, gap between blocks 16px. Cards radius 16, input radius 12, buttons radius 14. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Body 24px, screen heading 30px bold, field labels 24px semibold, button text 22px bold, helper text 20px, line-height 1.5 for body.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…".
+- Every touch target >= 48x48px. Exactly ONE filled (dark green #1F684B) button: "Tiếp tục", height 60px, full width minus 20px margins, fixed at the bottom of the screen with an arrow-right icon plus the text. No other filled button.
+- Back button at top-left: chevron-left icon plus visible text "Quay lại" (22px, #1F684B, touch area 48px high). Never an arrow alone.
+- Each sentence <= 15 words; each button label <= 5 words. No paragraphs.
+- Every field and every option has an icon (>= 32px) and a visible text label. No icon-only buttons. No three-dot menu. No bottom navigation (onboarding).
+- Selection state is never color only: the chosen option has a 2px #1F684B border, background #D6EADF, a check-circle icon and bold text; unchosen options are white with a 2px #526057 border and an empty-circle icon.
+- Input borders 2px #7B887F (>= 3:1 on white).
+
+LAYOUT (top to bottom):
+1. App bar: "Quay lại" back button (left). Beside or under it a step indicator as text with an icon: "Bước 1/2" (20px, #526057) — text only, no progress percentage.
+2. Heading "Giới thiệu về Bác" (30px bold) with a one-line sub text "An Nhiên gọi Bác cho đúng nhé." (24px, #526057).
+3. Field 1 label row: user icon (32px) + "Tên Bác" (24px semibold). Below it a text field, 60px high, white, radius 12, 2px #7B887F border, value empty with placeholder-free state; helper text under it with a pencil icon: "Ví dụ: Lan" (20px, #526057).
+4. Field 2 label row: heart/people icon (32px) + "An Nhiên gọi Bác là" (24px semibold). Below it THREE equal option buttons in one row, each 60px high, gap 8px: "Bác" (selected by default, with check-circle icon), "Ông", "Bà" (empty-circle icon). Each is tappable >= 48x48.
+5. Field 3 label row: sun/alarm icon (32px) + "Bác thức dậy lúc" (24px semibold). Below it ONE tappable time box, 60px high, white, 2px #7B887F border, radius 12: clock icon + "6 : 00 sáng" (24px) + chevron-down icon; tapping opens a time picker (no typing needed). Helper text with a bell icon: "Để nhắc việc đúng giờ cho Bác." (20px, #526057).
+6. Error state shown inline under the name field (not a popup), displayed in this design as a small hint card: error-container #FDECE9 background, alert-circle icon in #B42318 plus text "Bác chưa nhập tên." and "Ví dụ: Lan" (20px, #912018). Keep the name field itself EMPTY in this version so the hint is visible; border of the name field stays 2px #B42318 together with the icon, not color alone.
+7. Fixed footer: filled button "Tiếp tục" (60px high, arrow-right icon). Bottom safe padding 20px.
+
+TEXT STYLE: Use words "tên", "Bác", "Ông", "Bà", "thức dậy", "nhắc việc", "Tiếp tục", "Quay lại". Never use: profile, name, account, login, next, OK, cancel, người dùng, tài khoản, đăng nhập, hệ thống, nhiệm vụ, mục tiêu, thử thách.

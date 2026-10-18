@@ -1,0 +1,38 @@
+Design ONE mobile screen: "Thêm người thân" (Add a family member) for the Android app "An Nhiên", a daily routine calendar based on the 9 Power 9 healthy habits for Vietnamese seniors 60+. Frame 360x800 dp, portrait mobile. Top app bar with a text Back button; ONE fixed footer with the primary button; NO bottom navigation (child screen of the Gia đình tab). All UI text in Vietnamese WITH diacritics, addressing the user as "Bác". No English text anywhere.
+
+CONTEXT: User is Bà Lan, 68, far-sighted, slightly shaky fingers, only used to Zalo/YouTube. Principles: Bác decides; family only suggests; nothing is sent to anyone unless Bác chooses; no pressure; few words; many icons, every icon has a visible text label. One primary filled button per screen. No swiping, no long-press, little typing: choosing from the phone contacts is the fastest way. This screen has ONE job: Bác saves one family member (name, relation, phone number) so she can call them quickly. The form is shown filled in for a person named Mai, Bác's daughter.
+
+VISUAL TOKENS: Font Be Vietnam Pro. Background #F6F7F2, cards/fields #FFFFFF, main text #202B25, secondary text #526057, primary #1F684B (text on it #FFFFFF), primary-container #D6EADF (text #174C37), outline #7B887F, border #DFE5DF. Screen side margin 20px, gap between blocks 16px. Fields radius 12, option cards radius 16, buttons radius 14. NO gradients, no dark mode, no neon, no glassmorphism, no text on photos.
+
+HARD CONSTRAINTS (measurable):
+- Every text >= 20px. Screen title 30px bold, field labels 24px bold, field values 24px, button text 22px bold, hint text 20px, line-height 1.5.
+- Text contrast >= 4.5:1. Nothing overflows horizontally at 360px; no truncated text with "…". The form may scroll vertically; the footer stays fixed.
+- Every touch target >= 48x48px. Exactly ONE filled (dark green #1F684B) button: "Lưu người thân" with a save icon, height 60px, full width minus 20px margins, fixed at the bottom with 20px bottom padding. The contacts button is OUTLINED (white, 2px #7B887F border, height 60px).
+- Each sentence <= 15 words; each button label <= 5 words. No paragraphs. At most one hint line under a field.
+- Every icon has a visible text label next to it. No icon-only buttons. Icons >= 32px.
+- Text fields: height 60px, white, 2px #7B887F border, radius 12, the label sits ABOVE the field (never a placeholder in place of a label).
+- Relation choices are 4 tappable option cards in a 2x2 grid (gap 12px, each card at least 56px high, white, 2px #7B887F border, radius 16). The selected card has a 2px #1F684B border, #D6EADF background and the circle-dot icon; unselected cards have the circle icon in #7B887F. Selection is never color only: icon + border change.
+- No ranking, no streak, no pressure wording, no health claims, no three-dot menu, no swipe.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+- chevron-left = back, always with the text "Gia đình"
+- user-plus = Thêm người thân (next to the screen title)
+- contact = Chọn từ danh bạ (contacts button)
+- info = hint line
+- circle-dot = relation option selected
+- circle = relation option not selected
+- save = Lưu (footer button)
+
+LAYOUT (top to bottom, left aligned form):
+1. App bar: text button with chevron-left icon and "Gia đình" (22px bold, #1F684B, height 48), left padding exactly 20px.
+2. Title row: user-plus icon (32px) + "Thêm người thân" (30px bold).
+3. Outlined button "Chọn từ danh bạ" with contact icon (full width, 60px high), then a centered line "hoặc tự nhập" (20px, #526057).
+4. Field "Tên gọi": label above, 60px field with value "Mai". Under it a hint line with info icon: "Ví dụ: Mai, Hùng" (20px, #526057).
+5. Label "Là gì của Bác?" (24px bold), then the 2x2 option cards: "Con" (selected, circle-dot), "Cháu" (circle), "Bạn bè" (circle), "Khác" (circle).
+6. Field "Số điện thoại": label above, 60px field with value "0912 345 678". Under it a hint line with info icon: "Ví dụ: 0912 345 678".
+7. Info line (20px, #526057) with info icon: "Chỉ gửi tin khi Bác chọn gửi."
+8. Fixed footer: filled button "Lưu người thân" with save icon (60px).
+
+TEXT STYLE: Use words "người thân", "Tên gọi", "Số điện thoại", "Lưu người thân". Never use: contact, family, save, add, phone number, OK, cancel, notification, caregiver, thông báo, người chăm sóc, nhiệm vụ, mục tiêu, người dùng.

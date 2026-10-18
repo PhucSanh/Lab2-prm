@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An Nhiên - Cho phép nhắc việc (Bước 2/2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #F6F7F2;
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #202B25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  /* 360 x 800 dp mobile frame */
+  .mobile-frame {
+    width: 360px;
+    height: 800px;
+    background-color: #F6F7F2;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Header App Bar */
+  .app-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px 8px 20px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: #1F684B;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 6px 8px 6px 0;
+    min-height: 48px;
+    min-width: 48px;
+    text-decoration: none;
+  }
+
+  .back-btn svg {
+    width: 24px;
+    height: 24px;
+    stroke: #1F684B;
+    stroke-width: 2.8;
+  }
+
+  .step-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #526057;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .step-indicator svg {
+    width: 24px;
+    height: 24px;
+    stroke: #526057;
+    stroke-width: 2.2;
+  }
+
+  /* Main Scrollable Content */
+  .content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 20px 160px 20px; /* ample padding for 2 fixed buttons */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Center hero block */
+  .hero-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 6px 0 2px 0;
+  }
+
+  .bell-circle {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background-color: #D6EADF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .bell-circle svg {
+    width: 64px;
+    height: 64px;
+    stroke: #174C37;
+    stroke-width: 2.2;
+    fill: none;
+  }
+
+  .screen-title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #202B25;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .hero-subtext {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #526057;
+    text-align: center;
+  }
+
+  /* Example Reminder Card */
+  .preview-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    border: 1px solid #DFE5DF;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .preview-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #526057;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .preview-header svg {
+    width: 24px;
+    height: 24px;
+    stroke: #526057;
+    stroke-width: 2.2;
+    flex-shrink: 0;
+  }
+
+  .preview-task-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #F6F7F2;
+    border-radius: 12px;
+    padding: 12px 14px;
+    position: relative;
+    border-left: 6px solid #2BA15C;
+  }
+
+  .task-tile {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 12px;
+    background-color: #2BA15C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .task-tile svg {
+    width: 32px;
+    height: 32px;
+    stroke: #FFFFFF;
+    stroke-width: 2.4;
+    fill: none;
+  }
+
+  .task-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .task-name {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #202B25;
+  }
+
+  .task-time {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #1F684B;
+  }
+
+  /* Hint Card */
+  .hint-card {
+    background-color: #FFF3DB;
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    border: 1px solid #FFE4B3;
+  }
+
+  .hint-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .hint-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: #B26A00;
+    stroke-width: 2.3;
+    fill: none;
+  }
+
+  .hint-text {
+    font-size: 24px;
+    line-height: 1.5;
+    color: #8A5100;
+    font-weight: 500;
+  }
+
+  .hint-text strong {
+    font-weight: 700;
+    color: #8A5100;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  /* Fixed Footer */
+  .footer-actions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 20px 20px 20px;
+    background: linear-gradient(to top, #F6F7F2 85%, rgba(246, 247, 242, 0.9) 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 10;
+    border-top: 1px solid #DFE5DF;
+  }
+
+  .btn {
+    width: 100%;
+    height: 60px;
+    min-height: 60px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  /* Outlined button "Để sau" */
+  .btn-outline {
+    background-color: #FFFFFF;
+    color: #526057;
+    border: 2px solid #7B887F;
+  }
+
+  .btn-outline svg {
+    width: 32px;
+    height: 32px;
+    stroke: #526057;
+    stroke-width: 2.4;
+    fill: none;
+  }
+
+  /* Exactly ONE primary filled button "Bật nhắc việc" */
+  .btn-primary {
+    background-color: #1F684B;
+    color: #FFFFFF;
+    border: none;
+  }
+
+  .btn-primary svg {
+    width: 32px;
+    height: 32px;
+    stroke: #FFFFFF;
+    stroke-width: 2.4;
+    fill: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="mobile-frame">
+  <!-- 1. App Bar -->
+  <header class="app-bar">
+    <button class="back-btn" aria-label="Quay lại">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+      <span>Quay lại</span>
+    </button>
+    <div class="step-indicator">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+      <span>Bước 2/2</span>
+    </div>
+  </header>
+
+  <!-- Main Scrollable Content -->
+  <main class="content">
+    <!-- 2. Center Hero Block -->
+    <section class="hero-block">
+      <div class="bell-circle" aria-hidden="true">
+        <!-- 64px bell icon -->
+        <svg viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+        </svg>
+      </div>
+      <h1 class="screen-title">Cho phép nhắc việc</h1>
+      <p class="hero-subtext">Để đến giờ điện thoại đổ chuông nhắc Bác.</p>
+    </section>
+
+    <!-- 3. Example Reminder Card -->
+    <section class="preview-card">
+      <div class="preview-header">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+        </svg>
+        <span>Lời nhắc sẽ như thế này</span>
+      </div>
+      <div class="preview-task-row">
+        <div class="task-tile" aria-hidden="true">
+          <!-- Walking icon -->
+          <svg viewBox="0 0 24 24">
+            <circle cx="13.5" cy="4.5" r="2.5" fill="currentColor" stroke="none" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 8.5l-2.5 4-2.5-1.5M10.5 12.5l2 3.5 3-1.5M12.5 16l-1 5" />
+          </svg>
+        </div>
+        <div class="task-info">
+          <div class="task-name">Đến giờ đi bộ rồi Bác ơi</div>
+          <div class="task-time">9:30 sáng</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Hint Card -->
+    <section class="hint-card">
+      <div class="hint-icon" aria-hidden="true">
+        <!-- Phone icon -->
+        <svg viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+      </div>
+      <div class="hint-text">
+        Điện thoại sẽ hỏi lại, Bác chọn <strong>Cho phép</strong>.
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. Fixed Footer -->
+  <footer class="footer-actions">
+    <!-- Outlined button directly above filled button -->
+    <button class="btn btn-outline" type="button">
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 3" />
+      </svg>
+      <span>Để sau</span>
+    </button>
+
+    <!-- Exactly ONE filled dark green button -->
+    <button class="btn btn-primary" type="button">
+      <svg viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+      </svg>
+      <span>Bật nhắc việc</span>
+    </button>
+  </footer>
+</div>
+
+</body>
+</html>
