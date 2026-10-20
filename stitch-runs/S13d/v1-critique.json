@@ -1,0 +1,21 @@
+{
+  "screen": "S13d Nhắc việc đang tắt",
+  "round": 1,
+  "score": 97,
+  "errors": 0,
+  "warns": 1,
+  "note": "Critic không ghi được file; orchestrator ghi lại kết quả. Chấm theo v1.html đã vá cục bộ, v1.png là ảnh cũ.",
+  "fixed": ["R-ICON-03"],
+  "regressions": [],
+  "results": [
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "status": "fail",
+      "where": "Icon bell-off 64px trong vòng tròn 112px",
+      "evidence": "CSS '.bell-circle svg { stroke: #174C37; }' đè stroke #B26A00 trên thẻ svg",
+      "fix": "Đổi luật CSS thành stroke: #B26A00; giữ nền #FFF3DB, icon 64px, nét 2.2"
+    }
+  ],
+  "summary": "0 error, 1 warn (R-STY-01). Các luật khác pass hoặc n/a."
+}

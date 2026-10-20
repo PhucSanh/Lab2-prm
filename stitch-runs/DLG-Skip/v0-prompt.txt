@@ -1,0 +1,24 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: dialog "DLG-Skip" (skip a task for today, with an optional reason). The scrim and the centered white dialog card (320px wide, radius 24px, padding 24px, all content centered) stay as they are.
+1. Header circle: keep the 80x80px circle filled #D6EADF, but replace its icon with a Lucide `skip-forward` icon 64px, stroke 2.5, color #1F684B.
+2. Question (replaces "Bác đã đi bộ xong rồi chứ?"): "Bỏ qua đi bộ hôm nay?" Be Vietnam Pro 26px bold (700), #202B25, centered, line-height 1.4, 16px below the circle (may wrap to 2 lines).
+3. Detail text (replaces the two-row block), 12px below the question, centered, 24px regular (400), #526057, at most 2 lines: "Ngày mai An Nhiên vẫn nhắc như thường. Vì sao Bác bỏ qua? Không chọn cũng được." Remove the footprints tile and the clock row.
+4. 24px below, four outline buttons stacked vertically, 12px gap, each 272px x 60px, radius 14px, white background, 2px border #7B887F, label 22px bold #1F684B, a Lucide icon 32px #1F684B on the left of the label (icon and label left-aligned together, centered as a group):
+   - "Trời mưa" with `cloud-rain`
+   - "Thấy mệt" with `bed`
+   - "Bận việc nhà" with `washing-machine`
+   - "Lý do khác" with `circle-help`
+   None of the four is filled.
+5. 12px below the last button: a text button (no fill, no border) 272px x 60px, label "Không bỏ qua nữa" 22px bold #1F684B, with a Lucide `x` icon 32px #1F684B on the left of the label.
+6. Remove the old buttons "Đúng, đã xong" and "Chưa, để sau". No filled button anywhere, no close "X" in the corner, no countdown, no text field, no extra text.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+skip-forward = skip today (header circle only)
+cloud-rain = reason: rainy weather (only for "Trời mưa")
+bed = reason: feeling tired (only for "Thấy mệt")
+washing-machine = reason: busy with housework (only for "Bận việc nhà")
+circle-help = reason: other (only for "Lý do khác")
+x = do not change, close the dialog (only for "Không bỏ qua nữa")
+
+CONSTRAINTS (rule.md, error level): R-TXT-01 every text at least 20px; R-TXT-03 sentences at most 15 words, button labels at most 5 words, paragraph at most 2 lines; R-CON-01 contrast at least 4.5:1; R-LAY-01 nothing clipped or overflowing at 360px; R-ICON-01/02 every button has an icon and visible text; R-TAP-01/02 buttons 60px high, full dialog width; R-ONE-01 at most one filled button (here zero); R-GES-01 tap-only; R-LANG-01 100% Vietnamese with diacritics; R-LANG-03 no pressure or blaming words; R-CEN-01 dialog content centered. Do NOT generate: swipe, long-press, text input, three-dot menu, English text, gradient.

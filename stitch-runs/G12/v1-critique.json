@@ -1,0 +1,21 @@
+{
+  "screen": "G12 Hôm nay · thẻ gợi ý của Mai",
+  "round": 1,
+  "rescored": "luật mới",
+  "score": 97,
+  "errors": 0,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "status": "fail",
+      "where": "Ô icon thẻ 'Ăn sáng chậm rãi' (7:30 sáng, nền #B98331)",
+      "evidence": "SVG nĩa tự vẽ chồng lên dao, có vạch đứng thừa ở x=7; không khớp Lucide utensils",
+      "fix": "Thay icon ô 'Ăn sáng chậm rãi' bằng đúng Lucide utensils 32px, nét trắng #FFFFFF stroke-width 2.5, trên ô 48x48 bo 12 nền #B98331; giữ nguyên các icon khác"
+    }
+  ],
+  "fixed": ["R-ONE-02"],
+  "regressions": [],
+  "note": "Các luật còn lại pass hoặc n/a (R-NAV-02, R-SAFE-02, R-VOI-01). Orchestrator ghi file vì critic không ghi được."
+}

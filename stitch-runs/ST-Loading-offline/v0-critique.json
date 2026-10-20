@@ -1,0 +1,16 @@
+{
+  "screen": "ST-Loading-offline Đang lưu khi không có mạng",
+  "round": 0,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "results": "18 luật pass, 19 luật n/a (màn không có nút, bottom nav, thẻ việc, chip trạng thái việc, giọng đọc, vùng chạm)",
+  "measurements": {
+    "text": "30 / 24 / 22 px",
+    "contrast": "#526057 trên #F6F7F2 ≈ 6,2:1; trên #FFFFFF ≈ 6,6:1; loader-circle #1F684B trên #D6EADF ≈ 5,3:1",
+    "icons": "loader-circle 88 px; wifi-off 32 px, đúng Từ điển icon"
+  },
+  "fixed": [],
+  "regressions": [],
+  "summary": "Màn chờ lưu khi mất mạng đạt mọi luật áp dụng. (Critic không ghi được file nên orchestrator chép nguyên kết quả vào đây.)"
+}

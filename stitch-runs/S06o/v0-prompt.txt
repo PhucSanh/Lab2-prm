@@ -1,0 +1,26 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the "Thêm việc" step 2/2 form AFTER Bác fixed the missing name (Bác tapped the suggestion chip "Đi bộ buổi sáng"). The error is gone. The form is complete and ready to save. Nothing was saved yet.
+1. Add the screen title "Thêm việc" (30px bold 700, #202B25, left aligned) directly below the app bar, 16px above the summary card.
+2. Summary card at the top: keep only the habit line "Vận động tự nhiên" (remove any other task-name line). Tile 48x48px, radius 12px, background #2BA15C, Lucide `footprints` icon white 32px stroke 2.5. Left bar of the card #2BA15C, 6px wide.
+3. Text field "Tên việc": label "Tên việc" (24px semibold 600 #202B25) with a Lucide `pencil` icon 32px #1F684B on its left. The input is FILLED with the text "Đi bộ buổi sáng" (24px #202B25). Field 60px high, full width, radius 12px, white background, 2px border #7B887F (neutral, NOT red). No error block, no red, no `circle-alert`, no suggestion chips anymore, no helper line under the field.
+4. "Giờ làm": label with Lucide `clock` icon 32px. One tappable time box 60px high, white, 2px #7B887F border, radius 12px: "8 : 00 sáng" (24px) with Lucide `chevron-down` icon 32px and the text "Đổi giờ" (22px) beside it.
+5. "Lặp lại": label with Lucide `repeat` icon 32px. Three option buttons, each 60px high, gap 8px: "Mỗi ngày" (selected: 2px #1F684B border, #E7F2EB background, Lucide `circle-dot` icon 32px and text), "Vài ngày" and "Một lần" (unselected: 2px #7B887F border, Lucide `circle` icon 32px and text).
+6. "Lời nhắc": label with Lucide `bell` icon 32px. One outlined row 60px high "Nhắc lại sau 10 phút" with a pill "Bật" that shows the Lucide `bell-ring` icon 32px #174C37 plus the text "Bật" 22px bold (no check mark).
+7. Keep the sticky filled button "Lưu việc này" (60px high, full width minus 40px margins, radius 14px, #1F684B, 22px bold white, Lucide `save` icon 32px white). It is the ONLY filled button and is enabled. Make the scroll container padding-bottom 120px so nothing is covered by the sticky button.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box (habit tile: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+footprints = habit "Vận động tự nhiên" (only for that habit)
+pencil = edit / task name
+clock = time of the task
+chevron-down = open time box
+repeat = repeat
+circle-dot = selected option
+circle = unselected option
+bell = reminder label
+bell-ring = reminder on
+save = save ("Lưu việc này")
+chevron-left = back (always with the text "Quay lại")
+Exact Lucide paths (viewBox 0 0 24 24, fill none, round caps and joins): `footprints`: <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.5v2"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.5v2"/><path d="M16 17h4"/><path d="M4 13h4"/>; `pencil`: <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/>; `clock`: <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>; `bell-ring`: <path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/><path d="M4 2C2.8 3.7 2 5.7 2 8"/><path d="M22 8c0-2.3-.8-4.3-2-6"/>.
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped or truncated at 360px width; every icon has visible text next to it; touch targets at least 48x48px; exactly one filled button; tap-only; 100% Vietnamese with diacritics; no pressure or blame words.

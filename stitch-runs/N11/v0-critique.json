@@ -1,0 +1,28 @@
+{
+  "screen": "N11 Chọn ngày",
+  "round": 0,
+  "score": 94,
+  "errors": 0,
+  "warns": 2,
+  "results": [
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "status": "fail",
+      "where": "Lưới ngày trong thẻ lịch (.dates-grid, .date-cell)",
+      "evidence": "Ô ngày 48x48px, column-gap 0, row-gap 4px; nhỏ hơn 8px giữa hai vùng bấm kề nhau",
+      "fix": "Đổi row-gap lưới ngày từ 4px lên 8px; thu vòng số ngày và vòng ngày chọn còn 40px nằm giữa ô 48px; ngang không thể thêm gap (7x48+6x8=384px > 360px) nên giữ column-gap 0 và ghi ngoại lệ vào design-decisions.md"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "status": "fail",
+      "where": "Thẻ lịch (.calendar-wrapper / .calendar-card)",
+      "evidence": "Lề màn 12px thay vì 20px; lưới 336px nhưng lòng thẻ chỉ 334px (viền 1px) nên tràn 1px mỗi bên",
+      "fix": "Đặt .calendar-card padding 16px 0, thay border 1px #DFE5DF bằng box-shadow 0 0 0 1px #DFE5DF để lưới 336px nằm vừa; giữ lề 12px riêng cho thẻ lịch và ghi ngoại lệ vào design-decisions.md"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Đạt hết luật error; còn 2 warn về khe giữa ô ngày và lề thẻ lịch 12px. Critic không ghi được file nên điều phối chép lại các vi phạm từ kết quả critic trả về."
+}

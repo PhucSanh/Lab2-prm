@@ -1,0 +1,6 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Snackbar: shorten the text to "Đã dời sang 10:00." (20px regular white, may wrap to 2 lines) so it fits left of the "Hoàn tác" button in the 80px row. Keep the button, its icon, its size and the 80px height.
+2. In the task row "Ăn sáng chậm rãi" set the 48x48px icon tile background to #B98331 (same as its 6px left accent bar); keep the white `utensils` icon 32px.
+3. In the task row "Ngồi thở nhẹ 10 phút" set the 48x48px icon tile background to #AC76DB (same as its 6px left accent bar); keep the white `wind` icon 32px.
+4. Every habit tile must use exactly the habit accent color and the same color for its left bar: Vận động tự nhiên #2BA15C, Ăn vừa đủ #B98331, Thư giãn mỗi ngày #AC76DB, Trà chiều cùng bạn #D0754E, Gia đình trên hết #D86E75. No other colors such as #B26A00 or #8F65C2 on tiles.
+5. Bottom navigation: the "Gia đình" tab currently uses the `users` icon; replace it with the Lucide `hand-heart` icon (32px, stroke 2.2, color #526057). The "Lịch tuần" tab currently uses `calendar`; replace it with the Lucide `calendar-days` icon (32px, stroke 2.2, color #526057). Keep `sun` (active "Hôm nay") and `leaf` ("Thói quen").

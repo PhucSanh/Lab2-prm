@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - Thêm việc – thiết lập (Bước 2/2)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #EAECE6;
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #202B25;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+
+  /* Phone frame 360 x 800 */
+  .phone-screen {
+    width: 360px;
+    height: 800px;
+    background-color: #F6F7F2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0,0,0,0.06);
+    border-radius: 28px;
+  }
+
+  /* App bar */
+  .app-bar {
+    height: 64px;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    background-color: #F6F7F2;
+    z-index: 10;
+  }
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #1F684B;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 700;
+    min-height: 48px;
+    padding: 0 4px;
+  }
+
+  .back-btn svg {
+    width: 32px;
+    height: 32px;
+    stroke: #1F684B;
+    stroke-width: 2.8;
+    fill: none;
+    flex-shrink: 0;
+  }
+
+  .step-text {
+    font-size: 20px;
+    font-weight: 600;
+    color: #526057;
+    line-height: 1.2;
+  }
+
+  /* Scrollable container */
+  .scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 20px 120px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: #DFE5DF transparent;
+  }
+
+  .scroll-content::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scroll-content::-webkit-scrollbar-thumb {
+    background-color: #DFE5DF;
+    border-radius: 4px;
+  }
+
+  /* Summary Card */
+  .summary-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 16px;
+    position: relative;
+    border: 1px solid #DFE5DF;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .summary-accent-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background-color: #2BA15C;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+  }
+
+  .icon-tile-green {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: #2BA15C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: 4px;
+  }
+
+  .icon-tile-green svg {
+    width: 32px;
+    height: 32px;
+    fill: #FFFFFF;
+  }
+
+  .summary-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  .summary-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #202B25;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+  .summary-subtitle {
+    font-size: 20px;
+    color: #526057;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  /* Form Fields */
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .field-label-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #202B25;
+  }
+
+  .field-label-row svg {
+    width: 32px;
+    height: 32px;
+    stroke: #1F684B;
+    stroke-width: 2.2;
+    fill: none;
+    flex-shrink: 0;
+  }
+
+  .field-label-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: #202B25;
+    line-height: 1.3;
+  }
+
+  .input-box {
+    min-height: 60px;
+    background: #FFFFFF;
+    border: 2px solid #7B887F;
+    border-radius: 12px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #202B25;
+    width: 100%;
+    cursor: default;
+  }
+
+  .helper-text {
+    font-size: 20px;
+    color: #526057;
+    line-height: 1.4;
+    padding-left: 2px;
+  }
+
+  /* Time Box Tappable */
+  .time-tappable-box {
+    min-height: 60px;
+    background: #FFFFFF;
+    border: 2px solid #7B887F;
+    border-radius: 12px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.15s;
+  }
+
+  .time-tappable-box:active {
+    background-color: #E7F2EB;
+  }
+
+  .time-value-display {
+    font-size: 24px;
+    font-weight: 700;
+    color: #202B25;
+    letter-spacing: 0.5px;
+  }
+
+  .change-time-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #1F684B;
+  }
+
+  .change-time-label {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1F684B;
+  }
+
+  .change-time-badge svg {
+    width: 32px;
+    height: 32px;
+    stroke: #1F684B;
+    stroke-width: 2.5;
+    fill: none;
+    flex-shrink: 0;
+  }
+
+  /* Options list for Repeat */
+  .repeat-options-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .option-btn {
+    min-height: 60px;
+    border-radius: 14px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    width: 100%;
+    transition: all 0.15s;
+  }
+
+  .option-btn.selected {
+    background-color: #E7F2EB;
+    border: 2px solid #1F684B;
+  }
+
+  .option-btn.unselected {
+    background-color: #FFFFFF;
+    border: 2px solid #7B887F;
+  }
+
+  /* Radio indicators */
+  .radio-dot-container {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .radio-selected {
+    border: 3px solid #1F684B;
+    background: transparent;
+  }
+
+  .radio-inner-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #1F684B;
+  }
+
+  .radio-unselected {
+    border: 3px solid #7B887F;
+    background: transparent;
+  }
+
+  .option-btn-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #202B25;
+    line-height: 1.3;
+  }
+
+  /* Reminder Row with Toggle */
+  .reminder-row-card {
+    min-height: 60px;
+    background: #FFFFFF;
+    border: 2px solid #7B887F;
+    border-radius: 12px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .reminder-desc {
+    font-size: 22px;
+    font-weight: 600;
+    color: #202B25;
+    line-height: 1.3;
+    flex: 1;
+  }
+
+  /* Toggle Pill with icon + visible text */
+  .toggle-status-pill {
+    min-height: 48px;
+    padding: 0 14px;
+    background-color: #D6EADF;
+    border: 2px solid #1F684B;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .toggle-status-pill svg {
+    width: 32px;
+    height: 32px;
+    fill: #174C37;
+    stroke: #174C37;
+    stroke-width: 1;
+    flex-shrink: 0;
+  }
+
+  .toggle-status-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #174C37;
+    line-height: 1.2;
+  }
+
+  /* Fixed Footer */
+  .fixed-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #F6F7F2;
+    border-top: 1px solid #DFE5DF;
+    padding: 14px 20px 20px 20px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .save-primary-btn {
+    height: 60px;
+    width: 100%;
+    background-color: #1F684B;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 14px;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(31, 104, 75, 0.25);
+    transition: background-color 0.15s;
+  }
+
+  .save-primary-btn:active {
+    background-color: #174C37;
+  }
+
+  .save-primary-btn svg {
+    width: 32px;
+    height: 32px;
+    stroke: #FFFFFF;
+    stroke-width: 3;
+    fill: none;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+<div class="phone-screen">
+<!-- 1. App Bar -->
+<header class="app-bar">
+<button aria-label="Quay lại" class="back-btn" type="button">
+<!-- Chevron Left 32px -->
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Quay lại</span>
+</button>
+<span class="step-text">Bước 2/2</span>
+</header>
+<!-- Scrollable Form Area -->
+<main class="scroll-content">
+<!-- 2. Summary Card -->
+<h1 style="font-size: 30px; font-weight: 700; color: #202B25; line-height: 1.2; margin-bottom: 0;">Thêm việc</h1><section aria-label="Tóm tắt việc đã chọn" class="summary-card"><div aria-hidden="true" class="summary-accent-bar"></div><div aria-hidden="true" class="icon-tile-green"><svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.5v2"></path><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.5v2"></path><path d="M16 17h4"></path><path d="M4 13h4"></path></svg></div><div class="summary-info"><div class="summary-title" style="font-size: 24px; font-weight: 700; color: #202B25;">Vận động tự nhiên</div></div></section>
+<!-- 3. Field: Tên việc -->
+<section class="form-field"><div class="field-label-row"><svg fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg><span class="field-label-text" style="font-size: 20px; font-weight: 700;">Tên việc</span></div><input aria-label="Tên việc" class="input-box" placeholder="Ví dụ: Đi bộ buổi sáng" style="border-radius: 14px; border: 2px solid #7B887F; font-size: 24px; color: #202B25; height: 60px; outline: none; background: #FFFFFF; width: 100%;" type="text" value=""/><div style="border-radius: 16px; padding: 12px 16px; background-color: #FFF3DB; display: flex; align-items: center; gap: 12px;"><svg fill="none" height="32" stroke="#B26A00" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" style="flex-shrink: 0;" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg><span style="font-size: 20px; font-weight: 500; color: #8A5100; line-height: 1.3;">Bác nhập tên việc rồi lưu nhé.</span></div></section>
+<!-- 4. Field: Giờ làm -->
+<section class="form-field">
+<div class="field-label-row">
+<!-- Clock icon 32px -->
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<path d="M12 7v5l3 3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="field-label-text">Giờ làm</span>
+</div>
+<div aria-label="Giờ làm: 8:00 sáng. Bấm để đổi giờ." class="time-tappable-box" role="button" tabindex="0"><span class="time-value-display">8 : 00 sáng</span><div class="change-time-badge" style="border: 2px solid #1F684B; border-radius: 12px; height: 48px; padding: 0 12px; display: inline-flex; align-items: center; gap: 6px;"><span class="change-time-label">Đổi giờ</span><svg aria-hidden="true" style="width: 24px; height: 24px;" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div>
+</section>
+<!-- 5. Field: Lặp lại -->
+<section class="form-field">
+<div class="field-label-row">
+<!-- Repeat / Sync icon 32px -->
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M17 2l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M3 11v-1a4 4 0 0 1 4-4h14" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M7 22l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M21 13v1a4 4 0 0 1-4 4H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="field-label-text">Lặp lại</span>
+</div>
+<div aria-label="Tần suất lặp lại" class="repeat-options-col" role="radiogroup"><div aria-checked="true" class="option-btn selected" role="radio" style="background-color: #D6EADF; border: 2px solid #1F684B;" tabindex="0"><div aria-hidden="true" class="radio-dot-container radio-selected"><div class="radio-inner-dot"></div></div><div style="display: flex; align-items: baseline; gap: 8px;"><span class="option-btn-text">Mỗi ngày</span><span style="font-size: 20px; font-weight: 500; color: #1F684B;">(Đang chọn)</span></div></div><div aria-checked="false" class="option-btn unselected" role="radio" tabindex="0"><div aria-hidden="true" class="radio-dot-container radio-unselected"></div><span class="option-btn-text">Vài ngày</span></div><div aria-checked="false" class="option-btn unselected" role="radio" tabindex="0"><div aria-hidden="true" class="radio-dot-container radio-unselected"></div><span class="option-btn-text">Một lần</span></div></div>
+</section>
+<!-- 6. Field: Lời nhắc -->
+<section class="form-field">
+<div class="field-label-row">
+<!-- Bell icon 32px -->
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M13.73 21a2 2 0 0 1-3.46 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="field-label-text">Lời nhắc</span>
+</div>
+<div aria-checked="true" class="reminder-row-card" role="checkbox" tabindex="0">
+<span class="reminder-desc">Nhắc lại sau 10 phút</span>
+<div class="toggle-status-pill"><svg fill="none" height="32" stroke="#174C37" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path><path d="M4 2C2.8 3.7 2 5.7 2 8"></path><path d="M22 8c0-2.3-.8-4.3-2-6"></path></svg><span class="toggle-status-text">Bật</span></div>
+</div>
+</section>
+</main>
+<!-- 7. Fixed Footer -->
+<footer class="fixed-footer">
+<button class="save-primary-btn" type="button"><svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"></path><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"></path><path d="M7 3v4a1 1 0 0 0 1 1h7"></path></svg><span>Lưu việc này</span></button>
+</footer>
+</div>
+</body>
+</html>

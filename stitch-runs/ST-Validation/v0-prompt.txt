@@ -1,0 +1,19 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the "Thêm việc" step 2/2 screen right after Bác tapped "Lưu việc này" while the task name field is EMPTY. The app explains the problem gently and shows how to fix it. It never blames and never blocks Bác.
+1. Text field "Tên việc": the input is empty (no text typed). Field 60px high, full width, radius 14px, background #FDECE9, border 2px solid #B42318, placeholder-free. Keep the label "Tên việc" (20px bold #202B25) above it.
+2. Directly below the field (gap 8px) add the error block in 3 parts, left aligned, all text on max 2 lines, never truncated:
+   - Part 1: a Lucide `circle-alert` icon 32px #B42318 (stroke 2.2) on the left of the sentence "Bác chưa nhập tên việc." 24px bold #B42318.
+   - Part 2: the example line "Ví dụ: Đi bộ buổi sáng" 20px #526057.
+   - Part 3: a row of 3 suggestion chips (tap to fill the field), each 48px high, radius 999px, white background, 2px border #1F684B, text 20px bold #1F684B, horizontal padding 16px, gap 8px, wrapping to a second row if needed, no icon: "Đi bộ buổi sáng", "Tập thở chậm 10 phút", "Ngủ trưa 20 phút". The label above the chips: "Bác chạm để chọn nhanh:" 20px #526057.
+3. Remove the pre-filled name "Đi bộ nhẹ nhàng" and its habit line from the field area. Keep the rest of the form (time "Giờ làm", "Lặp lại", "Lời nhắc") unchanged.
+4. Keep the sticky filled button "Lưu việc này" (60px high, full width minus 40px margins, radius 14px, #1F684B, text 22px bold white, Lucide `save` icon 32px white). It stays the ONLY filled button. Chips are outlined, never filled. Make the scroll container padding-bottom 120px so nothing is covered by the sticky button.
+5. The error state must not rely on color alone: the field has the icon and the sentence. Do not show a red full-screen banner or a dialog.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+circle-alert = input error (red #B42318, always with the error sentence)
+save = save ("Lưu việc này")
+chevron-left = back (always with the text "Quay lại")
+(keep the other existing icons on the screen)
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1 (#B42318 on #FDECE9 is 5.6:1); nothing clipped or truncated at 360px width; every icon has visible text next to it; touch targets at least 48x48px; exactly one filled button; tap-only; 100% Vietnamese with diacritics; no pressure or blame words.

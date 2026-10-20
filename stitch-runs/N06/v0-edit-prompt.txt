@@ -1,0 +1,6 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Note card (background #D6EADF): replace the text with "Việc đã lưu vẫn giữ giờ cũ." (20px, #174C37). It must fit on at most 2 lines, never truncated. Keep the Lucide `info` icon 32px.
+2. Helper line under the name field: make the Lucide `info` icon 32x32px (stroke 2.5, #526057) next to "Ví dụ: Lan" (20px).
+3. Helper line under the time box: make the Lucide `bell` icon 32x32px (stroke 2.5, #526057) next to "Để nhắc việc đúng giờ cho Bác." (20px, may wrap to 2 lines).
+4. Under the three option buttons add one line (gap 8px) with the text "Đang chọn: Bà" (20px, #174C37, bold) so the selected state is also written in words. Keep the circle-dot icon inside the "Bà" button.
+5. Keep the fixed footer: filled "Lưu thông tin" (save icon) is the only filled button and outlined "Hủy" (x icon) below it; keep scroll padding-bottom at least 200px so nothing is covered.

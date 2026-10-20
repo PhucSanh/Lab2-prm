@@ -1,0 +1,21 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the screen right after Bác tapped "Tiếp tục gửi cho Mai" and Zalo was opened. It shows what Mai will read and says honestly that An Nhiên does not know whether the message arrived.
+1. Title row: keep Lucide `message-square` 32px; change the title to "Nội dung gửi cho Mai" (30px bold). App bar stays: chevron-left + "Gia đình".
+2. REMOVE the section "Bác muốn kể điều gì?" with its 3 option rows, the section "Gửi bằng" with its 2 option rows, and the note line. No option rows remain on this screen.
+3. Directly under the title (16px gap) insert an info card: full width minus 20px margins, background #D6EADF, 2px border #1F684B, radius 16, padding 16. Left: Lucide `info` 32px #1F684B. Next to it, line 1 "Bác tiếp tục ở Zalo để xem lại và bấm gửi." (24px bold, #174C37); line 2 "An Nhiên chưa biết tin này đã đến Mai chưa." (20px, #174C37). It is NOT a button, has no close "x".
+4. Keep the section label "Mai sẽ thấy" (24px bold) and its white card (radius 16, padding 16, border #DFE5DF) with the message (24px): "Mẹ nhớ con. Hôm nay mẹ khỏe, con nhé!". Place it under the info card, 16px gap.
+5. Fixed footer with TWO buttons stacked, 12px gap, each full width minus 20px margins, 60px high, radius 14, 20px bottom padding, flat #F6F7F2 background behind them (no gradient):
+   - top: OUTLINED (2px #1F684B border, white background, text #1F684B) "Gọi điện cho Mai" (22px bold) with Lucide `phone` 32px;
+   - bottom: the ONLY filled button (#1F684B, text #FFFFFF) "Về trang Gia đình" (22px bold) with Lucide `hand-heart` 32px.
+6. Remove the old footer button "Tiếp tục gửi cho Mai" and its arrow-right icon. No bottom navigation.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+- chevron-left = back, always with the text "Gia đình"
+- message-square = Nhắn tin (next to the screen title)
+- info = note ("Bác tiếp tục ở Zalo...")
+- phone = "Gọi điện cho Mai" (only calling)
+- hand-heart = "Về trang Gia đình"
+No circle-check, check, send, arrow-right, circle or circle-dot icon on this screen.
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped or truncated at 360px width, no "…"; every icon has visible text next to it; exactly ONE filled button, the other is outlined; touch targets at least 48x48px; status never by color only (card has icon + text); tap-only; no gradients; 100% Vietnamese with diacritics; never claim the message was sent (no "Đã gửi", "thành công"), no tracking wording, no ranking, no streak.

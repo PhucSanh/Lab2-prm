@@ -1,0 +1,13 @@
+{
+  "screen": "DLG-Delete Hỏi lại trước khi xóa việc",
+  "round": 0,
+  "score": 90,
+  "errors": 1,
+  "warns": 0,
+  "results": [
+    {"rule": "R-TXT-03", "level": "error", "check": "auto", "status": "fail", "where": "Đoạn mô tả dưới tiêu đề (#dialog-desc)", "evidence": "'Chỉ thay đổi lần này. Những ngày khác giữ nguyên.' ở 24px trong khung 272px rớt thành 3 dòng (chữ 'nguyên.' nằm riêng dòng 3) > 2 dòng", "fix": "Rút đoạn mô tả còn 'Chỉ xóa lần này. Ngày khác vẫn giữ.' (tối đa 2 dòng ở 24px, màu #526057, line-height 1.35)"}
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "(Rút gọn: orchestrator chép lại, critic không ghi được file.) Các luật còn lại pass hoặc n/a. Lỗi duy nhất: đoạn mô tả rớt 3 dòng."
+}

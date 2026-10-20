@@ -1,0 +1,10 @@
+{
+  "screen": "N15 Hỏi lại xóa người thân",
+  "round": 0,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "fixed": [],
+  "regressions": [],
+  "summary": "Dialog hỏi lại xóa người thân đạt mọi luật áp dụng: chữ 22–26 px, contrast ≥ 6.6:1, 2 nút 272×60 cách 8 px có icon trash-2/x đúng từ điển, chỉ 1 nút filled, token đúng DESIGN.md. (Bản rút gọn do orchestrator chép; critic không ghi được file.)"
+}

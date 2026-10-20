@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Date grid CSS: set row-gap to exactly 8px (currently 4px). Keep column-gap 0 and every date cell 48x48px.
+2. Date number circles: make every date circle 40x40px centered in its 48x48px cell. The selected date 23 circle is 40x40px (currently 44px), background #1F684B, white bold number.
+3. Calendar card: replace "border: 1px solid #DFE5DF" with "border: none; box-shadow: 0 0 0 1px #DFE5DF". Keep padding 16px 0 and side margin 12px.

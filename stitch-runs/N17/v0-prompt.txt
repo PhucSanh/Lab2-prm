@@ -1,0 +1,31 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant.
+The "Hôm nay" screen in the evening, after all 6 tasks were handled: 5 done and 1 skipped because of rain. Nothing is pending. No "next task", no "Dời lại", no snackbar, no "Báo tin vui" button (a skipped task is never reported to family).
+1. Header: greeting "Chào buổi tối, Bác Lan" (same style); date line "Thứ Năm, 8/10 · Đã xong 5/6 việc" (20px, #526057).
+2. Calm summary card at the top (replaces the celebration card): width 320px, padding 20px, radius 16px, background #D6EADF, centered content, vertical gap 12px:
+   - Lucide `circle-check` icon 72px, #1F684B, stroke 2.2, centered. Paths: <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+   - Text "5 việc đã xong · 1 việc bỏ qua" 24px bold #202B25, centered, at most 2 lines.
+   - Text "Không sao, để hôm khác nhé." 22px #202B25, centered, one line.
+   - A text button (no fill, no border) "Xem những việc đã làm" 22px bold #1F684B on ONE line (white-space nowrap), 60px high, 280px wide, with a Lucide `chevron-right` icon 32px #1F684B on its right. Paths: <path d="m9 18 6-6-6-6"/>
+3. Section title "Việc hôm nay". Show all 6 rows in time order, same card style as now (left bar 6px + 48x48 tile + time + name + chip + habit line):
+   - 6:30 sáng · Tưới rau ngoài vườn · chip "Đã xong"
+   - 7:30 sáng · Ăn sáng chậm rãi · chip "Đã xong"
+   - 8:30 sáng · Ngồi thở nhẹ 10 phút · chip "Đã xong"
+   - 9:30 sáng · Đi bộ quanh công viên · chip "Bỏ qua" (outline chip 40px high, radius 999px, 2px border #526057, background #FFFFFF, text 20px bold #202B25, Lucide `circle-minus` icon 24px #526057 on the left); sub line "Hôm nay trời mưa" instead of the habit line
+   - 3 giờ chiều · Uống trà với cô Tám · chip "Đã xong"
+   - 6 giờ tối · Gọi điện cho Mai · chip "Đã xong"
+   "Đã xong" chip: 40px high, radius 999px, background #1F684B, text 20px bold white, Lucide `circle-check` icon 24px white on the left. No "Chưa làm" and no "Đã dời" chip anywhere. Every task row keeps its habit color on tile and left bar.
+4. Sticky bar fixed right above the bottom navigation (padding 12px 20px, background #F6F7F2): the ONLY filled button of the screen, label "Xem lịch ngày mai" 22px bold white on ONE line, 320px wide, 60px high, radius 14px, background #1F684B, Lucide `arrow-right` icon 32px white on its right. Paths: <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>. Scroll container padding-bottom 200px so the last row is not covered.
+5. Keep the habit icons exact: `footprints` (white, 32px) for "Vận động tự nhiên" tiles; `utensils` (white, 32px, stroke 2.5) paths <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>; `wind`, `coffee`, `house` as now. Bottom navigation: `sun`, `calendar-days`, `leaf`, `hand-heart` 32px stroke 2.2, whole glyph visible and not clipped; tab "Hôm nay" selected.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px (status chip icons: 24px; the summary icon: 72px) and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+circle-check = done (only for the status "Đã xong" and the summary)
+circle-minus = skipped (only for the chip "Bỏ qua")
+chevron-right = open details ("Xem những việc đã làm")
+arrow-right = continue ("Xem lịch ngày mai")
+footprints = habit "Vận động tự nhiên" (only for that habit)
+utensils = habit "Ăn vừa đủ"; wind = "Thư giãn mỗi ngày"; coffee = "Trà chiều cùng bạn"; house = "Gia đình trên hết" (only for that habit)
+sun, calendar-days, leaf, hand-heart = bottom navigation tabs
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped at 360px width; every icon has visible text next to it; touch targets at least 48x48px; exactly one filled button; every status is icon + text; tile and left bar of each task card have the same habit color; tap-only; 100% Vietnamese with diacritics; no pressure words, no ranking, no comparison, no blame for the skipped task.

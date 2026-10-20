@@ -1,0 +1,11 @@
+{
+  "screen": "S12e Thêm người thân – lỗi nhập",
+  "round": 1,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "note": "Critic không ghi được file; orchestrator chép lại từ kết quả critic. Mọi rule pass hoặc n/a.",
+  "fixed": ["mất 4 hàng quan hệ (ngoài luật)", "trường Số điện thoại bị lặp (ngoài luật)", "dòng 'Chỉ gửi tin khi Bác chọn gửi.' bị footer che (ngoài luật)"],
+  "regressions": [],
+  "summary": "Đạt mọi luật rule.md. Đủ 4 hàng quan hệ (Con đang chọn), chỉ 1 trường Số điện thoại trống viền #B42318, lỗi có circle-alert + câu + ví dụ + gợi ý danh bạ, 1 nút filled 60 px. Lưu ý không tính điểm: khi mới mở, trường lỗi nằm dưới mép màn, cần tự cuộn tới trường lỗi."
+}

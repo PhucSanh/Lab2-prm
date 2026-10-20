@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>An Nhiên - Lặp lại việc (Chọn ngày trong tuần)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #ECEEE9;
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    /* Khung chuẩn Android 360x800 */
+    .device-screen {
+      width: 360px;
+      height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Vùng cuộn dọc chính */
+    .scroll-content {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 16px 20px 190px 20px;
+      scrollbar-width: none;
+    }
+
+    .scroll-content::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* 1. Nút Quay lại top-left */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 48px;
+      background: transparent;
+      border: none;
+      color: #1F684B;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 0;
+      margin-bottom: 8px;
+    }
+
+    /* 2. Dòng tiêu đề chính */
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .title-text {
+      font-size: 30px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.25;
+    }
+
+    /* 3. Dòng gợi ý */
+    .hint-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .hint-icon {
+      flex-shrink: 0;
+      color: #526057;
+      margin-top: 1px;
+    }
+
+    .hint-text {
+      font-size: 20px;
+      line-height: 1.4;
+      color: #526057;
+      font-weight: 400;
+    }
+
+    /* 4. Nhóm tùy chọn lặp lại tổng quát */
+    .options-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .option-card {
+      width: 320px;
+      min-height: 60px;
+      background-color: #FFFFFF;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      cursor: pointer;
+      border: 2px solid #7B887F;
+      transition: all 0.15s ease;
+    }
+
+    .option-card.selected {
+      background-color: #E7F2EB;
+      border: 2px solid #1F684B;
+    }
+
+    .option-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .option-label {
+      font-size: 24px;
+      color: #202B25;
+      font-weight: 400;
+    }
+
+    .option-card.selected .option-label {
+      font-weight: 700;
+      color: #1F684B;
+    }
+
+    .selected-tag {
+      font-size: 20px;
+      font-weight: 700;
+      color: #174C37;
+      white-space: nowrap;
+    }
+
+    /* 5. Tiêu đề mục chọn các ngày trong tuần */
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    /* 6. Danh sách 7 ngày trong tuần */
+    .weekdays-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .weekday-card {
+      width: 320px;
+      min-height: 56px;
+      background-color: #FFFFFF;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      cursor: pointer;
+      border: 2px solid #7B887F;
+      transition: all 0.15s ease;
+    }
+
+    .weekday-card.selected {
+      background-color: #E7F2EB;
+      border: 2px solid #1F684B;
+    }
+
+    .weekday-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .weekday-label {
+      font-size: 24px;
+      color: #202B25;
+      font-weight: 400;
+    }
+
+    .weekday-card.selected .weekday-label {
+      font-weight: 700;
+      color: #1F684B;
+    }
+
+    /* 7. Khối tóm tắt lựa chọn */
+    .summary-card {
+      width: 320px;
+      background-color: #D6EADF;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .summary-icon {
+      flex-shrink: 0;
+      color: #174C37;
+      margin-top: 2px;
+    }
+
+    .summary-text {
+      font-size: 24px;
+      font-weight: 700;
+      color: #174C37;
+      line-height: 1.35;
+      word-break: break-word;
+    }
+
+    /* 8. Chân trang cố định (Fixed footer) */
+    .fixed-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 360px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      padding: 16px 20px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 100;
+    }
+
+    /* Nút chính duy nhất (filled) */
+    .btn-primary {
+      width: 320px;
+      height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(31, 104, 75, 0.25);
+    }
+
+    /* Nút phụ viền ngoài (outlined) */
+    .btn-secondary {
+      width: 320px;
+      height: 60px;
+      background-color: #FFFFFF;
+      color: #1F684B;
+      border: 2px solid #7B887F;
+      border-radius: 14px;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .btn-primary:active, .btn-secondary:active {
+      transform: scale(0.985);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="device-screen">
+    <!-- Nội dung có thể cuộn dọc -->
+    <div class="scroll-content">
+      
+      <!-- 1. Nút quay lại góc trên trái -->
+      <button class="back-btn" aria-label="Quay lại Thêm việc">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        <span>Thêm việc</span>
+      </button>
+
+      <!-- 2. Dòng tiêu đề chính -->
+      <div class="title-row">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m17 2 4 4-4 4"/>
+          <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+          <path d="m7 22-4-4 4-4"/>
+          <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+        </svg>
+        <h1 class="title-text">Lặp lại</h1>
+      </div>
+
+      <!-- 3. Dòng gợi ý thân thiện -->
+      <div class="hint-row">
+        <div class="hint-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#526057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16v-4"/>
+            <path d="M12 8h.01"/>
+          </svg>
+        </div>
+        <p class="hint-text">Chọn những ngày Bác muốn làm việc này.</p>
+      </div>
+
+      <!-- 4. 3 hàng lựa chọn nhịp lặp lại -->
+      <div class="options-group">
+        <!-- Tùy chọn 1: Một lần -->
+        <div class="option-card" role="radio" aria-checked="false">
+          <div class="option-left">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#526057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+            <span class="option-label">Một lần</span>
+          </div>
+        </div>
+
+        <!-- Tùy chọn 2: Mỗi ngày -->
+        <div class="option-card" role="radio" aria-checked="false">
+          <div class="option-left">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#526057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+            <span class="option-label">Mỗi ngày</span>
+          </div>
+        </div>
+
+        <!-- Tùy chọn 3: Vài ngày trong tuần (Đang chọn) -->
+        <div class="option-card selected" role="radio" aria-checked="true">
+          <div class="option-left">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="4" fill="#1F684B"/>
+            </svg>
+            <span class="option-label">Vài ngày trong tuần</span>
+          </div>
+          <span class="selected-tag">Đang chọn</span>
+        </div>
+      </div>
+
+      <!-- 5. Tiêu đề nhóm chọn ngày trong tuần -->
+      <h2 class="section-title">Chọn ngày trong tuần</h2>
+
+      <!-- 6. 7 hàng thứ trong tuần -->
+      <div class="weekdays-group">
+        <!-- Thứ Hai (Chọn) -->
+        <div class="weekday-card selected" role="checkbox" aria-checked="true">
+          <div class="weekday-left">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="4" fill="#1F684B"/>
+            </svg>
+            <span class="weekday-label">Thứ Hai</span>
+          </div>
+          <span class="selected-tag">Đang chọn</span>
+        </div>
+
+        <!-- Thứ Ba -->
+        <div class="weekday-card" role="checkbox" aria-checked="false">
+          <div class="weekday-left">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#526057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+            <span class="weekday-label">Thứ Ba</span>
+          </div>
+        </div>
+
+        <!-- Thứ Tư (Chọn) -->
+        <div class="weekday-card selected" role="checkbox" aria-checked="true">
+          <div class="weekday-left">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="4" fill="#1F684B"/>
+            </svg>
+            <span class="weekday-label">Thứ Tư</span>
+          </div>
+          <span class="selected-tag">Đang chọn</span>
+        </div>
+
+        <!-- Thứ Năm -->
+        <div class="weekday-card" role="checkbox" aria-checked="false">
+          <div class="weekday-left">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#526057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+            <span class="weekday-label">Thứ Năm</span>
+          </div>
+        </div>
+
+        <!-- Thứ Sáu (Chọn) -->
+        <div class="weekday-card selected" role="checkbox" aria-checked="true">
+          <div class="weekday-left">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="4" fill="#1F684B"/>
+            </svg>
+            <span class="weekday-label">Thứ Sáu</span>
+          </div>
+          <span class="selected-tag">Đang chọn</span>
+        </div>
+
+        <!-- Thứ Bảy -->
+        <div class="weekday-card" role="checkbox" aria-checked="false">
+          <div class="weekday-left">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#526057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+            <span class="weekday-label">Thứ Bảy</span>
+          </div>
+        </div>
+
+        <!-- Chủ Nhật -->
+        <div class="weekday-card" role="checkbox" aria-checked="false">
+          <div class="weekday-left">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#526057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+            <span class="weekday-label">Chủ Nhật</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Khối tóm tắt lựa chọn -->
+      <div class="summary-card">
+        <div class="summary-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#174C37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m17 2 4 4-4 4"/>
+            <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+            <path d="m7 22-4-4 4-4"/>
+            <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+          </svg>
+        </div>
+        <div class="summary-text">
+          Đã chọn · Thứ Hai, Thứ Tư, Thứ Sáu
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 8. Chân trang cố định (Fixed footer) -->
+    <div class="fixed-footer">
+      <!-- Nút nền đầy duy nhất -->
+      <button class="btn-primary">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
+          <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/>
+          <path d="M7 3v4a1 1 0 0 0 1 1h7"/>
+        </svg>
+        <span>Lưu các ngày đã chọn</span>
+      </button>
+
+      <!-- Nút phụ viền ngoài -->
+      <button class="btn-secondary">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 6 6 18"/>
+          <path d="m6 6 12 12"/>
+        </svg>
+        <span>Hủy</span>
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>

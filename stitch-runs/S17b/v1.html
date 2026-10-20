@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - Nội dung gửi cho Mai (Đã mở Zalo)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #ECEEEA;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 16px;
+    }
+
+    /* Device frame: 360x800 */
+    .device-container {
+      width: 360px;
+      height: 800px;
+      background-color: #F6F7F2;
+      border-radius: 28px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top App Bar */
+    .app-bar {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      flex-shrink: 0;
+      background-color: #F6F7F2;
+      z-index: 10;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 48px;
+      background: transparent;
+      border: none;
+      color: #1F684B;
+      font-size: 22px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      padding: 0;
+      text-decoration: none;
+    }
+
+    .back-btn svg {
+      width: 32px;
+      height: 32px;
+      stroke: #1F684B;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Scrollable main content */
+    .scroll-content {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 4px 20px 104px 20px; /* 104px bottom padding for fixed footer clearance */
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      scrollbar-width: none;
+    }
+    .scroll-content::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Title row */
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .title-icon {
+      width: 32px;
+      height: 32px;
+      stroke: #1F684B;
+      stroke-width: 2.5;
+      fill: none;
+      flex-shrink: 0;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .screen-title {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #202B25;
+    }
+
+    /* Section block */
+    .section-block {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .section-label {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #202B25;
+    }
+
+    /* Option row items: 60px high, 320px wide, radius 16 */
+    .options-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-row {
+      width: 320px;
+      height: 60px;
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+
+    .option-row.selected {
+      background-color: #D6EADF;
+      border-color: #1F684B;
+    }
+
+    .option-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .option-row .option-icon {
+      stroke: #7B887F;
+      stroke-width: 2.5;
+    }
+
+    .option-row.selected .option-icon {
+      stroke: #1F684B;
+      stroke-width: 2.5;
+    }
+
+    .option-text {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #202B25;
+      flex: 1;
+      white-space: nowrap;
+    }
+
+    .selected-tag {
+      font-size: 20px;
+      font-weight: 700;
+      color: #174C37;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    /* Preview message card */
+    .preview-card {
+      width: 320px;
+      background-color: #FFFFFF;
+      border: 1px solid #DFE5DF;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    .preview-text {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #202B25;
+    }
+
+    /* Note line */
+    .note-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #526057;
+      margin-top: -2px;
+    }
+
+    .note-icon {
+      width: 32px;
+      height: 32px;
+      stroke: #526057;
+      stroke-width: 2.2;
+      fill: none;
+      flex-shrink: 0;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      margin-top: 1px;
+    }
+
+    .note-text {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.45;
+      color: #526057;
+    }
+
+    /* Fixed footer */
+    .fixed-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 360px;
+      padding: 12px 20px 20px 20px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      z-index: 20;
+    }
+
+    .primary-btn {
+      width: 320px;
+      height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(31, 104, 75, 0.25);
+    }
+
+    .primary-btn svg {
+      width: 32px;
+      height: 32px;
+      stroke: #FFFFFF;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+<div class="device-container">
+<!-- Top App Bar -->
+<header class="app-bar">
+<button aria-label="Quay lại Gia đình" class="back-btn">
+<!-- Lucide chevron-left -->
+<svg viewbox="0 0 24 24">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+<span>Gia đình</span>
+</button>
+</header>
+<!-- Scrollable Content -->
+<main class="scroll-content" style="padding-bottom: 180px;"><div class="title-row"><svg class="title-icon" viewbox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><h1 class="screen-title">Nội dung gửi cho Mai</h1></div><div style="background-color: #D6EADF; border: 2px solid #1F684B; border-radius: 16px; padding: 16px; display: flex; align-items: flex-start; gap: 12px; width: 320px; box-sizing: border-box;"><svg style="width: 32px; height: 32px; stroke: #1F684B; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0;" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg><div style="display: flex; flex-direction: column;"><p style="font-size: 24px; font-weight: 700; color: #174C37; line-height: 1.35; margin-bottom: 6px;">Bác bấm gửi trong Zalo nhé.</p><p style="font-size: 20px; font-weight: 500; color: #174C37; line-height: 1.4;">An Nhiên chưa biết tin này đã đến Mai chưa.</p></div></div><section class="section-block"><h2 class="section-label">Mai sẽ thấy</h2><div class="preview-card" style="border-width: 1.5px;"><p class="preview-text" style="line-height: 1.4;">Mẹ nhớ con. Hôm nay mẹ khỏe, con nhé!</p></div></section></main>
+<!-- Fixed Footer -->
+<footer class="fixed-footer"><div style="display: flex; flex-direction: column; gap: 12px; width: 320px;"><button style="height: 60px; width: 100%; border: 2px solid #1F684B; background: #FFFFFF; color: #1F684B; border-radius: 14px; font-size: 22px; font-weight: 700; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; padding: 0;"><svg style="width: 32px; height: 32px; stroke: #1F684B; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round;" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>Gọi điện cho Mai</span></button><button class="primary-btn" style="margin: 0;"><svg style="width: 32px; height: 32px; stroke: #FFFFFF; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round;" viewbox="0 0 24 24"><path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"></path><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"></path><path d="m2 15 6 6"></path><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 18.2 3c-1.4 0-2.2 1-2.7 1.7-.5-.7-1.3-1.7-2.7-1.7A2.73 2.73 0 0 0 10 5.8c0 1.1.8 2 1.5 2.7l4 3.9Z"></path></svg><span>Về trang Gia đình</span></button></div></footer>
+</div>
+</body>
+</html>

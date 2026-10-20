@@ -1,0 +1,22 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: screen "N18" (saved the very first task), shown after Bác saved the first task of the app. It never closes by itself.
+
+1. Headline: replace "Đã lưu xong!" with "Đã lưu việc đầu tiên!" (Be Vietnam Pro 30px bold #202B25, centered, may wrap to 2 lines, never clipped; keep the 16px gaps above and below it and the 20px screen margin).
+2. Summary card: keep the white card, 6px #2BA15C left accent bar, 48x48px #2BA15C tile with white Lucide `footprints` icon 32px, and the 3 icon rows (`clock` "8:00 sáng", `repeat` "Mỗi ngày", `bell` "Nhắc trước 10 phút", icons 32px #1F684B, text 24px). Task name stays "Đi bộ nhẹ nhàng".
+3. Primary button (the ONLY filled button, 320x60px, radius 14px, #1F684B): label "Xem lịch" 22px bold white with Lucide `calendar-days` icon 32px white on the left of the text. It replaces "Về trang Hôm nay".
+4. Secondary button (outline, 320x60px, 2px border #7B887F, white background): label "Thêm việc khác" 22px bold #1F684B with Lucide `plus` icon 32px #1F684B on the left. Unchanged. 12px gap between the two buttons, bottom margin 20px.
+5. Keep the 128x128px #1F684B circle with the white Lucide `save` icon 72px (stroke 2.5) at the top. Nothing else on screen: no percentage, no confetti, no illustration, no countdown, no share button, no snackbar, no bottom navigation.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+save = save the task (the saved confirmation)
+footprints = habit "Vận động tự nhiên" (only for that habit)
+clock = time of the task
+repeat = repeat
+bell = reminder
+calendar-days = go to Lịch tuần (only for the week calendar and the button that opens it)
+plus = add a task
+Do NOT use circle-check anywhere (it is only for the status "Đã xong"). Do NOT use `sun` on this screen.
+
+CONSTRAINTS (rule.md, error level): R-TXT-01 every text at least 20px; R-TXT-03 sentences at most 15 words; R-TXT-04 button labels at most 5 words; R-CON-01 text contrast at least 4.5:1; R-LAY-01 nothing clipped at 360px; R-ICON-01/02 every icon has visible text and every main button has an icon; R-COL-02 colored icon tile and 6px accent bar on the task card; R-TAP-01/02 touch targets at least 48x48px, primary button 60px high at the bottom; R-ONE-01 exactly one filled button; R-GES-01 tap-only; R-LANG-01 100% Vietnamese with diacritics; R-CEN-01 icon and headline centered, card content left-aligned.
+Do NOT generate: leaderboard, streak, charts, three-dot menu, icon-only buttons, English text, gradient.

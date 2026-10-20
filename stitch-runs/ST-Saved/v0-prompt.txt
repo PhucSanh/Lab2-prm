@@ -1,0 +1,44 @@
+Design ONE mobile screen: "ST-Saved" (saved successfully) for the Android app "An Nhiên" (360x800 dp).
+
+CONTEXT: App "An Nhiên" – daily routine calendar based on the 9 Power 9 habits for Vietnamese people aged 60+. User: Bà Lan, 68, farsighted, shaky fingers, only knows Zalo/YouTube. Principles: Bác decides; no pressure; few words. All UI text in Vietnamese with diacritics, addressing the user as "Bác". Sentences max 15 words, button labels max 5 words. One primary button per screen. No swipe, no long-press.
+
+PURPOSE: A full-screen result screen shown after Bác saved a new task. It confirms the task is saved and shows a short summary. It never closes by itself.
+
+LAYOUT (360x800, screen margin 20px, background #F6F7F2, no bottom navigation, no app bar, vertical spacing between blocks 16-24px):
+1. Top block, centered horizontally, starting about 48px from the top: a 128x128px circle filled #1F684B containing a white Lucide `save` icon 72px (stroke 2.5).
+2. 24px below: headline "Đã lưu xong!" Be Vietnam Pro 30px bold (700), #202B25, centered.
+3. 24px below: a white (#FFFFFF) summary card, width 320px, radius 16px, padding 16px, 1px border #DFE5DF, left-aligned content:
+   - Row 1 (title row): a 48x48px tile radius 12px filled #2BA15C with a white Lucide `footprints` icon 32px, then the task name "Đi bộ nhẹ nhàng" 24px bold #202B25. A 6px wide vertical accent bar #2BA15C on the left edge of the card.
+   - Row 2 (12px below): Lucide `clock` icon 32px #1F684B + "8:00 sáng" 24px #202B25.
+   - Row 3 (12px below): Lucide `repeat` icon 32px #1F684B + "Mỗi ngày" 24px #202B25.
+   - Row 4 (12px below): Lucide `bell` icon 32px #1F684B + "Nhắc trước 10 phút" 24px #202B25.
+4. Bottom block, pinned to the bottom with 20px margin, two buttons stacked vertically, 12px gap, each 320px wide x 60px high, radius 14px:
+   - Primary (the ONLY filled button): background #1F684B, white text "Về trang Hôm nay" 22px bold, with Lucide `sun` icon 32px white on the left of the text.
+   - Secondary (outline): white background, 2px border #7B887F, text "Thêm việc khác" 22px bold #1F684B, with Lucide `plus` icon 32px #1F684B on the left of the text.
+5. Nothing else: no percentage, no confetti, no illustration, no countdown, no share button, no snackbar.
+
+STYLE TOKENS: background #F6F7F2; card #FFFFFF; text #202B25; secondary text #526057; primary #1F684B; font Be Vietnam Pro; every text at least 20px; text contrast at least 4.5:1; flat design, no gradient, no dark background, no neon; at most a very light shadow on the card.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+save = save the task (the saved confirmation)
+footprints = habit "Vận động tự nhiên" (only for that habit)
+clock = time of the task
+repeat = repeat
+bell = reminder
+sun = go to Hôm nay
+plus = add a task
+Do NOT use circle-check anywhere (it is only for the status "Đã xong").
+
+CONSTRAINTS (from rule.md, error level):
+- R-TXT-01: every text at least 20px. R-TXT-03: no sentence longer than 15 words. R-TXT-04: button labels at most 5 words.
+- R-CON-01: text contrast at least 4.5:1. R-LAY-01: nothing clipped or overflowing at 360px.
+- R-ICON-01 / R-ICON-02: every icon has visible text next to it; every main action button has an icon.
+- R-COL-02: the task card has a colored icon tile and a 6px left accent bar in the habit color.
+- R-TAP-01 / R-TAP-02: touch targets at least 48x48px; primary button 60px high, near full width, at the bottom.
+- R-ONE-01: exactly one filled button.
+- R-GES-01: tap-only, no swipe/drag/long-press.
+- R-LANG-01: 100% Vietnamese with diacritics. R-LANG-03 / R-VOC-01: no pressure or technical words.
+- R-CEN-01: the result block (icon + headline) is centered; the card content is left-aligned.
+Do NOT generate: leaderboard, streak, health score, charts, three-dot menu, icon-only buttons, carousel, English text, gradient, background image behind text.

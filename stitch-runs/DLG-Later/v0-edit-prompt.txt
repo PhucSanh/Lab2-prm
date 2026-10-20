@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In each of the three outline buttons ("30 phút nữa", "Chiều nay, 4 giờ", "Ngày mai, cùng giờ"), replace the Lucide `clock` icon with a Lucide `alarm-clock-plus` icon 32px, stroke 2.5, color #1F684B, on the left of the label.
+2. Keep the Lucide `clock` icon 32px #1F684B only in the detail row "Đi bộ, đang hẹn 9:30 sáng".
+3. Keep the "Không dời nữa" text button with its `x` icon, the header circle, button sizes (272x60px), gaps and all text exactly as they are.

@@ -1,0 +1,26 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the "Chi tiết ngày" screen for a PAST day (Thứ Ba, 6/10), read-only review.
+1. Screen title (30px bold): "Thứ Ba, 6/10". Back button stays "Lịch tuần" with Lucide `chevron-left` 32px.
+2. Summary card (white, radius 16, padding 16, border #DFE5DF): REMOVE the clock icon. Line 1 "Đã xong 5 / 6 việc" (24px bold, #202B25); line 2 "Ngày đã qua – chỉ xem lại" (20px, #526057). No progress bar, no percentage.
+3. REMOVE the fixed footer button "Thêm việc cho ngày này" completely. There is NO button of any kind on this screen. Scroll container padding-bottom 20px.
+4. REMOVE the Lucide `chevron-right` from every task card (past tasks are view-only, not tappable). Keep the 6px left accent bar, the 48x48px radius-12 tile (white icon 32px, stroke 2.5), time, task name, ONE secondary line (habit name) and the status chip.
+5. Task list, 6 tasks in 4 groups (group label 22px bold #526057), cards 16px radius, 8px gap inside a group, 16px between groups:
+   - "Buổi sáng": (a) time "6:00 sáng", name "Tưới cây ngoài vườn", habit "Vận động tự nhiên", tile #2BA15C with `footprints`, chip "Đã xong"; (b) time "9:30 sáng · trời mưa", name "Đi bộ quanh công viên", habit "Vận động tự nhiên", tile #2BA15C with `footprints`, chip "Bỏ qua".
+   - "Buổi trưa": time "12 giờ trưa", name "Ăn trưa nhiều rau", habit "Ăn nhiều rau, đậu", tile #609D2A with `salad`, chip "Đã xong".
+   - "Buổi chiều": time "3 giờ chiều", name "Uống trà với cô Tám", habit "Trà chiều cùng bạn", tile #D0754E with `coffee`, chip "Đã xong".
+   - "Buổi tối": (a) time "6 giờ tối", name "Gọi điện cho Mai", habit "Gia đình trên hết", tile #D86E75 with `house`, chip "Đã xong"; (b) time "7 giờ tối", name "Ăn tối nhiều đậu", habit "Ăn nhiều rau, đậu", tile #609D2A with `salad`, chip "Đã xong".
+6. Status chip "Đã xong": pill height 40px, background #1F684B, text "Đã xong" 20px bold #FFFFFF, Lucide `circle-check` 24px white on the left. Status chip "Bỏ qua": pill height 40px, background #FFFFFF, 2px border #7B887F, text "Bỏ qua" 20px bold #202B25, Lucide `circle-minus` 24px #202B25 on the left. Replace every "Chưa làm" chip. Every task card background #FFFFFF, task name 24px bold, time 20px bold #526057, long names wrap, no "…".
+7. Cards must look calm and read-only: no shadow, no pressed-state hint, no three-dot menu, no swipe hint.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px (status chip icons: 24px) and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+- chevron-left = back, with the text "Lịch tuần"
+- circle-check = status "Đã xong" (only this status)
+- circle-minus = status "Bỏ qua" (only this status)
+- footprints = habit Vận động tự nhiên (only this habit)
+- salad = habit Ăn nhiều rau, đậu (only this habit)
+- coffee = habit Trà chiều cùng bạn (only this habit)
+- house = habit Gia đình trên hết (only this habit)
+No clock, no chevron-right, no plus, no circle on this screen.
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; text contrast at least 4.5:1; nothing clipped at 360px width; every icon has visible text next to it; no button, so no filled button; every status is icon + text, never color only; tile and left bar of each task card have the same habit color; no bottom navigation; tap-only; 100% Vietnamese with diacritics; no ranking, no streak, no percentage, no blame wording about the skipped task.

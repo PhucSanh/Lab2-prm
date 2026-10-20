@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=360, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - Thông tin của Bác</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: #F6F7F2;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 0;
+      line-height: 1.5;
+    }
+
+    /* Khung cố định thiết bị 360 x 800 dp */
+    .app-screen {
+      width: 360px;
+      min-height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      overflow-x: hidden;
+    }
+
+    /* App Bar */
+    .app-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px 8px 20px;
+      background-color: #F6F7F2;
+      height: 64px;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: none;
+      color: #1F684B;
+      font-size: 22px;
+      font-weight: 700;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      cursor: pointer;
+      min-height: 48px;
+      padding: 0 4px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .btn-back svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #526057;
+      min-height: 48px;
+      padding: 0 4px;
+    }
+
+    .step-badge svg {
+      width: 24px;
+      height: 24px;
+      stroke: #526057;
+    }
+
+    /* Nội dung cuộn */
+    .content-scroll {
+      flex: 1;
+      padding: 4px 20px 104px 20px; /* Chừa khoảng 104px cho nút Tiếp tục cố định ở đáy */
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: left;
+    }
+
+    /* Tiêu đề màn hình */
+    .heading-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    .heading-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    .heading-subtitle {
+      font-size: 24px;
+      font-weight: 400;
+      color: #526057;
+      line-height: 1.4;
+    }
+
+    /* Nhãn trường nhập liệu */
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .field-label-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #202B25;
+    }
+
+    .field-label-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      color: #1F684B;
+    }
+
+    .field-label-text {
+      font-size: 24px;
+      font-weight: 600;
+      color: #202B25;
+    }
+
+    /* Trường văn bản nhập tên (trạng thái lỗi hiển thị) */
+    .input-box {
+      width: 100%;
+      height: 60px;
+      background-color: #FFFFFF;
+      border: 2px solid #B42318; /* Viền lỗi theo yêu cầu */
+      border-radius: 12px;
+      padding: 0 16px;
+      font-size: 24px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      color: #202B25;
+      display: flex;
+      align-items: center;
+      outline: none;
+    }
+
+    /* Thông báo lỗi & hướng dẫn inline */
+    .error-card {
+      background-color: #FDECE9;
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .error-icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      color: #B42318;
+      margin-top: 2px;
+    }
+
+    .error-text-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .error-msg {
+      font-size: 20px;
+      font-weight: 600;
+      color: #912018;
+      line-height: 1.35;
+    }
+
+    .error-example {
+      font-size: 20px;
+      font-weight: 400;
+      color: #912018;
+      line-height: 1.35;
+    }
+
+    /* Nhóm nút lựa chọn Danh xưng (3 nút) */
+    .options-row {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .option-btn {
+      flex: 1;
+      height: 60px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      cursor: pointer;
+      text-decoration: none;
+      min-width: 0;
+      padding: 0 6px;
+      transition: all 0.15s ease;
+    }
+
+    /* Tùy chọn được chọn */
+    .option-btn.selected {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+      color: #174C37;
+      font-weight: 700;
+    }
+
+    /* Tùy chọn chưa chọn */
+    .option-btn.unselected {
+      background-color: #FFFFFF;
+      border: 2px solid #526057;
+      color: #202B25;
+      font-weight: 500;
+    }
+
+    .option-btn svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    /* Hộp thời gian bấm chạm */
+    .time-picker-box {
+      width: 100%;
+      height: 60px;
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      border-radius: 12px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .time-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .time-left svg {
+      width: 32px;
+      height: 32px;
+      color: #1F684B;
+      flex-shrink: 0;
+    }
+
+    .time-value {
+      font-size: 24px;
+      font-weight: 600;
+      color: #202B25;
+      letter-spacing: 0.5px;
+    }
+
+    .time-chevron svg {
+      width: 32px;
+      height: 32px;
+      color: #526057;
+      flex-shrink: 0;
+    }
+
+    /* Hướng dẫn trợ giúp */
+    .helper-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #526057;
+    }
+
+    .helper-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      color: #526057;
+    }
+
+    .helper-text {
+      font-size: 20px;
+      color: #526057;
+      line-height: 1.35;
+    }
+
+    /* Thanh cố định nút Tiếp tục ở đáy */
+    .fixed-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 360px;
+      padding: 12px 20px 20px 20px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      z-index: 100;
+      box-sizing: border-box;
+    }
+
+    .btn-primary {
+      width: 100%;
+      height: 60px;
+      background-color: #1F684B;
+      border: none;
+      border-radius: 14px;
+      color: #FFFFFF;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(31, 104, 75, 0.25);
+    }
+
+    .btn-primary svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      stroke-width: 2.5;
+    }
+  </style>
+</head>
+<body>
+<div class="app-screen">
+<!-- 1. Thanh tiêu đề đầu màn hình (App Bar) -->
+<header class="app-bar">
+<button aria-label="Quay lại" class="btn-back" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+<span>Quay lại</span>
+</button>
+</header>
+<!-- Nội dung cuộn chính -->
+<main class="content-scroll" style="padding-bottom: 200px;">
+<!-- 2. Tiêu đề màn hình & Giới thiệu -->
+<section class="heading-block"><h1 class="heading-title">Thông tin của Bác</h1>
+<p class="heading-subtitle">Bác đổi lại khi cần nhé.</p></section>
+<!-- 3. Trường 1: Tên Bác (Trạng thái hiển thị báo lỗi inline) -->
+<section class="field-group"><div class="field-label-row">
+<svg class="field-label-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+<label class="field-label-text" for="user-name" style="font-size: 22px; font-weight: 700;">Tên Bác</label>
+</div>
+<div aria-label="Tên Bác" class="input-box" id="user-name" role="textbox" style="border: 2px solid #7B887F; border-radius: 14px; font-weight: 700;" tabindex="0">Lan</div>
+<div class="helper-row" style="display: flex; align-items: center; gap: 8px; color: #526057;">
+<svg fill="none" stroke="#526057" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="width: 32px; height: 32px; flex-shrink: 0;" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="16" y2="12"></line><line x1="12" x2="12.01" y1="8" y2="8"></line></svg>
+<span class="helper-text" style="font-size: 20px;">Ví dụ: Lan</span>
+</div></section>
+<!-- 4. Trường 2: Danh xưng (3 nút bấm ngang bằng nhau) -->
+<section class="field-group"><div class="field-label-row">
+<svg class="field-label-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+<line x1="9" x2="9.01" y1="9" y2="9"></line>
+<line x1="15" x2="15.01" y1="9" y2="9"></line>
+</svg>
+<span class="field-label-text" style="font-size: 22px; font-weight: 700;">An Nhiên gọi Bác là</span>
+</div>
+<div aria-label="An Nhiên gọi Bác là" class="options-row" role="radiogroup">
+<button aria-checked="false" class="option-btn unselected" role="radio" style="font-weight: 700;" type="button">
+<svg fill="none" stroke="#526057" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span>Bác</span>
+</button>
+<button aria-checked="false" class="option-btn unselected" role="radio" style="font-weight: 700;" type="button">
+<svg fill="none" stroke="#526057" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span>Ông</span>
+</button>
+<button aria-checked="true" class="option-btn selected" role="radio" style="font-weight: 700;" type="button">
+<svg fill="none" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<circle cx="12" cy="12" fill="#1F684B" r="4"></circle>
+</svg>
+<span>Bà</span>
+</button>
+</div><div style="font-size: 20px; font-weight: 700; color: #174C37; margin-top: 8px;">Đang chọn: Bà</div></section>
+<!-- 5. Trường 3: Giờ thức dậy (Hộp bấm chọn giờ) -->
+<section class="field-group"><div class="field-label-row">
+<svg class="field-label-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M12 2v6"></path>
+<path d="m4.93 10.93 4.24 4.24"></path>
+<path d="M2 18h2"></path>
+<path d="M20 18h2"></path>
+<path d="m19.07 10.93-4.24 4.24"></path>
+<path d="M22 22H2"></path>
+<path d="m8 6 4-4 4 4"></path>
+<path d="M16 18a4 4 0 0 0-8 0"></path>
+</svg>
+<span class="field-label-text" style="font-size: 22px; font-weight: 700;">Bác thức dậy lúc</span>
+</div>
+<div aria-label="Chọn giờ thức dậy, hiện tại là 5 giờ 30 sáng" class="time-picker-box" role="button" style="border-radius: 14px;" tabindex="0">
+<div class="time-left">
+<svg fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v8"></path><path d="m4.93 10.93 1.41 1.41"></path><path d="M2 18h2"></path><path d="M20 18h2"></path><path d="m19.07 10.93-1.41 1.41"></path><path d="M22 22H2"></path><path d="m8 6 4-4 4 4"></path><path d="M16 18a4 4 0 0 0-8 0"></path></svg>
+<span class="time-value" style="font-weight: 700;">5 : 30 sáng</span>
+</div>
+<div class="time-chevron">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="6 9 12 15 18 9"></polyline>
+</svg>
+</div>
+</div>
+<div class="helper-row">
+<svg fill="none" stroke="#526057" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="width: 32px; height: 32px; flex-shrink: 0;" viewbox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+<span class="helper-text">Để nhắc việc đúng giờ cho Bác.</span>
+</div></section><div class="note-card" style="background-color: #D6EADF; border-radius: 16px; padding: 16px; display: flex; align-items: flex-start; gap: 12px; margin-top: 4px;">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="width: 32px; height: 32px; flex-shrink: 0; color: #174C37; margin-top: 2px;" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" x2="12" y1="16" y2="12"></line>
+<line x1="12" x2="12.01" y1="8" y2="8"></line>
+</svg>
+<span style="font-size: 20px; color: #174C37; font-weight: 500; line-height: 1.4;">Việc đã lưu vẫn giữ giờ cũ.</span>
+</div>
+</main>
+<!-- 7. Chân màn hình cố định: Nút "Tiếp tục" duy nhất -->
+<footer class="fixed-footer"><div style="display: flex; flex-direction: column; gap: 12px; width: 100%;">
+<button class="btn-primary" style="height: 60px; width: 100%; border-radius: 14px; background-color: #1F684B; color: #FFFFFF; font-size: 22px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; border: none; cursor: pointer;" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="width: 32px; height: 32px;" viewbox="0 0 24 24">
+<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+<polyline points="17 21 17 13 7 13 7 21"></polyline>
+<polyline points="7 3 7 8 15 8"></polyline>
+</svg>
+<span>Lưu thông tin</span>
+</button>
+<button style="height: 60px; width: 100%; border-radius: 14px; background-color: #FFFFFF; border: 2px solid #526057; color: #202B25; font-size: 22px; font-weight: 700; font-family: 'Be Vietnam Pro', sans-serif; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer;" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="width: 32px; height: 32px; color: #202B25;" viewbox="0 0 24 24">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+<span>Hủy</span>
+</button>
+</div></footer>
+</div>
+</body>
+</html>

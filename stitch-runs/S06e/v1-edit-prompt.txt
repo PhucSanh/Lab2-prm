@@ -1,0 +1,2 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Remove the Lucide `pencil` icon in front of the label "Tên việc"; keep only the text "Tên việc" 24px bold 600 #202B25, left aligned like the labels "Giờ làm", "Lặp lại" and "Lời nhắc".

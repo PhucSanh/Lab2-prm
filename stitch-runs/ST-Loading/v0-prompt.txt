@@ -1,0 +1,31 @@
+Design ONE mobile screen: "ST-Loading" (saving state) for the Android app "An Nhiên" (360x800 dp).
+
+CONTEXT: App "An Nhiên" – daily routine calendar based on the 9 Power 9 habits for Vietnamese people aged 60+. User: Bà Lan, 68, farsighted, shaky fingers, only knows Zalo/YouTube. Principles: Bác decides; no pressure; few words. All UI text in Vietnamese with diacritics, addressing the user as "Bác". Sentences max 15 words.
+
+PURPOSE: A full-screen, calm "saving" screen shown for a moment after Bác taps "Lưu việc này". It tells Bác the app is saving and that nothing needs to be tapped. The screen closes by itself when saving finishes.
+
+LAYOUT (360x800, screen margin 20px, background #F6F7F2, no bottom navigation, no app bar, no buttons, nothing tappable):
+1. Everything is one centered column (horizontally and vertically centered in the screen), center-aligned text.
+2. A circular progress ring: Lucide `loader-circle` icon 88x88px, stroke 2.5, color #1F684B, inside a 160x160px circle filled #D6EADF.
+3. 32px below the circle, the text "Đang lưu việc…" in Be Vietnam Pro 30px bold (700), color #202B25.
+4. 12px below, the text "Không cần bấm gì thêm" in 24px regular (400), color #526057, one line.
+5. Nothing else on the screen: no buttons, no cancel link, no percentage, no progress bar, no countdown, no illustration, no card.
+
+STYLE TOKENS: background #F6F7F2; text #202B25; secondary text #526057; primary #1F684B; container #D6EADF; font Be Vietnam Pro; every text at least 20px; contrast of text at least 4.5:1; flat design, no gradient, no shadow, no dark background, no neon.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+loader-circle = saving in progress (only for the "Đang lưu việc…" state)
+
+CONSTRAINTS (from rule.md, error level):
+- R-TXT-01: every text at least 20px.
+- R-TXT-03: no sentence longer than 15 words; no paragraph longer than 2 lines.
+- R-CON-01: text contrast at least 4.5:1.
+- R-LAY-01: nothing overflows or is clipped at 360px width; no horizontal scroll.
+- R-ICON-01 / R-ICON-02: every icon is accompanied by visible text (the ring is next to "Đang lưu việc…").
+- R-GES-01: no swipe, drag or long-press interactions.
+- R-LANG-01: 100% Vietnamese with diacritics; no English words.
+- R-LANG-03 / R-VOC-01: no pressure words, no technical words (no "đồng bộ", "sao lưu", "thiết bị", "tải").
+- R-CEN-01: content standing alone is centered.
+Do NOT generate: leaderboard, streak, health score, charts, three-dot menu, icon-only buttons, carousel, English text, gradient, background image behind text.

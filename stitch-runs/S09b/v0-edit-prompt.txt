@@ -1,0 +1,6 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Bottom navigation: make it 96px high. Every tab label (20px, bold for the active tab) must wrap onto 2 lines, centered, one word per line ("Hôm" / "nay", "Lịch" / "tuần", "Thói" / "quen", "Gia" / "đình"), white-space: normal, line-height 1.15, no horizontal padding on tabs, each tab exactly 25% width (90px). Labels must not touch each other or the screen edge. Keep icons 32px (sun, calendar-days, leaf, hand-heart) and the active #D6EADF pill.
+2. Buttons "Gọi điện" and "Nhắn tin" in all three cards: text 22px bold, button height 60px, icon 32px, gap 8px, equal width with 12px between them; text must not wrap or clip.
+3. Screen heading "Gia đình": 30px bold.
+4. Font for the whole screen: Be Vietnam Pro (Google Fonts, weights 500, 600, 700) instead of Plus Jakarta Sans.
+5. Scroll content bottom padding 220px so the Bin card is not hidden behind the button and the 96px nav.

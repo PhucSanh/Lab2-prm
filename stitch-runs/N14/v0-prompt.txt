@@ -1,0 +1,16 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: dialog "N14" (unsaved changes, shown when Bác taps Back on a form after editing). The scrim and the centered white dialog card (320px wide, radius 24px, padding 24px, all content centered) stay as they are.
+1. Header circle: keep the 80x80px circle filled #D6EADF, but replace its icon with a Lucide `info` icon 64px, stroke 2.5, color #1F684B.
+2. Question (replaces "Bác đã đi bộ xong rồi chứ?"): "Chưa lưu thay đổi" Be Vietnam Pro 26px bold (700), #202B25, centered, line-height 1.4, 16px below the circle (may wrap to 2 lines).
+3. Detail text (replaces the two-row block), 12px below the question, centered, 24px regular (400), #526057, at most 2 lines: "Nếu rời khỏi đây, phần vừa chỉnh sẽ không được lưu." Remove the footprints tile and the clock row.
+4. 24px below, ONE filled button, 272px x 60px, radius 14px, filled #1F684B, label "Tiếp tục chỉnh" 22px bold white, with a Lucide `pencil` icon 32px white on the left of the label (icon and label centered as a group). This is the safe choice and sits on top.
+5. 12px below: one outline button, 272px x 60px, radius 14px, white background, 2px border #7B887F, label "Bỏ thay đổi" 22px bold #1F684B, with a Lucide `file-x` icon 32px #1F684B on the left of the label. Not filled, not red.
+6. Remove the old buttons "Đúng, đã xong" and "Chưa, để sau". Exactly two buttons in total. No close "X" in the corner, no countdown, no extra text.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+info = note / hint (header circle only)
+pencil = edit (only for "Tiếp tục chỉnh")
+file-x = discard changes (only for "Bỏ thay đổi")
+
+CONSTRAINTS (rule.md, error level): R-TXT-01 every text at least 20px; R-TXT-03 sentences at most 15 words, button labels at most 5 words, paragraph at most 2 lines; R-CON-01 contrast at least 4.5:1; R-LAY-01 nothing clipped or overflowing at 360px; R-ICON-01/02 every button has an icon and visible text; R-TAP-01/02 buttons 60px high, full dialog width; R-ONE-01 exactly one filled button; R-GES-01 tap-only; R-LANG-01 100% Vietnamese with diacritics; R-LANG-03 no pressure or blaming words; R-VOC-01 buttons are not "OK", "Có", "Không"; R-CEN-01 dialog content centered. Do NOT generate: swipe, long-press, text input, three-dot menu, English text, gradient.

@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the 112px circle (background #FDECE9) the `bell-off` icon must be drawn in #B42318 (stroke 2.2, 64px). Remove the CSS rule `.bell-circle svg` that overrides the stroke with green #174C37; set the stroke to #B42318 on the svg itself.
+2. Remove the 1px border #FFE4A0 from the guide card (background #FFF3DB, no border).
+3. Remove `margin-top: 24px` from the guide card so the gap between the sentences block and the guide card is exactly 16px.
+4. In the outlined button "Vẫn để sau" remove the `clock` icon, so the button shows only the label "Vẫn để sau" (22px bold #202B25, centered), still 60px high, full width minus 20px margins, 2px border #7B887F, radius 14px. Keep the filled button "Bật nhắc việc" with its `bell-ring` icon 32px white.

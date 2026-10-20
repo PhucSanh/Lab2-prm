@@ -1,0 +1,22 @@
+{
+  "screen": "S11b Chi tiết ngày · ngày đã qua",
+  "round": 0,
+  "score": 97,
+  "errors": 0,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Khoảng cách giữa các nhóm buổi (vd. từ thẻ 'Đi bộ quanh công viên' tới nhãn 'Buổi trưa')",
+      "evidence": "Mỗi task-card có inline margin-bottom: 8px (thẻ cuối nằm trong flex .task-list nên margin không gộp) cộng section margin-bottom: 20px → khoảng cách giữa hai nhóm = 28px; trong danh sách: gap 8px + margin-bottom 8px = 16px",
+      "fix": "Bỏ margin-bottom: 8px trên .task-card, đặt .task-list gap: 8px và section.time-group margin-bottom: 16px để khoảng cách giữa các nhóm đúng 16px"
+    }
+  ],
+  "na": ["R-TXT-06", "R-TAP-02", "R-TAP-03", "R-NAV-01", "R-ONE-02", "R-SAFE-01", "R-SAFE-02", "R-VOI-01"],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Chỉ lệch khoảng cách giữa các nhóm buổi (28px thay vì 16px); các luật còn lại pass hoặc n/a. Ghi chú: critic không ghi được file, orchestrator lưu lại bản này từ báo cáo của critic (các dòng pass được rút gọn)."
+}

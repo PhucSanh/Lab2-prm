@@ -1,0 +1,22 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the "Hôm nay" screen in the evening after Bác finished all 6 tasks of the day. Nothing is pending, so there is no "next task", no "Dời lại" button, no snackbar.
+1. Header: greeting "Chào buổi tối, Bác Lan" (same style as before); date line "Thứ Năm, 8/10 · Đã xong 6/6 việc".
+2. Replace the whole "Việc tiếp theo" card by a celebration card: width 320px, padding 20px, radius 24px, background #D6EADF, centered content, vertical gap 16px:
+   - Lucide `circle-check` icon 72px, #1F684B, stroke 2.2, centered.
+   - Text "Hôm nay Bác đã làm xong 6 việc. Nghỉ ngơi thôi!" 24px bold #202B25, centered, may wrap to 2-3 lines.
+   - The ONLY filled button of the screen: label "Báo tin vui cho Mai" 22px bold white on ONE line (white-space nowrap), 60px high, 280px wide, radius 14px, background #1F684B, with a Lucide `message-square` icon 32px white on its left.
+   - A text button (no fill, no border) label "Xem lịch ngày mai" 22px bold #1F684B on ONE line, 60px high, 280px wide, with a Lucide `arrow-right` icon 32px #1F684B on its right.
+3. Task list: change the section title to "Đã xong". Show all 6 rows in time order, every row with the status chip "Đã xong" (chip 40px high, radius 999px, background #1F684B, text 20px bold white, Lucide `circle-check` icon 24px white on the left): 6:30 sáng · Tưới rau ngoài vườn, 7:30 sáng · Ăn sáng chậm rãi, 8:30 sáng · Ngồi thở nhẹ 10 phút, 9:30 sáng · Đi bộ quanh công viên, 3 giờ chiều · Uống trà với cô Tám, 6 giờ tối · Gọi điện cho Mai. No "Chưa làm", "Bỏ qua" or "Đã dời" chip anywhere.
+4. Remove the sticky filled button "Đã xong" and any snackbar. The celebration card button is the only filled button. Make the scroll container padding-bottom 120px so the last task card is not covered by the bottom navigation.
+5. Icon and color fixes to match the dictionary: Lucide `footprints` (white, 32px) in every tile of "Vận động tự nhiên"; Lucide `house` (white, 32px) in the tile of "Gọi điện cho Mai" instead of `phone`; Lucide `utensils` (stroke 2.5) for "Ăn vừa đủ", `wind` for "Thư giãn mỗi ngày", `coffee` for "Trà chiều cùng bạn"; every habit tile and its 6px left bar use the same accent color: Vận động tự nhiên #2BA15C, Ăn vừa đủ #B98331, Thư giãn mỗi ngày #AC76DB, Trà chiều cùng bạn #D0754E, Gia đình trên hết #D86E75 (no #B26A00 or #8F65C2 on tiles); bottom navigation icons: `sun`, `calendar-days`, `leaf`, `hand-heart` (the "Gia đình" tab must not use `users`), 32px, stroke 2.2. Exact Lucide path for `circle-check` (viewBox 0 0 24 24, fill none, round caps and joins): <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>; for `arrow-right`: <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>; for `message-square`: <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/>.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px (status chip icons: 24px; the celebration icon: 72px) and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+circle-check = done (only for the status "Đã xong" and the celebration)
+message-square = send a message ("Báo tin vui cho Mai")
+arrow-right = continue ("Xem lịch ngày mai")
+footprints = habit "Vận động tự nhiên" (only for that habit)
+house = habit "Gia đình trên hết" (only for that habit)
+(keep the other existing icons: utensils, wind, coffee, sun, calendar-days, leaf, hand-heart)
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped at 360px width; every icon has visible text next to it; touch targets at least 48x48px; exactly one filled button; every status is icon + text; tile and left bar of each task card have the same habit color; tap-only; 100% Vietnamese with diacritics; no pressure words, no ranking or comparison.

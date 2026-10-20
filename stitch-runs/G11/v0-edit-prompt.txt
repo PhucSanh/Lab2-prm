@@ -1,0 +1,10 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the popup, button 2 "Để sau": replace the Lucide `clock` icon with Lucide `alarm-clock-plus`, 32px, stroke 2.5, color #1F684B. Label and size unchanged.
+2. In the dimmed page behind, the "Dời lại" button on the "Việc tiếp theo" card: replace `clock` with Lucide `alarm-clock-plus` 32px, stroke 2.5.
+3. Task row "Gọi điện cho Mai": its 48x48 tile (#D86E75) shows Lucide `house` 32px white, stroke 2.5, instead of `phone`.
+4. Bottom navigation tab "Lịch tuần": use Lucide `calendar-days` 32px instead of `calendar`.
+5. Bottom navigation tab "Gia đình": use Lucide `hand-heart` 32px instead of `users`.
+6. The "Đã xong" chip and the sticky "Đã xong" button at the bottom: use Lucide `circle-check` 32px instead of `check`.
+7. Movement task tile (walking): use Lucide `footprints` 32px white, stroke 2.5, replacing the hand-drawn walking person.
+8. Task "Ăn sáng chậm rãi" tile: use the exact Lucide `utensils` 32px white, stroke 2.5, replacing the hand-drawn fork and knife.
+9. Keep `mail` (popup header), `eye` ("Xem gợi ý"), `sun`, `leaf`, `wind`, `coffee` as they are. Popup text, sizes and the dim scrim stay unchanged.

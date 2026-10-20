@@ -1,0 +1,14 @@
+{
+  "screen": "N13 Thay đổi lần nào",
+  "round": 0,
+  "score": 87,
+  "errors": 1,
+  "warns": 1,
+  "results": [
+    {"rule": "R-TXT-04", "level": "error", "check": "auto", "status": "fail", "where": "Nút viền thứ 2 'Lần này và các lần sau'", "evidence": "Nhãn nút 6 tiếng (> 5), xuống 2 dòng trong nút 272 px", "fix": "Đổi nhãn thành 'Từ nay về sau' (4 tiếng), giữ icon calendar-range 32 px, chữ 22px đậm trên 1 dòng"},
+    {"rule": "R-STY-03", "level": "warn", "check": "ai", "status": "fail", "where": "Ba nút trong hộp thoại so với mép thẻ", "evidence": "Thẻ max-width calc(100% - 32px) = 288 px, padding 20 px (vùng trong 248 px) nhưng nút cố định width 272 px, tràn lề trong 12 px mỗi bên; nút chỉ cách mép thẻ 8 px", "fix": "Đặt nút width 100% (248 px) trong thẻ 288 px padding 20 px, hoặc giữ nút 272 px và đổi thẻ thành 312 px với padding 20 px"}
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Hộp thoại sạch, icon đúng từ điển (repeat, info, calendar-1, calendar-range, x), 1 nút filled, chữ và tương phản đạt; còn nhãn 'Lần này và các lần sau' quá 5 tiếng và nút tràn lề trong thẻ. (Các luật còn lại pass hoặc n/a; critic không ghi được file nên orchestrator chép lại bản rút gọn.)"
+}

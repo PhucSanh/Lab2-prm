@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An Nhiên - ST-Error (Chưa lưu được)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: #E5E9E5;
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    /* Khung điện thoại Android 360x800 dp */
+    .phone-frame {
+      width: 360px;
+      height: 800px;
+      background-color: #F6F7F2;
+      border-radius: 32px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+      padding: 48px 20px 20px 20px;
+    }
+
+    /* Khối nội dung trên */
+    .top-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* Vòng tròn cảnh báo nhẹ nhàng */
+    .icon-circle {
+      width: 128px;
+      height: 128px;
+      border-radius: 64px;
+      background-color: #FDECE9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+
+    .icon-circle svg {
+      width: 88px;
+      height: 88px;
+      stroke: #B42318;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Tiêu đề chính */
+    .headline {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #202B25;
+      margin-bottom: 16px;
+      width: 320px;
+    }
+
+    /* Khối giải thích & trấn an */
+    .explanation-block {
+      width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .p-main {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #202B25;
+      text-align: center;
+    }
+
+    .p-reassure {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #526057;
+      text-align: center;
+    }
+
+    /* Khối các nút hành động ở đáy */
+    .bottom-section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Nút bấm chuẩn 320x60px */
+    .action-btn {
+      width: 320px;
+      height: 60px;
+      border-radius: 14px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      outline: none;
+      transition: transform 0.1s ease, filter 0.1s ease;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    .action-btn:active {
+      transform: scale(0.98);
+    }
+
+    .action-btn svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Nút chính (nút filled duy nhất) */
+    .btn-primary {
+      background-color: #1F684B;
+      color: #FFFFFF;
+    }
+
+    .btn-primary svg {
+      stroke: #FFFFFF;
+      stroke-width: 2.5;
+    }
+
+    /* Nút phụ dạng outline */
+    .btn-secondary {
+      background-color: #FFFFFF;
+      color: #1F684B;
+      border: 2px solid #7B887F;
+    }
+
+    .btn-secondary svg {
+      stroke: #1F684B;
+      stroke-width: 2.5;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="phone-frame" role="main" aria-label="Màn hình chưa lưu được việc">
+    <!-- Khối trên: Biểu tượng, Tiêu đề, Lời giải thích & trấn an -->
+    <section class="top-section">
+      <!-- Vòng tròn 128x128px nền #FDECE9 chứa icon circle-alert 88px #B42318 -->
+      <div class="icon-circle" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+      </div>
+
+      <!-- Tiêu đề 30px bold, #202B25 -->
+      <h1 class="headline">Chưa lưu được</h1>
+
+      <!-- 2 đoạn văn trấn an 24px, cách nhau 12px -->
+      <div class="explanation-block">
+        <p class="p-main">Chưa thể lưu trên điện thoại.</p>
+        <p class="p-reassure">Nội dung đang nhập vẫn được giữ lại.</p>
+      </div>
+    </section>
+
+    <!-- Khối dưới: 3 nút hành động xếp dọc, cách nhau 12px -->
+    <section class="bottom-section" aria-label="Các lựa chọn thao tác">
+      <!-- Nút 1: Filled duy nhất - Thử lại -->
+      <button class="action-btn btn-primary" type="button">
+        <!-- Lucide rotate-ccw 32px -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+          <path d="M3 3v5h5"></path>
+        </svg>
+        <span>Thử lại</span>
+      </button>
+
+      <!-- Nút 2: Outline - Kiểm tra lại lịch -->
+      <button class="action-btn btn-secondary" type="button">
+        <!-- Lucide calendar-search 32px -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7.5"></path>
+          <path d="M16 2v4"></path>
+          <path d="M8 2v4"></path>
+          <path d="M3 10h18"></path>
+          <circle cx="18" cy="18" r="3"></circle>
+          <path d="m22 22-1.5-1.5"></path>
+        </svg>
+        <span>Kiểm tra lại lịch</span>
+      </button>
+
+      <!-- Nút 3: Outline - Quay lại sửa -->
+      <button class="action-btn btn-secondary" type="button">
+        <!-- Lucide pencil 32px -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+          <path d="m15 5 4 4"></path>
+        </svg>
+        <span>Quay lại sửa</span>
+      </button>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the primary button "Về Hôm nay", replace the Lucide `sun` icon with the exact standard Lucide `sun` glyph, 32x32px, stroke 2.5, white #FFFFFF: a circle r=5 at the center plus 8 short rays; the bottom ray must be the short line from y=21 to y=23 (x=12), not a long vertical line through the center. Keep the icon on the left of the text, keep the button 320x60px.

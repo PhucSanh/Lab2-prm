@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the 112px circle at the top, change the background from #FDECE9 to #FFF3DB and draw the `bell-off` icon (64px, stroke 2.2) in #B26A00. Remove the inline style `stroke: #B42318 !important` and any red/pink color from this circle.
+2. In the "Quay lại" back button of the app bar, replace the arrow SVG with the Lucide `chevron-left` icon at 32px (path "m15 18-6-6 6-6", stroke-width 2.5, stroke #1F684B). Keep the label "Quay lại" at 22px.

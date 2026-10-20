@@ -1,0 +1,6 @@
+Keep the overall layout and everything not mentioned below unchanged.
+
+1. In the relative cards "Hùng" and "Bin": stack the two buttons VERTICALLY instead of side by side. Each button is full card inner width (286px), 60px high, 12px gap between them, radius 14px, 2px #7B887F border, white background. Order: "Gọi điện" (Lucide `phone` 32px, #1F684B) on top, "Nhắn tin" (Lucide `message-square` 32px, #1F684B) below. Label 22px bold #1F684B, white-space: nowrap, on ONE line, centered with the icon, nothing wrapped or clipped.
+2. Replace the line "Bác chọn điều muốn kể cho con" with "Người thân của Bác" (20px, #526057, left aligned) and REMOVE the `message-circle` icon next to it (no icon on this line).
+3. In the relative cards, replace the Lucide `user` icon in the 48x48px #D6EADF circle by a single letter: "H" for Hùng and "B" for Bin (24px bold #1F684B, centered, no icon).
+4. Keep the result banner, the fixed bottom buttons and the bottom navigation exactly as they are. Increase scroll container padding-bottom to 300px so the last card is not covered.

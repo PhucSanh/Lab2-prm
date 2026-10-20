@@ -1,0 +1,21 @@
+{
+  "screen": "S11b Chi tiết ngày · ngày đã qua",
+  "round": 0,
+  "score": 97,
+  "errors": 0,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Khoảng cách giữa các nhóm buổi (vd. thẻ 'Đi bộ quanh công viên' tới nhãn 'Buổi trưa')",
+      "evidence": "Mỗi .task-card có inline margin-bottom: 8px; thẻ cuối nằm trong flex .task-list nên margin không gộp, cộng section.time-group margin-bottom: 20px → 28px giữa hai nhóm; giữa hai thẻ = gap 8px + margin 8px = 16px",
+      "fix": "Bỏ margin-bottom: 8px trên mọi .task-card; .task-list gap 16px; section.time-group margin-bottom: 16px, margin-top 0"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Chấm lại theo luật hiện tại: 97, 0 error, 1 warn (R-STY-03). Các luật còn lại pass hoặc n/a. Critic không ghi được file; orchestrator lưu lại từ báo cáo (dòng pass rút gọn)."
+}

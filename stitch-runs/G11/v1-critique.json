@@ -1,0 +1,23 @@
+{
+  "screen": "G11 Popup \"Mai gửi lịch cho Bác\"",
+  "round": 1,
+  "score": 97,
+  "errors": 0,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Ô icon việc 'Tưới rau ngoài vườn' (6:30 sáng, thói quen Vận động tự nhiên, nền #2BA15C)",
+      "evidence": "SVG người tự vẽ không phải Lucide; cùng thói quen Vận động tự nhiên mà thẻ 'Đi bộ quanh công viên' và khối Việc tiếp theo dùng Lucide footprints, nên một thói quen hiện 2 icon khác nhau",
+      "fix": "Đổi ô icon việc 'Tưới rau ngoài vườn' sang Lucide footprints 32px, nét trắng #FFFFFF stroke-width 2.5 trên nền #2BA15C, giống hệt ô icon thẻ 'Đi bộ quanh công viên'. Giữ nguyên các icon khác"
+    }
+  ],
+  "passed_all_other_rules": true,
+  "na": ["R-NAV-02", "R-SAFE-01", "R-SAFE-02", "R-VOI-01"],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Đã sửa gần hết icon theo Từ điển; chỉ còn ô icon 'Tưới rau ngoài vườn' là SVG tự vẽ thay vì Lucide footprints nên R-ICON-03 vẫn fail, điểm giữ 97, không có error."
+}

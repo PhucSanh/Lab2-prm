@@ -1,0 +1,15 @@
+{
+  "screen": "S09b Gia đình · đã thêm người thân",
+  "round": 1,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "results": "Tất cả luật pass hoặc n/a (stitch-critic không ghi được file; orchestrator chép tóm tắt)",
+  "fixed": ["R-TXT-02", "R-LAY-01", "R-STY-02"],
+  "regressions": [],
+  "notes": [
+    "Nút Gọi điện/Nhắn tin padding 0, nội dung ~130/137px, chữ sát viền; nên thêm padding 0 8px khi dựng Figma/Flutter. Body có padding 24px 16px nên ở khung 360px thật nút có thể chật hơn.",
+    "Banner dùng icon save; Từ điển icon chưa có dòng 'đã thêm thành công'.",
+    "'Gợi ý từ Mai · 2 việc' xuống 2 dòng, không vi phạm."
+  ]
+}

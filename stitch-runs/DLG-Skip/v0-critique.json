@@ -1,0 +1,18 @@
+{
+  "screen": "DLG-Skip Bỏ qua hôm nay",
+  "round": 0,
+  "score": 74,
+  "errors": 2,
+  "warns": 2,
+  "results": [
+    {"rule": "R-TXT-01", "level": "error", "status": "fail", "where": "Dòng mô tả dưới tiêu đề (#dialog-desc)", "evidence": "inline style font-size: 17px (< 20px); class .dialog-detail 24px có trong CSS nhưng không được dùng", "fix": "Đổi #dialog-desc sang 24px, weight 400, màu #526057, line-height 1.35"},
+    {"rule": "R-TXT-02", "level": "warn", "status": "fail", "where": "Dòng mô tả", "evidence": "Chữ nội dung 17px, nhỏ hơn rõ so với mức ≈ 24px", "fix": "Chữ nội dung 24px"},
+    {"rule": "R-TXT-03", "level": "error", "status": "fail", "where": "Đoạn mô tả", "evidence": "3 câu, 3 dòng ở 17px; ở 24px sẽ 4-5 dòng (> 2 dòng)", "fix": "Rút còn 'Mai vẫn nhắc như thường.' (tối đa 2 dòng ở 24px)"},
+    {"rule": "R-ICON-03", "level": "warn", "status": "fail", "where": "Icon nút 'Bận việc nhà'", "evidence": "SVG tự vẽ, không trùng Lucide washing-machine, trông giống máy ảnh", "fix": "Dùng Lucide washing-machine chuẩn, 32px, nét 2.5, #1F684B"},
+    {"rule": "các luật còn lại (R-CON, R-LAY, R-TXT-04, R-ICON-01/02, R-TAP, R-GES, R-ONE, R-CEN, R-LANG, R-VOC, R-STY...)", "status": "pass hoặc n/a"}
+  ],
+  "fixed": [],
+  "regressions": [],
+  "notes": "Critic không ghi được file; orchestrator chép lại JSON (rút gọn luật pass/n-a). Ngoài luật: màn ghi 'Không chọn cũng được' nhưng không có đường bỏ qua mà không chọn lý do; tiêu đề rớt riêng chữ 'nay?' xuống dòng.",
+  "summary": "Hộp thoại căn giữa, 5 nút cao 60px có icon + chữ, không có nút filled; lỗi chặn là đoạn mô tả 17px dài 3 dòng."
+}

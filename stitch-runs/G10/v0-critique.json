@@ -1,0 +1,22 @@
+{
+  "screen": "G10 Có gợi ý mới (tự hiện)",
+  "round": 0,
+  "score": 97,
+  "errors": 0,
+  "warns": 1,
+  "violations": [
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "where": "Dòng phụ dưới tiêu đề popup 'Mai vừa gửi lúc 16:20'",
+      "evidence": "Giờ viết kiểu 24 giờ '16:20', trái SG-10; cùng màn dùng '9:30 sáng', '3 giờ chiều'",
+      "fix": "Đổi chữ thành 'Mai vừa gửi lúc 4:20 chiều' (giữ 22px, màu #526057, căn giữa)"
+    }
+  ],
+  "notes": [
+    "R-ONE-01: nút 'Đã xong' ở nền Hôm nay vẫn thấy dưới scrim; chấm trên lớp popup nên pass. Chấm chặt thì 1 error, điểm 87.",
+    "R-ICON-03: 'Để sau' dùng alarm-clock-plus, coi cùng nghĩa 'Nhắc lại sau, Dời giờ'."
+  ],
+  "fixed": [],
+  "regressions": []
+}

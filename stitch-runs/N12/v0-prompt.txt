@@ -1,0 +1,28 @@
+Design ONE Android mobile screen, 360x800 dp, for the app "An Nhiên" (daily routine calendar based on the 9 Power 9 habits, for Vietnamese people aged 60+). User: Bà Lan, 68, farsighted, shaky fingers, only knows Zalo/YouTube. Principles: Bác decides; no pressure; one main button per screen; tap only (no swipe, no long-press). All UI text Vietnamese with diacritics, address the user as "Bác". Short text: sentences max 15 words, button labels max 5 words.
+
+SCREEN: "Lặp lại" (repeat picker, opened from the "Thêm việc" form when Bác taps the repeat row). Bác chooses how often the task happens: once, every day, or on chosen weekdays, then saves. Sibling of the date picker screen "Chọn ngày": same frame, header and footer. No bottom navigation. No dialog, no snackbar, no three-dot menu, no error state shown.
+
+STYLE TOKENS: background #F6F7F2, cards #FFFFFF, text #202B25, secondary text #526057, primary #1F684B, primary-container #D6EADF with text #174C37, selected-row background #E7F2EB, outline #7B887F, border #DFE5DF. Font Be Vietnam Pro. Screen side margin 20px, gap between blocks 16px. Card radius 16, button radius 14, option row radius 12. Flat, no gradient, no dark background, no neon.
+
+LAYOUT (top to bottom, content scrolls vertically, footer fixed):
+1. Back button top-left: chevron-left icon 32px + text "Thêm việc" (22px bold #1F684B, 48px high touch area, left padding 20px).
+2. Title row, left aligned: repeat icon 32px (#1F684B) + title "Lặp lại" (30px bold #202B25).
+3. Hint line with info icon 32px: "Chọn những ngày Bác muốn làm việc này." (20px #526057).
+4. Three stacked option rows, full width (320px), each 60px high, gap 8px, white background, radius 12, text 24px: "Một lần", "Mỗi ngày", "Vài ngày trong tuần". Unselected rows: 2px #7B887F border + circle icon 32px (#526057) at left. Selected row "Vài ngày trong tuần": 2px #1F684B border, background #E7F2EB, circle-dot icon 32px (#1F684B) at left, bold text, and at right the text "Đang chọn" (20px bold #174C37). "Một lần" and "Mỗi ngày" are unselected.
+5. Section label (24px bold #202B25): "Chọn ngày trong tuần".
+6. Seven stacked weekday rows, full width (320px), each 56px high, gap 8px, same style as option rows, text 24px, in order: "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ Nhật". Selected = Thứ Hai, Thứ Tư, Thứ Sáu: 2px #1F684B border, background #E7F2EB, circle-dot icon 32px #1F684B, bold text, right-aligned text "Đang chọn" (20px bold #174C37). The other four rows: 2px #7B887F border, circle icon 32px #526057, no extra text.
+7. Selection summary block below the rows, centered, background #D6EADF, radius 16, padding 16px: repeat icon 32px (#174C37) + text "Đã chọn · Thứ Hai, Thứ Tư, Thứ Sáu" (24px bold #174C37, wraps to 2 lines if needed, never truncated).
+8. Fixed footer, two stacked full-width buttons, gap 12px, side margins 20px, bottom padding 20px, flat #F6F7F2 background with 1px #DFE5DF top border: (a) the ONLY filled button "Lưu các ngày đã chọn" (60px high, #1F684B, text #FFFFFF 22px bold, save icon 32px white); (b) below it an OUTLINED button "Hủy" (60px high, white, 2px #7B887F border, text and x icon 32px in #1F684B, 22px bold). Scroll container padding-bottom 180px so nothing is covered by the footer.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+chevron-left = back (always with the text "Thêm việc")
+repeat = repeat / chosen repeat (next to title "Lặp lại" and in the summary block)
+info = hint line
+circle = option or weekday not chosen
+circle-dot = option or weekday chosen (always with bold text and the text "Đang chọn")
+save = button "Lưu các ngày đã chọn" only
+x = button "Hủy"
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped or truncated at 360px width, no horizontal scroll; every icon has visible text next to it; touch targets at least 48x48px (every row at least 56px high); exactly one filled button ("Lưu các ngày đã chọn"); chosen state shown not by color only (circle-dot icon + "Đang chọn" text + summary text "Đã chọn · Thứ Hai, Thứ Tư, Thứ Sáu"); tap-only, no swipe, no toggle switch without text; 100% Vietnamese with diacritics; no pressure or blame words; never use the words "task", "OK", "Cancel", "Done", "Today", "Repeat", "người dùng".

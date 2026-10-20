@@ -1,0 +1,19 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the state "Nhắc việc đang tắt" (reminders are off) shown after Bác tapped "Để sau" or refused the Android permission. It is calm and explanatory, never scary, never blaming. Bác can still use the app.
+1. Keep the app bar: "Quay lại" back button with chevron-left and the step text "Bước 2/2".
+2. Center block: replace the bell circle by a circle 112px, background #FDECE9, containing the Lucide `bell-off` icon 64px, stroke 2.2, color #B42318. Heading "Nhắc việc đang tắt" 30px bold #202B25, centered. Below it two centered sentences, 24px #202B25, each on its own line, max 2 lines each: "Đến giờ điện thoại sẽ không đổ chuông." and "Bác tự mở An Nhiên để xem việc."
+3. Remove the white example card "Lời nhắc sẽ như thế này" and the yellow hint card about "Cho phép".
+4. Add a guide card (background #FFF3DB, radius 16px, padding 16px, gap 12px): Lucide `info` icon 32px #B26A00 at the left, then the label "Muốn bật lại, Bác vào:" 20px #8A5100, and below it the path "Hôm nay › Cài đặt › Nhắc việc" 24px bold #8A5100 (may wrap to 2 lines, never truncated).
+5. Fixed footer (bottom padding 20px, gap 8px): the outlined button "Vẫn để sau" (white, 2px border #7B887F, text 22px bold #202B25, 60px high, full width minus 20px margins, radius 14px) with a Lucide `clock` icon 32px on its left, directly above the ONLY filled button "Bật nhắc việc" (60px high, same width, radius 14px, background #1F684B, text 22px bold white) with a Lucide `bell-ring` icon 32px white on its left.
+6. No bottom navigation bar (onboarding screen). Status is shown by icon plus text, never by color alone.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box (the `bell-off` icon is 64px).
+Use exactly these icons and never reuse one icon for another meaning:
+bell-off = reminders are off
+bell-ring = turn reminders on
+info = hint
+clock = "Vẫn để sau"
+chevron-left = back (always with the text "Quay lại")
+(keep the other existing icons, e.g. the list icon next to "Bước 2/2")
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped or truncated at 360px width; every icon has visible text next to it; touch targets at least 48x48px; exactly one filled button; tap-only; 100% Vietnamese with diacritics; no pressure words, no blame ("Bác đã bỏ lỡ"), no scare wording.

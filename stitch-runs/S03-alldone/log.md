@@ -1,0 +1,64 @@
+# S03-alldone Hôm nay · xong 6/6 (biến thể của S03)
+
+**Trạng thái: DỪNG GIỮA CHỪNG, chờ người dùng** (xem mục "Vòng 2" cuối file)
+
+screen id: v0 `850c7d47604d41a6a10f19425a97d291` (project 2013215887278758682; gốc S03 `cc28fdd64e6e4c70b59b419c44376787`)
+
+## v0 – điểm 74
+![v0](v0.png)
+
+best: v0 – điểm 74 (2 error, 2 warn)
+
+| Luật | Mức | Vị trí | Bằng chứng | Sửa |
+|---|---|---|---|---|
+| R-TAP-02 | error | Nút "Báo tin vui cho Mai" | nằm giữa khối chúc mừng, rộng 280px | đưa vào thanh cố định trên bottom nav, 320px |
+| R-TXT-03 | error | Câu chúc mừng | 3 dòng ở 24px | "Xong hết rồi, Bác nghỉ ngơi nhé!" |
+| R-ICON-03 | warn | Ô Vận động tự nhiên, tab Lịch tuần, tab Gia đình | icon tự vẽ / `calendar` / hand-heart méo | `footprints`, `calendar-days`, `hand-heart` đúng path |
+| R-STY-02 | warn | Khối chúc mừng | bo 24px | 16px |
+
+Ghi chú: `arrow-right` của "Xem lịch ngày mai" đổi sang `chevron-right` (nghĩa "Mở chi tiết" trong từ điển).
+
+### Edit prompt vòng 1
+```
+Keep the overall layout and everything not mentioned below unchanged.
+1. Move the filled button "Báo tin vui cho Mai" out of the celebration card into a sticky bar fixed right above the bottom navigation (position fixed, bottom 104px, padding 12px 20px, background #F6F7F2). Button: 320px wide, 60px high, radius 14px, background #1F684B, label 22px bold white on ONE line, with a Lucide `message-square` icon 32px white on its left. It stays the only filled button. Inside the celebration card keep only the `circle-check` icon, the sentence and the text button "Xem lịch ngày mai".
+2. Change the celebration sentence to "Xong hết rồi, Bác nghỉ ngơi nhé!" (24px bold #202B25, centered, at most 2 lines).
+3. In the tiles of the two tasks "Tưới rau ngoài vườn" and "Đi bộ quanh công viên" replace the running-person drawing by the Lucide `footprints` icon, white, 32px, stroke 2.5, on the 48x48px tile #2BA15C: <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.5v2"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.5v2"/><path d="M16 17h4"/><path d="M4 13h4"/>.
+4. Bottom navigation tab "Lịch tuần": use the Lucide `calendar-days` icon 32px, stroke 2.2: <path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/>.
+5. Bottom navigation tab "Gia đình": use the exact Lucide `hand-heart` icon 32px, stroke 2.2, fully inside the 24x24 viewBox, not clipped: <path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.1 2.5-1.1s1.8.4 2.5 1.1c1.4 1.4 1.4 3.6 0 5L19 19"/>. Scale it so the whole glyph is visible.
+6. Change the border radius of the celebration card from 24px to 16px.
+7. In the text button "Xem lịch ngày mai" replace the `arrow-right` icon by the Lucide `chevron-right` icon 32px #1F684B, stroke 2.2: <path d="m9 18 6-6-6-6"/>.
+8. Raise the scroll container padding-bottom to 200px so the last task row is not covered by the sticky bar and the bottom navigation.
+```
+
+## v1 – điểm 97
+![v1](v1.png)
+
+best: v1 – điểm 97 (0 error, 1 warn). Đã sửa: R-TAP-02, R-TXT-03, R-STY-02 và 2/3 phần R-ICON-03. Regression: không.
+
+| Luật | Mức | Vị trí | Bằng chứng | Sửa |
+|---|---|---|---|---|
+| R-ICON-03 | warn | Tab Gia đình; ô "Ăn sáng chậm rãi" | `hand-heart` bị cắt (path tôi đưa ở v0 sai); `utensils` không phải Lucide | dùng đúng path Lucide cho cả hai |
+
+### Edit prompt vòng 2
+```
+Keep the overall layout and everything not mentioned below unchanged.
+1. Bottom navigation tab "Gia đình": replace the current icon by the exact Lucide `hand-heart` icon 32px, stroke 2.2, color #526057, fully inside the viewBox 0 0 24 24 (nothing clipped, the heart above the hand is visible), with exactly these four paths: <path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.8 2.8 0 0 0 18.2 3c-1.4 0-2.5.9-3.2 2-1-.8-2-2-3-2a2.8 2.8 0 0 0-2.8 2.8c0 1.1.8 2 1.5 2.7l4.5 4.5Z"/>.
+2. In the 48x48px tile #B98331 of the task "Ăn sáng chậm rãi" use the exact Lucide `utensils` icon, white, 32px, stroke 2.5, with exactly these paths: <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>.
+```
+
+## Chạy tiếp từ v1 (luật mới) – lần 2
+Gọi lại `get_screen` + `list_screens`: screen `3fe956631fc848f58bcf9dc1c338c061` vẫn trả HTML giống hệt v1 (md5 trùng, không có path `hand-heart`/`utensils` mới) và không có screen mới. Gửi lại `v1-edit-prompt.txt` một lần: Stitch báo 2 thao tác DOM (`replace_element`) trên đúng screen đó, nhưng `get_screen` vẫn trả cùng file id và HTML cũ. Sửa tại chỗ không được lưu qua API, nên không có v2 và không chấm lại.
+
+best: v1 – điểm 97 (0 error, 1 warn R-ICON-03). Không gửi thêm lần nữa để tránh tốn quota.
+Việc người dùng: mở Stitch, xem tab "Gia đình" (`hand-heart`) và ô "Ăn sáng chậm rãi" (`utensils`); nếu chưa đổi thì sửa tay hoặc chấp nhận 97.
+
+## Vòng 2 – chưa lấy được kết quả
+Đã gửi `v1-edit-prompt.txt` lên screen `3fe956631fc848f58bcf9dc1c338c061`. Stitch trả về thao tác DOM (thay icon `hand-heart` ở tab Gia đình, `utensils` ở ô "Ăn sáng chậm rãi") và sửa **tại chỗ**, không tạo screen mới. Nhưng `get_screen` (3 lần) vẫn trả đúng file HTML và ảnh của v1 (so sánh byte: giống hệt), và screen này không có trong `list_screens`. Chưa xác nhận được sửa đổi đã lưu, nên không có `v2.html`, `v2.png` và không chấm.
+
+best hiện tại: v1 – điểm 97 (0 error, 1 warn R-ICON-03). Cần mở Stitch xem screen này đã có `hand-heart`/`utensils` mới chưa, hoặc chạy lại `/stitch-loop S03-alldone --from S03 --resume`.
+
+
+**Màn chốt: v1 – điểm 97**
+
+**Kết quả: CONVERGED** (v1 – 97, 0 error, 1 warn R-ICON-03). Stitch sửa icon tại chỗ nhưng không lưu (2 lần), nên không thể tăng điểm bằng edit; sửa 2 icon `hand-heart`, `utensils` bằng tay ở Figma. v2.html/v2.png là bản tải thử trùng v1, bỏ qua.

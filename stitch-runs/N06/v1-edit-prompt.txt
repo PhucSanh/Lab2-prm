@@ -1,0 +1,2 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the wake-up time box ("5 : 30 sáng"), replace the Lucide `clock` icon on the left with the Lucide `sunrise` icon, 32x32px, stroke 2.5, color #1F684B. Keep the text "5 : 30 sáng" (24px bold) and the `chevron-down` icon 32px on the right. Do not use the `clock` icon anywhere on this screen.

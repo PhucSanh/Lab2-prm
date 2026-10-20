@@ -1,0 +1,7 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. RESTORE the relation block between the field "Tên gọi" and the field "Số điện thoại": the label "Là gì của Bác?" (24px bold #202B25), then 4 full-width rows, 60px high, 12px gap, order "Con", "Cháu", "Bạn bè", "Khác". Each row has a 32px Lucide icon and 24px text.
+2. Row "Con" is selected: Lucide `circle-dot` icon 32px #1F684B, 2px #1F684B border, #D6EADF background, and the text "Đang chọn" (20px bold #174C37) aligned right inside the row. Rows "Cháu", "Bạn bè", "Khác": Lucide `circle` icon 32px #7B887F, white background, 2px #7B887F border, no extra text.
+3. Keep exactly ONE field "Số điện thoại": EMPTY, background #FDECE9, border 2px solid #B42318, with its error block below (circle-alert + "Bác chưa nhập số điện thoại.", "Ví dụ: 0912 345 678", contact icon + "Bác chạm “Chọn từ danh bạ” ở trên cho nhanh."). DELETE any second "Số điện thoại" field that has the value "0912 345 678"; the screen must not contain two phone fields.
+4. Put the line "Chỉ gửi tin khi Bác chọn gửi." with Lucide `info` icon 32px (20px text #526057) directly below the error block, inside the scrolling area, fully visible when scrolled to the bottom.
+5. Scroll container padding-bottom 120px so nothing is covered by the fixed footer button "Lưu người thân" (the only filled button).
+6. Every text at least 20px, no horizontal overflow at 360px, Vietnamese with diacritics only.

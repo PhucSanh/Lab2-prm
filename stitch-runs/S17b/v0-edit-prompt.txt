@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the info card, change line 1 (24px bold, #174C37) from "Bác tiếp tục ở Zalo để xem lại và bấm gửi." to the shorter "Bác bấm gửi trong Zalo nhé." so it fits in at most 2 lines inside the card text area (about 244px wide). Keep line 2 "An Nhiên chưa biết tin này đã đến Mai chưa." (20px, #174C37) unchanged.
+2. Make sure the screen is a 360px-wide mobile frame, with the same colors, icons (Lucide info, phone, hand-heart, message-square, chevron-left, 32px) and the two stacked footer buttons.

@@ -1,0 +1,15 @@
+{
+  "screen": "N06 Thông tin của Bác",
+  "round": 0,
+  "score": 87,
+  "errors": 1,
+  "warns": 1,
+  "results": [
+    {"rule": "R-TXT-03", "level": "error", "check": "auto", "status": "fail", "where": "Khối lưu ý nền #D6EADF phía trên nút 'Lưu thông tin'", "evidence": "Câu 'Đổi giờ thức dậy không tự đổi giờ những việc đã lưu.' (12 tiếng, 20px, padding 16px, icon 32px + gap 12px) xuống 3 dòng trên ảnh, vượt giới hạn 2 dòng/đoạn", "fix": "Rút câu thành 'Việc đã lưu vẫn giữ giờ cũ.' (7 tiếng) để vừa tối đa 2 dòng ở 20px trong khối rộng 320px"},
+    {"rule": "R-ICON-03", "level": "warn", "check": "ai", "status": "fail", "where": "Dòng 'Ví dụ: Lan' dưới ô Tên Bác và dòng 'Để nhắc việc đúng giờ cho Bác.' dưới ô giờ thức dậy", "evidence": "Icon info dòng 'Ví dụ' style width/height 20px; icon bell class helper-icon 24px; cả hai < 32px và không nằm trong chip trạng thái. Ô 'Bà' dùng circle-dot nhưng thiếu chữ 'Đang chọn' như Từ điển icon yêu cầu", "fix": "Đặt icon Lucide `info` (dòng 'Ví dụ: Lan') và `bell` (dòng 'Để nhắc việc đúng giờ cho Bác.') thành 32 x 32px, nét 2.5; thêm chữ 'Đang chọn' 20px màu #174C37 dưới nhóm 3 ô xưng hô cạnh icon `circle-dot` của ô đang chọn"}
+  ],
+  "note": "Các luật còn lại đạt hoặc n/a (xem tóm tắt của critic: R-TXT-01/02/04, R-CON-01/02, R-LAY-01, R-ICON-01/02, R-COL-01/04, R-TAP-01/02/03, R-NAV-02, R-GES-01, R-ONE-01, R-CEN-01, R-LANG-01/02/03, R-VOC-01, R-STY-01/02/03 đều pass). Ghi hộ critic vì critic không có quyền ghi file.",
+  "fixed": [],
+  "regressions": [],
+  "summary": "Form sửa thông tin gọn, đúng token, chạm và tương phản đạt; còn 1 error khối lưu ý xuống 3 dòng và 1 warn icon gợi ý nhỏ hơn 32px."
+}

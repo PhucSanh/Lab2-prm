@@ -1,0 +1,23 @@
+{
+  "screen": "G11 Popup \"Mai gửi lịch cho Bác\"",
+  "round": 0,
+  "score": 97,
+  "errors": 0,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút 'Để sau' trong popup và nút 'Dời lại' thẻ Việc tiếp theo; ô icon việc 'Gọi điện cho Mai'; tab 'Lịch tuần', tab 'Gia đình'; chip 'Đã xong' và nút 'Đã xong' ở đáy; ô icon việc Vận động và 'Ăn sáng chậm rãi'",
+      "evidence": "'Để sau' và 'Dời lại' dùng Lucide clock (chỉ cho 'Giờ của việc'); thẻ Gia đình trên hết dùng phone (chỉ cho hành động Gọi điện); tab Lịch tuần dùng calendar thay vì calendar-days; tab Gia đình dùng users thay vì hand-heart; chip/nút 'Đã xong' dùng check thay vì circle-check; icon Vận động là SVG người đi bộ tự vẽ, không phải Lucide footprints; icon Ăn vừa đủ là SVG dao nĩa tự vẽ, không khớp Lucide utensils",
+      "fix": "Đổi icon nút 'Để sau' và 'Dời lại' sang Lucide alarm-clock-plus 32px; ô icon 'Gọi điện cho Mai' sang Lucide house 32px trắng trên nền #D86E75; tab Lịch tuần sang calendar-days 32px; tab Gia đình sang hand-heart 32px; chip 'Đã xong' và nút 'Đã xong' ở đáy sang circle-check; ô icon việc Vận động sang Lucide footprints 32px; ô icon 'Ăn sáng chậm rãi' sang đúng Lucide utensils 32px, nét trắng stroke-width 2.5. Giữ mail, eye, sun, leaf, wind, coffee, circle"
+    }
+  ],
+  "passed_all_other_rules": true,
+  "na": ["R-NAV-02", "R-SAFE-01", "R-SAFE-02", "R-VOI-01"],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Popup căn giữa, chữ ≥ 20px, màu đúng token, 2 nút 60px có icon + chữ, không lỗi error; chỉ còn icon sai Từ điển (clock cho Để sau/Dời lại, phone cho thẻ Gia đình, calendar/users ở tab, check thay circle-check, icon Vận động và Ăn vừa đủ không phải Lucide)."
+}

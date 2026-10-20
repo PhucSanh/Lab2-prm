@@ -1,0 +1,2 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the "Việc tiếp theo" card, make the outline button "Dời lại" 60px high (it is 48px now) with radius 14px, 2px border #1F684B, and set its label to 22px bold (700) #1F684B (it is 20px now). Keep its `alarm-clock-plus` icon 32px on the left.

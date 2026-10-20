@@ -1,0 +1,21 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the "Gia đình" screen right after Bác saved a new relative "Bin" (Cháu), showing a success banner.
+1. Insert a success banner directly under the line "Bác chọn điều muốn kể cho con", above the suggestion row, 16px gap above and below. Banner: full width minus 20px margins, background #D6EADF, 2px border #1F684B, radius 16, padding 16, min height 72px. It is NOT a button and has no close "x" and no "Hoàn tác" button (it never closes by itself). Left: Lucide `save` icon 32px #1F684B. Next to it, line 1 "Đã thêm Cháu Bin" (24px bold, #174C37); line 2 "Bác có thể gọi hoặc nhắn tin ngay." (20px, #174C37).
+2. REMOVE the message icon placed before the line "Bác chọn điều muốn kể cho con"; the line is plain text (20px, #526057), left aligned.
+3. Suggestion row "Gợi ý từ Mai · 2 việc": replace its left icon with Lucide `info` 32px #1F684B inside the 48x48 #D6EADF tile. Keep text, border and chevron-right (32px).
+4. Relative cards: replace the user icon in each 48x48 circle tile (#D6EADF) with a single capital letter (not an icon): "M" for Mai, "H" for Hùng, "B" for Bin (24px bold, #1F684B). Keep names, relations ("Con gái", "Con trai", "Cháu"), and the two outlined buttons "Gọi điện" (Lucide `phone` 32px) and "Nhắn tin" (Lucide `message-square` 32px) in every card.
+5. The "Bin" card is the new last card: add a 2px #1F684B border to the Bin card (other cards keep the 1px #DFE5DF border). No "mới" badge, no extra text.
+6. Bottom navigation: change the "Gia đình" tab icon to Lucide `hand-heart` 32px (still ACTIVE: #D6EADF pill, bold, #1F684B). Other tabs: `sun` Hôm nay, `calendar-days` Lịch tuần, `leaf` Thói quen. Keep the single filled button "Thêm người thân" with Lucide `user-plus` 32px, 60px high, fixed 16px above the nav, and a FLAT #F6F7F2 background behind it (no gradient).
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+- save = saved successfully (banner only)
+- info = hint / suggestion ("Gợi ý từ Mai")
+- chevron-right = open detail (end of the suggestion row)
+- phone = "Gọi điện" (only calling)
+- message-square = "Nhắn tin"
+- user-plus = "Thêm người thân"
+- sun = tab Hôm nay; calendar-days = tab Lịch tuần; leaf = tab Thói quen; hand-heart = tab Gia đình
+No user, users, mail-open, lightbulb, message-circle, circle-check or x icon on this screen.
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; text contrast at least 4.5:1; nothing clipped or truncated at 360px width, no "…"; every icon has visible text next to it; exactly ONE filled button ("Thêm người thân"), all other buttons outlined; touch targets at least 48x48px; status never by color only (banner has icon + text); tap-only; no gradients; 100% Vietnamese with diacritics; no "đã gửi" claim, no tracking wording, no ranking, no streak.

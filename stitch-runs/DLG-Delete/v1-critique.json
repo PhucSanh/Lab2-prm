@@ -1,0 +1,11 @@
+{
+  "screen": "DLG-Delete Hỏi lại trước khi xóa việc",
+  "round": 1,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "results": [],
+  "fixed": ["R-TXT-03"],
+  "regressions": [],
+  "summary": "(Rút gọn: orchestrator chép lại, critic không ghi được file; mọi luật pass hoặc n/a.) Đoạn mô tả 'Chỉ xóa lần này. Ngày khác vẫn giữ.' nằm gọn 2 dòng ở 24px; chữ >= 22px, nút 272x60 cách 8px, icon trash-2 và x đúng Từ điển icon, chỉ 1 nút filled."
+}

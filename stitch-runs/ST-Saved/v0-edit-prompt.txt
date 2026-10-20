@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Set the gap between the headline "Đã lưu xong!" and the 128x128px #1F684B circle above it to 16px (was 24px).
+2. Set the gap between the headline "Đã lưu xong!" and the white summary card below it to 16px (was 24px). Keep the 20px screen margin and all other sizes.

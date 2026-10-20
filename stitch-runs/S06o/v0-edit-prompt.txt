@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Label "Tên việc": remove the Lucide `pencil` icon completely; keep only the text "Tên việc" 24px semibold 600 #202B25, left aligned.
+2. Option "Mỗi ngày" (selected): keep the Lucide `circle-dot` icon 32px #1F684B and add the visible text "Đang chọn" at the right end of the row, 20px semibold 600 #1F684B, next to the text "Mỗi ngày" (22px bold).

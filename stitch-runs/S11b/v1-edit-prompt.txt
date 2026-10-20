@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged. This is a MOBILE screen, 360px wide.
+1. Spacing: remove margin-bottom 8px from every task card; set the gap between task cards inside a group to exactly 16px (flex gap on the task list).
+2. Spacing: set the gap between the last card of a group and the next group label ("Buổi trưa", "Buổi chiều") to exactly 16px: section margin-bottom 16px (instead of 20px) and margin-top 0, so the margins never add up to more than 16px.

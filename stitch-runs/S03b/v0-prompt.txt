@@ -1,0 +1,19 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the "Hôm nay" screen right after Bác confirmed that "Đi bộ quanh công viên" (9:30 sáng) is done.
+1. Header date line: change "Thứ Năm, 8/10 · Đã xong 3/6 việc" to "Thứ Năm, 8/10 · Đã xong 4/6 việc". Greeting unchanged.
+2. "Việc tiếp theo" card: it now shows the next task. Title line "Việc tiếp theo · 3 giờ chiều"; task name "Uống trà với cô Tám"; sub line "20 phút · Trà chiều cùng bạn". Replace the habit tile with a 48x48px tile (radius 12px) filled #D0754E containing a white Lucide `coffee` icon 32px. Keep the "Dời lại" outline button as it is.
+3. Task list: the row "9:30 sáng · Đi bộ quanh công viên" now shows the status chip "Đã xong" (chip 40px high, radius 999px, background #1F684B, white text 20px bold, Lucide `circle-check` icon 24px white on the left) instead of "Chưa làm". Keep its green #2BA15C accent bar and icon tile. The rows "3 giờ chiều" and "6 giờ tối" keep "Chưa làm". The three morning rows keep "Đã xong".
+4. Keep the sticky filled button "Đã xong" (60px high) above the bottom navigation exactly as it is.
+5. Add a snackbar directly above that sticky button (12px gap, 20px side margins, width 320px): background #202B25, radius 12px, padding 16px, white text, no auto-dismiss.
+   - Line 1: "Đã ghi: Đi bộ xong lúc 9:42 sáng." 20px regular (400), #FFFFFF, at most 2 lines.
+   - 12px below, a full-width outline button 288px x 48px, radius 12px, 2px border #FFFFFF, no fill, label "Hoàn tác" 22px bold #FFFFFF, with a Lucide `undo-2` icon 32px #FFFFFF on the left of the label.
+6. Everything else (bottom navigation with 4 tabs and Hôm nay active, other task cards, colors) stays unchanged. Nothing is clipped; the screen content may scroll but the sticky button, snackbar and bottom navigation stay visible.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px (status chip icon: 24px) and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+circle-check = done (only for the status/button "Đã xong")
+coffee = habit "Trà chiều cùng bạn" (only for that habit)
+undo-2 = undo
+(keep the existing icons: bell, clock, footprints, utensils, wind, phone, sun, calendar-days, leaf, hand-heart, circle)
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1 (white on #202B25 in the snackbar); nothing clipped at 360px width; every icon has visible text next to it; touch targets at least 48x48px; exactly one filled button (the snackbar button is outline); every status is icon + text; tap-only; 100% Vietnamese with diacritics; no pressure words.

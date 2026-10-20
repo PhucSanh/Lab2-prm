@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An Nhiên - Gia đình (Đã thêm Cháu Bin &amp; Thông báo)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #ECEFEA;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+
+    .phone-wrapper {
+      width: 100%;
+      max-width: 360px;
+      min-height: 800px;
+      background-color: #F6F7F2;
+      border-radius: 32px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Scrollable content area */
+    .content-area {
+      flex: 1;
+      overflow-y: auto;
+      padding: 28px 20px 220px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .screen-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: #202B25;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .subtitle-text {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+
+    /* Success banner */
+    .success-banner {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+      border-radius: 16px;
+      padding: 16px;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .banner-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .banner-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #174C37;
+      line-height: 1.25;
+    }
+
+    .banner-desc {
+      font-size: 20px;
+      font-weight: 500;
+      color: #174C37;
+      line-height: 1.35;
+    }
+
+    /* Suggestion row */
+    .suggestion-card {
+      background-color: #FFFFFF;
+      border: 1px solid #DFE5DF;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      cursor: pointer;
+    }
+
+    .suggestion-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .icon-tile-48 {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: #D6EADF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .suggestion-text {
+      font-size: 22px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    /* Relative list */
+    .relative-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .relative-card {
+      background-color: #FFFFFF;
+      border: 1px solid #DFE5DF;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .relative-card.highlight-card {
+      border: 2px solid #1F684B;
+    }
+
+    .relative-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar-letter-tile {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: #D6EADF;
+      color: #1F684B;
+      font-size: 24px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .relative-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .relative-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.25;
+    }
+
+    .relative-role {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.3;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .action-button {
+      flex: 1;
+      height: 48px;
+      min-height: 48px;
+      border: 2px solid #1F684B;
+      border-radius: 14px;
+      background-color: #FFFFFF;
+      color: #1F684B;
+      font-family: inherit;
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    /* Fixed Bottom Footer */
+    .fixed-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #F6F7F2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 50;
+    }
+
+    .cta-container {
+      width: 100%;
+      padding: 0 20px 16px 20px;
+      display: flex;
+      justify-content: center;
+      background-color: #F6F7F2;
+    }
+
+    .cta-button {
+      width: 100%;
+      height: 60px;
+      min-height: 60px;
+      background-color: #1F684B;
+      border: none;
+      border-radius: 14px;
+      color: #FFFFFF;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    /* Navigation Bar */
+    .bottom-nav {
+      width: 100%;
+      height: 72px;
+      background-color: #FFFFFF;
+      border-top: 1px solid #DFE5DF;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+    }
+
+    .nav-tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-decoration: none;
+      color: #526057;
+      gap: 2px;
+      padding: 4px 2px;
+    }
+
+    .nav-tab-pill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 38px;
+      border-radius: 20px;
+    }
+
+    .nav-tab.active .nav-tab-pill {
+      background-color: #D6EADF;
+    }
+
+    .nav-tab.active {
+      color: #1F684B;
+    }
+
+    .nav-label {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .nav-tab.active .nav-label {
+      font-weight: 700;
+      color: #1F684B;
+    }
+  </style>
+</head>
+<body>
+  <div class="phone-wrapper">
+    <!-- Scrollable Content -->
+    <main class="content-area">
+      <h1 class="screen-title">Gia đình</h1>
+      <p class="subtitle-text">Bác chọn điều muốn kể cho con</p>
+
+      <!-- 1. Success Banner -->
+      <section class="success-banner" aria-label="Thông báo thành công">
+        <div class="banner-icon">
+          <!-- Lucide save 32x32 -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
+            <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/>
+            <path d="M7 3v4a1 1 0 0 0 1 1h7"/>
+          </svg>
+        </div>
+        <div class="banner-content">
+          <div class="banner-title">Đã thêm Cháu Bin</div>
+          <div class="banner-desc">Bác có thể gọi hoặc nhắn tin ngay.</div>
+        </div>
+      </section>
+
+      <!-- 2. Suggestion Row -->
+      <section class="suggestion-card" aria-label="Gợi ý việc">
+        <div class="suggestion-left">
+          <div class="icon-tile-48">
+            <!-- Lucide info 32x32 -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 16v-4"/>
+              <path d="M12 8h.01"/>
+            </svg>
+          </div>
+          <span class="suggestion-text">Gợi ý từ Mai · 2 việc</span>
+        </div>
+        <!-- Lucide chevron-right 32x32 -->
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#526057" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+      </section>
+
+      <!-- 3. Relatives List -->
+      <section class="relative-list" aria-label="Danh sách người thân">
+        <!-- Relative 1: Mai -->
+        <article class="relative-card">
+          <div class="relative-header">
+            <div class="avatar-letter-tile">M</div>
+            <div class="relative-info">
+              <div class="relative-name">Mai</div>
+              <div class="relative-role">Con gái</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="action-button" type="button">
+              <!-- Lucide phone 32x32 -->
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>Gọi điện</span>
+            </button>
+            <button class="action-button" type="button">
+              <!-- Lucide message-square 32x32 -->
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              <span>Nhắn tin</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Relative 2: Hùng -->
+        <article class="relative-card">
+          <div class="relative-header">
+            <div class="avatar-letter-tile">H</div>
+            <div class="relative-info">
+              <div class="relative-name">Hùng</div>
+              <div class="relative-role">Con trai</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="action-button" type="button">
+              <!-- Lucide phone 32x32 -->
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>Gọi điện</span>
+            </button>
+            <button class="action-button" type="button">
+              <!-- Lucide message-square 32x32 -->
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              <span>Nhắn tin</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Relative 3: Bin (Newly added, 2px solid border) -->
+        <article class="relative-card highlight-card">
+          <div class="relative-header">
+            <div class="avatar-letter-tile">B</div>
+            <div class="relative-info">
+              <div class="relative-name">Bin</div>
+              <div class="relative-role">Cháu</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="action-button" type="button">
+              <!-- Lucide phone 32x32 -->
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>Gọi điện</span>
+            </button>
+            <button class="action-button" type="button">
+              <!-- Lucide message-square 32x32 -->
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              <span>Nhắn tin</span>
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Fixed Bottom Footer (Sticky CTA & Navigation) -->
+    <footer class="fixed-footer">
+      <div class="cta-container">
+        <button class="cta-button" type="button">
+          <!-- Lucide user-plus 32x32 white -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <line x1="19" x2="19" y1="8" y2="14"/>
+            <line x1="22" x2="16" y1="11" y2="11"/>
+          </svg>
+          <span>Thêm người thân</span>
+        </button>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Thanh điều hướng chính">
+        <!-- Tab 1: Hôm nay -->
+        <a href="#" class="nav-tab">
+          <div class="nav-tab-pill">
+            <!-- Lucide sun 32x32 -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#526057" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2"/>
+              <path d="M12 20v2"/>
+              <path d="m4.93 4.93 1.41 1.41"/>
+              <path d="m17.66 17.66 1.41 1.41"/>
+              <path d="M2 12h2"/>
+              <path d="M20 12h2"/>
+              <path d="m6.34 17.66-1.41 1.41"/>
+              <path d="m19.07 4.93-1.41 1.41"/>
+            </svg>
+          </div>
+          <span class="nav-label">Hôm nay</span>
+        </a>
+
+        <!-- Tab 2: Lịch tuần -->
+        <a href="#" class="nav-tab">
+          <div class="nav-tab-pill">
+            <!-- Lucide calendar-days 32x32 -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#526057" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2v4"/>
+              <path d="M16 2v4"/>
+              <rect width="18" height="18" x="3" y="4" rx="2"/>
+              <path d="M3 10h18"/>
+              <path d="M8 14h.01"/>
+              <path d="M12 14h.01"/>
+              <path d="M16 14h.01"/>
+              <path d="M8 18h.01"/>
+              <path d="M12 18h.01"/>
+              <path d="M16 18h.01"/>
+            </svg>
+          </div>
+          <span class="nav-label">Lịch tuần</span>
+        </a>
+
+        <!-- Tab 3: Thói quen -->
+        <a href="#" class="nav-tab">
+          <div class="nav-tab-pill">
+            <!-- Lucide leaf 32x32 -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#526057" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+            </svg>
+          </div>
+          <span class="nav-label">Thói quen</span>
+        </a>
+
+        <!-- Tab 4: Gia đình (Active) -->
+        <a href="#" class="nav-tab active">
+          <div class="nav-tab-pill">
+            <!-- Lucide hand-heart 32x32 -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/>
+              <path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/>
+              <path d="m2 15 6 6"/>
+              <path d="M19.5 8.5c.7-.7 1.5-1.5 1.5-2.5 0-1.4-1.1-2.5-2.5-2.5-.9 0-1.8.6-2.5 1.5-.7-.9-1.6-1.5-2.5-1.5-1.4 0-2.5 1.1-2.5 2.5 0 1 .8 1.8 1.5 2.5l3.5 3.5 3.5-3.5z"/>
+            </svg>
+          </div>
+          <span class="nav-label">Gia đình</span>
+        </a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

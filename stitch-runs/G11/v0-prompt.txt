@@ -1,0 +1,21 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the popup "Mai gửi lịch cho Bác" shown once on top of the "Hôm nay" screen when a relative's suggestion arrives. The "Hôm nay" page stays visible but dimmed behind the popup.
+1. Cover the whole 360x800 screen with a flat scrim #0F1411 at 60% opacity over the existing "Hôm nay" page (header, "Việc tiếp theo" card, task list, sticky "Đã xong" button and bottom navigation stay in place underneath, dimmed, not interactive). Do not add the suggestion card inside the page.
+2. One dialog card centered horizontally and vertically: width 320px, background #FFFFFF, radius 24px, padding 24px, soft level-2 shadow, no gradient. All content inside is centered.
+3. Top: an 80x80px circle filled #D6EADF containing a Lucide `mail` icon 64px, stroke 2.5, color #1F684B.
+4. 16px below: title "Mai gửi lịch cho Bác" Be Vietnam Pro 26px bold (700), #202B25, centered, line-height 1.4.
+5. 8px below: one line "2 việc cho ngày mai" 24px regular (400), #526057, centered.
+6. 12px below: Mai's message in a quiet box, background #F6F7F2, radius 16px, padding 16px, text "Mẹ ơi 3 giờ chiều mẹ đi bộ với cô Tám nhé" 22px regular (400) #202B25, centered, at most 3 lines.
+7. 12px below: one line "Chưa thêm vào lịch. Bác tự chọn." 20px regular (400) #526057, centered.
+8. 24px below: two buttons stacked vertically, 12px gap, each 272px x 60px, radius 14px, label 22px bold, icon 32px on the left of the label:
+   - Button 1 (the ONLY filled button in the popup): background #1F684B, white label "Xem gợi ý", Lucide `eye` icon 32px white.
+   - Button 2 (outline): white background, 2px border #7B887F, label "Để sau" #1F684B, Lucide `clock` icon 32px #1F684B.
+9. No close "X", no third button, no countdown, no badge, no auto-dismiss, nothing says Bác must accept.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+mail = suggestion from a relative (only for the popup header circle)
+eye = view / see suggestion (only for "Xem gợi ý")
+clock = time / later (for "Để sau")
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped at 360px width; every icon has visible text next to it; buttons 60px high and full popup content width, at least 48x48px touch targets; exactly one filled button in the popup; tap-only (no swipe, no long-press); 100% Vietnamese with diacritics, address the user as "Bác"; no pressure words; dialog content centered. Do NOT generate: English text, gradient, icon-only buttons, close button.

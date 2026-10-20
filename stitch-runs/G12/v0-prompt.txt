@@ -1,0 +1,16 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the "Hôm nay" screen when Bác chose "Để sau" on the popup "Mai gửi lịch cho Bác", so a suggestion card from Mai now sits at the top of the content.
+1. Insert a new suggestion card as the first block of the scrolling content, directly under the greeting/date header and above the "Việc tiếp theo" title. Card: width 320px, background #FFFFFF, radius 16px, padding 16px, same soft shadow as the other cards, no left color bar, no gradient. 16px gap below it before "Việc tiếp theo".
+2. Inside the card, top row: a 48x48px tile (radius 12px) filled #1F684B containing a white Lucide `mail` icon 32px; 16px to its right, the title "Mai gửi Bác 2 việc" 24px bold (700) #202B25, one line.
+3. Under the top row (8px gap), one line "Chưa thêm vào lịch. Bác tự chọn." 20px regular (400) #526057.
+4. 16px below that, a full-width outline button 288px x 56px, radius 14px, 2px border #1F684B, white fill, label "Xem gợi ý" 22px bold #1F684B, with a Lucide `eye` icon 32px #1F684B on the left of the label. It is an outline button, not filled.
+5. No other new text, no close button, no badge, no count dots. Do not add a popup.
+6. Everything else stays unchanged: header "Chào buổi sáng, Bác Lan" with date line and progress, the "Việc tiếp theo" card, the task list with status chips, the sticky filled "Đã xong" button (60px high) above the bottom navigation, bottom navigation with 4 tabs and "Hôm nay" active. Keep "Việc tiếp theo" the strongest element; the new card is visually quieter. Nothing is clipped; content may scroll while the sticky button and bottom navigation stay visible.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px (status chip icon: 24px) and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+mail = suggestion from a relative (only for the "Mai gửi Bác 2 việc" card)
+eye = view / see suggestion (only for the "Xem gợi ý" button)
+(keep the existing icons: circle-check, circle, bell, clock, footprints, utensils, wind, coffee, phone, sun, calendar-days, leaf, hand-heart)
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped at 360px width; every icon has visible text next to it; touch targets at least 48x48px; exactly one filled button on the screen (the sticky "Đã xong"; "Xem gợi ý" is outline); every status is icon + text; tap-only (no swipe, no long-press); 100% Vietnamese with diacritics, address the user as "Bác"; no pressure words, nothing says Bác must accept.

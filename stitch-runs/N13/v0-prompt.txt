@@ -1,0 +1,32 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant.
+
+Screen "N13" (dialog "scope of change": which occurrences of a repeating task to change). Same scrim and dialog card as the source screen, but with THREE stacked choices. Everything inside the dialog stays centered.
+
+CHANGES:
+1. Top circle: keep the 80x80px circle filled #D6EADF, but replace the icon with a Lucide `repeat` icon 64px, stroke 2.5, color #1F684B (the task repeats).
+2. Question: replace with "Thay đổi lần nào?" Be Vietnam Pro 26px bold (700), #202B25, centered, 16px below the circle.
+3. Detail line: replace with "Đi bộ quanh công viên, mỗi ngày" 24px regular (400), #526057, centered, at most 2 lines, 12px below the question.
+4. History note: 12px below the detail line add one centered row: Lucide `info` icon 32px (stroke 2.5, #1F684B) + 12px gap + the text "Lịch sử được giữ lại" 22px regular (400), #526057.
+5. Buttons: 24px below the note, THREE buttons stacked vertically, 12px gap, each 272px wide x 60px high, radius 14px, label 22px bold, icon 32px on the left of the label:
+   - Button 1 (the ONLY filled button): background #1F684B, white label "Chỉ lần này", Lucide `calendar-1` icon 32px white.
+   - Button 2 (outline): white background, 2px border #7B887F, label "Lần này và các lần sau" color #1F684B (label may wrap to 2 lines but font stays 22px and the button grows only as needed, min 60px high), Lucide `calendar-range` icon 32px #1F684B.
+   - Button 3 (outline): white background, 2px border #7B887F, label "Giữ nguyên" color #1F684B, Lucide `x` icon 32px #1F684B.
+6. If the dialog grows taller, keep it centered vertically with at least 20px margin top and bottom. Nothing else: no close "X" in the corner, no fourth button, no countdown, no extra text.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+repeat = repeating task (dialog header only)
+info = note (for "Lịch sử được giữ lại")
+calendar-1 = only this one occurrence (only for "Chỉ lần này")
+calendar-range = this and following occurrences (only for "Lần này và các lần sau")
+x = leave unchanged / close dialog (for "Giữ nguyên")
+
+CONSTRAINTS (from rule.md, error level):
+- R-TXT-01: every text at least 20px. R-TXT-03: no sentence longer than 15 words; no paragraph longer than 2 lines. R-TXT-04: button labels at most 5 words.
+- R-CON-01: text contrast at least 4.5:1. R-LAY-01: nothing clipped or overflowing at 360px.
+- R-ICON-01 / R-ICON-02: every icon has visible text next to it; every action button has an icon.
+- R-TAP-01 / R-TAP-02: touch targets at least 48x48px; buttons at least 60px high, full width of the dialog.
+- R-ONE-01: exactly one filled button. R-GES-01: tap-only. R-CEN-01: dialog content centered.
+- R-LANG-01: 100% Vietnamese with diacritics. R-LANG-03 / R-VOC-01: no pressure words; no "OK", "Có", "Không".
+Do NOT generate: leaderboard, streak, health score, charts, three-dot menu, icon-only buttons, English text, gradient.

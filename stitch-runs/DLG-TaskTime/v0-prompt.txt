@@ -1,0 +1,15 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant.
+This variant is "DLG-TaskTime" (dialog to pick the time of a task), same dialog as the wake-up time picker, opened from the "Giờ làm" time field on the task screen.
+1. Title row: replace the Lucide `sunrise` icon with the Lucide `clock` icon 32px (#1F684B, stroke 2.5); change the title to "Giờ làm" (26px bold #202B25).
+2. Keep the hint "Chạm vào số Bác muốn" unchanged.
+3. Change the default selection: hour "8" selected (light #D6EADF fill, 4px border #1F684B, text #174C37), minute "00" selected, "Sáng" selected. The hour "5" becomes unselected (white, 2px border #7B887F, text #202B25).
+4. Change the summary line to "Bác chọn: 8:00 sáng" (24px bold #1F684B).
+5. Keep the filled button "Lưu giờ" with Lucide `save` icon 32px white, and the outline button "Hủy" unchanged (still exactly one filled button, 272x60px, 16px gap).
+6. Keep every gap at 16px, dialog padding 24px, dialog width 320px, choice button radius 14px, tap-only (no wheel, no swipe, no drag).
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+clock = time of a task (title "Giờ làm")
+save = confirm and save the time (button "Lưu giờ")
+Do NOT use sunrise, circle-check or any other icon.
+Rules (rule.md, error): every text at least 20px; contrast at least 4.5:1; every touch target at least 48x48px; main button 60px high; nothing clipped at 360px; all text Vietnamese with diacritics; no scroll wheel, no English text, no gradient.

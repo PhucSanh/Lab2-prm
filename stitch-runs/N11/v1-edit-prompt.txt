@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the calendar card, change the vertical gap between date rows from 4px to 8px. Keep every date cell a 48x48px tap area with 0px column gap (7 columns x 48px = 336px).
+2. Inside each date cell, shrink the visible number circle to 40x40px, centered in the 48x48px cell, so neighbouring circles are always at least 8px apart. The selected date 23 is a filled circle 40px #1F684B with a white bold number (24px).
+3. Remove the 1px border of the calendar card and replace it with a box-shadow of 0 0 0 1px #DFE5DF, so the 336px weekday header and date grid fit exactly inside the card with no overflow. Card padding: 16px top and bottom, 0px left and right.
+4. Keep the calendar card side margins at 12px. All other blocks (back button, title, hint, month header, month buttons, summary block, footer buttons) keep 20px side margins.

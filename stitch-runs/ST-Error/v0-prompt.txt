@@ -1,0 +1,39 @@
+Design ONE mobile screen: "ST-Error" (could not save) for the Android app "An Nhiên" (360x800 dp).
+
+CONTEXT: App "An Nhiên" – daily routine calendar based on the 9 Power 9 habits for Vietnamese people aged 60+. User: Bà Lan, 68, farsighted, shaky fingers, only knows Zalo/YouTube. Principles: Bác decides; no pressure; few words; never blame the user. All UI text in Vietnamese with diacritics, addressing the user as "Bác". Sentences max 15 words, button labels max 5 words. One primary (filled) button per screen. No swipe, no long-press.
+
+PURPOSE: A full-screen calm error screen shown when saving a new task failed. It says clearly what happened, reassures that what Bác typed is kept, and gives three ways forward. It never closes by itself.
+
+LAYOUT (360x800, screen margin 20px, background #F6F7F2, no bottom navigation, no app bar, spacing between blocks 16px):
+1. Top block, centered horizontally, starting about 48px from the top: a 128x128px circle filled #FDECE9 containing a Lucide `circle-alert` icon 88px, stroke 2.5, color #B42318.
+2. 16px below: headline "Chưa lưu được" Be Vietnam Pro 30px bold (700), #202B25, centered.
+3. 16px below: two short centered paragraphs, 24px regular (400), line-height 1.5, each at most 2 lines, width 320px:
+   - "Chưa thể lưu trên điện thoại." color #202B25
+   - "Nội dung đang nhập vẫn được giữ lại." color #526057 (12px gap between the two paragraphs)
+4. Bottom block, pinned to the bottom with 20px margin, THREE buttons stacked vertically, 12px gap between them, each 320px wide x 60px high, radius 14px, label 22px bold, icon 32px on the left of the label:
+   - Button 1 (the ONLY filled button): background #1F684B, white label "Thử lại", Lucide `rotate-ccw` icon 32px white.
+   - Button 2 (outline): white background, 2px border #7B887F, label "Kiểm tra lại lịch" #1F684B, Lucide `calendar-search` icon 32px #1F684B.
+   - Button 3 (outline): white background, 2px border #7B887F, label "Quay lại sửa" #1F684B, Lucide `pencil` icon 32px #1F684B.
+5. Nothing else: no error code, no technical words, no red filled button, no blame, no countdown, no illustration, no snackbar.
+
+STYLE TOKENS: background #F6F7F2; text #202B25; secondary text #526057; primary #1F684B; error #B42318; error-container #FDECE9; font Be Vietnam Pro; every text at least 20px; text contrast at least 4.5:1; flat design, no gradient, no dark background, no neon, no shadow.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+circle-alert = error (could not save)
+rotate-ccw = try again
+calendar-search = check the schedule again
+pencil = edit / go back to edit
+Do NOT use circle-check, phone, or any other icon.
+
+CONSTRAINTS (from rule.md, error level):
+- R-TXT-01: every text at least 20px. R-TXT-03: no sentence longer than 15 words; no paragraph longer than 2 lines. R-TXT-04: button labels at most 5 words.
+- R-CON-01: text contrast at least 4.5:1. R-LAY-01: nothing clipped or overflowing at 360px.
+- R-ICON-01 / R-ICON-02: every icon has visible text next to it; every action button has an icon.
+- R-TAP-01 / R-TAP-02: touch targets at least 48x48px; buttons 60px high, near full width, at the bottom.
+- R-ONE-01: exactly one filled button.
+- R-GES-01: tap-only, no swipe/drag/long-press.
+- R-LANG-01: 100% Vietnamese with diacritics. R-LANG-03 / R-VOC-01: no pressure or technical words (no "lỗi", "thất bại", "đồng bộ", "sao lưu", "thiết bị").
+- R-CEN-01: all content is centered; buttons full width.
+Do NOT generate: leaderboard, streak, health score, charts, three-dot menu, icon-only buttons, carousel, English text, gradient, background image behind text.

@@ -93,3 +93,7 @@ Vòng này đi từ góc nhìn "bàn giao được cho lập trình viên": mọ
 | Trạng thái | Luôn có icon + chữ (✓ Đã xong, ⓘ lỗi), màu chỉ là tín hiệu phụ |
 
 Accessibility và responsive: xem [accessibility.md](accessibility.md).
+
+## N11 Chọn ngày – ngoại lệ lịch 7 cột (R-TAP-03, R-STY-03)
+
+Lưới 7 cột × ô 48px = 336px đã rộng hơn 320px (360 − 2 × 20). Thêm khe ngang 8px cần 384px > 360px. Vì vậy: khe ngang giữa ô ngày = 0, lề thẻ lịch = 12px (các khối khác giữ 20px). Khi code Flutter: giữ ô bấm 48×48, khe dọc 8px, vòng số 40px nằm giữa ô để vẫn có khe nhìn thấy 8px. Hai warn này chấp nhận, không phải lỗi `error`.

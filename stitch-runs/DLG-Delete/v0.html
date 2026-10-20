@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - DLG-Done (Xác nhận đã xong)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #E5E7EB;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Screen Frame 360x800 */
+    .mobile-screen {
+      width: 360px;
+      height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Scrim overlay: flat #0F1411 at 60% opacity */
+    .scrim {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(15, 20, 17, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 10;
+    }
+
+    /* Dialog Card: width 320px, background #FFFFFF, radius 24px, padding 24px, level-2 soft shadow */
+    .dialog-card {
+      width: 320px;
+      background-color: #FFFFFF;
+      border-radius: 24px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(15, 20, 17, 0.15), 0 2px 6px rgba(15, 20, 17, 0.08);
+      position: relative;
+    }
+
+    /* Top Icon Circle: 80x80px filled #D6EADF */
+    .icon-badge {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #D6EADF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      flex-shrink: 0;
+    }
+
+    /* Heading: 16px below icon, Be Vietnam Pro 26px bold (700), #202B25, line-height 1.4 */
+    .dialog-title {
+      margin-top: 16px;
+      font-size: 26px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    /* Detail text: 12px below title, 24px regular (400), #526057, max 2 lines */
+    .dialog-detail {
+      margin-top: 12px;
+      font-size: 24px;
+      font-weight: 400;
+      color: #526057;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    /* Button stack: 24px below detail, 12px gap, width 272px */
+    .button-group {
+      margin-top: 24px;
+      width: 272px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Base button style: 272px x 60px, radius 14px, tap target 60px */
+    .btn {
+      width: 272px;
+      height: 60px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      font-size: 22px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+
+    .btn:active {
+      opacity: 0.85;
+    }
+
+    /* Button 1: The ONLY filled button, background #1F684B, label white */
+    .btn-primary {
+      background-color: #1F684B;
+      color: #FFFFFF;
+    }
+
+    /* Button 2: Outlined, white bg, 2px border #7B887F, label #1F684B */
+    .btn-secondary {
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      color: #1F684B;
+    }
+
+    /* Lucide SVGs */
+    .lucide-icon {
+      display: block;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="mobile-screen">
+<!-- Scrim covering the screen -->
+<div class="scrim">
+<!-- Confirmation Dialog -->
+<div aria-describedby="dialog-desc" aria-labelledby="dialog-title" aria-modal="true" class="dialog-card" role="dialog">
+<!-- Top Icon Circle: 80x80 filled #D6EADF, Lucide circle-check 64px stroke 2.5 #1F684B -->
+<div class="icon-badge" style="background-color: #FDECE9;">
+<svg aria-hidden="true" class="lucide-icon" fill="none" height="64" stroke="#912018" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="64">
+<path d="M3 6h18"></path>
+<path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+<path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+<line x1="10" x2="10" y1="11" y2="17"></line>
+<line x1="14" x2="14" y1="11" y2="17"></line>
+</svg>
+</div>
+<!-- Question Title: 26px bold #202B25 -->
+<h2 class="dialog-title" id="dialog-title">Xóa việc “Đi bộ”?</h2>
+<!-- Detail: 24px regular #526057 -->
+<p class="dialog-detail" id="dialog-desc" style="margin-top: 12px; font-size: 24px; font-weight: 400; color: #526057; text-align: center; line-height: 1.35;">Chỉ thay đổi lần này. Những ngày khác giữ nguyên.</p>
+<!-- Buttons Stack: 272px wide, 60px high, 12px gap -->
+<div class="button-group" style="margin-top: 24px; width: 272px; display: flex; flex-direction: column; gap: 8px;"><button class="btn btn-primary" onclick="window.parent &amp;&amp; window.parent.postMessage('CANCEL_DELETE', '*')" style="gap: 12px;" type="button">
+<svg aria-hidden="true" class="lucide-icon" fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<path d="M18 6 6 18"></path>
+<path d="m6 6 12 12"></path>
+</svg>
+<span>Không xóa, giữ lại</span>
+</button>
+<button class="btn" onclick="window.parent &amp;&amp; window.parent.postMessage('CONFIRM_DELETE', '*')" style="background-color: #FFFFFF; border: 2px solid #B42318; color: #B42318; gap: 12px;" type="button">
+<svg aria-hidden="true" class="lucide-icon" fill="none" height="32" stroke="#B42318" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<path d="M3 6h18"></path>
+<path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+<path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+<line x1="10" x2="10" y1="11" y2="17"></line>
+<line x1="14" x2="14" y1="11" y2="17"></line>
+</svg>
+<span>Xóa khỏi lịch</span>
+</button></div>
+</div>
+</div>
+</div>
+</body>
+</html>

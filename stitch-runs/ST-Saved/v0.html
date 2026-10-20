@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An Nhiên - ST-Saved (Đã lưu xong)</title>
+  <!-- Google Font: Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #E8ECE9;
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Khung điện thoại Android 360x800 */
+    .mobile-screen {
+      width: 360px;
+      height: 800px;
+      background-color: #F6F7F2;
+      border-radius: 32px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 0 20px;
+    }
+
+    /* Khối kết quả trên cùng (căn giữa) */
+    .top-result-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 48px;
+    }
+
+    .save-circle {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      background-color: #1F684B;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .save-circle svg {
+      width: 72px;
+      height: 72px;
+      stroke: #FFFFFF;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .headline {
+      margin-top: 24px;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #202B25;
+      text-align: center;
+    }
+
+    /* Thẻ tóm tắt thông tin công việc (trắng, 320px, bo góc 16px) */
+    .summary-card {
+      width: 320px;
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #DFE5DF;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      margin-top: 24px;
+      position: relative;
+      overflow: hidden;
+      padding: 16px 16px 16px 22px; /* Dành chỗ cho thanh màu 6px bên mép trái */
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Thanh chỉ báo thói quen 6px bên mép trái thẻ */
+    .summary-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 6px;
+      background-color: #2BA15C;
+    }
+
+    /* Dòng 1: Tiêu đề công việc + ô biểu tượng thói quen */
+    .card-row-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .habit-icon-tile {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: #2BA15C;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .habit-icon-tile svg {
+      width: 32px;
+      height: 32px;
+      stroke: #FFFFFF;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .task-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+
+    /* Các dòng chi tiết (Dòng 2, 3, 4) */
+    .card-row-detail {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .detail-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .detail-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: #1F684B;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .detail-text {
+      font-size: 24px;
+      font-weight: 500;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    /* Khối nút thao tác ghim dưới đáy màn hình */
+    .bottom-actions {
+      margin-top: auto;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 320px;
+    }
+
+    .btn {
+      width: 320px;
+      height: 60px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      outline: none;
+    }
+
+    /* Nút chính (duy nhất 1 nút nền đầy đủ) */
+    .btn-primary {
+      background-color: #1F684B;
+      color: #FFFFFF;
+    }
+
+    .btn-primary svg {
+      width: 32px;
+      height: 32px;
+      stroke: #FFFFFF;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* Nút phụ (viền outline) */
+    .btn-secondary {
+      background-color: #FFFFFF;
+      color: #1F684B;
+      border: 2px solid #7B887F;
+    }
+
+    .btn-secondary svg {
+      width: 32px;
+      height: 32px;
+      stroke: #1F684B;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-screen">
+    <!-- Khối trên cùng: Biểu tượng lưu hoàn tất & Tiêu đề -->
+    <div class="top-result-block">
+      <!-- Vòng tròn 128x128px nền #1F684B với Lucide Save 72px stroke 2.5 -->
+      <div class="save-circle">
+        <svg viewBox="0 0 24 24">
+          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+          <polyline points="17 21 17 13 7 13 7 21"></polyline>
+          <polyline points="7 3 7 8 15 8"></polyline>
+        </svg>
+      </div>
+
+      <!-- Tiêu đề Be Vietnam Pro 30px bold #202B25 -->
+      <h1 class="headline">Đã lưu xong!</h1>
+    </div>
+
+    <!-- Thẻ tóm tắt thông tin việc vừa lưu (rộng 320px, bo 16px, viền trái 6px #2BA15C) -->
+    <div class="summary-card">
+      <!-- Dòng 1: Tên việc + biểu tượng footprints 32px trong ô 48x48 #2BA15C -->
+      <div class="card-row-title">
+        <div class="habit-icon-tile">
+          <!-- Lucide footprints icon -->
+          <svg viewBox="0 0 24 24">
+            <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.5v2"></path>
+            <path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.5v2"></path>
+            <path d="M16 17h4"></path>
+            <path d="M4 13h4"></path>
+          </svg>
+        </div>
+        <div class="task-name">Đi bộ nhẹ nhàng</div>
+      </div>
+
+      <!-- Dòng 2: Giờ làm (Lucide clock 32px #1F684B) -->
+      <div class="card-row-detail">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <div class="detail-text">8:00 sáng</div>
+      </div>
+
+      <!-- Dòng 3: Lặp lại (Lucide repeat 32px #1F684B) -->
+      <div class="card-row-detail">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24">
+            <polyline points="17 1 21 5 17 9"></polyline>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+            <polyline points="7 23 3 19 7 15"></polyline>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+          </svg>
+        </div>
+        <div class="detail-text">Mỗi ngày</div>
+      </div>
+
+      <!-- Dòng 4: Lời nhắc (Lucide bell 32px #1F684B) -->
+      <div class="card-row-detail">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </div>
+        <div class="detail-text">Nhắc trước 10 phút</div>
+      </div>
+    </div>
+
+    <!-- Khối nút bấm đáy (ghim dưới đáy, lề 20px) -->
+    <div class="bottom-actions">
+      <!-- Nút chính: Duy nhất 1 nút nền xanh đầy đủ #1F684B -->
+      <button class="btn btn-primary" type="button">
+        <!-- Lucide sun icon 32px white -->
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        Về trang Hôm nay
+      </button>
+
+      <!-- Nút phụ: Nền trắng viền 2px #7B887F -->
+      <button class="btn btn-secondary" type="button">
+        <!-- Lucide plus icon 32px #1F684B -->
+        <svg viewBox="0 0 24 24">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        Thêm việc khác
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>

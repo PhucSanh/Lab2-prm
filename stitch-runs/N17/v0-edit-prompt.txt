@@ -1,0 +1,2 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the 48x48px tile #B98331 of the task "Ăn sáng chậm rãi" (7:30 sáng) replace the current fork-and-knife drawing by the exact Lucide `utensils` icon, white, 32px, stroke 2.5, fills the box, with exactly these paths: <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>.

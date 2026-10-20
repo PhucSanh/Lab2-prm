@@ -1,0 +1,27 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant.
+
+VARIANT "ST-Loading-offline": same full-screen saving state, but the phone has no internet. Saving still works on the phone, so the tone stays calm (not an error).
+
+CHANGES (everything else stays exactly as in the current screen):
+1. Keep the centered column, the 160x160px circle #D6EADF with the Lucide `loader-circle` icon 88px (#1F684B, stroke 2.5), and the title "Đang lưu việc…" (30px bold, #202B25, 32px below the circle).
+2. Replace the second line with "Lưu trên điện thoại, không cần mạng" in 24px regular (400), color #526057, centered, at most 2 lines, width 320px, 12px below the title.
+3. Add a new non-tappable info pill, 24px below the second line, centered horizontally: white #FFFFFF background, radius 16px, height 56px, padding 0 16px, no border, no shadow. Inside, left to right with 12px gap: Lucide `wifi-off` icon 32x32px, color #526057, stroke 2.5, then the text "Đang không có mạng" in 22px regular (400), color #526057, one line.
+4. Still nothing else: no buttons, no cancel link, no percentage, no progress bar, no countdown, no red color, no warning triangle, no illustration.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+loader-circle = saving in progress (only for the "Đang lưu việc…" state)
+wifi-off = no internet connection (only for the "Đang không có mạng" note)
+
+CONSTRAINTS (from rule.md, error level):
+- R-TXT-01: every text at least 20px. R-TXT-03: no sentence longer than 15 words; no paragraph longer than 2 lines.
+- R-CON-01: text contrast at least 4.5:1 (#526057 on #F6F7F2 and on #FFFFFF).
+- R-LAY-01: nothing clipped or overflowing at 360px width.
+- R-ICON-01 / R-ICON-02: every icon has visible text next to it.
+- R-COL-01: the offline state is shown by icon + text, not by color alone.
+- R-GES-01: tap-only, no swipe/drag/long-press (nothing on screen is tappable).
+- R-LANG-01: 100% Vietnamese with diacritics; no English words (no "offline", "wifi").
+- R-LANG-03 / R-VOC-01: no pressure or technical words (no "lỗi", "thất bại", "đồng bộ", "sao lưu", "thiết bị", "kết nối").
+- R-CEN-01: content is centered.
+Do NOT generate: leaderboard, streak, charts, three-dot menu, icon-only buttons, English text, gradient, background image behind text.

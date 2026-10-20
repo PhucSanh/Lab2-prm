@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Replace the detail text with exactly "Mai vẫn nhắc như thường." (one sentence, at most 2 lines), font-size 24px (set it on the element itself, not smaller than 24px), weight 400, color #526057, line-height 1.35, centered.
+2. Between that detail text and the first reason button, 16px below the text, add a centered label "Vì sao vậy Bác?" Be Vietnam Pro 22px bold (700), color #202B25. 12px below it come the four reason buttons.
+3. In the button "Bận việc nhà", use the exact Lucide `washing-machine` icon, 32px, stroke 2.5, color #1F684B: a rounded rectangle body with a drum circle, a small dot at the top right of the panel, no camera-like shape.
+4. Keep the question "Bỏ qua đi bộ hôm nay?" 26px bold, the `skip-forward` header icon, the four outline reason buttons (272x60px, 12px gap), the "Không bỏ qua nữa" text button with `x`, and all colors exactly as they are. No filled button, nothing clipped, all text at least 20px.

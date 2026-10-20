@@ -1,0 +1,2 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Increase the gap between the snackbar and the sticky filled button "Đã xong việc đi bộ" from 12px to 16px (sticky-action-bar gap: 16px). Keep the snackbar text "Sẽ nhắc lại lúc 9:30 sáng." unchanged, and keep the button 60px high, 320px wide, radius 14px.

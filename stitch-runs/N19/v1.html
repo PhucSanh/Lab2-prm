@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - Hôm nay</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: #F6F7F2;
+      color: #202B25;
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 24px;
+      line-height: 1.5;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Khung điện thoại Android 360 x 800 */
+    .app-viewport {
+      width: 100%;
+      max-width: 360px;
+      min-height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 32px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Thanh cuộn chính */
+    .scroll-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px 20px 224px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Phần chào đầu trang */
+    .header-greeting {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .greeting-title {
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1.3;
+      color: #202B25;
+      letter-spacing: -0.3px;
+    }
+
+    .greeting-sub {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.4;
+    }
+
+    /* Thẻ Việc tiếp theo - nền trắng nổi bật viền xanh */
+    .featured-card {
+      background-color: #FFFFFF;
+      border: 2px solid #1F684B;
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .featured-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #174C37;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .featured-task-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .icon-tile {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      flex-shrink: 0;
+    }
+
+    .task-info-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .task-title-featured {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #202B25;
+    }
+
+    .task-meta-featured {
+      font-size: 20px;
+      color: #526057;
+      font-weight: 500;
+    }
+
+    .featured-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    /* Khung cố định thanh Đã xong dính phía trên bottom nav */
+    .sticky-action-bar {
+      position: fixed;
+      bottom: 104px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 360px;
+      padding: 12px 20px;
+      background: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      z-index: 99;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Nút chính duy nhất màu xanh đậm */
+    .btn-primary {
+      width: 320px;
+      height: 60px;
+      border-radius: 14px;
+      background: #1F684B;
+      color: #FFFFFF;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 10px rgba(31, 104, 75, 0.2);
+    }
+
+    /* Nút phụ viền */
+    .btn-outline {
+      height: 60px;
+      width: 100%;
+      background-color: #FFFFFF;
+      color: #174C37;
+      border: 2px solid #1F684B;
+      border-radius: 14px;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    /* Tiêu đề danh sách công việc */
+    .section-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #202B25;
+      margin: 0;
+    }
+
+    /* Danh sách 6 công việc */
+    .tasks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Thẻ công việc bình thường */
+    .task-card {
+      background-color: #FFFFFF;
+      border: 1px solid #DFE5DF;
+      border-radius: 16px;
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      min-height: 80px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .accent-bar {
+      width: 6px;
+      min-width: 6px;
+      height: 100%;
+    }
+
+    .task-card-inner {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .task-header-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .task-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      flex: 1;
+    }
+
+    .task-time-label {
+      font-size: 20px;
+      font-weight: 600;
+      color: #526057;
+      line-height: 1.3;
+    }
+
+    .task-title {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #202B25;
+    }
+
+    .task-secondary {
+      font-size: 20px;
+      color: #526057;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    /* Huy hiệu trạng thái (Status Chips) */
+    .chip-container {
+      display: flex;
+      align-items: center;
+      margin-top: 2px;
+    }
+
+    .status-chip {
+      height: 40px;
+      padding: 0 16px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    /* Chip Đã xong */
+    .status-chip.done {
+      background-color: #1F684B;
+      color: #FFFFFF;
+    }
+
+    /* Chip Chưa làm */
+    .status-chip.pending {
+      height: 40px;
+      background: #FFF3DB;
+      color: #8A5100;
+      border: 2px solid #B26A00;
+    }
+
+    .status-chip.pending svg {
+      color: #B26A00;
+      stroke: #B26A00;
+    }
+
+    /* Thanh điều hướng dưới đáy màn hình */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 360px;
+      height: 104px;
+      z-index: 100;
+      box-sizing: border-box;
+      background: #FFFFFF;
+      border-top: 1px solid #DFE5DF;
+      display: flex;
+      align-items: center;
+      justify-content: stretch;
+      padding: 0 6px;
+      gap: 8px;
+    }
+
+    .nav-tab {
+      flex: 1 1 0;
+      min-width: 0;
+      max-width: 81px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 4px 0;
+      border-radius: 12px;
+      color: #526057;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .nav-tab.active {
+      background-color: #D6EADF;
+      color: #1F684B;
+    }
+
+    .nav-label {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.15;
+      text-align: center;
+      white-space: normal;
+      margin-bottom: 0;
+    }
+
+    /* Đảm bảo icon có kích thước phù hợp chuẩn */
+    .svg-icon {
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="app-viewport">
+<div class="scroll-container">
+<!-- 1. LỜI CHÀO ĐẦU TRANG -->
+<header class="header-greeting">
+<h1 class="greeting-title">Chào buổi sáng, Bác Lan</h1>
+<div class="greeting-sub">Thứ Năm, 8/10 · Đã xong 0/1 việc</div>
+</header>
+<!-- 2. THẺ NỔI BẬT: VIỆC TIẾP THEO -->
+<section aria-label="Việc tiếp theo" class="featured-card"><div class="featured-header"><svg class="svg-icon" fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><span>Việc tiếp theo · 8:00 sáng</span></div><div class="featured-task-row"><div aria-hidden="true" class="icon-tile" style="background-color: #2BA15C;"><svg class="svg-icon" fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.5-2 8.5v2"></path><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.5 2 8.5v2"></path></svg></div><div class="task-info-block"><h2 class="task-title-featured">Đi bộ nhẹ nhàng</h2><div class="task-meta-featured">Mỗi ngày · Vận động tự nhiên</div></div></div><div class="featured-buttons"><button class="btn-outline" type="button"><svg class="svg-icon" fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2"></path><path d="M5 3 2 6"></path><path d="m22 6-3-3"></path><path d="M6.38 18.7 4 21"></path><path d="M17.64 18.67 20 21"></path></svg><span>Dời lại</span></button></div></section>
+<!-- 3. TIÊU ĐỀ DANH SÁCH -->
+<h2 class="section-title">Việc hôm nay</h2>
+<!-- DANH SÁCH 6 CÔNG VIỆC -->
+<main class="tasks-list"><article class="task-card"><div class="accent-bar" style="background-color: #2BA15C;"></div><div class="task-card-inner"><div class="task-header-row"><div aria-hidden="true" class="icon-tile" style="background-color: #2BA15C;"><svg class="svg-icon" fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.5-2 8.5v2"></path><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.5 2 8.5v2"></path></svg></div><div class="task-content"><div class="task-time-label">8:00 sáng</div><h3 class="task-title">Đi bộ nhẹ nhàng</h3><div class="chip-container"><span class="status-chip pending"><svg class="svg-icon" fill="none" height="24" stroke="#B26A00" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="24"><circle cx="12" cy="12" r="9"></circle></svg><span>Chưa làm</span></span></div><div class="task-secondary">Vận động tự nhiên</div></div></div></div></article><button class="btn-outline" style="white-space: nowrap;" type="button"><svg class="svg-icon" fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg><span>Thêm việc khác</span></button></main>
+</div>
+<!-- THANH CỐ ĐỊNH "ĐÃ XONG" -->
+<div class="sticky-action-bar">
+<button class="btn-primary" type="button"><svg class="svg-icon" fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24" width="32"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Đã xong</span></button>
+</div>
+<!-- 4. THANH ĐIỀU HƯỚNG DƯỚI (BOTTOM NAVIGATION - 104px) -->
+<nav aria-label="Điều hướng chính" class="bottom-nav"><a aria-current="page" class="nav-tab active" href="#today"><svg class="svg-icon" fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg><span class="nav-label">Hôm nay</span></a><a class="nav-tab" href="#calendar"><svg class="svg-icon" fill="none" height="32" stroke="#526057" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg><span class="nav-label">Lịch tuần</span></a><a class="nav-tab" href="#habits"><svg class="svg-icon" fill="none" height="32" stroke="#526057" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg><span class="nav-label">Thói quen</span></a><a class="nav-tab" href="#family"><svg class="svg-icon" fill="none" height="32" stroke="#526057" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span class="nav-label">Gia đình</span></a></nav>
+</div>
+</body></html>

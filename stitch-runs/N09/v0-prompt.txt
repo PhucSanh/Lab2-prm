@@ -1,0 +1,23 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the screen "Sửa người thân" (edit a family member, opened by tapping a name on the Gia đình tab). Bác changes the details of Mai, her daughter. Nothing is wrong, so there is NO error state. All UI text Vietnamese with diacritics.
+1. Back button stays top-left: chevron-left icon 32px + text "Gia đình" (22px bold, #1F684B, 48px high touch area, left padding 20px). Still NO bottom navigation.
+2. Title row: replace user-plus with pencil icon (32px) and the title "Sửa người thân" (30px bold #202B25).
+3. Remove the outlined button "Chọn từ danh bạ" and the line "hoặc tự nhập" completely. The form starts right under the title.
+4. Field "Tên gọi": FILLED with "Mai" (24px). Keep the hint line with info icon "Ví dụ: Mai, Hùng" (20px #526057).
+5. Label "Là gì của Bác?" and the 4 full-width option rows (60px high, 12px gap) "Con", "Cháu", "Bạn bè", "Khác". "Con" is SELECTED (circle-dot icon 32px, 2px #1F684B border, #D6EADF background, bold text, and the text "Đang chọn" 20px bold #174C37 on the right). The other three keep the circle icon in #7B887F, white, 2px #7B887F border.
+6. Field "Số điện thoại": FILLED with "0912 345 678" (24px). Keep the hint line with info icon "Ví dụ: 0912 345 678" (20px #526057).
+7. Remove the info line "Chỉ gửi tin khi Bác chọn gửi.".
+8. Fixed footer with two stacked buttons, gap 12px, side margins 20px, bottom padding 20px: (a) the ONLY filled button "Lưu thay đổi" (60px high, full width, #1F684B, text #FFFFFF 22px bold, save icon 32px white); (b) below it an OUTLINED button "Xóa khỏi An Nhiên" (60px high, full width, white background, 2px #B42318 border, text and trash-2 icon 32px in #B42318, text 22px bold). The delete button is NOT filled. Make the scroll container padding-bottom 180px so nothing is covered by the footer.
+9. No dialog, no snackbar, no three-dot menu.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+chevron-left = back (always with the text "Gia đình")
+pencil = Sửa (next to the screen title)
+info = hint lines under the fields
+circle-dot = relation option selected ("Con")
+circle = relation option not selected ("Cháu", "Bạn bè", "Khác")
+save = button "Lưu thay đổi"
+trash-2 = button "Xóa khỏi An Nhiên"
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped or truncated at 360px width; every icon has visible text next to it; touch targets at least 48x48px; exactly one filled button; selection never by color only; tap-only; 100% Vietnamese with diacritics; address the user as "Bác"; no pressure or blame words; never use the words "contact", "family", "save", "delete", "OK", "người chăm sóc", "người dùng".

@@ -1,0 +1,27 @@
+{
+  "screen": "G10 Có gợi ý mới (tự hiện)",
+  "round": 0,
+  "score": 97,
+  "errors": 0,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Dòng phụ dưới tiêu đề popup 'Mai vừa gửi lúc 16:20'",
+      "evidence": "Giờ viết kiểu 24 giờ '16:20', trái SG-10; cùng màn dùng '9:30 sáng', '3 giờ chiều' nên không thống nhất",
+      "fix": "Đổi chữ thành 'Mai vừa gửi lúc 4:20 chiều' (giữ 22px, #526057)"
+    }
+  ],
+  "na": ["R-NAV-02", "R-SAFE-01", "R-SAFE-02", "R-VOI-01"],
+  "fixed": [],
+  "regressions": [],
+  "notes": [
+    "Critic không ghi được file; orchestrator ghi lại, chỉ giữ luật fail (như G12).",
+    "R-ONE-01 chấm trên lớp popup: nút 'Đã xong' ở đáy nằm dưới scrim 60%, không bấm được. Chấm chặt hơn thì fail (87 điểm, 1 error).",
+    "Mọi icon đúng Từ điển, từ 32px trở lên; chữ nhỏ nhất 20px."
+  ],
+  "summary": "Popup căn giữa, đúng token, icon đúng Từ điển, không error; chỉ còn giờ '16:20' kiểu 24 giờ, cần đổi thành '4:20 chiều'."
+}

@@ -1,0 +1,28 @@
+{
+  "screen": "S17b Nhắn tin · đã mở chia sẻ",
+  "round": 0,
+  "score": 90,
+  "errors": 1,
+  "warns": 0,
+  "results": [
+    {"rule": "R-TXT-01", "level": "error", "check": "auto", "status": "pass"},
+    {"rule": "R-CON-01", "level": "error", "check": "auto", "status": "pass"},
+    {"rule": "R-LAY-01", "level": "error", "check": "auto", "status": "pass"},
+    {"rule": "R-TXT-03", "level": "error", "check": "auto", "status": "fail",
+     "where": "Khối thông báo nền #D6EADF dưới tiêu đề, câu đậm 'Bác tiếp tục ở Zalo để xem lại và bấm gửi.'",
+     "evidence": "font-size 24px bold trong vùng chữ rộng ~244px (320 - 2x16 padding - 32 icon - 12 gap); ảnh v0 cho thấy câu xuống 3 dòng, quá giới hạn 2 dòng",
+     "fix": "Rút câu đậm còn 'Bác bấm gửi trong Zalo nhé.' (6 tiếng, 24px đậm, tối đa 2 dòng); giữ dòng phụ 20px 'An Nhiên chưa biết tin này đã đến Mai chưa.'"},
+    {"rule": "R-TXT-04", "level": "error", "check": "auto", "status": "pass"},
+    {"rule": "R-ICON-01", "level": "error", "check": "auto", "status": "pass"},
+    {"rule": "R-ICON-02", "level": "error", "check": "ai", "status": "pass"},
+    {"rule": "R-TAP-01", "level": "error", "check": "auto", "status": "pass"},
+    {"rule": "R-TAP-02", "level": "error", "check": "ai", "status": "pass"},
+    {"rule": "R-NAV-02", "level": "error", "check": "ai", "status": "pass"},
+    {"rule": "R-ONE-01", "level": "error", "check": "ai", "status": "pass"},
+    {"rule": "R-LANG-03", "level": "error", "check": "ai", "status": "pass"},
+    {"rule": "R-VOC-01", "level": "error", "check": "auto", "status": "pass"}
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Chỉ còn câu đậm trong khối thông báo xuống 3 dòng vi phạm R-TXT-03. Các luật khác pass hoặc n/a (bản rút gọn của critic; bản đầy đủ 38 luật nằm trong báo cáo của critic, file gốc không ghi được do bị từ chối quyền)."
+}

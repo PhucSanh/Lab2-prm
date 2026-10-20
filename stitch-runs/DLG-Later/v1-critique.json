@@ -1,0 +1,29 @@
+{
+  "screen": "DLG-Later Dời việc",
+  "round": 1,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "results": [
+    { "rule": "R-TXT-01", "level": "error", "check": "auto", "status": "pass" },
+    { "rule": "R-CON-01", "level": "error", "check": "auto", "status": "pass" },
+    { "rule": "R-LAY-01", "level": "error", "check": "auto", "status": "pass" },
+    { "rule": "R-TXT-03", "level": "error", "check": "auto", "status": "pass" },
+    { "rule": "R-TXT-04", "level": "error", "check": "auto", "status": "pass" },
+    { "rule": "R-ICON-01", "level": "error", "check": "auto", "status": "pass" },
+    { "rule": "R-ICON-02", "level": "error", "check": "ai", "status": "pass" },
+    { "rule": "R-ICON-03", "level": "warn", "check": "ai", "status": "pass" },
+    { "rule": "R-TAP-01", "level": "error", "check": "auto", "status": "pass" },
+    { "rule": "R-TAP-02", "level": "error", "check": "ai", "status": "pass" },
+    { "rule": "R-ONE-01", "level": "error", "check": "ai", "status": "pass" },
+    { "rule": "R-GES-01", "level": "error", "check": "ai", "status": "pass" },
+    { "rule": "R-CEN-01", "level": "warn", "check": "ai", "status": "pass" },
+    { "rule": "R-LANG-01", "level": "error", "check": "ai", "status": "pass" },
+    { "rule": "R-LANG-03", "level": "error", "check": "ai", "status": "pass" },
+    { "rule": "R-VOC-01", "level": "error", "check": "auto", "status": "pass" }
+  ],
+  "fixed": ["R-ICON-03"],
+  "regressions": [],
+  "note": "Critic không ghi được file; orchestrator chép lại, đã rút gọn các luật n/a. Chữ 'Ngày mai, cùng giờ' (22px đậm) chạm sát viền phải nút nhưng chưa bị cắt, chưa đo bằng trình duyệt.",
+  "summary": "Đạt mọi luật. Ba nút dời dùng alarm-clock-plus, clock chỉ còn ở dòng giờ hẹn."
+}

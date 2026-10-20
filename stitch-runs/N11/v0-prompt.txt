@@ -1,0 +1,28 @@
+Design ONE Android mobile screen, 360x800 dp, for the app "An Nhiên" (daily routine calendar based on the 9 Power 9 habits, for Vietnamese people aged 60+). User: Bà Lan, 68, farsighted, shaky fingers, only knows Zalo/YouTube. Principles: Bác decides; no pressure; one main button per screen; tap only (no swipe, no long-press). All UI text Vietnamese with diacritics, address the user as "Bác". Short text: sentences max 15 words, button labels max 5 words.
+
+SCREEN: "Chọn ngày" (date picker, opened from the "Thêm việc" form when Bác taps "Ngày thực hiện"). Bác picks one date in a month calendar, then confirms. No bottom navigation. No dialog, no snackbar, no three-dot menu, no error state.
+
+STYLE TOKENS: background #F6F7F2, cards #FFFFFF, text #202B25, secondary text #526057, primary #1F684B, primary-container #D6EADF with text #174C37, outline #7B887F, border #DFE5DF. Font Be Vietnam Pro. Screen side margin 20px, gap between blocks 16px. Card radius 16, button radius 14. Flat, no gradient, no dark background, no neon.
+
+LAYOUT (top to bottom, content scrolls vertically, footer fixed):
+1. Back button top-left: chevron-left icon 32px + text "Thêm việc" (22px bold #1F684B, 48px high touch area, left padding 20px).
+2. Title row, left aligned: calendar icon 32px (#1F684B) + title "Chọn ngày" (30px bold #202B25).
+3. Hint line with info icon 32px: "Chọn ngày, rồi bấm Xong để xác nhận." (20px #526057).
+4. Month header, centered: "Tháng 10/2026" (26px bold #202B25).
+5. Month navigation: two OUTLINED buttons side by side with 16px gap, each 60px high, white background, 2px #7B887F border, text 22px bold #1F684B: left "Tháng 9" with chevrons-left icon 32px; right "Tháng 11" with chevrons-right icon 32px.
+6. Calendar card: white, radius 16, placed with 12px side margins so the 7 columns are exactly 48px wide (336px total), no inner side padding. Weekday header row (20px bold #526057, centered): "Hai", "Ba", "Tư", "Năm", "Sáu", "Bảy", "CN". Then October 2026 date grid, 5 rows, each date cell exactly 48x48px, number 24px #202B25 centered, 4px row gap. Day 1 falls on "Năm" (Thursday): first row has 3 empty cells then 1,2,3,4; then rows 5-11, 12-18, 19-25, 26-31 (last row ends at "Bảy"; "CN" cell of last row empty). Selected date 23 (Thứ Sáu): filled circle 44px #1F684B with white bold number. All other dates plain, no color.
+7. Selection summary below the card, centered inside a block with background #D6EADF, radius 16, padding 16px: calendar icon 32px (#174C37) + text "Đã chọn · Thứ Sáu, 23/10" (24px bold #174C37).
+8. Fixed footer, two stacked full-width buttons, gap 12px, side margins 20px, bottom padding 20px: (a) the ONLY filled button "Xong" (60px high, #1F684B, text #FFFFFF 22px bold, check icon 32px white); (b) below it an OUTLINED button "Hủy" (60px high, white, 2px #7B887F border, text and x icon 32px in #1F684B, 22px bold). Scroll container padding-bottom 180px so nothing is covered by the footer.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+chevron-left = back (always with the text "Thêm việc")
+calendar = choose date / chosen date (next to title "Chọn ngày" and in the summary block)
+info = hint line
+chevrons-left = button "Tháng 9" (previous month) only
+chevrons-right = button "Tháng 11" (next month) only
+check = button "Xong" only
+x = button "Hủy"
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped or truncated at 360px width, no horizontal scroll; every icon has visible text next to it; touch targets at least 48x48px (every date cell 48x48); exactly one filled button ("Xong"); selected date is shown not by color only (also the summary text "Đã chọn · Thứ Sáu, 23/10"); tap-only, no swipe to change month; 100% Vietnamese with diacritics; no pressure or blame words; never use the words "task", "OK", "Cancel", "Done", "Today", "người dùng".

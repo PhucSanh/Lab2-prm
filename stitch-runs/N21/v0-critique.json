@@ -1,0 +1,26 @@
+{
+  "screen": "N21 Gia đình – đã xóa người thân",
+  "round": 0,
+  "score": 87,
+  "errors": 1,
+  "warns": 1,
+  "note": "orchestrator ghi lại từ kết quả critic (critic không có quyền ghi file); các luật pass/n/a được lược bớt",
+  "violations": [
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "where": "Hai nút 'Gọi điện' và 'Nhắn tin' trong thẻ Hùng và thẻ Bin",
+      "evidence": "Mỗi nút còn ~125 px nội dung, cần ~135 px (icon 32 + gap 8 + chữ 22px đậm) nên nhãn bị bẻ 2 dòng 'Gọi / điện', 'Nhắn / tin'",
+      "fix": "Xếp 'Gọi điện' và 'Nhắn tin' thành 2 nút dọc, mỗi nút rộng 100% (286 px), cao 60 px, cách nhau 12 px, white-space: nowrap; giữ icon phone / message-square 32 px, chữ 22 px đậm"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "where": "Icon cạnh dòng phụ đề và icon avatar trong thẻ người thân",
+      "evidence": "message-circle không có trong Từ điển icon, giống message-square; avatar dùng user trong khi từ điển gán user cho 'Tên Bác, hồ sơ'",
+      "fix": "Đổi phụ đề thành 'Người thân của Bác' (20px, #526057) không icon; avatar thay bằng chữ cái đầu tên ('H', 'B') 24px đậm #1F684B trong vòng tròn 48 px nền #D6EADF"
+    }
+  ],
+  "fixed": [],
+  "regressions": []
+}

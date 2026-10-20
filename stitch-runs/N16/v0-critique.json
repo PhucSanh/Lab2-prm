@@ -1,0 +1,21 @@
+{
+  "screen": "N16 Đã lưu · nhắc cần kiểm tra",
+  "round": 0,
+  "score": 97,
+  "errors": 0,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Icon trong nút chính 'Về Hôm nay'",
+      "evidence": "SVG sun: tia dưới là <line x1=\"12\" x2=\"12\" y1=\"1\" y2=\"21\">, đúng Lucide phải là y1=\"21\" y2=\"23\"; thành nét dọc xuyên tâm",
+      "fix": "Thay bằng Lucide `sun` chuẩn 32 px, nét 2.5, màu #FFFFFF: tia dưới y1=21 y2=23, giữ circle r=5 và 7 tia còn lại"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Mọi luật error pass (chữ ≥ 22 px, #8A5100/#FFF3DB 5.86:1, viền #B26A00 3.87:1, 1 nút filled 60 px ở đáy). Còn icon sun vẽ sai. Orchestrator chép lại JSON (rút gọn các luật pass) vì critic không ghi được file."
+}

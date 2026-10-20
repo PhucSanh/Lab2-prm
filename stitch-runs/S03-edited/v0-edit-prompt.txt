@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the three status chips "Đã xong" (rows 6:30 sáng, 7:30 sáng, 8:30 sáng) use the exact Lucide `circle-check` icon, 24px, white, stroke-width 2.2, viewBox 0 0 24 24, fill none, round caps and joins: <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>. Remove the hand-drawn check mark (m16 9-5.5 5.5L8 12).
+2. In all three status chips "Chưa làm" (rows 10:00 sáng, 3 giờ chiều, 6 giờ tối) use the exact Lucide `circle` icon, 24px, stroke #B26A00, stroke-width 2.2, viewBox 0 0 24 24, fill none: <circle cx="12" cy="12" r="10"/>. Make the three chips identical: height 40px, radius 999px, background #FFF3DB, border 2px solid #B26A00, text "Chưa làm" 20px bold #8A5100.

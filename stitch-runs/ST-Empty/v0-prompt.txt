@@ -1,0 +1,20 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the "Hôm nay" screen when there are no tasks today (empty state).
+1. Keep the header exactly: greeting "Chào buổi sáng, Bác Lan" and the date line, but change the date line to "Thứ Năm, 8/10" only (remove "Đã xong 3/6 việc").
+2. Remove the "Việc tiếp theo" card, the section title "Việc hôm nay", all 6 task cards, and the sticky "Đã xong" button above the bottom navigation.
+3. In the free area between the header and the buttons, show one centered block (centered horizontally, vertically centered in that area, center-aligned text):
+   - a 128x128px circle filled #D6EADF containing a Lucide `sun` icon 72px, stroke 2.5, color #1F684B;
+   - 24px below: the headline "Hôm nay chưa có việc nào" 30px bold (700), #202B25, at most 2 lines;
+   - 12px below: the text "Bắt đầu nhẹ nhàng với một việc nhỏ." 24px regular (400), #526057, at most 2 lines.
+4. Directly above the bottom navigation (same place as the old sticky "Đã xong" bar, 20px side margins, 16px above the bottom navigation), two buttons stacked vertically, 12px gap, each 320px wide x 60px high, radius 14px, label 22px bold, icon 32px on the left of the label:
+   - Primary (the ONLY filled button): background #1F684B, white label "Thêm việc đầu tiên", Lucide `plus` icon 32px white.
+   - Secondary (outline): white background, 2px border #7B887F, label "Dùng lịch mẫu" #1F684B, Lucide `layout-list` icon 32px #1F684B.
+5. Keep the bottom navigation with 4 tabs (Hôm nay active) exactly as it is. No task card, no status chip, no "Đã xong" button anywhere on the screen.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+sun = today (empty state picture and the "Hôm nay" tab)
+plus = add a task
+layout-list = use a sample schedule
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped at 360px width; every icon has visible text next to it; touch targets at least 48x48px, main button 60px high near full width above the bottom nav; exactly one filled button; tap-only; 100% Vietnamese with diacritics; no pressure words (never "bạn chưa hoàn thành"); empty-state content is centered.

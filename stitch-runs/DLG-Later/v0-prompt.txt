@@ -1,0 +1,20 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: dialog "DLG-Later" (choose when to postpone a task). The scrim and the centered white dialog card (320px wide, radius 24px, padding 24px, all content centered) stay as they are.
+1. Header circle: keep the 80x80px circle filled #D6EADF, but replace its icon with a Lucide `alarm-clock-plus` icon 64px, stroke 2.5, color #1F684B.
+2. Question (replaces "Bác đã đi bộ xong rồi chứ?"): "Dời việc này đến lúc nào?" Be Vietnam Pro 26px bold (700), #202B25, centered, 16px below the circle.
+3. Detail block (replaces the two-row block): one centered row, 12px below the question: Lucide `clock` icon 32px (stroke 2.5, #1F684B), 12px gap, text "Đi bộ, đang hẹn 9:30 sáng" 24px regular (400), #526057. Remove the footprints tile.
+4. 24px below, three outline buttons stacked vertically, 12px gap, each 272px x 60px, radius 14px, white background, 2px border #7B887F, label 22px bold #1F684B, a Lucide `clock` icon 32px #1F684B on the left of the label:
+   - "30 phút nữa"
+   - "Chiều nay, 4 giờ"
+   - "Ngày mai, cùng giờ"
+   None of the three is filled.
+5. 12px below the last button: a text button (no fill, no border) 272px x 60px, label "Không dời nữa" 22px bold #1F684B, with a Lucide `x` icon 32px #1F684B on the left of the label.
+6. Remove the old buttons "Đúng, đã xong" and "Chưa, để sau". No filled button anywhere, no close "X" in the corner, no countdown, no time picker, no extra text.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+alarm-clock-plus = postpone / change time (header circle only)
+clock = time of the task (current time line and the three time choices)
+x = do not change, close the dialog (only for "Không dời nữa")
+
+CONSTRAINTS (rule.md, error level): R-TXT-01 every text at least 20px; R-TXT-03 sentences at most 15 words, button labels at most 5 words; R-CON-01 contrast at least 4.5:1; R-LAY-01 nothing clipped at 360px; R-ICON-01/02 every button has an icon and visible text; R-TAP-01/02 buttons 60px high, full dialog width; R-ONE-01 at most one filled button (here zero); R-GES-01 tap-only; R-LANG-01 100% Vietnamese with diacritics; R-CEN-01 dialog content centered. Do NOT generate: swipe, long-press, time picker, English text, gradient.

@@ -1,0 +1,23 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: screen "N16" (saved, but the reminder needs checking). The task was saved, but the phone could not set its reminder.
+1. Keep the 128x128px #1F684B circle with the white Lucide `save` icon 72px at the top, and keep the headline "Đã lưu xong!" (Be Vietnam Pro 30px bold, #202B25, centered).
+2. Directly below the headline (16px gap) add one centered line "Bác không cần nhập lại." in 24px #526057.
+3. Summary card (white, 320px wide, radius 16px, padding 16px, 1px border #DFE5DF, 6px #2BA15C left accent bar): keep row 1 (48x48 #2BA15C tile radius 12px with white Lucide `footprints` 32px + "Đi bộ nhẹ nhàng" 24px bold), row 2 (`clock` 32px #1F684B + "8:00 sáng") and row 3 (`repeat` 32px #1F684B + "Mỗi ngày"). REMOVE row 4 ("Nhắc trước 10 phút").
+4. 16px below the card add a notice box, 320px wide, radius 16px, padding 16px, background #FFF3DB, 1px border #B26A00. Inside, left-aligned: Lucide `bell-off` icon 32px #B26A00, then the text "Chưa đặt được lời nhắc cho việc này." 24px #8A5100 (wraps to two lines if needed).
+5. Bottom block (pinned, 20px margin, 12px gap, each 320x60px, radius 14px):
+   - Primary (the ONLY filled button): background #1F684B, white text "Về Hôm nay" 22px bold, with Lucide `sun` icon 32px white on the left.
+   - Secondary (outline): white background, 2px border #7B887F, text "Kiểm tra lời nhắc" 22px bold #1F684B, with Lucide `bell` icon 32px #1F684B on the left.
+6. Vertical gaps between blocks are 16px; screen margin 20px. Nothing else: no percentage, no confetti, no countdown, no snackbar, no red error color.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+save = save the task (the saved confirmation)
+footprints = habit "Vận động tự nhiên" (only for that habit)
+clock = time of the task
+repeat = repeat
+bell-off = reminder could not be set (warning color #B26A00, always with text)
+bell = reminder (the "Kiểm tra lời nhắc" button)
+sun = go to Hôm nay
+Do NOT use circle-check anywhere (it is only for the status "Đã xong"). Do NOT use circle-alert or any red error icon.
+
+CONSTRAINTS (rule.md, error level): R-TXT-01 every text at least 20px; R-TXT-03 no sentence longer than 15 words; R-TXT-04 button labels at most 5 words; R-CON-01 contrast at least 4.5:1; R-LAY-01 nothing clipped at 360px; R-ICON-01/02 every icon has visible text, every main button has an icon; R-COL-02 task card keeps colored icon tile and 6px accent bar; R-TAP-01/02 targets at least 48px, primary button 60px high; R-ONE-01 exactly one filled button; R-GES-01 tap-only; R-LANG-01 100% Vietnamese with diacritics; R-LANG-03 no pressure words (no "lỗi", "thất bại"); R-CEN-01 icon, headline and sentence centered, card content left-aligned.

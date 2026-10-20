@@ -1,0 +1,6 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Bottom navigation, tab "Gia đình": replace the two-people `users` icon with the Lucide `hand-heart` icon, 32px, stroke 2.2, same color as the other inactive tabs.
+2. Bottom navigation, tab "Lịch tuần": replace the plain `calendar` icon with the Lucide `calendar-days` icon, 32px, stroke 2.2.
+3. Sticky filled button "Đã xong" (320x60px, #1F684B): replace the plain check mark with the Lucide `circle-check` icon, 32px, white, on the left of the label. Exact paths (viewBox 0 0 24 24, fill none, stroke currentColor, round caps and joins): <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+4. Outlined button "Dời lại" in the "Việc tiếp theo" card: replace the `alarm-clock` icon with the Lucide `alarm-clock-plus` icon, 32px, #1F684B, on the left of the label. Exact paths: <circle cx="12" cy="13" r="8"/><path d="M5 3 2 6"/><path d="m22 6-3-3"/><path d="M6.38 18.7 4 21"/><path d="M17.64 18.67 20 21"/><path d="M12 10v6"/><path d="M9 13h6"/>
+5. Keep the sticky "Đã xong" bar where it is (right above the bottom navigation); do not move it into the card.

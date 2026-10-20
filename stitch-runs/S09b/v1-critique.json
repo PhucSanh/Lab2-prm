@@ -1,0 +1,16 @@
+{
+  "screen": "S09b Gia đình · đã thêm người thân",
+  "round": 1,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "results": "Tất cả luật pass hoặc n/a (chấm lại theo luật hiện tại; stitch-critic không ghi được file, orchestrator chép tóm tắt)",
+  "fixed": ["R-TXT-02", "R-LAY-01", "R-STY-02"],
+  "regressions": [],
+  "notes": [
+    "Nút Gọi điện/Nhắn tin rộng ~134px, không padding trong, chữ sát viền; nên thêm padding 0 8px và gap 8px khi dựng Figma/Flutter.",
+    "Banner 'Đã thêm Cháu Bin' dùng icon save; Từ điển icon chưa có nghĩa 'đã thêm' (gợi ý user-check hoặc user-plus).",
+    "Viền thẻ gợi ý #DFE5DF trên #F6F7F2 dưới 3:1, là viền thẻ nên không tính R-CON-02.",
+    "Số đo lấy từ CSS trong v1.html và ảnh v1.png, chưa đo bằng trình duyệt."
+  ]
+}

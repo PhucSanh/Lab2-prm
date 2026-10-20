@@ -1,0 +1,13 @@
+{
+  "screen": "N06 Thông tin của Bác",
+  "round": 2,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "results": [],
+  "note": "Mọi luật áp dụng được đều pass, còn lại n/a. Ghi hộ critic vì critic không có quyền ghi file; chi tiết từng luật nằm trong câu trả lời của critic.",
+  "fixed": ["R-ICON-03"],
+  "regressions": [],
+  "observations": "Icon sunrise ở nhãn 'Bác thức dậy lúc' bị Stitch vẽ lệch nét so với Lucide gốc (M12 2v6 thay vì M12 2v8); nhìn vẫn đúng nghĩa. Nên dùng bản Lucide gốc khi dựng Figma / Flutter.",
+  "summary": "Ô chọn giờ đã đổi clock sang sunrise 32px đúng Từ điển icon; chữ ≥ 20px, tương phản đạt, chỉ 1 nút filled; không còn lỗi."
+}

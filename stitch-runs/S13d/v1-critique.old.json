@@ -1,0 +1,30 @@
+{
+  "screen": "S13d Nhắc việc đang tắt",
+  "round": 1,
+  "score": 94,
+  "errors": 0,
+  "warns": 2,
+  "results": [
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Icon mũi tên trong nút 'Quay lại' ở app bar",
+      "evidence": "SVG path 'M15 19l-7-7 7-7' là chevron của Heroicons, không phải Lucide `chevron-left` (path Lucide 'm15 18-6-6 6-6'); Từ điển icon yêu cầu chỉ dùng bộ Lucide",
+      "fix": "Thay SVG nút 'Quay lại' bằng Lucide `chevron-left` 32 px (path 'm15 18-6-6 6-6'), stroke-width 2.5, nét #1F684B; giữ chữ 'Quay lại' 22px"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Vòng tròn icon bell-off 112 px ở đầu màn",
+      "evidence": "Inline style nền #FDECE9 (error-container) và stroke #B42318 !important (error) đè class .bell-circle (#D6EADF / #174C37); Từ điển icon ghi bell-off 'màu warning-strong, không dùng màu error'; tắt nhắc không phải lỗi, ảnh hiện icon đỏ trên nền hồng như báo lỗi",
+      "fix": "Vòng tròn 112 px đổi nền sang #FFF3DB (warning-container), icon bell-off 64 px nét #B26A00 (warning-strong); bỏ inline 'stroke: #B42318 !important' và nền #FDECE9"
+    }
+  ],
+  "fixed": ["R-STY-03"],
+  "regressions": [],
+  "summary": "Màn đạt mọi luật error; đã sửa khoảng cách khối về 16px và bỏ icon clock sai nghĩa ở 'Vẫn để sau'; còn 2 warn: vòng tròn bell-off dùng màu error thay vì warning-strong, mũi tên 'Quay lại' không phải Lucide chevron-left. (Các luật pass/n/a khác rút gọn khi ghi file; bản đầy đủ nằm trong báo cáo của critic.)"
+}

@@ -1,0 +1,236 @@
+{
+  "screen": "S03-snooze Hôm nay · nhắc lại sau 10 phút",
+  "round": 1,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [
+    "R-STY-03"
+  ],
+  "regressions": [],
+  "summary": "Màn đạt toàn bộ luật (0 error, 0 warn); khoảng cách snackbar – nút 'Đã xong việc đi bộ' đã sửa thành 16px. Ngoài luật vẫn còn lỗi nội dung chưa sửa: snackbar ghi 'Sẽ nhắc lại lúc 9:30 sáng.' trùng giờ gốc, nhắc lại sau 10 phút phải là 'Sẽ nhắc lại lúc 9:40 sáng.'"
+}

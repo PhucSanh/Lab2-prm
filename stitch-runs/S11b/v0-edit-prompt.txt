@@ -1,0 +1,2 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Spacing: remove margin-bottom 8px from each task card; set the gap between task cards inside a group to exactly 8px (flex gap), and set the gap between one group's last card and the next group label to exactly 16px (section margin-bottom 16px instead of 20px). Do not change anything else.

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An Nhiên - DLG-Done (Xác nhận đã xong)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #E5E7EB;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Screen Frame 360x800 */
+    .mobile-screen {
+      width: 360px;
+      height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Scrim overlay: flat #0F1411 at 60% opacity */
+    .scrim {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(15, 20, 17, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 10;
+    }
+
+    /* Dialog Card: width 320px, background #FFFFFF, radius 24px, padding 24px, level-2 soft shadow */
+    .dialog-card {
+      width: 320px;
+      background-color: #FFFFFF;
+      border-radius: 24px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(15, 20, 17, 0.15), 0 2px 6px rgba(15, 20, 17, 0.08);
+      position: relative;
+    }
+
+    /* Top Icon Circle: 80x80px filled #D6EADF */
+    .icon-badge {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #D6EADF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      flex-shrink: 0;
+    }
+
+    /* Heading: 16px below icon, Be Vietnam Pro 26px bold (700), #202B25, line-height 1.4 */
+    .dialog-title {
+      margin-top: 16px;
+      font-size: 26px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    /* Detail text: 12px below title, 24px regular (400), #526057, max 2 lines */
+    .dialog-detail {
+      margin-top: 12px;
+      font-size: 24px;
+      font-weight: 400;
+      color: #526057;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    /* Button stack: 24px below detail, 12px gap, width 272px */
+    .button-group {
+      margin-top: 24px;
+      width: 272px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Base button style: 272px x 60px, radius 14px, tap target 60px */
+    .btn {
+      width: 272px;
+      height: 60px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      font-size: 22px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+
+    .btn:active {
+      opacity: 0.85;
+    }
+
+    /* Button 1: The ONLY filled button, background #1F684B, label white */
+    .btn-primary {
+      background-color: #1F684B;
+      color: #FFFFFF;
+    }
+
+    /* Button 2: Outlined, white bg, 2px border #7B887F, label #1F684B */
+    .btn-secondary {
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      color: #1F684B;
+    }
+
+    /* Lucide SVGs */
+    .lucide-icon {
+      display: block;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-screen">
+    <!-- Scrim covering the screen -->
+    <div class="scrim">
+      
+      <!-- Confirmation Dialog -->
+      <div class="dialog-card" role="dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-desc">
+        
+        <!-- Top Icon Circle: 80x80 filled #D6EADF, Lucide circle-check 64px stroke 2.5 #1F684B -->
+        <div class="icon-badge">
+          <svg class="lucide-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+
+        <!-- Question Title: 26px bold #202B25 -->
+        <h2 id="dialog-title" class="dialog-title">
+          Bác đã đi bộ xong rồi chứ?
+        </h2>
+
+        <!-- Detail: 24px regular #526057 -->
+        <p id="dialog-desc" class="dialog-detail">
+          Đi bộ quanh công viên, 9:30 sáng
+        </p>
+
+        <!-- Buttons Stack: 272px wide, 60px high, 12px gap -->
+        <div class="button-group">
+          
+          <!-- Primary Filled Button: Lucide circle-check 32px -->
+          <button type="button" class="btn btn-primary" onclick="window.parent && window.parent.postMessage('CONFIRM_DONE', '*')">
+            <svg class="lucide-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+            <span>Đúng, đã xong</span>
+          </button>
+
+          <!-- Outlined Button: Lucide circle 32px -->
+          <button type="button" class="btn btn-secondary" onclick="window.parent && window.parent.postMessage('CANCEL_DONE', '*')">
+            <svg class="lucide-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+            <span>Chưa, để sau</span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

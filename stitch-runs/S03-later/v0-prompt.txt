@@ -1,0 +1,21 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the "Hôm nay" screen right after Bác tapped "Dời lại" and chose "30 phút nữa" for "Đi bộ quanh công viên" (moved from 9:30 sáng to 10:00 sáng). Progress stays "Đã xong 3/6 việc".
+1. "Việc tiếp theo" card: change the title line to "Việc tiếp theo · 10:00 sáng". Keep the task name "Đi bộ quanh công viên", the sub line and the outline button "Dời lại".
+2. Task list: in the row of "Đi bộ quanh công viên", change the time line from "9:30 sáng" to "10:00 sáng". Replace its status chip "Chưa làm" with the status chip "Đã dời": chip 40px high, radius 999px, white background #FFFFFF, 2px border #7B887F, text "Đã dời" 20px bold #202B25, with a Lucide `alarm-clock-plus` icon 24px #202B25 on the left of the text. Keep its green #2BA15C accent bar and its 48x48px tile. All other rows unchanged.
+3. Add a snackbar above the sticky button (12px gap, 20px side margins): one horizontal row, width 320px, height 80px, padding 16px, background #202B25, radius 12px, no auto-dismiss.
+   - Left: the text "Đã dời Đi bộ sang 10:00 sáng." 20px regular white (may wrap to 2 lines).
+   - Right: an outline button 48px high, radius 14px, 2px border #FFFFFF, no fill, padding 0 12px, gap 6px, white-space nowrap, flex-shrink 0, label "Hoàn tác" 22px bold white on ONE line, with a Lucide `undo-2` icon 32px white on its left.
+4. Rename the sticky filled button label from "Đã xong" to "Đã xong việc đi bộ" (22px bold white, one line); keep it 60px high, 320px wide, with a Lucide `circle-check` icon 32px.
+5. Make the scroll container padding-bottom 300px so the last task card is never covered by the snackbar, the sticky button or the bottom navigation.
+6. Icon fixes to match the icon dictionary: use the Lucide `footprints` icon (white, 32px) inside every 48x48 tile of the habit "Vận động tự nhiên" instead of any running-person icon; use the Lucide `house` icon (white, 32px) in the tile of "Gọi điện cho Mai" instead of `phone`; use `circle-check` for every "Đã xong" chip (24px) and never a plain `check`; the "Dời lại" button icon is `alarm-clock-plus` 32px; the bottom navigation tab icons are `sun`, `calendar-days`, `leaf`, `hand-heart` (32px, stroke 2.2).
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px (status chip icons: 24px) and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+alarm-clock-plus = postpone / "Đã dời" / "Dời lại"
+undo-2 = undo
+circle-check = done (only for the status/button "Đã xong")
+footprints = habit "Vận động tự nhiên" (only for that habit)
+house = habit "Gia đình trên hết" (only for that habit)
+(keep the other existing icons: bell, utensils, wind, coffee, circle, sun, calendar-days, leaf, hand-heart)
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped at 360px width (the "Hoàn tác" label stays on one line); every icon has visible text next to it; touch targets at least 48x48px; exactly one filled button; every status is icon + text; tap-only; 100% Vietnamese with diacritics; no pressure words.

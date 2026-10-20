@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Button 2: change the label from "Lần này và các lần sau" to "Từ nay về sau" (4 words), 22px bold, #1F684B, on ONE line; keep the Lucide `calendar-range` icon 32px #1F684B on the left; button height 60px.
+2. Dialog card: make the card 312px wide (20px margin each side of the 360px screen), padding 20px, radius 24px, background #FFFFFF, so the inner width is 272px.
+3. The three buttons: width exactly 272px (equal to the inner width of the card, 100%), no overflow beyond the card padding; keep 12px gap, radius 14px, height 60px.

@@ -1,0 +1,24 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: Bác just tapped "Lưu người thân" while the phone number field is EMPTY. The app explains the problem gently and shows how to fix it. It never blames and never blocks Bác. The name "Mai" and the relation "Con" that Bác already entered stay exactly as they are.
+1. Field "Số điện thoại": make the 60px field EMPTY (no value, no placeholder). Background #FDECE9, border 2px solid #B42318, radius 12px. Keep the label "Số điện thoại" (24px bold #202B25) above it. Remove the old hint line "Ví dụ: 0912 345 678" under the field; the error block replaces it.
+2. Directly below the field (gap 8px) add the error block, left aligned, all text on max 2 lines, never truncated:
+   - Part 1: a Lucide `circle-alert` icon 32px #B42318 (stroke 2.2) on the left of the sentence "Bác chưa nhập số điện thoại." 24px bold #B42318.
+   - Part 2: the example line "Ví dụ: 0912 345 678" 20px #526057.
+   - Part 3: the sentence "Bác chạm “Chọn từ danh bạ” ở trên cho nhanh." 20px #526057, with a Lucide `contact` icon 32px #1F684B on its left.
+3. Keep the field "Tên gọi" with value "Mai" and its hint line, and the 4 relation rows with "Con" still selected (circle-dot icon, text "Đang chọn"), unchanged.
+4. Keep the outlined button "Chọn từ danh bạ" (contact icon 32px, 60px high) at the top with the line "hoặc tự nhập" below it, and the line "Chỉ gửi tin khi Bác chọn gửi." with info icon.
+5. Keep the fixed footer filled button "Lưu người thân" with save icon (60px high, full width minus 40px margins) as the ONLY filled button. Make the scroll container padding-bottom 120px so nothing is covered by the footer.
+6. The error state must not rely on color alone: the field has the icon and the sentence. No red full-screen banner, no dialog, no snackbar.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+circle-alert = input error (red #B42318, always with the error sentence)
+contact = Chọn từ danh bạ
+info = hint lines
+user-plus = title "Thêm người thân"
+circle-dot = relation selected
+circle = relation not selected
+save = Lưu người thân
+chevron-left = back (always with the text "Gia đình")
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1 (#B42318 on #FDECE9 is 5.6:1); nothing clipped or truncated at 360px width; every icon has visible text next to it; touch targets at least 48x48px; exactly one filled button; tap-only; 100% Vietnamese with diacritics; address the user as "Bác"; no pressure or blame words.

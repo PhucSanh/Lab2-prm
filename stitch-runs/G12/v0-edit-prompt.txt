@@ -1,0 +1,8 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Suggestion card "Mai gửi Bác 2 việc": remove the box-shadow completely; keep a 1px #DFE5DF border. Change its 48x48px icon tile fill from #1F684B to #D6EADF and the Lucide `mail` icon (32px) color to #174C37. The "Việc tiếp theo" card stays the strongest block on the screen.
+2. Sticky filled button "Đã xong" and the "Đã xong" status chips: replace the plain check mark with the Lucide `circle-check` icon (button icon 32px white, chip icon 24px white).
+3. "Dời lại" outline button in the "Việc tiếp theo" card: replace the clock icon with the Lucide `alarm-clock-plus` icon 32px, color #174C37.
+4. Habit tile of "Đi bộ quanh công viên" (inside the "Việc tiếp theo" card and in the task list) and of "Tưới rau ngoài vườn": use the Lucide `footprints` icon 32px white, stroke 2.5, on the #2BA15C 48x48px tile. Never draw a custom walking figure.
+5. Habit tile of "Ăn sáng chậm rãi": use the Lucide `utensils` icon 32px white on the #B98331 48x48px tile.
+6. Habit tile of "Gọi điện cho Mai": use the Lucide `house` icon 32px white on the #D86E75 48x48px tile (the `phone` icon is only for call actions).
+7. Bottom navigation tab "Lịch tuần": use the Lucide `calendar-days` icon 32px. Tab "Gia đình": use the Lucide `hand-heart` icon 32px (not `users`). Labels and active state unchanged.

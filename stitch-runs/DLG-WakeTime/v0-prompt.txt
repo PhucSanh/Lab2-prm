@@ -1,0 +1,38 @@
+Design ONE mobile screen: "DLG-WakeTime" (dialog to pick the wake-up time) for the Android app "An Nhiên" (360x800 dp).
+
+CONTEXT: App "An Nhiên" – daily routine calendar based on the 9 Power 9 habits for Vietnamese people aged 60+. User: Bà Lan, 68, farsighted, shaky fingers, only knows Zalo/YouTube. Principles: Bác decides; no pressure; few words. All UI text in Vietnamese with diacritics, addressing the user as "Bác". Sentences max 15 words, button labels max 5 words. One primary (filled) button per screen. TAP ONLY: no scroll wheel, no swipe, no drag, no long-press. Choose instead of typing.
+
+PURPOSE: A dialog opened from the time field on the profile screen. Bác picks the hour, the minute and morning/afternoon by tapping big buttons, sees the chosen time in words, then taps "Xong". "Hủy" closes without saving. Default value shown: 5:00 sáng.
+
+LAYOUT (360x800, the whole screen is covered by a scrim: flat #0F1411 at 60% opacity over a plain #F6F7F2 page, no other page content visible):
+1. One dialog card centered horizontally and vertically: width 320px (margin 20px), background #FFFFFF, radius 24px, padding 24px, soft level-2 shadow, no gradient. Content width 272px, left-aligned unless stated.
+2. Title row, centered: Lucide `sunrise` icon 32px (#1F684B, stroke 2.5) + the title "Giờ thức dậy" 26px bold #202B25.
+3. 8px below, centered: hint "Chạm vào số Bác muốn" 20px regular #526057.
+4. 16px below: label "Giờ" 22px bold #202B25, then 8px below a grid of 12 hour buttons "1" to "12": 4 columns x 3 rows, each 62x48px, gap 8px, radius 12px, number 24px bold. Unselected: white background, 2px border #7B887F, text #202B25. Selected ("5"): background #D6EADF, 4px border #1F684B, text #174C37.
+5. 12px below: label "Phút" 22px bold, then 8px below one row of 4 buttons "00", "15", "30", "45", each 62x48px, gap 8px, same style; "00" is selected.
+6. 12px below: two buttons side by side "Sáng" and "Chiều", each 132x48px, gap 8px, same style; "Sáng" is selected.
+7. 16px below, centered: the chosen time in words "Bác chọn: 5:00 sáng" 24px bold #1F684B.
+8. 16px below: two buttons stacked vertically, 12px gap, each 272px wide x 60px high, radius 14px, label 22px bold, icon 32px on the left of the label:
+   - Button 1 (the ONLY filled button): background #1F684B, white label "Xong", Lucide `save` icon 32px white.
+   - Button 2 (outline): white background, 2px border #7B887F, label "Hủy" color #1F684B, no icon.
+9. Nothing else: no close "X", no wheel, no keyboard, no countdown.
+
+STYLE TOKENS: dialog #FFFFFF; scrim #0F1411; text #202B25; secondary text #526057; primary #1F684B; primary-container #D6EADF; outline #7B887F; font Be Vietnam Pro; every text at least 20px; text contrast at least 4.5:1; flat design, no gradient, no neon.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+sunrise = wake-up time
+save = confirm and save the time (button "Xong")
+Do NOT use circle-check or any other icon.
+
+CONSTRAINTS (from rule.md, error level):
+- R-TXT-01: every text at least 20px. R-TXT-03: no sentence longer than 15 words. R-TXT-04: button labels at most 5 words.
+- R-CON-01: text contrast at least 4.5:1. R-LAY-01: nothing clipped or overflowing at 360px; the dialog fits inside 800px height with at least 40px free above and below.
+- R-ICON-01: every icon has visible text next to it.
+- R-TAP-01 / R-TAP-02: every touch target at least 48x48px; the main button 60px high, full width of the dialog.
+- R-COL-01: the selected state is shown by background + thicker border + color, never by color alone; the line "Bác chọn: 5:00 sáng" also states it in words.
+- R-ONE-01: exactly one filled button (the selected choice buttons use the light #D6EADF fill, not the dark one).
+- R-GES-01: tap-only, no wheel, no swipe, no drag, no long-press.
+- R-LANG-01: 100% Vietnamese with diacritics. R-LANG-03 / R-VOC-01: no pressure words; buttons are not "OK", "Có", "Không".
+Do NOT generate: leaderboard, streak, health score, charts, three-dot menu, icon-only buttons, carousel, scroll wheel, English text, gradient, background image behind text.

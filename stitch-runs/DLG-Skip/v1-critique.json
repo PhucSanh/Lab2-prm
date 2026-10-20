@@ -1,0 +1,15 @@
+{
+  "screen": "DLG-Skip Bỏ qua hôm nay",
+  "round": 1,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "results": [
+    {"rule": "tất cả luật áp dụng (R-TXT-01/02/03/04, R-CON-01/02, R-LAY-01, R-ICON-01/02/03, R-TAP-01/02/03, R-GES-01, R-ONE-01, R-CEN-01, R-LANG-01/02/03, R-VOC-01, R-STY...)", "status": "pass"},
+    {"rule": "R-TXT-05, R-TXT-06, R-COL-02/03, R-NAV-01/02, R-STA-01/02, R-ONE-02, R-SAFE-02, R-VOI-01", "status": "n/a"}
+  ],
+  "fixed": ["R-TXT-01", "R-TXT-02", "R-TXT-03", "R-ICON-03"],
+  "regressions": [],
+  "notes": "Critic không ghi được file; orchestrator chép lại JSON (rút gọn). Ngoài luật: tiêu đề rớt riêng 'nay?' và mô tả rớt riêng 'thường.' xuống dòng; thẻ <title> trong HTML còn ghi 'DLG-Done'.",
+  "summary": "Chữ nhỏ nhất 22px, 6 icon Lucide đúng từ điển 32px (header 64px), 5 nút cao 60px, không nút filled."
+}

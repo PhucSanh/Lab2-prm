@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Replace the single detail line "Đi bộ quanh công viên, 9:30 sáng" with two left-aligned rows, centered as a group under the question, 12px gap between the rows, text 24px regular (400), color #526057.
+2. Row 1: a 48x48px tile, radius 12px, filled #2BA15C, containing a white Lucide `footprints` icon 32px (stroke 2.5), then 12px gap, then the text "Đi bộ quanh công viên" (may wrap to 2 lines).
+3. Row 2: a Lucide `clock` icon 32px (stroke 2.5, color #1F684B), then 12px gap, then the text "9:30 sáng".
+4. Keep the 80x80px circle with the `circle-check` icon 64px at the top of the dialog, the question, and both buttons exactly as they are. Keep all content inside the 272px width; nothing clipped.

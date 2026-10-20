@@ -1,0 +1,12 @@
+{
+  "screen": "N21 Gia đình – đã xóa người thân",
+  "round": 1,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "note": "orchestrator ghi lại từ kết quả critic (critic không có quyền ghi file)",
+  "violations": [],
+  "fixed": ["R-LAY-01", "R-ICON-03"],
+  "regressions": [],
+  "summary": "Đạt mọi luật. Ngoài luật: khối đáy cố định (2 nút + nav ~270px) che nửa thẻ Hùng và toàn bộ thẻ Bin ở khung đầu, phải cuộn mới thấy."
+}

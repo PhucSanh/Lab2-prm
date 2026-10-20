@@ -1,0 +1,3 @@
+v0 screen id: 23f12fc6834e44689a177f6031bf8870
+(biến thể của G11, gốc screen id e81f0f46e9e0464cbc6573147faabb10)
+v1 screen id: 51ecd53e2e084b69a87c5aded1fc6536 (màn chốt, sửa từ v0 23f12fc6834e44689a177f6031bf8870)

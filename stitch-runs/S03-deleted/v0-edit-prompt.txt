@@ -1,0 +1,2 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Change the border radius of the sticky filled button "Đã xong việc uống trà" from 16px to 14px (remove the inline border-radius: 16px; use 14px). Keep it 60px high, 320px wide, with the Lucide `circle-check` icon 32px white.

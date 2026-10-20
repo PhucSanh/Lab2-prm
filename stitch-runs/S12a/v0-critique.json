@@ -1,0 +1,12 @@
+{
+  "screen": "S12a Thêm người thân · chưa có số",
+  "round": 0,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "note": "Critic không ghi được file (bị từ chối quyền Bash); orchestrator chép nguyên kết quả critic trả về. Mục results rút gọn: chỉ liệt kê luật pass, còn lại n/a (R-TXT-05, R-TXT-06, R-COL-02, R-COL-03, R-NAV-01, R-STA-01, R-STA-02, R-ONE-02, R-SAFE-01, R-SAFE-02, R-VOI-01).",
+  "pass": ["R-TXT-01","R-TXT-02","R-CON-01","R-CON-02","R-LAY-01","R-TXT-03","R-TXT-04","R-ICON-02","R-ICON-03","R-COL-04","R-COL-01","R-TAP-01","R-TAP-02","R-TAP-03","R-ICON-01","R-NAV-02","R-GES-01","R-ONE-01","R-CEN-01","R-LANG-01","R-LANG-02","R-LANG-03","R-VOC-01","R-STY-01","R-STY-02","R-STY-03"],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Đạt mọi luật áp dụng: chữ nhỏ nhất 20px, nút và ô 60px, back ghi 'Gia đình', icon Lucide 32px đúng từ điển, một nút filled 'Lưu người thân' ở đáy, #526057 trên #F6F7F2 ~6.2:1."
+}

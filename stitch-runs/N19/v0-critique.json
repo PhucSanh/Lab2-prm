@@ -1,0 +1,27 @@
+{
+  "screen": "N19 Hôm nay · việc đầu tiên",
+  "round": 0,
+  "score": 94,
+  "errors": 0,
+  "warns": 2,
+  "results": [
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "status": "fail",
+      "where": "Tab 'Gia đình'; tab 'Lịch tuần'; nút filled 'Đã xong'; nút 'Dời lại'",
+      "evidence": "Tab Gia đình dùng `users` (đã là thói quen Gắn kết cộng đồng); tab Lịch tuần dùng `calendar` (chỉ cho Chọn ngày); nút Đã xong dùng `check` (chỉ cho nút Xong chốt lựa chọn); nút Dời lại dùng `alarm-clock` thay vì `alarm-clock-plus`",
+      "fix": "Tab Gia đình -> `hand-heart` 32px; tab Lịch tuần -> `calendar-days` 32px; nút Đã xong -> `circle-check` 32px trắng; nút Dời lại -> `alarm-clock-plus` 32px #1F684B"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "where": "Nút filled 'Đã xong' ở .sticky-action-bar tách khỏi thẻ 'Việc tiếp theo'",
+      "evidence": "Nút filled cao 60px đứng riêng ở đáy, cách thẻ khoảng 580px; không có chữ cho biết nút áp cho việc nào",
+      "fix": "Chuyển nút filled 'Đã xong' vào trong thẻ 'Việc tiếp theo', trên nút 'Dời lại' 12px; bỏ .sticky-action-bar"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "note": "Do orchestrator ghi lại từ kết quả critic (critic không có quyền ghi file). Các luật còn lại pass hoặc n/a. Ghi chú critic: footprints trong ảnh trông như hai chiếc dép, nhưng critic không trừ điểm."
+}

@@ -1,0 +1,16 @@
+{
+  "screen": "G10 Có gợi ý mới (tự hiện)",
+  "round": 1,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "violations": [],
+  "fixed": ["R-LANG-02"],
+  "regressions": [],
+  "notes": [
+    "R-ONE-01: nút 'Đã xong' ở nền Hôm nay vẫn thấy dưới scrim; chấm trên lớp popup nên pass. Chấm chặt thì 1 error, điểm 90.",
+    "R-ICON-03: 'Để sau' dùng alarm-clock-plus, coi cùng nghĩa 'Nhắc lại sau, Dời giờ'.",
+    "Ngoài luật: nền ghi 'Chào buổi sáng' trong khi tin gửi lúc 4:20 chiều."
+  ],
+  "summary": "Giờ đã đổi sang '4:20 chiều'; không còn vi phạm."
+}

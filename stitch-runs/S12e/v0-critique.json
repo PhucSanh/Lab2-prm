@@ -1,0 +1,11 @@
+{
+  "screen": "S12e Thêm người thân – lỗi nhập",
+  "round": 0,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "note": "Critic không ghi được file; orchestrator chép lại từ kết quả critic. Ngoài luật: orchestrator xác nhận bằng ảnh + HTML thấy mất 4 hàng quan hệ (Con/Cháu/Bạn bè/Khác), HTML lặp trường Số điện thoại (dòng 360 và 385, cùng id contact-phone, bản sau value '0912 345 678').",
+  "fixed": [],
+  "regressions": [],
+  "summary": "Đạt mọi luật rule.md: chữ >= 20 px, tương phản >= 6:1, lỗi nhập có icon circle-alert + câu + ví dụ, 1 nút filled 60 px ở đáy. Lỗi ngoài luật: mất khối quan hệ, trường Số điện thoại bị lặp trong HTML, dòng 'Chỉ gửi tin khi Bác chọn gửi.' khuất dưới footer."
+}

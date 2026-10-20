@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the popup, change the first sub-title line "Mai vừa gửi lúc 16:20" to "Mai vừa gửi lúc 4:20 chiều". Keep it 22px regular (400), #526057, centered, one line, not clipped. Use no 24-hour times anywhere on the screen.
+2. Everything else (scrim #0F1411 at 60%, dialog, icons, other text, sizes) stays exactly as it is.

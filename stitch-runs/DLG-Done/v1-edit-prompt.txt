@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Center the detail block under the question: the container of the two rows ("Đi bộ quanh công viên" and "9:30 sáng") must use align-items: center and text-align: center, so the block sits on the vertical center axis of the dialog like the icon, the question and the buttons.
+2. Make each of the two rows center its own content (justify-content: center), with no full-width stretching; the "Đi bộ quanh công viên" text must not use flex: 1, and the "9:30 sáng" row must have no left padding.
+3. Keep the 48x48px #2BA15C tile with the white `footprints` icon 32px, the `clock` icon 32px #1F684B, the 24px text #526057, the 12px gaps, and both buttons exactly as they are.

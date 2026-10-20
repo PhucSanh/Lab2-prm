@@ -1,0 +1,8 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the task rows "Tưới rau ngoài vườn" and "Đi bộ quanh công viên", replace the running-person icon inside the 48x48px #2BA15C tile with the Lucide `footprints` icon, white, 32px, stroke 2.5.
+2. In the task row "Gọi điện cho Mai", replace the `phone` icon inside the 48x48px #D86E75 tile with the Lucide `house` icon, white, 32px, stroke 2.5.
+3. Use the same icon for "done" everywhere: Lucide `circle-check`. In the status chips "Đã xong" (all four rows) use `circle-check` 24px white; in the sticky filled button use `circle-check` 32px white. Remove every plain `check` icon.
+4. Rename the sticky filled button label from "Đã xong" to "Đã xong việc uống trà" (22px bold white, one line), so it is clear which task it marks. Keep it 60px high, 320px wide.
+5. Replace the icon of the outline button "Dời lại" in the "Việc tiếp theo" card from `clock` to the Lucide `alarm-clock-plus`, 32px.
+6. Bottom navigation: change the "Gia đình" tab icon from `users` to Lucide `hand-heart` and the "Lịch tuần" tab icon from `calendar` to Lucide `calendar-days`, both 32px, stroke 2.2, color #526057.
+7. Make the snackbar smaller: one horizontal row, total height 80px (padding 16px), width 320px, background #202B25, radius 12px. Left: the text "Đã ghi: Đi bộ xong." 20px regular white (may wrap to 2 lines). Right: the outline button 48px high, radius 14px, 2px border #FFFFFF, label "Hoàn tác" 22px bold white with Lucide `undo-2` 32px white on its left. Keep the 12px gap between the snackbar and the sticky button.

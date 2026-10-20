@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the bottom navigation, change the "Gia đình" tab icon from `users` to the Lucide `hand-heart` icon, 32px, stroke 2.2, color #526057.
+2. In the bottom navigation, change the "Lịch tuần" tab icon from `calendar` to the Lucide `calendar-days` icon, 32px, stroke 2.2, color #526057.
+3. Keep the `sun` icon for the active "Hôm nay" tab and the `leaf` icon for "Thói quen" as they are (32px). Keep every label and tab size unchanged.

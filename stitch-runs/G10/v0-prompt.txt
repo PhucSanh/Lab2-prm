@@ -1,0 +1,17 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the moment the popup "Mai gửi lịch cho Bác" appears by itself on top of the "Hôm nay" screen, the first time a relative's suggestion arrives. Same popup, same scrim, same page behind it. Only the differences below.
+1. Keep the scrim #0F1411 at 60% over the whole 360x800 screen and the dimmed "Hôm nay" page underneath. Keep the dialog card (320px wide, #FFFFFF, radius 24px, padding 24px, centered) and the 80x80px #D6EADF circle with Lucide `mail` icon 64px, stroke 2.5, #1F684B.
+2. Keep the title exactly "Mai gửi lịch cho Bác" (Be Vietnam Pro 26px bold, #202B25, centered). Replace the single line "2 việc cho ngày mai" with two centered lines: first "Mai vừa gửi lúc 16:20" 22px regular (400) #526057, then "2 việc cho ngày mai" 24px regular (400) #202B25, 4px between them.
+3. Keep Mai's message box (#F6F7F2, radius 16px, padding 16px): "Mẹ ơi 3 giờ chiều mẹ đi bộ với cô Tám nhé" 22px regular, centered.
+4. Keep "Chưa thêm vào lịch. Bác tự chọn." 20px regular #526057, centered.
+5. Keep the two stacked buttons 272px x 60px, radius 14px, label 22px bold, icon 32px left of label, 12px gap: "Xem gợi ý" (the ONLY filled button, #1F684B, white label, Lucide `eye` 32px white) and "Để sau" (outline, white background, 2px border #7B887F, label #1F684B, Lucide `alarm-clock-plus` 32px #1F684B).
+6. Nothing else is added: no close "X", no third button, no countdown, no badge, no auto-dismiss, no pressure words.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+mail = suggestion from a relative (only for the popup header circle)
+eye = view / see suggestion (only for "Xem gợi ý")
+alarm-clock-plus = remind later / postpone (for "Để sau")
+In the dimmed page behind keep the existing icons: footprints (Đi bộ quanh công viên, Tưới rau ngoài vườn), utensils (Ăn sáng chậm rãi), calendar-days, hand-heart, circle-check, house, sun, leaf, wind, coffee.
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped at 360px width; every icon has visible text next to it; buttons 60px high, at least 48x48px touch targets; exactly one filled button in the popup; tap-only; 100% Vietnamese with diacritics, address the user as "Bác"; no pressure words; dialog content centered. Do NOT generate: English text, gradient, icon-only buttons, close button.

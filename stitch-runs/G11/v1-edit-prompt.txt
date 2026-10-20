@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. In the dimmed task list, the row "Tưới rau ngoài vườn" (6:30 sáng): its 48x48 tile (#2BA15C) must show Lucide `footprints` 32px, white #FFFFFF, stroke 2.5, no fill, identical to the tile of "Đi bộ quanh công viên". Remove the hand-drawn person SVG.
+2. Everything else (popup, scrim #0F1411 at 60%, other icons, text, sizes) stays exactly as it is.

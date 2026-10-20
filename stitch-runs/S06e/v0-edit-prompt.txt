@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Label "Tên việc": remove the inline 20px override so it is 24px bold 600 #202B25, the same as the labels "Giờ làm", "Lặp lại" and "Lời nhắc".
+2. In the calm hint box (background #FFF3DB, radius 16px, padding 12px 16px, Lucide `info` icon 32px #B26A00 stays; it is a hint, not an error, so keep it neutral and not red): make the sentence "Bác nhập tên việc rồi lưu nhé." 22px bold 600 #8A5100, and add under it, inside the same box, the persistent example line "Ví dụ: Đi bộ buổi sáng" 20px #8A5100. The example must stay visible even after Bác starts typing.
+3. In the "Đổi giờ" button increase the Lucide `chevron-down` icon from 24px to 32px (stroke 2.2, #1F684B), keep the button at least 48px high and the text "Đổi giờ" 20px bold.

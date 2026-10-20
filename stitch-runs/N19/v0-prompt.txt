@@ -1,0 +1,22 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the "Hôm nay" screen in the morning right after Bác saved the very first task of the app (N18). The day has exactly ONE task, not done yet.
+
+1. Header: greeting "Chào buổi sáng, Bác Lan" (same style, 30px bold, may wrap to 2 lines, never clipped); date line "Thứ Năm, 8/10 · Đã xong 0/1 việc" (20px, #526057).
+2. "Việc tiếp theo" card (keep white background, 2px #1F684B border, radius 16px, padding 20px): label "Việc tiếp theo · 8:00 sáng" with Lucide `bell` icon 32px; task name "Đi bộ nhẹ nhàng" 24px bold with the 48x48px #2BA15C tile and white Lucide `footprints` icon 32px; line "Mỗi ngày · Vận động tự nhiên" 20px #526057; keep the outlined button "Dời lại" (60px high, Lucide `alarm-clock-plus` icon 32px #1F684B on the left).
+3. Section title "Việc hôm nay" (26px bold). Show ONLY ONE task row (white card, radius 16px, 6px #2BA15C left bar, 48x48px #2BA15C tile with white `footprints` icon 32px): "8:00 sáng" / "Đi bộ nhẹ nhàng" (24px bold) / status chip "Chưa làm" (40px high, radius 999px, background #FFF3DB, 2px border #B26A00, text 20px bold #8A5100, Lucide `circle` icon 24px #B26A00 on the left) / line "Vận động tự nhiên". Remove the other 5 rows. No "Đã xong" chip anywhere.
+4. Under the task row, 16px gap, an outlined button (NOT filled): label "Thêm việc khác" 22px bold #1F684B on ONE line, 320px wide, 60px high, radius 14px, 2px border #1F684B, white background, Lucide `plus` icon 32px #1F684B on the left.
+5. Keep the ONLY filled button: the sticky "Đã xong" bar right above the bottom navigation (320px x 60px, #1F684B, white label 22px bold, Lucide `check` icon 32px). Keep the bottom navigation as is (104px high, `sun`, `calendar-days`, `leaf`, `hand-heart`, 32px, labels 20px, nothing clipped). Scroll container padding-bottom 224px so the last block is not covered.
+6. No snackbar, no popup, no suggestion card, no celebration text, no onboarding banner, no explanation text.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon; status chip icon: 24px).
+Use exactly these icons and never reuse one icon for another meaning:
+bell = reminder ("Việc tiếp theo")
+footprints = habit "Vận động tự nhiên" (only for that habit)
+alarm-clock-plus = postpone ("Dời lại")
+circle = not done yet (only for the chip "Chưa làm")
+plus = add a task ("Thêm việc khác")
+check = confirm the sticky "Đã xong" button
+sun, calendar-days, leaf, hand-heart = bottom navigation tabs
+Do NOT use calendar-days or circle-check anywhere except as stated.
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped at 360px width; every icon has visible text next to it; touch targets at least 48x48px; exactly one filled button; every status is icon + text; tile and left bar of the task card have the same habit color; tap-only; 100% Vietnamese with diacritics; no pressure words, no ranking, no streak.

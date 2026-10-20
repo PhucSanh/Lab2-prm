@@ -1,0 +1,34 @@
+Design ONE mobile screen: "DLG-Done" (confirm dialog "mark as done") for the Android app "An Nhiên" (360x800 dp).
+
+CONTEXT: App "An Nhiên" – daily routine calendar based on the 9 Power 9 habits for Vietnamese people aged 60+. User: Bà Lan, 68, farsighted, shaky fingers, only knows Zalo/YouTube. Principles: Bác decides; no pressure; few words. All UI text in Vietnamese with diacritics, addressing the user as "Bác". Sentences max 15 words, button labels max 5 words. One primary (filled) button per screen. No swipe, no long-press.
+
+PURPOSE: A confirmation dialog shown when Bác taps "Đã xong" on a task. It asks once, so a shaky finger cannot mark the task by mistake. Two clear choices, stacked vertically.
+
+LAYOUT (360x800, the whole screen is covered by a scrim: flat #0F1411 at 60% opacity over a plain #F6F7F2 page, no other page content visible):
+1. One dialog card centered horizontally and vertically: width 320px (screen margin 20px), background #FFFFFF, radius 24px, padding 24px, no gradient. All content inside is centered.
+2. Top of the dialog: a 80x80px circle filled #D6EADF containing a Lucide `circle-check` icon 64px, stroke 2.5, color #1F684B.
+3. 16px below: the question "Bác đã đi bộ xong rồi chứ?" Be Vietnam Pro 26px bold (700), #202B25, centered, line-height 1.4.
+4. 12px below: one line of detail "Đi bộ quanh công viên, 9:30 sáng" 24px regular (400), #526057, centered, at most 2 lines.
+5. 24px below: two buttons stacked vertically, 12px gap, each 272px wide (full width of the dialog content) x 60px high, radius 14px, label 22px bold, icon 32px on the left of the label:
+   - Button 1 (the ONLY filled button): background #1F684B, white label "Đúng, đã xong", Lucide `circle-check` icon 32px white.
+   - Button 2 (outline): white background, 2px border #7B887F, label "Chưa, để sau" color #1F684B, Lucide `circle` icon 32px #1F684B.
+6. Nothing else: no close "X", no third button, no countdown, no extra text.
+
+STYLE TOKENS: dialog #FFFFFF; scrim #0F1411; text #202B25; secondary text #526057; primary #1F684B; primary-container #D6EADF; font Be Vietnam Pro; every text at least 20px; text contrast at least 4.5:1; flat design, no gradient, no neon; the dialog may have a soft level-2 shadow.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+circle-check = done (only for the "Đã xong" confirmation)
+circle = not yet (for "Chưa, để sau")
+
+CONSTRAINTS (from rule.md, error level):
+- R-TXT-01: every text at least 20px. R-TXT-03: no sentence longer than 15 words; no paragraph longer than 2 lines. R-TXT-04: button labels at most 5 words.
+- R-CON-01: text contrast at least 4.5:1 (dialog text is on white). R-LAY-01: nothing clipped or overflowing at 360px.
+- R-ICON-01 / R-ICON-02: every icon has visible text next to it; every action button has an icon.
+- R-TAP-01 / R-TAP-02: touch targets at least 48x48px; buttons 60px high, full width of the dialog.
+- R-ONE-01: exactly one filled button.
+- R-GES-01: tap-only, no swipe/drag/long-press.
+- R-LANG-01: 100% Vietnamese with diacritics. R-LANG-03 / R-VOC-01: no pressure words; buttons are not "OK", "Có", "Không".
+- R-CEN-01: dialog content is centered.
+Do NOT generate: leaderboard, streak, health score, charts, three-dot menu, icon-only buttons, carousel, English text, gradient, background image behind text.

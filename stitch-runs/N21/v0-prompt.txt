@@ -1,0 +1,25 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the "Gia đình" screen right after Bác removed the relative "Con gái Mai" from An Nhiên (result of N15). Only two relatives remain.
+
+1. Keep heading "Gia đình" (30px bold) and the line "Bác chọn điều muốn kể cho con" (20px, #526057, Lucide `message-circle` 32px at the left).
+2. Directly under the heading line (16px gap) add a result banner: full width minus 20px margins, background #D6EADF, 2px border #1F684B, radius 16, padding 16, NOT a button, no close "x". Left: Lucide `info` 32px #1F684B. Next to it, line 1 "Con gái Mai đã được xóa" (24px bold, #174C37); line 2 "Danh bạ điện thoại vẫn giữ nguyên." (20px, #174C37). Under the text inside the banner (12px gap) an OUTLINED button "Hoàn tác" (60px high, radius 14, 2px #1F684B border, white background, text 22px bold #1F684B, Lucide `undo-2` 32px at the left), width = banner inner width.
+3. REMOVE the "Gợi ý từ Mai · 2 việc" suggestion row and the entire "Mai" relative card. No trace of Mai in the list.
+4. Under the banner (16px gap) show ONLY the two remaining relative cards, same style as before: "Hùng" · "Con trai" and "Bin" · "Cháu", each with the 48x48 #D6EADF circle tile (Lucide `user` 32px #1F684B), and a row of two outlined buttons "Gọi điện" (Lucide `phone` 32px) and "Nhắn tin" (Lucide `message-square` 32px), 60px high, 12px gap.
+5. Fixed bottom area above the bottom navigation (flat #F6F7F2 background, border-top 1px #DFE5DF, no gradient), two buttons stacked with 12px gap, each full width minus 20px margins, 60px high, radius 14: top OUTLINED (white, 2px #1F684B border, text #1F684B) "Về Hôm nay" (22px bold) with Lucide `sun` 32px; bottom the ONLY filled button (#1F684B, white text) "Thêm người thân" (22px bold) with Lucide `user-plus` 32px. 16px gap between the bottom button and the bottom navigation.
+6. Keep the bottom navigation as is (96px high, 4 tabs: "Hôm nay" `sun`, "Lịch tuần" `calendar-days`, "Thói quen" `leaf`, "Gia đình" `hand-heart` ACTIVE with #D6EADF pill; 32px icons, labels 20px, nothing clipped). Scroll container padding-bottom 300px so the last card is not covered.
+7. No snackbar, no popup, no celebration text, no apology text, no explanation paragraph.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+message-circle = line "Bác chọn điều muốn kể cho con"
+info = note in the result banner
+undo-2 = undo ("Hoàn tác" only)
+user = relative avatar tile
+phone = call ("Gọi điện" only)
+message-square = message ("Nhắn tin" only)
+user-plus = add relative ("Thêm người thân" only)
+sun = "Về Hôm nay" and bottom tab "Hôm nay"
+calendar-days, leaf, hand-heart = bottom navigation tabs
+Do NOT use trash-2, circle-check, check, x, users or house on this screen.
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped or truncated at 360px width, no "…"; every icon has visible text next to it; exactly ONE filled button, all others outlined; touch targets at least 48x48px; status never by color only (banner has icon + text); tap-only; no gradients; 100% Vietnamese with diacritics, address "Bác"; no pressure words, no ranking, no streak, no tracking wording.

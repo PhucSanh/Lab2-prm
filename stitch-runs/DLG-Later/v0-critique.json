@@ -1,0 +1,40 @@
+{
+  "screen": "DLG-Later Dời việc",
+  "round": 0,
+  "score": 97,
+  "errors": 0,
+  "warns": 1,
+  "results": [
+    { "rule": "R-TXT-01", "level": "error", "check": "auto", "status": "pass" },
+    { "rule": "R-TXT-02", "level": "warn", "check": "ai", "status": "pass" },
+    { "rule": "R-CON-01", "level": "error", "check": "auto", "status": "pass" },
+    { "rule": "R-CON-02", "level": "warn", "check": "auto", "status": "pass" },
+    { "rule": "R-LAY-01", "level": "error", "check": "auto", "status": "pass" },
+    { "rule": "R-TXT-03", "level": "error", "check": "auto", "status": "pass" },
+    { "rule": "R-TXT-04", "level": "error", "check": "auto", "status": "pass" },
+    { "rule": "R-ICON-02", "level": "error", "check": "ai", "status": "pass" },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "3 nút lựa chọn '30 phút nữa', 'Chiều nay, 4 giờ', 'Ngày mai, cùng giờ'",
+      "evidence": "Cả 3 nút dùng Lucide clock, trùng icon với dòng 'Đi bộ, đang hẹn 9:30 sáng'. Từ điển icon: clock = 'Giờ của việc'; 'Nhắc lại sau, Dời giờ' = alarm-clock-plus. Một icon đang mang 2 nghĩa",
+      "fix": "Đổi icon 3 nút dời sang Lucide alarm-clock-plus 32px, nét 2.5, màu #1F684B; giữ clock 32px chỉ cho dòng 'Đi bộ, đang hẹn 9:30 sáng'"
+    },
+    { "rule": "R-TAP-01", "level": "error", "check": "auto", "status": "pass" },
+    { "rule": "R-TAP-02", "level": "error", "check": "ai", "status": "pass" },
+    { "rule": "R-TAP-03", "level": "warn", "check": "ai", "status": "pass" },
+    { "rule": "R-ICON-01", "level": "error", "check": "auto", "status": "pass" },
+    { "rule": "R-GES-01", "level": "error", "check": "ai", "status": "pass" },
+    { "rule": "R-ONE-01", "level": "error", "check": "ai", "status": "pass" },
+    { "rule": "R-CEN-01", "level": "warn", "check": "ai", "status": "pass" },
+    { "rule": "R-LANG-01", "level": "error", "check": "ai", "status": "pass" },
+    { "rule": "R-LANG-03", "level": "error", "check": "ai", "status": "pass" },
+    { "rule": "R-VOC-01", "level": "error", "check": "auto", "status": "pass" }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "note": "Critic không ghi được file (bị từ chối quyền); orchestrator chép lại, đã rút gọn các luật n/a. Chữ 'Ngày mai, cùng giờ' sát mép nút (~4px mỗi bên), chưa đo bằng trình duyệt.",
+  "summary": "Đạt mọi luật error; còn 1 warn: icon clock dùng cho cả giờ của việc lẫn 3 nút dời giờ."
+}

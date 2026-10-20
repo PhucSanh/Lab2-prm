@@ -1,0 +1,17 @@
+{
+  "screen": "S09b Gia đình · đã thêm người thân",
+  "round": 0,
+  "score": 84,
+  "errors": 1,
+  "warns": 2,
+  "results": [
+    {"rule": "R-TXT-02", "level": "warn", "check": "ai", "status": "fail", "where": "Nút 'Gọi điện' / 'Nhắn tin' trong 3 thẻ người thân; tiêu đề 'Gia đình'", "evidence": ".action-button font-size: 20px (chuẩn chữ nút ≈ 22px); .screen-title font-size: 28px (chuẩn ≈ 30px)", "fix": "Đổi chữ nút 'Gọi điện', 'Nhắn tin' sang 22px đậm (giữ icon 32px, gap 8px, nút cao 60px); tiêu đề 'Gia đình' sang 30px"},
+    {"rule": "R-LAY-01", "level": "error", "check": "auto", "status": "fail", "where": "Nhãn bottom nav 'Hôm nay', 'Lịch tuần', 'Thói quen', 'Gia đình'", "evidence": ".nav-label 20px font-weight 600 white-space: nowrap trong cột 90px (360/4) có padding 2px; 'Thói quen', 'Lịch tuần' rộng ~95px > 86px khả dụng; ảnh cho thấy nhãn dính liền nhau ('Hôm nayLịch tuần', 'Thói quenGia đình') và 'Hôm nay', 'Gia đình' chạm sát mép màn", "fix": "Cho nhãn tab xuống 2 dòng: white-space: normal, text-align: center, line-height 1.15, mỗi nhãn tách 1 tiếng/dòng ('Hôm' / 'nay'); tăng bottom nav lên 96px, pill icon 56×36px; giữ chữ 20px, padding ngang tab 0px"},
+    {"rule": "R-STY-02", "level": "warn", "check": "ai", "status": "fail", "where": "Toàn màn (body)", "evidence": "font-family: 'Plus Jakarta Sans' và link Google Fonts Plus+Jakarta+Sans; không phải Be Vietnam Pro", "fix": "Đổi font toàn màn sang 'Be Vietnam Pro' (Google Fonts, wght 500;600;700), giữ card bo 16px, nút bo 14px"}
+  ],
+  "passed": "Mọi luật còn lại pass hoặc n/a (R-TXT-01, R-CON-01, R-TXT-03/04, R-ICON-01/02/03, R-COL-01, R-TAP-01/02/03, R-NAV-01, R-GES-01, R-ONE-01, R-LANG-01/03, R-VOC-01...)",
+  "fixed": [],
+  "regressions": [],
+  "summary": "Màn Gia đình sau khi thêm người thân gọn, đúng icon và token màu; còn 1 lỗi chặn là nhãn bottom nav 20px không vừa cột 90px nên dính nhau, cùng 2 cảnh báo về cỡ chữ nút/tiêu đề và sai font.",
+  "note": "Agent stitch-critic không ghi được file (bị từ chối quyền Bash); orchestrator chép lại từ kết quả trả về, rút gọn các dòng pass/n/a."
+}

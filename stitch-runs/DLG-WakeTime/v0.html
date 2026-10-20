@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An Nhiên - DLG-WakeTime</title>
+  <!-- Google Fonts: Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F6F7F2;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Screen device container: 360x800 dp */
+    .screen-container {
+      position: relative;
+      width: 360px;
+      height: 800px;
+      background-color: #F6F7F2;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Scrim overlay: flat #0F1411 at 60% opacity */
+    .scrim {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(15, 20, 17, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 10;
+    }
+
+    /* Dialog Card */
+    .dialog-card {
+      width: 320px;
+      background-color: #FFFFFF;
+      border-radius: 24px;
+      padding: 20px 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    /* Title row */
+    .dialog-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .dialog-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.2;
+    }
+
+    /* Hint text */
+    .dialog-hint {
+      font-size: 20px;
+      font-weight: 400;
+      color: #526057;
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    /* Section label */
+    .section-label {
+      font-size: 22px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.2;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+
+    /* Hour Grid: 4 cols x 3 rows */
+    .hour-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 62px);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    /* Button shared styles */
+    .choice-btn {
+      height: 48px;
+      border-radius: 12px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      color: #202B25;
+      transition: all 0.15s ease;
+      box-sizing: border-box;
+    }
+
+    /* Selected choice button state */
+    .choice-btn.selected {
+      background-color: #D6EADF;
+      border: 4px solid #1F684B;
+      color: #174C37;
+    }
+
+    /* Minute row: 4 buttons */
+    .minute-row {
+      display: grid;
+      grid-template-columns: repeat(4, 62px);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    /* Period row: Sáng / Chiều */
+    .period-row {
+      display: grid;
+      grid-template-columns: repeat(2, 132px);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .period-btn {
+      height: 48px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    /* Chosen summary line */
+    .chosen-time-summary {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1F684B;
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    /* Action buttons container */
+    .action-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Action button */
+    .action-btn {
+      width: 272px;
+      height: 60px;
+      border-radius: 14px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+      box-sizing: border-box;
+      transition: all 0.15s ease;
+    }
+
+    /* Primary button (Only filled button) */
+    .action-btn-primary {
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+    }
+
+    .action-btn-primary:active {
+      background-color: #174C37;
+    }
+
+    /* Secondary outline button */
+    .action-btn-outline {
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      color: #1F684B;
+    }
+
+    .action-btn-outline:active {
+      background-color: #F0F4F1;
+    }
+
+    /* SVG icon helper */
+    .icon-svg {
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen 360x800 -->
+  <div class="screen-container">
+    
+    <!-- Scrim overlay -->
+    <div class="scrim">
+      
+      <!-- Dialog Card (320px wide, 24px padding, 272px content) -->
+      <div class="dialog-card" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+        
+        <!-- Title row with Lucide sunrise icon (32px, stroke 2.5, #1F684B) -->
+        <div class="dialog-title-row">
+          <svg class="icon-svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2v6"/>
+            <path d="m4.93 10.93 1.41 1.41"/>
+            <path d="M20 18h2"/>
+            <path d="m19.07 10.93-1.41 1.41"/>
+            <path d="M22 22H2"/>
+            <path d="m8 6 4-4 4 4"/>
+            <path d="M16 18a4 4 0 0 0-8 0"/>
+          </svg>
+          <h2 class="dialog-title" id="dialog-title">Giờ thức dậy</h2>
+        </div>
+
+        <!-- Hint text -->
+        <p class="dialog-hint">Chạm vào số Bác muốn</p>
+
+        <!-- Hour section -->
+        <div class="section-label">Giờ</div>
+        <div class="hour-grid" role="radiogroup" aria-label="Chọn giờ">
+          <button type="button" class="choice-btn" data-hour="1">1</button>
+          <button type="button" class="choice-btn" data-hour="2">2</button>
+          <button type="button" class="choice-btn" data-hour="3">3</button>
+          <button type="button" class="choice-btn" data-hour="4">4</button>
+          <button type="button" class="choice-btn selected" data-hour="5" aria-checked="true">5</button>
+          <button type="button" class="choice-btn" data-hour="6">6</button>
+          <button type="button" class="choice-btn" data-hour="7">7</button>
+          <button type="button" class="choice-btn" data-hour="8">8</button>
+          <button type="button" class="choice-btn" data-hour="9">9</button>
+          <button type="button" class="choice-btn" data-hour="10">10</button>
+          <button type="button" class="choice-btn" data-hour="11">11</button>
+          <button type="button" class="choice-btn" data-hour="12">12</button>
+        </div>
+
+        <!-- Minute section -->
+        <div class="section-label">Phút</div>
+        <div class="minute-row" role="radiogroup" aria-label="Chọn phút">
+          <button type="button" class="choice-btn selected" data-minute="00" aria-checked="true">00</button>
+          <button type="button" class="choice-btn" data-minute="15">15</button>
+          <button type="button" class="choice-btn" data-minute="30">30</button>
+          <button type="button" class="choice-btn" data-minute="45">45</button>
+        </div>
+
+        <!-- Period section (Sáng / Chiều) -->
+        <div class="period-row" role="radiogroup" aria-label="Buổi">
+          <button type="button" class="choice-btn period-btn selected" data-period="sáng" aria-checked="true">Sáng</button>
+          <button type="button" class="choice-btn period-btn" data-period="chiều">Chiều</button>
+        </div>
+
+        <!-- Chosen time in words -->
+        <div class="chosen-time-summary" id="chosen-text">
+          Bác chọn: 5:00 sáng
+        </div>
+
+        <!-- Action buttons -->
+        <div class="action-group">
+          <!-- Button 1: Only filled button with save icon -->
+          <button type="button" class="action-btn action-btn-primary">
+            <svg class="icon-svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
+              <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/>
+              <path d="M7 3v4a1 1 0 0 0 1 1h7"/>
+            </svg>
+            <span>Xong</span>
+          </button>
+
+          <!-- Button 2: Outline button -->
+          <button type="button" class="action-btn action-btn-outline">
+            <span>Hủy</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tap interaction for demonstration and full responsiveness
+    let selectedHour = "5";
+    let selectedMinute = "00";
+    let selectedPeriod = "sáng";
+
+    const updateDisplay = () => {
+      const summaryEl = document.getElementById('chosen-text');
+      if (summaryEl) {
+        summaryEl.textContent = `Bác chọn: ${selectedHour}:${selectedMinute} ${selectedPeriod}`;
+      }
+    };
+
+    // Hour tap
+    document.querySelectorAll('.hour-grid .choice-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.hour-grid .choice-btn').forEach(b => {
+          b.classList.remove('selected');
+          b.removeAttribute('aria-checked');
+        });
+        btn.classList.add('selected');
+        btn.setAttribute('aria-checked', 'true');
+        selectedHour = btn.getAttribute('data-hour');
+        updateDisplay();
+      });
+    });
+
+    // Minute tap
+    document.querySelectorAll('.minute-row .choice-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.minute-row .choice-btn').forEach(b => {
+          b.classList.remove('selected');
+          b.removeAttribute('aria-checked');
+        });
+        btn.classList.add('selected');
+        btn.setAttribute('aria-checked', 'true');
+        selectedMinute = btn.getAttribute('data-minute');
+        updateDisplay();
+      });
+    });
+
+    // Period tap
+    document.querySelectorAll('.period-row .choice-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.period-row .choice-btn').forEach(b => {
+          b.classList.remove('selected');
+          b.removeAttribute('aria-checked');
+        });
+        btn.classList.add('selected');
+        btn.setAttribute('aria-checked', 'true');
+        selectedPeriod = btn.getAttribute('data-period');
+        updateDisplay();
+      });
+    });
+  </script>
+</body>
+</html>

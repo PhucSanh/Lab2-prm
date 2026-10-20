@@ -1,0 +1,17 @@
+{
+  "screen": "G11 Popup \"Mai gửi lịch cho Bác\"",
+  "round": 2,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "results": [],
+  "all_applicable_rules_pass": true,
+  "na": ["R-NAV-02", "R-SAFE-01", "R-SAFE-02", "R-VOI-01"],
+  "fixed": ["R-ICON-03"],
+  "regressions": [],
+  "notes": [
+    "R-ONE-01: nút 'Đã xong' ở màn nền vẫn tô đậm nhưng nằm dưới scrim, không bấm được; trong popup chỉ có một nút tô đậm là 'Xem gợi ý'.",
+    "R-ICON-03: 'Để sau' dùng alarm-clock-plus, cùng icon với 'Dời lại'; Từ điển ghi 'Nhắc lại sau, Dời giờ' nên coi cùng nghĩa."
+  ],
+  "summary": "Ô icon 'Tưới rau ngoài vườn' đã đổi sang Lucide footprints 32px trắng trên #2BA15C; mọi icon đúng Từ điển, chữ ≥ 20px, nút 60px, không còn vi phạm."
+}

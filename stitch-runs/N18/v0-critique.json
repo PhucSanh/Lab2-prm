@@ -1,0 +1,10 @@
+{
+  "screen": "N18 Đã lưu việc đầu tiên",
+  "round": 0,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "fixed": [],
+  "regressions": [],
+  "summary": "Màn kết quả căn giữa, chữ 22-30px, nền #F6F7F2, thẻ trắng bo 16 có vạch trái và ô icon #2BA15C (3,3:1) đúng thói quen Vận động tự nhiên, icon Lucide đúng từ điển (save, footprints, clock, repeat, bell, calendar-days cho Xem lịch, plus) đều 32px trở lên, 1 nút filled cao 60px ở đáy, nút phụ viền #7B887F (3,7:1), hai nút cách 12px, lề 20px, khoảng khối 16px; không có vi phạm. Lưu ý: file này do agent điều phối ghi lại từ kết quả của stitch-critic (critic không có quyền ghi file); bảng results chi tiết của 37 luật chỉ có trong kết quả trả về, 11 luật n/a."
+}

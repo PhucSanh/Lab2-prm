@@ -1,0 +1,21 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the result screen "Đã mở ứng dụng chia sẻ" shown after Bác tapped "Tiếp tục gửi cho Mai" and the messaging app (Zalo or SMS) was opened. It shows who the message is for and says honestly that An Nhiên does not know whether it was sent. All UI text Vietnamese with diacritics.
+1. App bar stays: chevron-left 32px + "Gia đình" (22px bold, #1F684B, 48px touch area). No bottom navigation.
+2. Title row: keep Lucide `message-square` 32px; change the title to "Đã mở ứng dụng nhắn tin" (30px bold #202B25, may wrap to 2 lines, nothing clipped).
+3. REMOVE the "Mai sẽ thấy" label with its white message card, and the outlined button "Gọi điện cho Mai" with its phone icon. No message text is shown on this screen.
+4. Directly under the title (16px gap) a recipient card: full width minus 20px margins, background #FFFFFF, 1px border #DFE5DF, radius 16, padding 16. Line 1 "Người nhận" (20px, #526057); line 2 "Con gái Mai" (28px bold, #202B25). No icon in this card.
+5. Under it (16px gap) an info card: full width minus 20px margins, background #D6EADF, 2px border #1F684B, radius 16, padding 16. Left: Lucide `info` 32px #1F684B. Next to it, line 1 "Chưa xác nhận đã gửi" (24px bold, #174C37); line 2 "Bác bấm gửi trong ứng dụng nhắn tin nhé." (20px, #174C37). It is NOT a button and has no close "x".
+6. Fixed footer with TWO buttons stacked, 12px gap, each full width minus 20px margins, 60px high, radius 14, 20px bottom padding, flat #F6F7F2 background behind them (no gradient):
+   - top: OUTLINED (2px #1F684B border, white background, text #1F684B) "Xem lại nội dung" (22px bold) with Lucide `eye` 32px;
+   - bottom: the ONLY filled button (#1F684B, text #FFFFFF) "Về Gia đình" (22px bold) with Lucide `hand-heart` 32px.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box.
+Use exactly these icons and never reuse one icon for another meaning:
+- chevron-left = back, always with the text "Gia đình"
+- message-square = Nhắn tin (next to the screen title)
+- info = note ("Chưa xác nhận đã gửi")
+- eye = "Xem lại nội dung" (only viewing)
+- hand-heart = "Về Gia đình"
+No phone, circle-check, check, send, arrow-right, circle or circle-dot icon on this screen.
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped or truncated at 360px width, no "…"; every icon has visible text next to it; exactly ONE filled button, the other is outlined; touch targets at least 48x48px; status never by color only (card has icon + text); tap-only; no gradients; 100% Vietnamese with diacritics; never claim the message was sent (no "Đã gửi" as a fact, no "thành công"), no tracking wording, no ranking, no streak.

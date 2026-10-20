@@ -504,8 +504,9 @@ Mỗi nghĩa một icon Lucide, mỗi icon chỉ một nghĩa trong toàn app (R
 | Trạng thái | Chưa (chưa làm / chưa chọn) | `circle` | Chip "Chưa làm" màu `warning-strong`; ô lựa chọn chưa chọn màu `outline` |
 | Trạng thái | Đang chọn | `circle-dot` | Ô lựa chọn đang chọn (kèm viền 2 px `primary` + chữ "Đang chọn") |
 | Trạng thái | Đã bỏ qua | `circle-minus` | |
+| Trạng thái | Đã dời | `redo-2` | Chip "Đã dời" (↻ trong R-STA-01). Thêm 18/10/2026 vì `alarm-clock-plus` đã là hành động "Dời lại" |
 | Điều hướng | Tab Hôm nay | `sun` | Không dùng `house` (đã là thói quen Gia đình trên hết) |
-| Điều hướng | Tab Lịch tuần | `calendar-days` | **Chỉ** cho tab và tiêu đề Lịch tuần. "Bước 1/2" không dùng icon này |
+| Điều hướng | Tab Lịch tuần | `calendar-days` | **Chỉ** cho tab, tiêu đề Lịch tuần và nút đi tới Lịch tuần (nút "Xem lịch" ở N18, thêm 19/10/2026). "Bước 1/2" không dùng icon này |
 | Điều hướng | Tab Thói quen | `leaf` | Logo app cũng là chiếc lá trong ô vuông: logo là nhận diện, không tính là icon |
 | Điều hướng | Tab Gia đình | `hand-heart` | Không dùng `users` (đã là thói quen Gắn kết cộng đồng) |
 | Điều hướng | Quay lại | `chevron-left` | Luôn kèm chữ "Quay lại" |
@@ -519,25 +520,44 @@ Mỗi nghĩa một icon Lucide, mỗi icon chỉ một nghĩa trong toàn app (R
 | Hành động | Chọn từ danh bạ | `contact` | Thêm 17/10/2026 cho S12 |
 | Hành động | Sửa | `pencil` | |
 | Thông tin | Lặp lại | `repeat` | Thêm 17/10/2026 cho S06, S15 |
+| Hành động | Chỉ lần này (một ngày) | `calendar-1` | Thêm 19/10/2026 cho N13; **chỉ** cho lựa chọn "Chỉ lần này"; luôn kèm chữ |
+| Hành động | Lần này và các lần sau (cả chuỗi) | `calendar-range` | Thêm 19/10/2026 cho N13; **chỉ** cho lựa chọn "Lần này và các lần sau"; luôn kèm chữ |
+| Thông tin | Chọn ngày, ngày đã chọn | `calendar` | Thêm 19/10/2026 cho N11; không dùng `calendar-days` (chỉ cho tab Lịch tuần); luôn kèm chữ |
+| Điều hướng | Tháng trước | `chevrons-left` | Thêm 19/10/2026 cho N11; **chỉ** cho nút "Tháng trước", khác `chevron-left` (Quay lại); luôn kèm chữ |
+| Điều hướng | Tháng sau | `chevrons-right` | Thêm 19/10/2026 cho N11; **chỉ** cho nút "Tháng sau", khác `chevron-right` (mở chi tiết); luôn kèm chữ |
+| Hành động | Chốt lựa chọn ("Xong") | `check` | Thêm 19/10/2026 cho N11; **chỉ** cho nút "Xong" chốt ngày/giờ đã chọn; không dùng `circle-check` (chỉ cho "Đã xong") |
 | Hành động | Xóa | `trash-2` | |
 | Hành động | Hoàn tác | `undo-2` | |
+| Hành động | Bỏ thay đổi (rời form không lưu) | `file-x` | Thêm 19/10/2026 cho N14; **chỉ** cho nút "Bỏ thay đổi"; không dùng `trash-2` (chỉ cho Xóa) và `undo-2` (Hoàn tác); luôn kèm chữ |
+| Hành động | Không đổi, đóng hộp thoại | `x` | Thêm 19/10/2026 cho DLG-Later ("Không dời nữa"); luôn kèm chữ, không dùng làm nút đóng chỉ-icon |
 | Hành động | Nhắc lại sau, Dời giờ | `alarm-clock-plus` | |
+| Lý do bỏ qua | Trời mưa | `cloud-rain` | Thêm 19/10/2026 cho DLG-Skip; luôn kèm chữ |
+| Lý do bỏ qua | Thấy mệt | `bed` | Thêm 19/10/2026 cho DLG-Skip; không dùng `heart-pulse` (gợi điểm sức khỏe) |
+| Lý do bỏ qua | Bận việc nhà | `washing-machine` | Thêm 19/10/2026 cho DLG-Skip; không dùng `house` (đã là thói quen Gia đình) |
+| Lý do bỏ qua | Lý do khác | `circle-help` | Thêm 19/10/2026 cho DLG-Skip; không dùng `ellipsis` (giống menu ba chấm) |
 | Hành động | Hôm nay bỏ qua | `skip-forward` | |
 | Hành động | Đọc to | `volume-2` | |
 | Hành động | Dừng đọc | `circle-stop` | |
 | Hành động | Gọi điện | `phone` | **Chỉ** cho hành động gọi |
 | Hành động | Nhắn tin | `message-square` | |
-| Hành động | Xem thử | `eye` | |
+| Hành động | Xem thử, Xem gợi ý | `eye` | Mở rộng 19/10/2026 cho G12 (nút "Xem gợi ý"): cùng nghĩa "xem"; luôn kèm chữ |
 | Thông tin | Giờ của việc | `clock` | |
 | Thông tin | Giờ thức dậy | `sunrise` | |
 | Thông tin | Lời nhắc, nhắc việc | `bell` | |
 | Thông tin | Bật nhắc | `bell-ring` | |
-| Thông tin | Tắt nhắc | `bell-off` | |
+| Thông tin | Tắt nhắc, chưa đặt được lời nhắc | `bell-off` | Mở rộng 19/10/2026 cho N16 (việc đã lưu nhưng chưa đặt được lời nhắc); màu `warning-strong`, luôn kèm chữ, không dùng màu `error` vì việc vẫn được lưu |
 | Thông tin | Cỡ chữ | `type` | |
 | Thông tin | Tên Bác, hồ sơ | `user` | |
+| Thông tin | Cách xưng hô (Bác / Ông / Bà) | `smile` | Thêm 19/10/2026 cho S02, N06; luôn kèm chữ "An Nhiên gọi Bác là" |
 | Thông tin | Điện thoại (thiết bị, quyền, dữ liệu trên máy) | `smartphone` | Không dùng `phone` |
 | Thông tin | Lưu ý, gợi ý | `info` | |
-| Thông tin | Lỗi nhập | `circle-alert` | Màu `error` + câu giải thích |
+| Thông tin | Gợi ý lịch từ người thân | `mail` | Thêm 19/10/2026 cho G12; **chỉ** cho thẻ "Mai gửi Bác …"; không dùng `message-square` (Nhắn tin) hay `info` (lưu ý) |
+| Thông tin | Lỗi nhập, lỗi lưu | `circle-alert` | Màu `error` + câu giải thích. Mở rộng 18/10/2026 cho ST-Error (chưa lưu được) |
+| Trạng thái | Đang lưu | `loader-circle` | **Chỉ** cho màn/nút "Đang lưu…". Thêm 18/10/2026 cho ST-Loading; luôn kèm chữ "Đang lưu việc…" |
+| Trạng thái | Mất mạng | `wifi-off` | **Chỉ** cho thông báo "Đang không có mạng" (ST-Loading-offline). Thêm 19/10/2026; luôn kèm chữ, màu `on-surface-variant`, không dùng màu `error` vì app vẫn lưu được trên máy |
+| Hành động | Dùng lịch mẫu | `layout-list` | Thêm 18/10/2026 cho ST-Empty |
+| Hành động | Thử lại | `rotate-ccw` | Thêm 18/10/2026 cho ST-Error |
+| Hành động | Kiểm tra lại lịch | `calendar-search` | Thêm 18/10/2026 cho ST-Error; không dùng `calendar-days` (chỉ cho tab Lịch tuần) |
 | Thói quen | 9 thói quen Power 9 | theo `vocabulary.md` mục 1 | `footprints` · `compass` · `wind` · `utensils` · `salad` · `coffee` · `users` · `house` · `handshake`; mỗi icon chỉ dùng cho thói quen của nó |
 
 **Giọng nói** ([01]): màn lời nhắc, chi tiết việc và 9 thói quen có nút "🔊 Đọc to" (có chữ, không chỉ icon).

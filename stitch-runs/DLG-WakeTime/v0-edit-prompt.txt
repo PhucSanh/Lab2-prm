@@ -1,0 +1,6 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Rename the filled button label from "Xong" to "Lưu giờ" (22px bold, white); keep the Lucide `save` icon 32px white on its left.
+2. Set the vertical gap between all blocks inside the dialog to exactly 16px: below the hint "Chạm vào số Bác muốn", below the hour grid, below the minute row, below the "Sáng"/"Chiều" row, and below the line "Bác chọn: 5:00 sáng".
+3. Set the gap between the two bottom buttons "Lưu giờ" and "Hủy" to 16px.
+4. Set the corner radius of all choice buttons (the 12 hour buttons, the 4 minute buttons, "Sáng", "Chiều") to 14px.
+5. Set the dialog padding to 24px on all four sides (currently 20px top and bottom). Keep the dialog width 320px; the dialog must still fit inside the 800px height with at least 40px free above and below.

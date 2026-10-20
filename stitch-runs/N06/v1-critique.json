@@ -1,0 +1,14 @@
+{
+  "screen": "N06 Thông tin của Bác",
+  "round": 1,
+  "score": 97,
+  "errors": 0,
+  "warns": 1,
+  "results": [
+    {"rule": "R-ICON-03", "level": "warn", "check": "ai", "status": "fail", "where": "Ô chọn giờ '5 : 30 sáng' dưới nhãn 'Bác thức dậy lúc'", "evidence": "Ô chọn giờ dùng icon Lucide `clock` (32px). Theo Từ điển icon, `clock` chỉ mang nghĩa 'Giờ của việc'; nghĩa 'Giờ thức dậy' là `sunrise`, và nhãn phía trên đã dùng `sunrise`. Vậy `clock` đang mang thêm một nghĩa thứ hai", "fix": "Bỏ icon `clock` trong ô chọn giờ, chỉ giữ chữ '5 : 30 sáng' 24px đậm và `chevron-down` 32px ở bên phải; hoặc thay bằng `sunrise` 32px, nét 2.5, màu #1F684B"}
+  ],
+  "note": "Các luật còn lại pass hoặc n/a. Ghi hộ critic vì critic không có quyền ghi file.",
+  "fixed": ["R-TXT-03"],
+  "regressions": [],
+  "summary": "Khối lưu ý còn 2 dòng, icon gợi ý đã 32px, đã có 'Đang chọn: Bà'; còn 1 warn: icon clock trong ô giờ thức dậy sai nghĩa theo Từ điển icon."
+}

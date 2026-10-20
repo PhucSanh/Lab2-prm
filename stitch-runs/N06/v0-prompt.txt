@@ -1,0 +1,27 @@
+Keep the overall layout, header, bottom navigation, colors and typography of this screen unchanged. Turn it into the following variant: the screen "Thông tin của Bác" (edit profile, opened from Settings). Bác already finished setup and now changes her details. Nothing is wrong, so there is NO error state. All UI text Vietnamese with diacritics.
+1. Remove the step text "Bước 1/2" completely. The back button stays top-left: chevron-left icon 32px + text "Quay lại" (22px, #1F684B, 48px high touch area).
+2. Heading: "Thông tin của Bác" (30px bold #202B25). Sub text under it: "Bác đổi lại khi cần nhé." (24px, #526057).
+3. Remove the whole red error hint card ("Bác chưa nhập tên." and the example line). Name field border back to 2px #7B887F, white background. The name field is FILLED with the value "Lan" (24px #202B25). Helper text under it keeps the info line "Ví dụ: Lan" (20px #526057).
+4. Field 2 "An Nhiên gọi Bác là": three equal option buttons "Bác", "Ông", "Bà", 60px high, gap 8px. "Bà" is SELECTED (2px #1F684B border, background #D6EADF, circle-dot icon 32px, bold text "Bà"). "Bác" and "Ông" are unselected (white, 2px #526057 border, circle icon 32px).
+5. Field 3 "Bác thức dậy lúc": time box 60px high with clock icon, the value "5 : 30 sáng" (24px) and chevron-down icon. Helper line with bell icon: "Để nhắc việc đúng giờ cho Bác." (20px #526057).
+6. Add a note card below the time field (gap 16px): background #D6EADF, radius 16, padding 16px, info icon 32px #174C37 on the left and the text "Đổi giờ thức dậy không tự đổi giờ những việc đã lưu." (20px, #174C37, max 3 lines, never truncated).
+7. Fixed footer, two stacked buttons, gap 12px, side margins 20px: (a) the ONLY filled button "Lưu thông tin" (60px high, full width, #1F684B, text #FFFFFF 22px bold, save icon 32px white); (b) below it an OUTLINED button "Hủy" (60px high, full width, white, 2px #526057 border, text #202B25 22px bold, x icon 32px). Hủy is not filled. Make the scroll container padding-bottom 180px so nothing is covered by the footer.
+8. No bottom navigation, no step indicator, no dialog, no snackbar.
+
+ICONS: Use only the Lucide icon set (outline, stroke 2-2.5). Never draw custom icons.
+Every icon renders at least 32x32px and its glyph fills the box (habit tiles: 48x48 tile, 32px white icon).
+Use exactly these icons and never reuse one icon for another meaning:
+chevron-left = back (always with the text "Quay lại")
+user = field "Tên Bác"
+smile = field "An Nhiên gọi Bác là"
+circle-dot = option selected ("Bà")
+circle = option not selected ("Bác", "Ông")
+sunrise = field "Bác thức dậy lúc"
+clock = inside the time box, next to "5 : 30 sáng"
+chevron-down = time box opens a picker
+bell = helper line "Để nhắc việc đúng giờ cho Bác."
+info = note card and the "Ví dụ: Lan" hint line
+save = button "Lưu thông tin"
+x = button "Hủy"
+
+CONSTRAINTS (rule.md, error level): every text at least 20px; no sentence longer than 15 words; button labels at most 5 words; text contrast at least 4.5:1; nothing clipped or truncated at 360px width; every icon has visible text next to it; touch targets at least 48x48px; exactly one filled button; tap-only; 100% Vietnamese with diacritics; address the user as "Bác"; no pressure or blame words; never use the words "hồ sơ", "profile", "OK".
