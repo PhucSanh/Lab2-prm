@@ -1,0 +1,289 @@
+{
+  "screen": "C10 Chi tiết việc",
+  "round": 2,
+  "score": 22,
+  "errors": 6,
+  "warns": 6,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nút “Đọc to”, sáu nhãn trạng thái lịch sử và bốn nhãn thanh điều hướng",
+      "evidence": "Metrics cho thấy nút Đọc to 13.33 px, trạng thái lịch sử 16 px và nhãn tab 16 px.",
+      "fix": "Đặt chữ Đọc to, trạng thái lịch sử và nhãn bottom nav ở tối thiểu 20 px."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút “Đọc to” và nhãn trạng thái lịch sử",
+      "evidence": "Ảnh cho thấy nút Đọc to và các nhãn Đã xong/Chưa làm/Bỏ qua nhỏ rõ rệt so với nội dung 24 px; metrics lần lượt 13.33 px và 16 px.",
+      "fix": "Đặt chữ trên nút Đọc to 22 px đậm; nhãn trạng thái tối thiểu 20 px."
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Màn tổng thể / bottom nav",
+      "evidence": "Ảnh 360 px cho thấy bốn liên kết nav nằm nội dòng; tab “Gia đình” bị đẩy xuống dòng kế, dù scrollWidth=360. Nội dung dùng 360 px ngang nhưng điều hướng bị vỡ bố cục.",
+      "fix": "Tạo bottom nav flex 4 cột, mỗi mục chiếm 25% chiều rộng, chiều cao 72 px; giữ 4 mục trên cùng một hàng ở viewport 360 px."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn Chi tiết việc, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Icon lịch sử và bottom nav",
+      "evidence": "Ảnh/HTML cho thấy icon trạng thái trong lịch sử chỉ 20 px (dưới cả ngoại lệ chip 24 px); icon lặp lại dùng repeat, không phải icon hành động đúng trong từ điển; icon Gia đình là heart+hand thay vì hand-heart.",
+      "fix": "Đặt icon trạng thái chip lịch sử 24 px; dùng alarm-clock-plus 32 px cho chi tiết lịch lặp và hand-heart 32 px cho tab Gia đình."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nút “Đọc to” và vùng chạm bottom nav",
+      "evidence": "Nút Đọc to cao 39 px; nav link là inline, chỉ cao 20 px và không có vùng đệm chạm 48 px.",
+      "fix": "Đặt nút Đọc to cao tối thiểu 48 px; mỗi tab dùng khung chạm tối thiểu 48 × 48 px."
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút hành động “Sửa việc” và “Ngưng lặp lại”",
+      "evidence": "Ảnh cho thấy hai nút filled/outlined nằm ở cuối nội dung, phía trên hộp hỏi lại; không có một nút chính duy nhất đặt cố định ở đáy màn.",
+      "fix": "Đặt một nút chính cao 60 px, rộng 320 px với lề 20 px ở đáy viewport; chuyển nút phụ sang kiểu tonal/viền."
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Thanh điều hướng dưới",
+      "evidence": "Ảnh toàn trang cho thấy nav rơi về liên kết trình duyệt xanh gạch chân; bốn mục không nằm trong thanh 72 px và Gia đình bị xuống hàng.",
+      "fix": "Tạo thanh nav cố định cao 72 px; 4 tab icon+nhãn 20 px chia đều cùng một hàng."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Các nhãn trạng thái ở sáu dòng lịch sử",
+      "evidence": "Tất cả sáu chip hiện bằng chữ 16 px và icon 20 px, không có nền xanh đậm chữ trắng cho Đã xong, viền vàng đậm cho Chưa làm, hay icon+nhãn đúng kiểu chip; trạng thái bỏ qua cũng chỉ là text.",
+      "fix": "Đặt Đã xong trong chip nền #1F684B chữ trắng với circle-check 24 px; Chưa làm trong chip viền #B26A00 với circle 24 px; Bỏ qua trong chip với circle-minus 24 px."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn Chi tiết việc, không phải màn Hôm nay có tiến độ tổng ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn Chi tiết việc, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Hộp xác nhận ngưng lặp",
+      "evidence": "Hộp xác nhận xuất hiện thường trực cuối trang, sát trên nav; không phủ màn và không căn giữa.",
+      "fix": "Ẩn hộp mặc định; khi mở, đặt dialog nền trắng rộng tối đa 320 px, căn giữa viewport cả hai chiều."
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Hành động Ngưng lặp lại",
+      "evidence": "Hộp xác nhận có sẵn trong luồng nhưng không ẩn ban đầu; ảnh cho thấy nội dung xác nhận nằm thường trực phía dưới nút.",
+      "fix": "Ẩn dialog ban đầu; chỉ mở khi chạm Ngưng lặp lại, với hai nút Hủy và Ngưng việc này cao tối thiểu 48 px."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không có trường nhập liệu hoặc lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nút Đọc to và bottom nav",
+      "evidence": "HTML metrics cho thấy nút Đọc to màu/nền mặc định trình duyệt (#EFEFEF, chữ đen); bottom nav là anchor xanh mặc định #0000EE thay vì token.",
+      "fix": "Tạo style cho nút Đọc to và nav bằng nền #F6F7F2/#FFFFFF, chữ #202B25 hoặc #526057, màu chọn #1F684B."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút Đọc to và bottom nav",
+      "evidence": "Nút Đọc to là nút mặc định hình chữ nhật viền đen; nav là link xanh gạch chân. Chúng không dùng Be Vietnam Pro/bo góc 14 px như hệ thống.",
+      "fix": "Dùng Be Vietnam Pro; đặt nút Đọc to cao 48 px, bo góc 14 px; tạo nav item kiểu không gạch chân với hit area 48 px."
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [
+    "R-TXT-03",
+    "R-TXT-05",
+    "R-LANG-02",
+    "R-CEN-01",
+    "R-SAFE-01"
+  ],
+  "regressions": [
+    "R-TXT-01",
+    "R-TXT-02",
+    "R-ICON-03",
+    "R-TAP-01",
+    "R-NAV-01",
+    "R-STA-01",
+    "R-STY-01",
+    "R-STY-02"
+  ],
+  "summary": "Màn hình tóm tắt việc đã rõ hơn, nhưng nút Đọc to, các trạng thái lịch sử, hộp xác nhận và bottom nav vẫn hiển thị kiểu trình duyệt mặc định hoặc sai bố cục."
+}

@@ -1,0 +1,7 @@
+Keep the G01b selected-time state: first activity “9:00 sáng” selected with circle-dot, “8:00 sáng” unselected with circle. Fix the reviewed issues:
+1. Set every visible control/container label to at least 20px, including header, footer, and time-option buttons. Keep button text at least 22px where primary.
+2. Pin the primary send button in a fixed bottom footer so it is visible on initial 360×800 and 412px screens. Use 60px height, 20px side inset, and leave content scroll space.
+3. Replace any custom/unlisted icons with the exact Lucide dictionary icons: footprints for Vận động tự nhiên; wind for Thư giãn mỗi ngày; circle-dot/circle for selected/unselected time choices; message-square for sending. All 32×32px, stroke 2–2.5.
+4. Use the exact habit accent tokens from DESIGN.md: #2BA15C for Vận động tự nhiên and #AC76DB for Thư giãn mỗi ngày, including icon tiles and accent bars; icons white.
+5. Make recipient wording consistent and clear: use “Bác” in the heading/message context; label the send action “Gửi gợi ý” so it is clear this sends a suggestion, not a confirmed schedule. Preserve the line that mẹ chooses whether to accept.
+Keep all targets >=48px and gaps >=8px. Do not claim the suggestion is already on her calendar. Generate the new screen now.

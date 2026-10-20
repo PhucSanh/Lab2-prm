@@ -1,0 +1,5 @@
+Apply these edits to the selected G03 screen and generate a new screen now. Keep all other content unchanged.
+1. Pin the action footer to the bottom of the 360×800/412px viewport; the primary button must appear in the first viewport. Reserve enough scroll padding so it never covers content.
+2. Add Lucide skip-forward 32×32px to “Bỏ qua gợi ý”.
+3. Replace the clock icon on “Đổi giờ đi bộ” with the documented Lucide alarm-clock-plus 32×32px.
+Preserve the short primary label “Thêm vào lịch”, both “○ Chưa làm” chips, “Đọc to”, all copy, colors, touch target sizes and 8px gaps. Create the edited screen, do not return a plan.

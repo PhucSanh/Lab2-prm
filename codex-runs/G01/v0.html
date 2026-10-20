@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An Nhiên - G01 Con cháu soạn lịch gợi ý</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #ECEEE9;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 20px 0;
+    }
+
+    /* Khung điện thoại Android 360x800dp (hỗ trợ responsive đến 412px) */
+    .phone-container {
+      width: 100%;
+      max-width: 360px;
+      min-height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      overflow-x: hidden;
+    }
+
+    @media (min-width: 400px) {
+      .phone-container {
+        max-width: 412px;
+      }
+    }
+
+    /* Thanh App Bar */
+    .app-bar {
+      display: flex;
+      align-items: center;
+      padding: 12px 20px 8px 20px;
+      background-color: #F6F7F2;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: none;
+      border: none;
+      color: #1F684B;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 6px 0;
+      min-height: 48px;
+    }
+
+    .btn-back svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2.2;
+      stroke: #1F684B;
+    }
+
+    /* Vùng nội dung cuộn / chứa */
+    .content-area {
+      padding: 4px 20px 108px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Khối tiêu đề */
+    .header-block {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .screen-title {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #202B25;
+      letter-spacing: -0.3px;
+    }
+
+    .sub-note {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.35;
+      color: #526057;
+    }
+
+    /* Thẻ gợi ý công việc */
+    .activities-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .activity-card {
+      background-color: #FFFFFF;
+      border: 2px solid #DFE5DF;
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .activity-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .habit-icon-tile {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      min-height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .habit-icon-tile.green {
+      background-color: #1F684B;
+    }
+
+    .habit-icon-tile svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2.2;
+      stroke: #FFFFFF;
+      fill: none;
+    }
+
+    .activity-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.25;
+    }
+
+    .activity-subtitle {
+      font-size: 19px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.2;
+    }
+
+    /* Lựa chọn giờ nhắc */
+    .time-selector-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .time-label {
+      font-size: 19px;
+      font-weight: 600;
+      color: #202B25;
+    }
+
+    .time-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .time-option-btn {
+      min-height: 48px;
+      border-radius: 12px;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background-color: #FFFFFF;
+      transition: all 0.15s ease;
+      outline: none;
+    }
+
+    .time-option-btn.selected {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+      color: #1F684B;
+    }
+
+    .time-option-btn.unselected {
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      color: #526057;
+    }
+
+    .time-option-text {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .time-option-btn.selected .time-option-text {
+      color: #1F684B;
+    }
+
+    .time-option-btn.unselected .time-option-text {
+      color: #202B25;
+    }
+
+    .radio-icon {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      min-height: 32px;
+    }
+
+    /* Thẻ nhập lời nhắn ngắn cho mẹ */
+    .message-card {
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      border-radius: 16px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .message-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .message-label {
+      font-size: 20px;
+      font-weight: 700;
+      color: #202B25;
+    }
+
+    .message-hint {
+      font-size: 19px;
+      font-weight: 500;
+      color: #526057;
+    }
+
+    .message-input {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: #202B25;
+      background: transparent;
+      line-height: 1.35;
+      resize: none;
+    }
+
+    /* Thẻ lưu ý quyền tự chủ / bảo mật */
+    .privacy-notice {
+      background-color: #FFFFFF;
+      border: 2px solid #DFE5DF;
+      border-radius: 14px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .privacy-icon {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      min-height: 32px;
+      stroke-width: 2.2;
+      stroke: #1F684B;
+      fill: none;
+    }
+
+    .privacy-text {
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.3;
+      color: #526057;
+    }
+
+    .privacy-text strong {
+      color: #202B25;
+      font-weight: 700;
+    }
+
+    /* Nút hành động cố định chân trang */
+    .fixed-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 20px 20px 20px;
+      background: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      display: flex;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .btn-submit {
+      width: 100%;
+      max-width: 372px;
+      height: 60px;
+      min-height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(31, 104, 75, 0.2);
+    }
+
+    .btn-submit svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2.2;
+      stroke: #FFFFFF;
+      fill: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="phone-container">
+    <!-- App Bar -->
+    <header class="app-bar">
+      <button class="btn-back" type="button" aria-label="Quay lại Gia đình">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6" />
+        </svg>
+        <span>Gia đình</span>
+      </button>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+      <!-- Title & Guidance -->
+      <section class="header-block">
+        <h1 class="screen-title">Gợi ý lịch cho mẹ</h1>
+        <p class="sub-note">Mẹ sẽ tự chọn nhận, đổi giờ hoặc bỏ qua.</p>
+      </section>
+
+      <!-- Suggested Activities List -->
+      <section class="activities-list" aria-label="Danh sách việc gợi ý">
+        
+        <!-- Activity 1: Đi bộ nhẹ nhàng -->
+        <article class="activity-card">
+          <div class="activity-header">
+            <div class="habit-icon-tile green" aria-hidden="true">
+              <!-- Lucide footprints (Vận động tự nhiên) -->
+              <svg viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.5v2" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.5v2" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 17h4" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 13h4" />
+              </svg>
+            </div>
+            <div>
+              <div class="activity-title">Đi bộ nhẹ nhàng</div>
+              <div class="activity-subtitle">Vận động tự nhiên · 20 phút</div>
+            </div>
+          </div>
+
+          <div class="time-selector-group">
+            <span class="time-label">Chọn giờ nhắc gợi ý:</span>
+            <div class="time-options" role="radiogroup" aria-label="Giờ nhắc đi bộ">
+              <!-- Option 8:00 (Selected) -->
+              <button type="button" class="time-option-btn selected" role="radio" aria-checked="true">
+                <span class="time-option-text">8:00 sáng</span>
+                <!-- Lucide circle-dot 32px -->
+                <svg class="radio-icon" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.2">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="3" fill="#1F684B" />
+                </svg>
+              </button>
+
+              <!-- Option 9:00 (Unselected) -->
+              <button type="button" class="time-option-btn unselected" role="radio" aria-checked="false">
+                <span class="time-option-text">9:00 sáng</span>
+                <!-- Lucide circle 32px -->
+                <svg class="radio-icon" viewBox="0 0 24 24" fill="none" stroke="#7B887F" stroke-width="2.2">
+                  <circle cx="12" cy="12" r="10" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Activity 2: Chăm cây -->
+        <article class="activity-card">
+          <div class="activity-header">
+            <div class="habit-icon-tile green" aria-hidden="true">
+              <!-- Lucide sprit/tree/leaf (Chăm cây) -->
+              <svg viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 10a6 6 0 0 0-6-6H3v2a6 6 0 0 0 6 6h3" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14a6 6 0 0 1 6-6h3v2a6 6 0 0 1-6 6h-3" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 22V10" />
+              </svg>
+            </div>
+            <div>
+              <div class="activity-title">Chăm cây ngoài vườn</div>
+              <div class="activity-subtitle">Thư giãn mỗi ngày · 15 phút</div>
+            </div>
+          </div>
+
+          <div class="time-selector-group">
+            <span class="time-label">Chọn giờ nhắc gợi ý:</span>
+            <div class="time-options" role="radiogroup" aria-label="Giờ nhắc chăm cây">
+              <!-- Option 8:00 (Unselected) -->
+              <button type="button" class="time-option-btn unselected" role="radio" aria-checked="false">
+                <span class="time-option-text">8:00 sáng</span>
+                <!-- Lucide circle 32px -->
+                <svg class="radio-icon" viewBox="0 0 24 24" fill="none" stroke="#7B887F" stroke-width="2.2">
+                  <circle cx="12" cy="12" r="10" />
+                </svg>
+              </button>
+
+              <!-- Option 9:00 (Selected) -->
+              <button type="button" class="time-option-btn selected" role="radio" aria-checked="true">
+                <span class="time-option-text">9:00 sáng</span>
+                <!-- Lucide circle-dot 32px -->
+                <svg class="radio-icon" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.2">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="3" fill="#1F684B" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- Optional Personal Message Field -->
+      <section class="message-card">
+        <div class="message-label-row">
+          <label for="personal-msg" class="message-label">Lời nhắn gửi kèm</label>
+          <span class="message-hint">Không bắt buộc</span>
+        </div>
+        <input 
+          id="personal-msg" 
+          class="message-input" 
+          type="text" 
+          value="Mẹ ơi, mai mình đi bộ nhé?"
+          placeholder="Nhập lời nhắn ấm áp cho mẹ..."
+        />
+      </section>
+
+      <!-- Privacy & Elder Autonomy Guarantee -->
+      <aside class="privacy-notice" aria-label="Lưu ý bảo mật và tôn trọng mẹ">
+        <svg class="privacy-icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 16v-4" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8h.01" />
+        </svg>
+        <div class="privacy-text">
+          Lịch của mẹ <strong>chỉ thay đổi khi mẹ bấm nhận</strong>.
+        </div>
+      </aside>
+    </main>
+
+    <!-- Bottom Sticky Primary CTA (Single Dark Filled Button) -->
+    <footer class="fixed-footer">
+      <button class="btn-submit" type="button">
+        <!-- Lucide send 32px -->
+        <svg viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m22 2-7 20-4-9-9-4Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M22 2 11 13" />
+        </svg>
+        <span>Gửi gợi ý cho mẹ</span>
+      </button>
+    </footer>
+  </div>
+
+  <script>
+    // Independent tap interaction for time option buttons
+    document.querySelectorAll('.time-selector-group').forEach(group => {
+      const buttons = group.querySelectorAll('.time-option-btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => {
+            b.classList.remove('selected');
+            b.classList.add('unselected');
+            b.setAttribute('aria-checked', 'false');
+            b.querySelector('.radio-icon').innerHTML = '<circle cx="12" cy="12" r="10" />';
+            b.querySelector('.radio-icon').setAttribute('stroke', '#7B887F');
+          });
+          btn.classList.remove('unselected');
+          btn.classList.add('selected');
+          btn.setAttribute('aria-checked', 'true');
+          btn.querySelector('.radio-icon').innerHTML = '<circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="3" fill="#1F684B" />';
+          btn.querySelector('.radio-icon').setAttribute('stroke', '#1F684B');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

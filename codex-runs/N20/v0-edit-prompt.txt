@@ -1,0 +1,6 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-TXT-02] Increase information-card headings and body copy to 24px.
+2. [R-TXT-03] Shorten the intro and each information paragraph to no more than 15 Vietnamese words and 2 lines at 360px. Use concise copy such as “Lịch việc lưu trên điện thoại này.” and “Không có mạng, Bác vẫn xem được lịch.” Avoid promising that a reminder will always fire.
+3. [R-ICON-03] Replace unsupported icons with dictionary icons: use `smartphone` for on-device/offline information, `info` for the sharing/autonomy card, and `chevron-left` for the “Về Cài đặt” return action. Keep icons 32×32px, stroke 2–2.5. Do not use `check`, `shield-check`, or `arrow-left`.
+4. [R-VOC-01] Remove the forbidden term “đồng bộ”; change the heading “Chưa đồng bộ sang máy khác” to “Lịch chỉ ở điện thoại này” and describe the data as “Lịch chưa chuyển sang máy khác.”
+5. [R-STY-03] Use 20px horizontal margins at 360px, including footer; preserve 16px block gaps.

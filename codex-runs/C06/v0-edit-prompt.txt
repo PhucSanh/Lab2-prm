@@ -1,0 +1,37 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-CON-02] Keep the selected Vận động tự nhiên habit accent#2BA15C, but make the selected card white#FFFFFF instead of pale#D6EADF so its colored tile has>=3:1 contrast. Keep2px#1F684B selected border, circle-dot32px and visible "Đang chọn" so choice remains explicit. Preserve6px accent stripe and48px tile withwhite32px icon.
+2. [R-ICON-03] Replace the entire utensils and wind SVGs with the exact official Lucide path data below. Actual rendered32x32px,white,stroke2.5. Do not draw two forks or re-create path shapes. Leave all other elements unchanged. Create a NEW screen version, preserve source.
+
+utensils:
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+  <path d="M7 2v20" />
+  <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+</svg>
+
+wind:
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12.8 19.6A2 2 0 1 0 14 16H2" />
+  <path d="M17.5 8a2.5 2.5 0 1 1 2 4H2" />
+  <path d="M9.8 4.4A2 2 0 1 1 11 8H2" />
+</svg>

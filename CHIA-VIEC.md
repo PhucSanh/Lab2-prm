@@ -6,7 +6,7 @@
 | Làn | Người chạy | Stitch project | Phạm vi | Số khung |
 | --- | --- | --- | --- | ---: |
 | **A** | Sanh | `2013215887278758682` (trong `project.txt`) | State, dialog, biến thể của S01 – S17, N "con" của S, G10 – G12 (nằm trên S03) | 45 |
-| **B** | Teammate | Project riêng của teammate (agent tự tạo) | Chế độ Người thân C01 – C12, Gợi ý lịch G01 – G09, N độc lập | 40 |
+| **B** | Hieu | Project riêng của teammate (agent tự tạo) | Chế độ Người thân C01 – C12, Gợi ý lịch G01 – G09, N độc lập | 40 |
 | **C** | Ai rảnh làm | Không dùng Stitch | Biến thể chỉ đổi chữ (S04 ·, S11 ·, S16 ·, S17 ·) – duplicate trong Figma rồi sửa chữ | 3 |
 
 **Vì sao chia như vậy:** biến thể (cách `EDIT`) phải sửa trên màn gốc nằm **cùng project Stitch**. Các màn gốc S01 – S17 nằm trong project của Sanh, nên mọi biến thể của S thuộc làn A. Làn B gồm những nhóm khép kín (C, G, N độc lập): teammate tự sinh màn gốc của nhóm rồi làm biến thể ngay trong project của mình.

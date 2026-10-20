@@ -1,0 +1,49 @@
+{
+  "projectId": "2013215887278758682",
+  "sessionId": "13529112215025963036",
+  "outputComponents": [
+    {
+      "design": {
+        "screens": [
+          {
+            "screenshot": {
+              "name": "projects/2013215887278758682/files/cd3db6df284d4978b3f393a1bd8057a2",
+              "downloadUrl": "[URL omitted]"
+            },
+            "htmlCode": {
+              "name": "projects/2013215887278758682/files/8324b517c996426d99675357f0ef319c",
+              "downloadUrl": "[URL omitted]",
+              "mimeType": "text/html"
+            },
+            "id": "a367993040524f49a2d3c7ad1a8f9948",
+            "generatedBy": "create_datastore_entry",
+            "width": "2560",
+            "height": "2048",
+            "title": "An Nhiên - C02 Nhập mã ghép nối",
+            "name": "projects/2013215887278758682/screens/a367993040524f49a2d3c7ad1a8f9948",
+            "theme": {},
+            "deviceType": "DESKTOP",
+            "screenType": "DESIGN",
+            "screenMetadata": {
+              "agentType": "PRO_AGENT",
+              "status": "COMPLETE"
+            }
+          }
+        ],
+        "theme": {}
+      }
+    },
+    {
+      "text": "Tôi đã tạo thành công màn hình **C02 \"Nhập mã ghép nối\"** dành cho vai trò Con/Cháu theo đúng toàn bộ yêu cầu kỹ thuật và nguyên tắc thiết kế An Nhiên:\n\n1. **Điều hướng trên cùng (Top Back Control)**:\n   - Nút *\"Quay lại\"* với biểu tượng Lucide `chevron-left` chuẩn 32px (stroke 2.5), kích thước vùng chạm rộng rãi đạt trên 112x48px giúp thao tác dễ dàng.\n\n2. **Tiêu đề & Dòng trợ giúp**:\n   - Tiêu đề chính: `\"Nhập mã từ máy của mẹ\"` với cỡ chữ chuẩn 30px bold, tự động ngắt 2 dòng tự nhiên.\n   - Hai dòng trợ giúp ngắn gọn: `\"Mã gồm 6 số.\"` và `\"Mã tự đổi sau 10 phút.\"` đạt cỡ 20px chuẩn trợ năng, không gây áp lực thời gian.\n\n3. **Ô nhập mã ghép nối thống nhất (Unified Tap Region)**:\n   - Nhãn rõ ràng: `\"Mã ghép nối\"` (20px semi-bold).\n   - Một trường nhập liệu duy nhất kích thước `320x64px`, hỗ trợ `inputmode=\"numeric\"` và `autocomplete=\"one-time-code\"`.\n   - Trang trí trực quan bằng 6 ô vuông hiển thị (khoảng ~47x64px, khoảng cách giữa các ô 6px), hiển thị số mẫu `123456` với phông chữ 30px đậm nét, không bị tràn ngang ở màn hình 360px.\n\n4. **Thẻ hướng dẫn (Guidance Card)**:\n   - Thẻ nền trắng bo góc 16px, chứa biểu tượng điện thoại `smartphone` 32px cùng nhãn `\"Trên máy của mẹ\"`.\n   - Hai bước chỉ dẫn súc tích:\n     1. `\"Mở Gia đình.\"` kèm biểu tượng `hand-heart` (biểu tượng tab Gia đình).\n     2. `\"Chọn Mã ghép nối.\"`.\n\n5. **Nút hành động chính cố định dưới đáy**:\n   - Duy nhất một nút đặc nổi bật: nền xanh đậm `#1F684B`, chữ trắng 22px bold `\"Ghép nối\"`, kèm biểu tượng Lucide `smartphone` 32px. Kích thước chuẩn `320x60px`, bo góc 14px, đặt trên thanh chân trang cố định và có khoảng đệm cuộn an toàn (`padding-bottom: 108px`).\n   - Giao diện 100% tiếng Việt chuẩn có dấu, tuân thủ nghiêm ngặt bảng màu và kiểu chữ Be Vietnam Pro của dự án."
+    },
+    {
+      "suggestion": "Tạo màn hình C03 khi ghép nối thành công"
+    },
+    {
+      "suggestion": "Tạo màn hình C02-Error khi nhập sai mã ghép nối"
+    },
+    {
+      "suggestion": "Điều chỉnh khoảng cách hoặc kích thước ô nhập mã"
+    }
+  ]
+}

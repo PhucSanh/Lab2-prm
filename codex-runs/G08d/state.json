@@ -1,0 +1,30 @@
+{
+  "screen": "G08d",
+  "title": "Lịch ngày mai",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 0,
+  "screen_id": "97ae11b4cf37413ba8e406d5d9d4429a",
+  "parent_screen_id": "a439ab41c55746ffbee5dbc4bdb2aa82",
+  "best_round": 0,
+  "best_screen_id": "97ae11b4cf37413ba8e406d5d9d4429a",
+  "best_score": 100,
+  "patience": 0,
+  "pending_operation_id": null,
+  "stop_reason": "score_100",
+  "canvas_row": 32,
+  "stage": "awaiting_review",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "provenance": {
+    "source_screen": "G08",
+    "source_screen_id": "a439ab41c55746ffbee5dbc4bdb2aa82",
+    "source_project_id": "2013215887278758682",
+    "source_best_round": 2,
+    "related_partial_acceptance": "G07b",
+    "related_partial_acceptance_screen_id": "35a72921269b4c1d934a16f6f95d3b72",
+    "variant_inference": "Only relaxation accepted"
+  },
+  "updated_at": "2026-10-19T08:41:28.405756+00:00",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/G08d/v-1-edit-prompt.txt",
+  "last_processed_round": 0
+}

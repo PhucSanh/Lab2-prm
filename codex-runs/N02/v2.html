@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>An Nhiên - N02 Đã nhận lời nhắc (Mobile)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F6F7F2;
+      color: #202B25;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .mobile-frame {
+      width: 100%;
+      max-width: 412px;
+      min-height: 100vh;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .scroll-content {
+      flex: 1;
+      padding: 16px 20px 220px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 48px;
+      margin-bottom: 8px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #1F684B;
+      font-size: 22px;
+      font-weight: 700;
+      text-decoration: none;
+      min-height: 48px;
+      min-width: 48px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px 8px 4px 0;
+      border-radius: 8px;
+      transition: background-color 0.15s ease;
+    }
+    .back-btn:active {
+      background-color: rgba(31, 104, 75, 0.08);
+    }
+    .app-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: #526057;
+    }
+    .header-block {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .screen-title {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #202B25;
+      margin: 0;
+    }
+    .sub-question {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.35;
+      color: #526057;
+      margin: 0;
+    }
+    .checklist-card {
+      background-color: #FFFFFF;
+      border: 1px solid #DFE5DF;
+      border-radius: 16px;
+      padding: 8px 16px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    }
+    .checklist-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      min-height: 72px;
+    }
+    .checklist-row:not(:last-child) {
+      border-bottom: 1px solid #EEF2EE;
+    }
+    .icon-tile {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: #E8F3ED;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #1F684B;
+    }
+    .checklist-text {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: #202B25;
+      flex: 1;
+    }
+    .info-card {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+      border-radius: 16px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .info-icon {
+      flex-shrink: 0;
+      color: #1F684B;
+      margin-top: 2px;
+    }
+    .info-text {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: #174C37;
+      margin: 0;
+    }
+    .fixed-footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 412px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      padding: 16px 20px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      z-index: 50;
+    }
+    .btn-primary {
+      width: 100%;
+      min-height: 60px;
+      height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      font-size: 22px;
+      font-weight: 700;
+      border-radius: 14px;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.15s ease, transform 0.05s ease;
+    }
+    .btn-primary:active {
+      background-color: #174C37;
+      transform: scale(0.99);
+    }
+    .btn-gap {
+      height: 20px;
+      width: 100%;
+    }
+    .btn-secondary {
+      width: 100%;
+      min-height: 60px;
+      height: 60px;
+      background-color: #FFFFFF;
+      color: #1F684B;
+      font-size: 22px;
+      font-weight: 700;
+      border-radius: 14px;
+      border: 2px solid #1F684B;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.15s ease, transform 0.05s ease;
+    }
+    .btn-secondary:active {
+      background-color: #E8F3ED;
+      transform: scale(0.99);
+    }
+  </style>
+</head>
+<body>
+  <div class="mobile-frame">
+    <!-- Main scrollable content -->
+    <main class="scroll-content">
+      <!-- App bar with Back action -->
+      <header class="top-bar">
+        <button class="back-btn" aria-label="Quay lại màn hình trước">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+          <span>Quay lại</span>
+        </button>
+        <span class="app-name">An Nhiên</span>
+      </header>
+
+      <!-- Screen Title & Sub-question -->
+      <section class="header-block">
+        <h1 class="screen-title">Đã nhận lời nhắc</h1>
+        <p class="sub-question">Bác đã nhận được chưa?</p>
+      </section>
+
+      <!-- Checklist Card with 3 rows -->
+      <section class="checklist-card" aria-label="Danh sách kiểm tra lời nhắc">
+        <!-- Row 1: bell -->
+        <div class="checklist-row">
+          <div class="icon-tile" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+            </svg>
+          </div>
+          <span class="checklist-text">Lời nhắc có hiện lên</span>
+        </div>
+
+        <!-- Row 2: bell-ring -->
+        <div class="checklist-row">
+          <div class="icon-tile" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+              <path d="M4 2C2.8 3.7 2 5.7 2 8"/>
+              <path d="M22 8c0-2.3-.8-4.3-2-6"/>
+            </svg>
+          </div>
+          <span class="checklist-text">Chuông hoặc rung có phát</span>
+        </div>
+
+        <!-- Row 3: type -->
+        <div class="checklist-row">
+          <div class="icon-tile" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 7 4 4 20 4 20 7"/>
+              <line x1="9" x2="15" y1="20" y2="20"/>
+              <line x1="12" x2="12" y1="4" y2="20"/>
+            </svg>
+          </div>
+          <span class="checklist-text">Chữ trong lời nhắc có dễ đọc</span>
+        </div>
+      </section>
+
+      <!-- Info note card -->
+      <section class="info-card" role="note" aria-label="Ghi chú">
+        <div class="info-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16v-4"/>
+            <path d="M12 8h.01"/>
+          </svg>
+        </div>
+        <p class="info-text">Bác có thể xem lại sau.</p>
+      </section>
+    </main>
+
+    <!-- Fixed footer buttons -->
+    <footer class="fixed-footer">
+      <button class="btn-primary" aria-label="Tôi đã nhận được lời nhắc">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span>Tôi đã nhận được</span>
+      </button>
+      <div class="btn-gap" aria-hidden="true"></div>
+      <button class="btn-secondary" aria-label="Chưa nhận được lời nhắc">
+        <span>Chưa nhận được</span>
+      </button>
+    </footer>
+  </div>
+</body>
+</html>

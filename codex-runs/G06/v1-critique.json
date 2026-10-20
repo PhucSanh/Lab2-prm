@@ -1,0 +1,252 @@
+{
+  "screen": "G06 Chọn từng việc",
+  "round": 1,
+  "score": 87,
+  "errors": 1,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Footer actions",
+      "evidence": "The primary “Tiếp tục” and secondary “Quay lại” buttons are pinned above the bottom navigation (footer bottom: 84px), leaving the primary action away from the screen bottom.",
+      "fix": "Place the primary 60px “Tiếp tục” button at the screen bottom with 20px side margins; keep bottom navigation below or move it above the action area."
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "This screen lets the user choose suggested activities; it does not show the daily task status states."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "This screen does not show daily completion progress."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "This is not the Hôm nay screen."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "There is no input field or input error state on this screen."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Consent notice background",
+      "evidence": "Inline background #E8F5E9 does not match the specified app surfaces; required backgrounds are #F6F7F2 and cards #FFFFFF.",
+      "fix": "Set the notice background to #FFFFFF (or the defined #D6EADF primary container)."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [
+    "R-TXT-05",
+    "R-ICON-03",
+    "R-COL-02",
+    "R-COL-03",
+    "R-STY-02"
+  ],
+  "regressions": [
+    "R-TAP-02"
+  ],
+  "summary": "Các thẻ việc đã gọn lại, dùng đúng màu/icon và đọc to; còn nút chính đặt quá cao so với đáy màn, nền thông báo lệch token màu."
+}

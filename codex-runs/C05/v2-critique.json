@@ -1,0 +1,246 @@
+{
+  "screen": "C05 Lịch tháng của mẹ Lan",
+  "round": 2,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn lịch tháng của người thân, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn lịch của người thân dùng bộ chọn Ngày/Tuần/Tháng, không có bottom nav."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có nút Back trên màn lịch cấp cao nhất trong flow người thân."
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn chỉ ghi số việc đã lên lịch, không thể hiện tiến độ hoàn thành trong ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không có trường nhập hoặc trạng thái lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không thuộc lời nhắc, chi tiết việc, chi tiết thói quen hoặc gợi ý từ người thân."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [
+    "R-LAY-01",
+    "R-ICON-03",
+    "R-COL-03",
+    "R-TAP-01"
+  ],
+  "regressions": [],
+  "summary": "Bản v2 đáp ứng các luật chấm; đã khắc phục tràn ngang, icon chế độ xem, màu thói quen và vùng chạm Xem ngày của v1."
+}

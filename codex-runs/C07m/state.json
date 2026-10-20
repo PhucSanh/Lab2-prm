@@ -1,0 +1,21 @@
+{
+  "screen": "C07m",
+  "title": "Lặp lại mỗi tháng (Bước 2/3)",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 3,
+  "screen_id": "a0ad79b8e127494596d43d4fef27beb1",
+  "parent_screen_id": "1a7d68bb0ed04f5591e814dd7b47c5d2",
+  "best_round": 3,
+  "best_screen_id": "a0ad79b8e127494596d43d4fef27beb1",
+  "best_score": 100,
+  "patience": 0,
+  "pending_operation_id": null,
+  "stop_reason": "score_100",
+  "updated_at": "2026-10-18T19:26:55.204207+00:00",
+  "canvas_row": 12,
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "stage": "awaiting_review",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/C07m/v2-edit-prompt.txt",
+  "last_processed_round": 3
+}

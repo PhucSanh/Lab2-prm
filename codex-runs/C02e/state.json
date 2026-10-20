@@ -1,0 +1,21 @@
+{
+  "screen": "C02e",
+  "title": "Mã sai hoặc hết hạn",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 3,
+  "screen_id": "706eff40546b4a58ad062dd0df3c2daa",
+  "parent_screen_id": "de3aca09ba4449938bc4852a1da0b037",
+  "best_round": 3,
+  "best_screen_id": "706eff40546b4a58ad062dd0df3c2daa",
+  "best_score": 97,
+  "patience": 2,
+  "pending_operation_id": null,
+  "stop_reason": "patience_2",
+  "updated_at": "2026-10-18T19:13:23.457159+00:00",
+  "canvas_row": 8,
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "stage": "awaiting_review",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/C02e/v2-edit-prompt.txt",
+  "last_processed_round": 3
+}

@@ -1,0 +1,252 @@
+{
+  "screen": "C02 Nhập mã ghép nối",
+  "round": 0,
+  "score": 87,
+  "errors": 1,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Số thứ tự 1 và 2 trong thẻ Trên máy của mẹ",
+      "evidence": "HTML .step-number có font-size:16px; cả hai số hiển thị rõ ở ảnh 360 và 412, nhỏ hơn mức sàn 20px.",
+      "fix": "Đổi .step-number từ 16px thành 20px; tăng vòng số lên 28×28px nếu cần giữ cân đối."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn nhập mã ghép nối, không có thẻ việc."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Icon Gia đình ở bước 1 và icon nút Ghép nối",
+      "evidence": "HTML .guidance-step-item svg là 24×24px dù không phải chip trạng thái. SVG bước 1 có hình heart-handshake thay vì hand-heart của tab Gia đình. Nút Ghép nối dùng smartphone giống icon thông tin máy, trong khi dictionary dành smartphone cho thiết bị/quyền/dữ liệu.",
+      "fix": "Đổi icon Gia đình sang đúng Lucide hand-heart kích thước 32×32px; đổi icon hành động tiếp tục ghép nối sang Lucide arrow-right 32×32px, giữ smartphone 32×32px cho thông tin máy của mẹ."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có thẻ việc hoặc thói quen; thẻ hướng dẫn không phải thẻ thói quen."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "n/a",
+      "evidence": "Không hiển thị thói quen hay màu nhấn thói quen."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Hai nút Quay lại và Ghép nối không nằm kề nhau."
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn ghép nối trước khi dùng app, không phải màn tab có bottom nav."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có việc để hiển thị trạng thái."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không hiển thị tiến độ ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có hành động xóa, đánh dấu xong, ngưng lặp hay hành động khó đảo ngược."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là trạng thái nhập mã mặc định, chưa có lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn C02 nhập mã, không thuộc S14/S04/S16/G03."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Bố cục nhập mã rõ ràng, không tràn ở 360/412px; còn số thứ tự 16px và icon bước hướng dẫn nhỏ/sai từ điển."
+}

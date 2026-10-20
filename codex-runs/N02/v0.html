@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An Nhiên - Đã nhận lời nhắc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F6F7F2;
+      color: #202B25;
+      line-height: 1.45;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0;
+    }
+
+    .app-viewport {
+      width: 100%;
+      max-width: 412px;
+      min-height: 100vh;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 24px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Top App Bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      padding: 12px 20px 8px;
+      min-height: 56px;
+      background-color: #F6F7F2;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 4px 8px 4px 0;
+      background: transparent;
+      border: none;
+      color: #1F684B;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* Scroll Content */
+    .scroll-content {
+      flex: 1;
+      padding: 8px 20px 220px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Title Block */
+    .header-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .screen-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.25;
+    }
+
+    .question-lead {
+      font-size: 22px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.4;
+    }
+
+    /* Checklist Card */
+    .check-card {
+      background-color: #FFFFFF;
+      border: 1px solid #DFE5DF;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-height: 48px;
+    }
+
+    .check-icon-tile {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: #D6EADF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .check-text {
+      font-size: 20px;
+      font-weight: 600;
+      color: #202B25;
+      line-height: 1.35;
+    }
+
+    .divider {
+      height: 1px;
+      background-color: #EEF2EE;
+      width: 100%;
+    }
+
+    /* Reassurance Note */
+    .info-card {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .info-icon {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .info-text {
+      font-size: 20px;
+      font-weight: 600;
+      color: #174C37;
+      line-height: 1.4;
+    }
+
+    /* Fixed Actions Footer */
+    .footer-actions {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 412px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      padding: 16px 20px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 50;
+    }
+
+    .btn-primary {
+      width: 100%;
+      min-height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .btn-secondary {
+      width: 100%;
+      min-height: 56px;
+      background-color: #FFFFFF;
+      color: #1F684B;
+      border: 2px solid #1F684B;
+      border-radius: 14px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .btn-primary:active {
+      background-color: #174C37;
+    }
+
+    .btn-secondary:active {
+      background-color: #EEF6F2;
+    }
+
+    /* SVG Icon Helpers */
+    .icon-svg {
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="app-viewport">
+    <!-- Top App Bar -->
+    <header class="top-bar">
+      <button class="back-btn" aria-label="Quay lại bước thử lời nhắc">
+        <svg class="icon-svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        <span>Quay lại</span>
+      </button>
+    </header>
+
+    <!-- Scrollable Content Container -->
+    <section class="scroll-content">
+      <!-- Title & Reassuring Question -->
+      <div class="header-block">
+        <h1 class="screen-title">Đã nhận lời nhắc</h1>
+        <p class="question-lead">Bác đã nhận được chưa?</p>
+      </div>
+
+      <!-- Checklist Summary Card -->
+      <div class="check-card" role="region" aria-label="Nội dung kiểm tra lời nhắc">
+        <!-- Item 1: Bell (Notification) -->
+        <div class="check-item">
+          <div class="check-icon-tile" aria-hidden="true">
+            <svg class="icon-svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+            </svg>
+          </div>
+          <span class="check-text">Thông báo có hiện lên</span>
+        </div>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <!-- Item 2: Bell-ring (Sound/vibration) -->
+        <div class="check-item">
+          <div class="check-icon-tile" aria-hidden="true">
+            <svg class="icon-svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+              <path d="M4 2C2.8 3.7 2 5.7 2 8"/>
+              <path d="M22 8c0-2.3-.8-4.3-2-6"/>
+            </svg>
+          </div>
+          <span class="check-text">Chuông hoặc rung có phát</span>
+        </div>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <!-- Item 3: Type (Text readability) -->
+        <div class="check-item">
+          <div class="check-icon-tile" aria-hidden="true">
+            <svg class="icon-svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 7 4 4 20 4 20 7"/>
+              <line x1="9" x2="15" y1="20" y2="20"/>
+              <line x1="12" x2="12" y1="4" y2="20"/>
+            </svg>
+          </div>
+          <span class="check-text">Chữ trong lời nhắc có dễ đọc</span>
+        </div>
+      </div>
+
+      <!-- Reassurance Note Card -->
+      <div class="info-card" role="note">
+        <svg class="icon-svg info-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 16v-4"/>
+          <path d="M12 8h.01"/>
+        </svg>
+        <p class="info-text">Bác có thể kiểm tra lại cài đặt chuông bất cứ lúc nào.</p>
+      </div>
+    </section>
+
+    <!-- Fixed Action Buttons -->
+    <footer class="footer-actions">
+      <!-- Primary: Continues to N04 -->
+      <button class="btn-primary">
+        <span>Tôi đã nhận được</span>
+      </button>
+
+      <!-- Secondary: Goes to N03 -->
+      <button class="btn-secondary">
+        <span>Chưa nhận được</span>
+      </button>
+    </footer>
+  </main>
+
+</body>
+</html>

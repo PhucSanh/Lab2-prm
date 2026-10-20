@@ -1,0 +1,263 @@
+{
+  "screen": "C04 Lịch tuần của mẹ Lan",
+  "round": 0,
+  "score": 54,
+  "errors": 4,
+  "warns": 2,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nhãn badge ‘Hôm nay’ trên ngày Chủ Nhật",
+      "evidence": "Metrics ghi chữ 16px (khoảng 20px thực tế do tỉ lệ co), dưới mức tối thiểu 20px.",
+      "fix": "Đặt cỡ chữ badge ‘Hôm nay’ thành 20px và tăng chiều cao badge theo nội dung."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Các dòng tiến độ ‘3 việc · xong 3’ trong từng ngày",
+      "evidence": "Chữ tiến độ đọc được nhưng nhỏ hơn tên ngày, trong khi nội dung chính nên khoảng 24px.",
+      "fix": "Tăng dòng tiến độ chính lên 24px."
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Các thẻ ngày ở danh sách tuần trên màn 360px",
+      "evidence": "Metrics có scrollWidth 360 ở viewport nhưng các thẻ ngày từ Thứ Năm trở đi rộng 372px, nội dung tràn qua cạnh phải và bị cắt trong ảnh.",
+      "fix": "Giới hạn mọi thẻ ngày ở chiều rộng 320px (width:100%; min-width:0) bên trong lề 20px."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn này liệt kê ngày trong tuần, không hiển thị thẻ việc."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn lịch tuần của người thân, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Các nút ‘Tuần trước’ và ‘Tuần sau’",
+      "evidence": "Hai nút điều hướng tuần chỉ có chữ, không có icon.",
+      "fix": "Thêm icon Lucide 32px cho mỗi nút điều hướng tuần, giữ nhãn chữ hiện có."
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn này không hiển thị thẻ việc hoặc thói quen; các hàng biểu diễn ngày."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "n/a",
+      "evidence": "Không có thói quen Power 9 hay thẻ việc cần gán 9 màu nhấn."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn C04 là màn lịch của người thân, không phải một trong bốn tab chính; không có bottom nav."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn con/điều phối lịch; không có nút Back hiển thị."
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Danh sách hiển thị tổng tiến độ theo ngày, không liệt kê từng việc cần một trong năm nhãn trạng thái."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Tiến độ dưới tên mỗi ngày",
+      "evidence": "UI dùng dạng ‘3 việc · xong 3’ thay vì câu tiến độ có nhãn rõ ‘Đã xong 3/6 việc’.",
+      "fix": "Hiển thị tiến độ theo mẫu ‘Đã xong 3/6 việc’ cho từng ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn này không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có thao tác xóa, hoàn tất việc hoặc ngưng lặp."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có trường nhập liệu hoặc trạng thái lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "C04 là màn lịch tuần, không thuộc các màn S14, S04, S16 hoặc G03 được yêu cầu nút Đọc to."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nhãn badge ‘Hôm nay’ và các chỉ số ‘xong 3’, ‘xong 2’ trong lịch",
+      "evidence": "Tránh dùng quy định Today và Done. Bản UI chứa ‘Hôm nay’ và ‘xong N’ (biến thể dịch của Done), còn từ vựng chuẩn trạng thái là ‘Đã xong’.",
+      "fix": "Đổi badge thành ‘Ngày đang xem’ và mọi ‘xong N’ thành ‘Đã xong N’ để tránh nhãn tiếng Anh/biến thể không chuẩn."
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Lịch tuần có cấu trúc rõ và nút chính dễ chạm, nhưng các thẻ ngày tràn ngang, badge chữ nhỏ và tiến độ chưa theo mẫu ngôn ngữ chuẩn."
+}

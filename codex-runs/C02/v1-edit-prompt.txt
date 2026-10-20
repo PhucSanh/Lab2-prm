@@ -1,0 +1,2 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-ICON-03] The hand-heart SVG after "Mở Gia đình." still renders24x24px because the CSS rule .guidance-step-item svg overrides its width/height attributes. Change that CSS rule to width:32px;height:32px (or explicitly32px on the relevant SVG style so no24px rule wins). Keep exact Lucide hand-heart paths. Preserve the corrected20px step numerals,32px arrow-right pairing action,32px smartphone header icon and all layout/text/colors. Generate a new screen version and preserve source.

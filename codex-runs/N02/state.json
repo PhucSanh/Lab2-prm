@@ -1,0 +1,22 @@
+{
+  "screen": "N02",
+  "title": "Đã nhận lời nhắc",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 3,
+  "screen_id": "8bda680054794169988681a86e9e0a1a",
+  "parent_screen_id": "f3e9cc4506ce434592e8592c9f4f6872",
+  "best_round": 3,
+  "best_screen_id": "8bda680054794169988681a86e9e0a1a",
+  "best_score": 100,
+  "patience": 0,
+  "pending_operation_id": null,
+  "stop_reason": "score_100",
+  "canvas_row": 37,
+  "stage": "awaiting_review",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "source_screen_id": "3d3ecf9383b04a34b9394f1396ae02d2",
+  "updated_at": "2026-10-19T12:16:23.990335+00:00",
+  "last_processed_round": 3,
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/N02/v0-prompt.txt"
+}

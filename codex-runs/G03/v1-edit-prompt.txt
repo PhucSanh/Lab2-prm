@@ -1,0 +1,5 @@
+Apply these edits directly to the selected G03 screen and generate the edited screen now. Return a new screen artifact; do not respond with a plan or ask for approval. Preserve the current layout and all unmentioned content.
+1. Change primary button label to “Thêm vào lịch” (3 tiếng).
+2. Add a labeled warning status chip “○ Chưa làm” beside each of the two suggested activities, using the documented warning colors; retain “Chưa thêm vào lịch. Bác tự chọn.”
+3. Add a secondary control “Đọc to” with Lucide volume-2 32px and visible text.
+Keep the two suggestions, times, Mai’s message, all existing actions, one filled primary CTA, minimum 20px text, 48px targets and 8px gaps. Fit 360×800 and 412px without footer overlap. Do not only describe the edits: create the new screen in the project.

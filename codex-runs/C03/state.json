@@ -1,0 +1,21 @@
+{
+  "screen": "C03",
+  "title": "Lịch của mẹ · Ngày",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 4,
+  "screen_id": "2293431810904ab1b776328f9463512d",
+  "parent_screen_id": "8728b1da9813434e8ea27bf1279d45e6",
+  "best_round": 3,
+  "best_screen_id": "8728b1da9813434e8ea27bf1279d45e6",
+  "best_score": 97,
+  "patience": 2,
+  "pending_operation_id": null,
+  "stop_reason": "patience_2",
+  "updated_at": "2026-10-18T18:53:32.478493+00:00",
+  "canvas_row": 2,
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/C03/v3-edit-prompt.txt",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "stage": "awaiting_review",
+  "last_processed_round": 4
+}

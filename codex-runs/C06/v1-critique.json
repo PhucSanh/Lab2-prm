@@ -1,0 +1,252 @@
+{
+  "screen": "C06 Tạo việc gợi ý — Bước 1/3",
+  "round": 1,
+  "score": 100,
+  "errors": 0,
+  "warns": 0,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Chữ trực tiếp trong HTML: nhỏ nhất 20px; nội dung ô nhập 24px, tiêu đề 30px, CTA 22px. Font 16px của container không có text trực tiếp hiển thị."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Chữ #202B25 trên trắng đạt 14,72:1; #526057 trên #F6F7F2 đạt 6,15:1; chữ trắng trên CTA #1F684B đạt 6,69:1."
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Ô icon #2BA15C trên thẻ trắng #FFFFFF đạt 3,30:1; viền #7B887F trên trắng đạt 3,70:1."
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Metrics 360/412: scrollWidth=clientWidth=360/412; ảnh bottom xác nhận ô thời lượng nằm trên footer sau khi cuộn; padding-bottom 104px."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là form tạo việc, không phải thẻ việc đã lên lịch."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "wind và utensils dùng path Lucide tương ứng; icon toàn màn 32×32px, circle-dot dành cho Đang chọn."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Ở khung chuẩn 360, Tiếp tục x=20, width=320, height=60, fixed bottom; metrics 412 cho lề46 là hạn chế đáp ứng ngoài khung chuẩn."
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Form con Bước 1/3 dùng Quay lại và footer, không phải màn tab."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có việc đã lên lịch cần nhãn trạng thái; Đang chọn là trạng thái chọn thói quen."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không hiển thị tiến độ ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Bước 1 chỉ nhập thông tin và Tiếp tục, chưa có hành động khó đảo ngược."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Form bình thường, không có lỗi nhập đang hiển thị."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "C06 Bước 1/3 không thuộc các màn bắt buộc Đọc to."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [
+    "R-CON-02",
+    "R-ICON-03"
+  ],
+  "regressions": [],
+  "summary": "Đã sửa tương phản ô icon đang chọn và SVG wind, utensils; form đạt đủ các luật áp dụng ở khung chuẩn 360px, cuộn tới thời lượng được tại 360/412px."
+}

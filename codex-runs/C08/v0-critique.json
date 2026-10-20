@@ -1,0 +1,253 @@
+{
+  "screen": "C08 Xem lại và gửi gợi ý",
+  "round": 0,
+  "score": 87,
+  "errors": 1,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Chữ #202B25/#FFFFFF, #526057/#F6F7F2 (6.15:1), #1F684B/#FFFFFF (6.69:1); đủ ngưỡng."
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Viền nhập #7B887F/#FFFFFF 3.70:1; ô icon #2BA15C/#FFFFFF 3.30:1."
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "metrics 360: scrollWidth=clientWidth=360; metrics 412: 412. Ảnh bottom cho thấy consent đọc được hết sau cuộn."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là thẻ tóm tắt thông số trong form xem lại gợi ý, không phải thẻ việc của lịch đã được nhận; các dòng giờ, lặp và ngày bắt đầu là dữ liệu cần xem lại."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Thẻ tùy chọn Mẹ nhận trước khi thêm",
+      "evidence": "Đây là mục cài đặt có switch, nhưng toàn hàng chỉ có chữ và track/thumb, không có icon có nghĩa.",
+      "fix": "Thêm Lucide info 32 × 32 px kèm nhãn; tốt hơn trình bày điều kiện nhận bắt buộc bằng hàng thông tin info 32 px, bỏ switch để mẹ luôn tự quyết."
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Dòng Từ 19/10/2026 và nút Gửi lịch cho mẹ",
+      "evidence": "SVG circle 32 px ở ngày bắt đầu lặp lại icon circle của Chưa làm (24 px), trái từ điển một icon một nghĩa. CTA dùng plus 32 px trong khi từ điển dành plus cho Thêm việc/Xem thêm. Ngoại lệ 24 px của chip trạng thái được áp dụng đúng.",
+      "fix": "Bỏ circle khỏi dòng Từ 19/10/2026. Với hành động gửi, ghi đề xuất bổ sung Lucide send vào codex-runs/design-decisions.md rồi dùng send 32 × 32 px; không tái dùng plus cho gửi và không sửa nguồn DESIGN.md trong loop."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Quay lại 127.78×48; CTA 320×60 tại360; switch-wrapper121.61×50; textarea320×99.19. Kích thước từ computed metrics."
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn con bước 3/3 của luồng tạo gợi ý người thân; không phải màn gốc có bottom navigation."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Gợi ý chưa gửi và chưa được mẹ nhận vào lịch; chưa có việc lịch để chấm trạng thái thực hiện. Chip Chưa làm hiện có không chứng minh gợi ý đã được nhận."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải tiến độ ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn xem lại trước gửi gợi ý, không có xóa, đánh dấu xong hay ngưng lặp. Có câu mẹ tự chọn nhận hoặc bỏ qua; ảnh tĩnh không chứng minh hành vi khi tắt switch."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có trạng thái lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn người thân soạn/xem lại gợi ý trước gửi, không phải G03 phía người lớn tuổi đọc gợi ý đã nhận, S04/S14/S16."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Chữ, tương phản và vùng chạm đạt ở360/412; cần thêm icon cho mục consent và sửa nghĩa icon ngày bắt đầu/gửi. Điều kiện mẹ tự nhận được ghi rõ nhưng switch khiến quyền này trông có thể tắt; nên chuyển thành thông tin bắt buộc, không suy diễn hành vi từ ảnh tĩnh."
+}

@@ -1,0 +1,5 @@
+Keep the best reviewed G03b v2 screen and everything not mentioned below unchanged. Fix its three warnings:
+1. Increase text in secondary buttons “Chọn từng việc” and “Bỏ qua gợi ý” from 20px to 22px, preserving 48px minimum height.
+2. Center the icon and text inside the status card that says the walking time changed; retain at least 16px internal padding.
+3. Make the “Bỏ qua gợi ý” action safe: tapping it must show an explicit confirmation with “Bỏ qua gợi ý này?”, and choices “Giữ gợi ý” (safe choice) and “Bỏ qua”. Keep the default suggestion screen readable; the confirmation may be a compact dialog state in the inspectable screen. Do not claim anything was skipped unless confirmed.
+Preserve all other content, selected time 9:00, second task 10:00, consent, colors, icons, responsive layout. Generate a new screen now.

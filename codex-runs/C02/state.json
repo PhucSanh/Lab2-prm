@@ -1,0 +1,21 @@
+{
+  "screen": "C02",
+  "title": "Nhập mã ghép nối",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 2,
+  "screen_id": "178c1a0062734b6983dcd210d75ae56e",
+  "parent_screen_id": "bb0b36b65a0f45d4bfe92368bd6274a9",
+  "best_round": 2,
+  "best_screen_id": "178c1a0062734b6983dcd210d75ae56e",
+  "best_score": 100,
+  "patience": 0,
+  "pending_operation_id": null,
+  "stop_reason": "score_100",
+  "updated_at": "2026-10-18T12:42:16.269785+00:00",
+  "canvas_row": 1,
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/C02/v1-edit-prompt.txt",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "stage": "awaiting_review",
+  "last_processed_round": 2
+}

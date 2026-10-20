@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-TXT-03] In the warning card, replace the entire warning sentence with exactly: “Im lặng hoặc Không làm phiền có thể tắt chuông.” Set the text to 20 px and ensure it occupies no more than 2 lines at 360 px.
+2. [R-STY-02] Set the outer settings-group container .settings-group border-radius to exactly 16 px. Apply the radius to the visible outer group itself, not only an inner section.
+Preserve all switches, labels, colors, button radius 14 px, Be Vietnam Pro, icon smartphone, and existing spacing.

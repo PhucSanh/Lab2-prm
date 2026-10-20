@@ -1,0 +1,9 @@
+Keep the best N07 v2 layout, dimensions, spacing, colors, card radii, icons, switch states, footer and navigation unchanged. Make text-only changes to the settings descriptions so each description fits within 2 lines at 360 px, retaining 20 px text.
+Replace the three settings descriptions with exactly:
+- “Thông báo”: “Nhắc khi đến giờ”
+- “Chuông và rung”: “Chuông nhẹ, rung”
+- “Đọc nội dung lời nhắc”: “Đọc tên việc”
+Replace the phone-settings card description with exactly “Cấp quyền thông báo trên máy”.
+Replace the warning card text with exactly “Chế độ im lặng có thể tắt chuông”.
+Keep the note below the card exactly “Bác có thể thử chuông để nghe âm lượng.”
+Do not change titles, labels, icons, actions, outer group radius (16 px), button radius (14 px), Be Vietnam Pro, or element widths. Ensure no horizontal overflow at 360 px or 412 px.

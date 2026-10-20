@@ -1,0 +1,255 @@
+{
+  "screen": "G04 Đổi giờ đi bộ",
+  "round": 1,
+  "score": 71,
+  "errors": 2,
+  "warns": 3,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Ô icon trong thẻ 'Đi bộ nhẹ nhàng' và 'Thư giãn nhẹ nhàng'",
+      "evidence": "Màu nền ô icon #E8F5E9 và #F3E8FF sát với nền thẻ #FFFFFF; tương phản lần lượt khoảng 1.2:1 và 1.1:1, dưới 3:1.",
+      "fix": "Đổi nền hai ô icon sang màu nhấn của thói quen #2BA15C và #AC76DB, giữ icon trắng."
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Thẻ 'Đi bộ nhẹ nhàng'",
+      "evidence": "Thẻ chứa dòng phụ 'Thời lượng: 20 phút' và thêm cả khối 'Chọn giờ đi bộ' với hai lựa chọn giờ, vượt giới hạn tối đa một dòng phụ và cấu trúc thẻ quy định.",
+      "fix": "Giữ trong thẻ icon, giờ, tên việc và trạng thái; chuyển khối chọn giờ ra ngoài thẻ và bỏ dòng 'Thời lượng: 20 phút' khỏi thẻ."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn G04 đổi giờ đi bộ, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Ô icon và vạch màu bên trái của hai thẻ hoạt động",
+      "evidence": "Vạch trái dùng màu nhấn chính xác, nhưng ô icon có nền pastel (#E8F5E9, #F3E8FF) và icon nét màu thay vì nền màu nhấn với icon trắng như luật yêu cầu.",
+      "fix": "Đặt nền ô icon lần lượt #2BA15C và #AC76DB, đổi nét icon thành #FFFFFF; giữ vạch trái cùng màu nhấn."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn chỉnh giờ đi bộ không trình bày tiến độ ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn G04 đổi giờ đi bộ, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Lưu lựa chọn giờ trong màn này không thuộc nhóm hành động khó đảo ngược được luật liệt kê."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có lỗi nhập liệu hay trạng thái lỗi trên màn."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Luật áp dụng cho S14, S04, S16 và G03; màn được chấm là G04."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Ô icon của hai thói quen",
+      "evidence": "Nền màu #E8F5E9 và #F3E8FF không thuộc màu nhấn được định nghĩa; các màu nhấn cho hai thói quen là #2BA15C và #AC76DB.",
+      "fix": "Thay nền ô icon bằng đúng màu nhấn #2BA15C và #AC76DB, dùng icon trắng."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Lời nhắn trong bong bóng trích dẫn",
+      "evidence": "Câu “Mẹ ơi, mai mình đi bộ với cô Tám nhé?” được in nghiêng; hướng dẫn thiết kế yêu cầu không dùng chữ nghiêng.",
+      "fix": "Bỏ font-style: italic; hiển thị câu trích dẫn bằng Be Vietnam Pro 22px chữ đứng."
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Màn G04 dễ đọc và có điều hướng rõ, nhưng cần rút gọn thẻ đi bộ và sửa màu ô icon; lời nhắn cũng đang dùng chữ nghiêng."
+}

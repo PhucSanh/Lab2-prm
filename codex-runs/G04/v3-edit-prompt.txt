@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-TAP-01: Increase both “Chưa làm” status-chip hit areas to at least 48×48px (minimum height 48px and minimum width 48px); preserve readable label text.
+2. R-COL-03 and R-STY-01: Align habit colors to DESIGN.md exactly. For “Đi bộ nhẹ nhàng” use habit-move-bg #D7EDE0 and habit-move-fg #0F3D2A in the habit icon tile, with habit-move-accent #2BA15C for the left stripe. For “Thư giãn nhẹ nhàng” use habit-downshift-bg #EDE4F6 and habit-downshift-fg #4B2A73 in its icon tile, with habit-downshift-accent #AC76DB for the left stripe. Do not replace the accent stripe colors with the background colors.
+3. R-ICON-03: Use Lucide hand-heart at 32×32px for the Gia đình tab, and Lucide save at 32×32px for “Lưu giờ mới”. Keep each icon with its visible Vietnamese label.
+Preserve all already-correct content and visual structure, including the selected “9:00 sáng” option and the calendar consent copy. Generate a new screen while preserving this source screen unchanged.

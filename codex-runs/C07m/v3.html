@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - C07m Lặp lại việc gợi ý (Mỗi tháng)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --bg: #F6F7F2;
+      --card-bg: #FFFFFF;
+      --text-main: #202B25;
+      --text-secondary: #526057;
+      --primary: #1F684B;
+      --primary-pale: #D6EADF;
+      --outline: #7B887F;
+      --error: #B42318;
+      --border-light: #DFE5DF;
+      --font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Target mobile container: 360px default, responsive up to 412px */
+    .screen-root {
+      width: 100%;
+      max-width: 412px;
+      min-height: 100vh;
+      background-color: var(--bg);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Top App Bar */
+    .top-app-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px 8px 20px;
+      background-color: var(--bg);
+      width: 100%;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-family: var(--font-family);
+      font-size: 20px;
+      font-weight: 600;
+      min-height: 48px;
+      padding: 6px 10px 6px 0;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .step-indicator {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    /* Main Content Area */
+    .main-scroll-content {
+      flex: 1;
+      padding: 8px 20px 130px 20px; /* Ample padding bottom to prevent footer overlap */
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow-y: auto;
+    }
+
+    .page-title {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text-main);
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    /* Section Headers */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    /* Radio Frequency List */
+    .radio-frequency-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .radio-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 60px;
+      padding: 12px 16px;
+      background-color: var(--card-bg);
+      border: 2px solid var(--outline);
+      border-radius: 16px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .radio-row.selected {
+      background-color: var(--primary-pale);
+      border: 2px solid var(--primary);
+    }
+
+    .radio-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .radio-label {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .radio-row.selected .radio-label {
+      color: var(--primary);
+    }
+
+    .selected-tag {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* Weekday selector grid (4 + 3) */
+    .weekday-section {
+      background-color: var(--card-bg);
+      border: 2px solid var(--outline);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .weekday-hint {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      line-height: 1.3;
+    }
+
+    .weekday-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .weekday-row-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .weekday-row-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .weekday-btn {
+      min-height: 72px;
+      min-width: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 8px 2px;
+      background-color: var(--bg);
+      border: 2px solid var(--outline);
+      border-radius: 14px;
+      cursor: pointer;
+    }
+
+    .weekday-btn.selected {
+      background-color: var(--primary-pale);
+      border: 2px solid var(--primary);
+    }
+
+    .weekday-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+
+    .weekday-btn.selected .weekday-name {
+      color: var(--primary);
+    }
+
+    .weekday-status-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+      text-align: center;
+    }
+
+    /* Date Fields */
+    .date-fields-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .date-field-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 64px;
+      padding: 12px 16px;
+      background-color: var(--card-bg);
+      border: 2px solid var(--outline);
+      border-radius: 16px;
+      cursor: pointer;
+    }
+
+    .field-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .field-label {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .field-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .field-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+    }
+
+    /* Summary Card */
+    .summary-card {
+      background-color: var(--card-bg);
+      border: 2px solid var(--outline);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .summary-p1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.35;
+    }
+
+    .summary-p2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      line-height: 1.35;
+    }
+
+    /* Sticky Footer */
+    .sticky-footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 412px;
+      padding: 12px 20px 20px 20px;
+      background-color: var(--bg);
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      justify-content: center;
+      z-index: 50;
+    }
+
+    .btn-primary {
+      width: 100%;
+      height: 60px;
+      background-color: var(--primary);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-family: var(--font-family);
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(31, 104, 75, 0.16);
+    }
+
+    .btn-primary:active {
+      background-color: #164e38;
+      transform: scale(0.99);
+    }
+
+    /* SVG icon utility styling */
+    .icon-svg {
+      display: inline-block;
+      flex-shrink: 0;
+    }
+  </style>
+<style>
+    .weekday-status-text {
+      font-size: 20px !important;
+      font-weight: 700 !important;
+      line-height: 1.2 !important;
+      text-align: center;
+    }
+    .weekday-btn {
+      min-height: 84px !important;
+      padding: 10px 4px !important;
+    }
+    .summary-p2 {
+      font-size: 24px !important;
+      font-weight: 500 !important;
+      color: #526057 !important;
+      line-height: 1.35 !important;
+    }
+  </style></head>
+<body>
+<div class="screen-root">
+<!-- Top App Bar -->
+<header class="top-app-bar">
+<button aria-label="Quay lại bước 1" class="btn-back" type="button">
+<!-- Lucide chevron-left 32px stroke 2.2 -->
+<svg class="icon-svg" fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+<span>Quay lại</span>
+</button>
+<span class="step-indicator">Bước 2/3</span>
+</header>
+<!-- Main Scroll Content -->
+<main class="main-scroll-content" style="padding-bottom: 140px;">
+<h1 class="page-title">Lặp lại</h1>
+<!-- Section Title with Lucide repeat 32px -->
+<div class="section-header">
+<svg class="icon-svg" fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="m17 2 4 4-4 4"></path>
+<path d="M3 11v-1a4 4 0 0 1 4-4h14"></path>
+<path d="m7 22-4-4 4-4"></path>
+<path d="M21 13v1a4 4 0 0 1-4 4H3"></path>
+</svg>
+<h2 class="section-title">Chọn nhịp nhắc</h2>
+</div>
+<!-- Frequency Radio List -->
+<section aria-label="Tần suất lặp lại" class="radio-frequency-group"><!-- Row 1: Một lần -->
+<div aria-checked="false" class="radio-row" role="radio">
+<div class="radio-left">
+<svg class="icon-svg" fill="none" height="32" stroke="#7B887F" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span class="radio-label">Một lần</span>
+</div>
+</div>
+<!-- Row 2: Mỗi ngày -->
+<div aria-checked="false" class="radio-row" role="radio">
+<div class="radio-left">
+<svg class="icon-svg" fill="none" height="32" stroke="#7B887F" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span class="radio-label">Mỗi ngày</span>
+</div>
+</div>
+<!-- Row 3: Mỗi tuần (Unselected) -->
+<div aria-checked="false" class="radio-row" role="radio">
+<div class="radio-left">
+<svg class="icon-svg" fill="none" height="32" stroke="#7B887F" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span class="radio-label">Mỗi tuần</span>
+</div>
+</div>
+<!-- Row 4: Mỗi tháng (Selected) -->
+<div aria-checked="true" class="radio-row selected" role="radio">
+<div class="radio-left">
+<svg class="icon-svg" fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+<circle cx="12" cy="12" r="1"></circle>
+</svg>
+<span class="radio-label">Mỗi tháng</span>
+</div>
+<span class="selected-tag">Đang chọn</span>
+</div></section>
+<!-- Weekday Choices Section (4 + 3) -->
+<section aria-label="Chọn ngày nhắc trong tháng" class="weekday-section" style="background-color: var(--card-bg); border: 2px solid var(--outline); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 14px;">
+<div style="display: flex; flex-direction: column; gap: 4px;">
+<h3 style="font-size: 22px; font-weight: 700; color: #202B25; line-height: 1.3;">Chọn ngày nhắc trong tháng:</h3>
+<p style="font-size: 20px; font-weight: 600; color: #1F684B; line-height: 1.3;">Đang chọn: Ngày 5 hằng tháng</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; width: 100%; box-sizing: border-box;">
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">1</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">2</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">3</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">4</button>
+<button aria-pressed="true" style="min-height: 56px; border: 2px solid #1F684B; background: #D6EADF; color: #1F684B; border-radius: 12px; font-size: 22px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; padding: 4px 2px;" type="button"><span>5</span><svg class="icon-svg" fill="none" height="32" min-height="32" min-width="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" fill="#1F684B" r="2.5"></circle></svg></button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">6</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">7</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">8</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">9</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">10</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">11</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">12</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">13</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">14</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">15</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">16</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">17</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">18</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">19</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">20</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">21</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">22</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">23</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">24</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">25</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">26</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">27</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">28</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">29</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">30</button>
+<button style="min-height: 52px; border: 2px solid #7B887F; background: #FFFFFF; color: #202B25; border-radius: 12px; font-size: 20px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center;" type="button">31</button>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: 10px 16px; background-color: #FFFFFF; border: 2px solid #7B887F; border-radius: 12px; cursor: pointer;">
+<span style="font-size: 20px; font-weight: 700; color: #202B25;">Vào ngày cuối tháng</span>
+<svg class="icon-svg" fill="none" height="32" stroke="#7B887F" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle></svg>
+</div>
+<p style="font-size: 20px; font-weight: 500; color: #526057; line-height: 1.35;">Chạm để chọn một hoặc nhiều ngày trong tháng</p>
+</section>
+<!-- Date Fields: Bắt đầu & Kết thúc -->
+<section aria-label="Thời gian áp dụng" class="date-fields-group">
+<!-- Field 1: Bắt đầu -->
+<div aria-haspopup="dialog" class="date-field-card" role="button" tabindex="0">
+<div class="field-info">
+<span class="field-label">Bắt đầu</span>
+<span class="field-value">19/10/2026</span>
+</div>
+<div class="field-action">
+<!-- Lucide chevron-down 32px stroke 2.2 -->
+<svg class="icon-svg" fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="m6 9 6 6 6-6"></path>
+</svg>
+</div>
+</div>
+<!-- Field 2: Kết thúc -->
+<div aria-haspopup="dialog" class="date-field-card" role="button" tabindex="0">
+<div class="field-info">
+<span class="field-label">Kết thúc</span>
+<span class="field-value">Không giới hạn</span>
+</div>
+<div class="field-action">
+<svg class="icon-svg" fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="m6 9 6 6 6-6"></path>
+</svg>
+</div>
+</div>
+</section>
+<!-- Summary Card with 2 short paragraphs -->
+<section aria-label="Tóm tắt lời nhắc" class="summary-card"><p class="summary-p1">Nhắc mẹ đi bộ lúc 8:00 sáng.</p>
+<p class="summary-p2">Vào ngày 5 hằng tháng.</p></section>
+</main>
+<!-- Pinned Primary Action Button -->
+<footer class="sticky-footer">
+<button class="btn-primary" type="button">
+<span>Xem lại</span>
+<!-- Lucide arrow-right 32px stroke 2.2 -->
+<svg class="icon-svg" fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 12h14"></path>
+<path d="m12 5 7 7-7 7"></path>
+</svg>
+</button>
+</footer>
+</div>
+</body></html>

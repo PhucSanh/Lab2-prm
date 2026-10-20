@@ -1,0 +1,21 @@
+{
+  "screen": "C08",
+  "title": "Xem lại và gửi (Bước 3/3)",
+  "status": "NEEDS_HUMAN",
+  "project_id": "2013215887278758682",
+  "round": 3,
+  "screen_id": "87e361beb4a245579dc92eebbf9163d5",
+  "parent_screen_id": "51022b50a33f4ff1b3bf939f10b34e68",
+  "best_round": 3,
+  "best_screen_id": "87e361beb4a245579dc92eebbf9163d5",
+  "best_score": 87,
+  "patience": 3,
+  "pending_operation_id": null,
+  "stop_reason": "patience_2",
+  "updated_at": "2026-10-18T18:57:23.541410+00:00",
+  "canvas_row": 5,
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/C08/v2-edit-prompt.txt",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "stage": "awaiting_review",
+  "last_processed_round": 3
+}

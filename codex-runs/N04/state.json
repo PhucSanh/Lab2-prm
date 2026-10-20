@@ -1,0 +1,21 @@
+{
+  "screen": "N04",
+  "title": "Chọn việc đầu tiên",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 2,
+  "screen_id": "185c95bb279a45a394a37008e5cb66d7",
+  "parent_screen_id": "afa01453a29a4da889eaf60aab2bee76",
+  "best_round": 2,
+  "best_screen_id": "185c95bb279a45a394a37008e5cb66d7",
+  "best_score": 100,
+  "patience": 0,
+  "pending_operation_id": null,
+  "stop_reason": "score_100",
+  "canvas_row": 34,
+  "stage": "awaiting_review",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "updated_at": "2026-10-19T09:07:43.558868+00:00",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/N04/v1-edit-prompt.txt",
+  "last_processed_round": 2
+}

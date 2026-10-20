@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - G01 Con cháu soạn lịch gợi ý</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #ECEEE9;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 20px 0;
+    }
+
+    /* Khung điện thoại Android 360x800dp (hỗ trợ responsive đến 412px) */
+    .phone-container {
+      width: 100%;
+      max-width: 360px;
+      min-height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      overflow-x: hidden;
+    }
+
+    @media (min-width: 400px) {
+      .phone-container {
+        max-width: 412px;
+      }
+    }
+
+    /* Thanh App Bar */
+    .app-bar {
+      display: flex;
+      align-items: center;
+      padding: 12px 20px 8px 20px;
+      background-color: #F6F7F2;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: none;
+      border: none;
+      color: #1F684B;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 6px 0;
+      min-height: 48px;
+    }
+
+    .btn-back svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2.2;
+      stroke: #1F684B;
+    }
+
+    /* Vùng nội dung cuộn / chứa */
+    .content-area {
+      padding: 4px 20px 108px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Khối tiêu đề */
+    .header-block {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .screen-title {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #202B25;
+      letter-spacing: -0.3px;
+    }
+
+    .sub-note {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.35;
+      color: #526057;
+    }
+
+    /* Thẻ gợi ý công việc */
+    .activities-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .activity-card {
+      background-color: #FFFFFF;
+      border: 2px solid #DFE5DF;
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .activity-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .habit-icon-tile {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      min-height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .habit-icon-tile.green {
+      background-color: #1F684B;
+    }
+
+    .habit-icon-tile svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2.2;
+      stroke: #FFFFFF;
+      fill: none;
+    }
+
+    .activity-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.25;
+    }
+
+    .activity-subtitle {
+      font-size: 19px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.2;
+    }
+
+    /* Lựa chọn giờ nhắc */
+    .time-selector-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .time-label {
+      font-size: 19px;
+      font-weight: 600;
+      color: #202B25;
+    }
+
+    .time-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .time-option-btn {
+      min-height: 48px;
+      border-radius: 12px;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background-color: #FFFFFF;
+      transition: all 0.15s ease;
+      outline: none;
+    }
+
+    .time-option-btn.selected {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+      color: #1F684B;
+    }
+
+    .time-option-btn.unselected {
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      color: #526057;
+    }
+
+    .time-option-text {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .time-option-btn.selected .time-option-text {
+      color: #1F684B;
+    }
+
+    .time-option-btn.unselected .time-option-text {
+      color: #202B25;
+    }
+
+    .radio-icon {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      min-height: 32px;
+    }
+
+    /* Thẻ nhập lời nhắn ngắn cho mẹ */
+    .message-card {
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      border-radius: 16px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .message-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .message-label {
+      font-size: 20px;
+      font-weight: 700;
+      color: #202B25;
+    }
+
+    .message-hint {
+      font-size: 19px;
+      font-weight: 500;
+      color: #526057;
+    }
+
+    .message-input {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: #202B25;
+      background: transparent;
+      line-height: 1.35;
+      resize: none;
+    }
+
+    /* Thẻ lưu ý quyền tự chủ / bảo mật */
+    .privacy-notice {
+      background-color: #FFFFFF;
+      border: 2px solid #DFE5DF;
+      border-radius: 14px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .privacy-icon {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      min-height: 32px;
+      stroke-width: 2.2;
+      stroke: #1F684B;
+      fill: none;
+    }
+
+    .privacy-text {
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.3;
+      color: #526057;
+    }
+
+    .privacy-text strong {
+      color: #202B25;
+      font-weight: 700;
+    }
+
+    /* Nút hành động cố định chân trang */
+    .fixed-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 20px 20px 20px;
+      background: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      display: flex;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .btn-submit {
+      width: 100%;
+      max-width: 372px;
+      height: 60px;
+      min-height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(31, 104, 75, 0.2);
+    }
+
+    .btn-submit svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2.2;
+      stroke: #FFFFFF;
+      fill: none;
+    }
+  </style>
+</head>
+<body>
+<div class="phone-container">
+<!-- App Bar -->
+<header class="app-bar">
+<button aria-label="Quay lại Gia đình" class="btn-back" style="font-size: 24px; font-weight: 700;" type="button"><svg fill="none" stroke="#1F684B" stroke-width="2.2" style="width: 32px; height: 32px; min-width: 32px;" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="font-size: 20px; font-weight: 700;">Gia đình</span></button>
+</header>
+<!-- Main Content Area -->
+<main class="content-area" style="padding: 4px 20px 250px 20px; display: flex; flex-direction: column; gap: 16px;">
+<!-- Title & Guidance -->
+<section class="header-block"><h1 class="screen-title" style="font-size: 30px; font-weight: 700; line-height: 1.25; color: #202B25; letter-spacing: -0.3px;">Gợi ý lịch cho Bác</h1>
+<p class="sub-note" style="font-size: 20px; font-weight: 500; line-height: 1.35; color: #526057;">Bác sẽ tự chọn nhận, đổi giờ hoặc bỏ qua.</p></section>
+<!-- Suggested Activities List -->
+<section aria-label="Danh sách việc gợi ý" class="activities-list" style="display: flex; flex-direction: column; gap: 16px;"><!-- Activity 1: Đi bộ nhẹ nhàng -->
+<article class="activity-card" style="border: 2px solid #DFE5DF; border-left: 6px solid #2BA15C; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 14px; background-color: #FFFFFF;"><div class="activity-header" style="display: flex; align-items: center; gap: 14px;">
+<div aria-hidden="true" class="habit-icon-tile" style="width: 48px; height: 48px; min-width: 48px; min-height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background-color: #2BA15C;">
+<svg style="width: 32px; height: 32px; stroke-width: 2.2; stroke: #FFFFFF; fill: none;" viewbox="0 0 24 24">
+<path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.5v2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.5v2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M16 17h4" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M4 13h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div><div class="activity-title" style="font-size: 24px; font-weight: 700; color: #202B25; line-height: 1.25;">Đi bộ nhẹ nhàng</div>
+<div class="activity-subtitle" style="font-size: 20px; font-weight: 500; color: #526057; line-height: 1.3; margin-top: 4px;">Vận động tự nhiên · 20 phút</div></div>
+</div>
+<div class="time-selector-group" style="display: flex; flex-direction: column;">
+<div aria-label="Giờ nhắc đi bộ" class="time-options" role="radiogroup" style="display: flex; flex-direction: column; gap: 8px; width: 100%; box-sizing: border-box;"><button aria-checked="false" class="time-option-btn unselected" role="radio" style="min-height: 48px; border-radius: 12px; padding: 6px 10px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; background-color: #FFFFFF; border: 2px solid #7B887F; outline: none; box-sizing: border-box;" type="button"><span class="time-option-text" style="font-size: 20px; font-weight: 700; color: #202B25; white-space: nowrap;">8:00 sáng</span><svg class="radio-icon" fill="none" stroke="#7B887F" stroke-width="2.2" style="width: 32px; height: 32px; min-width: 32px;" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg></button><button aria-checked="true" class="time-option-btn selected" role="radio" style="min-height: 48px; border-radius: 12px; padding: 6px 10px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; background-color: #D6EADF; border: 2px solid #1F684B; outline: none; box-sizing: border-box;" type="button"><span class="time-option-text" style="font-size: 20px; font-weight: 700; color: #1F684B; white-space: nowrap;">9:00 sáng</span><svg class="radio-icon" fill="none" stroke="#1F684B" stroke-width="2.2" style="width: 32px; height: 32px; min-width: 32px;" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="1"></circle></svg></button></div>
+</div></article>
+<!-- Activity 2: Thư giãn nhẹ nhàng -->
+<article class="activity-card" style="border: 2px solid #DFE5DF; border-left: 6px solid #AC76DB; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 14px; background-color: #FFFFFF;"><div class="activity-header" style="display: flex; align-items: center; gap: 12px;"><div aria-hidden="true" class="habit-icon-tile" style="width: 48px; height: 48px; min-width: 48px; min-height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background-color: #AC76DB;"><svg fill="none" height="32" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" style="width: 32px; height: 32px;" viewbox="0 0 24 24" width="32"><path d="M17.7 7.7A2.5 2.5 0 1 1 20 11H2"></path><path d="M19.7 15.7A2.5 2.5 0 1 1 18 19H2"></path><path d="M15.7 3.7A2 2 0 1 1 17 7H2"></path></svg></div><div><div class="activity-title" style="font-size: 24px; font-weight: 700; color: #202B25; line-height: 1.25;">Thư giãn nhẹ nhàng</div><div class="activity-subtitle" style="font-size: 20px; font-weight: 500; color: #526057; line-height: 1.3; margin-top: 4px;">Thư giãn mỗi ngày · 15 phút</div></div></div><div class="time-selector-group" style="display: flex; flex-direction: column; gap: 8px;"><div aria-label="Giờ nhắc thư giãn" class="time-options" role="radiogroup" style="display: flex; flex-direction: column; gap: 8px; width: 100%; box-sizing: border-box;"><button aria-checked="false" class="time-option-btn unselected" role="radio" style="min-height: 48px; border-radius: 12px; padding: 6px 10px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; background-color: #FFFFFF; border: 2px solid #7B887F; outline: none; box-sizing: border-box;" type="button"><span class="time-option-text" style="font-size: 20px; font-weight: 700; color: #202B25; white-space: nowrap;">8:00 sáng</span><svg class="radio-icon" fill="none" stroke="#7B887F" stroke-width="2.2" style="width: 32px; height: 32px; min-width: 32px;" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg></button><button aria-checked="true" class="time-option-btn selected" role="radio" style="min-height: 48px; border-radius: 12px; padding: 6px 10px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; background-color: #D6EADF; border: 2px solid #1F684B; outline: none; box-sizing: border-box;" type="button"><span class="time-option-text" style="font-size: 20px; font-weight: 700; color: #1F684B; white-space: nowrap;">9:00 sáng</span><svg class="radio-icon" fill="none" stroke="#1F684B" stroke-width="2.2" style="width: 32px; height: 32px; min-width: 32px;" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="1"></circle></svg></button></div></div></article></section>
+<!-- Optional Personal Message Field -->
+<section class="message-card" style="background-color: #FFFFFF; border: 2px solid #DFE5DF; border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; width: 100%; box-sizing: border-box; min-width: 0;"><div class="message-label-row" style="display: flex; justify-content: space-between; align-items: center;"><label class="message-label" for="personal-msg" style="font-size: 20px; font-weight: 700; color: #202B25;">Lời nhắn gửi kèm</label><span class="message-hint" style="font-size: 20px; font-weight: 500; color: #526057;">Không bắt buộc</span></div><input class="message-input" id="personal-msg" placeholder="Nhập lời nhắn ấm áp cho Bác..." style="width: 100%; height: 52px; min-height: 52px; border: 2px solid #7B887F; border-radius: 12px; outline: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 20px; font-weight: 500; color: #202B25; background: #FAFAFA; line-height: 1.35; padding: 0 14px; box-sizing: border-box;" type="text" value="Bác ơi, mai mình đi bộ nhé?"/></section>
+<!-- Privacy & Elder Autonomy Guarantee -->
+<aside aria-label="Lưu ý bảo mật và tôn trọng mẹ" class="privacy-notice" style="background-color: #F6F7F2; border: 2px solid #DFE5DF; border-radius: 16px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; box-sizing: border-box; width: 100%; min-width: 0;"><svg class="privacy-icon" style="width: 32px; height: 32px; min-width: 32px; min-height: 32px; stroke-width: 2.2; stroke: #1F684B; fill: none; flex-shrink: 0;" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 8h.01" stroke-linecap="round" stroke-linejoin="round"></path></svg><div class="privacy-text" style="font-size: 20px; font-weight: 500; line-height: 1.3; color: #526057;">Lịch của Bác <strong style="color: #202B25; font-weight: 700;">chỉ thay đổi khi Bác bấm nhận</strong>.</div></aside>
+</main>
+<!-- Bottom Sticky Primary CTA (Single Dark Filled Button) -->
+<footer class="fixed-footer" style="position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 412px; background-color: #F6F7F2; border-top: 1px solid #DFE5DF; padding: 14px 20px 20px 20px; box-sizing: border-box; z-index: 100; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);"><div style="display: flex; flex-direction: column; gap: 4px;"><div style="font-size: 24px; font-weight: 700; color: #202B25; line-height: 1.25;">Gửi gợi ý cho Bác?</div><div style="font-size: 20px; font-weight: 500; color: #526057; line-height: 1.3;">Lịch của Bác chỉ cập nhật khi Bác bấm nhận.</div></div><div style="display: flex; flex-direction: column; gap: 8px; width: 100%;"><button class="btn-submit" style="width: 100%; height: 60px; min-height: 60px; background-color: #1F684B; color: #FFFFFF; border: none; border-radius: 14px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 22px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; box-shadow: 0 4px 12px rgba(31, 104, 75, 0.2); box-sizing: border-box;" type="button"><svg fill="none" height="32" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" style="width: 32px; height: 32px; min-width: 32px;" viewbox="0 0 24 24" width="32"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><span>Gửi gợi ý</span></button><button style="width: 100%; height: 50px; min-height: 48px; background-color: #FFFFFF; border: 2px solid #1F684B; border-radius: 14px; color: #1F684B; font-family: 'Be Vietnam Pro', sans-serif; font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; cursor: pointer; box-sizing: border-box;" type="button">Sửa lại</button></div></footer>
+</div>
+<script>
+    // Independent tap interaction for time option buttons
+    document.querySelectorAll('.time-selector-group').forEach(group => {
+      const buttons = group.querySelectorAll('.time-option-btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => {
+            b.classList.remove('selected');
+            b.classList.add('unselected');
+            b.setAttribute('aria-checked', 'false');
+            b.querySelector('.radio-icon').innerHTML = '<circle cx="12" cy="12" r="10" />';
+            b.querySelector('.radio-icon').setAttribute('stroke', '#7B887F');
+          });
+          btn.classList.remove('unselected');
+          btn.classList.add('selected');
+          btn.setAttribute('aria-checked', 'true');
+          btn.querySelector('.radio-icon').innerHTML = '<circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="3" fill="#1F684B" />';
+          btn.querySelector('.radio-icon').setAttribute('stroke', '#1F684B');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

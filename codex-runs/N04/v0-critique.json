@@ -1,0 +1,249 @@
+{
+  "screen": "N04 Chọn việc đầu tiên",
+  "round": 0,
+  "score": 64,
+  "errors": 3,
+  "warns": 2,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Tiêu đề “Bác muốn làm gì?”",
+      "evidence": "Tiêu đề 28 px, thấp hơn cỡ xấp xỉ 30 px; chữ nội dung và nút khoảng 20–22 px.",
+      "fix": "Đặt tiêu đề màn hình 30 px; giữ nội dung 24 px và chữ nút 22 px."
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nhãn bottom nav ở chiều rộng 360 px",
+      "evidence": "Mỗi tab rộng 86 px nhưng nhãn nowrap như “Lịch tuần” và “Thói quen” vượt vùng tab; ảnh cho thấy các nhãn nhập vào nhau và bị cắt trong khung overflow:hidden.",
+      "fix": "Cho nhãn xuống 2 dòng hoặc rút gọn bằng bố cục vừa vùng 78 px hữu dụng/tab; bỏ nowrap và kiểm tra tổng nav không quá 360 px."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Các thẻ chọn việc",
+      "evidence": "Ba thẻ có ô icon màu nhưng không có vạch màu dọc bên trái theo quy tắc; ảnh cho thấy cạnh trái chỉ là viền bo đồng nhất.",
+      "fix": "Thêm vạch trái rộng 4 px vào mỗi thẻ, dùng màu nhấn đúng thói quen tương ứng."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Ô icon của ba thói quen mẫu",
+      "evidence": "HTML dùng #1F684B, #287A57, #BA3D2A; DESIGN.md quy định lần lượt habit-move-accent #2BA15C, habit-plant-accent #609D2A và habit-family-accent #D86E75.",
+      "fix": "Đổi nền ô icon thành #2BA15C cho Đi bộ, #609D2A cho Chăm cây, và #D86E75 cho Gọi người thân; dùng icon trắng."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Thanh điều hướng dưới cùng",
+      "evidence": "Có đủ bốn icon và nhãn đúng nội dung, nhưng nhãn ở ảnh bị dồn/chồng lên nhau ở khung 360 px nên không đọc rõ.",
+      "fix": "Bố trí lại 4 tab trong 360 px; giữ mỗi nhãn trọn vẹn trên tối đa 2 dòng, vùng tab tối thiểu 48 × 48 px."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Ba lỗi cần sửa: nhãn bottom nav bị chồng/cắt ở 360 px, thẻ thiếu vạch màu nhấn bên trái và ô icon dùng sai ba màu nhấn theo DESIGN.md."
+}

@@ -1,0 +1,7 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-TXT-02] Increase the three checklist labels and the green note text to 24px. Keep the title at 30px and button labels at 22px.
+2. [R-TXT-03] Replace the note “Bác có thể kiểm tra lại cài đặt chuông bất cứ lúc nào.” with “Bác có thể xem lại chuông bất cứ lúc nào.” and ensure it wraps to no more than 2 lines at a 360px viewport.
+3. [R-ICON-02] Add the Lucide circle-check icon, 32×32px, to the primary “Tôi đã nhận được” button.
+4. [R-ICON-03] Use Lucide chevron-left 32×32px for back, bell 32×32px for “Lời nhắc có hiện lên”, and bell-ring 32×32px for “Chuông/rung phát”. These must be distinct Lucide icons matching those meanings.
+5. [R-TAP-03] Increase the vertical gap between the primary and secondary buttons to 20px.
+6. [R-VOI-01] Change the checklist label “Thông báo có hiện lên” to “Lời nhắc có hiện lên”. Preserve the other checklist copy and all navigation targets.

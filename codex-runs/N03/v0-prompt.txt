@@ -1,0 +1,12 @@
+Create a new mobile Android screen in the existing An Nhiên project, using the supplied N02 “Đã nhận lời nhắc” screen as the visual source. This is N03 “Chưa nhận lời nhắc”, the recovery branch after the older adult reports that a test reminder did not arrive. Keep the same warm, quiet, high-contrast visual language, Be Vietnam Pro typography, pale #F6F7F2 background, white #FFFFFF cards, dark #202B25 text, secondary #526057, primary green #1F684B, generous whitespace, 20px side margins, 16px between content blocks, 16px card radius, and 14px button radius. Design for a 360×800dp Android viewport and responsive width 412dp. No gradients, photos, English UI, hidden gestures, or bottom navigation.
+
+Use a labeled back control at top: “Quay lại” with Lucide chevron-left, 32px. Heading: “Chưa nhận lời nhắc”. Supporting sentence: “Mình cùng kiểm tra 3 chỗ nhé.” Keep all visible copy in Vietnamese with diacritics, address the older adult as “Bác”, use short familiar words, and do not use “notification”, “reminder”, “settings”, or other avoided vocabulary.
+
+Main content is a clearly ordered set of exactly three readable recovery steps, each with an explicit number and a short title plus one concise instruction:
+1. “Kiểm tra quyền” — “Cho phép An Nhiên gửi lời nhắc.” Use the documented Lucide bell 32px, labeled by this adjacent text.
+2. “Kiểm tra âm lượng” — “Tăng âm lượng; tắt Không làm phiền.” Use the documented Lucide smartphone 32px to mean phone settings, with the adjacent text label. Do not reuse volume-2 because that icon is reserved for “Đọc to”.
+3. “Thử lại” — “Bác chạm nút bên dưới để gửi lời nhắc thử.” Use a clear numbered step marker; do not invent an icon meaning.
+
+Anchor the footer buttons near the bottom, large full width, 60px high and at least 20px apart. One filled primary button only: “Thử lại” with Lucide arrow-right 32px, meaning start/continue; this returns to N01. One outlined secondary button: “Dùng lịch trước”, which returns to S03 with reminders off. Both labels must remain visible and unambiguous. Provide safe-area spacing and ensure no horizontal overflow.
+
+Use the existing source screen’s design system and component style. Preserve the flow and exact destinations. Do not add extra settings pages, switches, extra actions, new shared tokens, or new icon dictionary meanings. Keep the copy readable at 360px and make the three recovery steps visually distinct without crowding the footer.

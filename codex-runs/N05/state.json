@@ -1,0 +1,23 @@
+{
+  "screen": "N05",
+  "title": "Xem lại việc đầu tiên",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 3,
+  "screen_id": "531974bf4f074684b23c2d296c9ce448",
+  "parent_screen_id": "d93bfb6ced594ae8b7ee395028246cd8",
+  "best_round": 3,
+  "best_screen_id": "531974bf4f074684b23c2d296c9ce448",
+  "best_score": 97,
+  "patience": 2,
+  "pending_operation_id": null,
+  "stop_reason": "patience_2",
+  "canvas_row": 38,
+  "stage": "awaiting_review",
+  "source_screen_id": "185c95bb279a45a394a37008e5cb66d7",
+  "source_task": "B39 EDIT N04",
+  "updated_at": "2026-10-19T12:01:26.290202+00:00",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/N05/v0-prompt.txt",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "last_processed_round": 3
+}

@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-ICON-03] Replace the unsupported book icon beside the screen title with documented Lucide `info` 32px.
+2. [R-ICON-03] Remove the unsupported `check-square` icon from step 1; retain its numbered badge and text. Keep the documented `bell-ring` 32px for “Nhắc nhẹ nhàng”.
+3. [R-ICON-03] For “Thử lời nhắc”, replace the repeated `bell` with documented Lucide `eye` 32px to convey preview/test. For “Mở cài đặt”, replace unsupported `settings` with documented Lucide `smartphone` 32px. Keep `chevron-left` 32px for back.
+4. [R-ICON-03] Ensure all icons are distinct by meaning, documented, and have visible labels; do not use unsupported icons. Preserve all text, layout, typography and colors.

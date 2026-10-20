@@ -1,0 +1,21 @@
+{
+  "screen": "G03b",
+  "title": "Lịch Mai gợi ý · đã đổi giờ",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 4,
+  "screen_id": "b4efe2b2102b40ef82e2b940eae64713",
+  "parent_screen_id": "3971b7a1bb9e4834be899bdc86e23b66",
+  "best_round": 2,
+  "best_screen_id": "3971b7a1bb9e4834be899bdc86e23b66",
+  "best_score": 91,
+  "patience": 2,
+  "pending_operation_id": null,
+  "stop_reason": "patience_2",
+  "canvas_row": 23,
+  "stage": "awaiting_review",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/G03b/v3-edit-prompt.txt",
+  "updated_at": "2026-10-19T04:36:51.861543+00:00",
+  "last_processed_round": 4
+}

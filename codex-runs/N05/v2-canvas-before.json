@@ -1,0 +1,1907 @@
+[
+  {
+    "id": "00123fce15c7460ea9c365f3bf86a6c2",
+    "sourceScreen": "projects/2013215887278758682/screens/00123fce15c7460ea9c365f3bf86a6c2",
+    "y": -8448,
+    "width": 1280,
+    "height": 1881,
+    "label": "An Nhiên - Lặp lại mỗi tuần (Bước 2/3)"
+  },
+  {
+    "id": "01508a36ddeb4aab8733ebb712bd5fcb",
+    "sourceScreen": "projects/2013215887278758682/screens/01508a36ddeb4aab8733ebb712bd5fcb",
+    "x": 5376,
+    "y": -39168,
+    "width": 1280,
+    "height": 1333,
+    "label": "An Nhiên - Đổi giờ đi bộ (Cập nhật v4)"
+  },
+  {
+    "id": "02520b9aa5a143b29ab1239cb2917908",
+    "sourceScreen": "projects/2013215887278758682/screens/02520b9aa5a143b29ab1239cb2917908",
+    "y": 9567,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Thêm việc – thiết lập (Bước 2/2)"
+  },
+  {
+    "id": "04567397fbd1489197e1eeea73ae417e",
+    "sourceScreen": "projects/2013215887278758682/screens/04567397fbd1489197e1eeea73ae417e",
+    "x": 1344,
+    "y": -37632,
+    "width": 1280,
+    "height": 1326,
+    "label": "An Nhiên - Lịch Mai gợi ý · đã đổi giờ (Cập nhật v1)"
+  },
+  {
+    "id": "082e2d7ec436489b9ab2a5ea3a1dedb3",
+    "sourceScreen": "projects/2013215887278758682/screens/082e2d7ec436489b9ab2a5ea3a1dedb3",
+    "x": 3142,
+    "y": 20299,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Thêm người thân (Lỗi chưa nhập số điện thoại)"
+  },
+  {
+    "id": "0837859db1b04283be1bf85c8a629f69",
+    "sourceScreen": "projects/2013215887278758682/screens/0837859db1b04283be1bf85c8a629f69",
+    "x": 4486,
+    "y": 26283,
+    "width": 390,
+    "height": 800,
+    "label": "An Nhiên - DLG-Delete (Chỉ xóa lần này. Ngày khác vẫn giữ.)"
+  },
+  {
+    "id": "092edfe01b4443958da9f96f6817c1f2",
+    "sourceScreen": "projects/2013215887278758682/screens/092edfe01b4443958da9f96f6817c1f2",
+    "x": 1344,
+    "y": 9567,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Thêm việc – Đã điền tên (Bước 2/2)"
+  },
+  {
+    "id": "0a98cf3f7241455da7cfadad83ee156a",
+    "sourceScreen": "projects/2013215887278758682/screens/0a98cf3f7241455da7cfadad83ee156a",
+    "x": 2688,
+    "y": -19200,
+    "width": 1280,
+    "height": 1168,
+    "label": "An Nhiên - Thiếu tên hoặc giờ (Cập nhật v2)"
+  },
+  {
+    "id": "0ac398ac30ac47b6aabf7ec8adc939a0",
+    "sourceScreen": "projects/2013215887278758682/screens/0ac398ac30ac47b6aabf7ec8adc939a0",
+    "x": 2688,
+    "y": -39168,
+    "width": 1280,
+    "height": 1313,
+    "label": "An Nhiên - Đổi giờ đi bộ (Cập nhật v2)"
+  },
+  {
+    "id": "0b71950e67114ca08c0a9bbfd3e18aa2",
+    "sourceScreen": "projects/2013215887278758682/screens/0b71950e67114ca08c0a9bbfd3e18aa2",
+    "x": 1798,
+    "y": 3391,
+    "width": 390,
+    "height": 956,
+    "label": "An Nhiên - Thông tin của Bác (Cập nhật ghi chú & Icon 32px)"
+  },
+  {
+    "id": "0beba189c2834f8783d4dc07bc692a91",
+    "sourceScreen": "projects/2013215887278758682/screens/0beba189c2834f8783d4dc07bc692a91",
+    "x": 1344,
+    "y": -14592,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Mã sai hoặc hết hạn (Cập nhật v1)"
+  },
+  {
+    "id": "0cf735d885ab4d48b48c7b9fd9d18ed7",
+    "sourceScreen": "projects/2013215887278758682/screens/0cf735d885ab4d48b48c7b9fd9d18ed7",
+    "x": 2688,
+    "y": -43776,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Đã nhận một việc (Cập nhật v2)"
+  },
+  {
+    "id": "0f037be5b44540d9be762933d67eee9c",
+    "sourceScreen": "projects/2013215887278758682/screens/0f037be5b44540d9be762933d67eee9c",
+    "x": 4032,
+    "y": -49920,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Lịch ngày mai (Cập nhật v3)"
+  },
+  {
+    "id": "1068ae843fce4906a84f854e3f62a38b",
+    "sourceScreen": "projects/2013215887278758682/screens/1068ae843fce4906a84f854e3f62a38b",
+    "y": -17664,
+    "width": 1280,
+    "height": 1931,
+    "label": "An Nhiên - Lịch của mẹ · Tháng"
+  },
+  {
+    "id": "131d9adf7e1d4cf69ef181699df68807",
+    "sourceScreen": "projects/2013215887278758682/screens/131d9adf7e1d4cf69ef181699df68807",
+    "x": 2688,
+    "y": 5727,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Nhắc việc đang tắt"
+  },
+  {
+    "id": "133e72ef02484f5cae4c9480b7538c4f",
+    "sourceScreen": "projects/2013215887278758682/screens/133e72ef02484f5cae4c9480b7538c4f",
+    "x": 10752,
+    "width": 1280,
+    "height": 2148,
+    "label": "An Nhiên - Hôm nay (Khoảng cách Snackbar 16px)"
+  },
+  {
+    "id": "14e0c222f42e453fbd2e8757af59962f",
+    "sourceScreen": "projects/2013215887278758682/screens/14e0c222f42e453fbd2e8757af59962f",
+    "y": 11923,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - 9 thói quen sống khỏe"
+  },
+  {
+    "id": "16092725f0aa44e092e8372faf7d8b9f",
+    "sourceScreen": "projects/2013215887278758682/screens/16092725f0aa44e092e8372faf7d8b9f",
+    "x": 5376,
+    "y": -31488,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Đã nhận gợi ý (Cập nhật v4)"
+  },
+  {
+    "id": "16e3d5343dce4655b0921a706d0279a4",
+    "sourceScreen": "projects/2013215887278758682/screens/16e3d5343dce4655b0921a706d0279a4",
+    "x": 2688,
+    "y": -8448,
+    "width": 1280,
+    "height": 2022,
+    "label": "An Nhiên - C07 Lặp lại việc gợi ý (Chuẩn hóa 24px & Viền tương phản)"
+  },
+  {
+    "id": "178c1a0062734b6983dcd210d75ae56e",
+    "sourceScreen": "projects/2013215887278758682/screens/178c1a0062734b6983dcd210d75ae56e",
+    "x": 2688,
+    "y": -3840,
+    "width": 1280,
+    "height": 1266,
+    "label": "An Nhiên - Nhập mã ghép nối (Cập nhật v2)"
+  },
+  {
+    "id": "17a2ead138fc48ea93625d553324704a",
+    "sourceScreen": "projects/2013215887278758682/screens/17a2ead138fc48ea93625d553324704a",
+    "y": 3391,
+    "width": 1280,
+    "height": 1635,
+    "label": "An Nhiên - Thiết lập hồ sơ (Bước 1/2)"
+  },
+  {
+    "id": "184123c7b4da4203b8822b77ea6a5a52",
+    "sourceScreen": "projects/2013215887278758682/screens/184123c7b4da4203b8822b77ea6a5a52",
+    "y": -9984,
+    "width": 1280,
+    "height": 1842,
+    "label": "An Nhiên - Xem lại và gửi (Bước 3/3)"
+  },
+  {
+    "id": "185c95bb279a45a394a37008e5cb66d7",
+    "sourceScreen": "projects/2013215887278758682/screens/185c95bb279a45a394a37008e5cb66d7",
+    "x": 1798,
+    "y": 30336,
+    "width": 390,
+    "height": 820,
+    "label": "An Nhiên - Chọn việc đầu tiên (Chuẩn hóa 24px, Icon Footprints & Nav 20px)"
+  },
+  {
+    "id": "19813b22917849b6ad737c32eafbfa92",
+    "sourceScreen": "projects/2013215887278758682/screens/19813b22917849b6ad737c32eafbfa92",
+    "y": 20299,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Thêm người thân"
+  },
+  {
+    "id": "1a41247112a74a0eb5051de083710c5e",
+    "sourceScreen": "projects/2013215887278758682/screens/1a41247112a74a0eb5051de083710c5e",
+    "x": 1344,
+    "y": -34560,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Soạn gợi ý · chọn giờ (Cập nhật v1)"
+  },
+  {
+    "id": "1a7d68bb0ed04f5591e814dd7b47c5d2",
+    "sourceScreen": "projects/2013215887278758682/screens/1a7d68bb0ed04f5591e814dd7b47c5d2",
+    "x": 2688,
+    "y": -20736,
+    "width": 1280,
+    "height": 2788,
+    "label": "An Nhiên - Lặp lại mỗi tháng (Bước 2/3) (Cập nhật v2)"
+  },
+  {
+    "id": "1c627ef6d3b6483da89ea13fc3d8423e",
+    "sourceScreen": "projects/2013215887278758682/screens/1c627ef6d3b6483da89ea13fc3d8423e",
+    "x": 1344,
+    "y": -11520,
+    "width": 1280,
+    "height": 1509,
+    "label": "An Nhiên - C09 Đã gửi cho mẹ (Biểu tượng Clock & Thanh điều hướng đáy 72px)"
+  },
+  {
+    "id": "1d3212248de24652a655f7556b0e4b65",
+    "sourceScreen": "projects/2013215887278758682/screens/1d3212248de24652a655f7556b0e4b65",
+    "x": 7192,
+    "y": 26283,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - DLG-Later (Icon Alarm-Clock-Plus 32px cho 3 nút)"
+  },
+  {
+    "id": "1eb259b02bbb4497bdf6fa1c5b359e6b",
+    "sourceScreen": "projects/2013215887278758682/screens/1eb259b02bbb4497bdf6fa1c5b359e6b",
+    "x": 6720,
+    "y": 9567,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Thêm việc – Lỗi chưa nhập tên (Bước 2/2)"
+  },
+  {
+    "id": "1ef49e64807d478f97e4599ec9b6dff2",
+    "sourceScreen": "projects/2013215887278758682/screens/1ef49e64807d478f97e4599ec9b6dff2",
+    "x": 5376,
+    "y": -34560,
+    "width": 1280,
+    "height": 2176,
+    "label": "An Nhiên - Soạn gợi ý · chọn giờ (Cập nhật v4)"
+  },
+  {
+    "id": "1f51101a3d174dfc84345412ea1620a0",
+    "sourceScreen": "projects/2013215887278758682/screens/1f51101a3d174dfc84345412ea1620a0",
+    "y": 2312,
+    "width": 1280,
+    "height": 824,
+    "label": "An Nhiên - Chào mừng (Chọn cỡ chữ)"
+  },
+  {
+    "id": "21be536d56db425f8e358e552b49640f",
+    "sourceScreen": "projects/2013215887278758682/screens/21be536d56db425f8e358e552b49640f",
+    "y": 27563,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - DLG-WakeTime (Chọn giờ thức dậy)"
+  },
+  {
+    "id": "22264169a37842a3b64dcd8348ea65b9",
+    "sourceScreen": "projects/2013215887278758682/screens/22264169a37842a3b64dcd8348ea65b9",
+    "x": 2688,
+    "y": -16128,
+    "width": 1280,
+    "height": 1391,
+    "label": "An Nhiên - Lịch của mẹ · Tuần (Cập nhật v2)"
+  },
+  {
+    "id": "2293431810904ab1b776328f9463512d",
+    "sourceScreen": "projects/2013215887278758682/screens/2293431810904ab1b776328f9463512d",
+    "x": 5376,
+    "y": -5376,
+    "width": 1280,
+    "height": 1772,
+    "label": "An Nhiên - C03 Lịch của mẹ Lan (Biểu tượng Calendar-days Tuần & Tháng)"
+  },
+  {
+    "id": "23954dfb48dd44918ba0d6944314f9e8",
+    "sourceScreen": "projects/2013215887278758682/screens/23954dfb48dd44918ba0d6944314f9e8",
+    "y": -31488,
+    "width": 1280,
+    "height": 2154,
+    "label": "An Nhiên - Đã nhận gợi ý"
+  },
+  {
+    "id": "24dccbdc024342269ba91b375e8420bb",
+    "sourceScreen": "projects/2013215887278758682/screens/24dccbdc024342269ba91b375e8420bb",
+    "y": -20736,
+    "width": 1280,
+    "height": 1466,
+    "label": "An Nhiên - Lặp lại mỗi tháng (Bước 2/3)"
+  },
+  {
+    "id": "25627dadc6a642d6a3b6f03ccfdb1c66",
+    "sourceScreen": "projects/2013215887278758682/screens/25627dadc6a642d6a3b6f03ccfdb1c66",
+    "x": 1344,
+    "y": 14483,
+    "width": 1280,
+    "height": 1632,
+    "label": "An Nhiên - Cài đặt hiển thị (Hoàn thiện)"
+  },
+  {
+    "id": "26ef3eaa30c448709354de11bdb34269",
+    "sourceScreen": "projects/2013215887278758682/screens/26ef3eaa30c448709354de11bdb34269",
+    "x": 4032,
+    "width": 1280,
+    "height": 2024,
+    "label": "An Nhiên - Hôm nay (Hoàn thiện)"
+  },
+  {
+    "id": "2bac776f261e4f8986ee3bc3d86053a2",
+    "sourceScreen": "projects/2013215887278758682/screens/2bac776f261e4f8986ee3bc3d86053a2",
+    "y": 13203,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Gia đình (Tab 4)"
+  },
+  {
+    "id": "2bfc718ed8e94d2086b49dd39d0cc6e9",
+    "sourceScreen": "projects/2013215887278758682/screens/2bfc718ed8e94d2086b49dd39d0cc6e9",
+    "x": 4032,
+    "y": -40704,
+    "width": 1280,
+    "height": 1192,
+    "label": "An Nhiên - Chọn từng việc (Cập nhật v3)"
+  },
+  {
+    "id": "2c7b2e7c31e446dea227670667de862b",
+    "sourceScreen": "projects/2013215887278758682/screens/2c7b2e7c31e446dea227670667de862b",
+    "x": 4032,
+    "y": -36096,
+    "width": 1280,
+    "height": 1110,
+    "label": "An Nhiên - Đã gửi gợi ý (Cập nhật v3)"
+  },
+  {
+    "id": "311943e6e7b544418171d30fce9cf683",
+    "sourceScreen": "projects/2013215887278758682/screens/311943e6e7b544418171d30fce9cf683",
+    "y": -6912,
+    "width": 1280,
+    "height": 950,
+    "label": "An Nhiên - Thông tin việc (Bước 1/3)"
+  },
+  {
+    "id": "35a72921269b4c1d934a16f6f95d3b72",
+    "sourceScreen": "projects/2013215887278758682/screens/35a72921269b4c1d934a16f6f95d3b72",
+    "y": -45312,
+    "width": 1280,
+    "height": 1167,
+    "label": "An Nhiên - Đã nhận một việc · nhánh B"
+  },
+  {
+    "id": "36ace0d5cfb640a083bb5a156c8ed17d",
+    "sourceScreen": "projects/2013215887278758682/screens/36ace0d5cfb640a083bb5a156c8ed17d",
+    "x": 2688,
+    "y": 27563,
+    "width": 390,
+    "height": 800,
+    "label": "An Nhiên - DLG-TaskTime (Chọn giờ làm 8:00 sáng)"
+  },
+  {
+    "id": "37beae92ede742f7ba167a6f823b5c6a",
+    "sourceScreen": "projects/2013215887278758682/screens/37beae92ede742f7ba167a6f823b5c6a",
+    "y": 5727,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Cho phép nhắc việc (Bước 2/2)"
+  },
+  {
+    "id": "385be7f16f3b45f7879428105d984c3d",
+    "sourceScreen": "projects/2013215887278758682/screens/385be7f16f3b45f7879428105d984c3d",
+    "y": 33168,
+    "width": 1280,
+    "height": 1313,
+    "label": "An Nhiên - Cài đặt nhắc việc (Android Mobile)"
+  },
+  {
+    "id": "38e949fd4da44658a007f1c4ff85d000",
+    "sourceScreen": "projects/2013215887278758682/screens/38e949fd4da44658a007f1c4ff85d000",
+    "x": 4032,
+    "y": -34560,
+    "width": 1280,
+    "height": 2176,
+    "label": "An Nhiên - Soạn gợi ý · chọn giờ (Cập nhật v3)"
+  },
+  {
+    "id": "3971b7a1bb9e4834be899bdc86e23b66",
+    "sourceScreen": "projects/2013215887278758682/screens/3971b7a1bb9e4834be899bdc86e23b66",
+    "x": 2688,
+    "y": -37632,
+    "width": 1280,
+    "height": 1284,
+    "label": "An Nhiên - Lịch Mai gợi ý · đã đổi giờ (Cập nhật v2)"
+  },
+  {
+    "id": "3acef4da569f46039eece4cdaba62751",
+    "sourceScreen": "projects/2013215887278758682/screens/3acef4da569f46039eece4cdaba62751",
+    "x": 26880,
+    "width": 1280,
+    "height": 2108,
+    "label": "An Nhiên - Hôm nay (Chuẩn hóa màu thẻ & Snackbar)"
+  },
+  {
+    "id": "3be239d587214db3abbc334691cd7efa",
+    "sourceScreen": "projects/2013215887278758682/screens/3be239d587214db3abbc334691cd7efa",
+    "x": 1344,
+    "y": -31488,
+    "width": 1280,
+    "height": 1186,
+    "label": "An Nhiên - Đã nhận gợi ý (Cập nhật v1)"
+  },
+  {
+    "id": "3d3ecf9383b04a34b9394f1396ae02d2",
+    "sourceScreen": "projects/2013215887278758682/screens/3d3ecf9383b04a34b9394f1396ae02d2",
+    "x": 4032,
+    "y": -52992,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Thử lời nhắc (Cập nhật v3)"
+  },
+  {
+    "id": "3dd22d6ca0c4422da18f825a661cf241",
+    "sourceScreen": "projects/2013215887278758682/screens/3dd22d6ca0c4422da18f825a661cf241",
+    "y": -29952,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Lịch Mai gợi ý"
+  },
+  {
+    "id": "3e2586c3d4b6405fab43b0e982c5551b",
+    "sourceScreen": "projects/2013215887278758682/screens/3e2586c3d4b6405fab43b0e982c5551b",
+    "x": 1344,
+    "y": -5376,
+    "width": 1280,
+    "height": 1729,
+    "label": "An Nhiên - Lịch của mẹ · Ngày (Cập nhật v1)"
+  },
+  {
+    "id": "3fcf6dfaf09f47c7a23847669bbb33cb",
+    "sourceScreen": "projects/2013215887278758682/screens/3fcf6dfaf09f47c7a23847669bbb33cb",
+    "y": -42240,
+    "width": 1280,
+    "height": 1085,
+    "label": "An Nhiên - Đã nhận · đổi giờ"
+  },
+  {
+    "id": "3fe956631fc848f58bcf9dc1c338c061",
+    "sourceScreen": "projects/2013215887278758682/screens/3fe956631fc848f58bcf9dc1c338c061",
+    "x": 8064,
+    "width": 1280,
+    "height": 1948,
+    "label": "An Nhiên - Hôm nay (Buổi tối - Nút cố định & Hoàn thiện icon)"
+  },
+  {
+    "id": "412034105b1a4d148f6b3e1f080931ba",
+    "sourceScreen": "projects/2013215887278758682/screens/412034105b1a4d148f6b3e1f080931ba",
+    "x": 1344,
+    "y": -49920,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Lịch ngày mai (Cập nhật v1)"
+  },
+  {
+    "id": "42f3bb3e685b45d79ad46fcf0fb3ba9a",
+    "sourceScreen": "projects/2013215887278758682/screens/42f3bb3e685b45d79ad46fcf0fb3ba9a",
+    "x": 17472,
+    "width": 1280,
+    "height": 2136,
+    "label": "An Nhiên - Hôm nay (Bỏ qua đi bộ vì trời mưa & Tiếp theo Uống trà)"
+  },
+  {
+    "id": "43b090a82ffa4ce48ed7eb2e646b3f5f",
+    "sourceScreen": "projects/2013215887278758682/screens/43b090a82ffa4ce48ed7eb2e646b3f5f",
+    "x": 1344,
+    "y": 11923,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - 9 thói quen sống khỏe (Cập nhật)"
+  },
+  {
+    "id": "440d61ca87b64dc1b0e32dbda45248c5",
+    "sourceScreen": "projects/2013215887278758682/screens/440d61ca87b64dc1b0e32dbda45248c5",
+    "y": -16128,
+    "width": 1280,
+    "height": 2452,
+    "label": "An Nhiên - Lịch của mẹ · Tuần"
+  },
+  {
+    "id": "4415d02f5f7245cba86d1bcab91efdbb",
+    "sourceScreen": "projects/2013215887278758682/screens/4415d02f5f7245cba86d1bcab91efdbb",
+    "x": 1344,
+    "y": 22651,
+    "width": 390,
+    "height": 816,
+    "label": "An Nhiên - ST-Loading-offline (Lưu khi không có mạng)"
+  },
+  {
+    "id": "475b7c2f584945f5aba18ebbcd8bbb52",
+    "sourceScreen": "projects/2013215887278758682/screens/475b7c2f584945f5aba18ebbcd8bbb52",
+    "y": -48384,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Lịch ngày mai"
+  },
+  {
+    "id": "4e54d2bf87a94c40a1c7a3e56e05aa3f",
+    "sourceScreen": "projects/2013215887278758682/screens/4e54d2bf87a94c40a1c7a3e56e05aa3f",
+    "x": 1344,
+    "y": 20299,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Thêm người thân (Tùy chọn quan hệ 1 cột)"
+  },
+  {
+    "id": "4e5e8d14436f4fe28e4ba18362aaab83",
+    "sourceScreen": "projects/2013215887278758682/screens/4e5e8d14436f4fe28e4ba18362aaab83",
+    "x": 28224,
+    "width": 1280,
+    "height": 2148,
+    "label": "An Nhiên - Hôm nay (Snackbar dọc & Nút Hoàn tác)"
+  },
+  {
+    "id": "4e784ab19ba14d8395082edab0a8cd47",
+    "sourceScreen": "projects/2013215887278758682/screens/4e784ab19ba14d8395082edab0a8cd47",
+    "x": 1344,
+    "y": -36096,
+    "width": 1280,
+    "height": 1110,
+    "label": "An Nhiên - Đã gửi gợi ý (Cập nhật v1)"
+  },
+  {
+    "id": "4f6588ed8b1a4c5ba95864505ef1bd23",
+    "sourceScreen": "projects/2013215887278758682/screens/4f6588ed8b1a4c5ba95864505ef1bd23",
+    "x": 24192,
+    "width": 1280,
+    "height": 2148,
+    "label": "An Nhiên - Hôm nay (Dời đi bộ sang 4 giờ chiều & Tiếp theo Uống trà)"
+  },
+  {
+    "id": "509ac29b1c6542fd8747f0a3b628fad6",
+    "sourceScreen": "projects/2013215887278758682/screens/509ac29b1c6542fd8747f0a3b628fad6",
+    "x": 2688,
+    "y": -17664,
+    "width": 1280,
+    "height": 1526,
+    "label": "An Nhiên - Lịch của mẹ · Tháng (Cập nhật v2)"
+  },
+  {
+    "id": "51022b50a33f4ff1b3bf939f10b34e68",
+    "sourceScreen": "projects/2013215887278758682/screens/51022b50a33f4ff1b3bf939f10b34e68",
+    "x": 1344,
+    "y": -9984,
+    "width": 1280,
+    "height": 1042,
+    "label": "An Nhiên - C08 Xem lại và gửi gợi ý (Chuẩn hóa điều kiện & Biểu tượng Send)"
+  },
+  {
+    "id": "527c3df14c194c84acbec4154ca62d4b",
+    "sourceScreen": "projects/2013215887278758682/screens/527c3df14c194c84acbec4154ca62d4b",
+    "x": 2688,
+    "y": 21579,
+    "width": 1280,
+    "height": 816,
+    "label": "An Nhiên - Nội dung gửi cho Mai (Đã mở Zalo)"
+  },
+  {
+    "id": "53723ff825954797a5a2316f16898550",
+    "sourceScreen": "projects/2013215887278758682/screens/53723ff825954797a5a2316f16898550",
+    "x": 1344,
+    "y": -19200,
+    "width": 1280,
+    "height": 2063,
+    "label": "An Nhiên - Thiếu tên hoặc giờ (Cập nhật v1)"
+  },
+  {
+    "id": "5811c9386ecd49359a0e14e2bce09031",
+    "sourceScreen": "projects/2013215887278758682/screens/5811c9386ecd49359a0e14e2bce09031",
+    "x": 5376,
+    "y": 13203,
+    "width": 1280,
+    "height": 1699,
+    "label": "An Nhiên - Gia đình (Thanh điều hướng 96px, Phông Be Vietnam Pro & Nút 60px)"
+  },
+  {
+    "id": "5822007f89f04e21bf027c74d740101e",
+    "sourceScreen": "projects/2013215887278758682/screens/5822007f89f04e21bf027c74d740101e",
+    "x": 2688,
+    "y": -29952,
+    "width": 1280,
+    "height": 1174,
+    "label": "An Nhiên - Lịch Mai gợi ý (Cập nhật v2)"
+  },
+  {
+    "id": "586a6d9797d8488bb28eabae2092f05d",
+    "sourceScreen": "projects/2013215887278758682/screens/586a6d9797d8488bb28eabae2092f05d",
+    "x": 32256,
+    "width": 1280,
+    "height": 2058,
+    "label": "An Nhiên - Hôm nay (Cập nhật Biểu tượng & Snackbar)"
+  },
+  {
+    "id": "596693a46d1048499f7c8e51ed025995",
+    "sourceScreen": "projects/2013215887278758682/screens/596693a46d1048499f7c8e51ed025995",
+    "x": 4486,
+    "y": 20299,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Thêm người thân (Lỗi chưa nhập SĐT & Khôi phục quan hệ)"
+  },
+  {
+    "id": "598921024b39445ba88974fb625edf63",
+    "sourceScreen": "projects/2013215887278758682/screens/598921024b39445ba88974fb625edf63",
+    "x": 2688,
+    "y": -11520,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - C09 Đã gửi cho mẹ (Biểu tượng Sun, Leaf & Nhãn đáy 20px)"
+  },
+  {
+    "id": "5a1f4ba3e82e43ecab6f75e450c2ef5a",
+    "sourceScreen": "projects/2013215887278758682/screens/5a1f4ba3e82e43ecab6f75e450c2ef5a",
+    "x": 2688,
+    "y": 17739,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Chi tiết ngày (Hoàn thiện biểu tượng & Nút)"
+  },
+  {
+    "id": "5a3b977adf9c409d871c4777f896e1ad",
+    "sourceScreen": "projects/2013215887278758682/screens/5a3b977adf9c409d871c4777f896e1ad",
+    "x": 1344,
+    "y": 7007,
+    "width": 1280,
+    "height": 816,
+    "label": "An Nhiên - Lời nhắc đến giờ (Cập nhật)"
+  },
+  {
+    "id": "5af7a349f19946d896a8a3f805e6f3dd",
+    "sourceScreen": "projects/2013215887278758682/screens/5af7a349f19946d896a8a3f805e6f3dd",
+    "x": 5848,
+    "y": 26283,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - DLG-Later (Dời việc này đến lúc nào?)"
+  },
+  {
+    "id": "5c679c9b110044d38f134e40a4fa40a3",
+    "sourceScreen": "projects/2013215887278758682/screens/5c679c9b110044d38f134e40a4fa40a3",
+    "x": 1344,
+    "y": -40704,
+    "width": 1280,
+    "height": 1164,
+    "label": "An Nhiên - Chọn từng việc (Cập nhật v1)"
+  },
+  {
+    "id": "5cb9fab2ff5f44c29070aa197efe9c94",
+    "sourceScreen": "projects/2013215887278758682/screens/5cb9fab2ff5f44c29070aa197efe9c94",
+    "x": 1344,
+    "y": -52992,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Thử lời nhắc (Cập nhật v1)"
+  },
+  {
+    "id": "5d7a4160a28d4a6b8b650e3cc0edcfe9",
+    "sourceScreen": "projects/2013215887278758682/screens/5d7a4160a28d4a6b8b650e3cc0edcfe9",
+    "x": 2688,
+    "y": 20299,
+    "width": 390,
+    "height": 820,
+    "label": "Generating Screen..."
+  },
+  {
+    "id": "5da170d355454407948bdd5d113fd558",
+    "sourceScreen": "projects/2013215887278758682/screens/5da170d355454407948bdd5d113fd558",
+    "x": 1344,
+    "y": 5727,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Cho phép nhắc việc (Cập nhật)"
+  },
+  {
+    "id": "5dede12d02734346843d308e8ad960a0",
+    "sourceScreen": "projects/2013215887278758682/screens/5dede12d02734346843d308e8ad960a0",
+    "y": 8287,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Thêm việc – chọn việc quen (Bước 1/2)"
+  },
+  {
+    "id": "5f33a88d994f480f9f167043d6aca9f6",
+    "sourceScreen": "projects/2013215887278758682/screens/5f33a88d994f480f9f167043d6aca9f6",
+    "x": 5376,
+    "y": 19019,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Chi tiết thói quen (Căn lề thẻ tuần & biểu tượng Bỏ qua)"
+  },
+  {
+    "id": "5fcdb9da3ee54b08bfb53961e9c1f213",
+    "sourceScreen": "projects/2013215887278758682/screens/5fcdb9da3ee54b08bfb53961e9c1f213",
+    "x": 2688,
+    "y": -28416,
+    "width": 1280,
+    "height": 1998,
+    "label": "An Nhiên - Con cháu soạn lịch gợi ý (Cập nhật v2)"
+  },
+  {
+    "id": "61669dadedbe4bd8a5dc8a25743fd7eb",
+    "sourceScreen": "projects/2013215887278758682/screens/61669dadedbe4bd8a5dc8a25743fd7eb",
+    "x": 8064,
+    "y": 9567,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Thêm việc – Lỗi chưa nhập tên (Hoàn thiện)"
+  },
+  {
+    "id": "6230f724dd5f47259a633094d1fc1264",
+    "sourceScreen": "projects/2013215887278758682/screens/6230f724dd5f47259a633094d1fc1264",
+    "x": 2688,
+    "y": -46848,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Đã bỏ qua gợi ý (Cập nhật v2)"
+  },
+  {
+    "id": "63089859a9a148f0834caef34b4290d6",
+    "sourceScreen": "projects/2013215887278758682/screens/63089859a9a148f0834caef34b4290d6",
+    "x": 2688,
+    "y": -31488,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Đã nhận gợi ý (Cập nhật v2)"
+  },
+  {
+    "id": "634e2360b16c438697d1a8334a7e9322",
+    "sourceScreen": "projects/2013215887278758682/screens/634e2360b16c438697d1a8334a7e9322",
+    "y": 30336,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Chọn việc đầu tiên (Mobile)"
+  },
+  {
+    "id": "6437d8b0a8374f5b9c0849164b1a2d0a",
+    "sourceScreen": "projects/2013215887278758682/screens/6437d8b0a8374f5b9c0849164b1a2d0a",
+    "y": 7007,
+    "width": 1280,
+    "height": 816,
+    "label": "An Nhiên - Lời nhắc đến giờ"
+  },
+  {
+    "id": "686f8ac73127449eaf05c2f20fcc17d9",
+    "sourceScreen": "projects/2013215887278758682/screens/686f8ac73127449eaf05c2f20fcc17d9",
+    "x": 1344,
+    "y": -46848,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Đã bỏ qua gợi ý (Cập nhật v1)"
+  },
+  {
+    "id": "6a63d7ae639749c69c2fe3eee609a9b9",
+    "sourceScreen": "projects/2013215887278758682/screens/6a63d7ae639749c69c2fe3eee609a9b9",
+    "x": 4032,
+    "y": 8287,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Thêm việc – chọn việc quen (Bước 1/2)"
+  },
+  {
+    "id": "6cbb3a14aa194593939bd3561a19e335",
+    "sourceScreen": "projects/2013215887278758682/screens/6cbb3a14aa194593939bd3561a19e335",
+    "x": 1344,
+    "y": -45312,
+    "width": 1280,
+    "height": 1085,
+    "label": "An Nhiên - Đã nhận một việc · nhánh B (Cập nhật v1)"
+  },
+  {
+    "id": "6f736369ab494b4294e6f61cfe5c963e",
+    "sourceScreen": "projects/2013215887278758682/screens/6f736369ab494b4294e6f61cfe5c963e",
+    "x": 1344,
+    "y": -20736,
+    "width": 1280,
+    "height": 2788,
+    "label": "An Nhiên - Lặp lại mỗi tháng (Bước 2/3) (Cập nhật v1)"
+  },
+  {
+    "id": "705adc6ba2724c08b49042a05947c728",
+    "sourceScreen": "projects/2013215887278758682/screens/705adc6ba2724c08b49042a05947c728",
+    "y": 4447,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Chi tiết việc"
+  },
+  {
+    "id": "706eff40546b4a58ad062dd0df3c2daa",
+    "sourceScreen": "projects/2013215887278758682/screens/706eff40546b4a58ad062dd0df3c2daa",
+    "x": 4032,
+    "y": -14592,
+    "width": 1280,
+    "height": 1747,
+    "label": "An Nhiên - Mã sai hoặc hết hạn (Cập nhật v3)"
+  },
+  {
+    "id": "707c32d5e49447dabfc7ae7485e541e7",
+    "sourceScreen": "projects/2013215887278758682/screens/707c32d5e49447dabfc7ae7485e541e7",
+    "x": 6720,
+    "y": -40704,
+    "width": 1280,
+    "height": 1192,
+    "label": "An Nhiên - Chọn từng việc (Cập nhật v5)"
+  },
+  {
+    "id": "720a85a3a0254afa9cbc1a32825ce93c",
+    "sourceScreen": "projects/2013215887278758682/screens/720a85a3a0254afa9cbc1a32825ce93c",
+    "y": -2304,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Chọn vai trò"
+  },
+  {
+    "id": "73deffcd947440ae992a3232b319d766",
+    "sourceScreen": "projects/2013215887278758682/screens/73deffcd947440ae992a3232b319d766",
+    "x": 2688,
+    "y": 9567,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Thêm việc – Chưa nhập tên (Bước 2/2)"
+  },
+  {
+    "id": "757085b74597441786088387267f7826",
+    "sourceScreen": "projects/2013215887278758682/screens/757085b74597441786088387267f7826",
+    "x": 64,
+    "width": 1280,
+    "height": 1349,
+    "label": "An Nhiên - C07 Lặp lại việc gợi ý (Biểu tượng ngày 32px chuẩn)"
+  },
+  {
+    "id": "75beaf1824f449a8b31f0f4043c73b4f",
+    "sourceScreen": "projects/2013215887278758682/screens/75beaf1824f449a8b31f0f4043c73b4f",
+    "x": 2688,
+    "y": -5376,
+    "width": 1280,
+    "height": 1772,
+    "label": "An Nhiên - Lịch của mẹ · Ngày (Cập nhật v2)"
+  },
+  {
+    "id": "76c906dcf2a947fa973bb592501415ab",
+    "sourceScreen": "projects/2013215887278758682/screens/76c906dcf2a947fa973bb592501415ab",
+    "x": 4032,
+    "y": -28416,
+    "width": 1280,
+    "height": 936,
+    "label": "An Nhiên - Con cháu soạn lịch gợi ý (Cập nhật v3)"
+  },
+  {
+    "id": "77ea5dc9ec2b4f6ca6aa36c29679b426",
+    "sourceScreen": "projects/2013215887278758682/screens/77ea5dc9ec2b4f6ca6aa36c29679b426",
+    "width": 1280,
+    "height": 2053,
+    "label": "An Nhiên - Hôm nay"
+  },
+  {
+    "id": "786a5cf30df24d8bbef58e2b518245cd",
+    "sourceScreen": "projects/2013215887278758682/screens/786a5cf30df24d8bbef58e2b518245cd",
+    "x": 21504,
+    "width": 1280,
+    "height": 2148,
+    "label": "An Nhiên - Hôm nay (Cập nhật Biểu tượng Utensils & Redo-2)"
+  },
+  {
+    "id": "79ebadfcd74e46e189bd4e8a77be685e",
+    "sourceScreen": "projects/2013215887278758682/screens/79ebadfcd74e46e189bd4e8a77be685e",
+    "x": 4032,
+    "y": -29952,
+    "width": 1280,
+    "height": 1123,
+    "label": "An Nhiên - Lịch Mai gợi ý (Cập nhật v3)"
+  },
+  {
+    "id": "7a45cbdcb1c2438793d833f4c7d00cb8",
+    "sourceScreen": "projects/2013215887278758682/screens/7a45cbdcb1c2438793d833f4c7d00cb8",
+    "x": 1344,
+    "y": 10643,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Lịch tuần (Cập nhật hoàn thiện)"
+  },
+  {
+    "id": "7bb2a864267542d7a80342edccc24820",
+    "sourceScreen": "projects/2013215887278758682/screens/7bb2a864267542d7a80342edccc24820",
+    "y": -14592,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Mã sai hoặc hết hạn"
+  },
+  {
+    "id": "7e2b9354e551457a996eeaa6077e02d4",
+    "sourceScreen": "projects/2013215887278758682/screens/7e2b9354e551457a996eeaa6077e02d4",
+    "x": 14784,
+    "width": 1280,
+    "height": 2148,
+    "label": "An Nhiên - Hôm nay (Đã chỉnh sang 10:00 sáng & Đã lưu)"
+  },
+  {
+    "id": "7f7caffadd5240cc85d41e35a0d266c5",
+    "sourceScreen": "projects/2013215887278758682/screens/7f7caffadd5240cc85d41e35a0d266c5",
+    "x": 4032,
+    "y": -43776,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Đã nhận một việc (Cập nhật v3)"
+  },
+  {
+    "id": "7ff9ca8396ab43de862332eb0bee45ce",
+    "sourceScreen": "projects/2013215887278758682/screens/7ff9ca8396ab43de862332eb0bee45ce",
+    "x": 30912,
+    "width": 1280,
+    "height": 2108,
+    "label": "An Nhiên - Hôm nay (Cập nhật Toàn diện & Snackbar Chuẩn)"
+  },
+  {
+    "id": "82a32f17fdaf4e53a8236463f0ccb36a",
+    "sourceScreen": "projects/2013215887278758682/screens/82a32f17fdaf4e53a8236463f0ccb36a",
+    "y": 17739,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Chi tiết ngày (Thứ Sáu, 9/10)"
+  },
+  {
+    "id": "82b1e0de27834ca4953fafd4818b32c9",
+    "sourceScreen": "projects/2013215887278758682/screens/82b1e0de27834ca4953fafd4818b32c9",
+    "y": -33024,
+    "width": 1280,
+    "height": 863,
+    "label": "An Nhiên - Lịch ngày mai"
+  },
+  {
+    "id": "850c7d47604d41a6a10f19425a97d291",
+    "sourceScreen": "projects/2013215887278758682/screens/850c7d47604d41a6a10f19425a97d291",
+    "x": 6720,
+    "width": 1280,
+    "height": 1978,
+    "label": "An Nhiên - Hôm nay (Buổi tối - Đã xong 6/6 việc)"
+  },
+  {
+    "id": "85152f6e78aa49158e8c48fe8bd7589a",
+    "sourceScreen": "projects/2013215887278758682/screens/85152f6e78aa49158e8c48fe8bd7589a",
+    "x": 2688,
+    "y": 2312,
+    "width": 1280,
+    "height": 827,
+    "label": "An Nhiên - Chào mừng (Chọn cỡ chữ - Hoàn thiện mã nguồn)"
+  },
+  {
+    "id": "85cacc8170fb413aa40be1d7ddd52f4b",
+    "sourceScreen": "projects/2013215887278758682/screens/85cacc8170fb413aa40be1d7ddd52f4b",
+    "x": 2688,
+    "y": 8287,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Thêm việc – chọn việc quen (Chuẩn hoàn thiện)"
+  },
+  {
+    "id": "8728b1da9813434e8ea27bf1279d45e6",
+    "sourceScreen": "projects/2013215887278758682/screens/8728b1da9813434e8ea27bf1279d45e6",
+    "x": 4032,
+    "y": -5376,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - C03 Lịch của mẹ Lan (Chuẩn hóa viền Tuần & Tháng)"
+  },
+  {
+    "id": "875d16012526440e8beb8055455f1f8f",
+    "sourceScreen": "projects/2013215887278758682/screens/875d16012526440e8beb8055455f1f8f",
+    "x": 18816,
+    "width": 1280,
+    "height": 2148,
+    "label": "An Nhiên - Hôm nay (Nút Dời lại 60px, Chữ 22px)"
+  },
+  {
+    "id": "87d256944948485ca68133500b6ac822",
+    "sourceScreen": "projects/2013215887278758682/screens/87d256944948485ca68133500b6ac822",
+    "x": 5376,
+    "y": -11520,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - C09 Đã gửi cho mẹ (Khoảng cách dọc 16px chuẩn)"
+  },
+  {
+    "id": "87e361beb4a245579dc92eebbf9163d5",
+    "sourceScreen": "projects/2013215887278758682/screens/87e361beb4a245579dc92eebbf9163d5",
+    "x": 2688,
+    "y": -9984,
+    "width": 1280,
+    "height": 1958,
+    "label": "An Nhiên - C08 Xem lại và gửi gợi ý (Mẹ tự nhận việc & Biểu tượng Arrow-Right)"
+  },
+  {
+    "id": "87fe4bd42384485d872382c2da449dbc",
+    "sourceScreen": "projects/2013215887278758682/screens/87fe4bd42384485d872382c2da449dbc",
+    "x": 1344,
+    "y": 2312,
+    "width": 1280,
+    "height": 827,
+    "label": "An Nhiên - Chào mừng (Chọn cỡ chữ - Hoàn thiện)"
+  },
+  {
+    "id": "88422771afb04db59573ae065d089496",
+    "sourceScreen": "projects/2013215887278758682/screens/88422771afb04db59573ae065d089496",
+    "x": 5376,
+    "y": -40704,
+    "width": 1280,
+    "height": 1192,
+    "label": "An Nhiên - Chọn từng việc (Cập nhật v4)"
+  },
+  {
+    "id": "88d69767e7b64a9f8eb05f59dde4ba4b",
+    "sourceScreen": "projects/2013215887278758682/screens/88d69767e7b64a9f8eb05f59dde4ba4b",
+    "x": 5830,
+    "y": 20299,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Thêm người thân (Chưa nhập dữ liệu)"
+  },
+  {
+    "id": "8a2ad41e258a4d4b883bad8881ad9643",
+    "sourceScreen": "projects/2013215887278758682/screens/8a2ad41e258a4d4b883bad8881ad9643",
+    "y": 23723,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - ST-Saved (Đã lưu xong)"
+  },
+  {
+    "id": "8aeab01313e84577aa18508fb3eeb08a",
+    "sourceScreen": "projects/2013215887278758682/screens/8aeab01313e84577aa18508fb3eeb08a",
+    "y": -28416,
+    "width": 1280,
+    "height": 2092,
+    "label": "An Nhiên - Con cháu soạn lịch gợi ý"
+  },
+  {
+    "id": "8b3153c3c7594a34a4bd541120ff4ba0",
+    "sourceScreen": "projects/2013215887278758682/screens/8b3153c3c7594a34a4bd541120ff4ba0",
+    "x": 5376,
+    "y": 17739,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Chi tiết ngày (Thứ Ba, 6/10 - Đã qua)"
+  },
+  {
+    "id": "8b6538f417544fb9b81dfdd1dbe93b60",
+    "sourceScreen": "projects/2013215887278758682/screens/8b6538f417544fb9b81dfdd1dbe93b60",
+    "y": 31616,
+    "width": 1280,
+    "height": 1266,
+    "label": "An Nhiên - Cài đặt nhắc việc (Android Mobile)"
+  },
+  {
+    "id": "8dbd82153c14463aa7a54d58eb920e7b",
+    "sourceScreen": "projects/2013215887278758682/screens/8dbd82153c14463aa7a54d58eb920e7b",
+    "x": 4032,
+    "y": 21579,
+    "width": 390,
+    "height": 816,
+    "label": "An Nhiên - Nội dung gửi cho Mai (Rút gọn thông báo Zalo)"
+  },
+  {
+    "id": "8f554e1c2eec4261b3bcd1c607686ec2",
+    "sourceScreen": "projects/2013215887278758682/screens/8f554e1c2eec4261b3bcd1c607686ec2",
+    "x": 1344,
+    "y": 16459,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Sửa việc (Căn lề App bar)"
+  },
+  {
+    "id": "9269ebfeaa834fb3b09d270d43ad2bd3",
+    "sourceScreen": "projects/2013215887278758682/screens/9269ebfeaa834fb3b09d270d43ad2bd3",
+    "x": 1344,
+    "y": -17664,
+    "width": 1280,
+    "height": 1610,
+    "label": "An Nhiên - Lịch của mẹ · Tháng (Cập nhật v1)"
+  },
+  {
+    "id": "927b365e9429489a9dbe74b1ba15f4d2",
+    "sourceScreen": "projects/2013215887278758682/screens/927b365e9429489a9dbe74b1ba15f4d2",
+    "x": 5376,
+    "y": -28416,
+    "width": 1280,
+    "height": 1998,
+    "label": "An Nhiên - Con cháu soạn lịch gợi ý (Cập nhật v4)"
+  },
+  {
+    "id": "9429698d600f4fe7a82307c6a1934279",
+    "sourceScreen": "projects/2013215887278758682/screens/9429698d600f4fe7a82307c6a1934279",
+    "x": 29568,
+    "width": 1280,
+    "height": 2158,
+    "label": "An Nhiên - Hôm nay (Đã ghi nhận đi bộ & Việc tiếp theo)"
+  },
+  {
+    "id": "958b3a21f2294b5cbd2827ad4496736e",
+    "sourceScreen": "projects/2013215887278758682/screens/958b3a21f2294b5cbd2827ad4496736e",
+    "y": -40704,
+    "width": 1280,
+    "height": 2954,
+    "label": "An Nhiên - Chọn từng việc"
+  },
+  {
+    "id": "97ae11b4cf37413ba8e406d5d9d4429a",
+    "sourceScreen": "projects/2013215887278758682/screens/97ae11b4cf37413ba8e406d5d9d4429a",
+    "y": -51456,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Lịch ngày mai"
+  },
+  {
+    "id": "97cf0266fdd54abeb428a3af0a05fa7a",
+    "sourceScreen": "projects/2013215887278758682/screens/97cf0266fdd54abeb428a3af0a05fa7a",
+    "x": 33600,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Hôm nay (Chưa có việc)"
+  },
+  {
+    "id": "9827dbb7f35945379a747ef84d19e1f9",
+    "sourceScreen": "projects/2013215887278758682/screens/9827dbb7f35945379a747ef84d19e1f9",
+    "x": 2688,
+    "y": 19019,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Chi tiết thói quen (Cập nhật lịch tuần & chú thích)"
+  },
+  {
+    "id": "99eda771162341a2ac3c7d7bc5950308",
+    "sourceScreen": "projects/2013215887278758682/screens/99eda771162341a2ac3c7d7bc5950308",
+    "y": 33168,
+    "width": 1280,
+    "height": 1141,
+    "label": "An Nhiên - Cách dùng đơn giản"
+  },
+  {
+    "id": "9b64bb35a5ed4b768b68511ceb839c3e",
+    "sourceScreen": "projects/2013215887278758682/screens/9b64bb35a5ed4b768b68511ceb839c3e",
+    "y": 25003,
+    "width": 1280,
+    "height": 824,
+    "label": "An Nhiên - ST-Error (Chưa lưu được)"
+  },
+  {
+    "id": "9d00e0160fef4a67bee1b5052fc4a487",
+    "sourceScreen": "projects/2013215887278758682/screens/9d00e0160fef4a67bee1b5052fc4a487",
+    "x": 6720,
+    "y": 17739,
+    "width": 390,
+    "height": 800,
+    "label": "An Nhiên - Chi tiết ngày (Thứ Ba, 6/10 - Khoảng cách thẻ 16px chuẩn)"
+  },
+  {
+    "id": "9d3029136f2646018010235866a042aa",
+    "sourceScreen": "projects/2013215887278758682/screens/9d3029136f2646018010235866a042aa",
+    "x": 4032,
+    "y": 19019,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Chi tiết thói quen (Cập nhật lịch tuần & chỉ báo Nay)"
+  },
+  {
+    "id": "9d8d44e4c74d4ecc9a1ce17bda834514",
+    "sourceScreen": "projects/2013215887278758682/screens/9d8d44e4c74d4ecc9a1ce17bda834514",
+    "x": 9408,
+    "width": 1280,
+    "height": 2148,
+    "label": "An Nhiên - Hôm nay (Sẽ nhắc lại lúc 9:30 sáng)"
+  },
+  {
+    "id": "9e3b806a05094bbabf835a87fc5d7981",
+    "sourceScreen": "projects/2013215887278758682/screens/9e3b806a05094bbabf835a87fc5d7981",
+    "x": 4032,
+    "y": 31616,
+    "width": 1280,
+    "height": 4099,
+    "label": "An Nhiên - Cài đặt nhắc việc (Cập nhật v3)"
+  },
+  {
+    "id": "9f9cb617a10c4601bb43af2fc3fd613e",
+    "sourceScreen": "projects/2013215887278758682/screens/9f9cb617a10c4601bb43af2fc3fd613e",
+    "x": 4940,
+    "y": 26283,
+    "width": 390,
+    "height": 800,
+    "label": "An Nhiên - DLG-Skip (Bỏ qua đi bộ hôm nay?)"
+  },
+  {
+    "id": "a0ad79b8e127494596d43d4fef27beb1",
+    "sourceScreen": "projects/2013215887278758682/screens/a0ad79b8e127494596d43d4fef27beb1",
+    "x": 4032,
+    "y": -20736,
+    "width": 1280,
+    "height": 2791,
+    "label": "An Nhiên - Lặp lại mỗi tháng (Bước 2/3) (Cập nhật v3)"
+  },
+  {
+    "id": "a0e49cb7a79e4b899d85db098781a1b7",
+    "sourceScreen": "projects/2013215887278758682/screens/a0e49cb7a79e4b899d85db098781a1b7",
+    "x": 2688,
+    "y": 7007,
+    "width": 1280,
+    "height": 816,
+    "label": "An Nhiên - Lời nhắc đến giờ (Hoàn thiện)"
+  },
+  {
+    "id": "a1743a4689ca4beab4399fe96b6b9ef0",
+    "sourceScreen": "projects/2013215887278758682/screens/a1743a4689ca4beab4399fe96b6b9ef0",
+    "x": 1344,
+    "y": 26283,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - DLG-Done (Chi tiết việc 2 hàng)"
+  },
+  {
+    "id": "a247c36073c147c1a57e54685a90dec5",
+    "sourceScreen": "projects/2013215887278758682/screens/a247c36073c147c1a57e54685a90dec5",
+    "x": 1344,
+    "y": 23723,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - ST-Saved (Cập nhật khoảng cách)"
+  },
+  {
+    "id": "a367993040524f49a2d3c7ad1a8f9948",
+    "sourceScreen": "projects/2013215887278758682/screens/a367993040524f49a2d3c7ad1a8f9948",
+    "y": -3840,
+    "width": 1280,
+    "height": 1266,
+    "label": "An Nhiên - Nhập mã ghép nối"
+  },
+  {
+    "id": "a3d08156385c4f02a7d45815a21a3f18",
+    "sourceScreen": "projects/2013215887278758682/screens/a3d08156385c4f02a7d45815a21a3f18",
+    "y": -34560,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Soạn gợi ý · chọn giờ"
+  },
+  {
+    "id": "a439ab41c55746ffbee5dbc4bdb2aa82",
+    "sourceScreen": "projects/2013215887278758682/screens/a439ab41c55746ffbee5dbc4bdb2aa82",
+    "x": 2688,
+    "y": -33024,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Lịch ngày mai (Cập nhật v2)"
+  },
+  {
+    "id": "a4e9f072291b460187977ff04298e611",
+    "sourceScreen": "projects/2013215887278758682/screens/a4e9f072291b460187977ff04298e611",
+    "x": 4032,
+    "y": 9567,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Thêm việc – Chưa nhập tên (Đồng bộ cỡ chữ & Thêm ví dụ)"
+  },
+  {
+    "id": "a61bcc98740d4f8c84bdcb06f404b531",
+    "sourceScreen": "projects/2013215887278758682/screens/a61bcc98740d4f8c84bdcb06f404b531",
+    "y": 22651,
+    "width": 1280,
+    "height": 816,
+    "label": "An Nhiên - ST-Loading (Đang lưu việc)"
+  },
+  {
+    "id": "a69f1e339467495591d7376521dce445",
+    "sourceScreen": "projects/2013215887278758682/screens/a69f1e339467495591d7376521dce445",
+    "x": 2252,
+    "y": 3391,
+    "width": 390,
+    "height": 956,
+    "label": "An Nhiên - Thông tin của Bác (Icon Sunrise trong khung giờ)"
+  },
+  {
+    "id": "a753d056d66b40ea85d52a4f0a4a9dde",
+    "sourceScreen": "projects/2013215887278758682/screens/a753d056d66b40ea85d52a4f0a4a9dde",
+    "x": 4032,
+    "y": -39168,
+    "width": 1280,
+    "height": 1313,
+    "label": "An Nhiên - Đổi giờ đi bộ (Cập nhật v3)"
+  },
+  {
+    "id": "a77219681c624fe7b0184e1ddca77ea6",
+    "sourceScreen": "projects/2013215887278758682/screens/a77219681c624fe7b0184e1ddca77ea6",
+    "y": 34720,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Đã nhận lời nhắc"
+  },
+  {
+    "id": "a833f6e054bb42dba500417fda5f9798",
+    "sourceScreen": "projects/2013215887278758682/screens/a833f6e054bb42dba500417fda5f9798",
+    "x": 1344,
+    "y": -42240,
+    "width": 1280,
+    "height": 1061,
+    "label": "An Nhiên - Đã nhận · đổi giờ (Cập nhật v1)"
+  },
+  {
+    "id": "a8dd4392fd6646b98d3e550dd4d39a09",
+    "sourceScreen": "projects/2013215887278758682/screens/a8dd4392fd6646b98d3e550dd4d39a09",
+    "x": 2688,
+    "y": -36096,
+    "width": 1280,
+    "height": 2335,
+    "label": "An Nhiên - Đã gửi gợi ý (Cập nhật v2)"
+  },
+  {
+    "id": "ab4fcaa3bb6a45528cd2813b6a41048a",
+    "sourceScreen": "projects/2013215887278758682/screens/ab4fcaa3bb6a45528cd2813b6a41048a",
+    "x": 1344,
+    "y": -28416,
+    "width": 1280,
+    "height": 1114,
+    "label": "An Nhiên - Con cháu soạn lịch gợi ý (Cập nhật v1)"
+  },
+  {
+    "id": "ad5b28ee2dd94e5cad88342c936974bc",
+    "sourceScreen": "projects/2013215887278758682/screens/ad5b28ee2dd94e5cad88342c936974bc",
+    "x": 1344,
+    "y": 8287,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Thêm việc – chọn việc quen (Hoàn thiện)"
+  },
+  {
+    "id": "afa01453a29a4da889eaf60aab2bee76",
+    "sourceScreen": "projects/2013215887278758682/screens/afa01453a29a4da889eaf60aab2bee76",
+    "x": 1344,
+    "y": 30336,
+    "width": 390,
+    "height": 820,
+    "label": "An Nhiên - Chọn việc đầu tiên (Chuẩn hóa Tiêu đề 30px, Sọc màu thói quen & Nav)"
+  },
+  {
+    "id": "afc71ec5c3244cfca8584b3153174a88",
+    "sourceScreen": "projects/2013215887278758682/screens/afc71ec5c3244cfca8584b3153174a88",
+    "y": 21579,
+    "width": 1280,
+    "height": 816,
+    "label": "An Nhiên - Nhắn tin cho Mai"
+  },
+  {
+    "id": "b25cd8f3eb9d43d8baffe8feaa66138f",
+    "sourceScreen": "projects/2013215887278758682/screens/b25cd8f3eb9d43d8baffe8feaa66138f",
+    "x": 1344,
+    "y": 28619,
+    "width": 1280,
+    "height": 1460,
+    "label": "An Nhiên - C10 Chi tiết việc (Thanh điều hướng 72px & Xác nhận ngưng lặp lại)"
+  },
+  {
+    "id": "b284c276835247b6982c7285770db2e9",
+    "sourceScreen": "projects/2013215887278758682/screens/b284c276835247b6982c7285770db2e9",
+    "x": 1344,
+    "y": 21579,
+    "width": 1280,
+    "height": 816,
+    "label": "An Nhiên - Nhắn tin cho Mai (Cập nhật hiển thị Đang chọn)"
+  },
+  {
+    "id": "b3e987db066344e394ad956705345de2",
+    "sourceScreen": "projects/2013215887278758682/screens/b3e987db066344e394ad956705345de2",
+    "y": -11520,
+    "width": 1280,
+    "height": 1449,
+    "label": "An Nhiên - Đã gửi · Chờ mẹ nhận"
+  },
+  {
+    "id": "b4efe2b2102b40ef82e2b940eae64713",
+    "sourceScreen": "projects/2013215887278758682/screens/b4efe2b2102b40ef82e2b940eae64713",
+    "x": 5376,
+    "y": -37632,
+    "width": 1280,
+    "height": 1230,
+    "label": "An Nhiên - Lịch Mai gợi ý · đã đổi giờ (Cập nhật v4)"
+  },
+  {
+    "id": "b7fb2dc55f914dc8990be08add07fc40",
+    "sourceScreen": "projects/2013215887278758682/screens/b7fb2dc55f914dc8990be08add07fc40",
+    "x": 1344,
+    "y": 27563,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - DLG-WakeTime (Lưu giờ & Khoảng cách 16px)"
+  },
+  {
+    "id": "b8c8d65c610744c8a86a2fea5fbc8fb6",
+    "sourceScreen": "projects/2013215887278758682/screens/b8c8d65c610744c8a86a2fea5fbc8fb6",
+    "y": 19019,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Chi tiết thói quen (Vận động tự nhiên)"
+  },
+  {
+    "id": "baec561b56924d68b62a112e88dd1934",
+    "sourceScreen": "projects/2013215887278758682/screens/baec561b56924d68b62a112e88dd1934",
+    "x": 5376,
+    "y": 9567,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Thêm việc – Chưa nhập tên (Bỏ icon Tên việc)"
+  },
+  {
+    "id": "bb0b36b65a0f45d4bfe92368bd6274a9",
+    "sourceScreen": "projects/2013215887278758682/screens/bb0b36b65a0f45d4bfe92368bd6274a9",
+    "x": 1344,
+    "y": -3840,
+    "width": 1280,
+    "height": 1266,
+    "label": "An Nhiên - Nhập mã ghép nối (Cập nhật v1)"
+  },
+  {
+    "id": "bb36c1b9dc154669829916831894e31f",
+    "sourceScreen": "projects/2013215887278758682/screens/bb36c1b9dc154669829916831894e31f",
+    "y": -36096,
+    "width": 1280,
+    "height": 1088,
+    "label": "An Nhiên - Đã gửi gợi ý"
+  },
+  {
+    "id": "bbe95aed2282460789221b8b7bc97d89",
+    "sourceScreen": "projects/2013215887278758682/screens/bbe95aed2282460789221b8b7bc97d89",
+    "y": -5376,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Lịch của mẹ · Ngày"
+  },
+  {
+    "id": "bc8c534bdc87422b9371b9a59ead5eb0",
+    "sourceScreen": "projects/2013215887278758682/screens/bc8c534bdc87422b9371b9a59ead5eb0",
+    "x": 4032,
+    "y": 26283,
+    "width": 390,
+    "height": 800,
+    "label": "An Nhiên - DLG-Delete (Xóa việc “Đi bộ”? & Không xóa, giữ lại)"
+  },
+  {
+    "id": "bcb650d8dc114750a2be58222edbaada",
+    "sourceScreen": "projects/2013215887278758682/screens/bcb650d8dc114750a2be58222edbaada",
+    "x": 34944,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Hôm nay (Cập nhật Icon Navigation)"
+  },
+  {
+    "id": "bedf99d2b9da40ee8a948022f603ac13",
+    "sourceScreen": "projects/2013215887278758682/screens/bedf99d2b9da40ee8a948022f603ac13",
+    "x": 2688,
+    "y": -49920,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Lịch ngày mai (Cập nhật v2)"
+  },
+  {
+    "id": "c1d660d473ef49c7aeff150aef996d8d",
+    "sourceScreen": "projects/2013215887278758682/screens/c1d660d473ef49c7aeff150aef996d8d",
+    "x": 2688,
+    "y": 26283,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - DLG-Done (Căn giữa chi tiết)"
+  },
+  {
+    "id": "c22a82ba807d4b539f00d98c999ce5f2",
+    "sourceScreen": "projects/2013215887278758682/screens/c22a82ba807d4b539f00d98c999ce5f2",
+    "x": 1344,
+    "y": 17739,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Chi tiết ngày (Cập nhật)"
+  },
+  {
+    "id": "c3e7c4cfc0874d8e9739b32f5e6572b7",
+    "sourceScreen": "projects/2013215887278758682/screens/c3e7c4cfc0874d8e9739b32f5e6572b7",
+    "x": 1344,
+    "y": -8448,
+    "width": 1280,
+    "height": 1921,
+    "label": "An Nhiên - Lặp lại mỗi tuần (Bước 2/3) (Cập nhật v1)"
+  },
+  {
+    "id": "c4df0d09e62e4027b5761b9714db1cd9",
+    "sourceScreen": "projects/2013215887278758682/screens/c4df0d09e62e4027b5761b9714db1cd9",
+    "x": 12096,
+    "width": 1280,
+    "height": 1930,
+    "label": "An Nhiên - Hôm nay (Đã xóa Đi bộ khỏi lịch & Tiếp theo Uống trà)"
+  },
+  {
+    "id": "c556fb1baca24692a8d759e083975ccf",
+    "sourceScreen": "projects/2013215887278758682/screens/c556fb1baca24692a8d759e083975ccf",
+    "x": 1344,
+    "y": -62208,
+    "width": 1280,
+    "height": 3000,
+    "label": "An Nhiên - Dữ liệu trên điện thoại (Cập nhật v1)"
+  },
+  {
+    "id": "c595728d2d154b40bcf3b682ffeb2483",
+    "sourceScreen": "projects/2013215887278758682/screens/c595728d2d154b40bcf3b682ffeb2483",
+    "y": -46848,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Đã bỏ qua gợi ý"
+  },
+  {
+    "id": "c5f4b1d1443e4503926cd38a63262bcd",
+    "sourceScreen": "projects/2013215887278758682/screens/c5f4b1d1443e4503926cd38a63262bcd",
+    "x": 1344,
+    "y": -16128,
+    "width": 1280,
+    "height": 2636,
+    "label": "An Nhiên - Lịch của mẹ · Tuần (Cập nhật v1)"
+  },
+  {
+    "id": "c8e677c98c0c4ec0b4ad147524e99b17",
+    "sourceScreen": "projects/2013215887278758682/screens/c8e677c98c0c4ec0b4ad147524e99b17",
+    "x": 1344,
+    "y": 19019,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Chi tiết thói quen (Cập nhật lịch tuần & biểu tượng)"
+  },
+  {
+    "id": "c9ecfbba199a4f0087b053d7bc51d8c0",
+    "sourceScreen": "projects/2013215887278758682/screens/c9ecfbba199a4f0087b053d7bc51d8c0",
+    "x": 1344,
+    "y": -33024,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Lịch ngày mai (Cập nhật v1)"
+  },
+  {
+    "id": "ca1deaa721214c60b43e97efc36f2425",
+    "sourceScreen": "projects/2013215887278758682/screens/ca1deaa721214c60b43e97efc36f2425",
+    "x": 2688,
+    "y": -34560,
+    "width": 1280,
+    "height": 2173,
+    "label": "An Nhiên - Soạn gợi ý · chọn giờ (Cập nhật v2)"
+  },
+  {
+    "id": "cc28fdd64e6e4c70b59b419c44376787",
+    "sourceScreen": "projects/2013215887278758682/screens/cc28fdd64e6e4c70b59b419c44376787",
+    "x": 5376,
+    "width": 1280,
+    "height": 2032,
+    "label": "An Nhiên - Hôm nay (Điều chỉnh Navigation)"
+  },
+  {
+    "id": "ccbd3f51107542f588a4019ffbbfd436",
+    "sourceScreen": "projects/2013215887278758682/screens/ccbd3f51107542f588a4019ffbbfd436",
+    "x": 1344,
+    "y": -39168,
+    "width": 1280,
+    "height": 1326,
+    "label": "An Nhiên - Đổi giờ đi bộ (Cập nhật v1)"
+  },
+  {
+    "id": "cf2304905dc04d3ebcb810eec77a7ba4",
+    "sourceScreen": "projects/2013215887278758682/screens/cf2304905dc04d3ebcb810eec77a7ba4",
+    "x": 13440,
+    "width": 1280,
+    "height": 1930,
+    "label": "An Nhiên - Hôm nay (Bo góc nút 14px)"
+  },
+  {
+    "id": "cfefaf7789c748ddb9e43ae9c832fdf0",
+    "sourceScreen": "projects/2013215887278758682/screens/cfefaf7789c748ddb9e43ae9c832fdf0",
+    "y": 10643,
+    "width": 1280,
+    "height": 820,
+    "label": "An Nhiên - Lịch tuần"
+  },
+  {
+    "id": "d474c26a8b644f91a6f998825253a724",
+    "sourceScreen": "projects/2013215887278758682/screens/d474c26a8b644f91a6f998825253a724",
+    "y": -43776,
+    "width": 1280,
+    "height": 1147,
+    "label": "An Nhiên - Đã nhận một việc"
+  },
+  {
+    "id": "d4c8c14ed117454db0d5d56784a116e7",
+    "sourceScreen": "projects/2013215887278758682/screens/d4c8c14ed117454db0d5d56784a116e7",
+    "y": -60672,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Xem lại việc đầu tiên"
+  },
+  {
+    "id": "d68ef73f08a345da9a73ff3125df2249",
+    "sourceScreen": "projects/2013215887278758682/screens/d68ef73f08a345da9a73ff3125df2249",
+    "y": 16459,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Sửa việc"
+  },
+  {
+    "id": "d93bfb6ced594ae8b7ee395028246cd8",
+    "sourceScreen": "projects/2013215887278758682/screens/d93bfb6ced594ae8b7ee395028246cd8",
+    "x": 1344,
+    "y": -60672,
+    "width": 1280,
+    "height": 1028,
+    "label": "An Nhiên - Xem lại việc đầu tiên (Cập nhật v1)"
+  },
+  {
+    "id": "dd17c80e8a9943b19655e5708c90b655",
+    "sourceScreen": "projects/2013215887278758682/screens/dd17c80e8a9943b19655e5708c90b655",
+    "x": 16128,
+    "width": 1280,
+    "height": 2148,
+    "label": "An Nhiên - Hôm nay (Chuẩn hóa Chip Đã xong & Chưa làm)"
+  },
+  {
+    "id": "dd8eec4be5024c57ba14071eb05569a6",
+    "sourceScreen": "projects/2013215887278758682/screens/dd8eec4be5024c57ba14071eb05569a6",
+    "x": 22848,
+    "width": 1280,
+    "height": 2148,
+    "label": "An Nhiên - Hôm nay (Chuẩn hóa chuẩn Lucide Utensils, Redo-2 & Alarm-Clock-Plus)"
+  },
+  {
+    "id": "de0d546e8e4741b983f43a99a94a54e9",
+    "sourceScreen": "projects/2013215887278758682/screens/de0d546e8e4741b983f43a99a94a54e9",
+    "x": 4032,
+    "y": -11520,
+    "width": 1280,
+    "height": 1529,
+    "label": "An Nhiên - C09 Đã gửi cho mẹ (Thanh điều hướng 90px & Đệm cuộn chuẩn)"
+  },
+  {
+    "id": "de1224b0d7b64b968a008c03877ff2bd",
+    "sourceScreen": "projects/2013215887278758682/screens/de1224b0d7b64b968a008c03877ff2bd",
+    "x": 5394,
+    "y": 26283,
+    "width": 390,
+    "height": 800,
+    "label": "An Nhiên - DLG-Skip (Mai vẫn nhắc như thường & Vì sao vậy Bác)"
+  },
+  {
+    "id": "de3aca09ba4449938bc4852a1da0b037",
+    "sourceScreen": "projects/2013215887278758682/screens/de3aca09ba4449938bc4852a1da0b037",
+    "x": 2688,
+    "y": -14592,
+    "width": 1280,
+    "height": 1647,
+    "label": "An Nhiên - Mã sai hoặc hết hạn (Cập nhật v2)"
+  },
+  {
+    "id": "de3f6f6ef0ae40b4a901db925b2ee484",
+    "sourceScreen": "projects/2013215887278758682/screens/de3f6f6ef0ae40b4a901db925b2ee484",
+    "x": 1344,
+    "y": -6912,
+    "width": 1280,
+    "height": 1509,
+    "label": "An Nhiên - Thông tin việc (Bước 1/3) (Cập nhật v1)"
+  },
+  {
+    "id": "e05816e82aba4e829bbc187e938a2c0e",
+    "sourceScreen": "projects/2013215887278758682/screens/e05816e82aba4e829bbc187e938a2c0e",
+    "y": -19200,
+    "width": 1280,
+    "height": 2063,
+    "label": "An Nhiên - Thiếu tên hoặc giờ"
+  },
+  {
+    "id": "e36cfe774cae49359f4c3673883bc323",
+    "sourceScreen": "projects/2013215887278758682/screens/e36cfe774cae49359f4c3673883bc323",
+    "x": 4032,
+    "y": 13203,
+    "width": 1280,
+    "height": 1658,
+    "label": "An Nhiên - Gia đình (Đã thêm Cháu Bin & Thông báo thành công)"
+  },
+  {
+    "id": "e37f65a8115142c08aa8c3ea6be1cfdf",
+    "sourceScreen": "projects/2013215887278758682/screens/e37f65a8115142c08aa8c3ea6be1cfdf",
+    "y": -52992,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Thử lời nhắc"
+  },
+  {
+    "id": "e4877754214e4b548b32a95e1baeada0",
+    "sourceScreen": "projects/2013215887278758682/screens/e4877754214e4b548b32a95e1baeada0",
+    "y": -49920,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Lịch ngày mai"
+  },
+  {
+    "id": "e5293a7fbb4b4856b9beb49b5d374f4b",
+    "sourceScreen": "projects/2013215887278758682/screens/e5293a7fbb4b4856b9beb49b5d374f4b",
+    "y": -62208,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Dữ liệu trên điện thoại"
+  },
+  {
+    "id": "e543dc91ebbc4d1cb37d4bf11be51c59",
+    "sourceScreen": "projects/2013215887278758682/screens/e543dc91ebbc4d1cb37d4bf11be51c59",
+    "x": 1344,
+    "y": 13203,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Gia đình (Đã thêm Cháu Bin & Thông báo)"
+  },
+  {
+    "id": "e6c79c80f4484c03829c3ca64cbab493",
+    "sourceScreen": "projects/2013215887278758682/screens/e6c79c80f4484c03829c3ca64cbab493",
+    "x": 5376,
+    "y": 31616,
+    "width": 1280,
+    "height": 4009,
+    "label": "An Nhiên - Cài đặt nhắc việc (Cập nhật v4)"
+  },
+  {
+    "id": "ebec34462e6a4b96a341ccc71ab81fa9",
+    "sourceScreen": "projects/2013215887278758682/screens/ebec34462e6a4b96a341ccc71ab81fa9",
+    "x": 2688,
+    "width": 1280,
+    "height": 2986,
+    "label": "An Nhiên - Hôm nay (Cập nhật)"
+  },
+  {
+    "id": "ec509e26e1b049209314ade4d131d224",
+    "sourceScreen": "projects/2013215887278758682/screens/ec509e26e1b049209314ade4d131d224",
+    "y": 28619,
+    "width": 1280,
+    "height": 1200,
+    "label": "An Nhiên - C10 Chi tiết việc"
+  },
+  {
+    "id": "ece7ea9689344007a9e7495967b8099b",
+    "sourceScreen": "projects/2013215887278758682/screens/ece7ea9689344007a9e7495967b8099b",
+    "x": 25536,
+    "width": 1280,
+    "height": 2108,
+    "label": "An Nhiên - Hôm nay (Đã dời việc đi bộ sang 10:00 sáng)"
+  },
+  {
+    "id": "ed18b14a04d64657af585c1d87068912",
+    "sourceScreen": "projects/2013215887278758682/screens/ed18b14a04d64657af585c1d87068912",
+    "x": 2688,
+    "y": 13203,
+    "width": 1280,
+    "height": 824,
+    "label": "An Nhiên - Gia đình (Đã thêm Cháu Bin & Thông báo)"
+  },
+  {
+    "id": "ed30856e70174cd3abbc75e6e28bf6fc",
+    "sourceScreen": "projects/2013215887278758682/screens/ed30856e70174cd3abbc75e6e28bf6fc",
+    "x": 1344,
+    "y": 3391,
+    "width": 390,
+    "height": 933,
+    "label": "An Nhiên - Thông tin của Bác (Sửa thông tin)"
+  },
+  {
+    "id": "ef2e4cef6df04d8fbadaee5239b862cf",
+    "sourceScreen": "projects/2013215887278758682/screens/ef2e4cef6df04d8fbadaee5239b862cf",
+    "x": 1344,
+    "y": -43776,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Đã nhận một việc (Cập nhật v1)"
+  },
+  {
+    "id": "ef8560450ac04ed594de5ae5fcd095a7",
+    "sourceScreen": "projects/2013215887278758682/screens/ef8560450ac04ed594de5ae5fcd095a7",
+    "y": 14483,
+    "width": 1280,
+    "height": 1665,
+    "label": "An Nhiên - Cài đặt hiển thị"
+  },
+  {
+    "id": "eff674e465f5464f8a8c6e515cb461dc",
+    "sourceScreen": "projects/2013215887278758682/screens/eff674e465f5464f8a8c6e515cb461dc",
+    "x": 1344,
+    "y": -59136,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Đã nhận lời nhắc (Cập nhật v1)"
+  },
+  {
+    "id": "f177e56510f844a59ee286d8456748ef",
+    "sourceScreen": "projects/2013215887278758682/screens/f177e56510f844a59ee286d8456748ef",
+    "x": 4032,
+    "y": -33024,
+    "width": 1280,
+    "height": 962,
+    "label": "An Nhiên - Lịch ngày mai (Cập nhật v3)"
+  },
+  {
+    "id": "f18eacbd1f164974bc5850ca65a77ee9",
+    "sourceScreen": "projects/2013215887278758682/screens/f18eacbd1f164974bc5850ca65a77ee9",
+    "x": 4032,
+    "y": -31488,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Đã nhận gợi ý (Cập nhật v3)"
+  },
+  {
+    "id": "f7af0389ca464815b905eed36f92929d",
+    "sourceScreen": "projects/2013215887278758682/screens/f7af0389ca464815b905eed36f92929d",
+    "y": 26283,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - DLG-Done (Xác nhận đã xong)"
+  },
+  {
+    "id": "f80d166f7ea74511b8c1cc3cea280aa8",
+    "sourceScreen": "projects/2013215887278758682/screens/f80d166f7ea74511b8c1cc3cea280aa8",
+    "x": 4032,
+    "y": -9984,
+    "width": 1280,
+    "height": 2016,
+    "label": "An Nhiên - C08 Xem lại và gửi gợi ý (Rút gọn điều kiện & Tách dòng ghi chú)"
+  },
+  {
+    "id": "f9de4a86bd8847d59ecb33eef043ccd2",
+    "sourceScreen": "projects/2013215887278758682/screens/f9de4a86bd8847d59ecb33eef043ccd2",
+    "x": 4032,
+    "y": 17739,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - Chi tiết ngày (Cập nhật nút Thêm việc)"
+  },
+  {
+    "id": "fa0ce95a8e40470294479e06e601463b",
+    "sourceScreen": "projects/2013215887278758682/screens/fa0ce95a8e40470294479e06e601463b",
+    "x": 20160,
+    "width": 1280,
+    "height": 2148,
+    "label": "An Nhiên - Hôm nay (Dời đi bộ sang ngày mai & Tiếp theo Uống trà)"
+  },
+  {
+    "id": "fcdef0d0390947778b9437e0a20dc60a",
+    "sourceScreen": "projects/2013215887278758682/screens/fcdef0d0390947778b9437e0a20dc60a",
+    "x": 2688,
+    "y": -52992,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Thử lời nhắc (Cập nhật v2)"
+  },
+  {
+    "id": "fd6299d9bce9424c9a7083a8c7b52c5d",
+    "sourceScreen": "projects/2013215887278758682/screens/fd6299d9bce9424c9a7083a8c7b52c5d",
+    "x": 4032,
+    "y": -37632,
+    "width": 1280,
+    "height": 1302,
+    "label": "An Nhiên - Lịch Mai gợi ý · đã đổi giờ (Cập nhật v3)"
+  },
+  {
+    "id": "fda15558f95a4d50b5ffb09183f4733b",
+    "sourceScreen": "projects/2013215887278758682/screens/fda15558f95a4d50b5ffb09183f4733b",
+    "x": 2688,
+    "y": 11923,
+    "width": 1280,
+    "height": 800,
+    "label": "An Nhiên - 9 thói quen sống khỏe (Hoàn thiện)"
+  },
+  {
+    "id": "ff64beefe6684316a12cb375ca40178c",
+    "sourceScreen": "projects/2013215887278758682/screens/ff64beefe6684316a12cb375ca40178c",
+    "x": 2688,
+    "y": -40704,
+    "width": 1280,
+    "height": 1162,
+    "label": "An Nhiên - Chọn từng việc (Cập nhật v2)"
+  }
+]

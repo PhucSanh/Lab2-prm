@@ -1,0 +1,251 @@
+{
+  "screen": "C06 Tạo việc gợi ý — Bước 1/3",
+  "round": 0,
+  "score": 94,
+  "errors": 0,
+  "warns": 2,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Ô icon Vận động tự nhiên đang chọn",
+      "evidence": "Nền ô icon #2BA15C trên nền thẻ selected #D6EADF chỉ đạt 2,63:1, dưới 3:1. Viền control #7B887F trên trắng đạt 3,70:1.",
+      "fix": "Giữ màu nhấn #2BA15C; đặt ô icon trên nền trắng #FFFFFF để đạt 3,30:1, dùng viền 2px #1F684B và circle-dot + Đang chọn để biểu thị lựa chọn."
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Metrics 360: scrollWidth=clientWidth=360; ảnh đáy xác nhận cuộn tới ô thời lượng không bị footer che; padding-bottom 104px."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là form tạo việc, không phải thẻ việc đã lên lịch."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Icon thói quen Ăn vừa đủ và Thư giãn mỗi ngày",
+      "evidence": "SVG được ghi chú Lucide nhưng đường nét tự dựng: utensils hiện hai chiếc nĩa, không phải hình nĩa và dao của Lucide utensils; wind có các nét cuộn chồng bất thường. Mọi khung SVG đều 32×32px nên không lỗi kích thước.",
+      "fix": "Thay nguyên SVG bằng Lucide utensils và wind chính thức; giữ khung 32×32px, stroke-width 2.5 và màu trắng; không tự dựng lại path."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Ở khung chuẩn 360, Tiếp tục x=20, width=320, height=60, fixed bottom; metrics 412 cho lề46 là hạn chế đáp ứng ngoài khung chuẩn."
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Form con Bước 1/3 dùng Quay lại và footer, không phải màn tab."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có việc đã lên lịch cần nhãn trạng thái; Đang chọn là trạng thái chọn thói quen."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không hiển thị tiến độ ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Bước 1 chỉ nhập thông tin và Tiếp tục, chưa có hành động khó đảo ngược."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Form bình thường, không có lỗi nhập đang hiển thị."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "C06 Bước 1/3 không thuộc các màn bắt buộc Đọc to."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Form đọc rõ, cuộn tới cuối được và không có lỗi chặn; cần tăng tương phản ô icon đang chọn và dùng nguyên bản icon Lucide."
+}

@@ -1,0 +1,21 @@
+{
+  "screen": "G02",
+  "title": "Đã gửi gợi ý",
+  "status": "NEEDS_HUMAN",
+  "project_id": "2013215887278758682",
+  "round": 3,
+  "screen_id": "2c7b2e7c31e446dea227670667de862b",
+  "parent_screen_id": "4e784ab19ba14d8395082edab0a8cd47",
+  "best_round": 1,
+  "best_screen_id": "4e784ab19ba14d8395082edab0a8cd47",
+  "best_score": 90,
+  "patience": 2,
+  "pending_operation_id": null,
+  "stop_reason": "patience_2",
+  "canvas_row": 22,
+  "stage": "awaiting_review",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/G02/v2-edit-prompt.txt",
+  "updated_at": "2026-10-19T04:21:45.037417+00:00",
+  "last_processed_round": 3
+}

@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-ICON-03: Increase the Lucide `clock` icon beside “9:30 sáng” from 24×24px to 32×32px. Keep the exact clock icon and its time label.
+Preserve the 24px circle in the status chip, four-tab nav, 32px main icons, test-only note and bottom actions. Generate a new screen and preserve N01 v2 unchanged.

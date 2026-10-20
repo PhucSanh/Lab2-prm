@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An Nhiên - Chọn việc đầu tiên</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #ECEEE7;
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #202B25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+
+  /* Mobile container 360px wide, min 800px tall */
+  .mobile-frame {
+    width: 360px;
+    height: 800px;
+    background-color: #F6F7F2;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 12px 32px rgba(32, 43, 37, 0.12);
+    border-radius: 28px;
+  }
+
+  /* Header App Bar */
+  .app-header {
+    flex-shrink: 0;
+    padding: 20px 20px 12px;
+    display: flex;
+    align-items: center;
+    background-color: #F6F7F2;
+    z-index: 10;
+  }
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1F684B;
+    padding: 6px 0;
+    min-height: 48px;
+  }
+
+  /* Scrollable Content */
+  .scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 20px;
+    /* padding bottom to clear pinned actions (approx 140px) + bottom-nav (96px) */
+    padding-bottom: 244px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Titles & Guidance */
+  .page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #202B25;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .page-subtitle {
+    font-size: 22px;
+    font-weight: 400;
+    color: #526057;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  /* Selection Cards Stack */
+  .cards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* Selectable Card */
+  .task-card {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    border: 2px solid #7B887F;
+    border-radius: 16px;
+    padding: 16px;
+    cursor: pointer;
+    min-height: 88px;
+    position: relative;
+    transition: all 0.15s ease;
+    text-align: left;
+    width: 100%;
+  }
+
+  .task-card.selected {
+    background: #D6EADF;
+    border: 3px solid #1F684B;
+    padding: 15px; /* Adjust for 3px border to keep height consistent */
+  }
+
+  .card-icon-tile {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 14px;
+  }
+
+  /* Habit specific colors */
+  .icon-green {
+    background-color: #1F684B;
+    color: #FFFFFF;
+  }
+
+  .icon-leaf {
+    background-color: #287A57;
+    color: #FFFFFF;
+  }
+
+  .icon-coral {
+    background-color: #BA3D2A;
+    color: #FFFFFF;
+  }
+
+  .icon-neutral {
+    background-color: #E2E6DF;
+    color: #1F684B;
+    border: 2px dashed #7B887F;
+  }
+
+  .card-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #202B25;
+    line-height: 1.3;
+    margin-bottom: 4px;
+    word-break: break-word;
+  }
+
+  .card-desc {
+    font-size: 20px;
+    font-weight: 400;
+    color: #526057;
+    line-height: 1.3;
+  }
+
+  /* Selection Affordance (Radio / Check) */
+  .card-affordance {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 10px;
+    flex-shrink: 0;
+  }
+
+  .radio-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .radio-text {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1F684B;
+    white-space: nowrap;
+  }
+
+  /* Custom activity entry card */
+  .custom-task-card {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    border: 2px dashed #7B887F;
+    border-radius: 16px;
+    padding: 16px;
+    cursor: pointer;
+    min-height: 84px;
+    width: 100%;
+    text-align: left;
+    transition: all 0.15s ease;
+  }
+
+  .custom-task-card:active {
+    background-color: #F0F3ED;
+  }
+
+  /* Informational note */
+  .info-note {
+    background-color: #E8ECE6;
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .info-note-text {
+    font-size: 20px;
+    font-weight: 400;
+    color: #526057;
+    line-height: 1.4;
+  }
+
+  /* Pinned Bottom Actions Area */
+  .bottom-actions-container {
+    position: absolute;
+    bottom: 96px; /* Sits right above 96px bottom nav */
+    left: 0;
+    width: 360px;
+    background-color: #F6F7F2;
+    border-top: 1px solid #DFE5DF;
+    padding: 12px 20px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 20;
+  }
+
+  .primary-btn {
+    width: 100%;
+    height: 60px;
+    background-color: #1F684B;
+    border: none;
+    border-radius: 14px;
+    color: #FFFFFF;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(31, 104, 75, 0.2);
+  }
+
+  .secondary-btn {
+    width: 100%;
+    min-height: 48px;
+    background: transparent;
+    border: none;
+    color: #1F684B;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0;
+  }
+
+  /* Bottom Navigation 96px */
+  .bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 360px;
+    height: 96px;
+    background-color: #FFFFFF;
+    border-top: 2px solid #DFE5DF;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 4px;
+    z-index: 30;
+  }
+
+  .nav-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 86px;
+    height: 80px;
+    color: #526057;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+
+  .nav-tab.active {
+    color: #1F684B;
+  }
+
+  .nav-label {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  svg {
+    display: block;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="mobile-frame">
+  <!-- Header / Back -->
+  <header class="app-header">
+    <button class="back-btn" type="button" aria-label="Quay lại Hôm nay">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+      <span>Quay lại</span>
+    </button>
+  </header>
+
+  <!-- Scrollable Content -->
+  <main class="scroll-content">
+    <h1 class="page-title">Bác muốn làm gì?</h1>
+    <p class="page-subtitle">Chọn một việc nhỏ để bắt đầu ngày mới nhẹ nhàng.</p>
+
+    <!-- Cards Stack -->
+    <div class="cards-stack" role="radiogroup" aria-label="Danh sách việc mẫu">
+      
+      <!-- Option 1: Đi bộ nhẹ nhàng (Selected state by default) -->
+      <div class="task-card selected" role="radio" aria-checked="true" tabindex="0">
+        <div class="card-icon-tile icon-green" aria-hidden="true">
+          <!-- Lucide foot-prints 32px -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.6-2 8.5v2"/>
+            <path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.6 2 8.5v2"/>
+            <path d="M16 17h4"/>
+            <path d="M4 13h4"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Đi bộ nhẹ nhàng</div>
+          <div class="card-desc">Vận động tự nhiên</div>
+        </div>
+        <div class="card-affordance">
+          <div class="radio-pill">
+            <!-- Lucide circle-dot 32px -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="3" fill="#1F684B"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 2: Chăm cây -->
+      <div class="task-card" role="radio" aria-checked="false" tabindex="0">
+        <div class="card-icon-tile icon-leaf" aria-hidden="true">
+          <!-- Lucide sprout / leaf 32px -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 20h10"/>
+            <path d="M10 20c5.5-2.5.8-6.4 3-13"/>
+            <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+            <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Chăm cây</div>
+          <div class="card-desc">Vận động tự nhiên</div>
+        </div>
+        <div class="card-affordance">
+          <!-- Lucide circle 32px -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7B887F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Option 3: Gọi người thân -->
+      <div class="task-card" role="radio" aria-checked="false" tabindex="0">
+        <div class="card-icon-tile icon-coral" aria-hidden="true">
+          <!-- Lucide phone 32px -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Gọi người thân</div>
+          <div class="card-desc">Gia đình trên hết</div>
+        </div>
+        <div class="card-affordance">
+          <!-- Lucide circle 32px -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7B887F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Option 4: Tự đặt tên việc (Entry action) -->
+      <div class="custom-task-card" role="button" tabindex="0" aria-label="Tự đặt tên việc">
+        <div class="card-icon-tile icon-neutral" aria-hidden="true">
+          <!-- Lucide pen-line 32px -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"/>
+            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Tự đặt tên việc</div>
+          <div class="card-desc">Tạo một việc khác theo ý Bác</div>
+        </div>
+        <div class="card-affordance">
+          <!-- Lucide chevron-right 32px -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m9 18 6-6-6-6"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Assurance Note -->
+    <div class="info-note">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="16" x2="12" y2="12"/>
+        <line x1="12" y1="8" x2="12.01" y2="8"/>
+      </svg>
+      <div class="info-note-text">
+        Bác cứ chọn thử, bước tiếp theo Bác mới bấm lưu vào lịch nhé.
+      </div>
+    </div>
+  </main>
+
+  <!-- Pinned Bottom Actions above Nav -->
+  <section class="bottom-actions-container">
+    <button class="primary-btn" type="button">
+      <span>Tiếp tục</span>
+      <!-- Lucide arrow-right 32px -->
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14"/>
+        <path d="m12 5 7 7-7 7"/>
+      </svg>
+    </button>
+    <button class="secondary-btn" type="button">
+      Để sau
+    </button>
+  </section>
+
+  <!-- Bottom Navigation 4 Tabs 96px -->
+  <nav class="bottom-nav" aria-label="Điều hướng chính">
+    <a href="#hom-nay" class="nav-tab active">
+      <!-- Lucide sun 32px -->
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2"/>
+        <path d="M12 20v2"/>
+        <path d="m4.93 4.93 1.41 1.41"/>
+        <path d="m17.66 17.66 1.41 1.41"/>
+        <path d="M2 12h2"/>
+        <path d="M20 12h2"/>
+        <path d="m6.34 17.66-1.41 1.41"/>
+        <path d="m19.07 4.93-1.41 1.41"/>
+      </svg>
+      <span class="nav-label" style="color: #1F684B;">Hôm nay</span>
+    </a>
+    
+    <a href="#lich-tuan" class="nav-tab">
+      <!-- Lucide calendar-days 32px -->
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#526057" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="18" height="18" x="3" y="4" rx="2"/>
+        <line x1="16" x2="16" y1="2" y2="6"/>
+        <line x1="8" x2="8" y1="2" y2="6"/>
+        <line x1="3" x2="21" y1="10" y2="10"/>
+        <path d="M8 14h.01"/>
+        <path d="M12 14h.01"/>
+        <path d="M16 14h.01"/>
+        <path d="M8 18h.01"/>
+        <path d="M12 18h.01"/>
+        <path d="M16 18h.01"/>
+      </svg>
+      <span class="nav-label">Lịch tuần</span>
+    </a>
+
+    <a href="#thoi-quen" class="nav-tab">
+      <!-- Lucide leaf 32px -->
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#526057" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+      </svg>
+      <span class="nav-label">Thói quen</span>
+    </a>
+
+    <a href="#gia-dinh" class="nav-tab">
+      <!-- Lucide hand-heart 32px -->
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#526057" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/>
+        <path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/>
+        <path d="m2 15 6 6"/>
+        <path d="M19.5 8.5c.7-.7 1.5-1.2 2.5-1.5a4 4 0 0 0-5.7-3.4 4 4 0 0 0-5.3 1.9"/>
+      </svg>
+      <span class="nav-label">Gia đình</span>
+    </a>
+  </nav>
+</div>
+
+<script>
+  // Simple interactive selection for older adults
+  const taskCards = document.querySelectorAll('.task-card');
+  taskCards.forEach(card => {
+    card.addEventListener('click', () => {
+      taskCards.forEach(c => {
+        c.classList.remove('selected');
+        c.setAttribute('aria-checked', 'false');
+        const affordance = c.querySelector('.card-affordance');
+        if (affordance) {
+          affordance.innerHTML = `
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7B887F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+          `;
+        }
+      });
+      card.classList.add('selected');
+      card.setAttribute('aria-checked', 'true');
+      const affordance = card.querySelector('.card-affordance');
+      if (affordance) {
+        affordance.innerHTML = `
+          <div class="radio-pill">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="3" fill="#1F684B"/>
+            </svg>
+          </div>
+        `;
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

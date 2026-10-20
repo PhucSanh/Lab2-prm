@@ -1,0 +1,6 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-TXT-03] In step 3, replace “Bác chạm nút bên dưới để gửi lời nhắc thử.” with the shorter exact text “Chạm nút bên dưới để thử lại.” It must wrap to no more than 2 lines at 360px. Preserve all three steps and both destinations.
+2. [R-LANG-02] Change the subtitle under the heading to “Bác cùng kiểm tra 3 chỗ nhé.” so the screen uses one consistent form of address.
+3. [R-STY-01] Change the background of every `.step-badge` from `#E8F3ED` to the documented `#D6EADF` (`primary-container`). Leave other colors unchanged.
+4. [R-STY-03] Set the vertical gap between the two footer buttons to exactly 16px. Keep both buttons 60px high and retain their current labels and order.
+Do not add icons or change the content, typography, destinations, card layout, or any other colors.

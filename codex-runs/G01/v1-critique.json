@@ -1,0 +1,258 @@
+{
+  "screen": "G01 Con cháu soạn lịch gợi ý",
+  "round": 1,
+  "score": 64,
+  "errors": 3,
+  "warns": 2,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Thẻ hoạt động, dòng phụ, nhãn chọn giờ, trường lời nhắn, lời nhắc quyền tự chủ",
+      "evidence": "HTML khai báo nhiều nhãn 19px (activity-subtitle, time-label, message-hint, privacy-text); nội dung hiển thị theo v1-fullpage-360.png nhỏ hơn mức tối thiểu 20px ở vài thành phần.",
+      "fix": "Đặt mọi chữ hiển thị tối thiểu 20px; tăng .activity-subtitle, .time-label, .message-hint và .privacy-text từ 19px lên 20px."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Toàn màn, đặc biệt hai thẻ việc và phần chọn giờ",
+      "evidence": "v1-fullpage-360.png cho thấy phần lớn chữ nội dung, nhãn giờ và lời nhắn bị thu nhỏ đáng kể trong bố cục; các dòng tên và giờ trong lựa chọn gãy thành hai dòng, giảm khả năng đọc lướt.",
+      "fix": "Giữ nội dung chính 24px, tiêu đề khoảng 30px, chữ nút 22px và nới lựa chọn giờ để mỗi giờ như ‘8:00 sáng’ nằm trên một dòng."
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Trường ‘Lời nhắn gửi kèm’ và thẻ chứa nó tại 360 px",
+      "evidence": "v1-metrics-360.json ghi scrollWidth = clientWidth = 360 nhưng .message-input có x=36, width=340, kết thúc ở x=376; .message-card cũng vượt mép phải. .phone-container che ngang bằng overflow-x:hidden nên phần bị tràn bị cắt thay vì làm tăng scrollWidth.",
+      "fix": "Sửa box model của .message-card/.message-input để toàn bộ nằm trong lề x=20..340 tại khung 360px; bỏ overflow-x:hidden dùng để che lỗi và xác nhận không có phần tử vượt x=360."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Hai thẻ gợi ý ‘Đi bộ nhẹ nhàng’ và ‘Thư giãn nhẹ nhàng’",
+      "evidence": "Mỗi thẻ có tên việc, dòng phụ gồm tên thói quen + thời lượng, phần ‘Chọn giờ nhắc gợi ý’ và hai lựa chọn giờ; phần chọn giờ là thêm nhiều dòng thông tin thay vì cấu trúc thẻ chỉ có icon, giờ, tên việc, trạng thái và tối đa một dòng phụ.",
+      "fix": "Thu gọn mỗi thẻ thành icon + giờ gợi ý + tên việc + trạng thái; tối đa một dòng phụ, chuyển phần chọn giờ thành lựa chọn ngắn gọn gắn trực tiếp vào giờ."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn G01 soạn gợi ý của người thân, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "G01 là màn soạn lịch trên máy người thân theo flutter-handoff.md; màn này dùng app bar và CTA, không có bottom navigation."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "G01 là màn người thân soạn đề xuất, chưa có việc nào ở trạng thái đã nhận, đang làm hoặc đã hoàn thành."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "G01 không phải màn Hôm nay và không hiển thị tiến độ trong ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Quy tắc chỉ áp dụng cho màn Hôm nay; G01 là màn soạn gợi ý của người thân."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn là form gồm danh sách gợi ý, lựa chọn giờ và ô nhập; rule yêu cầu căn trái form."
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có thao tác xóa, đánh dấu hoàn thành hay ngưng lặp trên màn soạn gợi ý này."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có trạng thái lỗi nhập liệu hiển thị để đánh giá."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Quy tắc áp dụng cho S14, S04, S16 và G03; màn hiện tại là G01."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Thẻ lời nhắn và nút chọn giờ",
+      "evidence": "Ảnh v1-fullpage-360.png cho thấy các góc bo tổng thể gần đúng nhưng các lựa chọn giờ bo khoảng 12px, trong khi token nút là 14px; font Be Vietnam Pro được khai báo trong HTML.",
+      "fix": "Đặt border-radius của các nút chọn giờ thành 14px; giữ card 16px và Be Vietnam Pro."
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "G01 có CTA rõ, tương phản tốt và màu thói quen nhận diện được, nhưng bố cục trường lời nhắn tràn khung 360px và cấu trúc thẻ gợi ý quá nhiều lớp thông tin; vài nhãn cũng bị thu nhỏ hoặc xuống dòng khó đọc."
+}

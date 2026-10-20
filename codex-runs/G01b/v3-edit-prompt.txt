@@ -1,0 +1,1 @@
+Keep the best reviewed G01b v2 screen unchanged except for the two remaining warning fixes: use “Bác” consistently in the send confirmation and privacy line (“Gửi gợi ý cho Bác?”; “Lịch của Bác chỉ cập nhật khi Bác bấm nhận.”); set `.activities-list` gap to exactly 16px. Preserve the selected 9:00 state, all controls, fixed send CTA, widths and icons. Generate a new screen now.

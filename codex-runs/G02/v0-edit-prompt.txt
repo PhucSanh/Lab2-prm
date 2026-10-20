@@ -1,0 +1,6 @@
+Keep the overall G02 screen unchanged except for these review fixes; generate a new screen now:
+1. Resolve bottom-nav label overlap at 360px and 412px without shrinking text below 20px: use four equal-width tab columns, centered labels allowed to wrap to at most two lines, 20px type, line-height 1.1, and a nav height of 104px. Keep at least 4px visible gap between labels.
+2. Increase both clock icons beside task times from 22px to 32×32px.
+3. Replace the bottom-nav Gia đình icon `users` with documented Lucide `hand-heart` 32×32px.
+4. Replace “Đang chờ mẹ xem” on each task with the specified state chip “○ Chưa làm”, using Lucide circle 24×24px and documented warning styling.
+Preserve task names, sent-message content, privacy statement, and the same single primary action. Keep text >=20px, touch targets >=48px, no horizontal overlap and no footer/nav covering content.

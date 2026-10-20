@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-TXT-01] In the instruction card, set .step-number font-size to20px (currently16px) and size both numbered circles to28x28px. No displayed text may be below20px.
+2. [R-ICON-03] Replace the family icon after "Mở Gia đình." with exact Lucide hand-heart SVG32x32px,stroke2–2.5. The current24px heart-handshake shape is incorrect. Keep its visible label.
+3. [R-ICON-03] In the main "Ghép nối" button replace smartphone with exact Lucide arrow-right32x32px for continuing the pairing action. Keep smartphone32px only beside "Trên máy của mẹ" as phone information. Preserve all other text/colors/layout and single accessible code input with6visual cells. Create a NEW screen version; do not overwrite source.

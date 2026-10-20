@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>An Nhiên - Cách dùng đơn giản</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F6F7F2;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      line-height: 1.4;
+    }
+
+    .mobile-container {
+      width: 100%;
+      max-width: 412px;
+      min-height: 100vh;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 24px rgba(0, 0, 0, 0.06);
+    }
+
+    /* App Bar */
+    .app-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px 8px 20px;
+      background-color: #F6F7F2;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      color: #1F684B;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      cursor: pointer;
+      min-height: 48px;
+      min-width: 48px;
+      padding: 6px 12px 6px 0;
+    }
+
+    .app-brand {
+      font-size: 20px;
+      font-weight: 600;
+      color: #526057;
+    }
+
+    /* Scroll Content */
+    .scroll-content {
+      flex: 1;
+      padding: 8px 20px 220px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .header-section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-icon {
+      flex-shrink: 0;
+      color: #1F684B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .screen-title {
+      font-size: 30px;
+      font-weight: 800;
+      color: #202B25;
+      line-height: 1.25;
+    }
+
+    .screen-subtitle {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.4;
+    }
+
+    /* Step Card */
+    .step-card {
+      background-color: #FFFFFF;
+      border: 1px solid #DFE5DF;
+      border-radius: 16px;
+      padding: 18px 16px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .step-badge-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #D6EADF;
+      color: #174C37;
+      font-size: 20px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #1F684B;
+    }
+
+    .icon-tile {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon-tile.green {
+      background-color: #1F684B;
+      color: #FFFFFF;
+    }
+
+    .icon-tile.amber {
+      background-color: #B26A00;
+      color: #FFFFFF;
+    }
+
+    .icon-tile.teal {
+      background-color: #157367;
+      color: #FFFFFF;
+    }
+
+    .step-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .step-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    .step-desc {
+      font-size: 20px;
+      font-weight: 400;
+      color: #526057;
+      line-height: 1.45;
+    }
+
+    /* Reassurance Note Card */
+    .reassurance-card {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .reassurance-icon {
+      flex-shrink: 0;
+      color: #1F684B;
+      margin-top: 2px;
+    }
+
+    .reassurance-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .reassurance-highlight {
+      font-size: 20px;
+      font-weight: 700;
+      color: #174C37;
+      line-height: 1.45;
+    }
+
+    .reassurance-sub {
+      font-size: 20px;
+      font-weight: 400;
+      color: #174C37;
+      line-height: 1.45;
+    }
+
+    /* Fixed Footer Actions */
+    .fixed-footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 412px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      padding: 14px 20px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 20;
+    }
+
+    .btn {
+      width: 100%;
+      height: 60px;
+      border-radius: 14px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.15s ease;
+      touch-action: manipulation;
+    }
+
+    /* Exactly ONE filled button */
+    .btn-primary {
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+    }
+
+    .btn-primary:active {
+      background-color: #174C37;
+    }
+
+    /* Outlined button */
+    .btn-secondary {
+      background-color: #FFFFFF;
+      color: #1F684B;
+      border: 2px solid #1F684B;
+    }
+
+    .btn-secondary:active {
+      background-color: #E8F2EC;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-container">
+    <!-- Header / App bar -->
+    <header class="app-bar">
+      <button type="button" class="back-btn" aria-label="Quay lại">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        <span>Quay lại</span>
+      </button>
+      <div class="app-brand">An Nhiên</div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="scroll-content">
+      <!-- Title Area -->
+      <section class="header-section">
+        <div class="title-row">
+          <div class="title-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+              <path d="M6 6h10"/>
+              <path d="M6 10h10"/>
+            </svg>
+          </div>
+          <h1 class="screen-title">Cách dùng đơn giản</h1>
+        </div>
+        <p class="screen-subtitle">Ba bước nhẹ nhàng để bắt đầu mỗi ngày cùng An Nhiên.</p>
+      </section>
+
+      <!-- Step 1 -->
+      <article class="step-card">
+        <div class="step-badge-col">
+          <div class="step-number" aria-label="Bước 1">1</div>
+          <div class="icon-tile green">
+            <!-- Lucide check-square -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m9 11 3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </div>
+        </div>
+        <div class="step-body">
+          <h2 class="step-title">Chọn việc</h2>
+          <p class="step-desc">Bác chọn một việc nhỏ quen thuộc để bắt đầu ngày mới nhẹ nhàng.</p>
+        </div>
+      </article>
+
+      <!-- Step 2 -->
+      <article class="step-card">
+        <div class="step-badge-col">
+          <div class="step-number" aria-label="Bước 2">2</div>
+          <div class="icon-tile amber">
+            <!-- Lucide bell-ring -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+              <path d="M4 2C2.8 3.7 2 5.7 2 8"/>
+              <path d="M22 8c0-2.3-.8-4.3-2-6"/>
+            </svg>
+          </div>
+        </div>
+        <div class="step-body">
+          <h2 class="step-title">Nhắc nhẹ nhàng</h2>
+          <p class="step-desc">Ứng dụng đổ chuông êm và đọc tên việc đúng giờ Bác đã chọn.</p>
+        </div>
+      </article>
+
+      <!-- Step 3 -->
+      <article class="step-card">
+        <div class="step-badge-col">
+          <div class="step-number" aria-label="Bước 3">3</div>
+          <div class="icon-tile teal">
+            <!-- Lucide hand-heart -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/>
+              <path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.7-2.9l-3.2 2.8"/>
+              <path d="M2 15v5a2 2 0 0 0 2 2h4"/>
+              <path d="M18 7.5a2.5 2.5 0 0 0-3.5 0l-.5.5-.5-.5a2.5 2.5 0 0 0-3.5 3.5l4 4 4-4a2.5 2.5 0 0 0 0-3.5Z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="step-body">
+          <h2 class="step-title">Gần gũi người thân</h2>
+          <p class="step-desc">Con cháu có thể gửi gợi ý lịch. Bác tự chọn nhận hoặc bỏ qua.</p>
+        </div>
+      </article>
+
+      <!-- Exact Reassurance Card -->
+      <section class="reassurance-card">
+        <div class="reassurance-icon">
+          <!-- Lucide info -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16v-4"/>
+            <path d="M12 8h.01"/>
+          </svg>
+        </div>
+        <div class="reassurance-content">
+          <p class="reassurance-highlight">Người thân có thể gửi gợi ý lịch. Bác tự chọn nhận hoặc bỏ qua.</p>
+          <p class="reassurance-sub">Việc chỉ vào lịch khi Bác bấm nhận.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Fixed Action Footer: Exactly ONE filled button -->
+    <footer class="fixed-footer">
+      <!-- Outlined action -->
+      <button type="button" class="btn btn-secondary">
+        <!-- Lucide bell -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+          <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+        </svg>
+        <span>Thử lời nhắc</span>
+      </button>
+
+      <!-- The ONLY filled button -->
+      <button type="button" class="btn btn-primary">
+        <!-- Lucide settings -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+        <span>Mở cài đặt</span>
+      </button>
+    </footer>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-TXT-03: Remove the long explanatory paragraph “Chưa thêm vào lịch. Bác có thể thêm sau trong Gia đình.” from the walking suggestion card. If needed, replace it with the short standalone label “Chưa thêm vào lịch.” outside the card, at no more than 2 lines.
+2. R-TXT-05: Simplify the unaccepted “Đi bộ nhẹ nhàng” card to only its habit icon, time, task name and status chip; remove the extra “Vận động tự nhiên” subline and any explanatory sentence inside the card. Keep the accepted relaxation card at 10:00 as already shown.
+Preserve the one-item acceptance confirmation, distinguish walking at 9:00 as not added, keep “Xem lịch ngày mai”, voice, return control and four-tab navigation. Generate a new screen and preserve G07b v0 unchanged.

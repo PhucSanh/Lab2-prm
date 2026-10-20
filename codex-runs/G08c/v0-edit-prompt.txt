@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-TXT-02: Increase the screen heading “Ngày mai · Thứ Sáu, 9/10” from 28px to 30px.
+2. R-TXT-05 and R-TXT-06: Remove the entire unaccepted “Thư giãn nhẹ nhàng” suggestion card from this calendar screen, along with the separate explanations “Gợi ý từ Mai · Chưa thêm vào lịch.” and “Bác có thể đổi giờ hoặc thêm việc bất cứ lúc nào.” Keep only the accepted calendar activity “Đi bộ nhẹ nhàng” at 9:00 sáng. Do not show unaccepted tasks or advice on this calendar view.
+Preserve date context, correct habit accent tokens, calendar navigation, and the accepted-one-activity state. Generate a new screen and preserve G08c v0 unchanged.

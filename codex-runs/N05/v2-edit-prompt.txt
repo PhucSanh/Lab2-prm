@@ -1,0 +1,2 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-ICON-03] In the “Chưa làm” status chip, replace the plain 20px “○” character with the documented Lucide `circle` icon at 24×24px, stroke 2–2.5. Keep it beside the visible “Chưa làm” label and preserve the chip colors, shape, text and all other screen details.

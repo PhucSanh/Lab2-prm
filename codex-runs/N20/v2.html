@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - Dữ liệu trên điện thoại</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F6F7F2;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    .mobile-container {
+      width: 100%;
+      max-width: 412px;
+      min-height: 100vh;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top App Bar */
+    .app-bar {
+      display: flex;
+      align-items: center;
+      padding: 12px 20px 8px;
+      background-color: #F6F7F2;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      color: #1F684B;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 8px 12px 8px 0;
+      min-height: 48px;
+      min-width: 48px;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .btn-back:focus-visible {
+      outline: 3px solid #1F684B;
+      outline-offset: 2px;
+    }
+
+    /* Scrollable Content Container */
+    .content {
+      flex: 1;
+      padding: 8px 20px 140px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Screen Title Row */
+    .title-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .title-icon {
+      color: #1F684B;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .screen-title {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #202B25;
+    }
+
+    /* Intro sentence */
+    .intro-text {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #526057;
+      margin-bottom: 24px;
+    }
+
+    /* Info Cards List */
+    .cards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .info-card {
+      background-color: #FFFFFF;
+      border: 1px solid #DFE5DF;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card-header-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .icon-tile {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: #D6EADF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #1F684B;
+    }
+
+    .card-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.35;
+    }
+
+    .card-body {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #526057;
+    }
+
+    /* Fixed Footer CTA */
+    .fixed-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      max-width: 412px;
+      margin: 0 auto;
+      padding: 16px 20px 20px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      z-index: 30;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .btn-primary {
+      width: 100%;
+      height: 60px;
+      min-height: 48px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      box-shadow: none;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn-primary:active {
+      background-color: #174C37;
+    }
+
+    .btn-primary:focus-visible {
+      outline: 3px solid #202B25;
+      outline-offset: 2px;
+    }
+
+    /* Responsiveness Check: 360px viewport */
+    @media (max-width: 360px) {
+      .app-bar {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      .content {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      .fixed-footer {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+  </style>
+<style>@media (max-width: 360px) { .app-bar, .content, .fixed-footer { padding-left: 20px !important; padding-right: 20px !important; } } .intro-text, .card-body { font-size: 24px !important; line-height: 1.45 !important; }</style></head>
+<body>
+<main class="mobile-container">
+<!-- App Bar -->
+<header class="app-bar">
+<button aria-label="Quay lại cài đặt" class="btn-back" type="button">
+<!-- Lucide chevron-left 32x32 -->
+<svg aria-hidden="true" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+<span>Quay lại</span>
+</button>
+</header>
+<!-- Content Area -->
+<div class="content">
+<!-- Title Row -->
+<div class="title-row">
+<!-- Lucide smartphone 32x32 -->
+<svg aria-hidden="true" class="title-icon" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<rect height="20" rx="2" ry="2" width="14" x="5" y="2"></rect>
+<path d="M12 18h.01"></path>
+</svg>
+<h1 class="screen-title">Dữ liệu trên điện thoại</h1>
+</div>
+<!-- Intro Text (one concise reassuring sentence) -->
+<p class="intro-text" style="font-size: 24px; line-height: 1.45;">Lịch việc lưu gọn gàng trên chính chiếc điện thoại này.</p>
+<!-- Three Information Cards -->
+<div class="cards-list">
+<!-- Card 1: Dùng được khi mất mạng -->
+<article class="info-card"><div class="card-header-row">
+<div aria-hidden="true" class="icon-tile">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<rect height="20" rx="2" ry="2" width="14" x="5" y="2"></rect>
+<path d="M12 18h.01"></path>
+</svg>
+</div>
+<h2 class="card-title">Dùng được khi mất mạng</h2>
+</div>
+<p class="card-body" style="font-size: 24px; line-height: 1.45;">Không có mạng, Bác vẫn xem được lịch bình thường.</p></article>
+<!-- Card 2: Chưa đồng bộ sang máy khác -->
+<article class="info-card"><div class="card-header-row">
+<div aria-hidden="true" class="icon-tile">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 16v-4"></path>
+<path d="M12 8h.01"></path>
+</svg>
+</div>
+<h2 class="card-title">Lịch chỉ ở điện thoại này</h2>
+</div>
+<p class="card-body" style="font-size: 24px; line-height: 1.45;">Lịch chưa chuyển sang máy khác.</p></article>
+<!-- Card 3: Chia sẻ do Bác quyết định -->
+<article class="info-card"><div class="card-header-row">
+<div aria-hidden="true" class="icon-tile">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 16v-4"></path>
+<path d="M12 8h.01"></path>
+</svg>
+</div>
+<h2 class="card-title">Chia sẻ do Bác quyết định</h2>
+</div>
+<p class="card-body" style="font-size: 24px; line-height: 1.45;">Ứng dụng chỉ chia sẻ khi chính Bác đồng ý.</p></article>
+</div>
+</div>
+<!-- Pinned Bottom CTA -->
+<footer class="fixed-footer">
+<button class="btn-primary" type="button"><svg aria-hidden="true" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+<span>Về Cài đặt</span></button>
+</footer>
+</main>
+</body>
+</html>

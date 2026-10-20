@@ -1,0 +1,251 @@
+{
+  "screen": "G04 Đổi giờ đi bộ",
+  "round": 3,
+  "score": 81,
+  "errors": 1,
+  "warns": 3,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn G04 đổi giờ từ gợi ý người thân, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Tab Gia đình và nút “Lưu giờ mới”",
+      "evidence": "Tab Gia đình dùng hình trái tim thay Lucide `hand-heart`; nút Lưu dùng dấu tick thay `save` theo từ điển icon.",
+      "fix": "Đổi icon Gia đình thành Lucide `hand-heart` 32×32 px và icon nút Lưu thành Lucide `save` 32×32 px."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Ô icon và vạch trái của hai thẻ việc",
+      "evidence": "Màu đang dùng #2BA15C và #AC76DB, không khớp cặp màu của thói quen trong DESIGN.md (Vận động: #D7EDE0/#0F3D2A; Thư giãn: #EDE4F6/#4B2A73).",
+      "fix": "Dùng đúng màu token của từng thói quen trong DESIGN.md; đồng bộ nền ô icon, màu icon tương phản và vạch trái theo cùng màu thói quen."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Hai chip trạng thái “Chưa làm”",
+      "evidence": "HTML đặt min-height 38px; nhỏ hơn vùng chạm tối thiểu 48×48px.",
+      "fix": "Tăng min-height mỗi chip lên 48px và bảo đảm vùng bấm rộng tối thiểu 48px."
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn chỉnh giờ cho một gợi ý, không trình bày tiến độ ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Luật này chỉ áp dụng cho màn Hôm nay; đây là màn G04 đổi giờ."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có hành động xóa, đánh dấu xong hoặc ngưng lặp trên màn này."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không hiển thị trạng thái lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Ô icon và vạch trái của các thẻ việc",
+      "evidence": "#2BA15C và #AC76DB khác màu nhấn theo DESIGN.md; các màu nền/chữ chính còn lại dùng đúng token.",
+      "fix": "Thay màu hai thói quen bằng cặp token tương ứng trong DESIGN.md: Vận động #D7EDE0/#0F3D2A; Thư giãn #EDE4F6/#4B2A73."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Màn có 1 lỗi chặn do chip trạng thái thấp hơn vùng chạm tối thiểu; sai màu thói quen và hai icon cần chỉnh theo từ điển."
+}

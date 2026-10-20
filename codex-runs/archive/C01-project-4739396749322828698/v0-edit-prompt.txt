@@ -1,0 +1,2 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. Standardize the inter-block spacing to exactly16px: set .brand-header margin-bottom:16px, .main-heading margin-bottom:16px and .choices-container margin-bottom:16px. Keep horizontal viewport padding20px, the gap between the two role cards16px, current Vietnamese wording, colors, font sizes and icons unchanged. Preserve 360x800 and412px responsive layout, no horizontal overflow, descriptions at most2 lines and the60px bottom Continue button.

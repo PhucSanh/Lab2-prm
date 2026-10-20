@@ -1,0 +1,1 @@
+Keep the overall layout and all elements unchanged. Fix only the gradient warnings: replace the linear-gradient behind the fixed “Về Hôm nay” button with a solid #F6F7F2 background. Preserve the CTA, nav, content, responsive sizes and touch targets. Generate a new screen now.

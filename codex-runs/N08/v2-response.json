@@ -1,0 +1,27 @@
+{
+  "projectId": "2013215887278758682",
+  "sessionId": "6168524175061677646",
+  "outputComponents": [
+    {
+      "design": {
+        "screens": [
+          {
+            "name": "projects/2013215887278758682/screens/c9a5170959fc4cd28bfde8a562a74474",
+            "id": "c9a5170959fc4cd28bfde8a562a74474",
+            "title": "An Nhiên - Cách dùng đơn giản",
+            "width": "780",
+            "height": "2110",
+            "deviceType": "MOBILE",
+            "screenshot": {
+              "name": "projects/2013215887278758682/files/aa9d74df2f994c9ab8f791bd84169c5e"
+            },
+            "htmlCode": {
+              "name": "projects/2013215887278758682/files/9cfa240da49e46a59106e0c945d669e4",
+              "mimeType": "text/html"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>An Nhiên - Cách dùng đơn giản (Cập nhật v1)</title>
+<!-- Google Fonts: Be Vietnam Pro -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              bg: '#F6F7F2',
+              primary: '#1F684B',
+              primaryHover: '#17523B',
+              textMain: '#202B25',
+              textMuted: '#526057',
+              border: '#DFE5DF',
+              softBg: '#D6EADF',
+              softText: '#174C37',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="base-styles">
+    /* Global accessibility baseline for elderly users */
+    * {
+      -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #F6F7F2;
+      color: #202B25;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+    /* Touch target guarantee */
+    .touch-target {
+      min-height: 48px;
+      min-width: 48px;
+    }
+  </style>
+</head>
+<body class="flex justify-center min-h-screen bg-[#F6F7F2]">
+<!-- Mobile Frame Container (Optimized for 360px - 412px) -->
+<main class="w-full max-w-[430px] min-h-screen bg-[#F6F7F2] flex flex-col justify-between relative shadow-sm" data-purpose="mobile-container">
+<!-- Top & Main Content Wrapper -->
+<div class="px-5 pt-4 pb-6 flex-1 flex flex-col gap-4">
+<!-- BEGIN: AppBar -->
+<header class="flex items-center justify-between min-h-[48px] pt-1" data-purpose="app-bar">
+<!-- Back Navigation Button -->
+<button aria-label="Quay lại màn hình trước" class="touch-target -ml-2 inline-flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-brand-primary active:bg-black/5 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-primary" type="button">
+<!-- Lucide: chevron-left (32x32, stroke 2.5) -->
+<svg aria-hidden="true" class="w-8 h-8 text-brand-primary shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+<span class="text-[22px] font-bold text-brand-primary leading-none select-none">Quay lại</span>
+</button>
+<!-- Brand Label -->
+<span class="text-[20px] font-medium text-brand-textMuted select-none">
+          An Nhiên
+        </span>
+</header>
+<!-- END: AppBar -->
+<!-- BEGIN: ScreenHeader -->
+<section class="mt-1 flex flex-col gap-2" data-purpose="screen-header">
+<!-- Title with Icon -->
+<div class="flex items-center gap-2.5">
+<!-- Lucide: info (32x32, stroke 2.2) -->
+<svg aria-hidden="true" class="w-8 h-8 text-brand-primary shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 16v-4"></path>
+<path d="M12 8h.01"></path>
+</svg>
+<h1 class="text-[30px] font-bold text-brand-textMain tracking-tight leading-tight">
+            Cách dùng đơn giản
+          </h1>
+</div>
+<!-- Description -->
+<p class="text-[20px] text-brand-textMuted leading-relaxed font-normal">
+          Ba bước nhẹ nhàng để bắt đầu mỗi ngày cùng An Nhiên.
+        </p>
+</section>
+<!-- END: ScreenHeader -->
+<!-- BEGIN: StepList -->
+<section aria-label="Các bước hướng dẫn" class="flex flex-col gap-4 mt-1" data-purpose="instruction-steps">
+<!-- Step 1 Card -->
+<article class="bg-white rounded-[16px] border border-brand-border p-5 shadow-sm" data-purpose="step-1-card">
+<div class="flex items-center gap-3 mb-2">
+<!-- Badge 1 -->
+<div aria-hidden="true" class="w-10 h-10 rounded-full border-2 border-brand-primary flex items-center justify-center shrink-0 bg-white">
+<span class="text-[22px] font-bold text-brand-primary leading-none">1</span>
+</div>
+<h2 class="text-[24px] font-bold text-brand-textMain">Chọn việc</h2>
+</div>
+<p class="text-[20px] text-brand-textMuted leading-relaxed pl-[52px]">
+            Bác chọn một việc nhỏ quen thuộc để bắt đầu ngày mới nhẹ nhàng.
+          </p>
+</article>
+<!-- Step 2 Card -->
+<article class="bg-white rounded-[16px] border border-brand-border p-5 shadow-sm" data-purpose="step-2-card">
+<div class="flex items-center gap-3 mb-2">
+<!-- Badge 2 -->
+<div aria-hidden="true" class="w-10 h-10 rounded-full border-2 border-brand-primary flex items-center justify-center shrink-0 bg-white">
+<span class="text-[22px] font-bold text-brand-primary leading-none">2</span>
+</div>
+<h2 class="text-[24px] font-bold text-brand-textMain">Nhắc nhẹ nhàng</h2>
+</div>
+<p class="text-[20px] text-brand-textMuted leading-relaxed pl-[52px]">
+            Ứng dụng đổ chuông êm và đọc tên việc đúng giờ Bác đã chọn.
+          </p>
+</article>
+<!-- Step 3 Card -->
+<article class="bg-white rounded-[16px] border border-brand-border p-5 shadow-sm" data-purpose="step-3-card">
+<div class="flex items-center gap-3 mb-2">
+<!-- Badge 3 -->
+<div aria-hidden="true" class="w-10 h-10 rounded-full border-2 border-brand-primary flex items-center justify-center shrink-0 bg-white">
+<span class="text-[22px] font-bold text-brand-primary leading-none">3</span>
+</div>
+<h2 class="text-[24px] font-bold text-brand-textMain">Gần gũi người thân</h2>
+</div>
+<div class="pl-[52px] flex flex-col gap-2.5">
+<p class="text-[20px] text-brand-textMuted leading-relaxed">
+              Con cháu có thể gửi gợi ý lịch. Bác tự chọn nhận hoặc bỏ qua.
+            </p>
+<!-- Standard Lucide hand-heart icon dedicated to Step 3 -->
+<div class="inline-flex items-center gap-2 pt-1">
+<div class="p-1.5 rounded-lg bg-[#EBF4EE] flex items-center justify-center">
+<svg aria-label="Biểu tượng bàn tay trao yêu thương" class="w-8 h-8 text-brand-primary shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"></path>
+<path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.7-2.8L15 13"></path>
+<path d="M15.8 4.3a3 3 0 0 0-4.2 0L11 4.9l-.6-.6a3 3 0 0 0-4.2 4.2l.6.6 4.2 4.2 4.2-4.2.6-.6a3 3 0 0 0 0-4.2z"></path>
+</svg>
+</div>
+<span class="text-[20px] font-semibold text-brand-primary">Gắn kết gia đình</span>
+</div>
+</div>
+</article>
+</section>
+<!-- END: StepList -->
+<!-- BEGIN: ReassuranceCard -->
+<section aria-label="Ghi chú an tâm" class="mt-1 bg-brand-softBg border-2 border-brand-primary rounded-[16px] p-5 shadow-sm" data-purpose="reassurance-card">
+<!-- Reassurance Title -->
+<h3 class="text-[22px] font-bold text-brand-softText leading-snug">
+          Người thân có thể gửi gợi ý lịch. Bác tự chọn nhận hoặc bỏ qua.
+        </h3>
+<!-- Reassurance Body -->
+<p class="text-[20px] font-medium text-brand-softText leading-relaxed mt-2.5">
+          Việc chỉ vào lịch khi Bác bấm nhận. Lịch không tự ý thay đổi.
+        </p>
+</section>
+<!-- END: ReassuranceCard -->
+</div>
+<!-- BEGIN: BottomActionButtons -->
+<footer class="w-full px-5 pb-10 pt-2 flex flex-col gap-3.5 bg-[#F6F7F2]" data-purpose="action-buttons-footer">
+<!-- Outlined Button: Thử lời nhắc -->
+<button aria-label="Thử nghe lời nhắc mẫu" class="touch-target w-full h-[60px] rounded-[14px] border-2 border-brand-primary bg-white text-brand-primary font-bold text-[22px] flex items-center justify-center gap-3 shadow-sm active:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all" type="button">
+<span>Thử lời nhắc</span>
+<!-- Lucide: arrow-right (32x32, stroke 2.5) -->
+<svg aria-hidden="true" class="w-8 h-8 text-brand-primary shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="m12 5 7 7-7 7"></path>
+</svg>
+</button>
+<!-- Primary Filled Button: Mở cài đặt -->
+<button aria-label="Mở cài đặt nhắc việc trên máy" class="touch-target w-full h-[60px] rounded-[14px] bg-brand-primary text-white font-bold text-[22px] flex items-center justify-center gap-3 shadow-md active:bg-brand-primaryHover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary transition-all" type="button">
+<!-- Lucide: smartphone (32x32, stroke 2.2) -->
+<svg aria-hidden="true" class="w-8 h-8 text-white shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<rect height="20" rx="2" ry="2" width="14" x="5" y="2"></rect>
+<path d="M12 18h.01"></path>
+</svg>
+<span>Mở cài đặt</span>
+</button>
+</footer>
+<!-- END: BottomActionButtons -->
+</main>
+</body></html>

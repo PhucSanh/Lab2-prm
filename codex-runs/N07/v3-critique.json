@@ -1,0 +1,259 @@
+{
+  "screen": "N07",
+  "round": 3,
+  "score": 77,
+  "errors": 2,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Khung 412 px",
+      "evidence": "Metrics 412 báo scrollWidth 412, nhưng các phần tử con vươn đến x=392 từ lề trái 22 và card đặt tại x=20 rộng 372; chỉ còn 20 px ở mép phải. Ở khung 360 px không tràn ngang.",
+      "fix": "Sửa device-wrapper và fixed-footer dùng width:min(100%, 412px), bỏ min-width 360px; đảm bảo content-area padding ngang 20px và card không vượt x=392 ở 412 px."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Các mô tả tùy chọn và ghi chú ở khung 360 px",
+      "evidence": "Metrics 360: “Cho phép lời nhắc đến giờ”, “Chuông nhẹ, rung máy”, “Đọc nội dung lời nhắc”, “Đọc tên việc thành tiếng”, “Cấp quyền thông báo trực tiếp từ máy” và lưu ý “Im lặng hoặc Không làm phiền có thể tắt chuông.” đều hiển thị 3 dòng. Luật giới hạn đoạn tối đa 2 dòng.",
+      "fix": "Giới hạn từng đoạn tối đa 2 dòng ở 360 px; ví dụ đổi thành “Cho phép nhắc khi đến giờ”, “Chuông nhẹ và rung”, “Đọc tên việc”, “Cấp quyền thông báo trên máy” và “Chế độ im lặng có thể tắt chuông”."
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn cài đặt nhắc việc không có thẻ việc."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Quy tắc giải thích áp dụng cho màn Hôm nay; đây là màn cài đặt nhắc việc."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Biểu tượng chuông ở hàng “Thông báo”, “Chuông và rung” và nút “Thử lời nhắc”",
+      "evidence": "Ảnh 360 cho thấy cùng hình chuông được dùng cho ý nghĩa Thông báo, Chuông và rung, và hành động Thử lời nhắc; từ điển quy định một icon một nghĩa, chuông cho Lời nhắc và bell-ring cho Bật nhắc.",
+      "fix": "Dùng `bell` chỉ cho “Thông báo/Lời nhắc”, `bell-ring` cho “Chuông và rung/Bật nhắc”, và `volume-2` cho nút “Thử lời nhắc”; giữ mỗi SVG 32 × 32 px."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không có thẻ việc hay thẻ thói quen."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "n/a",
+      "evidence": "Màn không hiển thị thói quen Power 9 hay màu nhấn thói quen."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn cài đặt không hiển thị bottom nav."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có việc nào được liệt kê trên màn cài đặt."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn cài đặt không hiển thị tiến độ ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Quy tắc khối “Việc tiếp theo” chỉ áp dụng cho màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không có hành động khó đảo ngược."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không có trường nhập liệu hoặc trạng thái lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Quy tắc nút “Đọc to” áp dụng cho lời nhắc, chi tiết việc, chi tiết thói quen và gợi ý từ người thân; đây là màn cài đặt."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [
+    "R-TXT-03"
+  ],
+  "regressions": [
+    "R-LAY-01",
+    "R-ICON-03"
+  ],
+  "summary": "V3 rút ngắn một số mô tả nhưng chúng vẫn thành 3 dòng ở 360 px; 412 px tràn ngang và icon chuông bị dùng lặp cho nhiều nghĩa."
+}

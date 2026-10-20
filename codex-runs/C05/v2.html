@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - C05 Lịch tháng của mẹ Lan</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background-color: #F6F7F2;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+    }
+
+    .screen-container {
+      width: 100%;
+      max-width: 412px;
+      min-height: 100vh;
+      background-color: #F6F7F2;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .scroll-content {
+      flex: 1;
+      padding: 24px 20px 100px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Header */
+    .header-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .avatar-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: #D6EADF;
+      color: #1F684B;
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .screen-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.25;
+    }
+
+    .connection-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #526057;
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .icon-inline {
+      width: 32px;
+      height: 32px;
+      stroke: #526057;
+      stroke-width: 2.2;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    /* Segmented View Selector */
+    .selector-section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .view-selector-group {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      width: 100%;
+    }
+
+    .view-choice-btn {
+      min-height: 52px;
+      background-color: #FFFFFF;
+      border: 1.5px solid #7B887F;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 6px;
+      cursor: pointer;
+      color: #202B25;
+      font-size: 20px;
+      font-weight: 600;
+      font-family: inherit;
+    }
+
+    .view-choice-btn.selected {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+      color: #1F684B;
+    }
+
+    .choice-icon {
+      width: 32px;
+      height: 32px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .choice-feedback {
+      font-size: 20px;
+      color: #526057;
+      font-weight: 500;
+      padding-left: 4px;
+    }
+
+    /* Date Navigation Bar */
+    .date-nav-card {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #DFE5DF;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .current-date-text {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      text-align: center;
+    }
+
+    .date-action-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .text-nav-btn {
+      min-height: 48px;
+      background-color: transparent;
+      border: 1.5px solid #7B887F;
+      border-radius: 14px;
+      color: #202B25;
+      font-size: 20px;
+      font-weight: 600;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .text-nav-btn:active {
+      background-color: #D6EADF;
+    }
+
+    /* Task List */
+    .task-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .task-card {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #DFE5DF;
+      overflow: hidden;
+      display: flex;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .task-accent-bar {
+      width: 6px;
+      flex-shrink: 0;
+    }
+
+    .task-inner {
+      flex: 1;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .task-top-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .habit-icon-tile {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .habit-icon-tile svg {
+      width: 32px;
+      height: 32px;
+      stroke: #FFFFFF;
+      stroke-width: 2.2;
+      fill: none;
+    }
+
+    .task-header-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .task-time {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+    }
+
+    .task-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    /* Status Chips */
+    .status-container {
+      display: flex;
+      margin-top: 2px;
+    }
+
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .status-chip.done {
+      background-color: #1F684B;
+      color: #FFFFFF;
+    }
+
+    .status-chip.pending {
+      background-color: #FFF3DB;
+      color: #8A5100;
+      border: 2px solid #B26A00;
+    }
+
+    .status-chip svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 2.2;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .status-chip.done svg {
+      stroke: #FFFFFF;
+    }
+
+    .status-chip.pending svg {
+      stroke: #B26A00;
+    }
+
+    /* Sticky Footer Button */
+    .sticky-footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 412px;
+      padding: 16px 20px 20px 20px;
+      background: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      display: flex;
+      justify-content: center;
+      z-index: 50;
+    }
+
+    .primary-btn {
+      width: 320px;
+      height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-size: 22px;
+      font-weight: 700;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(31, 104, 75, 0.25);
+    }
+
+    .primary-btn:active {
+      background-color: #164e38;
+    }
+
+    .primary-btn svg {
+      width: 32px;
+      height: 32px;
+      stroke: #FFFFFF;
+      stroke-width: 2.5;
+      fill: none;
+    }
+  </style>
+</head>
+<body>
+<main class="screen-container">
+<div class="scroll-content" style="padding-bottom: 160px;">
+<!-- Caregiver Top Section -->
+<header class="header-card">
+<div class="header-row">
+<div aria-hidden="true" class="avatar-circle">L</div>
+<div class="header-text">
+<h1 class="screen-title">Lịch của mẹ Lan</h1>
+<div class="connection-status">
+<svg class="icon-inline" viewbox="0 0 24 24">
+<rect height="20" rx="2" ry="2" width="14" x="5" y="2"></rect>
+<path d="M12 18h.01"></path>
+</svg>
+<span>Đã ghép nối · 2 phút trước</span>
+</div>
+</div>
+</div>
+</header>
+<!-- View Selector Group -->
+<section aria-label="Chế độ xem lịch" class="selector-section"><div class="view-selector-group" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; width: 100%; box-sizing: border-box;">
+<!-- Ngày (Unselected) -->
+<button aria-pressed="false" class="view-choice-btn" style="min-width: 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80px; padding: 10px 4px; gap: 4px; text-align: center; background-color: #FFFFFF; border: 2px solid #7B887F; color: #202B25;" type="button"><svg class="choice-icon" height="32" style="width: 32px; height: 32px; stroke: currentColor; stroke-width: 2.2; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="32"><rect height="18" rx="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg><span style="font-size: 20px; font-weight: 600; line-height: 1.2;">Ngày</span></button>
+<!-- Tuần (Unselected) -->
+<button aria-pressed="false" class="view-choice-btn" style="min-width: 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80px; padding: 10px 4px; gap: 4px; text-align: center; background-color: #FFFFFF; border: 2px solid #7B887F; color: #202B25;" type="button"><svg class="choice-icon" height="32" style="width: 32px; height: 32px; stroke: currentColor; stroke-width: 2.2; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="32"><rect height="18" rx="2" width="18" x="3" y="4"></rect><path d="M8 2v4"></path><path d="M16 2v4"></path><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg><span style="font-size: 20px; font-weight: 600; line-height: 1.2;">Tuần</span></button>
+<!-- Tháng (Selected) -->
+<button aria-pressed="true" class="view-choice-btn selected" style="min-width: 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80px; padding: 10px 4px; gap: 4px; text-align: center; background-color: #D6EADF; border: 2px solid #1F684B; color: #1F684B;" type="button">
+<svg class="choice-icon" height="32" style="width: 32px; height: 32px; stroke: #1F684B; stroke-width: 2.2; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="32">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+<line x1="16" x2="16" y1="2" y2="6"></line>
+<line x1="8" x2="8" y1="2" y2="6"></line>
+<line x1="3" x2="21" y1="10" y2="10"></line>
+<path d="m9 16 2 2 4-4"></path>
+</svg>
+<span style="font-size: 20px; font-weight: 700; line-height: 1.2;">Tháng</span>
+</button>
+</div>
+<div class="choice-feedback" style="font-size: 20px; color: #526057; font-weight: 500; padding-left: 4px;">Đang chọn: Tháng</div></section>
+<!-- Date Text & Navigation Buttons -->
+<section aria-label="Lịch tháng 10 năm 2026" class="date-nav-card" style="background-color: #FFFFFF; border-radius: 16px; padding: 16px; border: 1px solid #DFE5DF; display: flex; flex-direction: column; gap: 14px;">
+<div class="current-date-text" style="font-size: 24px; font-weight: 700; color: #202B25; text-align: center;">Tháng 10/2026</div>
+<div class="date-action-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;"><button class="text-nav-btn" style="min-height: 52px; border: 2px solid #7B887F; border-radius: 14px; font-size: 20px; font-weight: 700; color: #1F684B; background: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;" type="button">
+<svg fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" style="flex-shrink: 0;" viewbox="0 0 24 24" width="32"><path d="m15 18-6-6 6-6"></path></svg>
+<span>Tháng trước</span>
+</button>
+<button class="text-nav-btn" style="min-height: 52px; border: 2px solid #7B887F; border-radius: 14px; font-size: 20px; font-weight: 700; color: #1F684B; background: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;" type="button">
+<span>Tháng sau</span>
+<svg fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" style="flex-shrink: 0;" viewbox="0 0 24 24" width="32"><path d="m9 18 6-6-6-6"></path></svg>
+</button></div>
+<!-- Calendar Grid Container -->
+<div style="width: 100%; margin-top: 4px;"><div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); text-align: center; margin-bottom: 10px; width: 100%; box-sizing: border-box;"><span style="font-size: 20px; font-weight: 700; color: #526057;">T2</span><span style="font-size: 20px; font-weight: 700; color: #526057;">T3</span><span style="font-size: 20px; font-weight: 700; color: #526057;">T4</span><span style="font-size: 20px; font-weight: 700; color: #526057;">T5</span><span style="font-size: 20px; font-weight: 700; color: #526057;">T6</span><span style="font-size: 20px; font-weight: 700; color: #526057;">T7</span><span style="font-size: 20px; font-weight: 700; color: #1F684B;">CN</span></div><div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; width: 100%; box-sizing: border-box;"><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #526057; font-size: 20px; font-weight: 500;">28</div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #526057; font-size: 20px; font-weight: 500;">29</div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #526057; font-size: 20px; font-weight: 500;">30</div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">1<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">2<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">3</div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">4<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">5<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">6<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">7</div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">8<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">9<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">10</div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">11<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">12<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">13<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">14</div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">15<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">16<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">17</div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 12px; background-color: #D6EADF; border: 2.5px solid #1F684B; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 21px; font-weight: 700; color: #1F684B; cursor: pointer; box-shadow: 0 2px 6px rgba(31, 104, 75, 0.2);">18<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 1px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">19<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">20<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">21</div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">22<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">23<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">24</div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">25<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">26<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">27<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">28</div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">29<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">30<span style="width: 6px; height: 6px; border-radius: 50%; background: #1F684B; margin-top: 2px;"></span></div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #202B25; cursor: pointer;">31</div><div style="min-height: 48px; min-width: 0; width: 100%; box-sizing: border-box; padding: 4px 2px; text-align: center; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #526057; font-size: 20px; font-weight: 500;">1</div></div><div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 14px; padding-top: 10px; border-top: 1px solid #DFE5DF;"><span style="width: 10px; height: 10px; border-radius: 50%; background-color: #1F684B; display: inline-block;"></span><span style="font-size: 20px; font-weight: 600; color: #526057;">Chấm xanh: Có việc trong ngày</span></div></div>
+</section>
+<!-- Task List -->
+<section aria-label="Chi tiết ngày đã chọn" class="task-list" style="display: flex; flex-direction: column; gap: 12px;"><!-- Header of selected day -->
+<div style="background-color: #FFFFFF; border-radius: 16px; border: 1px solid #DFE5DF; padding: 18px 16px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04); cursor: pointer;"><div><h2 style="font-size: 24px; font-weight: 700; color: #202B25; line-height: 1.3;">Chủ nhật, 18/10</h2><span style="font-size: 20px; font-weight: 500; color: #526057;">3 việc đã lên lịch cho mẹ</span></div><button aria-label="Xem lịch ngày 18/10" data-action="open-c03-day-view" style="min-width: 96px; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 4px; padding: 8px 12px; border-radius: 12px; border: 2px solid #1F684B; background: transparent; color: #1F684B; font-size: 20px; font-weight: 700; cursor: pointer; text-decoration: none;" type="button"><span>Xem ngày</span><svg fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" style="width: 32px; height: 32px; min-width: 32px;" viewbox="0 0 24 24" width="32"><path d="m9 18 6-6-6-6"></path></svg></button></div>
+<!-- Task Card 1: Ăn sáng chậm rãi -->
+<div style="background-color: #FFFFFF; border-radius: 16px; border: 1px solid #DFE5DF; overflow: hidden; display: flex; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04); cursor: pointer;"><div style="width: 6px; background-color: #B98331; border-left: 6px solid #B98331; flex-shrink: 0;"></div><div style="flex: 1; padding: 16px; display: flex; flex-direction: column; gap: 12px;"><div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;"><div style="display: flex; align-items: center; gap: 14px;"><div style="width: 48px; height: 48px; border-radius: 12px; background: #B98331; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32"><path d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"></path><path d="M15 2v20"></path><path d="M5 2v4a3 3 0 0 0 3 3v13"></path><path d="M8 2v4"></path></svg></div><div style="display: flex; flex-direction: column; gap: 3px;"><div style="font-size: 24px; font-weight: 700; color: #202B25; line-height: 1.3;">Ăn sáng chậm rãi</div><div style="font-size: 20px; font-weight: 500; color: #526057;">7:30 sáng</div></div></div><span class="status-chip done" style="padding: 6px 14px; font-size: 20px; font-weight: 700; background-color: #1F684B; color: #FFFFFF; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;"><svg fill="none" height="24" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="24"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span>Đã xong</span></span></div></div></div>
+<!-- Task Card 2: Đi bộ quanh công viên -->
+<div style="background-color: #FFFFFF; border-radius: 16px; border: 1px solid #DFE5DF; overflow: hidden; display: flex; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04); cursor: pointer;"><div style="width: 6px; background-color: #2BA15C; border-left: 6px solid #2BA15C; flex-shrink: 0;"></div><div style="flex: 1; padding: 16px; display: flex; flex-direction: column; gap: 12px;"><div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;"><div style="display: flex; align-items: center; gap: 14px;"><div style="width: 48px; height: 48px; border-radius: 12px; background: #2BA15C; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.5v2"></path><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.5v2"></path><path d="M4 20h4"></path><path d="M16 20h4"></path></svg></div><div style="display: flex; flex-direction: column; gap: 3px;"><div style="font-size: 24px; font-weight: 700; color: #202B25; line-height: 1.3;">Đi bộ quanh công viên</div><div style="font-size: 20px; font-weight: 500; color: #526057;">9:30 sáng</div></div></div><span class="status-chip pending" style="padding: 6px 14px; font-size: 20px; font-weight: 700; background-color: #FFF3DB; color: #8A5100; border: 2px solid #B26A00; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;"><svg fill="none" height="24" stroke="#8A5100" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="24"><circle cx="12" cy="12" r="10"></circle></svg><span>Chưa làm</span></span></div></div></div>
+<!-- Task Card 3: Uống trà cùng bạn -->
+<div style="background-color: #FFFFFF; border-radius: 16px; border: 1px solid #DFE5DF; overflow: hidden; display: flex; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04); cursor: pointer;"><div style="width: 6px; background-color: #D0754E; border-left: 6px solid #D0754E; flex-shrink: 0;"></div><div style="flex: 1; padding: 16px; display: flex; flex-direction: column; gap: 12px;"><div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;"><div style="display: flex; align-items: center; gap: 14px;"><div style="width: 48px; height: 48px; border-radius: 12px; background: #D0754E; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32"><path d="M10 2v2"></path><path d="M14 2v2"></path><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h12Z"></path><path d="M6 2v2"></path><line x1="16" x2="16" y1="13" y2="13"></line><line x1="16" x2="20" y1="10" y2="10"></line><path d="M17 10h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1"></path></svg></div><div style="display: flex; flex-direction: column; gap: 3px;"><div style="font-size: 24px; font-weight: 700; color: #202B25; line-height: 1.3;">Uống trà cùng bạn</div><div style="font-size: 20px; font-weight: 500; color: #526057;">3 giờ chiều</div></div></div><span class="status-chip pending" style="padding: 6px 14px; font-size: 20px; font-weight: 700; background-color: #FFF3DB; color: #8A5100; border: 2px solid #B26A00; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;"><svg fill="none" height="24" stroke="#8A5100" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="24"><circle cx="12" cy="12" r="10"></circle></svg><span>Chưa làm</span></span></div></div></div></section>
+</div>
+<!-- Pinned Sticky Primary Action -->
+<footer class="sticky-footer" style="box-sizing: border-box; padding: 16px 20px 20px 20px;">
+<button class="primary-btn" style="width: 320px; height: 60px; max-width: 100%;" type="button">
+<svg viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="M12 5v14"></path>
+</svg>
+<span>Tạo lịch cho mẹ</span>
+</button>
+</footer>
+</main>
+</body>
+</html>

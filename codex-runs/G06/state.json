@@ -1,0 +1,27 @@
+{
+  "screen": "G06",
+  "title": "Chọn từng việc",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 5,
+  "screen_id": "707c32d5e49447dabfc7ae7485e541e7",
+  "parent_screen_id": "2bfc718ed8e94d2086b49dd39d0cc6e9",
+  "best_round": 5,
+  "best_screen_id": "707c32d5e49447dabfc7ae7485e541e7",
+  "best_score": 97,
+  "patience": 2,
+  "pending_operation_id": null,
+  "stop_reason": "patience_2",
+  "canvas_row": 25,
+  "stage": "awaiting_review",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "provenance": {
+    "source_screen": "G03",
+    "source_screen_id": "79ebadfcd74e46e189bd4e8a77be685e",
+    "source_project_id": "2013215887278758682",
+    "source_best_round": 3
+  },
+  "updated_at": "2026-10-19T07:21:45.448326+00:00",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/G06/v4-edit-prompt.txt",
+  "last_processed_round": 5
+}

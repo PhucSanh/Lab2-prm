@@ -1,0 +1,6 @@
+Keep the overall G03b layout unchanged. Fix the four reviewed findings:
+1. Remove the extra “Bác đã đổi sang 9:00 sáng” chip from the walking task card. The changed time is already shown as “9:00 sáng”; keep a short change explanation outside the task card only if needed.
+2. Remove the 22px check icon from that change message; do not use circle-check for an edited-time state.
+3. Change footer action label “Đổi lại giờ” to “Đổi giờ đi bộ”.
+4. Place the action footer below the scroll content instead of overlaying it; reserve at least 332px of bottom content space (footer 320px + 12px inset) so both cards remain visible at 360×800 and 412px. Keep 16px block gaps.
+Preserve the accepted-flow actions, changed walking time 9:00, second activity 10:00, consent statement, four-tab nav, fonts >=20px and targets >=48px. Generate a new screen now.

@@ -1,0 +1,7 @@
+Keep the overall layout and everything not mentioned below unchanged.
+
+1. [R-TXT-03] In step 3, replace the description with exactly: “Con cháu gửi gợi ý lịch. Bác chọn nhận hoặc bỏ qua.” Keep it to at most 2 lines at 360 px.
+2. [R-TXT-03] In the reassurance card, replace the bold sentence with exactly: “Bác tự chọn nhận gợi ý lịch.” Keep it to at most 2 lines at 360 px. Preserve any separate supporting sentence if present.
+3. [R-ICON-03] Remove the smartphone icon from the “Mở cài đặt” button; keep the label and button styling unchanged. Do not replace it with another icon.
+
+Preserve the existing typography, spacing, colors, rounded corners, and all other content. This is a Vietnamese mobile onboarding guide for older adults.

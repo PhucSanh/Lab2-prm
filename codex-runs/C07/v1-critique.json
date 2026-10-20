@@ -1,0 +1,270 @@
+{
+  "screen": "C07 Lặp lại việc gợi ý – Bước 2/3",
+  "round": 1,
+  "score": 94,
+  "errors": 0,
+  "warns": 2,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Metrics 360/412 và HTML: mọi chữ hiển thị từ 20px trở lên; fontReady=true."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Các nhãn tần suất, thứ trong tuần và hai dòng tóm tắt lịch",
+      "evidence": "HTML/metrics 360 và 412 ghi .radio-label, .weekday-name, .summary-p1 và .summary-p2 đều 20px; đây là nội dung chính trong form, dưới mức khoảng 24px. Tiêu đề 30px và nút 22px đạt yêu cầu.",
+      "fix": "Đặt .radio-label, .weekday-name và .summary-p1/.summary-p2 thành 24px; giữ nhãn phụ tối thiểu 20px, tiêu đề 30px và nút 22px."
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Các cặp chữ/nền nhìn thấy có tương phản đạt ngưỡng; chữ phụ #526057 trên nền sáng đạt trên 4.5:1, chữ primary #1F684B trên trắng và nền chọn #D6EADF cũng đạt ngưỡng."
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Viền các lựa chọn tần suất chưa chọn và hai ô ngày Bắt đầu/Kết thúc",
+      "evidence": "HTML dùng viền #DFE5DF trên thẻ trắng. Tương phản xấp xỉ 1.27:1, thấp hơn 3:1; viền ngày trong tuần #7B887F đạt khoảng 3.44:1 trên nền app.",
+      "fix": "Đổi viền .radio-row chưa chọn và .date-field-card thành 2px solid #7B887F; giữ viền lựa chọn hiện tại 2px #1F684B."
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Metrics 360: scrollWidth=clientWidth=360; không tràn ngang và chữ trong ảnh không bị cắt."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Câu dài nhất hiển thị dưới 15 tiếng; các đoạn tóm tắt không quá hai dòng ở 360px."
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là form lặp lại và tóm tắt lịch, không có thẻ việc trong danh sách."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Các biểu tượng lựa chọn circle/circle-dot đều 32px; lựa chọn ngày đã chọn có chữ “Đang chọn” đi kèm và icon gắn với trạng thái chọn rõ ràng."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có thẻ việc hoặc thói quen; màn chỉ gồm form và phần tóm tắt."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "n/a",
+      "evidence": "Màn không hiển thị thói quen hoặc màu nhấn thói quen."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Trạng thái lựa chọn có cả biểu tượng và chữ “Đang chọn”, không dựa riêng vào màu."
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Metrics 360 cho thấy nút quay lại 129.8×48px, lựa chọn tần suất 320×58px, ngày trong tuần tối thiểu khoảng 65×68px và CTA 320×60px."
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Nút “Xem lại” cố định ở đáy màn, cao 60px, rộng 320px với lề 20px tại khung 360px."
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Các hàng tần suất và ngày kề nhau cách 8px; hai trường ngày cách 12px. Không có cặp nút lời nhắc."
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là bước 2/3 của luồng tạo lời nhắc, không có bottom nav."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Nút back có nhãn nhìn thấy “Quay lại”."
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Các lựa chọn hiển thị bằng nút/hàng có thể chạm; không có hướng dẫn hành động chỉ bằng vuốt, kéo hoặc nhấn giữ."
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có việc cần đánh dấu trạng thái thực hiện; màn chỉ cấu hình lịch lặp."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không hiển thị tiến độ trong ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Chỉ CTA “Xem lại” là nút filled; các lựa chọn còn lại là control nền sáng/viền."
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Các lựa chọn lịch và trường ngày được căn trái theo bố cục form."
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không có thao tác xóa, đánh dấu xong hoặc ngưng lặp."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có lỗi nhập đang hiển thị."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "C07 là form chọn lịch lặp, không thuộc các màn S14, S04, S16 hoặc G03."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Nhãn nhìn thấy bằng tiếng Việt; không có chuỗi giao diện tiếng Anh."
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Không có xưng hô không nhất quán hoặc nút “OK/Có/Không”; nhãn nút dùng động từ “Xem lại”."
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Không thấy từ nào trong danh sách tránh dùng xuất hiện ở chữ hiển thị."
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "HTML dùng các token nền #F6F7F2, thẻ #FFFFFF, chữ #202B25/#526057 và primary #1F684B; không có màu nhấn thói quen cần đối chiếu."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "HTML khai báo Be Vietnam Pro và fontReady=true; thẻ bo 16px, CTA bo 14px, không có gradient."
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Lề nội dung 20px và khoảng cách các khối chính 16px."
+    }
+  ],
+  "fixed": ["R-ICON-03"],
+  "regressions": [],
+  "summary": "Màn đạt 94 điểm; nhãn trạng thái ngày đã rõ hơn, còn nội dung chính 20px và viền control nhạt dưới ngưỡng tương phản."
+}

@@ -1,0 +1,7 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-CON-02] Change the border of the time/date/repeat controls from #DFE5DF to #7B887F so each control outline reaches at least 3:1 contrast against white.
+2. [R-TXT-03] Replace the reassurance note with the exact shorter copy “Bác bấm Lưu việc để thêm vào lịch.” and keep it within 2 lines at 360px.
+3. [R-TXT-05, R-STA-01] In the selected task card, show the task time “9:00 sáng” and add a visible “○ Chưa làm” status chip next to the task name; keep the secondary line to one line maximum.
+4. [R-ICON-02] Add the documented Lucide pencil 32px with visible “Đổi ngày” label to the date editing control; do not use calendar-days because DESIGN.md reserves it for the Lịch tuần tab/title. Remove the invented “Để sau” secondary action and its icon; keep only the documented primary “Lưu việc” action in the footer.
+5. [R-COL-03] Set the move-habit accent stripe and icon tile to #2BA15C.
+6. [R-STY-01] Replace the selected task/note background #E8F3ED with #D6EADF; replace the note border #C4DEC0 with #7B887F. Preserve all other palette tokens and text.

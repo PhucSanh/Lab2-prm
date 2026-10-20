@@ -1,0 +1,23 @@
+{
+  "screen": "N20",
+  "title": "Dữ liệu trên điện thoại",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 3,
+  "screen_id": "837aec79736d4aaa9aea64c4621adf26",
+  "parent_screen_id": "c556fb1baca24692a8d759e083975ccf",
+  "best_round": 1,
+  "best_screen_id": "c556fb1baca24692a8d759e083975ccf",
+  "best_score": 94,
+  "patience": 2,
+  "pending_operation_id": null,
+  "stop_reason": "patience_2",
+  "canvas_row": 39,
+  "stage": "awaiting_review",
+  "source_screen_id": "e6c79c80f4484c03829c3ca64cbab493",
+  "source_task": "B40 EDIT N07",
+  "updated_at": "2026-10-19T12:03:05.688325+00:00",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/N20/v0-prompt.txt",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "last_processed_round": 3
+}

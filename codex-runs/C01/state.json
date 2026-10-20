@@ -1,0 +1,25 @@
+{
+  "screen": "C01",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 0,
+  "screen_id": "720a85a3a0254afa9cbc1a32825ce93c",
+  "parent_screen_id": null,
+  "best_round": 0,
+  "best_screen_id": "720a85a3a0254afa9cbc1a32825ce93c",
+  "best_score": 100,
+  "patience": 0,
+  "pending_operation_id": null,
+  "stop_reason": "score_100",
+  "updated_at": "2026-10-18T12:22:34.298656+00:00",
+  "prompt_path": "codex-runs/C01/v0-prompt.txt",
+  "previous_project_id": "4739396749322828698",
+  "last_processed_round": 0,
+  "delivery_status": "API_POSITION_VERIFIED_UI_UNCONFIRMED",
+  "canvas_instance_id": "720a85a3a0254afa9cbc1a32825ce93c",
+  "canvas_position": {
+    "x": 0,
+    "y": -2304
+  },
+  "delivery_note": "User screenshot does not show C01. API membership at x6784,y0 is not proof of web UI visibility. Browser Google login observation and proposed canvas reposition were rejected by automatic approval review; no reposition applied."
+}

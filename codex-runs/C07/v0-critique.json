@@ -1,0 +1,263 @@
+{
+  "screen": "C07 Lặp lại việc gợi ý – Bước 2/3",
+  "round": 0,
+  "score": 91,
+  "errors": 0,
+  "warns": 3,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Mọi chữ hiển thị trong HTML có cỡ 20/22/24/30px; fontReady true ở 360/412."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nhãn tần suất, ngày trong tuần và tóm tắt lịch",
+      "evidence": "HTML và metrics 360/412: .radio-label, .weekday-name, .summary-p1/.summary-p2 = 20px; đây là nội dung chính. Tiêu đề 30px và CTA 22px đúng.",
+      "fix": "Đổi .radio-label và .summary-p1/.summary-p2 sang 24px; giữ tiêu đề 30px, CTA 22px, nhãn phụ tối thiểu 20px."
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Chữ phụ #526057 trên trắng 6.63:1; primary trên trắng 6.69:1; primary trên #D6EADF 5.32:1."
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Viền lựa chọn Một lần/Mỗi ngày/Mỗi tháng và ô Bắt đầu/Kết thúc",
+      "evidence": "Viền #DFE5DF trên nền app #F6F7F2 chỉ 1.19:1, trên nền trắng 1.27:1, dưới 3:1. Viền ngày #7B887F đạt 3.44:1 trên nền app.",
+      "fix": "Đổi viền các .radio-row chưa chọn và .date-field-card thành 2px solid #7B887F; giữ viền đang chọn 2px #1F684B."
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Metrics 360: scrollWidth=clientWidth=360; ảnh không cắt chữ."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Câu dài nhất 8 tiếng; .weekday-hint và hai đoạn tóm tắt tối đa 2 dòng ở360, 1 dòng ở412."
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn form chọn lịch lặp; khối cuối là tóm tắt thông số, không phải thẻ việc trong danh sách."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Trạng thái chọn ngày T2/T4/T6",
+      "evidence": "Các icon circle-dot đúng nghĩa và 32px, nhưng nhãn đi kèm là “Chọn”; từ điển yêu cầu circle-dot kèm viền 2px primary và chữ “Đang chọn”. Hiện nhãn giống lời mời thao tác thay vì trạng thái.",
+      "fix": "Đổi nhãn “Chọn” dưới circle-dot ở T2/T4/T6 thành “Đang chọn” với chữ ≥20px; tăng chiều rộng ô hoặc dùng danh sách ngày để không xuống quá 2 dòng. Giữ Lucide circle-dot 32px và viền 2px #1F684B."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có thẻ việc/thói quen; chỉ form lặp và bản tóm tắt thông số."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "n/a",
+      "evidence": "Không hiện thói quen hoặc màu nhấn thói quen."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Quay lại 129.78×48; radio 320×58/60; ngày nhỏ nhất65.5×100; date320×81; CTA320×60 tại360."
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "CTA Xem lại cố định đáy, 320×60px, lề20px tại360."
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Khoảng cách radio/ngày8px, date12px; không có cặp nút lời nhắc."
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Bước 2/3 trong luồng tạo gợi ý, không có bottom nav."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có việc cần đánh dấu tiến trình thực hiện; chỉ lựa chọn lịch."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có tiến độ ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có thao tác xóa, đánh dấu xong hoặc ngưng lặp được thực hiện trên màn này."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có lỗi nhập đang hiển thị."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "C07 form chọn lịch lặp, không thuộc S14/S04/S16/G03."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Be Vietnam Pro khai báo và fontReady true; thẻ16px, nút14px, không gradient."
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Lề main20px; gap giữa khối chính16px."
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Form đọc được, không tràn và vùng chạm đủ lớn; còn 3 cảnh báo về cỡ nội dung chính, tương phản viền control và nhãn trạng thái ngày đang chọn."
+}

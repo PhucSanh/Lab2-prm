@@ -1,0 +1,74 @@
+Keep the overall layout and everything not mentioned below unchanged.
+You are editing the BEST source v0, not the regressed v1. Apply the best source critique below.
+1. [R-ICON-03] Replace the habit SVGs with exact official Lucide utensils, footprints and coffee below, actual32x32px,white,stroke2.2; keep48px colored tiles and6px left stripes. Use the exact circle-check24px below for "Đã xong", not circle-check-big (check must remain inside circle); keep circle24px for "Chưa làm". Do not approximate paths.
+2. [R-STY-03] Keep all three Ngày/Tuần/Tháng radio choices inside20px margins at360px: grid repeat(3,minmax(0,1fr)),8px gaps,each child min-width0. Within EACH radio option stack its32px circle/circle-dot icon ABOVE its20px text label (flex-direction:column,gap4px), height>=80px. Allow no ellipsis,clipping,nowrap truncation; every full word Ngày/Tuần/Tháng must be visible. Keep separate line "Đang chọn: Ngày" and selected pale styling. This improves fit while preserving labels/icons.
+3. [R-STY-03] Primary footer button width100% within20px horizontal footer padding,no320px max cap:width320 at360 and372 at412,height60,radius14. Preserve adequate scroll bottom padding and every other element. Create NEW version, preserve source.
+
+utensils:
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+  <path d="M7 2v20" />
+  <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+</svg>
+
+footprints:
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z" />
+  <path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z" />
+  <path d="M16 17h4" />
+  <path d="M4 13h4" />
+</svg>
+
+coffee:
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 2v2" />
+  <path d="M14 2v2" />
+  <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" />
+  <path d="M6 2v2" />
+</svg>
+
+circle-check:
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="m16 9-5.5 5.5L8 12" />
+</svg>

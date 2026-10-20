@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-TAP-02: Reorder the bottom area so the four-tab navigation sits directly above the primary action, and pin the 60px “Tiếp tục” button at the very bottom of the content area with 20px side margins and a 20px safe-area inset. Keep “Quay lại” as a visible text action above the navigation; prevent overlap and preserve 48×48px minimum touch targets.
+2. R-STY-01: Set the consent notice background to the defined primary-container token #D6EADF; keep foreground text readable.
+Preserve the two unchecked individual choices, activity text and times, sender message, corrected habit colors and Lucide icons. Generate a new screen and keep G06 v1 unchanged.

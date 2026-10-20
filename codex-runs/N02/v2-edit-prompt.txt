@@ -1,0 +1,2 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-ICON-03] Remove `circle-check` from the primary button “Tôi đã nhận được”; the dictionary reserves it for the “Đã xong” state. Replace it with documented Lucide `arrow-right` 32×32px to indicate continuing to N04. Do not change the label, route, note, card content, or other icons.

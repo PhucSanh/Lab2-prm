@@ -1,0 +1,21 @@
+{
+  "screen": "N01",
+  "title": "Thử lời nhắc",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 3,
+  "screen_id": "3d3ecf9383b04a34b9394f1396ae02d2",
+  "parent_screen_id": "fcdef0d0390947778b9437e0a20dc60a",
+  "best_round": 3,
+  "best_screen_id": "3d3ecf9383b04a34b9394f1396ae02d2",
+  "best_score": 97,
+  "patience": 2,
+  "pending_operation_id": null,
+  "stop_reason": "patience_2",
+  "canvas_row": 33,
+  "stage": "awaiting_review",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "updated_at": "2026-10-19T08:56:17.545593+00:00",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/N01/v2-edit-prompt.txt",
+  "last_processed_round": 3
+}

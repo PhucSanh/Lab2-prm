@@ -1,0 +1,191 @@
+[
+  {
+    "path": "upstream/scientific-agent-skills/LICENSE.md",
+    "upstream_path": "LICENSE.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/LICENSE.md",
+    "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "bytes": 1068
+  },
+  {
+    "path": "upstream/scientific-agent-skills/README.md",
+    "upstream_path": "README.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/README.md",
+    "sha256": "2d4a9f2268c6ed70fc0d0d769921963da6b82966bd71c4b0225e35b0779b2447",
+    "bytes": 84156
+  },
+  {
+    "path": "upstream/scientific-agent-skills/docs/skill-guides/scientific-critical-thinking.md",
+    "upstream_path": "docs/skill-guides/scientific-critical-thinking.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/docs/skill-guides/scientific-critical-thinking.md",
+    "sha256": "26d0d1932db60a2cdea36794d6eacd1807a1fe4a808dd6acbcc1998133e99854",
+    "bytes": 4534
+  },
+  {
+    "path": "upstream/scientific-agent-skills/docs/skill-guides/scientific-slides.md",
+    "upstream_path": "docs/skill-guides/scientific-slides.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/docs/skill-guides/scientific-slides.md",
+    "sha256": "713d32323d311b7d67b41a0081b443ad210e8b74520af482e63d4f2996a6a2c9",
+    "bytes": 4358
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-critical-thinking/SKILL.md",
+    "upstream_path": "skills/scientific-critical-thinking/SKILL.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-critical-thinking/SKILL.md",
+    "sha256": "563af70571b7dcd6a96bf2e303bedfdcba623b4e9f082d58f04aacbc961fdae4",
+    "bytes": 13146
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-critical-thinking/references/common_biases.md",
+    "upstream_path": "skills/scientific-critical-thinking/references/common_biases.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-critical-thinking/references/common_biases.md",
+    "sha256": "641e8e8e6dfadac1643ea8691b7d3e4e58cf013f134cd42c71301878096a5a39",
+    "bytes": 12368
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-critical-thinking/references/core_capabilities.md",
+    "upstream_path": "skills/scientific-critical-thinking/references/core_capabilities.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-critical-thinking/references/core_capabilities.md",
+    "sha256": "0f337b96aa2d7453433a17824368fbd0638b9469d4f90a5fd23f4167c9dee180",
+    "bytes": 16975
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-critical-thinking/references/evidence_hierarchy.md",
+    "upstream_path": "skills/scientific-critical-thinking/references/evidence_hierarchy.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-critical-thinking/references/evidence_hierarchy.md",
+    "sha256": "534fbe991ecfb2d162f755004dc528118ce74a78862917c2911595a522d76e6c",
+    "bytes": 17435
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-critical-thinking/references/experimental_design.md",
+    "upstream_path": "skills/scientific-critical-thinking/references/experimental_design.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-critical-thinking/references/experimental_design.md",
+    "sha256": "eca7e42025393984c07676f3d4bc354d217e5604dc2209c76215d31953a7c74c",
+    "bytes": 18227
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-critical-thinking/references/logical_fallacies.md",
+    "upstream_path": "skills/scientific-critical-thinking/references/logical_fallacies.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-critical-thinking/references/logical_fallacies.md",
+    "sha256": "becfc5bfac7b831dca67cc442cd0fcb42d8eea527a6fc2921c1b704e592ff593",
+    "bytes": 18659
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-critical-thinking/references/review_sources.md",
+    "upstream_path": "skills/scientific-critical-thinking/references/review_sources.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-critical-thinking/references/review_sources.md",
+    "sha256": "71e75106f36f3e69b28959ad1fec503ccdb21b7f5361ab230173e4812accbf62",
+    "bytes": 7557
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-critical-thinking/references/scientific_method.md",
+    "upstream_path": "skills/scientific-critical-thinking/references/scientific_method.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-critical-thinking/references/scientific_method.md",
+    "sha256": "5aa925b97c7a916f819dafc8b42a9c24e4bd3eb2836594e724f1e7f9ae75ea0f",
+    "bytes": 7641
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-critical-thinking/references/statistical_pitfalls.md",
+    "upstream_path": "skills/scientific-critical-thinking/references/statistical_pitfalls.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-critical-thinking/references/statistical_pitfalls.md",
+    "sha256": "0c43204a0a81110cfeb7c982fa4caa89f274bdcebf096e09e5adfccf31241cb9",
+    "bytes": 21151
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-slides/SKILL.md",
+    "upstream_path": "skills/scientific-slides/SKILL.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-slides/SKILL.md",
+    "sha256": "b1d34b81d30789f561bd4ee3ddb373c9fb84bed25086794bebd842af46afbad6",
+    "bytes": 21522
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-slides/assets/powerpoint_design_guide.md",
+    "upstream_path": "skills/scientific-slides/assets/powerpoint_design_guide.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-slides/assets/powerpoint_design_guide.md",
+    "sha256": "afacd3ac9b33311a86ebf1398bc960279b1412a77a25c3ce5429ebbf3e50d94a",
+    "bytes": 22025
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-slides/assets/timing_guidelines.md",
+    "upstream_path": "skills/scientific-slides/assets/timing_guidelines.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-slides/assets/timing_guidelines.md",
+    "sha256": "39f4720e9d5a602d6c16af0985232fbc78d4e79598e7ed17a2bc076efc9cc195",
+    "bytes": 13605
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-slides/references/beamer_guide.md",
+    "upstream_path": "skills/scientific-slides/references/beamer_guide.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-slides/references/beamer_guide.md",
+    "sha256": "a57ee14a34d7b8b6bb72d19bc0b0d4ccaa172731cfc5d8dbf30fbceeb30dcbcd",
+    "bytes": 20245
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-slides/references/common_pitfalls.md",
+    "upstream_path": "skills/scientific-slides/references/common_pitfalls.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-slides/references/common_pitfalls.md",
+    "sha256": "1624aa65d42d52469a06727e6a68c5ba66cce311020f107659de7ca80654888b",
+    "bytes": 3335
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-slides/references/data_visualization_slides.md",
+    "upstream_path": "skills/scientific-slides/references/data_visualization_slides.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-slides/references/data_visualization_slides.md",
+    "sha256": "ff0b437dae2cc74b9290907ade331dc69cb1365071584ef2a854f5ade3a53408",
+    "bytes": 18110
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-slides/references/presentation_structure.md",
+    "upstream_path": "skills/scientific-slides/references/presentation_structure.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-slides/references/presentation_structure.md",
+    "sha256": "8e79965dd65ca56a7e239920867b36be1b2f626cee9e65e99e4d6efaaa883004",
+    "bytes": 22551
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-slides/references/presentation_workflow.md",
+    "upstream_path": "skills/scientific-slides/references/presentation_workflow.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-slides/references/presentation_workflow.md",
+    "sha256": "5e52ebfcf4b0a423dc82451fd62ec5468e8c4b66599f14d5e57ec6ece9c00700",
+    "bytes": 7586
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-slides/references/prompt_writing.md",
+    "upstream_path": "skills/scientific-slides/references/prompt_writing.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-slides/references/prompt_writing.md",
+    "sha256": "87341d37eac34509c88ba2a3e5e1a880915ac0576e74b12f0f6d2baa31f79f9d",
+    "bytes": 2203
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-slides/references/script_reference.md",
+    "upstream_path": "skills/scientific-slides/references/script_reference.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-slides/references/script_reference.md",
+    "sha256": "cc20750df4fbb6f3e8068bc9ba355dfacfa943da5c5211223244da0b39e69761",
+    "bytes": 8434
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-slides/references/slide_capabilities.md",
+    "upstream_path": "skills/scientific-slides/references/slide_capabilities.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-slides/references/slide_capabilities.md",
+    "sha256": "1ad22713e87571cf65ac3176a84985774ad74e2a8be7e4c3396cb0877876f38b",
+    "bytes": 12419
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-slides/references/slide_design_principles.md",
+    "upstream_path": "skills/scientific-slides/references/slide_design_principles.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-slides/references/slide_design_principles.md",
+    "sha256": "6b50148bc161c80272b16da445dfdb87f966a32ccd3a28ff94dedc940dd6fbff",
+    "bytes": 23986
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-slides/references/talk_types_guide.md",
+    "upstream_path": "skills/scientific-slides/references/talk_types_guide.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-slides/references/talk_types_guide.md",
+    "sha256": "743274bc2664177f7a015c2531d07d516d1a7a6d6b6cb4a5ff527a3a99fac683",
+    "bytes": 20477
+  },
+  {
+    "path": "upstream/scientific-agent-skills/skills/scientific-slides/references/visual_review_workflow.md",
+    "upstream_path": "skills/scientific-slides/references/visual_review_workflow.md",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/593377bb048752abb0152deab9fbb1083a6087df/skills/scientific-slides/references/visual_review_workflow.md",
+    "sha256": "38138ef5f10b92f6d8965906438235bbb9ff08c8839545501a00bd6b799ab581",
+    "bytes": 20368
+  }
+]

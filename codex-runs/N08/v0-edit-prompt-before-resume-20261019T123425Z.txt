@@ -1,0 +1,7 @@
+Keep the overall layout, copy, sizes, colors, spacing, and actions unchanged; make only the following icon changes for [R-ICON-03].
+1. Replace the book icon beside the “Cách dùng đơn giản” title with documented Lucide info, 32 px.
+2. Remove the undocumented check-square icon from step “Chọn việc”; retain the numbered step badge and its text.
+3. Keep documented bell-ring for the “Nhắc nhẹ nhàng” step; keep documented hand-heart only where it already represents the family step only if it does not duplicate another distinct meaning. Otherwise remove the icon and retain number/text.
+4. Replace the undocumented gear/settings icon on “Mở cài đặt” with documented Lucide smartphone, 32 px.
+5. Keep bell on “Thử lời nhắc” for the test reminder and info on the reassurance note for a note. Ensure every displayed icon maps to its documented meaning in DESIGN.md and no icon is reused for a different meaning.
+Do not modify visible wording, typography, screen size, navigation, or card/button styling.

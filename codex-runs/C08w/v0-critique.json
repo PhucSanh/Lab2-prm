@@ -1,0 +1,256 @@
+{
+  "screen": "C08w",
+  "round": 0,
+  "score": 64,
+  "errors": 3,
+  "warns": 2,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nội dung cảnh báo trong modal",
+      "evidence": "Đoạn “Mẹ đã có việc khác lúc 8:00 sáng. Bác vẫn có thể gửi lịch này.” dài 3 dòng ở 24px trong metrics 360 và 412; rule giới hạn đoạn tối đa 2 dòng.",
+      "fix": "Rút gọn thành “Mẹ có việc lúc 8:00 sáng. Bác vẫn gửi được.” và giữ tối đa 2 dòng."
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn xem lại/gửi gợi ý kèm một modal cảnh báo, không phải màn Hôm nay có thẻ việc theo định nghĩa của luật."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn này không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Icon đồng hồ trong modal cảnh báo trùng giờ",
+      "evidence": "Ảnh cho thấy icon đồng hồ 48×48, nhưng từ điển chỉ gán `clock` cho “Giờ của việc”; icon trên cảnh báo trùng giờ không có nghĩa riêng trong từ điển. Ngoài ra, `arrow-right` được ghi cho “Tiếp tục, Bắt đầu” nhưng cũng xuất hiện trên “Vẫn gửi”.",
+      "fix": "Dùng `clock` 32×32 cạnh thông tin giờ việc; bỏ `arrow-right` khỏi “Vẫn gửi” và thể hiện lựa chọn bằng nhãn chữ. Nếu cần icon cảnh báo riêng, bổ sung nghĩa vào từ điển trước khi dùng."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "C08w is an in-flow caregiver schedule confirmation screen, not a top-level destination screen; bottom navigation is not applicable."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Chip “Chưa làm” trên thẻ tóm tắt",
+      "evidence": "Chip nền xám nhạt, viền xám và chữ xám; ảnh không có viền vàng đậm hay màu/icon vàng theo yêu cầu trạng thái chưa làm.",
+      "fix": "Đổi chip sang nền `#FFF3DB`, icon `circle` 24×24 màu `#B26A00` và chữ `#8A5100`, đặt cạnh tên việc."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn chỉ tóm tắt một việc được gợi ý, không hiển thị tiến độ ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Modal “Trùng giờ với việc khác” chồng trên trang có nút gửi",
+      "evidence": "Trong cùng ảnh có hai nút nền đậm: “Vẫn gửi” trên modal và “Gửi lịch cho mẹ” ở footer bên dưới overlay.",
+      "fix": "Ẩn CTA footer khi modal mở để modal chỉ còn một nút filled; giữ “Đổi giờ khác” dạng viền."
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có lỗi nhập liệu được trình bày trên màn này."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "C08w là bước xem lại và gửi lịch của người thân, không thuộc các loại màn lời nhắc, chi tiết việc, chi tiết thói quen hoặc gợi ý từ người thân mà luật liệt kê."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Câu giải thích trong modal “Trùng giờ với việc khác”",
+      "evidence": "Câu “Mẹ đã có việc khác lúc 8:00 sáng. Bác vẫn có thể gửi lịch này.” dùng “Mẹ” cho người nhận và “Bác” cho người xem trong cùng lời thoại; giọng caregiver ở C03–C09 dùng cách gọi theo quan hệ gia đình.",
+      "fix": "Đổi thành “Mẹ đã có việc lúc 8:00 sáng. Mẹ vẫn gửi được lịch này.” và giữ nhãn hành động cụ thể “Gửi lịch cho mẹ”."
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Modal cảnh báo dễ đọc và có thứ bậc rõ, nhưng phần giải thích dài quá hai dòng, trạng thái “Chưa làm” nhạt, và hai hành động gửi cùng lúc làm lựa chọn chính kém phân biệt."
+}

@@ -1,0 +1,14 @@
+Create a brand-new, distinct MOBILE screen in the An Nhiên app for “N02 — Đã nhận lời nhắc”. The previous v1 was reviewed and its PNG/HTML snapshot is saved under codex-runs/N02/v1.*; use it only as visual reference. Do not edit or reuse any existing screen ID. Use the same gentle light theme, Be Vietnam Pro, rounded white checklist card, green info card and fixed footer.
+
+At top show a visible back action “Quay lại” with Lucide chevron-left 32px. Main title “Đã nhận lời nhắc” at 30px and question “Bác đã nhận được chưa?” at 24px.
+
+Show a white rounded checklist card with three rows, each with a unique documented Lucide icon 32px, followed by visible Vietnamese text at 24px:
+- bell — “Lời nhắc có hiện lên”
+- bell-ring — “Chuông hoặc rung có phát”
+- type — “Chữ trong lời nhắc có dễ đọc”
+
+Below show a calm green note card with Lucide info 32px and the exact short text “Bác có thể xem lại sau.” at 24px; keep it to at most two lines at 360px.
+
+Fixed footer with primary green 60px button, Lucide circle-check 32px and label “Tôi đã nhận được” at 22px (goes to N04). Below it, secondary outlined button “Chưa nhận được” at 22px (goes to N03). Vertical gap between these buttons must be exactly 20px. Both buttons must have hit targets at least 48px high.
+
+Use 20px side margins; card radius 16px; button radius 14px; block gaps 16px; icon stroke 2–2.5 and each icon meaning appears only once. Use exact DESIGN.md colors/tokens. No bottom nav. Keep all text readable and visible or scrollable at width 360px and 412px; no horizontal overflow. Do not add content or claim notification delivery is guaranteed.

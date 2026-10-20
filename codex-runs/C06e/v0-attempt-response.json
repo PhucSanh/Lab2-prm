@@ -1,0 +1,18 @@
+{
+  "projectId": "2013215887278758682",
+  "sessionId": "15596787667786339385",
+  "outputComponents": [
+    {
+      "text": "Dưới đây là kế hoạch chi tiết và thông số thiết kế cho màn hình biến thể **C06e – Thông tin việc (Bước 1/3 - Trạng thái báo lỗi xác thực)** được phát triển từ màn hình nguồn tốt nhất C06:\n\n### 1. Phản hồi lỗi trực quan & Trợ năng xác thực (Validation Errors)\n- **Trường \"Tên việc\"**:\n  - Ô nhập để trống hoàn toàn (chiều cao 60px, bo góc 14px, nền hồng nhạt `#FDECE9`, viền đỏ cảnh báo `2px solid #B42318`).\n  - Dòng hướng dẫn phụ dưới ô: *\"Mẹ sẽ thấy đúng tên này.\"* (`20px #526057`).\n  - Khối thông báo lỗi đặt sát ngay dưới trường: Biểu tượng Lucide `circle-alert` chuẩn `32×32px` màu đỏ `#B42318` đi liền câu thông báo chính xác: **\"Hãy nhập tên việc để mẹ biết cần làm gì\"** (`24px bold #B42318`, độ tương phản > 4.5:1, không đổ lỗi hay tạo áp lực).\n- **Trường \"Giờ nhắc\"**:\n  - Bộ chọn giờ ở trạng thái chưa đặt (unset): hiển thị *\"Chọn giờ\"* kèm biểu tượng Lucide `clock` 32px và `chevron-down` 32px, chiều cao 60px, bo góc 14px, nền hồng nhạt `#FDECE9`, viền đỏ `2px solid #B42318`.\n  - Khối thông báo lỗi đặt ngay dưới trường: Biểu tượng Lucide `circle-alert` chuẩn `32×32px` màu đỏ `#B42318` đi liền câu thông báo chính xác: **\"Chọn giờ để nhắc mẹ đúng lúc\"** (`24px bold #B42318`).\n\n### 2. Bảo tồn dữ liệu hợp lệ & Bố cục biểu mẫu C06\n- **Nhóm thói quen**: Giữ nguyên thẻ **\"Vận động tự nhiên\"** đang chọn (`background: #FFFFFF`, dải nhấn xanh lá 6px `#2BA15C`, viền `2px solid #1F684B`, ô icon 48×48px xanh lá `#2BA15C` chứa Lucide footprints 32px trắng, nhãn `\"Đang chọn\"` và radio `circle-dot` 32px xanh). 3 thói quen còn lại (\"Thư giãn mỗi ngày\", \"Ăn vừa đủ\", \"Gia đình trên hết\") ở trạng thái chưa chọn.\n- **Thời lượng thực hiện**: Duy trì ô nhập hợp lệ **\"Làm trong 15 phút\"** (chiều cao 60px, viền trung tính `2px solid #7B887F`, nền trắng).\n- **Thanh App Bar**: Nút *\"< Quay lại\"* và chỉ báo *\"Bước 1/3\"*, tiêu đề trang *\"Thông tin việc\"* (30px bold 700).\n\n### 3. Nút hành động cố định & Phản hồi viewport\n- Nút chính duy nhất dạng nền đầy (filled): **\"Tiếp tục\"** kèm biểu tượng Lucide `arrow-right` 32px màu trắng, chiều cao 60px, bo góc 14px, nền xanh `#1F684B`, cố định phía trên chân trang.\n- Vùng cuộn có `padding-bottom: 120px` đảm bảo người dùng cuộn xem và chỉnh sửa thoải mái, không bị che khuất nội dung hay khối lỗi xác thực.\n- Hoàn toàn tương thích và hiển thị mượt mà trên cả hai độ phân giải `360px` và `412px`, phông chữ Be Vietnam Pro, 100% tiếng Việt có dấu."
+    },
+    {
+      "suggestion": "Tạo ngay màn hình HTML C06e hoàn chỉnh lên Canvas"
+    },
+    {
+      "suggestion": "Tùy chỉnh thêm các gợi ý tên việc một chạm (suggestion chips)"
+    },
+    {
+      "suggestion": "Chuyển tiếp sang màn hình C07 (Lặp lại việc gợi ý)"
+    }
+  ]
+}
