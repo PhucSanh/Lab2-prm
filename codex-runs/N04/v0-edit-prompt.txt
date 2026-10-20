@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-TXT-02: Increase the screen heading “Bác muốn làm gì?” from 28px to 30px; set main body copy to 24px and button labels to 22px.
+2. R-LAY-01 and R-NAV-01: Reflow the four bottom-nav labels within 360px: allow labels to wrap to at most 2 lines, remove nowrap/overflow clipping, and give each tab enough width for “Hôm nay”, “Lịch tuần”, “Thói quen”, “Gia đình” to remain fully readable with clear gaps. Keep 20px label type and all icons.
+3. R-COL-02 and R-COL-03: For the three task cards, add a 4px full-height left accent stripe and a matching solid accent icon tile with white icon. Use exact accents: Walking #2BA15C, Plant-care #609D2A, Family/call #D86E75. Do not use primary/danger colors in place of these habit accents.
+Preserve the three activity choices, “Tự đặt tên việc”, “Tiếp tục”, “Để sau”, and the rule that nothing is saved until review. Generate a new screen and preserve N04 v0 unchanged.

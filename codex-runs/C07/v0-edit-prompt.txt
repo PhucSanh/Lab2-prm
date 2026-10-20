@@ -1,0 +1,4 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-TXT-02] Set .radio-label, .weekday-name, .summary-p1 and .summary-p2 font-size24px; keep heading30px,CTA22px and secondary/helper text>=20px. Keep each summary paragraph at most2lines at360px; allow natural wrapping and no truncation.
+2. [R-CON-02] Set unselected .radio-row and .date-field-card borders to2px solid#7B887F,not#DFE5DF. Keep selected borders2px#1F684B and all current fill colors.
+3. [R-ICON-03] For selected T2/T4/T6 replace caption "Chọn" with exact "Đang chọn" at20px,line-height24px. Preserve circle-dot32px and primary2px border. Let caption wrap to at most2lines, never clip; increase weekday tile height as needed (min-height144px,auto height) while preserving4+3 grid,8px target gaps,20px screen side margins and vertical scroll access. Do not shrink text/icon. All other elements unchanged; make NEW screen version, preserve source.

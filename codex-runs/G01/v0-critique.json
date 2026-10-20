@@ -1,0 +1,273 @@
+{
+  "screen": "G01 Gợi ý lịch cho mẹ",
+  "round": 0,
+  "score": 42,
+  "errors": 4,
+  "warns": 6,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Các dòng phụ thói quen, nhãn ‘Chọn giờ nhắc gợi ý:’ và ‘Không bắt buộc’",
+      "evidence": "v0-metrics-360/412.json đo .activity-subtitle, .time-label và .message-hint ở 19px; .privacy-text cũng dùng 19px trong v0.html.",
+      "fix": "Đặt tất cả chữ hiển thị hiện 19px lên tối thiểu 20px, gồm .activity-subtitle, .time-label, .message-hint và .privacy-text."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Dòng phụ trong thẻ ‘Đi bộ nhẹ nhàng’ và ‘Chăm cây ngoài vườn’",
+      "evidence": "Trong ảnh 360px, dòng mô tả ‘Vận động tự nhiên · 20 phút’ và ‘Thư giãn mỗi ngày · 15 phút’ trông nhỏ hơn tiêu đề/nội dung chính; HTML đặt chúng ở 19px, dưới mức nội dung khoảng 24px.",
+      "fix": "Tăng chữ nội dung chính của hai dòng mô tả từ 19px lên 24px; giữ tiêu đề màn 30px và nút 22px."
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "G01 là màn soạn lịch gợi ý; hai thẻ là lựa chọn việc và giờ cho lịch tương lai, không phải thẻ việc có trạng thái trong danh sách Hôm nay."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn G01 soạn lịch, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Icon thói quen trong thẻ ‘Chăm cây ngoài vườn’ và icon nút ‘Gửi gợi ý cho mẹ’",
+      "evidence": "Icon thói quen thứ hai có hình mầm cây (Lucide sprout), trong khi từ điển quy định wind cho ‘Thư giãn mỗi ngày’; icon máy bay giấy trên nút gửi không khớp tên nào trong từ điển. Các icon đều đủ 32px.",
+      "fix": "Đổi icon mầm cây thành Lucide wind 32px; đổi icon máy bay giấy thành Lucide message-square 32px theo từ điển."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Hai thẻ ‘Đi bộ nhẹ nhàng’ và ‘Chăm cây ngoài vườn’",
+      "evidence": "Ảnh 360/412 cho thấy mỗi thẻ chỉ có ô icon xanh lá đồng màu và không có vạch màu ở cạnh trái; các ô icon không dùng màu nhấn riêng của từng thói quen.",
+      "fix": "Thêm vạch 4px ở cạnh trái mỗi thẻ và tô vạch cùng ô icon bằng màu nhấn đúng thói quen: #2BA15C cho Vận động tự nhiên, #AC76DB cho Thư giãn mỗi ngày; giữ icon trắng."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nền hai ô icon thói quen",
+      "evidence": "HTML dùng #1F684B cho cả hai .habit-icon-tile.green; DESIGN.md quy định màu nhấn #2BA15C cho Vận động tự nhiên và #AC76DB cho Thư giãn mỗi ngày.",
+      "fix": "Đổi nền ô icon (và vạch trái tương ứng) sang #2BA15C cho Vận động tự nhiên và #AC76DB cho Thư giãn mỗi ngày."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Trường nhập ‘Lời nhắn gửi kèm’",
+      "evidence": "v0-metrics-360.json đo .message-input cao 27px; nút chọn giờ đạt 56px ở 360px và 48px ở 412px.",
+      "fix": "Đặt chiều cao tối thiểu vùng nhập lời nhắn là 48px (min-height: 48px), giữ nhãn và vùng nhập cùng vùng chạm dễ bấm."
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút chính ‘Gửi gợi ý cho mẹ’ ở chân màn",
+      "evidence": "Ở ảnh 360px, nội dung dài 1002px và nút nằm tại y=901.6–961.6, ngoài khung 800px; ở ảnh 412px nút nằm y=787.5–847.5, cũng vượt đáy khung 800px. Ảnh viewport cho thấy nút bị khuất.",
+      "fix": "Giữ nút 60px cao, rộng trừ lề 20px, ghim vào đáy viewport với khoảng đệm 20px; dành phần đệm cuộn để nội dung không bị nút che."
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "G01 là màn soạn gợi ý trên máy người thân trong flow riêng, không phải màn chính có bottom navigation."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Các thẻ G01 là gợi ý chưa được nhận vào lịch, nên chưa có việc hiện hữu với trạng thái đã xong/chưa làm/đến giờ/đã dời/bỏ qua."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "G01 không phải màn Hôm nay và không hiển thị tiến độ trong ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn G01 soạn lịch, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn này là một form có nhiều mục và lựa chọn; luật căn giữa chỉ áp dụng nội dung đứng một mình như lời nhắc, màn trống hoặc kết quả."
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không hiển thị trạng thái lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Luật yêu cầu nút đọc to cho S14, S04, S16 và G03; màn đang chấm là G01."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Hai ô icon thói quen trên nền thẻ trắng",
+      "evidence": "Nền, thẻ, chữ chính, chữ phụ và primary trong HTML khớp token; ô icon dùng #1F684B thay vì hai màu nhấn token #2BA15C và #AC76DB của các thói quen trên màn.",
+      "fix": "Dùng #2BA15C cho ô icon Vận động tự nhiên và #AC76DB cho ô icon Thư giãn mỗi ngày, theo DESIGN.md."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Thẻ lưu ý ‘Lịch của mẹ chỉ thay đổi khi mẹ bấm nhận.’",
+      "evidence": "HTML đặt .privacy-notice border-radius: 14px, trong khi token yêu cầu card bo 16px; các thẻ việc đã bo 16px, nút bo 14px và font Be Vietnam Pro.",
+      "fix": "Đổi border-radius của .privacy-notice từ 14px lên 16px."
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Khoảng cách giữa hai thẻ gợi ý việc",
+      "evidence": "HTML đặt .activities-list gap: 14px, thấp hơn khoảng cách 16px giữa các khối theo token.",
+      "fix": "Đổi gap của .activities-list từ 14px lên 16px."
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Màn dễ đọc và không tràn ngang, nhưng còn bốn lỗi chặn gồm chữ 19px, thiếu màu nhấn/vạch thói quen, vùng nhập 27px và nút gửi bị khuất dưới khung 800px."
+}

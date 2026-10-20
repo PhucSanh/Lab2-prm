@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-ICON-03: Replace the Lucide `house` icon on the “Về Hôm nay” button with Lucide `sun` at 32×32px, matching the documented Hôm nay navigation meaning. Keep the visible text label.
+Preserve the single accepted walking event at 9:00, date heading, calendar controls, colors, and footer. Generate a new screen and preserve G08c v1 unchanged.

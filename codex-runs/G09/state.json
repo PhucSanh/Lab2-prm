@@ -1,0 +1,27 @@
+{
+  "screen": "G09",
+  "title": "Đã bỏ qua gợi ý",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 2,
+  "screen_id": "6230f724dd5f47259a633094d1fc1264",
+  "parent_screen_id": "686f8ac73127449eaf05c2f20fcc17d9",
+  "best_round": 2,
+  "best_screen_id": "6230f724dd5f47259a633094d1fc1264",
+  "best_score": 97,
+  "patience": 1,
+  "pending_operation_id": null,
+  "stop_reason": "score_100",
+  "canvas_row": 29,
+  "stage": "awaiting_review",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "provenance": {
+    "source_screen": "G05",
+    "source_screen_id": "f18eacbd1f164974bc5850ca65a77ee9",
+    "source_project_id": "2013215887278758682",
+    "source_best_round": 3
+  },
+  "updated_at": "2026-10-19T08:19:10.573952+00:00",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/G09/v1-edit-prompt.txt",
+  "last_processed_round": 2
+}

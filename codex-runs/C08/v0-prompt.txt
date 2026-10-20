@@ -1,0 +1,22 @@
+Create ONE screen for An Nhiên, Android360x800dp, responsive412px, Vietnamese older adults65+ and relatives. Match the existing project S03/C01 scaffolding and design tokens exactly: background#F6F7F2, white cards#FFFFFF, main text#202B25, secondary#526057, primary#1F684B, pale#D6EADF, outline#7B887F, error#B42318. Be Vietnam Pro only; heading30px bold, main content24px, description/labels>=20px, button22px bold. Cards radius16, buttons radius14. Screen side margins20px, inter-block gaps16px. Main button320x60px pinned above bottom safe area, reserve content space to avoid overlap. All touch targets>=48x48px; adjacent tap targets gap>=8px. Text contrast>=4.5:1, large text>=3:1; controls>=3:1. All visible UI in Vietnamese with accents; no English, no text under20px including fake system status bar. No gradients, neon, dark theme, custom illustrations, scores, streaks, medical promises, or pressure. Only ONE dark filled action per screen. Sentences<=15 syllables, paragraphs<=2 lines, button labels<=5 syllables, tab labels<=3 syllables. Icons must be actual Lucide SVG32px stroke2–2.5 with visible text, state-chip icon>=24px allowed. Choice selected uses circle-dot, unselected circle, never circle-check for selection. Keep senior user's autonomy: relatives send suggestions, changes require acceptance, no covert reports. Do not change existing screens or project design system. Generate screenshot and inspectable HTML/CSS; do not add a desktop simulator bezel or outer gray background. Name according to common project convention, no person/agent suffix.
+
+SCREEN C08 Step3of3 caregiver reviews a suggestion. Backchevron-left32+"Quay lại", step"Bước 3/3"20px, heading"Xem lại và gửi"30px. White summary card radius16:48px #2BA15C habit tile whitefootprints32,6px matching left bar, title"Đi bộ buổi sáng"24px, habit"Vận động tự nhiên"20px,clock32+"8:00 sáng · 15 phút",repeat32+"Thứ Hai, Thứ Tư, Thứ Sáu",start"Từ 19/10/2026"20px. Because this is an unsent suggestion, explicit pending statuscircle24+"Chưa làm" only if treated as task; do not falsely claim mother's completed consent. Field label"Lời nhắn cho mẹ",helper"Không bắt buộc",textarea60+px with short draft"Mẹ đi bộ nhẹ nhàng nhé!",24px. Consent row label"Mẹ nhận trước khi thêm"20px at most2lines;large switch touch target>=48x48 with visible word"Đang bật" and label (color not only cue). Do not usecircle-check for on. Explanatory short text"Mẹ tự chọn nhận hoặc bỏ qua."20px<=2lines. Footer single filled buttonplus32 (adding proposed schedule)+"Gửi lịch cho mẹ",320x60; no paper-plane or send icon absent dictionary. No bottom nav on wizard. Conflict overlay is separate C08w later,not this default. All changes queued as suggestions until mother accepts; do not render hidden forced-add option or monitoring claim. Icons dictionary:chevron-left,footprints,clock,repeat,plus,circle=pending,info for consent note if used. No new icon meanings, every actionable icon has text.
+RESPONSIVE FOOTER: each footer button width100% of footer content with20px side padding:320px at360 viewport,372px at412. Do NOT cap at320px at412. All visible numerals/indexes also>=20px; non-status icons actual computed32px, not just SVG attributes. When using colored habit tiles, surround with white so contrast>=3:1 even on selected pale cards.
+
+Use this EXACT official Lucide footprints SVG path data, do not draw a different icon:
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z" />
+  <path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z" />
+  <path d="M16 17h4" />
+  <path d="M4 13h4" />
+</svg>

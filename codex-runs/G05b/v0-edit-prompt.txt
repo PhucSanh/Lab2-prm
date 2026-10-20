@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-TXT-03: Replace the reminder sentence “Lịch nhắc đã sẵn sàng. Bác có thể đổi giờ hoặc ngưng nhắc bất cứ lúc nào.” with the exact shorter copy “Bác có thể đổi giờ hoặc ngưng nhắc.” (8 tiếng).
+2. R-ICON-03: Replace the heart icon on the Gia đình tab with the exact Lucide `hand-heart` icon at 32×32px; keep the visible “Gia đình” label.
+3. R-STY-03: Increase the vertical gap between the two accepted activity cards from 12px to 16px.
+Preserve the accepted confirmation, walking at “9:00 sáng”, relaxation at “10:00 sáng”, other text, “Đọc to”, primary “Xem lịch ngày mai”, return action, colors, and four-tab navigation. Generate a new screen and preserve G05b v0 unchanged.

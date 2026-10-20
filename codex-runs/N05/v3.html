@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - Xem lại việc đầu tiên</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --bg-canvas: #F6F7F2;
+      --card-bg: #FFFFFF;
+      --card-border: #DFE5DF;
+      --card-selected-bg: #E8F3ED;
+      --card-selected-border: #1F684B;
+      --habit-move: #1F684B;
+      --primary: #1F684B;
+      --primary-hover: #174C37;
+      --text-main: #202B25;
+      --text-muted: #526057;
+      --text-light: #7B887F;
+      --font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      font-family: var(--font-family);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .mobile-frame {
+      width: 100%;
+      max-width: 412px;
+      min-height: 100vh;
+      background-color: var(--bg-canvas);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Header / App Bar */
+    .app-bar {
+      padding: 16px 20px 8px 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--primary);
+      font-family: var(--font-family);
+      font-size: 22px;
+      font-weight: 700;
+      padding: 8px 12px 8px 0;
+      min-height: 48px;
+      min-width: 48px;
+      text-decoration: none;
+    }
+
+    .back-btn svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2.5;
+    }
+
+    /* Main Scrollable Content */
+    .content-area {
+      flex: 1;
+      padding: 8px 20px 180px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Title Block */
+    .title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .screen-title {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text-main);
+    }
+
+    .screen-subtitle {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--text-muted);
+    }
+
+    /* Selected Task Card */
+    .task-card {
+      background: var(--card-selected-bg);
+      border: 2px solid var(--card-selected-border);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+    }
+
+    .habit-strip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 8px;
+      background-color: var(--habit-move);
+      border-top-left-radius: 14px;
+      border-bottom-left-radius: 14px;
+    }
+
+    .task-icon-tile {
+      width: 60px;
+      height: 60px;
+      background-color: var(--habit-move);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      flex-shrink: 0;
+      margin-left: 4px;
+    }
+
+    .task-icon-tile svg {
+      width: 34px;
+      height: 34px;
+      stroke-width: 2.2;
+    }
+
+    .task-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .task-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    .task-category {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* Section Heading */
+    .section-label {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 4px;
+      margin-bottom: -4px;
+    }
+
+    /* Details Rows Group */
+    .details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .detail-row-btn {
+      width: 100%;
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      cursor: pointer;
+      font-family: var(--font-family);
+      text-align: left;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .detail-row-btn:active {
+      background-color: #EEF3EF;
+      border-color: var(--primary);
+    }
+
+    .detail-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+    }
+
+    .detail-icon-wrap {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .detail-icon-wrap svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2.2;
+    }
+
+    .detail-texts {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .detail-label {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    .detail-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    .detail-action-tag {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--primary);
+      background-color: #E8F3ED;
+      padding: 6px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+      margin-left: 8px;
+    }
+
+    /* Reassurance / Info Card */
+    .note-card {
+      background-color: #E8F3ED;
+      border: 1px solid #C4DEC0;
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .note-card svg {
+      width: 32px;
+      height: 32px;
+      color: var(--primary);
+      stroke-width: 2.2;
+      flex-shrink: 0;
+    }
+
+    .note-text {
+      font-size: 20px;
+      font-weight: 500;
+      color: #174C37;
+      line-height: 1.4;
+    }
+
+    /* Fixed Bottom Action Container */
+    .fixed-footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 412px;
+      padding: 16px 20px 20px 20px;
+      background-color: var(--bg-canvas);
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 100;
+    }
+
+    .btn-save {
+      width: 100%;
+      height: 60px;
+      background-color: var(--primary);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-family: var(--font-family);
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(31, 104, 75, 0.2);
+    }
+
+    .btn-save:active {
+      background-color: var(--primary-hover);
+    }
+
+    .btn-save svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2.2;
+    }
+
+    .btn-secondary {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-family: var(--font-family);
+      font-size: 22px;
+      font-weight: 700;
+      padding: 8px;
+      min-height: 48px;
+      cursor: pointer;
+      text-decoration: underline;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+<style>
+  :root {
+    --habit-move: #2BA15C;
+    --card-selected-bg: #D6EADF;
+  }
+  .detail-row-btn {
+    border: 1.5px solid #7B887F !important;
+  }
+  .detail-action-tag {
+    border: 1.5px solid #1F684B;
+  }
+  .note-card {
+    background-color: #D6EADF !important;
+    border: 1.5px solid #7B887F !important;
+  }
+</style></head>
+<body>
+<div class="mobile-frame">
+<!-- Header / App Bar -->
+<header class="app-bar">
+<button aria-label="Quay lại" class="back-btn" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+<span>Quay lại</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="content-area">
+<!-- Title Block -->
+<section class="title-block">
+<h1 class="screen-title">Xem lại việc đầu tiên</h1>
+<p class="screen-subtitle">Bác xem lại một lần trước khi lưu nhé.</p>
+</section>
+<!-- Selected Task Card -->
+<section aria-label="Việc đã chọn" class="task-card"><div class="habit-strip" style="background-color: #2BA15C;"></div>
+<div class="task-icon-tile" style="background-color: #2BA15C;">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.67-2 8.5V16a2 2 0 0 1-2 2 2 2 0 0 1-2-2Z"></path>
+<path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.67 2 8.5V20a2 2 0 0 0 2 2 2 2 0 0 0 2-2Z"></path>
+<path d="M16 17h4"></path>
+<path d="M4 13h4"></path>
+</svg>
+</div>
+<div class="task-info">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;">
+<div class="task-name">Đi bộ nhẹ nhàng</div>
+<span style="font-size: 20px; font-weight: 700; color: #8A5100; background: #FFF3DB; border: 2px solid #B26A00; border-radius: 9999px; padding: 4px 12px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" style="width: 24px; height: 24px; flex-shrink: 0;" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg><span>Chưa làm</span></span>
+</div>
+<div style="display: flex; align-items: center; gap: 6px; color: #1F684B; font-size: 20px; font-weight: 600;">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" style="width: 24px; height: 24px;" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+<span>9:00 sáng</span>
+</div>
+<div class="task-category" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Vận động tự nhiên</div>
+</div></section>
+<div class="section-label">Thời gian và lặp lại</div>
+<!-- Tappable Summary Rows Group -->
+<section class="details-list">
+<!-- Time Row: opens time picker -->
+<button aria-label="Giờ nhắc: 9:00 sáng. Bấm để đổi giờ." class="detail-row-btn" type="button">
+<div class="detail-left">
+<div class="detail-icon-wrap">
+<!-- Lucide clock 32px -->
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+</div>
+<div class="detail-texts">
+<span class="detail-label">Giờ nhắc</span>
+<span class="detail-value">9:00 sáng</span>
+</div>
+</div>
+<span class="detail-action-tag">Đổi giờ</span>
+</button>
+<!-- Date Row: leads to N11. No icon as per requirement (calendar-days reserved) -->
+<button aria-label="Ngày bắt đầu: Thứ Hai, 19/10. Bấm để đổi ngày." class="detail-row-btn" type="button"><div class="detail-left">
+<div class="detail-icon-wrap">
+<svg fill="none" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 32px; height: 32px;" viewbox="0 0 24 24">
+<path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path>
+<path d="m15 5 4 4"></path>
+</svg>
+</div>
+<div class="detail-texts">
+<span class="detail-label">Ngày bắt đầu</span>
+<span class="detail-value">Thứ Hai, 19/10</span>
+</div>
+</div>
+<span class="detail-action-tag">Đổi ngày</span></button>
+<!-- Repeat Row: leads to N12 -->
+<button aria-label="Nhịp nhắc: Một lần. Bấm để đổi nhịp nhắc." class="detail-row-btn" type="button">
+<div class="detail-left">
+<div class="detail-icon-wrap">
+<!-- Lucide repeat 32px -->
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<path d="m17 2 4 4-4 4"></path>
+<path d="M3 11v-1a4 4 0 0 1 4-4h14"></path>
+<path d="m7 22-4-4 4-4"></path>
+<path d="M21 13v1a4 4 0 0 1-4 4H3"></path>
+</svg>
+</div>
+<div class="detail-texts">
+<span class="detail-label">Nhịp nhắc</span>
+<span class="detail-value">Một lần</span>
+</div>
+</div>
+<span class="detail-action-tag">Đổi nhịp</span>
+</button>
+</section>
+<!-- Reassurance Note Card -->
+<section class="note-card">
+<!-- Lucide info 32px -->
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 16v-4"></path>
+<path d="M12 8h.01"></path>
+</svg>
+<span class="note-text">Bác bấm Lưu việc để thêm vào lịch.</span>
+</section>
+</main>
+<!-- Fixed Bottom CTA -->
+<footer class="fixed-footer">
+<button class="btn-save" type="button">
+<!-- Lucide save 32px -->
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"></path>
+<path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"></path>
+<path d="M7 3v4a1 1 0 0 0 1 1h7"></path>
+</svg>
+<span>Lưu việc</span>
+</button>
+</footer>
+</div>
+</body>
+</html>

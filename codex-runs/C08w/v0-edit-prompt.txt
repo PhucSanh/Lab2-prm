@@ -1,0 +1,9 @@
+Keep the overall layout and all elements not mentioned below unchanged.
+
+1. [R-TXT-03] Replace the dialog body with exactly: “Mẹ có việc lúc 8:00. Vẫn gửi lịch này?” At 360px, keep this paragraph within 2 lines while preserving 24px text.
+2. [R-LANG-02] In the caregiver dialog, use family-relationship wording without addressing the caregiver as “Bác”. Change the primary action label to exactly “Gửi lịch cho mẹ”. Keep the secondary action label “Đổi giờ khác”.
+3. [R-ICON-03] Remove the large clock icon from the warning badge at the top of the dialog; do not replace it with an undocumented icon. Keep the documented clock beside the scheduled time and on “Đổi giờ khác”, and keep the documented `arrow-right` on “Gửi lịch cho mẹ” only as the forward/continue action to C09.
+4. [R-STA-01] Restyle the background “Chưa làm” chip to a clear warning outline using a 24×24 `circle` icon and `#B26A00` accent on a pale `#FFF3DB` background, with the label still visible.
+5. [R-ONE-01] Hide the underlying C08 footer “Gửi lịch cho mẹ” CTA while the modal is open so the full screen has only one filled button. Keep the dimmed C08 summary, message, and consent explanation visible behind the scrim.
+
+Keep the modal centered, the two modal actions distinct (primary filled and secondary outlined), and preserve C08 layout, An Nhiên colors, typography, touch sizes, and all other copy. This is a caregiver flow: do not imply that the schedule is already added to the mother’s calendar.

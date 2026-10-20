@@ -1,0 +1,257 @@
+{
+  "screen": "G05 Đã thêm vào lịch",
+  "round": 1,
+  "score": 54,
+  "errors": 4,
+  "warns": 2,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Hai chip trạng thái và bốn tab điều hướng",
+      "evidence": "Mỗi chip `.status-chip` và thẻ liên kết `.nav-tab` được tính font mặc định 16px ở cả 360 và 412 dp; dù nhãn con lớn hơn, phần tử chứa vẫn hiển thị chữ với cỡ 16px.",
+      "fix": "Đặt font-size:20px cho `.status-chip` và `.nav-tab`, đồng thời giữ `.status-chip-text`/`.nav-tab-label` tối thiểu 20px."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Luật chỉ áp dụng cho màn Hôm nay; đây là màn kết quả G05 đã nhận gợi ý."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Các thẻ “Đi bộ nhẹ nhàng” và “Thư giãn nhẹ nhàng”",
+      "evidence": "Tile icon có nền pastel (`#D6EADF`, `#F2E8FA`) thay vì màu nhấn thói quen; footprint còn xanh thay vì trắng. Các glyph 32px và chip 24px đạt kích thước; icon hero calendar-plus không phải icon trong từ điển cho nghĩa “Đã thêm vào lịch”.",
+      "fix": "Dùng `footprints` trắng 32px trên `#2BA15C`, `wind` trắng 32px trên `#AC76DB`; đổi icon hero thành icon có trong từ điển, ví dụ `calendar-days` 40px cho lịch."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Hai thẻ việc",
+      "evidence": "Vạch trái dùng đúng `#2BA15C`/`#AC76DB`, nhưng ô icon không dùng màu accent và icon không trắng.",
+      "fix": "Đặt nền `.tile-walking` `#2BA15C`, `.tile-resting` `#AC76DB`; đặt cả hai icon thành trắng."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút “Xem lịch ngày mai” ở cuối màn",
+      "evidence": "Nút cao 60px, rộng 320px với lề 20px, nhưng nằm sau nội dung ở khoảng y=814px trên màn 360×800; không nằm ở đáy màn nhìn thấy khi mở.",
+      "fix": "Đặt nút chính fixed/bottom ở đáy vùng nhìn 360×800, cao 60px, cách mép ngang 20px."
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Hai thẻ việc, chip trạng thái cạnh phần tên",
+      "evidence": "Cả hai thẻ ghi “Chưa làm”; bộ trạng thái quy định là “○ Chưa làm” và viền vàng đậm. Hiện icon tròn có nhưng nhãn thiếu ký hiệu quy định.",
+      "fix": "Đổi nhãn cả hai thành “○ Chưa làm”, giữ viền `#B26A00` tối thiểu 2px."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Luật chỉ áp dụng cho màn Hôm nay; đây là màn kết quả G05 đã nhận gợi ý."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Luật chỉ áp dụng cho màn Hôm nay; đây là màn kết quả G05 đã nhận gợi ý."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Luật chỉ áp dụng cho màn Hôm nay; đây là màn kết quả G05 đã nhận gợi ý."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Luật chỉ áp dụng cho màn Hôm nay; đây là màn kết quả G05 đã nhận gợi ý."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Bố cục màn kết quả",
+      "evidence": "Lề ngang 20px đúng, nhưng các khối dọc không giữ nhịp 16px: ví dụ tiêu đề section có margin-bottom 12px, thẻ đầu→thẻ sau 12px.",
+      "fix": "Đặt margin giữa các khối chính và hai thẻ là 16px; đổi `.section-title` margin-bottom từ 12px lên 16px và `.card-walking` margin-bottom từ 12px lên 16px."
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Màn kết quả dễ đọc, có điều hướng và đọc to, nhưng cần sửa nhãn trạng thái, các ô icon accent và đưa nút chính vào đáy màn."
+}

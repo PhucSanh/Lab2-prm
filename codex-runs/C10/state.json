@@ -1,0 +1,21 @@
+{
+  "screen": "C10",
+  "title": "Chi tiết việc lặp lại",
+  "status": "NEEDS_HUMAN",
+  "project_id": "2013215887278758682",
+  "round": 2,
+  "screen_id": "d1142242942447bdae9241251a2a30ca",
+  "parent_screen_id": "ec509e26e1b049209314ade4d131d224",
+  "best_round": 0,
+  "best_screen_id": "ec509e26e1b049209314ade4d131d224",
+  "best_score": 67,
+  "patience": 2,
+  "pending_operation_id": null,
+  "stop_reason": "patience_2",
+  "updated_at": "2026-10-18T18:58:11.599228+00:00",
+  "canvas_row": 7,
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/C10/v1-edit-prompt.txt",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "stage": "awaiting_review",
+  "last_processed_round": 2
+}

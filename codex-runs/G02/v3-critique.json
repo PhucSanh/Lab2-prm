@@ -1,0 +1,252 @@
+{
+  "screen": "G02 Đã gửi gợi ý",
+  "round": 3,
+  "score": 81,
+  "errors": 1,
+  "warns": 3,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Viền thẻ việc và ô icon nền xanh/tím",
+      "evidence": "Habit glyphs are #1F684B/#7C3AED on pale #D6EADF/#F3E8FF tiles; their foreground/background contrast is below the required 3:1 for icon controls.",
+      "fix": "Use #2BA15C and #AC76DB accent fills with white 32px icons, each meeting at least 3:1 contrast."
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "G02 is a sent-suggestion confirmation, not the Today screen."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Two activity cards: footprints and wind tiles; status chips",
+      "evidence": "Habit glyphs are 32px and recognizable, but use colored strokes on pale tiles instead of white glyphs on the corresponding accent color. Status circle is 24px, within exception. Success check is generic and does not encode an explicit done status.",
+      "fix": "Keep status circle at 24px; render footprints/wind as white 32px glyphs on #2BA15C and #AC76DB. Use a 32px Lucide circle-check only for an explicit ‘Đã xong’ status, or remove the success glyph."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Activity cards ‘Đi bộ nhẹ nhàng’ and ‘Thư giãn nhẹ nhàng’",
+      "evidence": "Cards have left accent bars, but the 48×48 tiles are pale #D6EADF/#F3E8FF with colored icons, not accent-color tiles with white icons.",
+      "fix": "Set tile backgrounds to #2BA15C and #AC76DB respectively and their 32×32 Lucide icons to #FFFFFF; retain matching 6px left bars."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "G02 is a message confirming suggestion delivery and has no daily task-completion progress measure."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "This is G02, not the Today screen."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "No destructive or difficult-to-reverse action is offered on this sent-confirmation screen."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "No input error state or form validation is shown."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "The ‘Đọc to’ requirement covers G03 suggestion detail; G02 is the sender-side sent confirmation."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Sender line, heading, body and CTA",
+      "evidence": "UI addresses recipient as ‘mẹ’ (‘Đã gửi gợi ý cho mẹ’, ‘Mẹ sẽ tự chọn…’) while another sentence switches to third-person ‘mẹ’; the handoff specifies recipient-facing ‘Bác’ for G03, but sender-side G02 uses mother wording. CTA ‘Về Gia đình’ is a destination label rather than verb + object.",
+      "fix": "Use the intended G02 sender-facing ‘mẹ’ consistently throughout and change CTA to the explicit action ‘Xem Gia đình’ (3 tiếng)."
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "G02 clearly communicates suggestion delivery and preserves the mother’s choice, but its habit icon tiles miss the required accent treatment and a few details in the footer and sender wording need adjustment."
+}

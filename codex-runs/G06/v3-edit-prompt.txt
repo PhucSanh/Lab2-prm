@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-ICON-03: Replace both time icons `clock-3` with the exact Lucide `clock` icon at 32×32px.
+Preserve the two unchecked activity choices, correct habit accent tokens, consent notice, bottom navigation above the bottom-pinned primary action, and all other text and styling. Generate a new screen and preserve G06 v3 unchanged.

@@ -1,0 +1,21 @@
+{
+  "screen": "C07",
+  "title": "Lặp lại mỗi tuần (Bước 2/3)",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 4,
+  "screen_id": "757085b74597441786088387267f7826",
+  "parent_screen_id": "2d9bcdaf92d24015b7bddd1b831da562",
+  "best_round": 4,
+  "best_screen_id": "757085b74597441786088387267f7826",
+  "best_score": 100,
+  "patience": 0,
+  "pending_operation_id": null,
+  "stop_reason": "score_100",
+  "updated_at": "2026-10-18T19:00:05.415499+00:00",
+  "canvas_row": 4,
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/C07/v3-edit-prompt.txt",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "stage": "awaiting_review",
+  "last_processed_round": 4
+}

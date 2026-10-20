@@ -1,0 +1,255 @@
+{
+  "screen": "G01b",
+  "round": 3,
+  "score": 77,
+  "errors": 2,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Hai thẻ gợi ý việc.",
+      "evidence": "Mỗi thẻ hiển thị icon thói quen, tên việc, tên thói quen và thời lượng, cùng bốn hàng chọn giờ. Phần thời lượng/tên thói quen và nhiều lựa chọn giờ vượt cấu trúc thẻ việc được quy định.",
+      "fix": "Giữ trong thẻ icon, một giờ đề xuất, tên việc và một nhãn trạng thái; chuyển chọn giờ thay thế sang bước riêng."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "where": "Màn G01b không có bottom navigation; luật áp dụng cho thanh tab.",
+      "evidence": "Luật không áp dụng cho loại màn này."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút quay lại ở đầu màn.",
+      "evidence": "Ảnh 360/412 hiển thị chevron cùng chữ ‘Gia đình’; nút không có nhãn ‘Quay lại’ nhìn thấy được.",
+      "fix": "Đổi nhãn hiển thị thành ‘Quay lại’ (20px), hoặc tên màn trước nếu biết chính xác."
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "where": "Màn soạn lịch gợi ý không hiển thị việc đang thực hiện hoặc nhãn trạng thái việc.",
+      "evidence": "Luật không áp dụng cho loại màn này."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "where": "Màn G01b không có tiến độ ngày.",
+      "evidence": "Luật không áp dụng cho loại màn này."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "where": "Đây không phải màn Hôm nay.",
+      "evidence": "Luật không áp dụng cho loại màn này."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "where": "Không có lỗi nhập đang hiển thị.",
+      "evidence": "Luật không áp dụng cho loại màn này."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "where": "G01b không thuộc nhóm màn yêu cầu nút Đọc to theo luật.",
+      "evidence": "Luật không áp dụng cho loại màn này."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Hàng ‘Lời nhắn gửi kèm / Không bắt buộc’ trên màn 360px.",
+      "evidence": "Metrics 360 cho LABEL và SPAN mỗi dòng cao 50px, xếp cạnh nhau ở cùng hàng; ảnh fullpage cho thấy các từ rơi xuống thành hai dòng và sát cạnh nhau. Lề 20px và gap 16px được giữ ở các khối chính.",
+      "fix": "Ở 360px đổi hàng nhãn thành cột hoặc để nhãn ‘Không bắt buộc’ xuống hàng riêng; đặt gap dọc 8px và giữ lề 20px."
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Hai lỗi chặn là cấu trúc thẻ gợi ý vượt giới hạn nội dung và nút quay lại thiếu nhãn; hàng nhãn biểu mẫu cần xếp lại ở 360px."
+}

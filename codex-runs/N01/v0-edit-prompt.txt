@@ -1,0 +1,7 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-TXT-03: Replace the long explanatory paragraph with the exact short copy “Bác thử chuông; việc này không thêm vào lịch.” Keep it within 2 lines.
+2. R-TXT-05: In the sample “Đi bộ nhẹ nhàng” card, remove “Ví dụ · 5 phút” and instead show time “9:30 sáng”, the task name, and a standard “○ Chưa làm” status chip beside the task name. This remains a test sample and must not be added to the calendar.
+3. R-ICON-03: Increase the bell, volume-2, and smartphone icons to 32×32px. Use exact Lucide `bell` for the sample reminder, `volume-2` for reading audio, and `smartphone` for the device note.
+4. R-COL-02: Add a 4px full-height left accent stripe to the sample walking card in accent #2BA15C; retain its icon tile and white Lucide icon.
+5. R-NAV-01: Add the required four-tab bottom navigation with Lucide sun / calendar-days / leaf / hand-heart and visible labels “Hôm nay”, “Lịch tuần”, “Thói quen”, “Gia đình”, each 20px. Preserve the primary “Gửi thử” action at the screen bottom above the nav and “Để sau” as visible text.
+Keep every other claim conditional; do not claim the notification was sent or received. Generate a new screen and preserve N01 v0 unchanged.

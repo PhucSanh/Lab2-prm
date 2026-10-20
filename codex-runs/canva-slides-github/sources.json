@@ -1,0 +1,52 @@
+[
+  {
+    "repo": "anthropics/skills",
+    "stars": 182125,
+    "forks": 21585,
+    "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+    "license": null,
+    "checked_date": "2026-10-19"
+  },
+  {
+    "repo": "K-Dense-AI/scientific-agent-skills",
+    "stars": 52786,
+    "forks": 4678,
+    "commit": "593377bb048752abb0152deab9fbb1083a6087df",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "checked_date": "2026-10-19"
+  },
+  {
+    "repo": "slidevjs/slidev",
+    "stars": 49126,
+    "forks": 2229,
+    "commit": "73053ab2b9653ed475960301b56e1ce4439d9c75",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "checked_date": "2026-10-19"
+  },
+  {
+    "repo": "marp-team/marp",
+    "stars": 12654,
+    "forks": 302,
+    "commit": "aaac2347ec65cd835c0ccd90ba3d866c9a75cb07",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "checked_date": "2026-10-19"
+  }
+]

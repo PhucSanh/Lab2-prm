@@ -1,0 +1,6 @@
+Keep the overall layout and all other elements unchanged.
+
+1. [R-ICON-03] On the secondary “Đổi giờ khác” action, replace Lucide `clock` with documented `alarm-clock-plus` at 32×32 px. Keep the `arrow-right` on “Vẫn gửi”; it represents continuing to C09.
+2. [R-LANG-02] Replace the modal body with exactly: “Mẹ có việc lúc 8:00. Bác vẫn gửi chứ?” Keep the handoff action labels exactly “Vẫn gửi” and “Đổi giờ khác”. Preserve 24px body text and ensure it stays within 2 lines at 360px.
+
+Preserve the fixed footer hidden while the modal is open, the “Chưa làm” chip colors, the documented `#2BA15C` Vận động accent, modal size/position, scrim, and all other content.

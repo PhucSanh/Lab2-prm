@@ -1,0 +1,15 @@
+{
+  "projectId": "2013215887278758682",
+  "sessionId": "5846084029121072892",
+  "outputComponents": [
+    {
+      "text": "Dưới đây là kế hoạch chi tiết và các điểm đã chuẩn bị để cập nhật màn hình C08 (An Nhiên - C08 Xem lại và gửi gợi ý) theo đúng toàn bộ các tiêu chí reviewer:\n\n1. **Thay thế công tắc (Switch) bằng hàng điều kiện bắt buộc rõ ràng**:\n   - Loại bỏ công tắc bật/tắt (switch toggle) hiện tại.\n   - Thay bằng khối thông tin điều kiện tường minh: Mẹ cần đích thân bấm nhận trên máy của mình trước khi việc được đưa vào lịch; không gây hiểu nhầm về việc tự động giám sát hay tự động thêm lịch.\n   - Bổ sung biểu tượng Lucide `info` chính thức kích thước `32x32px` với nét vẽ chuẩn `2.2 - 2.5` đặt cạnh phần mô tả giải thích.\n\n2. **Chuẩn hóa hàng thông tin ngày bắt đầu**:\n   - Loại bỏ biểu tượng hình tròn rỗng (`circle`) chung chung ở trước dòng ngày bắt đầu `Từ 19/10/2026`.\n\n3. **Cập nhật biểu tượng nút gửi lịch chính thức**:\n   - Thay thế biểu tượng dấu cộng (`+`) trên nút cố định dưới chân trang *\"Gửi lịch cho mẹ\"* bằng biểu tượng Lucide `send` kích thước `32x32px` màu trắng (đúng chuẩn vector: `<line x1=\"22\" x2=\"11\" y1=\"2\" y2=\"13\"/><polygon points=\"22 2 15 22 11 13 2 9 22 2\"/>`).\n\n4. **Bảo toàn các tiêu chuẩn công thái học & kiểu dáng An Nhiên**:\n   - Cỡ chữ tối thiểu từ `20px` trở lên, tương phản cao, phân cấp trực quan rõ ràng.\n   - Bố cục co giãn đáp ứng tốt ở độ phân giải `360px` và `412px`, nút CTA cố định ở đáy trang với khoảng đệm cuộn an toàn.\n\nBạn có muốn tôi áp dụng ngay những chỉnh sửa này lên màn hình C08 không?"
+    },
+    {
+      "suggestion": "Áp dụng ngay các thay đổi trên màn hình C08"
+    },
+    {
+      "suggestion": "Xem lại mã nguồn chi tiết của khối giải thích điều kiện"
+    }
+  ]
+}

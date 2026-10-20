@@ -1,0 +1,262 @@
+{
+  "screen": "G01b",
+  "round": 0,
+  "score": 68,
+  "errors": 2,
+  "warns": 4,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Header và khung MAIN (360/412 px)",
+      "evidence": "Metrics ghi font 16px cho HEADER, MAIN, FOOTER; nút chọn giờ còn font 13.3333px. Chữ nhãn con 20px không làm các phần tử chữ 16px/13.33px đạt ngưỡng.",
+      "fix": "Đặt mọi chữ hiển thị, kể cả nhãn chứa của header/footer và chữ điều khiển chọn giờ, tối thiểu 20px; đặt font-size:20px cho .time-option-btn."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn gợi ý lịch gia đình có hai lựa chọn thói quen và biểu mẫu nhắn kèm, không phải màn Hôm nay với thẻ việc."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn gợi ý lịch cho người thân, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Ô icon của hai thẻ thói quen và các vòng chọn giờ",
+      "evidence": "Ảnh cho thấy các nét minh họa trong ô thói quen là glyphs không nhận diện được là Lucide. Theo từ điển, icon dùng cho từng ý nghĩa phải là icon Lucide đã chỉ định; kích thước hộp đạt 32px.",
+      "fix": "Thay icon tự vẽ bằng đúng tên Lucide trong từ điển DESIGN.md cho từng thói quen; dùng circle-dot 32×32 cho giờ đang chọn và circle 32×32 cho giờ chưa chọn."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Ô icon và vạch trái thẻ đi bộ, thư giãn",
+      "evidence": "HTML dùng #2BA15C và #AC76DB; đây không phải màu accent được chỉ định cho hai thói quen trong DESIGN.md.",
+      "fix": "Thay #2BA15C và #AC76DB lần lượt bằng đúng habit-walk-accent và habit-downshift-accent trong DESIGN.md, đồng nhất màu ô icon với vạch trái."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút Gửi gợi ý cho mẹ ở chân màn",
+      "evidence": "Nút cao 60px và rộng 320px ở lề 20px, nhưng ở viewport 360×800 nó nằm tại y=941px (412px: y=861px), ngoài màn hình ban đầu do nội dung dài; người dùng phải cuộn để thấy hành động chính.",
+      "fix": "Đặt nút cao 60px, rộng màn hình trừ 40px và ghim trong footer đáy viewport; bảo đảm luôn thấy trên màn 360×800."
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn lồng ghép G01b; thiết kế dùng thanh đáy có nút gửi hành động chính thay cho điều hướng cấp cao."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn chọn giờ trong gợi ý lịch, không hiển thị các việc trong ngày với trạng thái hoàn thành."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không hiển thị tiến độ ngày; đây không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn gợi ý lịch cho người thân, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn là danh sách lựa chọn và biểu mẫu nên căn trái; không phải lời nhắc, hộp hỏi lại, màn trống, kết quả hoặc chọn cỡ chữ đứng một mình."
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Gửi gợi ý chỉ đề nghị thêm lựa chọn giờ; không có hành động xóa, đánh dấu xong hoặc ngưng lặp khó đảo ngược."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không có trạng thái lỗi nhập liệu."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn G01b là gợi ý từ người thân, nhưng không phải màn G03 gợi ý cụ thể theo phạm vi luật R-VOI-01."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Toàn màn",
+      "evidence": "Màn gọi người nhận là “mẹ” nhưng nút quay lại ghi “Gia đình”; không có lời gọi trực tiếp thống nhất theo Bác/Ông/Bà. Câu nút “Gửi gợi ý cho mẹ” không nói rõ việc thêm gợi ý vào lịch.",
+      "fix": "Dùng một cách gọi xuyên suốt, ví dụ đổi tiêu đề/nội dung/nút thành “Gợi ý lịch cho Bác”, “Lịch của Bác…” và “Thêm gợi ý vào lịch”."
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Các vùng nhấn thói quen và thẻ giờ",
+      "evidence": "Màu nền/chữ chính khớp token; màu vùng accent #2BA15C/#AC76DB không khớp bảng token thói quen trong DESIGN.md.",
+      "fix": "Dùng chính xác 9 token accent từ DESIGN.md; riêng hai thẻ này thay bằng accent đúng của Đi bộ tự nhiên và Thư giãn."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Màn rõ và dễ đọc, nhưng vi phạm cỡ chữ tối thiểu, icon/màu accent, vùng chạm và khả năng nhìn thấy nút gửi ngay trong viewport; cần chỉnh trước khi dùng."
+}

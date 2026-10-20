@@ -1,0 +1,249 @@
+{
+  "screen": "G01b Soạn gợi ý lịch",
+  "round": 1,
+  "score": 71,
+  "errors": 2,
+  "warns": 3,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Tên và mô tả hoạt động trong hai thẻ gợi ý",
+      "evidence": "Ảnh 360/412 cho thấy tên việc và dòng phụ hiển thị cỡ khoảng 20 px; nội dung chính cần gần 24 px. Tiêu đề 30 px và nút 22 px đạt mức quy định.",
+      "fix": "Đặt tên hoạt động và dòng mô tả trong thẻ ở 24 px; giữ tiêu đề 30 px và nút 22 px."
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Viền ô nhập ‘Lời nhắn gửi kèm’",
+      "evidence": "HTML dùng viền #DFE5DF trên nền ô #FAFAFA, tương phản xấp xỉ 1.2:1, thấp hơn 3:1.",
+      "fix": "Đổi viền ô nhập sang #7B887F (outline) để đạt tương phản tối thiểu 3:1 với nền #FAFAFA."
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Hai lựa chọn giờ trong thẻ ‘Đi bộ nhẹ nhàng’ ở viewport 360 px",
+      "evidence": "Metrics đặt lựa chọn ‘9:00 sáng’ tại x=207.67 với rộng 158.31 px, kết thúc ở x=365.98; ảnh 360 cắt phần phải của lựa chọn. scrollWidth báo 360 nhưng ảnh xác nhận nội dung bị cắt.",
+      "fix": "Ở 360 px chuyển nhóm giờ thành hai hàng hoặc giảm cỡ/đệm để cả hai nút nằm trọn trong x=20–340 px; bảo đảm mép phải không vượt 340 px."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút chính ‘Gửi gợi ý’ ở viewport 360 × 800",
+      "evidence": "Nút cao 60 px và rộng 280 px, nhưng metrics đặt nó ở y=879.5–939.5; ở 360 × 800 nó nằm dưới màn hình, do footer nằm sau nội dung cuộn.",
+      "fix": "Đặt footer cố định trong viewport 360 × 800; neo nút cao 60 px ở đáy với lề ngang 20 px và giữ nút luôn thấy được mà không cuộn."
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút ‘Gửi gợi ý’ ở chân màn",
+      "evidence": "Handoff mô tả thao tác này gửi gợi ý cho mẹ và chuyển sang G02; màn không có bước xác nhận hay cách hoàn tác việc đã gửi.",
+      "fix": "Thêm hộp xác nhận trước khi gửi với nút an toàn “Sửa lại” và nút cụ thể “Gửi gợi ý cho mẹ”; hoặc thêm “Hoàn tác” sau khi gửi."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a"
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Hai lỗi chặn còn lại ở 360 px: lựa chọn giờ bị cắt ngang và nút gửi nằm ngoài khung ban đầu; cần tăng cỡ chữ nội dung, làm rõ viền ô nhập và xác nhận thao tác gửi."
+}

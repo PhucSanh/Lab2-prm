@@ -1,0 +1,15 @@
+{
+  "projectId": "2013215887278758682",
+  "sessionId": "17537795979014918674",
+  "outputComponents": [
+    {
+      "text": "Tôi đã tiến hành kiểm tra và chuẩn hóa các yêu cầu reviewer cho màn hình C03 (Lịch của mẹ Lan):\n\n1. **Chuẩn hóa biểu tượng bộ chọn chế độ xem [R-ICON-03]**:\n   - Thay thế các biểu tượng hình tròn rỗng generic (`circle`) ở hai tùy chọn **Tuần** và **Tháng** bằng biểu tượng Lucide `calendar-days` chính thức kích thước `32×32px`, nét vẽ `2.2` màu `#526057`. Glyph biểu tượng lấp đầy khung 32px rõ ràng, sắc nét.\n   - Giữ nguyên biểu tượng Lucide `circle-dot` kích thước `32×32px` màu xanh `#1F684B` cho tùy chọn đang chọn **Ngày**.\n   - Các chế độ được phân biệt trực quan thông qua nhãn chữ đầy đủ: **Ngày**, **Tuần**, **Tháng**.\n\n2. **Duy trì toàn bộ tiêu chuẩn giao diện & công thái học**:\n   - Viền nút chưa chọn giữ chuẩn `2px solid #7B887F` (tương phản 3.70:1 trên nền trắng) và viền nút đang chọn `2px solid #1F684B`.\n   - Bố cục co giãn đáp ứng hoàn hảo ở cả hai bề rộng màn hình `360px` và `412px`, không có tình trạng co ép hay cắt bớt từ \"Tháng\".\n   - Bảo toàn nguyên vẹn danh sách công việc, màu sắc theo thói quen, biểu tượng Lucide chuẩn mực và nút cố định dưới chân trang \"+ Tạo lịch cho mẹ\"."
+    },
+    {
+      "suggestion": "Xem trước giao diện C03 với bộ chọn Ngày, Tuần, Tháng đã chuẩn hóa"
+    },
+    {
+      "suggestion": "Kiểm tra độ tương thích trên màn hình 360px và 412px"
+    }
+  ]
+}

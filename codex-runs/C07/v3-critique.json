@@ -1,0 +1,273 @@
+{
+  "screen": "C07 Lặp lại việc gợi ý – Bước 2/3",
+  "round": 3,
+  "score": 97,
+  "errors": 0,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "where": "Dòng tóm tắt phụ “Vào Thứ Hai, Thứ Tư, Thứ Sáu.”",
+      "evidence": "Metrics v3 tại 360px ghi tiêu đề 30px, nội dung tóm tắt 24px và CTA 22px; ảnh cho thấy cỡ chữ cân đối với vai trò từng phần.",
+      "fix": "Đặt .summary-p2 thành 24px và bảo đảm không quá hai dòng; giữ tiêu đề màn 30px và nút 22px."
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Viền control #7B887F trên nền trắng/nền app đạt tương phản trên 3:1; viền lựa chọn đang chọn dùng #1F684B."
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Metrics tại 360px: scrollWidth=clientWidth=360; ảnh viewport không cho thấy chữ bị cắt hoặc tràn ngang."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Các câu hiển thị đều dưới 15 tiếng; đoạn tóm tắt dài nhất hiển thị tối đa hai dòng ở 360px."
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là form cài lịch lặp, không có thẻ việc trong danh sách."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Các lựa chọn tần suất, ngày trong tuần và hai ô ngày có icon; nút Quay lại và CTA cũng có icon."
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "evidence": "v3-metrics-360/412 và v3.html ghi các SVG trong weekday-btn là 24×24 px. Đây là icon của control chọn nhiều ngày, không phải icon nằm trong chip trạng thái được miễn ngưỡng 32 px.",
+      "where": "Icon trạng thái trong các ô chọn ngày T2–CN",
+      "fix": "Tăng icon trong các ô chọn ngày lên 32×32 px; giữ nhãn ngày và chữ “Đang chọn” nguyên vẹn, đồng thời tăng chiều cao ô nếu cần để giữ khoảng đệm."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có thẻ việc hoặc thói quen cần ô icon màu và vạch màu bên trái."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "n/a",
+      "evidence": "Màn không hiển thị thói quen hoặc màu nhấn thói quen."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Màu xanh chỉ nằm ở lựa chọn đang chọn, icon và CTA; không có nền tối, neon hay gradient."
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Ngày được chọn có biểu tượng circle-dot và chữ “Đang chọn”, bên cạnh nền/viền màu."
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Metrics v3 tại 360px ghi nút Quay lại 129.8×48px, hàng tần suất 320×60px, ô ngày ít nhất 65×130.4px, ô ngày tháng 320×85px và CTA 320×60px."
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "CTA “Xem lại” nằm cố định ở đáy, cao 60px, rộng 320px với lề 20px ở viewport 360px."
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Metrics v3 tại 360px ghi khoảng cách giữa các ô chọn ngày là 8px; các hàng tần suất cách 10px và hai ô ngày tháng cách 12px; không có cặp nút lời nhắc."
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là bước 2/3 của luồng tạo lời nhắc, không có bottom nav."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Nút quay lại hiển thị chữ “Quay lại” bên cạnh mũi tên."
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Các lựa chọn và ô ngày đều hiển thị như vùng bấm; không có hướng dẫn thao tác chỉ bằng vuốt, kéo hoặc nhấn giữ."
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn cấu hình lịch lặp không hiển thị việc cần đánh dấu trạng thái thực hiện."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không hiển thị tiến độ trong ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Chỉ CTA “Xem lại” là nút filled; các lựa chọn còn lại là control nền sáng/viền."
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Form và các lựa chọn lịch được căn trái theo bố cục form."
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không có thao tác xóa, đánh dấu xong hoặc ngưng lặp."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có lỗi nhập nào đang hiển thị."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "C07 là form chọn lịch lặp, không thuộc các màn S14, S04, S16 hoặc G03."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Chữ giao diện hiển thị bằng tiếng Việt có dấu; T2/T3… là ký hiệu ngày trong tuần."
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Không có xưng hô mâu thuẫn hoặc nút “OK/Có/Không”; nhãn CTA là “Xem lại”."
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Không thấy từ nào trong danh sách Tránh dùng ở chữ giao diện hiển thị."
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "HTML dùng nền #F6F7F2, thẻ #FFFFFF, chữ #202B25/#526057 và primary #1F684B; không có màu nhấn thói quen cần đối chiếu."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "HTML khai báo Be Vietnam Pro; thẻ bo 16px, nút bo 14px, không có gradient."
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "HTML dùng lề nội dung 20px; khoảng cách giữa các khối chính là 16px."
+    }
+  ],
+  "fixed": [
+    "R-TXT-01",
+    "R-TXT-02"
+  ],
+  "regressions": [],
+  "summary": "Màn đạt 97 điểm; hai lỗi cỡ chữ đã được sửa, còn icon chọn ngày trong tuần chỉ 24×24 px, thấp hơn mức 32 px."
+}

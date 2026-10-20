@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-TXT-03] Replace the long warning sentence with exactly: “Chuông có thể không reo khi điện thoại ở chế độ Im lặng hoặc Không làm phiền.” Replace the long explanatory sentence with exactly: “Bác có thể thử chuông để nghe âm lượng.” Ensure each paragraph occupies at most 2 lines at 360 px.
+2. [R-ICON-03] Change the icon beside “Mở cài đặt điện thoại” from a gear to the documented Lucide icon “smartphone”, 32 × 32 px.
+3. [R-STY-02] Set the settings option cards, phone-settings link card, and warning card border-radius to 16 px. Keep buttons at 14 px and preserve Be Vietnam Pro.
+Preserve the Vietnamese labels, switch states, all existing settings and action behavior, colors, and spacing structure.

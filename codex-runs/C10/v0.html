@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An Nhiên - C10 Chi tiết việc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background-color: #F6F7F2;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .app-viewport {
+      width: 100%;
+      max-width: 412px;
+      min-height: 100vh;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* App Bar */
+    .app-bar {
+      padding: 16px 20px 8px 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      color: #1F684B;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      cursor: pointer;
+      min-height: 48px;
+      min-width: 48px;
+      padding: 4px 8px 4px 0;
+    }
+
+    .btn-back svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      padding: 8px 20px 220px 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .page-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.25;
+    }
+
+    /* Summary Card */
+    .summary-card {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #DFE5DF;
+      position: relative;
+      overflow: hidden;
+      padding: 20px 18px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .summary-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 6px;
+      background-color: #2BA15C;
+    }
+
+    .card-top-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .habit-tile-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: #2BA15C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .habit-tile-box svg {
+      width: 32px;
+      height: 32px;
+      color: #FFFFFF;
+    }
+
+    .card-title-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .task-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    .habit-name {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.3;
+    }
+
+    .chip-chua-lam {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background-color: #FFF3DB;
+      border: 2px solid #B26A00;
+      color: #8A5100;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+      min-height: 40px;
+    }
+
+    .chip-chua-lam svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .card-divider {
+      height: 1px;
+      background-color: #DFE5DF;
+      margin: 2px 0;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #202B25;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .meta-item svg {
+      width: 32px;
+      height: 32px;
+      color: #1F684B;
+      flex-shrink: 0;
+    }
+
+    /* Consent / Info Box */
+    .consent-card {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #DFE5DF;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .consent-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      color: #202B25;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .consent-line .bullet-point {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #1F684B;
+      flex-shrink: 0;
+    }
+
+    .privacy-notice {
+      margin-top: 4px;
+      padding-top: 10px;
+      border-top: 1px dashed #DFE5DF;
+      font-size: 20px;
+      color: #526057;
+      line-height: 1.4;
+    }
+
+    /* History Section */
+    .history-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .section-heading {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    .history-card {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #DFE5DF;
+      padding: 8px 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .history-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 52px;
+      padding: 10px 0;
+      border-bottom: 1px solid #DFE5DF;
+    }
+
+    .history-row:last-child {
+      border-bottom: none;
+    }
+
+    .history-date {
+      font-size: 20px;
+      font-weight: 600;
+      color: #202B25;
+    }
+
+    /* Status Badges in History */
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .badge-status svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .badge-done {
+      color: #1F684B;
+    }
+
+    .badge-skipped {
+      color: #526057;
+    }
+
+    .badge-pending {
+      color: #8A5100;
+    }
+
+    /* Sticky Footer */
+    .sticky-footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 412px;
+      padding: 16px 20px 20px 20px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-sizing: border-box;
+      z-index: 50;
+    }
+
+    .btn-action {
+      width: 100%;
+      min-height: 60px;
+      border-radius: 14px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
+    .btn-primary {
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+    }
+
+    .btn-primary svg {
+      width: 32px;
+      height: 32px;
+      color: #FFFFFF;
+      flex-shrink: 0;
+    }
+
+    .btn-secondary {
+      background-color: #FFFFFF;
+      color: #1F684B;
+      border: 2px solid #7B887F;
+    }
+
+    .btn-secondary svg {
+      width: 32px;
+      height: 32px;
+      color: #1F684B;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-viewport">
+    <!-- App Bar -->
+    <header class="app-bar">
+      <button class="btn-back" type="button" aria-label="Quay lại danh sách lịch">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        <span>Quay lại</span>
+      </button>
+    </header>
+
+    <!-- Scrollable Main Content -->
+    <main class="main-content">
+      <h1 class="page-title">Chi tiết việc</h1>
+
+      <!-- Habit & Task Summary Card -->
+      <section class="summary-card" aria-label="Tóm tắt công việc">
+        <div class="card-top-row">
+          <div class="habit-tile-box" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/>
+              <path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/>
+              <path d="M16 17h4"/>
+              <path d="M4 13h4"/>
+            </svg>
+          </div>
+          <div class="card-title-group">
+            <h2 class="task-title">Đi bộ buổi sáng</h2>
+            <div class="habit-name">Vận động tự nhiên</div>
+          </div>
+        </div>
+
+        <div class="chip-chua-lam">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+          </svg>
+          <span>Chưa làm</span>
+        </div>
+
+        <div class="card-divider"></div>
+
+        <div class="meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span>8:00 sáng · 15 phút</span>
+        </div>
+
+        <div class="meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m17 2 4 4-4 4"/>
+            <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+            <path d="m7 22-4-4 4-4"/>
+            <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+          </svg>
+          <span>Thứ Hai, Thứ Tư, Thứ Sáu</span>
+        </div>
+      </section>
+
+      <!-- Owner & Consent Info -->
+      <section class="consent-card" aria-label="Thông tin đồng thuận">
+        <div class="consent-line">
+          <span class="bullet-point"></span>
+          <span>Mai tạo lịch này.</span>
+        </div>
+        <div class="consent-line">
+          <span class="bullet-point"></span>
+          <span>Mẹ đã nhận ngày 16/10.</span>
+        </div>
+        <div class="privacy-notice">
+          Chỉ hiện thông tin mẹ chọn chia sẻ.
+        </div>
+      </section>
+
+      <!-- History Section -->
+      <section class="history-section" aria-label="Lịch sử thực hiện gần nhất">
+        <h3 class="section-heading">6 lần gần nhất</h3>
+        <div class="history-card">
+          <!-- Row 1: Hôm nay -->
+          <div class="history-row">
+            <span class="history-date">Hôm nay, 18/10</span>
+            <span class="badge-status badge-pending">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+              <span>Chưa làm</span>
+            </span>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="history-row">
+            <span class="history-date">Thứ Sáu, 16/10</span>
+            <span class="badge-status badge-done">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+              <span>Đã xong</span>
+            </span>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="history-row">
+            <span class="history-date">Thứ Tư, 14/10</span>
+            <span class="badge-status badge-done">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+              <span>Đã xong</span>
+            </span>
+          </div>
+
+          <!-- Row 4 -->
+          <div class="history-row">
+            <span class="history-date">Thứ Hai, 12/10</span>
+            <span class="badge-status badge-skipped">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M8 12h8"/>
+              </svg>
+              <span>Bỏ qua</span>
+            </span>
+          </div>
+
+          <!-- Row 5 -->
+          <div class="history-row">
+            <span class="history-date">Thứ Sáu, 9/10</span>
+            <span class="badge-status badge-done">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+              <span>Đã xong</span>
+            </span>
+          </div>
+
+          <!-- Row 6 -->
+          <div class="history-row">
+            <span class="history-date">Thứ Tư, 7/10</span>
+            <span class="badge-status badge-done">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+              <span>Đã xong</span>
+            </span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sticky Responsive Footer Actions -->
+    <footer class="sticky-footer">
+      <button class="btn-action btn-primary" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/>
+          <path d="m15 5 4 4"/>
+        </svg>
+        <span>Sửa việc</span>
+      </button>
+
+      <button class="btn-action btn-secondary" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m17 2 4 4-4 4"/>
+          <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+          <path d="m7 22-4-4 4-4"/>
+          <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+        </svg>
+        <span>Ngưng lặp lại</span>
+      </button>
+    </footer>
+  </div>
+
+</body>
+</html>

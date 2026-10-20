@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-TXT-02] Increase .intro-text and all .card-body copy from 20px to 24px; keep the screen title at 30px and button labels at 22px. Ensure line-height remains readable and cards can grow naturally.
+2. [R-STY-03] At viewport width 360px, change horizontal content and footer margins from 16px to 20px; retain 16px vertical gaps between blocks. Preserve all exact text, icons, colors, and card order.

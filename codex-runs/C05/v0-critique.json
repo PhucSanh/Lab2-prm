@@ -1,0 +1,272 @@
+{
+  "screen": "C05 Lịch tháng của mẹ Lan",
+  "round": 0,
+  "score": 28,
+  "errors": 6,
+  "warns": 4,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nhãn thứ và chip trạng thái trong lịch ngày",
+      "evidence": "metrics 360/412 đo nhãn thứ 18px và chip trạng thái 17px; đều dưới ngưỡng 20px.",
+      "fix": "Đặt mọi chữ giao diện, gồm nhãn thứ và chữ chip, ở cỡ tối thiểu 20px."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Tên việc trong danh sách ngày",
+      "evidence": "Tên việc hiển thị khoảng 20px, nhỏ hơn cỡ nội dung chính khoảng 24px; tiêu đề màn 30px và nút 22px đã đúng.",
+      "fix": "Tăng tên việc và nội dung chính từ 20px lên 24px."
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Các ngày ngoài tháng hiện tại",
+      "evidence": "HTML dùng #AAB4AC cho ngày mờ trên nền #FFFFFF; độ tương phản thấp hơn 4.5:1.",
+      "fix": "Đổi chữ ngày mờ từ #AAB4AC sang #526057 trên nền #FFFFFF."
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Viền hai lựa chọn Ngày và Tuần",
+      "evidence": "Viền control #DFE5DF trên nền trắng có tương phản thấp hơn 3:1.",
+      "fix": "Đổi viền control sang #7B887F để đạt tương phản tối thiểu 3:1."
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn lịch tháng cho người thân, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Ba việc trong danh sách ngày",
+      "evidence": "Mỗi việc chỉ có một chấm màu 12px, không có icon thói quen trong ô icon; yêu cầu tất cả việc có icon.",
+      "fix": "Thay mỗi chấm 12px bằng ô icon 48×48px nền màu thói quen, có icon Lucide trắng 32px và nhãn việc bên cạnh."
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Biểu tượng điều hướng lịch",
+      "evidence": "Hai nút Tháng trước/sau dùng chevron 20px, Xem ngày dùng chevron 22px, nút Đã xong dùng dấu kiểm 18px; các kích thước thấp hơn 32px (chip cho phép tối thiểu 24px).",
+      "fix": "Đặt chevron-left và chevron-right trong nút điều hướng ở 32px; dùng circle-check 24px cho chip Đã xong."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Ba thẻ việc trong danh sách ngày",
+      "evidence": "Các thẻ chỉ có chấm tròn màu 12px; không có ô icon màu nhấn và vạch màu dọc bên trái.",
+      "fix": "Thêm vạch trái 6px và ô icon 48×48px nền đúng màu habit-*-accent cho từng thẻ."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Các ngày có lịch trong lưới tháng",
+      "evidence": "Dấu chấm xanh nhỏ là dấu hiệu duy nhất cho ngày có việc; không có nhãn hoặc giải thích kèm theo.",
+      "fix": "Thêm nhãn chữ ngắn 'Có việc' kèm biểu tượng và đặt cạnh lịch tháng để giải thích dấu ngày có lịch."
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn lịch của người thân dùng bộ chọn Ngày/Tuần/Tháng; bản bàn giao không có bottom nav ở flow này."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn lịch cấp cao nhất trong flow người thân; không có nút Back trên thiết kế bàn giao."
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Hai thẻ có trạng thái Chưa làm",
+      "evidence": "Chip vàng 'Chưa làm' không có biểu tượng ○; vì vậy trạng thái thiếu biểu tượng bắt buộc đi cùng chữ.",
+      "fix": "Thêm circle 24px vào chip 'Chưa làm' và giữ chữ 'Chưa làm' cạnh biểu tượng."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn chỉ ghi số việc được lên lịch, không hiển thị tiến độ hoàn thành trong ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn chỉ xem lịch và mở luồng tạo việc; không có thao tác khó đảo ngược trực tiếp."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không chứa trường nhập hoặc trạng thái lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không thuộc lời nhắc, chi tiết việc, chi tiết thói quen hoặc gợi ý từ người thân."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Ngày ngoài tháng hiện tại",
+      "evidence": "Nền, thẻ, chữ, màu nhấn, cảnh báo và border-subtle chính khớp token; chữ ngày mờ #AAB4AC không phải màu token trong DESIGN.md.",
+      "fix": "Dùng màu token #526057 cho ngày ngoài tháng thay #AAB4AC."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Lưới tháng rõ và không tràn ngang, nhưng chữ và một số icon nhỏ; thẻ việc thiếu ô icon/vạch màu và chip Chưa làm thiếu biểu tượng."
+}

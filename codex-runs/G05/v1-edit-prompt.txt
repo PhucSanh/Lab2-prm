@@ -1,0 +1,8 @@
+Keep the current G05 screen and everything not mentioned unchanged. Apply these fixes and generate a new screen now:
+1. Set font-size:20px or larger on the actual `.status-chip` and `.nav-tab` elements as well as their text labels.
+2. On the walking activity, use a #2BA15C icon tile with white Lucide footprints 32px; on the rest activity use #AC76DB tile with white Lucide wind 32px. Keep matching 6px accent bars.
+3. Change both status labels exactly to “○ Chưa làm” and keep the documented warning border #B26A00 at least 2px.
+4. Pin “Xem lịch ngày mai” to the bottom of the 360×800/412px viewport with 60px height and 20px side inset; reserve footer space so it does not cover content. It must be visible without scrolling on initial load.
+5. Remove the hero icon if it is not an exact DESIGN.md dictionary icon for this success meaning.
+6. Set the main section/card vertical gaps to 16px.
+Preserve the 4-tab nav, title, confirmation, two tasks, one filled CTA, all icons from the documented dictionary, 48px targets and 8px gaps. Ensure the content, CTA, and nav do not overlap at either viewport.

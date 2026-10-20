@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - C08 Xem lại và gửi gợi ý (Bước 3/3)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F6F7F2;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .app-viewport {
+      width: 100%;
+      max-width: 412px;
+      min-height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Scrollable content container */
+    .content-scroll {
+      flex: 1;
+      padding: 20px 20px 120px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Top navigation bar */
+    .app-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 48px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      color: #1F684B;
+      font-family: inherit;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      min-height: 48px;
+      padding: 4px 8px 4px 0;
+    }
+
+    .back-btn svg {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      min-height: 32px;
+    }
+
+    .step-badge {
+      font-size: 20px;
+      font-weight: 600;
+      color: #526057;
+    }
+
+    /* Heading */
+    .screen-heading {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #202B25;
+    }
+
+    /* White Summary Card */
+    .summary-card {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #DFE5DF;
+      border-left: 6px solid #2BA15C;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .summary-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .habit-tile {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      min-height: 48px;
+      background-color: #2BA15C;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+    }
+
+    .habit-tile svg {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      min-height: 32px;
+    }
+
+    .task-meta {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .task-title {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #202B25;
+    }
+
+    .habit-category {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+    }
+
+    .details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-top: 1px solid #DFE5DF;
+      padding-top: 14px;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .detail-item svg {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      min-height: 32px;
+      color: #1F684B;
+    }
+
+    .detail-text {
+      font-size: 20px;
+      color: #202B25;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    /* Pending Status Note */
+    .pending-status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #F6F7F2;
+      border: 1px solid #7B887F;
+      border-radius: 10px;
+      padding: 8px 12px;
+      align-self: flex-start;
+      min-height: 48px;
+    }
+
+    .pending-status-chip svg {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      min-height: 24px;
+      color: #526057;
+    }
+
+    .pending-text {
+      font-size: 20px;
+      font-weight: 600;
+      color: #526057;
+    }
+
+    /* Message Block */
+    .message-section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .label-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .field-label {
+      font-size: 22px;
+      font-weight: 700;
+      color: #202B25;
+    }
+
+    .helper-text {
+      font-size: 20px;
+      color: #526057;
+      font-weight: 400;
+    }
+
+    .message-input {
+      width: 100%;
+      min-height: 72px;
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-family: inherit;
+      font-size: 24px;
+      font-weight: 500;
+      color: #202B25;
+      line-height: 1.4;
+      resize: vertical;
+      outline: none;
+    }
+
+    .message-input:focus {
+      border-color: #1F684B;
+    }
+
+    /* Consent Setting Card */
+    .consent-card {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #DFE5DF;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .consent-main-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .consent-label {
+      font-size: 20px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.35;
+      max-width: 200px;
+    }
+
+    /* Switch Component */
+    .switch-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      cursor: pointer;
+    }
+
+    .switch-track {
+      width: 60px;
+      height: 36px;
+      min-width: 60px;
+      background-color: #1F684B;
+      border-radius: 18px;
+      position: relative;
+      transition: background-color 0.2s;
+    }
+
+    .switch-thumb {
+      width: 28px;
+      height: 28px;
+      background-color: #FFFFFF;
+      border-radius: 50%;
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .switch-status-text {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1F684B;
+    }
+
+    .consent-explanatory-text {
+      font-size: 20px;
+      color: #526057;
+      line-height: 1.35;
+    }
+
+    /* Sticky Footer */
+    .footer-bar {
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      padding: 16px 20px 24px 20px;
+      display: flex;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .cta-submit-btn {
+      width: 100%;
+      height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(31, 104, 75, 0.25);
+    }
+
+    .cta-submit-btn svg {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      min-height: 32px;
+    }
+  </style>
+</head>
+<body>
+<main class="app-viewport">
+<div class="content-scroll">
+<!-- App bar -->
+<header class="app-bar">
+<button aria-label="Quay lại" class="back-btn" type="button">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+<span>Quay lại</span>
+</button>
+<span class="step-badge">Bước 3/3</span>
+</header>
+<!-- Page Heading -->
+<h1 class="screen-heading">Xem lại và gửi</h1>
+<!-- Summary Card -->
+<section aria-label="Tóm tắt việc gợi ý" class="summary-card">
+<div class="summary-header">
+<div aria-hidden="true" class="habit-tile">
+<!-- Exact official Lucide footprints SVG -->
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"></path>
+<path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"></path>
+<path d="M16 17h4"></path>
+<path d="M4 13h4"></path>
+</svg>
+</div>
+<div class="task-meta">
+<h2 class="task-title">Đi bộ buổi sáng</h2>
+<p class="habit-category">Vận động tự nhiên</p>
+</div>
+</div>
+<div class="details-list">
+<div class="detail-item">
+<svg aria-hidden="true" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+<span class="detail-text">8:00 sáng · 15 phút</span>
+</div>
+<div class="detail-item">
+<svg aria-hidden="true" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="m17 2 4 4-4 4"></path>
+<path d="M3 11v-1a4 4 0 0 1 4-4h14"></path>
+<path d="m7 22-4-4 4-4"></path>
+<path d="M21 13v1a4 4 0 0 1-4 4H3"></path>
+</svg>
+<span class="detail-text">Thứ Hai, Thứ Tư, Thứ Sáu</span>
+</div>
+<div class="detail-item">
+<span class="detail-text">Từ 19/10/2026</span>
+</div>
+</div>
+<div class="pending-status-chip">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span class="pending-text">Chưa làm</span>
+</div>
+</section>
+<!-- Message to mother -->
+<section class="message-section">
+<div class="label-row" style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
+<label class="field-label" for="caregiver-note" style="font-size: 22px; font-weight: 700; color: #202B25;">Lời nhắn cho mẹ</label>
+<span class="helper-text" style="font-size: 20px; color: #526057; font-weight: 400; margin-top: 4px;">Không bắt buộc</span>
+</div>
+<textarea class="message-input" id="caregiver-note" rows="2">Mẹ đi bộ nhẹ nhàng nhé!</textarea>
+</section>
+<!-- Consent row & senior autonomy -->
+<section class="consent-card" style="background-color: #FFFFFF; border-radius: 16px; border: 2px solid #DFE5DF; padding: 18px 16px; display: flex; align-items: flex-start; gap: 14px;">
+<div style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; padding-top: 2px;">
+<svg aria-hidden="true" fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 16v-4"></path>
+<path d="M12 8h.01"></path>
+</svg>
+</div>
+<p style="font-size: 20px; font-weight: 500; line-height: 1.45; color: #202B25; margin: 0;">Mẹ bấm nhận thì việc mới vào lịch.<br/>An Nhiên không tự thêm việc.</p>
+</section>
+</div>
+<!-- Pinned responsive footer CTA -->
+<footer class="footer-bar">
+<button class="cta-submit-btn" type="button">
+<svg aria-hidden="true" fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><line x1="22" x2="11" y1="2" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+<span>Gửi lịch cho mẹ</span>
+</button>
+</footer>
+</main>
+</body>
+</html>

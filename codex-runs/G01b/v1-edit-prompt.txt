@@ -1,0 +1,7 @@
+Keep the G01b selected-time state: first activity “9:00 sáng” selected and “8:00 sáng” unselected. Fix the v1 review findings:
+1. Set activity names/descriptions to 24px; keep all visible copy >=20px.
+2. At 360px, fit both time buttons fully inside x=20..340: use two rows if necessary, each button min 48px high, 32px documented circle/circle-dot icon, no clipping. Preserve 8px gaps.
+3. Fix message field border to #7B887F.
+4. Pin the 60px primary CTA in a fixed bottom footer with 20px side inset and safe area; keep it visible at 360×800/412px. Reserve scroll padding.
+5. Add a compact explicit send-confirmation state near the CTA: “Gửi gợi ý cho mẹ?” with actions “Gửi gợi ý” and “Sửa lại” (safe choice), stacked with 8px gap. Clearly indicate this is still only a suggestion and does not alter mẹ’s calendar until she accepts.
+Preserve exact approved icons, colors and layout elsewhere. Generate the screen now.

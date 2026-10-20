@@ -1,0 +1,49 @@
+{
+  "projectId": "2013215887278758682",
+  "sessionId": "2636149538686247783",
+  "outputComponents": [
+    {
+      "design": {
+        "screens": [
+          {
+            "screenshot": {
+              "name": "projects/2013215887278758682/files/3616f0cc83f24fad97f4749c1706e98e",
+              "downloadUrl": "[URL omitted]"
+            },
+            "htmlCode": {
+              "name": "projects/2013215887278758682/files/954fda09f66b4656b06e9fdb30ce8d3d",
+              "downloadUrl": "[URL omitted]",
+              "mimeType": "text/html"
+            },
+            "id": "3dd22d6ca0c4422da18f825a661cf241",
+            "generatedBy": "create_datastore_entry",
+            "width": "2560",
+            "height": "2048",
+            "title": "An Nhiên - G03 Lịch Mai gợi ý",
+            "name": "projects/2013215887278758682/screens/3dd22d6ca0c4422da18f825a661cf241",
+            "theme": {},
+            "deviceType": "DESKTOP",
+            "screenType": "DESIGN",
+            "screenMetadata": {
+              "agentType": "PRO_AGENT",
+              "status": "COMPLETE"
+            }
+          }
+        ],
+        "theme": {}
+      }
+    },
+    {
+      "text": "Tôi đã hoàn thành thiết kế màn hình **G03 “Lịch Mai gợi ý”** cho ứng dụng **An Nhiên** dành cho người cao tuổi trên điện thoại Android (`360×800dp`, co giãn linh hoạt đến `412px`) theo đúng quy chuẩn thiết kế và tài liệu bàn giao G03/G11, PRD FR06/FR08.\n\n### Các điểm thiết kế nổi bật trên màn hình G03:\n1. **Thanh tiêu đề & Nút quay lại**:\n   - Nút quay lại có nhãn chữ rõ ràng: `‹ Gia đình` với biểu tượng chevron 32px màu `#1F684B`, vùng chạm lớn $\\ge 48\\times 48\\text{px}$.\n   - Tiêu đề chính `30px bold`: **\"Mai gửi lịch cho Bác\"**.\n\n2. **Thẻ lời nhắn từ con gái (Quote Card)**:\n   - Avatar chữ cái in hoa cỡ lớn `M` (24px bold) trên nền tròn 48×48px `#D6EADF`.\n   - Thông tin người gửi: **Mai** (22px bold) · **Con gái** (20px).\n   - Nội dung lời nhắn trích dẫn: *“Mẹ ơi, mai mình đi bộ với cô Tám nhé?”* (22px) đặt trong bong bóng đối thoại dịu mắt.\n\n3. **Danh sách 2 việc gợi ý (2 việc gợi ý)**:\n   - **Đi bộ nhẹ nhàng**: Thanh nhấn bên trái `6px` màu xanh lá `#2BA15C` (nhóm *Vận động tự nhiên*), ô icon vuông bo góc chứa Lucide `footprints` 32px trắng; giờ nhắc **8:00 sáng** (`#1F684B`, 20px bold) · thời lượng **20 phút** (20px).\n   - **Thư giãn nhẹ nhàng**: Thanh nhấn bên trái `6px` màu tím `#AC76DB` (nhóm *Thư giãn mỗi ngày*), ô icon vuông bo góc chứa Lucide `wind` 32px trắng; giờ nhắc **9:00 sáng** (`#1F684B`, 20px bold) · thời lượng **15 phút** (20px).\n\n4. **Thẻ thông báo trạng thái & Quyền tự quyết (State Line)**:\n   - Thẻ nền `#D6EADF` viền `2px solid #1F684B`, bo góc `16px`, chứa icon Lucide `info` 32px cùng câu thông báo: **\"Chưa thêm vào lịch. Bác tự chọn.\"** (20px bold `#174C37`).\n   - Khẳng định lịch của Bác không bị thay đổi tự động nếu Bác chưa bấm đồng ý nhận việc.\n\n5. **Phân cấp hành động rõ ràng dưới chân trang (Fixed Actions Footer)**:\n   - **Nút chính duy nhất nền đặc (Primary CTA)**: `\"Thêm 2 việc vào lịch\"` (cao 60px, nền đậm `#1F684B`, chữ trắng 22px bold, icon `plus` 32px).\n   - **Nút phụ thứ hai (Secondary)**: `\"Đổi giờ đi bộ\"` (cao 60px, nền trắng viền 2px `#1F684B`, chữ xanh 22px bold, icon `clock` 32px).\n   - **Nút viền thứ ba (Tertiary Outlined)**: `\"Chọn từng việc\"` (cao 60px, nền trắng viền 2px `#7B887F`, chữ đậm 22px bold, icon `check-square` 32px).\n   - **Nút dạng liên kết chữ (Text Action)**: `\"Bỏ qua gợi ý\"` (cao $\\ge 48\\text{px}$, chữ gạch chân 20px `#526057`).\n\n6. **Đảm bảo khả năng tiếp cận & Trợ năng cao tuổi**:\n   - Tất cả chữ $\\ge 20\\text{px}$, độ tương phản chữ $\\ge 4.5:1$, viền ô điều khiển $\\ge 3:1$.\n   - Khoảng đệm cuộn an toàn (`padding-bottom: 320px`) giúp toàn bộ nội dung danh sách và thẻ lưu ý có thể cuộn trọn vẹn lên trên khu vực nút cố định mà không bao giờ bị che khuất.\n   - 100% tiếng Việt có dấu, phông chữ **Be Vietnam Pro**. Không sử dụng màu chuyển sắc, không tạo viền giả điện thoại."
+    },
+    {
+      "suggestion": "Mở modal xác nhận khi bấm \"Đổi giờ đi bộ\""
+    },
+    {
+      "suggestion": "Thiết kế trạng thái sau khi bấm \"Thêm 2 việc vào lịch\" (thông báo thành công)"
+    },
+    {
+      "suggestion": "Thiết kế màn hình \"Chọn từng việc\" (cho phép Bác chọn nhận 1 trong 2 việc)"
+    }
+  ]
+}

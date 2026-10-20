@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-ICON-03: Increase the × icon inside each “✕ Bỏ qua” status chip from 20×20px to 24×24px minimum; keep the chip label visible and the icon centered.
+Preserve the skipped state, visible “Hoàn tác” action, status labels beside task names, four-tab nav, 16px spacing and all existing text. Generate a new screen and preserve G09 v1 unchanged.

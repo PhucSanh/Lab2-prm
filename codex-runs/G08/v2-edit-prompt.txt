@@ -1,0 +1,5 @@
+Keep the best reviewed G08 v2 layout unchanged except for these fixes:
+1. Increase the clock icon beside each task time from 24px to 32×32px.
+2. Change the “Về Hôm nay” button icon from house to the documented Lucide sun 32×32px.
+3. Place the reassurance card “Bác có thể đổi giờ bất cứ lúc nào” in the scroll content before the CTA; the fixed CTA must not cover it at 360×800 or 412px. Keep 16px spacing, 60px CTA, and 20px horizontal inset.
+Preserve all other text, task cards, bottom nav, colors, and targets. Generate a new screen now.

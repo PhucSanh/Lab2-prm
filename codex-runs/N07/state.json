@@ -1,0 +1,21 @@
+{
+  "screen": "N07",
+  "title": "Cài đặt nhắc việc",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 4,
+  "screen_id": "e6c79c80f4484c03829c3ca64cbab493",
+  "parent_screen_id": "72b9a7f5efcd46fa8684856b03e2abdd",
+  "best_round": 4,
+  "best_screen_id": "e6c79c80f4484c03829c3ca64cbab493",
+  "best_score": 100,
+  "patience": 0,
+  "pending_operation_id": null,
+  "stop_reason": "score_100",
+  "canvas_row": 35,
+  "stage": "awaiting_review",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "updated_at": "2026-10-19T09:52:42.517025+00:00",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/N07/v0-prompt.txt",
+  "last_processed_round": 4
+}

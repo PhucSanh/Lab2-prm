@@ -1,0 +1,7 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-TXT-01] Increase all four bottom navigation labels (“Hôm nay”, “Lịch tuần”, “Thói quen”, “Gia đình”) from 18 px to 20 px minimum. Let labels wrap inside each tab; do not clip or shrink them.
+2. [R-TXT-02] Increase the activity-card titles and descriptions to 24 px. Preserve the screen title at 30 px and button labels at 22 px.
+3. [R-ICON-03] For the “Chăm cây” card, use Lucide `footprints` at 32 px. “Chăm cây, tưới rau” is a documented activity under “Vận động tự nhiên” in vocabulary.md.
+4. [R-COL-03] Set the “Chăm cây” card icon background and its left accent stripe to the Move accent `#2BA15C`; keep the icon white.
+
+Preserve Vietnamese wording, the existing selection state, spacing structure, navigation, and all other colors and content.

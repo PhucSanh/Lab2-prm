@@ -1,0 +1,255 @@
+{
+  "screen": "C06e Tạo việc gợi ý (Báo lỗi)",
+  "round": 2,
+  "score": 77,
+  "errors": 2,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Khung nhìn 360 × 800 px, thông báo lỗi ‘Giờ nhắc’",
+      "evidence": "Thanh hành động cố định bắt đầu tại y=708 px; thông báo lỗi giờ nhắc bắt đầu tại y=839.5 px và bị che hoàn toàn trong khung nhìn đầu, nên chữ bị khuất dù scrollWidth không vượt 360 px.",
+      "fix": "Tăng phần đệm cuộn cuối màn lên tối thiểu 160 px và bảo đảm có thể cuộn lỗi giờ nhắc lên khỏi thanh cố định."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Thông báo lỗi dưới trường ‘Giờ nhắc’",
+      "evidence": "Ở khung 360 px, câu ‘Chọn giờ, ví dụ 8 giờ sáng, để nhắc mẹ đúng lúc.’ chiếm 3 dòng (font 20 px; vùng chữ rộng 244 px), vượt giới hạn 2 dòng.",
+      "fix": "Rút câu còn tối đa 2 dòng ở cỡ 20 px, ví dụ ‘Chọn giờ nhắc, ví dụ 8 giờ sáng.’"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn biểu mẫu tạo việc, không phải danh sách/thẻ việc."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn biểu mẫu bước trong luồng tạo việc, không có bottom navigation."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Biểu mẫu chưa có việc đã tạo nên không hiển thị trạng thái việc."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn tạo việc không có tiến độ ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn tạo việc không thuộc nhóm lời nhắc, chi tiết việc, chi tiết thói quen hoặc gợi ý từ người thân."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Khung 360 × 800 px, thông báo lỗi đầu tiên và thanh hành động cố định",
+      "evidence": "Vùng chữ lỗi ở y=652.5–704.5 px; thanh cố định bắt đầu tại y=708 px, để lại khoảng cách khoảng 3.5 px. Thông báo lỗi kế tiếp nằm dưới thanh và bị che trong màn hình ban đầu.",
+      "fix": "Giữ khoảng cách dọc 16 px giữa thông báo lỗi và thanh hành động; tăng vùng đệm cuộn cuối màn lên tối thiểu 160 px để thông báo lỗi kế tiếp cuộn lên khỏi thanh cố định."
+    }
+  ],
+  "fixed": [
+    "R-SAFE-02"
+  ],
+  "regressions": [
+    "R-TXT-03",
+    "R-LAY-01"
+  ],
+  "summary": "Ví dụ giờ đã có và thông báo lỗi có icon; câu lỗi giờ nhắc vượt 2 dòng và bị che bởi thanh hành động cố định trong khung nhìn đầu."
+}

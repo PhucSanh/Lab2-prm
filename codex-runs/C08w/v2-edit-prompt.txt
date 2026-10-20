@@ -1,0 +1,5 @@
+Keep the overall layout and all elements not mentioned below unchanged.
+
+1. [R-LANG-02] Replace the modal body with exactly: “Mẹ có việc lúc 8:00. Con vẫn gửi chứ?” This uses caregiver-family address (Mẹ–con) and names the person deciding. Keep it within 2 lines at 360px, with body text at 24px.
+
+Keep the action labels exactly “Vẫn gửi” and “Đổi giờ khác” per the C08w flow. Preserve documented `alarm-clock-plus` on “Đổi giờ khác”, `arrow-right` on “Vẫn gửi”, the colored “Chưa làm” chip, the documented `#2BA15C` Vận động accent, the hidden background footer CTA, scrim, and all layout/colors.

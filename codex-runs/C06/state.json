@@ -1,0 +1,21 @@
+{
+  "screen": "C06",
+  "title": "Thông tin việc (Bước 1/3)",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 1,
+  "screen_id": "de3f6f6ef0ae40b4a901db925b2ee484",
+  "parent_screen_id": "311943e6e7b544418171d30fce9cf683",
+  "best_round": 1,
+  "best_screen_id": "de3f6f6ef0ae40b4a901db925b2ee484",
+  "best_score": 100,
+  "patience": 0,
+  "pending_operation_id": null,
+  "stop_reason": "score_100",
+  "updated_at": "2026-10-18T12:46:47.669463+00:00",
+  "canvas_row": 3,
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/C06/v0-edit-prompt.txt",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "stage": "awaiting_review",
+  "last_processed_round": 1
+}

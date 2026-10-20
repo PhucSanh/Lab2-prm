@@ -1,0 +1,6 @@
+Apply the following edits directly to the selected source screen and create a new G03b screen artifact now. Do not return a plan, suggestion list, or confirmation question. The user already authorized this screen generation.
+1. Change the walking activity from 8:00 sáng to 9:00 sáng and show “Bác đã đổi sang 9:00 sáng”.
+2. Set the second activity, Thư giãn nhẹ nhàng, to 10:00 sáng to avoid a time conflict.
+3. Keep the statement “Chưa thêm vào lịch. Bác tự chọn.” and all consent wording: the calendar changes only after Bác accepts.
+4. Preserve the G03 layout, sender message, approved icons/colors, status chips, “Đọc to”, the four actions, footer and bottom navigation. Do not alter the source G03.
+Create the new screen now and return its screen artifact.

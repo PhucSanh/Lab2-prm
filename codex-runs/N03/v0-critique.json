@@ -1,0 +1,256 @@
+{
+  "screen": "N03",
+  "round": 0,
+  "score": 81,
+  "errors": 1,
+  "warns": 3,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Mô tả bước 3: ‘Bác chạm nút bên dưới để gửi lời nhắc thử.’",
+      "evidence": "Ở viewport 360 px, .step-desc tại bước 3 có 3 dòng (metrics: height 87 px, line-height 29 px), vượt giới hạn đoạn 2 dòng.",
+      "fix": "Rút gọn còn tối đa 2 dòng, ví dụ ‘Chạm nút bên dưới để gửi lời nhắc thử.’ (8 tiếng)."
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn khắc phục lỗi lời nhắc không có thẻ việc."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Các thẻ là bước khắc phục sự cố, không phải thẻ việc hoặc thẻ thói quen."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "n/a",
+      "evidence": "Màn này không hiển thị thói quen hoặc màu nhấn thói quen."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không hiển thị trạng thái việc cần được truyền đạt bằng icon và chữ."
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn xử lý sự cố, không phải một trong bốn tab điều hướng."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn hướng dẫn khắc phục không có việc cần nhãn trạng thái."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn này không hiển thị tiến độ các việc trong ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có trường nhập hoặc lỗi nhập trên màn này."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Quy tắc chỉ áp dụng cho S14, S04, S16 và G03; N03 là màn khắc phục lời nhắc."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Dòng giới thiệu dưới tiêu đề và mô tả bước 3",
+      "evidence": "Văn bản chuyển từ ‘Mình cùng kiểm tra 3 chỗ nhé.’ sang cách xưng hô ‘Bác’ trong ‘Bác chạm nút bên dưới…’.",
+      "fix": "Thống nhất xưng ‘Bác’: đổi dòng giới thiệu thành ‘Bác cùng kiểm tra 3 chỗ nhé.’"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nền ô số/icon của các bước trong .step-badge",
+      "evidence": "HTML dùng #E8F3ED; màu này không có trong token DESIGN.md (màu nền tương ứng đã định nghĩa là primary-container #D6EADF).",
+      "fix": "Đổi nền .step-badge từ #E8F3ED sang #D6EADF."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Khoảng cách giữa hai nút ở chân màn",
+      "evidence": "HTML đặt .footer-section gap 20 px; DESIGN.md quy định khoảng cách giữa các khối là 16 px, và đây không phải cặp nút lời nhắc cần khoảng cách 20 px.",
+      "fix": "Đặt khoảng cách giữa hai nút là 16 px."
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Màn có bố cục và chữ dễ đọc; còn một lỗi về mô tả bước cuối dài ba dòng và ba sai lệch nhẹ về cách xưng hô, màu token và khoảng cách."
+}

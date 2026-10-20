@@ -1,0 +1,2 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-TXT-03] In the green note card, replace “Bác có thể xem lại chuông bất cứ lúc nào.” with the exact shorter sentence “Bác có thể xem lại sau.” Ensure the note occupies no more than 2 lines at a 360px viewport. Preserve the 24px note font and all other text, icons, button spacing, colors, and layout.

@@ -1,0 +1,21 @@
+{
+  "screen": "C04",
+  "title": "Lịch của mẹ · Tuần",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 2,
+  "screen_id": "22264169a37842a3b64dcd8348ea65b9",
+  "parent_screen_id": "c5f4b1d1443e4503926cd38a63262bcd",
+  "best_round": 2,
+  "best_screen_id": "22264169a37842a3b64dcd8348ea65b9",
+  "best_score": 100,
+  "patience": 0,
+  "pending_operation_id": null,
+  "stop_reason": "score_100",
+  "updated_at": "2026-10-18T19:12:30.403164+00:00",
+  "canvas_row": 9,
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "stage": "awaiting_review",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/C04/v1-edit-prompt.txt",
+  "last_processed_round": 2
+}

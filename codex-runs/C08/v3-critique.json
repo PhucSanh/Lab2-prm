@@ -1,0 +1,280 @@
+{
+  "screen": "C08 Xem lại và gửi gợi ý",
+  "round": 3,
+  "score": 87,
+  "errors": 1,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "HTML dùng cỡ chữ hiển thị 20px trở lên; các nhãn, nội dung, nút lần lượt 20–30px."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Tiêu đề 30px, tên việc/nội dung 24px, CTA 22px; nhìn rõ ở ảnh 360px."
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Màu chữ chính #202B25 trên #F6F7F2 hoặc #FFFFFF, chữ phụ #526057 trên nền sáng và chữ trắng trên #1F684B đều đạt tối thiểu 4.5:1."
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Viền textarea #7B887F trên trắng và viền chip trạng thái #7B887F trên #F6F7F2 đạt 3:1; viền thẻ nhạt không bao quanh control."
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Metrics v2 ghi scrollWidth=clientWidth tại 360px và 412px; ảnh 360px không có tràn ngang."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "HTML hiển thị hai câu “Mẹ tự nhận việc.” (4 tiếng) và “An Nhiên không tự thêm lịch.” (6 tiếng); mỗi câu nằm một dòng ở metrics 360/412, không câu nào quá 15 tiếng và đoạn không quá 2 dòng."
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Nhãn CTA ‘Gửi lịch cho mẹ’ 4 tiếng; tên việc ‘Đi bộ buổi sáng’ 4 tiếng; không có tab."
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Thẻ tóm tắt gợi ý chưa được nhận vào lịch, không phải thẻ việc lịch có nội dung ngoài cấu trúc cho phép."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Thẻ có icon thói quen, các dòng giờ/lặp có icon, thẻ giải thích có icon thông tin và CTA có icon gửi."
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Icon mũi tên sang phải trên nút “Gửi lịch cho mẹ”",
+      "evidence": "Icon arrow-right 32 × 32 px biểu đạt “Tiếp tục, Bắt đầu” theo từ điển icon, nhưng nút này gửi lịch cho mẹ; mũi tên không khớp nghĩa gửi/nhắn tin. Các icon footprints, clock, repeat, info và circle đúng nghĩa; circle 24 px trong chip đạt ngoại lệ.",
+      "fix": "Thay icon trên “Gửi lịch cho mẹ” bằng Lucide message-square 32 × 32 px theo nghĩa Nhắn tin trong từ điển icon."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Thẻ việc có ô icon nền xanh #2BA15C, icon trắng và vạch trái cùng màu."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Thói quen Vận động tự nhiên dùng accent #2BA15C đúng token."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Accent chỉ dùng ở ô icon/vạch trái; không có nền tối, neon hoặc gradient."
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Trạng thái ‘Chưa làm’ có icon vòng tròn và nhãn chữ; màu không phải tín hiệu duy nhất."
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Metrics ghi nút Quay lại 127.8×48px, textarea 320×99px và CTA 320×60px ở 360px; các vùng chạm đạt 48×48px."
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Footer tại ảnh cuộn cuối màn 360 × 800",
+      "evidence": "Ảnh v3-bottom-360.png cho thấy sau khi cuộn đến thẻ tự chủ, vùng footer từ y≈699 đến đáy trống và không có nút chính; ảnh bottom 412 px vẫn có CTA. Metrics 360 ghi CTA 320 × 60 ở y=716 tại đầu trang, nên nút không được duy trì ở đáy khi cuộn trên khung 360 px.",
+      "fix": "Giữ CTA “Gửi lịch cho mẹ” kích thước 320 × 60 px, lề ngang 20 px và neo cách đáy 24 px trên toàn bộ cuộn ở khung 360 × 800."
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Không có cặp nút hành động kề nhau."
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Nút Quay lại và CTA đều có nhãn chữ nhìn thấy được."
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn bước 3/3 của luồng gợi ý không dùng bottom navigation."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Nút quay lại hiển thị chữ ‘Quay lại’ cùng icon."
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Không thấy hành động chỉ thực hiện được bằng vuốt, kéo hoặc nhấn giữ."
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là gợi ý chưa gửi/chưa được nhận vào lịch, không phải việc đang được theo dõi thực hiện."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn tiến độ ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Chỉ CTA gửi lịch là nút filled."
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Form và thẻ thông tin được căn trái."
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "CTA chỉ gửi gợi ý để mẹ tự nhận; màn không thực hiện hành động khó đảo ngược."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có trạng thái lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn S14, S04, S16 hay G03."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Nội dung UI nhìn thấy dùng tiếng Việt có dấu."
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Xưng hô ‘mẹ’ thống nhất; CTA nêu hành động và đối tượng rõ."
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Không có bảng xếp hạng, điểm hay lời lẽ gây áp lực."
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Không thấy từ thuộc danh sách tránh dùng trong chữ UI; ‘Chưa làm’ là nhãn được phép."
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "HTML dùng nền #F6F7F2, thẻ #FFFFFF, chữ #202B25/#526057, primary #1F684B và accent thói quen #2BA15C."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Dùng Be Vietnam Pro, không gradient; card bo 16px và nút bo 14px."
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "Lề nội dung là 20 px và các khối cách nhau 16 px; ở 360 px, “Không bắt buộc” nằm riêng dưới nhãn và thẻ tự chủ hiển thị gọn khi cuộn đến cuối."
+    }
+  ],
+  "fixed": [
+    "R-TXT-03",
+    "R-STY-03"
+  ],
+  "regressions": [
+    "R-TAP-02"
+  ],
+  "summary": "V3 rút gọn phần tự chủ và tách nhãn biểu mẫu thành các dòng dễ quét. Ở ảnh cuộn cuối màn 360 px, vùng chân trang trống và thiếu nút gửi; CTA cũng dùng arrow-right mang nghĩa tiếp tục thay vì gửi/nhắn tin."
+}

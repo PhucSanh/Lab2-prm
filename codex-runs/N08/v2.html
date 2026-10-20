@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>An Nhiên - Cách dùng đơn giản</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F6F7F2;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      line-height: 1.4;
+    }
+
+    .mobile-container {
+      width: 100%;
+      max-width: 412px;
+      min-height: 100vh;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 24px rgba(0, 0, 0, 0.06);
+    }
+
+    /* App Bar */
+    .app-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px 8px 20px;
+      background-color: #F6F7F2;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      color: #1F684B;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      cursor: pointer;
+      min-height: 48px;
+      min-width: 48px;
+      padding: 6px 12px 6px 0;
+    }
+
+    .app-brand {
+      font-size: 20px;
+      font-weight: 600;
+      color: #526057;
+    }
+
+    /* Scroll Content */
+    .scroll-content {
+      flex: 1;
+      padding: 8px 20px 220px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .header-section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-icon {
+      flex-shrink: 0;
+      color: #1F684B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .screen-title {
+      font-size: 30px;
+      font-weight: 800;
+      color: #202B25;
+      line-height: 1.25;
+    }
+
+    .screen-subtitle {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.4;
+    }
+
+    /* Step Card */
+    .step-card {
+      background-color: #FFFFFF;
+      border: 1px solid #DFE5DF;
+      border-radius: 16px;
+      padding: 18px 16px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .step-badge-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #D6EADF;
+      color: #174C37;
+      font-size: 20px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #1F684B;
+    }
+
+    .icon-tile {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon-tile.green {
+      background-color: #1F684B;
+      color: #FFFFFF;
+    }
+
+    .icon-tile.amber {
+      background-color: #B26A00;
+      color: #FFFFFF;
+    }
+
+    .icon-tile.teal {
+      background-color: #157367;
+      color: #FFFFFF;
+    }
+
+    .step-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .step-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    .step-desc {
+      font-size: 20px;
+      font-weight: 400;
+      color: #526057;
+      line-height: 1.45;
+    }
+
+    /* Reassurance Note Card */
+    .reassurance-card {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .reassurance-icon {
+      flex-shrink: 0;
+      color: #1F684B;
+      margin-top: 2px;
+    }
+
+    .reassurance-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .reassurance-highlight {
+      font-size: 20px;
+      font-weight: 700;
+      color: #174C37;
+      line-height: 1.45;
+    }
+
+    .reassurance-sub {
+      font-size: 20px;
+      font-weight: 400;
+      color: #174C37;
+      line-height: 1.45;
+    }
+
+    /* Fixed Footer Actions */
+    .fixed-footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 412px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      padding: 14px 20px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 20;
+    }
+
+    .btn {
+      width: 100%;
+      height: 60px;
+      border-radius: 14px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.15s ease;
+      touch-action: manipulation;
+    }
+
+    /* Exactly ONE filled button */
+    .btn-primary {
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+    }
+
+    .btn-primary:active {
+      background-color: #174C37;
+    }
+
+    /* Outlined button */
+    .btn-secondary {
+      background-color: #FFFFFF;
+      color: #1F684B;
+      border: 2px solid #1F684B;
+    }
+
+    .btn-secondary:active {
+      background-color: #E8F2EC;
+    }
+  </style>
+</head>
+<body>
+<div class="mobile-container">
+<!-- Header / App bar -->
+<header class="app-bar">
+<button aria-label="Quay lại" class="back-btn" type="button">
+<svg aria-hidden="true" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+<span>Quay lại</span>
+</button>
+<div class="app-brand">An Nhiên</div>
+</header>
+<!-- Main Content -->
+<main class="scroll-content">
+<!-- Title Area -->
+<section class="header-section">
+<div class="title-row">
+<h1 class="screen-title">Cách dùng đơn giản</h1>
+</div>
+<p class="screen-subtitle">Ba bước nhẹ nhàng để bắt đầu mỗi ngày cùng An Nhiên.</p>
+</section>
+<!-- Step 1 -->
+<article class="step-card">
+<div class="step-badge-col">
+<div aria-label="Bước 1" class="step-number">1</div>
+</div>
+<div class="step-body">
+<h2 class="step-title">Chọn việc</h2>
+<p class="step-desc">Bác chọn việc quen thuộc.</p>
+</div>
+</article>
+<!-- Step 2 -->
+<article class="step-card">
+<div class="step-badge-col">
+<div aria-label="Bước 2" class="step-number">2</div>
+<div class="icon-tile amber"><svg aria-hidden="true" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></div>
+</div>
+<div class="step-body">
+<h2 class="step-title">Nhắc nhẹ nhàng</h2>
+<p class="step-desc">An Nhiên nhắc Bác đúng giờ.</p>
+</div>
+</article>
+<!-- Step 3 -->
+<article class="step-card">
+<div class="step-badge-col">
+<div aria-label="Bước 3" class="step-number">3</div>
+</div>
+<div class="step-body">
+<h2 class="step-title">Gần gũi người thân</h2>
+<p class="step-desc">Con cháu có thể gửi gợi ý lịch. Bác tự chọn nhận hoặc bỏ qua.</p>
+</div>
+</article>
+<!-- Exact Reassurance Card -->
+<section class="reassurance-card">
+<div class="reassurance-icon">
+<!-- Lucide info -->
+<svg aria-hidden="true" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 16v-4"></path>
+<path d="M12 8h.01"></path>
+</svg>
+</div>
+<div class="reassurance-content">
+<p class="reassurance-highlight">Người thân có thể gửi gợi ý lịch. Bác tự chọn nhận hoặc bỏ qua.</p>
+<p class="reassurance-sub">Việc chỉ vào lịch khi Bác bấm nhận.</p>
+</div>
+</section>
+</main>
+<!-- Fixed Action Footer: Exactly ONE filled button -->
+<footer class="fixed-footer">
+<!-- Outlined action -->
+<button class="btn btn-secondary" type="button">
+<!-- Lucide bell -->
+<svg aria-hidden="true" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+<path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+</svg>
+<span>Thử lời nhắc</span>
+</button>
+<!-- The ONLY filled button -->
+<button class="btn btn-primary" type="button">
+<!-- Lucide settings -->
+<svg aria-hidden="true" fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><rect height="20" rx="2" ry="2" width="14" x="5" y="2"></rect><path d="M12 18h.01"></path></svg>
+<span>Mở cài đặt</span>
+</button>
+</footer>
+</div>
+</body>
+</html>

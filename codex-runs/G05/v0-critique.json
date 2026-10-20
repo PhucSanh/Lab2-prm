@@ -1,0 +1,262 @@
+{
+  "screen": "G05 Đã nhận gợi ý",
+  "round": 0,
+  "score": 27,
+  "errors": 7,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nút ‘Xem lịch ngày mai’",
+      "evidence": "Nhãn có 5 tiếng, đúng giới hạn; tuy nhiên tên thói quen ở thẻ ‘Đi bộ nhẹ nhàng’ / ‘Thư giãn nhẹ nhàng’ dùng tên việc thay cho hai tên thói quen đã thống nhất.",
+      "fix": "Đổi tên thói quen trên thẻ thành ‘Vận động tự nhiên’ và ‘Thư giãn mỗi ngày’ (mỗi tên 3 tiếng); giữ tên việc riêng nếu cần."
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Khối thông tin dưới hai thẻ việc",
+      "evidence": "Có khối lời khuyên giải thích riêng ‘Lịch nhắc đã sẵn sàng. Bác có thể đổi giờ hoặc ngưng nhắc bất cứ lúc nào.’ ngoài cấu trúc thẻ việc.",
+      "fix": "Xóa khối giải thích 2 câu này khỏi màn; giữ thông tin trong màn chi tiết nếu cần."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Hai thẻ việc và cụm điều hướng đầu trang",
+      "evidence": "Hai thẻ chỉ có tên việc và giờ, không có nhãn trạng thái. Cụm quay lại hiển thị ‘Gia đình’ thay vì nhãn ‘Quay lại’.",
+      "fix": "Thêm chip ‘○ Chưa làm’ cạnh tên mỗi việc; đổi chữ nút đầu trang thành ‘Quay lại’ hoặc ‘Quay lại Gia đình’."
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Huy hiệu dấu kiểm ở đầu màn",
+      "evidence": "Huy hiệu success dùng circle-check để biểu thị đã nhận/thêm lịch; từ điển chỉ định circle-check riêng cho trạng thái/nút ‘Đã xong’. Các icon khác hiển thị 32 px.",
+      "fix": "Đổi icon huy hiệu sang icon thông tin/hoàn tất không trùng nghĩa đã xong, hoặc bỏ icon huy hiệu; giữ icon thẻ theo từ điển."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Hai thẻ việc",
+      "evidence": "Không có nhãn trạng thái dạng icon + chữ cạnh tên việc; hiện màu ô icon/vạch bên trái là dấu hiệu phân biệt duy nhất của mỗi thẻ.",
+      "fix": "Thêm chip có biểu tượng và chữ ‘○ Chưa làm’ cho mỗi việc, cỡ chữ tối thiểu 20 px."
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Cuối màn",
+      "evidence": "Không có bottom nav 4 tab Hôm nay, Lịch tuần, Thói quen, Gia đình.",
+      "fix": "Thêm bottom nav cố định gồm đúng 4 tab và icon + nhãn 20 px: Hôm nay, Lịch tuần, Thói quen, Gia đình."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút điều hướng đầu màn",
+      "evidence": "Nút có mũi tên nhưng chữ hiển thị là ‘Gia đình’; chữ không nói đây là thao tác quay lại.",
+      "fix": "Đổi nhãn hiển thị thành ‘Quay lại’ (hoặc ‘Quay lại Gia đình’)."
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Hai thẻ việc dưới ‘2 việc đã nhận’",
+      "evidence": "Cả hai thẻ đều thiếu một trong năm nhãn trạng thái bắt buộc; chỉ icon thói quen và giờ được hiển thị.",
+      "fix": "Thêm cạnh tên mỗi việc chip ‘○ Chưa làm’ với icon circle 24 px trở lên và chữ trắng/viền vàng đậm theo trạng thái."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn xác nhận nhận gợi ý, không phải màn Hôm nay có tiến độ ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không có trường nhập hoặc trạng thái lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "G05 là màn xác nhận gợi ý đã nhận; luật chỉ áp dụng cho S14, S04, S16 và G03."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Màn xác nhận dễ đọc, gọn màu và không tràn ngang; cần bổ sung trạng thái cho từng việc và sửa điều hướng quay lại, đồng thời bỏ khối giải thích riêng."
+}

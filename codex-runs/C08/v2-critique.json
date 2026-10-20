@@ -1,0 +1,282 @@
+{
+    "screen": "C08 Xem l\u1ea1i v\u00e0 g\u1eedi g\u1ee3i \u00fd",
+    "round": 2,
+    "score": 84,
+    "errors": 1,
+    "warns": 2,
+    "results": [
+        {
+            "rule": "R-TXT-01",
+            "level": "error",
+            "check": "auto",
+            "status": "pass",
+            "evidence": "HTML d\u00f9ng c\u1ee1 ch\u1eef hi\u1ec3n th\u1ecb 20px tr\u1edf l\u00ean; c\u00e1c nh\u00e3n, n\u1ed9i dung, n\u00fat l\u1ea7n l\u01b0\u1ee3t 20\u201330px."
+        },
+        {
+            "rule": "R-TXT-02",
+            "level": "warn",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "Ti\u00eau \u0111\u1ec1 30px, t\u00ean vi\u1ec7c/n\u1ed9i dung 24px, CTA 22px; nh\u00ecn r\u00f5 \u1edf \u1ea3nh 360px."
+        },
+        {
+            "rule": "R-CON-01",
+            "level": "error",
+            "check": "auto",
+            "status": "pass",
+            "evidence": "M\u00e0u ch\u1eef ch\u00ednh #202B25 tr\u00ean #F6F7F2 ho\u1eb7c #FFFFFF, ch\u1eef ph\u1ee5 #526057 tr\u00ean n\u1ec1n s\u00e1ng v\u00e0 ch\u1eef tr\u1eafng tr\u00ean #1F684B \u0111\u1ec1u \u0111\u1ea1t t\u1ed1i thi\u1ec3u 4.5:1."
+        },
+        {
+            "rule": "R-CON-02",
+            "level": "warn",
+            "check": "auto",
+            "status": "pass",
+            "evidence": "Vi\u1ec1n textarea #7B887F tr\u00ean tr\u1eafng v\u00e0 vi\u1ec1n chip tr\u1ea1ng th\u00e1i #7B887F tr\u00ean #F6F7F2 \u0111\u1ea1t 3:1; vi\u1ec1n th\u1ebb nh\u1ea1t kh\u00f4ng bao quanh control."
+        },
+        {
+            "rule": "R-LAY-01",
+            "level": "error",
+            "check": "auto",
+            "status": "pass",
+            "evidence": "Metrics v2 ghi scrollWidth=clientWidth t\u1ea1i 360px v\u00e0 412px; \u1ea3nh 360px kh\u00f4ng c\u00f3 tr\u00e0n ngang."
+        },
+        {
+            "rule": "R-TXT-03",
+            "level": "error",
+            "check": "auto",
+            "status": "fail",
+            "where": "\u0110o\u1ea1n gi\u1ea3i th\u00edch trong th\u1ebb quy\u1ec1n t\u1ef1 ch\u1ee7 \u1edf cu\u1ed1i n\u1ed9i dung",
+            "evidence": "HTML c\u00f3 hai c\u00e2u ng\u1eafn, nh\u01b0ng \u1edf khung 360px v\u00f9ng ch\u1eef r\u1ed9ng 284px, c\u1ee1 20px, \u1ea3nh fullpage cho th\u1ea5y c\u00e2u cu\u1ed1i b\u1ecb xu\u1ed1ng d\u00f2ng th\u00e0nh hai d\u00f2ng v\u00e0 ph\u1ea7n \u0111\u1ea7u b\u1ecb footer che; \u0111o\u1ea1n hi\u1ec3n th\u1ecb v\u01b0\u1ee3t gi\u1edbi h\u1ea1n 2 d\u00f2ng/kh\u00f3 \u0111\u1ecdc tr\u1ecdn v\u1eb9n. Metrics 360 c\u0169 c\u0169ng ghi \u0111o\u1ea1n t\u01b0\u01a1ng \u1ee9ng 4 d\u00f2ng, nh\u01b0ng kh\u00f4ng kh\u1edbp HTML hi\u1ec7n t\u1ea1i.",
+            "fix": "R\u00fat \u0111o\u1ea1n th\u00e0nh m\u1ed9t c\u00e2u t\u1ed1i \u0111a 2 d\u00f2ng, v\u00ed d\u1ee5 \u2018M\u1eb9 nh\u1eadn th\u00ec vi\u1ec7c m\u1edbi v\u00e0o l\u1ecbch.\u2019; gi\u1eef c\u1ee1 ch\u1eef 20px v\u00e0 b\u1ea3o \u0111\u1ea3m c\u1ea3 c\u00e2u n\u1eb1m tr\u00ean footer."
+        },
+        {
+            "rule": "R-TXT-04",
+            "level": "error",
+            "check": "auto",
+            "status": "pass",
+            "evidence": "Nh\u00e3n CTA \u2018G\u1eedi l\u1ecbch cho m\u1eb9\u2019 4 ti\u1ebfng; t\u00ean vi\u1ec7c \u2018\u0110i b\u1ed9 bu\u1ed5i s\u00e1ng\u2019 4 ti\u1ebfng; kh\u00f4ng c\u00f3 tab."
+        },
+        {
+            "rule": "R-TXT-05",
+            "level": "error",
+            "check": "ai",
+            "status": "n/a",
+            "evidence": "Th\u1ebb t\u00f3m t\u1eaft g\u1ee3i \u00fd ch\u01b0a \u0111\u01b0\u1ee3c nh\u1eadn v\u00e0o l\u1ecbch, kh\u00f4ng ph\u1ea3i th\u1ebb vi\u1ec7c l\u1ecbch c\u00f3 n\u1ed9i dung ngo\u00e0i c\u1ea5u tr\u00fac cho ph\u00e9p."
+        },
+        {
+            "rule": "R-TXT-06",
+            "level": "warn",
+            "check": "ai",
+            "status": "n/a",
+            "evidence": "\u0110\u00e2y kh\u00f4ng ph\u1ea3i m\u00e0n H\u00f4m nay."
+        },
+        {
+            "rule": "R-ICON-02",
+            "level": "error",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "Th\u1ebb c\u00f3 icon th\u00f3i quen, c\u00e1c d\u00f2ng gi\u1edd/l\u1eb7p c\u00f3 icon, th\u1ebb gi\u1ea3i th\u00edch c\u00f3 icon th\u00f4ng tin v\u00e0 CTA c\u00f3 icon g\u1eedi."
+        },
+        {
+            "rule": "R-ICON-03",
+            "level": "warn",
+            "check": "ai",
+            "status": "fail",
+            "where": "Icon m\u00e1y bay gi\u1ea5y tr\u00ean n\u00fat \u2018G\u1eedi l\u1ecbch cho m\u1eb9\u2019",
+            "evidence": "Icon g\u1eedi c\u00f3 k\u00edch th\u01b0\u1edbc 32px v\u00e0 ngh\u0129a tr\u1ef1c quan, nh\u01b0ng icon `send` kh\u00f4ng c\u00f3 trong T\u1eeb \u0111i\u1ec3n icon; icon th\u00f3i quen `footprints`, clock, repeat, info v\u00e0 circle c\u00f2n l\u1ea1i kh\u1edbp ngh\u0129a, trong \u0111\u00f3 circle tr\u1ea1ng th\u00e1i 24px \u0111\u00fang ngo\u1ea1i l\u1ec7.",
+            "fix": "D\u00f9ng icon Lucide `message-square` (\u0111\u00e3 c\u00f3 trong t\u1eeb \u0111i\u1ec3n cho Nh\u1eafn tin), k\u00edch th\u01b0\u1edbc 32\u00d732px, ho\u1eb7c b\u1ed5 sung ngh\u0129a g\u1eedi v\u00e0o t\u1eeb \u0111i\u1ec3n tr\u01b0\u1edbc khi d\u00f9ng."
+        },
+        {
+            "rule": "R-COL-02",
+            "level": "error",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "Th\u1ebb vi\u1ec7c c\u00f3 \u00f4 icon n\u1ec1n xanh #2BA15C, icon tr\u1eafng v\u00e0 v\u1ea1ch tr\u00e1i c\u00f9ng m\u00e0u."
+        },
+        {
+            "rule": "R-COL-03",
+            "level": "warn",
+            "check": "auto",
+            "status": "pass",
+            "evidence": "Th\u00f3i quen V\u1eadn \u0111\u1ed9ng t\u1ef1 nhi\u00ean d\u00f9ng accent #2BA15C \u0111\u00fang token."
+        },
+        {
+            "rule": "R-COL-04",
+            "level": "warn",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "Accent ch\u1ec9 d\u00f9ng \u1edf \u00f4 icon/v\u1ea1ch tr\u00e1i; kh\u00f4ng c\u00f3 n\u1ec1n t\u1ed1i, neon ho\u1eb7c gradient."
+        },
+        {
+            "rule": "R-COL-01",
+            "level": "error",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "Tr\u1ea1ng th\u00e1i \u2018Ch\u01b0a l\u00e0m\u2019 c\u00f3 icon v\u00f2ng tr\u00f2n v\u00e0 nh\u00e3n ch\u1eef; m\u00e0u kh\u00f4ng ph\u1ea3i t\u00edn hi\u1ec7u duy nh\u1ea5t."
+        },
+        {
+            "rule": "R-TAP-01",
+            "level": "error",
+            "check": "auto",
+            "status": "pass",
+            "evidence": "Metrics ghi n\u00fat Quay l\u1ea1i 127.8\u00d748px, textarea 320\u00d799px v\u00e0 CTA 320\u00d760px \u1edf 360px; c\u00e1c v\u00f9ng ch\u1ea1m \u0111\u1ea1t 48\u00d748px."
+        },
+        {
+            "rule": "R-TAP-02",
+            "level": "error",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "CTA cao 60px, r\u1ed9ng 320px v\u1edbi l\u1ec1 20px, \u0111\u1eb7t \u1edf \u0111\u00e1y khung."
+        },
+        {
+            "rule": "R-TAP-03",
+            "level": "warn",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "Kh\u00f4ng c\u00f3 c\u1eb7p n\u00fat h\u00e0nh \u0111\u1ed9ng k\u1ec1 nhau."
+        },
+        {
+            "rule": "R-ICON-01",
+            "level": "error",
+            "check": "auto",
+            "status": "pass",
+            "evidence": "N\u00fat Quay l\u1ea1i v\u00e0 CTA \u0111\u1ec1u c\u00f3 nh\u00e3n ch\u1eef nh\u00ecn th\u1ea5y \u0111\u01b0\u1ee3c."
+        },
+        {
+            "rule": "R-NAV-01",
+            "level": "error",
+            "check": "ai",
+            "status": "n/a",
+            "evidence": "M\u00e0n b\u01b0\u1edbc 3/3 c\u1ee7a lu\u1ed3ng g\u1ee3i \u00fd kh\u00f4ng d\u00f9ng bottom navigation."
+        },
+        {
+            "rule": "R-NAV-02",
+            "level": "error",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "N\u00fat quay l\u1ea1i hi\u1ec3n th\u1ecb ch\u1eef \u2018Quay l\u1ea1i\u2019 c\u00f9ng icon."
+        },
+        {
+            "rule": "R-GES-01",
+            "level": "error",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "Kh\u00f4ng th\u1ea5y h\u00e0nh \u0111\u1ed9ng ch\u1ec9 th\u1ef1c hi\u1ec7n \u0111\u01b0\u1ee3c b\u1eb1ng vu\u1ed1t, k\u00e9o ho\u1eb7c nh\u1ea5n gi\u1eef."
+        },
+        {
+            "rule": "R-STA-01",
+            "level": "error",
+            "check": "ai",
+            "status": "n/a",
+            "evidence": "\u0110\u00e2y l\u00e0 g\u1ee3i \u00fd ch\u01b0a g\u1eedi/ch\u01b0a \u0111\u01b0\u1ee3c nh\u1eadn v\u00e0o l\u1ecbch, kh\u00f4ng ph\u1ea3i vi\u1ec7c \u0111ang \u0111\u01b0\u1ee3c theo d\u00f5i th\u1ef1c hi\u1ec7n."
+        },
+        {
+            "rule": "R-STA-02",
+            "level": "warn",
+            "check": "ai",
+            "status": "n/a",
+            "evidence": "Kh\u00f4ng ph\u1ea3i m\u00e0n ti\u1ebfn \u0111\u1ed9 ng\u00e0y."
+        },
+        {
+            "rule": "R-ONE-01",
+            "level": "error",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "Ch\u1ec9 CTA g\u1eedi l\u1ecbch l\u00e0 n\u00fat filled."
+        },
+        {
+            "rule": "R-ONE-02",
+            "level": "warn",
+            "check": "ai",
+            "status": "n/a",
+            "evidence": "Kh\u00f4ng ph\u1ea3i m\u00e0n H\u00f4m nay."
+        },
+        {
+            "rule": "R-CEN-01",
+            "level": "warn",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "Form v\u00e0 th\u1ebb th\u00f4ng tin \u0111\u01b0\u1ee3c c\u0103n tr\u00e1i."
+        },
+        {
+            "rule": "R-SAFE-01",
+            "level": "warn",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "CTA ch\u1ec9 g\u1eedi g\u1ee3i \u00fd \u0111\u1ec3 m\u1eb9 t\u1ef1 nh\u1eadn; m\u00e0n kh\u00f4ng th\u1ef1c hi\u1ec7n h\u00e0nh \u0111\u1ed9ng kh\u00f3 \u0111\u1ea3o ng\u01b0\u1ee3c."
+        },
+        {
+            "rule": "R-SAFE-02",
+            "level": "warn",
+            "check": "ai",
+            "status": "n/a",
+            "evidence": "Kh\u00f4ng c\u00f3 tr\u1ea1ng th\u00e1i l\u1ed7i nh\u1eadp."
+        },
+        {
+            "rule": "R-VOI-01",
+            "level": "error",
+            "check": "ai",
+            "status": "n/a",
+            "evidence": "Kh\u00f4ng ph\u1ea3i m\u00e0n S14, S04, S16 hay G03."
+        },
+        {
+            "rule": "R-LANG-01",
+            "level": "error",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "N\u1ed9i dung UI nh\u00ecn th\u1ea5y d\u00f9ng ti\u1ebfng Vi\u1ec7t c\u00f3 d\u1ea5u."
+        },
+        {
+            "rule": "R-LANG-02",
+            "level": "warn",
+            "check": "auto",
+            "status": "pass",
+            "evidence": "X\u01b0ng h\u00f4 \u2018m\u1eb9\u2019 th\u1ed1ng nh\u1ea5t; CTA n\u00eau h\u00e0nh \u0111\u1ed9ng v\u00e0 \u0111\u1ed1i t\u01b0\u1ee3ng r\u00f5."
+        },
+        {
+            "rule": "R-LANG-03",
+            "level": "error",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "Kh\u00f4ng c\u00f3 b\u1ea3ng x\u1ebfp h\u1ea1ng, \u0111i\u1ec3m hay l\u1eddi l\u1ebd g\u00e2y \u00e1p l\u1ef1c."
+        },
+        {
+            "rule": "R-VOC-01",
+            "level": "error",
+            "check": "auto",
+            "status": "pass",
+            "evidence": "Kh\u00f4ng th\u1ea5y t\u1eeb thu\u1ed9c danh s\u00e1ch tr\u00e1nh d\u00f9ng trong ch\u1eef UI; \u2018Ch\u01b0a l\u00e0m\u2019 l\u00e0 nh\u00e3n \u0111\u01b0\u1ee3c ph\u00e9p."
+        },
+        {
+            "rule": "R-STY-01",
+            "level": "warn",
+            "check": "auto",
+            "status": "pass",
+            "evidence": "HTML d\u00f9ng n\u1ec1n #F6F7F2, th\u1ebb #FFFFFF, ch\u1eef #202B25/#526057, primary #1F684B v\u00e0 accent th\u00f3i quen #2BA15C."
+        },
+        {
+            "rule": "R-STY-02",
+            "level": "warn",
+            "check": "ai",
+            "status": "pass",
+            "evidence": "D\u00f9ng Be Vietnam Pro, kh\u00f4ng gradient; card bo 16px v\u00e0 n\u00fat bo 14px."
+        },
+        {
+            "rule": "R-STY-03",
+            "level": "warn",
+            "check": "ai",
+            "status": "fail",
+            "where": "Th\u1ebb gi\u1ea3i th\u00edch t\u1ef1 ch\u1ee7 \u1edf s\u00e1t ch\u00e2n n\u1ed9i dung",
+            "evidence": "\u1ede \u1ea3nh fullpage 360px, footer CTA ph\u1ee7 l\u00ean ph\u1ea7n tr\u00ean c\u1ee7a th\u1ebb; c\u00e2u gi\u1ea3i th\u00edch b\u1ecb t\u00e1ch/che, l\u00e0m kh\u1ed1i n\u1ed9i dung kh\u00f4ng tho\u00e1ng d\u00f9 l\u1ec1 ngo\u00e0i 20px v\u00e0 kho\u1ea3ng c\u00e1ch kh\u1ed1i ch\u00ednh 16px.",
+            "fix": "T\u0103ng kho\u1ea3ng \u0111\u1ec7m cu\u1ed1i v\u00f9ng cu\u1ed9n l\u00ean \u00edt nh\u1ea5t 180px ho\u1eb7c \u0111\u1eb7t th\u1ebb gi\u1ea3i th\u00edch tr\u01b0\u1edbc textarea; gi\u1eef l\u1ec1 20px v\u00e0 gap kh\u1ed1i 16px \u0111\u1ec3 to\u00e0n b\u1ed9 th\u1ebb n\u1eb1m tr\u00ean CTA."
+        }
+    ],
+    "fixed": [
+        "R-TXT-03",
+        "R-STY-03"
+    ],
+    "regressions": [
+        "R-ICON-03"
+    ],
+    "summary": "V2 r\u00fat ng\u1eafn l\u1eddi gi\u1ea3i th\u00edch v\u00e0 x\u1ebfp nh\u00e3n tr\u01b0\u1eddng theo chi\u1ec1u d\u1ecdc; \u1edf 360px th\u1ebb gi\u1ea3i th\u00edch cu\u1ed1i v\u1eabn b\u1ecb CTA che, c\u00f2n icon g\u1eedi ch\u01b0a c\u00f3 ngh\u0129a t\u01b0\u01a1ng \u1ee9ng trong t\u1eeb \u0111i\u1ec3n."
+}

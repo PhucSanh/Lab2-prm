@@ -1,0 +1,19 @@
+{
+  "screen": "C01",
+  "status": "CONVERGED",
+  "project_id": "4739396749322828698",
+  "round": 1,
+  "screen_id": "6fbd38cfb456447aa7629c18c6a5142c",
+  "parent_screen_id": "9c299fb08e08456fb0c57efa4f1bbf2d",
+  "best_round": 1,
+  "best_screen_id": "6fbd38cfb456447aa7629c18c6a5142c",
+  "best_score": 100,
+  "patience": 0,
+  "pending_operation_id": null,
+  "stop_reason": "score_100",
+  "updated_at": "2026-10-18T12:13:18.902487+00:00",
+  "prompt_path": "codex-runs/C01/v0-prompt.txt",
+  "last_processed_round": 1,
+  "delivery_status": "CANVAS_NOT_CONFIRMED",
+  "delivery_note": "get_project succeeds; get_screen for best_screen_id succeeds; list_screens returns empty and project has no screenInstances. Web UI could not be verified in browser session."
+}

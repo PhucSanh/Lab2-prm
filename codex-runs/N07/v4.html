@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>An Nhiên - Cài đặt nhắc việc</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F6F7F2;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    .device-wrapper {
+      width: 100%;
+      max-width: 412px;
+      min-width: 360px;
+      min-height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Top Bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px 8px 20px;
+      background-color: #F6F7F2;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      color: #1F684B;
+      font-size: 22px;
+      font-weight: 700;
+      cursor: pointer;
+      min-height: 48px;
+      padding: 4px 8px 4px 0;
+      font-family: inherit;
+    }
+    .app-brand-sub {
+      font-size: 20px;
+      font-weight: 600;
+      color: #526057;
+    }
+
+    /* Scrollable content */
+    .content-area {
+      flex: 1;
+      padding: 8px 20px 220px 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Screen Title */
+    .header-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .screen-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.25;
+    }
+    .screen-desc {
+      font-size: 22px;
+      font-weight: 400;
+      color: #526057;
+      line-height: 1.4;
+    }
+
+    /* Setting Card Group */
+    .settings-group {
+      background: #FFFFFF;
+      border: 2px solid #DFE5DF;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .setting-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 16px;
+      background: #FFFFFF;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .setting-row:not(:last-child) {
+      border-bottom: 1px solid #DFE5DF;
+    }
+    .row-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      flex: 1;
+    }
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: #E8F3ED;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #1F684B;
+      margin-top: 2px;
+    }
+    .row-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .row-label {
+      font-size: 22px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+    .row-desc {
+      font-size: 20px;
+      font-weight: 400;
+      color: #526057;
+      line-height: 1.35;
+    }
+
+    /* Toggle Switch Component with visible label */
+    .switch-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+      min-width: 80px;
+    }
+    .switch-pill {
+      width: 68px;
+      height: 40px;
+      border-radius: 20px;
+      background-color: #1F684B;
+      position: relative;
+      transition: background-color 0.2s ease;
+      display: flex;
+      align-items: center;
+      padding: 4px;
+      border: 2px solid #1F684B;
+    }
+    .switch-pill.off {
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+    }
+    .switch-handle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+      transform: translateX(28px);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    .switch-pill.off .switch-handle {
+      transform: translateX(0);
+      background-color: #526057;
+    }
+    .switch-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1F684B;
+      white-space: nowrap;
+    }
+    .switch-text.off {
+      color: #526057;
+      font-weight: 600;
+    }
+
+    /* System link card */
+    .system-link-card {
+      background: #FFFFFF;
+      border: 2px solid #DFE5DF;
+      border-radius: 18px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      min-height: 68px;
+    }
+    .system-link-card:active {
+      background-color: #E8F3ED;
+    }
+    .system-link-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+    }
+    .system-link-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .system-link-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1F684B;
+    }
+    .system-link-desc {
+      font-size: 20px;
+      font-weight: 400;
+      color: #526057;
+      line-height: 1.35;
+    }
+
+    /* Note card */
+    .notice-card {
+      background: #FFF7ED;
+      border: 2px solid #FED7AA;
+      border-radius: 18px;
+      padding: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .notice-icon {
+      color: #C2410C;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .notice-text {
+      font-size: 20px;
+      font-weight: 500;
+      color: #7C2D12;
+      line-height: 1.4;
+    }
+
+    /* Fixed footer */
+    .fixed-footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 412px;
+      min-width: 360px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      padding: 16px 20px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 100;
+    }
+    .btn-primary {
+      width: 100%;
+      height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-secondary {
+      width: 100%;
+      height: 60px;
+      background-color: #FFFFFF;
+      color: #1F684B;
+      border: 2px solid #1F684B;
+      border-radius: 14px;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-primary:active {
+      background-color: #174C37;
+    }
+    .btn-secondary:active {
+      background-color: #E8F3ED;
+    }
+  </style>
+</head>
+<body>
+<div class="device-wrapper">
+<!-- Top Navigation -->
+<header class="top-bar">
+<button aria-label="Quay lại" class="back-btn" type="button">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+<span>Quay lại</span>
+</button>
+<span class="app-brand-sub">An Nhiên</span>
+</header>
+<!-- Main Content -->
+<main class="content-area">
+<!-- Title & Reassuring Intro -->
+<section class="header-block">
+<h1 class="screen-title">Cài đặt nhắc việc</h1>
+<p class="screen-desc" style="font-size: 20px; font-weight: 400; color: #526057; line-height: 1.4;">Bác chọn cách chuông và điện thoại báo việc mỗi ngày.</p>
+</section>
+<!-- 3 Main Settings Rows -->
+<section aria-label="Tùy chọn lời nhắc" class="settings-group" style="border-radius: 16px;">
+<!-- Row 1: Thông báo -->
+<div class="setting-row" onclick="toggleSwitch(this)" role="button" tabindex="0">
+<div class="row-left">
+<div aria-hidden="true" class="icon-box">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+<path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+</svg>
+</div>
+<div class="row-info">
+<span class="row-label" style="font-size: 24px; font-weight: 700; color: #202B25; line-height: 1.3;">Thông báo</span>
+<span class="row-desc">Nhắc khi đến giờ</span>
+</div>
+</div>
+<div class="switch-wrapper">
+<div aria-checked="true" class="switch-pill">
+<div class="switch-handle"></div>
+</div>
+<span class="switch-text">Đang bật</span>
+</div>
+</div>
+<!-- Row 2: Chuông và rung -->
+<div class="setting-row" onclick="toggleSwitch(this)" role="button" tabindex="0">
+<div class="row-left">
+<div aria-hidden="true" class="icon-box"><svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></div>
+<div class="row-info">
+<span class="row-label" style="font-size: 24px; font-weight: 700; color: #202B25; line-height: 1.3;">Chuông và rung</span>
+<span class="row-desc">Chuông nhẹ, rung</span>
+</div>
+</div>
+<div class="switch-wrapper">
+<div aria-checked="true" class="switch-pill">
+<div class="switch-handle"></div>
+</div>
+<span class="switch-text">Đang bật</span>
+</div>
+</div>
+<!-- Row 3: Đọc nội dung lời nhắc -->
+<div class="setting-row" onclick="toggleSwitch(this)" role="button" tabindex="0">
+<div class="row-left">
+<div aria-hidden="true" class="icon-box">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+<path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+<path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+</svg>
+</div>
+<div class="row-info">
+<span class="row-label" style="font-size: 24px; font-weight: 700; color: #202B25; line-height: 1.3;">Đọc nội dung lời nhắc</span>
+<span class="row-desc">Đọc tên việc</span>
+</div>
+</div>
+<div class="switch-wrapper">
+<div aria-checked="true" class="switch-pill">
+<div class="switch-handle"></div>
+</div>
+<span class="switch-text">Đang bật</span>
+</div>
+</div>
+</section>
+<!-- System Settings Link -->
+<section>
+<div class="system-link-card" role="button" style="border-radius: 16px;" tabindex="0">
+<div class="system-link-left">
+<div aria-hidden="true" class="icon-box"><svg fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><rect height="20" rx="2" ry="2" width="14" x="5" y="2"></rect><path d="M12 18h.01"></path></svg></div>
+<div class="system-link-text">
+<span class="system-link-title" style="font-size: 24px; font-weight: 700; color: #1F684B; line-height: 1.3;">Mở cài đặt điện thoại</span>
+<span class="system-link-desc">Cấp quyền thông báo trên máy</span>
+</div>
+</div>
+<svg fill="none" height="32" stroke="#526057" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="flex-shrink:0;" viewbox="0 0 24 24" width="32">
+<path d="m9 18 6-6-6-6"></path>
+</svg>
+</div>
+</section>
+<!-- Reassuring Note Card -->
+<section class="notice-card" style="background: #FFF4E5; border: 1px solid #F5C186; border-radius: 16px; padding: 16px; display: flex; align-items: flex-start; gap: 14px;">
+<div aria-hidden="true" class="notice-icon" style="color: #B26A00; flex-shrink: 0; margin-top: 2px;">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" x2="12" y1="16" y2="12"></line>
+<line x1="12" x2="12.01" y1="8" y2="8"></line>
+</svg>
+</div>
+<p class="notice-text" style="font-size: 20px; font-weight: 700; color: #8A5100; line-height: 1.4;">Chế độ im lặng có thể tắt chuông</p>
+</section>
+<!-- Helper text before buttons -->
+<p style="font-size: 20px; color: #526057; line-height: 1.4; text-align: center; margin-top: 4px;">Bác có thể thử chuông để nghe âm lượng.</p>
+</main>
+<!-- Fixed Footer with 60px Actions -->
+<footer class="fixed-footer">
+<button class="btn-primary" onclick="alert('Mở màn hình thử lời nhắc')" type="button">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+<path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+</svg>
+<span>Thử lời nhắc</span>
+</button>
+<button class="btn-secondary" onclick="alert('Đã lưu cài đặt')" type="button">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+<polyline points="17 21 17 13 7 13 7 21"></polyline>
+<polyline points="7 3 7 8 15 8"></polyline>
+</svg>
+<span>Lưu cài đặt</span>
+</button>
+</footer>
+</div>
+<script>
+    function toggleSwitch(row) {
+      const pill = row.querySelector('.switch-pill');
+      const text = row.querySelector('.switch-text');
+      const isChecked = pill.getAttribute('aria-checked') === 'true';
+      
+      if (isChecked) {
+        pill.setAttribute('aria-checked', 'false');
+        pill.classList.add('off');
+        text.classList.add('off');
+        text.textContent = 'Đang tắt';
+      } else {
+        pill.setAttribute('aria-checked', 'true');
+        pill.classList.remove('off');
+        text.classList.remove('off');
+        text.textContent = 'Đang bật';
+      }
+    }
+  </script>
+</body>
+</html>

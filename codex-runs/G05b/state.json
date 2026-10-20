@@ -1,0 +1,29 @@
+{
+  "screen": "G05b",
+  "title": "Đã nhận · đổi giờ",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 1,
+  "screen_id": "a833f6e054bb42dba500417fda5f9798",
+  "parent_screen_id": "3fcf6dfaf09f47c7a23847669bbb33cb",
+  "best_round": 1,
+  "best_screen_id": "a833f6e054bb42dba500417fda5f9798",
+  "best_score": 100,
+  "patience": 0,
+  "pending_operation_id": null,
+  "stop_reason": "score_100",
+  "canvas_row": 26,
+  "stage": "awaiting_review",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "provenance": {
+    "source_screen": "G05",
+    "source_screen_id": "f18eacbd1f164974bc5850ca65a77ee9",
+    "source_project_id": "2013215887278758682",
+    "source_best_round": 3,
+    "related_changed_time_screen": "G03b",
+    "related_changed_time_screen_id": "3971b7a1bb9e4834be899bdc86e23b66"
+  },
+  "updated_at": "2026-10-19T07:29:47.035624+00:00",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/G05b/v0-edit-prompt.txt",
+  "last_processed_round": 1
+}

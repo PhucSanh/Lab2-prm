@@ -1,0 +1,254 @@
+{
+  "screen": "G07 Đã nhận một việc",
+  "round": 2,
+  "score": 74,
+  "errors": 2,
+  "warns": 2,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Dòng phụ ở thẻ ‘Thư giãn nhẹ nhàng’",
+      "evidence": "‘Chưa thêm vào lịch. Bác có thể thêm sau trong Gia đình.’ xuống thành hai dòng, trong khi thẻ chỉ được có tối đa một dòng phụ.",
+      "fix": "Rút dòng phụ thành một dòng, ví dụ ‘Chưa vào lịch; thêm sau ở Gia đình.’, cỡ 20 px."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Ô icon và vạch trái của hai thẻ việc",
+      "evidence": "Màu thói quen đi bộ dùng #2BA15C/#D6EADF thay cặp #D7EDE0/#0F3D2A; thói quen thư giãn dùng #AC76DB/#F2E8FA thay #EDE4F6/#4B2A73.",
+      "fix": "Dùng nền #D7EDE0, icon #0F3D2A và vạch trái #0F3D2A cho đi bộ; dùng nền #EDE4F6, icon #4B2A73 và vạch trái #4B2A73 cho thư giãn."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Thẻ ‘Thư giãn nhẹ nhàng’",
+      "evidence": "Chip ‘Gợi ý của Mai’ không thuộc một trong năm trạng thái yêu cầu; dòng mô tả lại cho biết việc chưa được thêm vào lịch.",
+      "fix": "Thay chip bằng ‘○ Chưa làm’ (nền #FFF3DB, viền #8A5100) và giữ rõ đây là gợi ý chưa được nhận; hoặc bỏ thẻ này khỏi danh sách việc đã nhận."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn kết quả nhận một việc không hiển thị tiến độ tổng số việc trong ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn kết quả Gia đình, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Thông báo ‘Đã thêm vào lịch’ và nút ‘Xem lịch ngày mai’",
+      "evidence": "Việc được thêm vào lịch nhưng không có bước xác nhận hoặc nút ‘Hoàn tác’ để đảo ngược thao tác.",
+      "fix": "Thêm thông báo có nút ‘Hoàn tác’ cao tối thiểu 48 px ngay dưới xác nhận, giữ khoảng cách tối thiểu 20 px tới nút khác."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có form nhập hoặc lỗi nhập trên màn này."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Luật dành cho S14, S04, S16 và G03; đây là màn kết quả G07."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [
+    "R-ICON-03"
+  ],
+  "regressions": [
+    "R-COL-03"
+  ],
+  "summary": "Icon đồng hồ đã đạt kích thước; thẻ gợi ý vẫn dùng nhãn trạng thái không hợp lệ, đồng thời màu nhận diện hai thói quen lệch token và nội dung phụ chiếm hai dòng."
+}

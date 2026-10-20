@@ -1,0 +1,264 @@
+{
+  "screen": "N02 Đã nhận lời nhắc",
+  "round": 0,
+  "score": 61,
+  "errors": 3,
+  "warns": 3,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Ba dòng trong thẻ kiểm tra và ghi chú xanh",
+      "evidence": "Ảnh cho thấy nội dung checklist và lời ghi chú chỉ ở cỡ khoảng 20px, nhỏ hơn mức nội dung chính khoảng 24px.",
+      "fix": "Tăng chữ ba dòng checklist và ghi chú lên 24px; giữ tiêu đề 30px và chữ nút 22px."
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Ghi chú 'Bác có thể kiểm tra lại cài đặt chuông bất cứ lúc nào.'",
+      "evidence": "Câu có 10 tiếng nhưng metrics ở viewport 360 ghi 3 dòng trong nội dung; giới hạn đoạn văn là tối đa 2 dòng.",
+      "fix": "Rút thành câu tối đa 2 dòng ở 360px, ví dụ: 'Bác có thể xem lại chuông bất cứ lúc nào.'"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn xác nhận nhận lời nhắc, không có thẻ việc."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút chính 'Tôi đã nhận được' ở chân màn",
+      "evidence": "Nút hành động chính chỉ có chữ, không có icon; các biểu tượng trong thẻ kiểm tra đều có nhãn.",
+      "fix": "Thêm icon Lucide circle-check 32×32px vào nút 'Tôi đã nhận được'."
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Icon Quay lại và hai icon chuông trong thẻ kiểm tra",
+      "evidence": "Cả hai hình chuông dùng cùng glyph dù biểu đạt hai nghĩa khác nhau; từ điển dành bell cho lời nhắc và bell-ring cho bật nhắc. Nét vẽ thủ công trong SVG cũng không xác định được là Lucide.",
+      "fix": "Dùng Lucide chevron-left 32×32px cho Quay lại, bell 32×32px cho thông báo hiện lên, bell-ring 32×32px cho chuông/rung phát."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn này không có thẻ việc hoặc thẻ thói quen."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "n/a",
+      "evidence": "Màn này không hiển thị màu của bất kỳ thói quen Power 9 nào."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Hai nút ở chân màn",
+      "evidence": "Khoảng cách dọc giữa nút chính và nút phụ là 12px; cặp lời nhắc cần cách nhau ≥20px.",
+      "fix": "Tăng khoảng cách giữa hai nút lên 20px."
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn xác nhận từng bước, không có bottom navigation."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không hiển thị danh sách việc hoặc trạng thái việc."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không có tiến độ ngày hoặc danh sách việc."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Nội dung là checklist và thao tác xác nhận, không thuộc các màn độc lập cần căn giữa; danh sách được căn trái."
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có hành động xóa, đánh dấu xong hoặc ngưng lặp."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có trường nhập hoặc thông báo lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "N02 là màn xác nhận nhận lời nhắc, không phải S14, S04, S16 hoặc G03."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Mục checklist 'Thông báo có hiện lên'",
+      "evidence": "Từ 'Thông báo' tương ứng mục tránh dùng notification trong danh sách vocabulary mục 5.",
+      "fix": "Đổi thành 'Lời nhắc có hiện lên'."
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Nền, thẻ, chữ chính/phụ và primary đúng token; viền checklist/ghi chú dùng #DFE5DF (border-subtle), đúng token."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Màn có bố cục rõ, nhưng cần rút ghi chú xuống tối đa hai dòng, bổ sung icon cho nút chính, sửa icon chưa đúng từ điển và thay từ “Thông báo”."
+}

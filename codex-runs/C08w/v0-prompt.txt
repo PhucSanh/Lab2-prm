@@ -1,0 +1,11 @@
+Create a new mobile overlay screen based on this exact C08 source, preserving An Nhiên’s current colors, typography, corner radii, spacing, icon stroke, and the underlying review page. Do not alter the source screen.
+
+Show the C08 review page in the background, dimmed with a translucent scrim, and a centered accessible AlertDialog for a duplicate scheduled time. This is the C08w branch shown after tapping “Gửi lịch cho mẹ”; the app detected another task at the selected time.
+
+Dialog content in Vietnamese, exactly:
+- Title: “Trùng giờ với việc khác”
+- Body: “Mẹ đã có việc khác lúc 8:00 sáng. Bác vẫn có thể gửi lịch này.”
+- Secondary outlined action: “Đổi giờ khác” (returns to editing the schedule)
+- Primary text action: “Vẫn gửi” (continues to C09; sending still waits for the mother to accept)
+
+Keep the dialog concise and readable for older adults. Use one primary action, clear text labels, touch targets at least 48px, and proper contrast on the scrim/dialog. Do not imply that anything is already added to the mother’s calendar. The background must remain recognizable as C08 and the dialog must be the visual focus. Add only documented Lucide icons when they clarify a control; the two dialog actions may be text-only if no matching icon exists. Fit a 360×800 dp Android viewport without horizontal overflow.

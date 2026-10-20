@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - C06e Tạo việc gợi ý (Báo lỗi)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F6F7F2;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .app-container {
+      width: 100%;
+      max-width: 412px;
+      min-height: 800px;
+      background-color: #F6F7F2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top App Bar */
+    .app-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px 8px 20px;
+      background-color: #F6F7F2;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      color: #1F684B;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      min-height: 48px;
+      min-width: 48px;
+      padding: 4px 8px 4px 0;
+      font-family: inherit;
+    }
+
+    .step-indicator {
+      font-size: 20px;
+      font-weight: 600;
+      color: #526057;
+    }
+
+    /* Content Area */
+    .content-scroll {
+      flex: 1;
+      padding: 8px 20px 104px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .page-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+
+    .section-label {
+      font-size: 20px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    /* 2x2 Habit Grid */
+    .habit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .habit-card {
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      border-radius: 16px;
+      min-height: 124px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .habit-card.selected {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+    }
+
+    /* Accent bar on left */
+    .accent-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 6px;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: 4px;
+    }
+
+    .habit-icon-tile {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .habit-radio-status {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: #1F684B;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .habit-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+      margin-top: 8px;
+      margin-left: 4px;
+    }
+
+    /* Form Fields */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .input-box {
+      width: 100%;
+      height: 60px;
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      border-radius: 14px;
+      padding: 0 16px;
+      font-size: 24px;
+      font-weight: 600;
+      color: #202B25;
+      font-family: inherit;
+      outline: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-box:focus {
+      border-color: #1F684B;
+    }
+
+    .selector-box {
+      width: 100%;
+      height: 60px;
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      border-radius: 14px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .selector-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .selector-value {
+      font-size: 24px;
+      font-weight: 600;
+      color: #202B25;
+    }
+
+    .helper-text {
+      font-size: 20px;
+      color: #526057;
+      line-height: 1.35;
+    }
+
+    /* Bottom Fixed CTA */
+    .bottom-cta-container {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 412px;
+      padding: 12px 20px 20px 20px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      z-index: 50;
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      width: 320px;
+      height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-size: 22px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-primary:active {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+<div class="app-container">
+<!-- Top Navigation -->
+<header class="app-header">
+<button aria-label="Quay lại" class="btn-back" type="button">
+<!-- Lucide chevron-left 32x32 stroke 2.5 -->
+<svg fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+<span>Quay lại</span>
+</button>
+<span class="step-indicator">Bước 1/3</span>
+</header>
+<!-- Main Content -->
+<main class="content-scroll" style="padding-bottom: 140px;">
+<h1 class="page-title">Thông tin việc</h1>
+<!-- Habit 2x2 Selection Grid -->
+<section class="form-group" style="gap: 10px;">
+<span class="section-label">Chọn nhóm thói quen</span>
+<div aria-label="Chọn nhóm thói quen" class="habit-grid" role="radiogroup">
+<!-- Card 1: Vận động tự nhiên (ĐANG CHỌN) -->
+<div aria-checked="true" class="habit-card selected" role="radio" style="background-color: #FFFFFF;" tabindex="0">
+<div class="accent-bar" style="background-color: #2BA15C;"></div>
+<div class="card-top">
+<div class="habit-icon-tile" style="background-color: #2BA15C;">
+<!-- Lucide footprints 32x32 stroke 2.5 white -->
+<svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.5v2"></path>
+<path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.5v2"></path>
+<path d="M16 17h4"></path>
+<path d="M4 13h4"></path>
+</svg>
+</div>
+<div class="habit-radio-status">
+<!-- Lucide circle-dot 32x32 stroke 2.5 #1F684B -->
+<svg fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<circle cx="12" cy="12" r="10"></circle>
+<circle cx="12" cy="12" fill="#1F684B" r="3"></circle>
+</svg>
+</div>
+</div>
+<div class="habit-name">Vận động tự nhiên</div>
+<div style="font-size: 20px; font-weight: 600; color: #1F684B; margin-left: 4px;">Đang chọn</div>
+</div>
+<!-- Card 2: Thư giãn mỗi ngày -->
+<div aria-checked="false" class="habit-card" role="radio" tabindex="0">
+<div class="accent-bar" style="background-color: #AC76DB;"></div>
+<div class="card-top">
+<div class="habit-icon-tile" style="background-color: #AC76DB;">
+<!-- Lucide wind 32x32 stroke 2.5 white -->
+<svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"></path><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"></path><path d="M9.8 4.4A2 2 0 1 1 11 8H2"></path></svg>
+</div>
+<!-- Lucide circle 32x32 stroke 2.5 #7B887F -->
+<svg fill="none" height="32" stroke="#7B887F" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+</div>
+<div class="habit-name">Thư giãn mỗi ngày</div>
+</div>
+<!-- Card 3: Ăn vừa đủ -->
+<div aria-checked="false" class="habit-card" role="radio" tabindex="0">
+<div class="accent-bar" style="background-color: #B98331;"></div>
+<div class="card-top">
+<div class="habit-icon-tile" style="background-color: #B98331;">
+<!-- Lucide utensils 32x32 stroke 2.5 white -->
+<svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>
+</div>
+<!-- Lucide circle 32x32 stroke 2.5 #7B887F -->
+<svg fill="none" height="32" stroke="#7B887F" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+</div>
+<div class="habit-name">Ăn vừa đủ</div>
+</div>
+<!-- Card 4: Gia đình trên hết -->
+<div aria-checked="false" class="habit-card" role="radio" tabindex="0">
+<div class="accent-bar" style="background-color: #D86E75;"></div>
+<div class="card-top">
+<div class="habit-icon-tile" style="background-color: #D86E75;">
+<!-- Lucide house 32x32 stroke 2.5 white -->
+<svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+<path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+</svg>
+</div>
+<!-- Lucide circle 32x32 stroke 2.5 #7B887F -->
+<svg fill="none" height="32" stroke="#7B887F" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+</div>
+<div class="habit-name">Gia đình trên hết</div>
+</div>
+</div>
+</section>
+<!-- Field: Tên việc -->
+<section class="form-group">
+<label class="section-label" for="task-name">Tên việc</label>
+<input aria-describedby="task-name-helper task-name-error" aria-invalid="true" class="input-box" id="task-name" placeholder="Ví dụ: Đi dạo công viên" style="border-color: #B42318; background-color: #FFF5F5;" type="text" value=""/>
+<p class="helper-text" id="task-name-helper">Mẹ sẽ thấy đúng tên này.</p><div id="task-name-error" role="alert" style="display: flex; align-items: center; gap: 10px; background-color: #FDECE9; border: 1.5px solid #B42318; border-radius: 12px; padding: 12px 16px; margin-top: 4px;"><svg fill="none" height="32" stroke="#B42318" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" style="flex-shrink: 0; width: 32px; height: 32px; min-width: 32px; min-height: 32px;" viewbox="0 0 24 24" width="32"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg><span style="font-size: 20px; font-weight: 700; color: #B42318; line-height: 1.3;">Hãy nhập tên việc để mẹ biết cần làm gì</span></div>
+</section>
+<!-- Field: Giờ nhắc -->
+<section class="form-group">
+<label class="section-label">Giờ nhắc</label>
+<div aria-invalid="true" aria-label="Chọn giờ nhắc (chưa chọn)" class="selector-box" role="button" style="border-color: #B42318; background-color: #FFF5F5;" tabindex="0"><div class="selector-left"><svg fill="none" height="32" stroke="#7B887F" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="selector-value" style="color: #7B887F; font-weight: 500;">Chọn giờ</span></div><svg fill="none" height="32" stroke="#526057" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32"><path d="m6 9 6 6 6-6"></path></svg></div><div id="reminder-time-error" role="alert" style="display: flex; align-items: center; gap: 10px; background-color: #FDECE9; border: 1.5px solid #B42318; border-radius: 12px; padding: 12px 16px; margin-top: 4px;"><svg fill="none" height="32" stroke="#B42318" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" style="flex-shrink: 0; width: 32px; height: 32px; min-width: 32px; min-height: 32px;" viewbox="0 0 24 24" width="32"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg><span style="font-size: 20px; font-weight: 700; color: #B42318; line-height: 1.3;">Chọn giờ, ví dụ 8 giờ sáng, để nhắc mẹ đúng lúc.</span></div>
+</section>
+<!-- Field: Thời lượng thực hiện -->
+<section class="form-group">
+<label class="section-label" for="duration-input">Thời lượng thực hiện</label>
+<input class="input-box" id="duration-input" type="text" value="Làm trong 15 phút"/>
+</section>
+</main>
+<!-- Bottom Sticky CTA -->
+<div class="bottom-cta-container">
+<button class="btn-primary" type="button">
+<!-- Lucide arrow-right 32x32 stroke 2.5 white -->
+<svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32">
+<path d="M5 12h14"></path>
+<path d="m12 5 7 7-7 7"></path>
+</svg>
+<span>Tiếp tục</span>
+</button>
+</div>
+</div>
+</body>
+</html>

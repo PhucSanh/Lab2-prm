@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - C04 Lịch tuần của mẹ Lan</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background-color: #F6F7F2;
+      color: #202B25;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+    }
+
+    .screen-container {
+      width: 100%;
+      max-width: 412px;
+      min-height: 100vh;
+      background-color: #F6F7F2;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .scroll-content {
+      flex: 1;
+      padding: 24px 20px 100px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Header */
+    .header-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .avatar-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: #D6EADF;
+      color: #1F684B;
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .screen-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.25;
+    }
+
+    .connection-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #526057;
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .icon-inline {
+      width: 32px;
+      height: 32px;
+      stroke: #526057;
+      stroke-width: 2.2;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    /* Segmented View Selector */
+    .selector-section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .view-selector-group {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      width: 100%;
+    }
+
+    .view-choice-btn {
+      min-height: 52px;
+      background-color: #FFFFFF;
+      border: 1.5px solid #7B887F;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 6px;
+      cursor: pointer;
+      color: #202B25;
+      font-size: 20px;
+      font-weight: 600;
+      font-family: inherit;
+    }
+
+    .view-choice-btn.selected {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+      color: #1F684B;
+    }
+
+    .choice-icon {
+      width: 32px;
+      height: 32px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .choice-feedback {
+      font-size: 20px;
+      color: #526057;
+      font-weight: 500;
+      padding-left: 4px;
+    }
+
+    /* Date Navigation Bar */
+    .date-nav-card {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #DFE5DF;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .current-date-text {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      text-align: center;
+    }
+
+    .date-action-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .text-nav-btn {
+      min-height: 48px;
+      background-color: transparent;
+      border: 1.5px solid #7B887F;
+      border-radius: 14px;
+      color: #202B25;
+      font-size: 20px;
+      font-weight: 600;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .text-nav-btn:active {
+      background-color: #D6EADF;
+    }
+
+    /* Task List */
+    .task-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .task-card {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #DFE5DF;
+      overflow: hidden;
+      display: flex;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .task-accent-bar {
+      width: 6px;
+      flex-shrink: 0;
+    }
+
+    .task-inner {
+      flex: 1;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .task-top-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .habit-icon-tile {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .habit-icon-tile svg {
+      width: 32px;
+      height: 32px;
+      stroke: #FFFFFF;
+      stroke-width: 2.2;
+      fill: none;
+    }
+
+    .task-header-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .task-time {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+    }
+
+    .task-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #202B25;
+      line-height: 1.3;
+    }
+
+    /* Status Chips */
+    .status-container {
+      display: flex;
+      margin-top: 2px;
+    }
+
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .status-chip.done {
+      background-color: #1F684B;
+      color: #FFFFFF;
+    }
+
+    .status-chip.pending {
+      background-color: #FFF3DB;
+      color: #8A5100;
+      border: 2px solid #B26A00;
+    }
+
+    .status-chip svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 2.2;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .status-chip.done svg {
+      stroke: #FFFFFF;
+    }
+
+    .status-chip.pending svg {
+      stroke: #B26A00;
+    }
+
+    /* Sticky Footer Button */
+    .sticky-footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 412px;
+      padding: 16px 20px 20px 20px;
+      background: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      display: flex;
+      justify-content: center;
+      z-index: 50;
+    }
+
+    .primary-btn {
+      width: 320px;
+      height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-size: 22px;
+      font-weight: 700;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(31, 104, 75, 0.25);
+    }
+
+    .primary-btn:active {
+      background-color: #164e38;
+    }
+
+    .primary-btn svg {
+      width: 32px;
+      height: 32px;
+      stroke: #FFFFFF;
+      stroke-width: 2.5;
+      fill: none;
+    }
+  </style>
+</head>
+<body>
+<main class="screen-container">
+<div class="scroll-content" style="padding-bottom: 160px;">
+<!-- Caregiver Top Section -->
+<header class="header-card">
+<div class="header-row">
+<div aria-hidden="true" class="avatar-circle">L</div>
+<div class="header-text">
+<h1 class="screen-title">Lịch của mẹ Lan</h1>
+<div class="connection-status">
+<svg class="icon-inline" viewbox="0 0 24 24">
+<rect height="20" rx="2" ry="2" width="14" x="5" y="2"></rect>
+<path d="M12 18h.01"></path>
+</svg>
+<span>Đã ghép nối · 2 phút trước</span>
+</div>
+</div>
+</div>
+</header>
+<!-- View Selector Group -->
+<section aria-label="Chế độ xem lịch" class="selector-section"><div class="view-selector-group" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; width: 100%; box-sizing: border-box;">
+<!-- Ngày (Unselected) -->
+<button aria-pressed="false" class="view-choice-btn" style="min-width: 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80px; padding: 10px 4px; gap: 4px; text-align: center; background-color: #FFFFFF; border: 2px solid #7B887F; color: #526057;" type="button">
+<svg class="choice-icon" height="32" style="width: 32px; height: 32px; stroke: currentColor; stroke-width: 2.2; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="32">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+<span style="font-size: 20px; font-weight: 600; line-height: 1.2;">Ngày</span>
+</button>
+<!-- Tuần (Selected) -->
+<button aria-pressed="true" class="view-choice-btn selected" style="min-width: 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80px; padding: 10px 4px; gap: 4px; text-align: center; background-color: #D6EADF; border: 2px solid #1F684B; color: #1F684B;" type="button">
+<svg class="choice-icon" height="32" style="width: 32px; height: 32px; stroke: currentColor; stroke-width: 2.2; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="32">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+<line x1="16" x2="16" y1="2" y2="6"></line>
+<line x1="8" x2="8" y1="2" y2="6"></line>
+<line x1="3" x2="21" y1="10" y2="10"></line>
+<path d="M8 14h.01"></path>
+<path d="M12 14h.01"></path>
+<path d="M16 14h.01"></path>
+<path d="M8 18h.01"></path>
+<path d="M12 18h.01"></path>
+<path d="M16 18h.01"></path>
+</svg>
+<span style="font-size: 20px; font-weight: 700; line-height: 1.2;">Tuần</span>
+</button>
+<!-- Tháng (Unselected) -->
+<button aria-pressed="false" class="view-choice-btn" style="min-width: 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80px; padding: 10px 4px; gap: 4px; text-align: center; background-color: #FFFFFF; border: 2px solid #7B887F; color: #526057;" type="button">
+<svg class="choice-icon" height="32" style="width: 32px; height: 32px; stroke: currentColor; stroke-width: 2.2; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="32">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+<line x1="16" x2="16" y1="2" y2="6"></line>
+<line x1="8" x2="8" y1="2" y2="6"></line>
+<line x1="3" x2="21" y1="10" y2="10"></line>
+</svg>
+<span style="font-size: 20px; font-weight: 600; line-height: 1.2;">Tháng</span>
+</button>
+</div>
+<div class="choice-feedback" style="font-size: 20px; color: #526057; font-weight: 500; padding-left: 4px;">Đang chọn: Tuần</div></section>
+<!-- Date Text & Navigation Buttons -->
+<section aria-label="Điều hướng tuần" class="date-nav-card"><div class="current-date-text" style="font-size: 24px; font-weight: 700; color: #202B25; text-align: center;">Tuần này, 12/10 – 18/10</div>
+<div class="date-action-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; box-sizing: border-box;">
+<button class="text-nav-btn" style="min-height: 52px; border: 2px solid #1F684B; border-radius: 14px; color: #1F684B; font-size: 20px; font-weight: 700; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 8px 10px; cursor: pointer; background: transparent; width: 100%; min-width: 0; box-sizing: border-box;" type="button">
+<svg class="choice-icon" height="32" style="width: 32px; height: 32px; stroke: #1F684B; stroke-width: 2.2; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="32"><path d="m15 18-6-6 6-6"></path></svg>
+<span style="white-space: nowrap;">Tuần trước</span>
+</button>
+<button class="text-nav-btn" style="min-height: 52px; border: 2px solid #1F684B; border-radius: 14px; color: #1F684B; font-size: 20px; font-weight: 700; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 8px 10px; cursor: pointer; background: transparent; width: 100%; min-width: 0; box-sizing: border-box;" type="button">
+<span style="white-space: nowrap;">Tuần sau</span>
+<svg class="choice-icon" height="32" style="width: 32px; height: 32px; stroke: #1F684B; stroke-width: 2.2; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="32"><path d="m9 18 6-6-6-6"></path></svg>
+</button>
+</div></section>
+<!-- Task List -->
+<section aria-label="Danh sách các ngày trong tuần của mẹ" class="task-list"><div role="list" style="display: flex; flex-direction: column; gap: 12px; width: 100%; min-width: 0; box-sizing: border-box;">
+<!-- Thứ Hai 12/10 -->
+<div role="listitem" style="min-height: 72px; width: 100%; min-width: 0; box-sizing: border-box; background-color: #FFFFFF; border: 1.5px solid #DFE5DF; border-radius: 16px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.04);" tabindex="0">
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+<div style="font-size: 22px; font-weight: 700; color: #202B25;">Thứ Hai, 12/10</div>
+<div style="font-size: 20px; font-weight: 600; color: #1F684B;">Đã xong 3/3 việc</div>
+</div>
+<svg height="28" style="width: 28px; height: 28px; stroke: #526057; stroke-width: 2.2; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="28"><path d="m9 18 6-6-6-6"></path></svg>
+</div>
+<!-- Thứ Ba 13/10 -->
+<div role="listitem" style="min-height: 72px; width: 100%; min-width: 0; box-sizing: border-box; background-color: #FFFFFF; border: 1.5px solid #DFE5DF; border-radius: 16px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.04);" tabindex="0">
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+<div style="font-size: 22px; font-weight: 700; color: #202B25;">Thứ Ba, 13/10</div>
+<div style="font-size: 20px; font-weight: 600; color: #1F684B;">Đã xong 3/4 việc</div>
+</div>
+<svg height="28" style="width: 28px; height: 28px; stroke: #526057; stroke-width: 2.2; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="28"><path d="m9 18 6-6-6-6"></path></svg>
+</div>
+<!-- Thứ Tư 14/10 -->
+<div role="listitem" style="min-height: 72px; width: 100%; min-width: 0; box-sizing: border-box; background-color: #FFFFFF; border: 1.5px solid #DFE5DF; border-radius: 16px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.04);" tabindex="0">
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+<div style="font-size: 22px; font-weight: 700; color: #202B25;">Thứ Tư, 14/10</div>
+<div style="font-size: 20px; font-weight: 600; color: #1F684B;">Đã xong 3/3 việc</div>
+</div>
+<svg height="28" style="width: 28px; height: 28px; stroke: #526057; stroke-width: 2.2; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="28"><path d="m9 18 6-6-6-6"></path></svg>
+</div>
+<!-- Thứ Năm 15/10 -->
+<div role="listitem" style="min-height: 72px; width: 100%; min-width: 0; box-sizing: border-box; background-color: #FFFFFF; border: 1.5px solid #DFE5DF; border-radius: 16px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.04);" tabindex="0">
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+<div style="font-size: 22px; font-weight: 700; color: #202B25;">Thứ Năm, 15/10</div>
+<div style="font-size: 20px; font-weight: 600; color: #1F684B;">Đã xong 2/4 việc</div>
+</div>
+<svg height="28" style="width: 28px; height: 28px; stroke: #526057; stroke-width: 2.2; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="28"><path d="m9 18 6-6-6-6"></path></svg>
+</div>
+<!-- Thứ Sáu 16/10 -->
+<div role="listitem" style="min-height: 72px; width: 100%; min-width: 0; box-sizing: border-box; background-color: #FFFFFF; border: 1.5px solid #DFE5DF; border-radius: 16px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.04);" tabindex="0">
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+<div style="font-size: 22px; font-weight: 700; color: #202B25;">Thứ Sáu, 16/10</div>
+<div style="font-size: 20px; font-weight: 600; color: #1F684B;">Đã xong 4/5 việc</div>
+</div>
+<svg height="28" style="width: 28px; height: 28px; stroke: #526057; stroke-width: 2.2; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="28"><path d="m9 18 6-6-6-6"></path></svg>
+</div>
+<!-- Thứ Bảy 17/10 -->
+<div role="listitem" style="min-height: 72px; width: 100%; min-width: 0; box-sizing: border-box; background-color: #FFFFFF; border: 1.5px solid #DFE5DF; border-radius: 16px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.04);" tabindex="0">
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+<div style="font-size: 22px; font-weight: 700; color: #202B25;">Thứ Bảy, 17/10</div>
+<div style="font-size: 20px; font-weight: 600; color: #1F684B;">Đã xong 2/2 việc</div>
+</div>
+<svg height="28" style="width: 28px; height: 28px; stroke: #526057; stroke-width: 2.2; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="28"><path d="m9 18 6-6-6-6"></path></svg>
+</div>
+<!-- Chủ Nhật 18/10 (Hôm nay / Selected) -->
+<div role="listitem" style="min-height: 72px; width: 100%; min-width: 0; box-sizing: border-box; background-color: #D6EADF; border: 2.5px solid #1F684B; border-radius: 16px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; box-shadow: 0 2px 8px rgba(31,104,75,0.16);" tabindex="0">
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+<div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+<span style="font-size: 22px; font-weight: 700; color: #174C37;">Chủ Nhật, 18/10</span>
+<span style="background-color: #1F684B; color: #FFFFFF; font-size: 20px; font-weight: 700; padding: 2px 10px; border-radius: 8px; line-height: 1.2;">Hôm nay</span>
+</div>
+<div style="font-size: 20px; font-weight: 700; color: #8A5100;">Đã xong 1/3 việc</div>
+</div>
+<svg height="28" style="width: 28px; height: 28px; stroke: #1F684B; stroke-width: 2.8; fill: none; flex-shrink: 0;" viewbox="0 0 24 24" width="28"><path d="m9 18 6-6-6-6"></path></svg>
+</div>
+</div></section>
+</div>
+<!-- Pinned Sticky Primary Action -->
+<footer class="sticky-footer" style="box-sizing: border-box; padding: 16px 20px 20px 20px;">
+<button class="primary-btn" style="width: 320px; height: 60px; max-width: 100%;" type="button">
+<svg viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="M12 5v14"></path>
+</svg>
+<span>Tạo lịch cho mẹ</span>
+</button>
+</footer>
+</main>
+</body>
+</html>

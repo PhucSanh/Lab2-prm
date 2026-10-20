@@ -1,0 +1,261 @@
+{
+  "screen": "G01 Con cháu soạn lịch gợi ý",
+  "round": 4,
+  "score": 61,
+  "errors": 3,
+  "warns": 3,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Các tên việc / mô tả thói quen trong thẻ gợi ý",
+      "evidence": "HTML đặt `.activity-title` và `.activity-subtitle` lần lượt 24 px và 20 px ở viewport, nhưng ảnh 360/412 hiển thị các dòng đó nhỏ hơn đáng kể (khoảng 16 px), trong khi phần còn lại như tiêu đề 32 px khớp gần đúng; chữ trên các thẻ không đạt 20 px theo render.",
+      "fix": "Đặt cỡ chữ thực tế của `.activity-title` và `.activity-subtitle` ít nhất 20 px; bỏ mọi scale làm chúng render nhỏ hơn."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Hai nhóm lựa chọn giờ ở thẻ gợi ý, viewport 360 px",
+      "evidence": "metrics 360: `.time-options` x=42, width=280, mỗi nút x=42 width≈157.7 và x≈207.7 width≈158.3; nút thứ hai kết thúc tại x≈366, vượt mép phone x=360 và bị clip trong ảnh 360. scrollWidth=clientWidth=360 do `.phone-container { overflow-x:hidden }`, không chứng minh nội dung không bị cắt. 412 px thì nút cuối x=374, nằm trong khung.",
+      "fix": "Ở 360 px, làm mỗi nút lựa chọn giờ nằm trọn trong thẻ: đặt `.time-options` width:100%; grid-template-columns: minmax(0,1fr) minmax(0,1fr); đặt nút min-width:0 và giảm padding ngang đủ để tổng 2 nút + gap 8 px không vượt 248 px."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không áp dụng cho màn G01 soạn lịch trên máy người thân: đây không phải thẻ việc đang làm trên màn Hôm nay của người lớn tuổi"
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không áp dụng cho màn G01 soạn lịch trên máy người thân: lệnh cấm áp dụng riêng cho màn Hôm nay"
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Icon radio ở các lựa chọn giờ",
+      "evidence": "Icon trạng thái lựa chọn có kích thước 32 px nhưng là hai vòng tròn tự viết (SVG circle); Từ điển icon chỉ định `circle` cho chưa chọn và `circle-dot` cho đang chọn. Icon cho thư giãn trông như gió, phù hợp `wind`; footprints cho đi bộ đúng nghĩa.",
+      "fix": "Dùng Lucide `circle-dot` 32×32 px cho giờ đang chọn và Lucide `circle` 32×32 px cho giờ chưa chọn."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Các nút chọn giờ ở cả hai thẻ",
+      "evidence": "HTML metrics ghi `.time-option-btn` cao 52 px ở cả 360 và 412; nhưng ảnh 360 cho thấy nút thứ hai bị cắt ở cạnh phải, khiến phần diện tích nhìn thấy/tương tác trong khung nhỏ hơn mục tiêu, còn diện tích theo bounding box vượt khung.",
+      "fix": "Giữ toàn bộ mỗi nút trong vùng nội dung 248 px tại 360 px; đặt cả hai nút tối thiểu 48×48 px sau khi co giãn."
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không áp dụng cho màn G01 soạn lịch trên máy người thân: màn G01 là luồng tạo gợi ý, không phải màn có bottom navigation"
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không áp dụng cho màn G01 soạn lịch trên máy người thân: màn tạo gợi ý chưa có việc trong lịch và không trình bày trạng thái thực hiện"
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không áp dụng cho màn G01 soạn lịch trên máy người thân: màn tạo gợi ý chưa có tiến độ ngày"
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không áp dụng cho màn G01 soạn lịch trên máy người thân: màn G01 không phải màn Hôm nay"
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không áp dụng cho màn G01 soạn lịch trên máy người thân: không có hành động khó đảo ngược trên màn này"
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không áp dụng cho màn G01 soạn lịch trên máy người thân: màn này không hiển thị lỗi nhập"
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không áp dụng cho màn G01 soạn lịch trên máy người thân: G01 không thuộc các màn bắt buộc có nút đọc to (S14, S04, S16, G03)"
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nền ngoài khung điện thoại",
+      "evidence": "HTML `body` computed background is `#ECEEE9`, while R-STY-01 requires `#F6F7F2` app background. The phone interior uses `#F6F7F2`; the differing gray shows as a narrow strip around the frame in both 360 and 412 renders.",
+      "fix": "Đổi `body { background-color: #ECEEE9; }` thành `#F6F7F2`."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Các thẻ việc và nhóm lựa chọn giờ",
+      "evidence": "Ở 360 px, thẻ thứ nhất x=20..340 (lề 20 đúng) nhưng hai nút giờ tràn khung; khoảng cách dọc giữa hai thẻ cũng khoảng 14 px trong ảnh, thấp hơn token 16 px.",
+      "fix": "Đặt khoảng cách `.activities-list` thành 16 px và co nút giờ để vừa bề rộng thẻ 280 px, giữ 8 px gap nội bộ."
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Màn G01 giữ được cấu trúc và nội dung chính, nhưng lựa chọn giờ bị cắt ở viewport 360 px; một số chữ trong thẻ nhỏ trong render và icon radio không theo Lucide đã quy định."
+}

@@ -1,0 +1,289 @@
+{
+  "screen": "C10 Chi tiết việc",
+  "round": 1,
+  "score": 19,
+  "errors": 6,
+  "warns": 7,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nút Đọc to, nút trong hộp xác nhận, và nhãn thanh tab ở cuối trang",
+      "evidence": "HTML metrics cho thấy chữ nút mặc định 13.33 px và nhãn tab 16 px; cả hai nhỏ hơn 20 px.",
+      "fix": "Đặt chữ Đọc to, hai nút xác nhận và 4 nhãn tab ở 20 px trở lên."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút Đọc to",
+      "evidence": "Tiêu đề 30 px và nội dung chính khoảng 24 px, nhưng chữ Đọc to hiện theo kiểu trình duyệt mặc định khoảng 13 px.",
+      "fix": "Đặt chữ Đọc to thành Be Vietnam Pro 22 px, đậm; giữ tiêu đề 30 px và nội dung chính 24 px."
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Mô tả trong hộp xác nhận ngưng lặp",
+      "evidence": "Câu “Lịch nhắc đi bộ lúc 8:00 sáng sẽ không xuất hiện trong các tuần tới nữa.” có 16 tiếng, vượt giới hạn 15.",
+      "fix": "Rút câu còn tối đa 15 tiếng, ví dụ: “Lịch đi bộ lúc 8:00 sáng sẽ dừng từ tuần tới.”"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Thẻ tóm tắt việc đi bộ",
+      "evidence": "Thẻ có tên việc và trạng thái, nhưng phần phụ gồm tên thói quen, giờ/thời lượng, và lịch lặp thành ba dòng thông tin phụ.",
+      "fix": "Giữ tối đa một dòng phụ trong thẻ; gộp chi tiết lịch vào một dòng hoặc chuyển phần lịch lặp ra ngoài thẻ."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn Chi tiết việc, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Icon trong 4 tab điều hướng",
+      "evidence": "Tab Hôm nay dùng hình điện thoại, tab Thói quen dùng footprints trùng nghĩa với thói quen Vận động tự nhiên, và tab Gia đình dùng trái tim; các hình này không khớp từ điển icon đã quy định.",
+      "fix": "Dùng sun 32 px cho Hôm nay, calendar-days 32 px cho Lịch tuần, leaf 32 px cho Thói quen, và hand-heart 32 px cho Gia đình."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nút Đọc to, nút xác nhận/hủy, và vùng chạm tab",
+      "evidence": "Các control dùng kiểu trình duyệt mặc định; metrics cho thấy nút xác nhận cao 19 px, nút Đọc to thấp hơn 48 px, và tab chỉ có vùng nhãn 20 px.",
+      "fix": "Đặt mỗi vùng chạm ít nhất 48 × 48 px; làm nút Đọc to và hai nút xác nhận cao tối thiểu 48 px, mỗi tab có khung chạm tối thiểu 48 × 48 px."
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Thanh điều hướng dưới",
+      "evidence": "Ảnh viewport không hiện thanh tab ở đáy; ảnh toàn trang đặt các liên kết sau nội dung ở cuối tài liệu, không có thanh nền/cố định. Nhãn cũng hiển thị theo kiểu liên kết mặc định.",
+      "fix": "Đặt thanh điều hướng cố định ở đáy cao 72 px, có đúng 4 tab icon + nhãn 20 px: Hôm nay, Lịch tuần, Thói quen, Gia đình."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "fail",
+      "where": "Các trạng thái Đã xong và Chưa làm trong lịch sử",
+      "evidence": "Các dòng Đã xong chỉ có dấu kiểm và chữ xanh trên nền trắng, không phải chip xanh đậm chữ trắng; trạng thái Chưa làm trong lịch sử cũng không có viền vàng đậm như quy định.",
+      "fix": "Đổi Đã xong thành chip nền #1F684B chữ trắng; đặt Chưa làm trong chip viền #B26A00 và giữ icon vòng tròn cùng nhãn."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn Chi tiết việc, không phải màn Hôm nay có tiến độ tổng ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn Chi tiết việc, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Hộp xác nhận ngưng lặp",
+      "evidence": "Hộp hỏi lại không được trình bày như hộp thoại phủ màn; trong ảnh toàn trang nội dung nằm dưới danh sách, căn trái và các nút hiện kiểu mặc định.",
+      "fix": "Ẩn hộp xác nhận cho tới khi mở; khi mở, đặt hộp 320 px giữa màn theo cả hai chiều, với nội dung và nút nằm trong thẻ nền trắng."
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút Ngưng lặp lại và hộp xác nhận",
+      "evidence": "Nút chỉ thêm class active nhưng không có kiểu ẩn/hiện cho hộp thoại; hộp xác nhận vốn đã nằm thường trực dưới nội dung nên thao tác không tạo một bước xác nhận rõ ràng trước khi dừng lịch.",
+      "fix": "Ẩn hộp thoại mặc định; khi chạm Ngưng lặp lại, mở hộp thoại phủ màn với hai nút riêng Hủy và Ngưng việc này, mỗi nút cao ít nhất 48 px."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn không có trường nhập liệu hoặc lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Thông báo đồng thuận và hộp xác nhận",
+      "evidence": "Nội dung dùng “Mẹ đã nhận” và “mẹ chọn chia sẻ”, còn câu trong hộp hỏi lại chuyển sang xưng “Bác”.",
+      "fix": "Thống nhất cách xưng hô trên màn; ví dụ đổi thành “Bác đã nhận ngày 16/10”, “Chỉ hiện thông tin Bác chọn chia sẻ”, và giữ “Bác có thể tạo lại bất cứ lúc nào.”"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "fail",
+      "where": "Nút Đọc to, hộp xác nhận, và thanh tab cuối trang",
+      "evidence": "Các thành phần này đang dùng màu mặc định của trình duyệt: nút xám nhạt, chữ đen và liên kết xanh; chúng không theo các màu giao diện đã định nghĩa.",
+      "fix": "Tạo kiểu cho các control bằng nền #FFFFFF hoặc #F6F7F2, chữ #202B25, nút chính #1F684B và nhãn tab theo màu chữ #526057/#1F684B."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Nút Đọc to và các nút trong hộp xác nhận",
+      "evidence": "Các nút này hiển thị dạng control mặc định hình chữ nhật, không dùng Be Vietnam Pro và không bo góc 14 px như nút trong màn.",
+      "fix": "Dùng Be Vietnam Pro cho mọi nút và bo góc 14 px; đặt nút Đọc to cao 48–60 px và các nút xác nhận cao tối thiểu 48 px."
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [
+    "R-VOI-01"
+  ],
+  "regressions": [
+    "R-TXT-01",
+    "R-TXT-02",
+    "R-TXT-03",
+    "R-ICON-03",
+    "R-TAP-01",
+    "R-CEN-01",
+    "R-LANG-02",
+    "R-STY-01",
+    "R-STY-02"
+  ],
+  "summary": "Màn đã có nút Đọc to nhưng nhiều thành phần mới vẫn rơi về kiểu trình duyệt mặc định; nav chưa cố định, trạng thái lịch sử và hộp xác nhận chưa theo quy chuẩn."
+}

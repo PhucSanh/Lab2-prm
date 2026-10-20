@@ -1,0 +1,1 @@
+Edit C06e from its best reviewed screen to fix only the remaining guidance warning. Make the exact time-error copy: “Chọn giờ, ví dụ 8 giờ sáng, để nhắc mẹ đúng lúc.” Keep the error icon 32px, the other exact name validation message, empty/unset field state, selected habit, duration, one “Tiếp tục” CTA, 360/412 layout and all correct design styling.

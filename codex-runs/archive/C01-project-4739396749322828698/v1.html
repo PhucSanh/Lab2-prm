@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>C01 - Chọn vai trò | An Nhiên</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F6F7F2;
+      color: #202B25;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+
+    /* Khung thiết bị Android chuẩn 360x800dp và co giãn responsive đến 412px */
+    .app-viewport {
+      width: 100%;
+      max-width: 412px;
+      min-height: 800px;
+      background-color: #F6F7F2;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 24px 20px 20px 20px;
+    }
+
+    /* Phần đầu: Logo và Tên thương hiệu An Nhiên */
+    .brand-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 12px;
+      margin-bottom: 24px;
+      gap: 12px;
+    }
+
+    .brand-logo-badge {
+      width: 56px;
+      height: 56px;
+      background-color: #1F684B;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1F684B;
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+    }
+
+    /* Tiêu đề chính màn hình */
+    .main-heading {
+      font-size: 30px;
+      font-weight: 700;
+      color: #202B25;
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 28px;
+      max-width: 320px;
+      align-self: center;
+    }
+
+    /* Khu vực lựa chọn vai trò */
+    .choices-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    /* Thẻ radio lựa chọn */
+    .role-card {
+      width: 100%;
+      min-height: 130px;
+      border-radius: 16px;
+      padding: 18px 18px 18px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      cursor: pointer;
+      text-align: left;
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .role-card:active {
+      transform: scale(0.985);
+    }
+
+    /* Trạng thái đã chọn */
+    .role-card.selected {
+      background-color: #D6EADF;
+      border: 2px solid #1F684B;
+    }
+
+    .radio-icon-wrapper {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .role-title {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: #202B25;
+      margin-bottom: 6px;
+    }
+
+    .role-card.selected .role-title {
+      color: #174C37;
+    }
+
+    .role-desc {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #526057;
+      margin-bottom: 8px;
+    }
+
+    .role-card.selected .role-desc {
+      color: #202B25;
+    }
+
+    /* Huy hiệu văn bản rõ ràng: không chỉ dựa vào màu sắc */
+    .status-badge {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1F684B;
+      display: inline-flex;
+      align-items: center;
+      margin-top: 2px;
+    }
+
+    /* Đệm dưới để không bị che bởi nút cố định */
+    .bottom-spacer {
+      flex-grow: 1;
+      min-height: 24px;
+    }
+
+    /* Khu vực nút bấm Tiếp tục ở cuối màn hình */
+    .action-container {
+      width: 100%;
+      padding-top: 12px;
+      padding-bottom: 8px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn-continue {
+      width: 100%;
+      max-width: 320px;
+      height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      box-shadow: none;
+      transition: background-color 0.15s ease, transform 0.1s ease;
+    }
+
+    .btn-continue:active {
+      background-color: #174C37;
+      transform: scale(0.98);
+    }
+
+    .btn-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+<main class="app-viewport">
+<!-- Phần nhận diện thương hiệu An Nhiên -->
+<header class="brand-header" style="margin-bottom: 16px;">
+<div aria-label="Biểu trưng An Nhiên" class="brand-logo-badge">
+<!-- Lucide Leaf SVG (2.5 stroke) -->
+<svg fill="none" height="34" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="34" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+<path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+</svg>
+</div>
+<div class="brand-name">An Nhiên</div>
+</header>
+<!-- Câu hỏi định hướng vai trò sử dụng -->
+<h1 class="main-heading" style="margin-bottom: 16px;">Ai đang dùng máy này?</h1>
+<!-- Danh sách lựa chọn vai trò -->
+<div aria-label="Chọn người sử dụng máy này" class="choices-container" role="radiogroup" style="margin-bottom: 16px;">
+<!-- Thẻ 1: Người lớn tuổi (Mặc định chọn) -->
+<div aria-checked="true" class="role-card selected" id="optionElderly" onclick="selectRole('elderly')" role="radio" tabindex="0">
+<div class="radio-icon-wrapper" id="iconElderly">
+<!-- Lucide Circle-Dot cho trạng thái Đang chọn -->
+<svg fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+<circle cx="12" cy="12" fill="#1F684B" r="4"></circle>
+</svg>
+</div>
+<div class="card-content">
+<h2 class="role-title">Tôi là người lớn tuổi</h2>
+<p class="role-desc">Tự xem và làm theo lịch</p>
+<div class="status-badge" id="badgeElderly">Đang chọn</div>
+</div>
+</div>
+<!-- Thẻ 2: Con cháu gửi gợi ý -->
+<div aria-checked="false" class="role-card" id="optionFamily" onclick="selectRole('family')" role="radio" tabindex="0">
+<div class="radio-icon-wrapper" id="iconFamily">
+<!-- Lucide Circle cho trạng thái Chưa chọn -->
+<svg fill="none" height="32" stroke="#7B887F" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+</svg>
+</div>
+<div class="card-content">
+<h2 class="role-title">Tôi là con, cháu</h2>
+<p class="role-desc">Gửi lịch gợi ý cho người thân</p>
+<div class="status-badge" id="badgeFamily" style="display: none;">Đang chọn</div>
+</div>
+</div>
+</div>
+<!-- Khoảng cách đàn hồi -->
+<div class="bottom-spacer"></div>
+<!-- Nút hành động chính Tiếp tục -->
+<footer class="action-container">
+<button aria-label="Tiếp tục sang bước tiếp theo" class="btn-continue" onclick="handleContinue()" type="button">
+<span>Tiếp tục</span>
+<span class="btn-icon">
+<!-- Lucide Arrow Right SVG -->
+<svg fill="none" height="32" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 12h14"></path>
+<path d="m12 5 7 7-7 7"></path>
+</svg>
+</span>
+</button>
+</footer>
+</main>
+<script>
+    let currentRole = 'elderly';
+
+    const circleDotSvg = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F684B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <circle cx="12" cy="12" r="4" fill="#1F684B"/>
+      </svg>
+    `;
+
+    const circleOutlineSvg = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7B887F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+      </svg>
+    `;
+
+    function selectRole(role) {
+      currentRole = role;
+      const cardElderly = document.getElementById('optionElderly');
+      const cardFamily = document.getElementById('optionFamily');
+      const iconElderly = document.getElementById('iconElderly');
+      const iconFamily = document.getElementById('iconFamily');
+      const badgeElderly = document.getElementById('badgeElderly');
+      const badgeFamily = document.getElementById('badgeFamily');
+
+      if (role === 'elderly') {
+        cardElderly.classList.add('selected');
+        cardElderly.setAttribute('aria-checked', 'true');
+        iconElderly.innerHTML = circleDotSvg;
+        badgeElderly.style.display = 'inline-flex';
+
+        cardFamily.classList.remove('selected');
+        cardFamily.setAttribute('aria-checked', 'false');
+        iconFamily.innerHTML = circleOutlineSvg;
+        badgeFamily.style.display = 'none';
+      } else {
+        cardFamily.classList.add('selected');
+        cardFamily.setAttribute('aria-checked', 'true');
+        iconFamily.innerHTML = circleDotSvg;
+        badgeFamily.style.display = 'inline-flex';
+
+        cardElderly.classList.remove('selected');
+        cardElderly.setAttribute('aria-checked', 'false');
+        iconElderly.innerHTML = circleOutlineSvg;
+        badgeElderly.style.display = 'none';
+      }
+    }
+
+    function handleContinue() {
+      if (currentRole === 'elderly') {
+        console.log('Chuyển tiếp đến màn hình S01 (Người lớn tuổi)');
+      } else {
+        console.log('Chuyển tiếp đến màn hình C02 (Gia đình / Con cháu)');
+      }
+    }
+
+    // Hỗ trợ chọn bằng phím Enter hoặc Space
+    document.querySelectorAll('.role-card').forEach(card => {
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

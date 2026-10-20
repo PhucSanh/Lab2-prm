@@ -1,0 +1,261 @@
+{
+  "screen": "C01 Chọn vai trò",
+  "round": 0,
+  "score": 97,
+  "errors": 0,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Chữ thực hiển thị có CSS 20px (mô tả, trạng thái), 22px (nút), 24px (vai trò, thương hiệu), 30px (tiêu đề). Font 16px của container không chứa text node trực tiếp."
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Tính WCAG từ CSS: #526057 trên #FFFFFF 6.63:1; #174C37 trên #D6EADF 7.85:1; #202B25 trên #D6EADF 11.64:1; #1F684B trên #D6EADF 5.32:1; trắng trên primary 6.69:1."
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Viền control #7B887F trên trắng 3.70:1; selected #1F684B trên #D6EADF 5.32:1."
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Chromium tại 360×800: scrollWidth=clientWidth=360, hai thẻ x20 rộng320; chữ không bị cắt. Bản412px cũng scrollWidth=clientWidth=412."
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Câu dài nhất 7 tiếng: Gửi lịch gợi ý cho người thân. DOM360: mô tả đầu1 dòng, mô tả sau2 dòng; không đoạn quá2 dòng."
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Nhãn Tiếp tục2 tiếng; hai nhãn chọn vai trò lần lượt5 và4 tiếng; không có tab hoặc tên thói quen."
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "C01 chọn vai trò, không có thẻ việc."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass",
+      "evidence": "SVG circle-dot và circle đúng nghĩa lựa chọn, 32px; arrow-right đúng Tiếp tục, 32px. Logo lá là nhận diện được miễn kiểm icon."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có thẻ việc hoặc thói quen; hai thẻ là lựa chọn vai trò."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "n/a",
+      "evidence": "Không hiển thị 9 thói quen."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "DOM360: thẻ320×180.78 và320×146.39; nút320×60. Các icon radio thuộc vùng chạm toàn thẻ."
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Hai thẻ radio có nhãn vai trò nhìn thấy; arrow-right đi kèm Tiếp tục."
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "C01 là màn gốc chọn vai trò trước onboarding, chưa có bottom nav."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn gốc không có màn trước hoặc nút Back."
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có việc cần hiển thị trạng thái thực hiện."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có tiến độ ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Chỉ chọn vai trò và tiếp tục; không có hành động khó đảo ngược."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có ô nhập hoặc trạng thái lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "C01 không thuộc S14, S04, S16 hoặc G03."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Hai lựa chọn tự xưng Tôi nhất quán; nút Tiếp tục là động từ cụ thể, không OK/Có/Không."
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "Chữ hiển thị không chứa các cụm từ mục5 Tránh dùng; người lớn tuổi không thuộc danh sách cấm."
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass",
+      "evidence": "CSS dùng đúng nền #F6F7F2, thẻ #FFFFFF, chữ #202B25/#526057, primary #1F684B và tonal #D6EADF/#174C37."
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Khoảng cách giữa thương hiệu, câu hỏi và nhóm lựa chọn",
+      "evidence": "CSS brand-header margin-bottom24px; main-heading margin-bottom28px; choices-container margin-bottom20px. DOM360 câu hỏi kết thúc y234.80, thẻ đầu bắt đầu y262.80: cách28px, khác token16px.",
+      "fix": "Đặt margin-bottom của .brand-header, .main-heading và .choices-container thành16px; giữ padding ngang20px và gap hai thẻ16px."
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "C01 đọc rõ, chọn vai trò và tiếp tục dễ chạm; còn khoảng cách giữa các khối chưa theo token16px."
+}

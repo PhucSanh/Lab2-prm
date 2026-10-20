@@ -1,0 +1,28 @@
+{
+  "screen": "G07b",
+  "title": "Đã nhận một việc · nhánh B",
+  "status": "CONVERGED",
+  "project_id": "2013215887278758682",
+  "round": 1,
+  "screen_id": "6cbb3a14aa194593939bd3561a19e335",
+  "parent_screen_id": "35a72921269b4c1d934a16f6f95d3b72",
+  "best_round": 1,
+  "best_screen_id": "6cbb3a14aa194593939bd3561a19e335",
+  "best_score": 100,
+  "patience": 0,
+  "pending_operation_id": null,
+  "stop_reason": "score_100",
+  "canvas_row": 28,
+  "stage": "awaiting_review",
+  "delivery_status": "API_CANVAS_MEMBERSHIP_VERIFIED_UI_UNCONFIRMED",
+  "provenance": {
+    "source_screen": "G07",
+    "source_screen_id": "ef2e4cef6df04d8fbadaee5239b862cf",
+    "source_project_id": "2013215887278758682",
+    "source_best_round": 1,
+    "task_branch_inference": "G07b accepts relaxation; G07 accepts walking"
+  },
+  "updated_at": "2026-10-19T08:06:26.130109+00:00",
+  "prompt_path": "/data/qtram/FPT_UNI/K8_FU_26FA/Lab2-prm/codex-runs/G07b/v0-edit-prompt.txt",
+  "last_processed_round": 1
+}

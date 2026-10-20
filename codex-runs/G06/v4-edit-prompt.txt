@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-ICON-03: Make the existing Lucide `clock` time icon clearly legible at 32×32px by using a 2px stroke and the defined on-surface color #202B25; keep the exact `clock` icon shape and meaning.
+Preserve the two habit accent colors, unchecked choices, bottom navigation above the pinned “Tiếp tục” action, and consent notice. Generate a new screen and preserve G06 v3 unchanged.

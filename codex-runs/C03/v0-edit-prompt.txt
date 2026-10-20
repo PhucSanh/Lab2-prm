@@ -1,0 +1,57 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. [R-ICON-03] Replace the three habit SVGs with the exact official Lucide utensils, footprints and coffee SVGs below; set actual rendered size32x32px, stroke2.2, white inside existing colored48px tiles. Do not approximate paths or draw a connecting line between the two footprints. Keep circle-check24px only for "Đã xong" and circle24px for "Chưa làm".
+2. [R-STY-03] Keep the Ngày/Tuần/Tháng radio selector inside20px screen margins at360px. Use grid-template-columns:repeat(3,minmax(0,1fr));min-width:0 on children;padding-inline:2px;gap between icon and label4px;32px icons and20px labels. Preserve8px between interactive options. The last choice must end atx340 or less, notx358.
+3. [R-STY-03] Set main CTA width:100% inside a footer with20px horizontal padding, and remove its max-width320px cap:320px wide at360 viewport,372px at412 viewport. Preserve60px height and14px radius, keep footer below content with adequate scroll padding. Preserve all other content/colors. Generate a new screen version, do not overwrite source.
+
+utensils (official Lucide SVG; keep path data exact):
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+  <path d="M7 2v20" />
+  <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+</svg>
+
+footprints (official Lucide SVG; keep path data exact):
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z" />
+  <path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z" />
+  <path d="M16 17h4" />
+  <path d="M4 13h4" />
+</svg>
+
+coffee (official Lucide SVG; keep path data exact):
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 2v2" />
+  <path d="M14 2v2" />
+  <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" />
+  <path d="M6 2v2" />
+</svg>

@@ -1,0 +1,7 @@
+Apply the G04 design edits directly to the selected best G03 screen. The user has authorized creating the screen now; do not return a plan or ask for confirmation. Return a new screen artifact.
+- Change title to “Đổi giờ đi bộ”. Keep Mai’s sender message and the visible “Đọc to” control.
+- In the walking card, show two large radio options: “8:00 sáng” unselected and “9:00 sáng” selected. Use circle/circle-dot, 32px. Keep the other activity at 10:00 sáng.
+- Keep consent copy that the calendar is unchanged until Bác accepts.
+- Primary action: “Lưu giờ mới”. Secondary: “Quay lại”. Keep the 4-tab navigation, task status chips and all design tokens/icons.
+- All text >=20px, targets >=48px, gaps >=8px, no content/footer overlap at 360×800/412px.
+Create a new G04 screen in the project and preserve the original G03 unchanged.

@@ -1,0 +1,27 @@
+{
+  "projectId": "2013215887278758682",
+  "sessionId": "2945020230291831244",
+  "outputComponents": [
+    {
+      "design": {
+        "screens": [
+          {
+            "name": "projects/2013215887278758682/screens/0045bb0a4a054d08b31f95b83fb5a0e4",
+            "id": "0045bb0a4a054d08b31f95b83fb5a0e4",
+            "title": "An Nhiên - N03 Chưa nhận lời nhắc",
+            "width": "780",
+            "height": "1778",
+            "deviceType": "MOBILE",
+            "screenshot": {
+              "name": "projects/2013215887278758682/files/3139c816a22b4d7e9a215065afc1867b"
+            },
+            "htmlCode": {
+              "name": "projects/2013215887278758682/files/69a434c8650a4a10b51dc2bc75976021",
+              "mimeType": "text/html"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

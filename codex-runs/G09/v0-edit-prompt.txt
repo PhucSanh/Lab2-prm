@@ -1,0 +1,5 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-STA-01: For both skipped suggestions, replace “Chưa thêm vào lịch” with the approved status “✕ Bỏ qua”, and place each status chip beside its task name. Preserve the clear overall result that neither activity entered the calendar and keep the “Hoàn tác” action visible.
+2. R-ICON-03: Replace the Gia đình bottom-nav icon `handshake` with the exact Lucide `hand-heart` at 32×32px, with visible “Gia đình” label.
+3. R-STY-03: Set the gap between content blocks and between the two action buttons to 16px; keep 20px screen margins.
+Preserve all other content, colors, text and layout. Generate a new screen and preserve G09 v0 unchanged.

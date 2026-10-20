@@ -1,0 +1,8 @@
+Keep the overall layout and all content not mentioned below unchanged. Fix the reviewed issues:
+1. Use the exact habit names “Vận động tự nhiên” for the walking card and “Thư giãn mỗi ngày” for the rest card. Keep task names “Đi bộ nhẹ nhàng” / “Thư giãn nhẹ nhàng” as separate labels if space allows.
+2. Remove the standalone explanatory advice paragraph under the two cards.
+3. Add a labeled warning status chip “○ Chưa làm” to each card, with warning colors and 24px+ circle icon, so each item has a visible state.
+4. Replace the success badge’s circle-check icon with a non-conflicting documented icon, or remove that icon; circle-check is reserved for completed tasks.
+5. Add the required fixed four-tab bottom navigation: Hôm nay, Lịch tuần, Thói quen, Gia đình, each with documented Lucide 32px icon and visible 20px label. Keep it above the device bottom safe area.
+6. Change the top back control label to “Quay lại” or “Quay lại Gia đình” with a left arrow and full 48px target.
+Preserve the one primary “Xem lịch ngày mai” action and existing confirmation text. Keep all text >=20px, controls >=48px, gaps >=8px, and prevent overlap between content, CTA and bottom navigation at 360×800 and 412px. Generate the new edited screen now.

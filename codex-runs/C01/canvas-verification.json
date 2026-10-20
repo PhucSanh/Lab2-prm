@@ -1,0 +1,15 @@
+{
+  "project_id": "2013215887278758682",
+  "screen_id": "720a85a3a0254afa9cbc1a32825ce93c",
+  "canvas_instance": {
+    "id": "720a85a3a0254afa9cbc1a32825ce93c",
+    "sourceScreen": "projects/2013215887278758682/screens/720a85a3a0254afa9cbc1a32825ce93c",
+    "y": -2304,
+    "width": 1280,
+    "height": 1024,
+    "label": "An Nhiên - Chọn vai trò"
+  },
+  "existing_screens_unchanged": true,
+  "total_instances": 44,
+  "ui_confirmed": false
+}

@@ -1,0 +1,251 @@
+{
+  "screen": "N08 Cách dùng đơn giản",
+  "round": 0,
+  "score": 87,
+  "errors": 1,
+  "warns": 1,
+  "results": [
+    {
+      "rule": "R-TXT-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-CON-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LAY-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-03",
+      "level": "error",
+      "check": "auto",
+      "status": "fail",
+      "where": "Các mô tả dưới bước 1 và bước 2 trong thẻ hướng dẫn",
+      "evidence": "Ở viewport 360 px, ‘Bác chọn một việc nhỏ quen thuộc để bắt đầu ngày mới nhẹ nhàng.’ và ‘Ứng dụng đổ chuông êm và đọc tên việc đúng giờ Bác đã chọn.’ đều chiếm 4 dòng theo metrics; quy tắc giới hạn đoạn văn ở 2 dòng.",
+      "fix": "Rút mỗi mô tả còn tối đa 2 dòng ở 360 px, ví dụ: ‘Bác chọn việc quen thuộc.’ và ‘An Nhiên nhắc Bác đúng giờ.’"
+    },
+    {
+      "rule": "R-TXT-04",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TXT-05",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là ba thẻ hướng dẫn theo bước, không phải thẻ việc; không có việc được lập lịch hay trạng thái việc."
+    },
+    {
+      "rule": "R-TXT-06",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây là màn hướng dẫn ‘Cách dùng đơn giản’, không phải màn Hôm nay."
+    },
+    {
+      "rule": "R-ICON-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "fail",
+      "where": "Các icon ở tiêu đề, bước 1, bước 3 và nút ‘Mở cài đặt’",
+      "evidence": "HTML dùng các hình book/open-book, check-square, hand-heart và settings; các nghĩa/tên này không có trong từ điển icon của DESIGN.md. Icon hand-heart cũng được quy định riêng cho tab Gia đình, còn icon bell-ring trong bước 2 được gắn nghĩa ‘Bật nhắc’, không phải nhắc việc.",
+      "fix": "Dùng icon có tên trong từ điển và đúng nghĩa: tiêu đề có thể bỏ icon; thay biểu tượng hoàn thành ở bước 1 bằng circle-check chỉ nếu nghĩa là ‘Đã xong’ (nếu không có icon khớp, dùng số bước, không thêm icon); thay hand-heart bằng info nếu thể hiện gợi ý, và thay settings bằng smartphone nếu chỉ thao tác trên điện thoại; dùng bell cho lời nhắc ở bước 2."
+    },
+    {
+      "rule": "R-COL-02",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Các thẻ là bước hướng dẫn, không đại diện cho thẻ việc hoặc thói quen nên không áp dụng ô icon màu thói quen và vạch màu trái."
+    },
+    {
+      "rule": "R-COL-03",
+      "level": "warn",
+      "check": "auto",
+      "status": "n/a",
+      "evidence": "Màn không hiển thị thẻ việc hoặc thói quen thuộc 9 nhóm màu nhấn."
+    },
+    {
+      "rule": "R-COL-04",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-COL-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-TAP-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ICON-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-NAV-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn hướng dẫn không có bottom navigation; đây không phải màn có thanh tab."
+    },
+    {
+      "rule": "R-NAV-02",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-GES-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STA-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có thẻ việc hoặc trạng thái hoàn thành/chưa làm trên màn hướng dẫn."
+    },
+    {
+      "rule": "R-STA-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Màn hướng dẫn không trình bày danh sách việc trong ngày hay tiến độ ngày."
+    },
+    {
+      "rule": "R-ONE-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-ONE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Quy tắc chỉ áp dụng cho màn Hôm nay; đây là màn hướng dẫn."
+    },
+    {
+      "rule": "R-CEN-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-SAFE-01",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có thao tác xóa, đánh dấu xong hoặc ngưng lặp."
+    },
+    {
+      "rule": "R-SAFE-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Không có biểu mẫu nhập liệu hoặc trạng thái lỗi nhập."
+    },
+    {
+      "rule": "R-VOI-01",
+      "level": "error",
+      "check": "ai",
+      "status": "n/a",
+      "evidence": "Đây không phải màn lời nhắc S14, chi tiết việc S04, chi tiết thói quen S16 hoặc gợi ý người thân G03."
+    },
+    {
+      "rule": "R-LANG-01",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-02",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-LANG-03",
+      "level": "error",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-VOC-01",
+      "level": "error",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-01",
+      "level": "warn",
+      "check": "auto",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-02",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    },
+    {
+      "rule": "R-STY-03",
+      "level": "warn",
+      "check": "ai",
+      "status": "pass"
+    }
+  ],
+  "fixed": [],
+  "regressions": [],
+  "summary": "Màn dễ đọc và cân đối; cần rút gọn mô tả hai bước ở viewport 360 px và chỉnh các icon về đúng từ điển."
+}

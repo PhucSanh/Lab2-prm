@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>An Nhiên - C09 Đã gửi cho mẹ</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #F6F7F2;
+      color: #202B25;
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.4;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Khung ứng dụng Android 360dp - 412dp chuẩn thiết bị */
+    .app-viewport {
+      width: 100%;
+      max-width: 412px;
+      min-height: 100vh;
+      background-color: #F6F7F2;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Header chuẩn An Nhiên */
+    .header-bar {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px 8px 20px;
+      position: relative;
+      min-height: 56px;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: transparent;
+      border: none;
+      color: #1F684B;
+      font-family: inherit;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      min-height: 48px;
+      min-width: 48px;
+      padding: 4px 8px 4px 0;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .btn-back svg {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      min-height: 32px;
+      stroke: #1F684B;
+    }
+
+    /* Nội dung trung tâm */
+    .content-area {
+      flex: 1;
+      padding: 16px 20px 180px 20px; /* Chừa đủ khoảng trống phía dưới cho 2 nút cố định */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Tiêu đề chính 30px bold */
+    .screen-heading {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #202B25;
+      margin-top: 12px;
+      margin-bottom: 24px;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* Biểu tượng điện thoại thông điệp */
+    .context-icon-container {
+      width: 72px;
+      height: 72px;
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .context-icon-container svg {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      min-height: 32px;
+      stroke: #1F684B;
+    }
+
+    /* Thẻ trạng thái Đang chờ mẹ nhận */
+    .status-card {
+      width: 100%;
+      background-color: #FFFFFF;
+      border: 2px solid #7B887F;
+      border-radius: 16px;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .status-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #202B25;
+    }
+
+    .status-badge svg {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      min-height: 32px;
+      stroke: #1F684B;
+    }
+
+    .status-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1F684B;
+      line-height: 1.3;
+    }
+
+    .status-meta-box {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 100%;
+      border-top: 1px solid #DFE5DF;
+      padding-top: 12px;
+    }
+
+    .status-meta-line {
+      font-size: 20px;
+      color: #526057;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* Khối giải thích sự tự chủ của mẹ */
+    .explanation-box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      padding: 20px 16px;
+      border: 1px solid #DFE5DF;
+      text-align: left;
+    }
+
+    .explanation-p1 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #202B25;
+      line-height: 1.45;
+    }
+
+    .explanation-p2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #526057;
+      line-height: 1.45;
+    }
+
+    /* Khung chân trang cố định chứa 2 nút hành động dọc */
+    .sticky-footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 412px;
+      padding: 16px 20px calc(16px + env(safe-area-inset-bottom, 0px)) 20px;
+      background-color: #F6F7F2;
+      border-top: 1px solid #DFE5DF;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 50;
+    }
+
+    /* Nút chính Về lịch của mẹ */
+    .btn-primary {
+      width: 100%;
+      height: 60px;
+      min-height: 60px;
+      background-color: #1F684B;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(31, 104, 75, 0.2);
+    }
+
+    .btn-primary:active {
+      background-color: #164e38;
+    }
+
+    .btn-primary svg {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      min-height: 32px;
+      stroke: #FFFFFF;
+    }
+
+    /* Nút phụ Tạo thêm việc */
+    .btn-secondary {
+      width: 100%;
+      height: 60px;
+      min-height: 60px;
+      background-color: #FFFFFF;
+      color: #1F684B;
+      border: 2px solid #7B887F;
+      border-radius: 14px;
+      font-family: inherit;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .btn-secondary:active {
+      background-color: #EBF3ED;
+    }
+
+    .btn-secondary svg {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      min-height: 32px;
+      stroke: #1F684B;
+    }
+  </style>
+</head>
+<body>
+<div class="app-viewport">
+<!-- Header: Quay lại -->
+<header class="header-bar">
+<button aria-label="Quay lại" class="btn-back" type="button">
+<!-- Lucide chevron-left 32px stroke 2.5 -->
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+<span>Quay lại</span>
+</button>
+</header>
+<!-- Khu vực nội dung trung tâm -->
+<main class="content-area" style="padding-bottom: 240px;">
+<!-- Tiêu đề màn hình 30px căn giữa -->
+<h1 class="screen-heading">Đã gửi cho mẹ</h1>
+<!-- Biểu tượng điện thoại bối cảnh 32px Lucide smartphone trong khung 72x72px -->
+<div aria-hidden="true" class="context-icon-container">
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<rect height="20" rx="2" ry="2" width="14" x="5" y="2"></rect>
+<path d="M12 18h.01"></path>
+</svg>
+</div>
+<!-- Thẻ trạng thái Đang chờ mẹ nhận -->
+<section aria-label="Trạng thái lịch gửi" class="status-card">
+<div class="status-badge"><svg aria-hidden="true" fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="status-title">Đang chờ mẹ nhận</span></div>
+<div class="status-meta-box">
+<p class="status-meta-line">Gửi lúc 16:20</p>
+<p class="status-meta-line">Mẹ chưa xem</p>
+</div>
+</section>
+<!-- Khối diễn giải tôn trọng sự tự chủ của mẹ -->
+<div class="explanation-box">
+<p class="explanation-p1">Mẹ chọn nhận trước khi thêm vào lịch.</p>
+<p class="explanation-p2">Lịch chưa đổi trên máy của mẹ.</p>
+</div>
+</main>
+<!-- Chân trang cố định 2 nút hành động dọc -->
+<footer class="sticky-footer" style="position: fixed; bottom: 76px; left: 50%; transform: translateX(-50%); width: 100%; max-width: 412px; padding: 12px 20px; background-color: #F6F7F2; border-top: 1px solid #DFE5DF; display: flex; flex-direction: column; gap: 12px; z-index: 50;">
+<button class="btn-primary" type="button">
+<!-- Lucide arrow-right 32px stroke 2.5 -->
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 12h14"></path>
+<path d="m12 5 7 7-7 7"></path>
+</svg>
+<span>Về lịch của mẹ</span>
+</button>
+<button class="btn-secondary" type="button">
+<!-- Lucide plus 32px stroke 2.5 -->
+<svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 12h14"></path>
+<path d="M12 5v14"></path>
+</svg>
+<span>Tạo thêm việc</span>
+</button>
+</footer><nav aria-label="Điều hướng chính" class="bottom-nav" style="position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 412px; height: 76px; min-height: 76px; background-color: #FFFFFF; border-top: 1px solid #DFE5DF; display: flex; align-items: center; justify-content: space-around; z-index: 60; padding: 6px 4px; box-sizing: border-box;"><a href="#" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; text-decoration: none; color: #526057; min-height: 48px; border-radius: 8px;"><svg fill="none" height="32" stroke="#526057" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg><span style="font-size: 20px; font-weight: 600; color: #526057; white-space: nowrap;">Hôm nay</span></a><a href="#" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; text-decoration: none; color: #526057; min-height: 48px; border-radius: 8px;"><svg fill="none" height="32" stroke="#526057" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="2" width="18" x="3" y="4"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg><span style="font-size: 20px; font-weight: 600; color: #526057; white-space: nowrap;">Lịch tuần</span></a><a href="#" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; text-decoration: none; color: #526057; min-height: 48px; border-radius: 8px;"><svg fill="none" height="32" stroke="#526057" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg><span style="font-size: 20px; font-weight: 600; color: #526057; white-space: nowrap;">Thói quen</span></a><a aria-current="page" href="#" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; text-decoration: none; color: #1F684B; min-height: 48px; border-radius: 8px;"><svg fill="none" height="32" stroke="#1F684B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"></path><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"></path><path d="m2 15 6 6"></path><path d="M19.5 8.5c.7-.7 1.5-1.1 2.5-1.1a3 3 0 0 1 3 3c0 1-.4 1.8-1.1 2.5L20 16.8 16.1 12.9c-.7-.7-1.1-1.5-1.1-2.5a3 3 0 0 1 3-3c1 0 1.8.4 2.5 1.1z"></path></svg><span style="font-size: 20px; font-weight: 700; color: #1F684B; white-space: nowrap;">Gia đình</span></a></nav>
+</div>
+</body>
+</html>

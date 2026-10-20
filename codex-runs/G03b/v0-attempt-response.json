@@ -1,0 +1,15 @@
+{
+  "projectId": "2013215887278758682",
+  "sessionId": "17436372723379354463",
+  "outputComponents": [
+    {
+      "text": "Dưới đây là kế hoạch chi tiết và thông số thiết kế để tạo màn hình biến thể mới **G03b – \"Lịch Mai gợi ý · đã đổi giờ\"** từ màn hình G03 chuẩn nhất:\n\n### Chi tiết các điểm thiết kế của màn hình G03b:\n1. **Trạng thái đổi giờ của Bác đối với việc Đi bộ**:\n   - Thẻ việc 1 (*Đi bộ nhẹ nhàng* - Vận động tự nhiên): Cập nhật thời gian thực hiện từ 8:00 sáng sang **9:00 sáng** (`9:00 sáng · 20 phút`), đi kèm chỉ báo/huy hiệu trực quan thể hiện Bác đã đổi giờ: chip trạng thái phụ hoặc dòng chú thích trang nhã *\"Bác đã đổi sang 9:00 sáng\"* rõ ràng, tương phản tốt.\n   - Thẻ việc 2 (*Thư giãn nhẹ nhàng* - Thư giãn mỗi ngày): Đặt lúc **10:00 sáng** (`10:00 sáng · 15 phút`) để tránh xung đột khung giờ với việc đi bộ 9:00 sáng.\n   - Cả hai thẻ đều duy trì chip trạng thái cảnh báo chuẩn **“○ Chưa làm”** (nền `#FFF3DB`, viền `2px solid #B26A00`, chữ `20px bold #8A5100`, biểu tượng Lucide `circle` 24px) và các dải màu nhấn 6px (`#2BA15C`, `#AC76DB`).\n\n2. **Khẳng định tính tự chủ & Tôn trọng quyền riêng tư**:\n   - Khối thông báo an tâm: *\"Chưa thêm vào lịch. Bác tự chọn.\"* cùng ghi chú súc tích thể hiện Bác vừa đổi giờ đi bộ, việc chỉ chính thức vào lịch khi Bác bấm nút xác nhận. Không tuyên bố hay ngụ ý lịch của Bác đã bị thay đổi trước khi nhận.\n\n3. **Bảo tồn trọn vẹn bố cục, lời nhắn và các hành động**:\n   - Thẻ ngữ cảnh người gửi: *\"Mai · Con gái\"* và trích dẫn tin nhắn: *“Mẹ ơi, mai mình đi bộ với cô Tám nhé?”*.\n   - Nút trợ năng **\"Đọc to\"** (cao 52px, chữ 22px bold kèm biểu tượng Lucide `volume-2` 32px).\n   - Thanh thao tác cố định dưới chân trang:\n     * Nút chính duy nhất: **\"Thêm vào lịch\"** (cao 60px, nền đặc `#1F684B`, chữ trắng 22px bold, icon `plus` 32px).\n     * Nút viền: **\"Đổi lại giờ\"** (kèm icon `alarm-clock-plus` 32px) và **\"Chọn từng việc\"** (kèm icon `check-square` 32px).\n     * Nút phụ: **\"Bỏ qua gợi ý\"** (kèm icon `skip-forward` 32px).\n   - Thanh điều hướng đáy 4 tab chuẩn mực 104px (*Hôm nay*, *Lịch tuần*, *Thói quen*, *Gia đình* với tab Gia đình kích hoạt và biểu tượng `hand-heart` 32px, nhãn chữ $\\ge 20\\text{px}$).\n   - Mọi vùng chạm $\\ge 48\\times 48\\text{px}$, chữ $\\ge 20\\text{px}$, khoảng cách $\\ge 8\\text{px}$, phông chữ **Be Vietnam Pro**, 100% tiếng Việt có dấu, đáp ứng mượt mà cả hai kích thước `360×800` và `412×800`.\n\nBạn có muốn tôi tiến hành tạo và lưu màn hình G03b này lên Canvas ngay bây giờ không?"
+    },
+    {
+      "suggestion": "Tạo và lưu màn hình G03b lên Canvas ngay"
+    },
+    {
+      "suggestion": "Điều chỉnh lại giờ hoặc văn bản trước khi tạo"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-ICON-03: Increase the Lucide `circle` icon inside the “○ Chưa làm” status chip from 20×20px to 24×24px minimum, keeping the label visible and the icon centered.
+Preserve the four-tab navigation, 32px main icons, sample task at 9:30, short test-only note, “Gửi thử” and “Để sau” actions. Do not claim the reminder has been sent or received. Generate a new screen and preserve N01 v1 unchanged.

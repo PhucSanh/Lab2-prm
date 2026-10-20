@@ -1,0 +1,18 @@
+{
+  "projectId": "2013215887278758682",
+  "sessionId": "12971371075952147627",
+  "outputComponents": [
+    {
+      "text": "Dưới đây là kế hoạch chi tiết và thông số thiết kế để chuẩn hóa màn hình **G03 (Mai gửi lịch cho Bác)** từ màn hình đã chọn:\n\n1. **Rút gọn nút hành động chính (Primary CTA)**:\n   - Đổi nhãn nút từ *\"Thêm 2 việc vào lịch\"* thành đúng 3 âm tiết: **“Thêm vào lịch”**.\n   - Giữ nguyên thiết kế nút chính nền đặc duy nhất (`#1F684B`, cao `60px`, bo góc `14px`, chữ trắng `22px bold`, icon `plus` 32px).\n\n2. **Thêm chip trạng thái “○ Chưa làm” (Status Chip 20px)**:\n   - Thêm chip trạng thái vào cả hai thẻ hoạt động gợi ý (*Đi bộ nhẹ nhàng* và *Thư giãn nhẹ nhàng*), đặt ngay dưới tiêu đề việc.\n   - Định dạng chuẩn cảnh báo/chưa làm: chiều cao `40px`, bo góc tròn `999px`, nền `#FFF3DB`, viền `2px solid #B26A00`, chữ `20px bold #8A5100`, biểu tượng Lucide `circle` kích thước `24px` nét `2.2` màu `#B26A00`.\n   - Giữ nguyên dòng thông báo tính tự chủ: *\"Chưa thêm vào lịch. Bác tự chọn.\"* để làm rõ không có việc nào tự động vào lịch khi Bác chưa xác nhận.\n\n3. **Bổ sung nút phụ “Đọc to” dễ tiếp cận**:\n   - Thêm nút phụ *\"Đọc to\"* với biểu tượng Lucide `volume-2` kích thước `32×32px` cùng chữ rõ ràng (không dùng nút chỉ có icon), chiều cao tối thiểu $\\ge 48\\text{px}$ và vùng chạm rộng rãi.\n\n4. **Bảo tồn toàn vẹn các thành phần & Trợ năng An Nhiên**:\n   - Giữ trọn vẹn 2 việc gợi ý, giờ nhắc (*8:00 sáng*, *9:00 sáng*), lời nhắn của Mai (*\"Mẹ ơi, mai mình đi bộ với cô Tám nhé?\"*), và các nút tùy chọn giờ / chọn từng việc / bỏ qua.\n   - Mọi vùng chạm tối thiểu $\\ge 48\\times 48\\text{px}$, khoảng cách $\\ge 8\\text{px}$, cỡ chữ $\\ge 20\\text{px}$, khoảng đệm chân trang an toàn không bị che khuất ở cả `360px` và `412px`.\n\nBạn có muốn tôi áp dụng ngay những chỉnh sửa này lên màn hình không?"
+    },
+    {
+      "suggestion": "Áp dụng các thay đổi này và tạo màn hình mới ngay"
+    },
+    {
+      "suggestion": "Giữ nguyên nhãn nút cũ Thêm 2 việc vào lịch"
+    },
+    {
+      "suggestion": "Điều chỉnh vị trí nút Đọc to lên đầu trang"
+    }
+  ]
+}

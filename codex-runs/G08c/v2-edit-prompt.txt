@@ -1,0 +1,3 @@
+Keep the overall layout and everything not mentioned below unchanged.
+1. R-ICON-03: Replace the Lucide `house` icon on the “Về Hôm nay” button with Lucide `sun` at 32×32px, matching the documented Hôm nay meaning. Keep the visible text.
+Keep the original G08c v1 bottom-nav geometry exactly: four equal columns with visible gaps between “Hôm nay”, “Lịch tuần”, “Thói quen”, and “Gia đình”; do not change label font size, widths, or wrapping. Preserve the accepted walking event at 9:00, date heading and calendar controls. Generate a new screen from best v1 and preserve it unchanged.

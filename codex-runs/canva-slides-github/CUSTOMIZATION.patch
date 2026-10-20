@@ -1,0 +1,80 @@
+--- upstream/skills/scientific-slides/references/presentation_structure.md
++++ an-nhien-canva/references/presentation-structure.md
+@@ -1,4 +1,13 @@
+ # Presentation Structure Guide
++
++## An Nhiên adaptation — apply before generic templates
++
++This is a UX design case study presented in Vietnamese, not a clinical experiment. Use: scenario → design questions → published evidence → project decisions → real UI → AI-assisted process → iteration evidence → limitations → planned user testing.
++
++Translate the original Hook/Context/Gap/Approach/Results/Implications/Closure as: bà Lan (explicitly a composite scenario), accessibility questions, verified papers, research-to-UI choices, actual Stitch artifacts, regressions and best-version choice, and next steps. “Results” means design artifacts and internal review, never health outcomes or real-user findings without data.
++
++Default to 16 main slides over 12–15 minutes; this is a project draft assumption, not a fixed upstream rule. Read `storyboard.md` for slide-level content. Include no more than 2–3 directly relevant verified papers in the main story. Keep other papers in an appendix after verification. Rehearse to check timing; do not mechanically enforce one slide per minute.
++
+ 
+ ## Overview
+ 
+@@ -6,7 +15,7 @@
+ 
+ Treat the section ranges below as planning options, not additive time budgets.
+ Choose one concrete allocation whose sum includes transitions, buffer, and any in-slot
+-Q&A. The [timing guide](../assets/timing_guidelines.md) gives checked 5-, 15-, and
++Q&A. The [timing guide](timing.md) gives checked 5-, 15-, and
+ 45-minute budgets; rehearsal, not slide count, determines whether the deck fits.
+ 
+ ## Core Narrative Structure
+--- upstream/skills/scientific-slides/references/slide_design_principles.md
++++ an-nhien-canva/references/slide-design.md
+@@ -1,4 +1,15 @@
+ # Slide Design Principles for Scientific Presentations
++
++## An Nhiên adaptation — project visual direction takes priority
++
++Author in Canva MCP with editable text, charts and diagrams. Use 16:9; background #F6F7F2, primary #1F684B, text #202B25, secondary #D6EADF. Be Vietnam Pro, or Noto Sans if unavailable. Cover 48–60pt, slide title 32–40pt, body 22–28pt, labels 18–20pt, source footers 14–16pt. These are presentation choices, not Android app units. Keep 5% safe margins.
++
++One dominant composition per slide. Use actual UI screenshots at readable scale; before/after must use the same screen and viewport. Preserve image proportions and label versions. Avoid grids of decorative UI cards, medical stock imagery, and generated screenshots. Figures and UI artifacts must prove a point, not decorate a research claim.
++
++The original 6×6 rule is a heuristic, not a quota. Prefer 30–45 visible Vietnamese words per content slide when practical, with explanation in speaker notes. Choose the project palette over generic palettes below; do not infer psychological or medical effects from a color.
++
++Ignore implementation software suggestions below when creating this Canva deck. No Beamer/PPTX pipeline, external asset subscription, image model or API key is required by this adaptation.
++
+ 
+ ## Overview
+ 
+--- upstream/skills/scientific-slides/assets/timing_guidelines.md
++++ an-nhien-canva/references/timing.md
+@@ -1,4 +1,9 @@
+ # Presentation Timing Guidelines
++
++## An Nhiên adaptation
++
++Use the 15-minute guidance as a planning aid, not a promise. The local storyboard contains about 13 minutes of speech, leaving room for transitions within a 15-minute slot. Clarify whether Q&A shares the slot before final rehearsal. Keep 16 main slides unless the user changes that assumption. Scientific-talk examples below are illustrative; preserve the UX case-study arc in `storyboard.md`.
++
+ 
+ ## Overview
+ 
+--- upstream/skills/scientific-critical-thinking/references/evidence_hierarchy.md
++++ an-nhien-canva/references/evidence-quality.md
+@@ -1,4 +1,13 @@
+ # Evidence Hierarchy and Quality Assessment
++
++## An Nhiên adaptation — applicability before hierarchy
++
++For UI choices, assess the research question, actual participants, devices, tasks, methods, limitations and transfer to Vietnamese adults aged 65+. Do not treat a clinical RCT hierarchy as a universal ranking of UX evidence. A systematic review supports a direction only within the scope of its underlying studies.
++
++Every slide claim needs: source/DOI or repository path, supported claim, method/sample when relevant, limitation, applied UI decision and slide ID. Label VERIFIED / PARTIAL / LOCAL / PROPOSED. Research numbers must retain units; pt, px, dp and sp are not interchangeable.
++
++Six AI roleplays in `ux/persona.md` are simulations. Bà Lan/chị Mai are scenario characters. Stitch critic scores are internal rubric results, not SUS, usability percentages, user satisfaction or clinical benefit. New papers found now must not be narrated as sources used historically. Read `evidence-ledger.md` for verified project-specific sources.
++
+ 
+ ## Traditional Evidence Hierarchy (Medical/Clinical)
+ 
+@@ -7,7 +16,7 @@
+ mechanisms have different evidence needs. A review synthesizes its underlying studies;
+ meta-analysis alone does not increase certainty. Reporting quality, risk of bias,
+ applicability, and certainty must be assessed separately. Current sources are recorded in
+-[review_sources.md](review_sources.md).
++[review_sources.md](../../upstream/scientific-agent-skills/skills/scientific-critical-thinking/references/review_sources.md).
+ 
+ ### Level 1: Systematic Reviews and Meta-Analyses
+ **Description:** Comprehensive synthesis of all available evidence on a question.
